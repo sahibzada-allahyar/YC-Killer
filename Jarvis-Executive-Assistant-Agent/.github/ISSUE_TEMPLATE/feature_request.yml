@@ -1,0 +1,120 @@
+name: Feature Request
+description: Suggest an idea for this project
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature!
+        Please fill out this form as completely as possible.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is your feature request related to a problem?
+      description: A clear and concise description of what the problem is.
+      placeholder: I'm always frustrated when [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you want to happen.
+      placeholder: |
+        I would like to see [...]
+        This would help by [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe alternatives you've considered
+      description: A clear and concise description of any alternative solutions or features you've considered.
+      placeholder: |
+        Alternative 1: [...]
+        Alternative 2: [...]
+
+        I prefer the proposed solution because [...]
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: What area of the application would this feature affect?
+      multiple: true
+      options:
+        - Frontend UI
+        - Backend API
+        - Database
+        - Authentication
+        - AI/ML Capabilities
+        - Integration (Third-party services)
+        - Performance
+        - Security
+        - Documentation
+        - Developer Experience
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Critical (Blocking work)
+        - High (Major functionality missing)
+        - Medium (Important but not urgent)
+        - Low (Nice to have)
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add any other context, screenshots, or examples about the feature request here.
+      placeholder: |
+        - Screenshots/mockups of similar features in other applications
+        - Links to relevant documentation or research
+        - Use cases that would benefit from this feature
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation ideas
+      description: If you have any ideas about how to implement this feature, please share them.
+      placeholder: |
+        Technical approach:
+        - Step 1: [...]
+        - Step 2: [...]
+
+        Potential challenges:
+        - Challenge 1: [...]
+        - Challenge 2: [...]
+
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Please confirm the following
+      options:
+        - label: I have searched for existing feature requests and this is not a duplicate
+          required: true
+        - label: I am willing to help implement this feature
+        - label: This feature would benefit the broader community, not just my specific use case
+          required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this feature request, you agree to follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

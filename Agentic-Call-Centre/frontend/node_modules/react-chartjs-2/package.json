@@ -1,0 +1,44 @@
+{
+  "name": "react-chartjs-2",
+  "type": "module",
+  "version": "5.3.0",
+  "description": "React components for Chart.js",
+  "author": "Jeremy Ayerst",
+  "homepage": "https://github.com/reactchartjs/react-chartjs-2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reactchartjs/react-chartjs-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reactchartjs/react-chartjs-2/issues"
+  },
+  "keywords": [
+    "chart",
+    "chart-js",
+    "chart.js",
+    "react-chartjs-2",
+    "react chart.js",
+    "react-chart.js"
+  ],
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "publishConfig": {
+    "directory": "package"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "chart.js": "^4.1.1",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "scripts": {}
+}

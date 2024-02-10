@@ -1,0 +1,163 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  NODE_VERSION: '18'
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run build --workspace=@jarvis-executive-assistant/shared
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format -- --check
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:5
+        ports:
+          - 27017:27017
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --coverage
+        env:
+          MONGODB_URI: mongodb://localhost:27017/test
+          JWT_SECRET: test-secret
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [validate, test]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload frontend artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-dist
+          path: packages/frontend/dist
+
+      - name: Upload backend artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: backend-dist
+          path: packages/backend/dist
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: production
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download frontend artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: frontend-dist
+          path: packages/frontend/dist
+
+      - name: Download backend artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: backend-dist
+          path: packages/backend/dist
+
+      # Add your deployment steps here
+      # Example for deploying to a cloud provider:
+      # - name: Deploy to Cloud
+      #   run: |
+      #     # Add deployment commands
+
+      - name: Notify deployment
+        if: success()
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          channel-id: 'deployments'
+          slack-message: 'Deployment successful! :rocket:'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    needs: [validate, test, build, deploy]
+    if: always()
+
+    steps:
+      - name: Notify status
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          channel-id: 'ci-cd'
+          slack-message: |
+            *Build Status*: ${{ needs.build.result }}
+            *Test Status*: ${{ needs.test.result }}
+            *Deploy Status*: ${{ needs.deploy.result }}
+
+            Commit: ${{ github.event.head_commit.message }}
+            Author: ${{ github.event.head_commit.author.name }}
+
+            <${{ github.event.head_commit.url }}|View Commit>
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
