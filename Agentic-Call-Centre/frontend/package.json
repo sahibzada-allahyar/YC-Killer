@@ -1,0 +1,33 @@
+{
+  "name": "ai-call-center-frontend",
+  "version": "1.0.0",
+  "description": "Admin dashboard for AI-driven call center system",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "next lint",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.0",
+    "axios": "^1.0.0",
+    "chart.js": "^4.0.0",
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-chartjs-2": "^5.0.0",
+    "react-dom": "^18.0.0",
+    "wavesurfer.js": "^7.9.1",
+    "ws": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/ws": "^8.0.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}
