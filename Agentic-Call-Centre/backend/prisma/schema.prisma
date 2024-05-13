@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Call {
+  id               String            @id @default(uuid())
+  type             String            // 'sales' | 'support'
+  status           String            // 'ringing' | 'in-progress' | 'completed' | 'failed'
+  phoneNumber      String
+  startTime        DateTime
+  endTime          DateTime?
+  outcome          String?           // SalesOutcome | SupportOutcome
+  recordingUrl     String?
+  transcriptSegments TranscriptSegment[]
+  feedback         CallFeedback[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+}
+
+model TranscriptSegment {
+  id        String   @id @default(uuid())
+  callId    String
+  timestamp DateTime
+  speaker   String   // 'user' | 'assistant'
+  text      String
+  call      Call     @relation(fields: [callId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([callId])
+}
+
+model CallFeedback {
+  id        String   @id @default(uuid())
+  callId    String
+  reviewerId String
+  rating    Int      // 1-5 scale
+  comments  String?
+  call      Call     @relation(fields: [callId], references: [id])
+  reviewer  User     @relation(fields: [reviewerId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([callId])
+  @@index([reviewerId])
+}
+
+model User {
+  id           String         @id @default(uuid())
+  email        String        @unique
+  name         String
+  role         String        // 'admin' | 'supervisor'
+  passwordHash String
+  feedback     CallFeedback[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([email])
+}
+
+// For RLHF training data
+model TrainingExample {
+  id           String   @id @default(uuid())
+  callId       String?  // Optional reference to original call
+  context      String   // Conversation context/history
+  input        String   // User input
+  output       String   // AI response
+  rating       Int      // Human rating (1-5)
+  feedback     String?  // Specific feedback comments
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([rating])
+}
