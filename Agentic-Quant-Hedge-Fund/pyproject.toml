@@ -4,5 +4,7 @@ version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
   "numpy>=1.26",
+  "numba>=0.59",
   "typer>=0.12",
+  "lark>=1.1",
 ]

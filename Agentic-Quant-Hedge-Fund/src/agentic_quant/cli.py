@@ -35,38 +35,5 @@ def test_transforms():
     typer.echo(f"Add transform test: {result}")
 
 
-@app.command()
-def idea():
-    """Generate a new trading strategy idea."""
-    from .agents.strategy_generator import generate
-    path = generate()
-    typer.echo(f"Generated idea saved to: {path}")
-
-
-@app.command()
-def test_backtest():
-    """Test backtesting functionality."""
-    import numpy as np
-    import polars as pl
-    from .backtest.engine import backtest
-    
-    # Create sample data for testing
-    timestamps = pl.date_range(
-        start=pl.date(2024, 1, 1),
-        end=pl.date(2024, 1, 5),
-        interval="1d"
-    )
-    
-    sample_data = pl.DataFrame({
-        "timestamp": timestamps,
-        "ticker": ["BTCUSDT"] * len(timestamps),
-        "alpha": [0.1, -0.2, 0.3, -0.1, 0.2],
-        "close": [100.0, 102.0, 98.0, 105.0, 103.0]
-    })
-    
-    result = backtest(sample_data)
-    typer.echo(f"Backtest completed. Final PnL: {result['cum_pnl'][-1]:.2f}")
-
-
 if __name__ == "__main__":
     app() 
