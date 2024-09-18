@@ -35,5 +35,13 @@ def test_transforms():
     typer.echo(f"Add transform test: {result}")
 
 
+@app.command()
+def idea():
+    """Generate a new trading strategy idea."""
+    from .agents.strategy_generator import generate
+    path = generate()
+    typer.echo(f"Generated idea saved to: {path}")
+
+
 if __name__ == "__main__":
     app() 
