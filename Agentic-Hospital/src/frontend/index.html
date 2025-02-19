@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Agent Dashboard</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .query-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .response-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .agent-response {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .priority-high {
+            border-left: 4px solid #dc3545;
+        }
+        .priority-medium {
+            border-left: 4px solid #ffc107;
+        }
+        .priority-low {
+            border-left: 4px solid #28a745;
+        }
+        .insurance-info {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .insurance-covered {
+            color: #28a745;
+        }
+        .insurance-not-covered {
+            color: #dc3545;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .recommendations {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .recommendations li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function HealthcareAgent() {
+            const [query, setQuery] = React.useState('');
+            const [age, setAge] = React.useState('');
+            const [diabetesType, setDiabetesType] = React.useState('');
+            const [bloodSugar, setBloodSugar] = React.useState('');
+            const [medications, setMedications] = React.useState('');
+            const [responses, setResponses] = React.useState([]);
+            const [loading, setLoading] = React.useState(false);
+            const [error, setError] = React.useState(null);
+
+            const handleSubmit = async (e) => {
+                e.preventDefault();
+                setLoading(true);
+                setError(null);
+
+                const patientContext = {
+                    ...(age && { age: parseInt(age) }),
+                    ...(diabetesType && { diabetesType }),
+                    ...(bloodSugar && { lastBloodSugar: parseFloat(bloodSugar) }),
+                    ...(medications && { medications: medications.split(',').map(m => m.trim()) })
+                };
+
+                try {
+                    const response = await fetch('http://localhost:3000/query', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            query,
+                            patientContext
+                        }),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to get response');
+                    }
+
+                    const data = await response.json();
+                    setResponses(data.responses);
+                } catch (err) {
+                    setError(err.message);
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            return (
+                <div className="container">
+                    <div className="header">
+                        <h1>Healthcare Agent Dashboard</h1>
+                        <p>Get personalized health advice from multiple healthcare specialists</p>
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="query-form">
+                        <div>
+                            <textarea
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder="Enter your health-related question here..."
+                                rows={4}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="number"
+                                value={age}
+                                onChange={(e) => setAge(e.target.value)}
+                                placeholder="Age (optional)"
+                            />
+                        </div>
+                        <div>
+                            <select
+                                value={diabetesType}
+                                onChange={(e) => setDiabetesType(e.target.value)}
+                            >
+                                <option value="">Select Diabetes Type (optional)</option>
+                                <option value="1">Type 1</option>
+                                <option value="2">Type 2</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input
+                                type="number"
+                                value={bloodSugar}
+                                onChange={(e) => setBloodSugar(e.target.value)}
+                                placeholder="Last Blood Sugar Reading (optional)"
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                value={medications}
+                                onChange={(e) => setMedications(e.target.value)}
+                                placeholder="Current Medications (comma-separated, optional)"
+                            />
+                        </div>
+                        <button type="submit" disabled={loading}>
+                            {loading ? 'Getting Responses...' : 'Get Advice'}
+                        </button>
+                    </form>
+
+                    {error && (
+                        <div style={{ color: 'red', marginBottom: '20px' }}>
+                            Error: {error}
+                        </div>
+                    )}
+
+                    <div className="response-container">
+                        {responses.map((response, index) => (
+                            <div 
+                                key={index} 
+                                className={`agent-response priority-${response.response.priority}`}
+                            >
+                                <h3>{response.agentName}</h3>
+                                <p>{response.response.message}</p>
+                                {response.response.recommendations.length > 0 && (
+                                    <div className="recommendations">
+                                        <h4>Recommendations:</h4>
+                                        <ul>
+                                            {response.response.recommendations.map((rec, idx) => (
+                                                <li key={idx}>{rec}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                                {response.response.insuranceCoverage && (
+                                    <div className="insurance-info">
+                                        <h4>Insurance Coverage:</h4>
+                                        <p className={response.response.insuranceCoverage.covered ? 'insurance-covered' : 'insurance-not-covered'}>
+                                            {response.response.insuranceCoverage.covered ? '✓ Covered' : '✗ Not Covered'}
+                                            {response.response.insuranceCoverage.covered && 
+                                                ` (${response.response.insuranceCoverage.estimatedCoverage}% estimated coverage)`
+                                            }
+                                        </p>
+                                        <p><small>{response.response.insuranceCoverage.notes}</small></p>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<HealthcareAgent />);
+    </script>
+</body>
+</html>
