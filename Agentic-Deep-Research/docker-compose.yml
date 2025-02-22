@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  knowledge-engine:
+    build: .
+    container_name: knowledge-synthesis-engine
+    environment:
+      - NODE_ENV=production
+      - OPENAI_KEY=${OPENAI_KEY}
+      - OPENAI_MODEL=o3-mini
+      - FIRECRAWL_KEY=${FIRECRAWL_KEY}
+      - FIRECRAWL_BASE_URL=${FIRECRAWL_BASE_URL}
+      - CONTEXT_SIZE=128000
+    volumes:
+      - ./reports:/app/reports
+    command: node --experimental-vm-modules dist/run.js "Quantum computing advancements"
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
