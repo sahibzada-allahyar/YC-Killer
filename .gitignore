@@ -1,0 +1,128 @@
+# Dependencies
+node_modules/
+**/node_modules/
+.pnp/
+.pnp.js
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+**/.env
+**/.env.*
+
+# Build outputs
+dist/
+build/
+**/dist/
+**/build/
+.next/
+out/
+.nuxt/
+.output/
+*.tsbuildinfo
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.settings/
+.history/
+
+# Logs and debugging
+logs/
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+debug.log
+**/debug.log
+
+# Testing and coverage
+coverage/
+.nyc_output/
+.jest/
+__tests__/**/coverage/
+test-results/
+
+# Cache directories
+.cache/
+.temp/
+.eslintcache
+.stylelintcache
+.parcel-cache
+**/.cache/
+.npm/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+.docker/
+docker-volumes/
+*.env.docker
+docker-compose.override.yml
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+k8s-secrets.yml
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Framework specific
+## Next.js
+.next/
+out/
+.vercel/
+
+## Nuxt.js
+.nuxt/
+.output/
+
+## Vite
+.vite/
+
+## Prisma
+prisma/.env
+
+## TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Misc
+.env.backup
+.env.save
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.webpack/
+.svelte-kit
