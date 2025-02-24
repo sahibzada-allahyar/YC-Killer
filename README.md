@@ -1,6 +1,6 @@
 # YC-Killer by Singularity Research
 
-> 🌟 **Join Our Mission**: We're systematically open-sourcing enterprise-grade AI agents to counter every YC company, one by one. If you have a stellar academic background and are excited about democratizing AI access, please star this repository and [apply to join our team](https://forms.gle/iwQNA9hXPFbzj37y9). We'll review your GitHub profile and application together.
+> 🌟 **Join Our Mission**: We're systematically open-sourcing enterprise-grade AI agents to counter every YC company, one by one. If you have a stellar academic background and are excited about democratizing AI access, please fork this repository and [apply to join our team](https://forms.gle/iwQNA9hXPFbzj37y9). We'll review your GitHub profile and application together.
 
 A collection of enterprise-grade AI agents designed to democratize artificial intelligence and provide free, open-source alternatives to overvalued Y Combinator startups. Our mission is to make advanced AI technology accessible to everyone, not just well-funded companies.
 
