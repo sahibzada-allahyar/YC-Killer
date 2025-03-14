@@ -1,0 +1,26 @@
+{
+  "short_name": "AI Tutor",
+  "name": "AI Tutor - Your Personal Homework Assistant",
+  "icons": [
+    {
+      "src": "tutor.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "tutor-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "tutor-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2196f3",
+  "background_color": "#f5f5f5",
+  "description": "An AI-powered tutor that helps you with your homework and explains solutions step by step"
+}

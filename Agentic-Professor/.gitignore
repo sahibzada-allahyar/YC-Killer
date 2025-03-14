@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Cache and logs
+.cache/
+*.log
+backend/cache/*
+!backend/cache/.gitkeep
+backend/logs/*
+!backend/logs/.gitkeep
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Frontend specific
+frontend/.vite/
+frontend/dist/
+frontend/stats.html
+
+# Backend specific
+backend/dist/
+
+# Shared package
+shared/dist/
