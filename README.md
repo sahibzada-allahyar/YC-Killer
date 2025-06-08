@@ -108,7 +108,7 @@ cd Agentic-Accounting-Firm  # or any other agent directory
 
 We're looking for passionate individuals who share our vision of democratizing AI access:
 
-- **Option 1**: [Help us take on overinflated GPT-wrapper startups](https://forms.gle/Y64WFkcuR7XMwXFQA)https://forms.gle/jqkYvYHhE4Pjbnxj6
+- **Option 1**: [Help us take on overinflated GPT-wrapper startups](https://forms.gle/Y64WFkcuR7XMwXFQA)
 - **Option 2**: [Apply even if you just want to contribute your passion for open source accessible AI](https://forms.gle/Y64WFkcuR7XMwXFQA)
 
 ## Contributing
@@ -133,6 +133,9 @@ Each agent is licensed under the MIT License - see the LICENSE file in each agen
 
 Singularity Research is dedicated to democratizing AI through open source initiatives. We believe in making advanced AI technologies accessible to everyone, fostering innovation and collaboration in the AI community. Our goal is to accelerate technologies that save humanity and challenge the status quo of overvalued, underdeveloped AI solutions.
 
+
+Visit our website for more information: [https://www.singularityresearchlabs.com](https://www.singularityresearchlabs.com)
 ---
 
 Made with ❤️ by Singularity Research
+
