@@ -1,5 +1,7 @@
 # Agentic Call Centre
 
+> Putting a whole call center into a data centre by completely automating it with AI agents. AI voice based sales system.
+
 An AI-driven call center system built with TypeScript that handles both outbound sales calls and inbound customer support. The system uses Large Language Models for real-time conversations and includes features like call recording, transcription, and continuous improvement through RLHF (Reinforcement Learning with Human Feedback).
 
 ## Features

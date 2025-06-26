@@ -10,36 +10,18 @@ We believe AI access is a human right. While Y Combinator companies build simple
 
 ## Our Team
 
-Our team consists of the most brilliant and talented individuals in the world, including alumni from:
-- Google
-- Anthropic
+Our team consists of the most brilliant quantitative researchers and AI engineers in the world, including alumni from:
+- Google DeepMind
 - Harvard University
 - MIT
 - Stanford University
 - Cambridge University
+- Anthropic
 
 ## The Agents
 
-### 1. Agentic Accounting Firm
-An AI-powered accounting assistant that revolutionizes financial management through natural language processing and voice commands. Features include:
-- Natural language processing for accounting operations
-- Voice command support via OpenAI's voice agent
-- Integration with QuickBooks for automated accounting
-- Real-time transaction processing and categorization
-- Automated tax calculation and reporting
-- Multi-currency support
-
-### 2. Agentic Call Centre
-A complete AI call center solution that handles both inbound support and outbound sales with enterprise-grade features:
-- AI-powered conversations using GPT-4 or other LLMs
-- Real-time speech-to-text and text-to-speech conversion
-- Call recording and transcription
-- Admin dashboard for monitoring and analytics
-- RLHF system for continuous improvement
-- Auto-scaling infrastructure
-
-### 3. Deep Research Engine
-An open-source alternative to OpenAI's Deep Research, providing comprehensive research capabilities:
+### 1. Agentic Deep Research
+An open source version of OpenAI's Deep Research. Provides comprehensive research capabilities:
 - Recursive exploration with configurable breadth and depth
 - Parallel processing with intelligent rate limiting
 - AI-powered analysis and insight extraction
@@ -47,26 +29,17 @@ An open-source alternative to OpenAI's Deep Research, providing comprehensive re
 - Comprehensive markdown reports with citations
 - Docker support for easy deployment
 
-### 4. Healthcare Agent System
-A sophisticated multi-agent healthcare system providing accessible medical consultation:
-- Dynamic team assembly based on query complexity
-- Comprehensive specialist network including primary care, nutrition, and specialists
-- Real-time insurance coverage verification
-- Intelligent query analysis and contextual understanding
-- Coordinated multi-agent responses
-- Integration with medical systems
+### 2. Agentic Quant Hedge Fund
+Fully autonomous Hedge Fund run end-to-end entirely by AI agents. A complete, production-ready agentic quantitative trading system:
+- **Strategy Ideation Agent**: Generates market-neutral trading ideas based on behavioral finance principles
+- **Alpha Engineering Agent**: Converts high-level ideas into executable mathematical expressions
+- **Automated Feature Engineering**: Compiles trading signals using NumPy+Numba for maximum performance
+- **High-Performance Data Engine**: Polars-based data processing for lightning-fast computations
+- **Enterprise-Grade Backtesting**: Dollar-neutral long/short equity strategies with realistic transaction costs
+- **Production-Ready Infrastructure**: Docker containerization and DVC for data version control
 
-### 5. AI Tutor
-An intelligent tutoring system offering personalized education:
-- Upload homework images for automatic text extraction
-- Detailed explanations with mathematical notation
-- Voice-based explanations using OpenAI's text-to-speech
-- Wikipedia integration for additional context
-- Interactive diagrams and visualizations
-- Progressive Web App (PWA) support
-
-### 6. Jarvis Executive Assistant
-A comprehensive AI personal assistant with enterprise-grade capabilities:
+### 3. Jarvis Agentic Executive Agent
+Making Jarvis from Iron Man a real thing. A comprehensive AI personal assistant with enterprise-grade capabilities:
 - Advanced AI-powered conversation
 - Calendar management and scheduling
 - Email composition and management
@@ -74,6 +47,42 @@ A comprehensive AI personal assistant with enterprise-grade capabilities:
 - Task and reminder management
 - Real-time updates via WebSocket
 - Secure authentication with Google OAuth
+
+### 4. Agentic Call Center
+Putting a whole call center into a data centre by completely automating it with AI agents. AI voice based sales system:
+- AI-powered conversations using GPT-4 or other LLMs
+- Real-time speech-to-text and text-to-speech conversion
+- Call recording and transcription
+- Admin dashboard for monitoring and analytics
+- RLHF system for continuous improvement
+- Auto-scaling infrastructure
+
+### 5. Agentic AI Hospital
+[350+ GitHub Stars]: Democratizing access to Cambridge Doctor level medical care for the underprivileged in developing countries:
+- Dynamic team assembly based on query complexity
+- Comprehensive specialist network including primary care, nutrition, and specialists
+- Real-time insurance coverage verification
+- Intelligent query analysis and contextual understanding
+- Coordinated multi-agent responses
+- Integration with medical systems
+
+### 6. Agentic Professor
+Agentic AI for 1-on-1 tutoring - it has whiteboard access, can display diagrams, voice capabilities and a wiki-agent does RAG on wikipedia articles. Long-term goal is to create a fully online schooling and tutoring system to democratize Cambridge University level quality education for the underprivileged in developing countries:
+- Upload homework images for automatic text extraction
+- Detailed explanations with mathematical notation
+- Voice-based explanations using OpenAI's text-to-speech
+- Wikipedia integration for additional context
+- Interactive diagrams and visualizations
+- Progressive Web App (PWA) support
+
+### 7. Agentic Accounting Firm
+A full accounting firm run by AI multi-agents:
+- Natural language processing for accounting operations
+- Voice command support via OpenAI's voice agent
+- Integration with QuickBooks for automated accounting
+- Real-time transaction processing and categorization
+- Automated tax calculation and reporting
+- Multi-currency support
 
 ## Technical Overview
 

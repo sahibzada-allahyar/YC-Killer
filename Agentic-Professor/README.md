@@ -1,5 +1,7 @@
 # Agentic Professor
 
+> Agentic AI for 1-on-1 tutoring - it has whiteboard access, can display diagrams, voice capabilities and a wiki-agent does RAG on wikipedia articles. Long-term goal is to create a fully online schooling and tutoring system to democratize Cambridge University level quality education for the underprivileged in developing countries.
+
 An AI-powered tutoring system that helps students with their homework by providing detailed explanations, step-by-step solutions, and interactive learning experiences.
 
 ## Features

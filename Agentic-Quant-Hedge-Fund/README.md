@@ -2,6 +2,8 @@
 
 > 🌟 **Join Our Mission**: We're systematically democratizing quantitative finance by open-sourcing enterprise-grade trading systems that rival the most sophisticated hedge funds. If you have a stellar academic background and are excited about making advanced quant strategies accessible to everyone, please star this repository and [apply to join our team](https://www.singularityresearchlabs.com).
 
+> Fully autonomous Hedge Fund run end-to-end entirely by AI agents.
+
 A complete, production-ready agentic quantitative trading system that brings institutional-grade algorithmic trading capabilities to everyone. Our mission is to democratize quantitative finance and break down the barriers that have kept sophisticated trading strategies locked behind the walls of elite hedge funds.
 
 ## Our Mission

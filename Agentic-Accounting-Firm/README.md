@@ -1,5 +1,7 @@
 # Agentic Accounting Firm
 
+> A full accounting firm run by AI multi-agents.
+
 An intelligent accounting assistant that uses natural language processing to help small businesses manage their accounting and taxes through voice and text commands.
 
 ## Features

@@ -1,5 +1,7 @@
 # Jarvis Executive Assistant Agent
 
+> Making Jarvis from Iron Man a real thing.
+
 A powerful AI-powered personal assistant that helps you manage tasks, schedule meetings, and find information efficiently. Built with TypeScript, React, and Node.js.
 
 ## Features

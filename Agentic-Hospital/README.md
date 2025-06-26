@@ -1,5 +1,7 @@
 # Agentic Hospital
 
+> Democratizing access to Cambridge Doctor level medical care for the underprivileged in developing countries.
+
 A sophisticated multi-agent healthcare system developed by Sahibzada A at Singularity Research, an organization dedicated to democratizing AI through open source. This system leverages Large Language Models (LLMs) to create an adaptive collaboration framework for medical decision-making, where multiple AI agents work together to provide comprehensive healthcare advice. The aim is to provide top tier healthcare access to everyone across the globe.
 
 ## Project Structure
