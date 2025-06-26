@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  agentic-quant:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../data:/app/data
+      - ../artifacts:/app/artifacts
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  ollama_data:
+

@@ -144,3 +144,4 @@ Contributors will be recognized in:
 - Our team page for exceptional contributions
 
 Thank you for contributing to democratizing quantitative finance!
+
