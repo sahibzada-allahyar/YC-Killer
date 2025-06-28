@@ -1,6 +1,6 @@
 # Agentic Quantitative Trading by Singularity Research
 
-## Fully autonomous Hedge Fund, run end-to-end entirely by AI agents.
+###Fully autonomous Hedge Fund, run end-to-end entirely by AI agents.
 
 > 🌟 **Join Our Mission**: We're systematically democratizing quantitative finance by open-sourcing enterprise-grade trading systems that rival the most sophisticated hedge funds. If you have a stellar academic background and are excited about making advanced quant strategies accessible to everyone, please star this repository and [apply to join our team](https://www.singularityresearchlabs.com).
 
