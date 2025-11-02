@@ -1,0 +1,21 @@
+# Global default: repo owner reviews major changes
+*                                         @sahibzada-allahyar
+
+# ---------- VR Office Project ----------
+# VR Office lives at repo root (NOT in /agents/)
+/vr-office/**                             @sahibzada-allahyar
+
+# ---------- Physics Lab Project ----------
+/physics-lab/**                           @sahibzada-allahyar
+
+# ---------- Sensitive Infrastructure ----------
+/.github/**                               @sahibzada-allahyar
+/infra/**                                 @sahibzada-allahyar
+/vr-office/infra/**                       @sahibzada-allahyar
+/SECURITY.md                              @sahibzada-allahyar
+/CODE_OF_CONDUCT.md                       @sahibzada-allahyar
+/LICENSE                                  @sahibzada-allahyar
+
+# ---------- Documentation ----------
+/vr-office/docs/**                        @sahibzada-allahyar
+/physics-lab/docs/**                      @sahibzada-allahyar
