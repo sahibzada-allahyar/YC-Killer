@@ -6,3 +6,4 @@ Jinja2>=3.1.0
 PyYAML>=6.0
 rich>=13.0.0
 pytest>=7.4.0
+# for physics ODEs / MH sampler already using scipy/numpy

@@ -1,0 +1,7 @@
+project: "Damped Oscillator Demo"
+dataset: "examples/physics/oscillator.csv"
+metric: "y"
+alpha: 0.05
+
+report:
+  out_dir: "examples/physics/outputs"
