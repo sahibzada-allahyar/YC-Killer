@@ -1,0 +1,26 @@
+project: "Example AB Test"
+dataset: "examples/simple_experiment/dataset.csv"
+id_column: "id"
+outcome_column: "conversion"
+group_column: ""               # leave empty to let the runner randomize
+group_names: ["control", "treatment"]
+
+hypothesis:
+  type: "mean_difference"
+  direction: "treatment > control"
+  metric: "conversion"
+  alpha: 0.05
+
+design:
+  assignment: "random"
+  n_per_group: 20
+  seed: 7
+  test: "welch_t"
+
+run:
+  bootstrap_iters: 1000
+
+report:
+  out_dir: "examples/simple_experiment/outputs"
+  format: "md"
+  include_plots: false

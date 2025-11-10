@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grantlab"
+version = "0.1.0"
+description = "End-to-end experimental pipeline with Lean proof-checking agent"
+authors = [{ name = "GrantLab" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=2.2.0",
+    "numpy>=1.24.0",
+    "scipy>=1.11.0",
+    "typer>=0.9.0",
+    "Jinja2>=3.1.0",
+    "PyYAML>=6.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+grantlab = "grantlab.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"

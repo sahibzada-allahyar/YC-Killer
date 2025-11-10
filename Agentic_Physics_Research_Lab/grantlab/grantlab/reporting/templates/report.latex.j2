@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+\section*{{{{ project }}} --- Experimental Report}
+Date: {{ timestamp }}
+
+\section*{Hypothesis}
+Type: {{ hypothesis.type }}
+
+\section*{Design}
+Assignment: {{ plan.assignment }}, n/group: {{ plan.n_per_group }}, Test: {{ plan.test }}
+
+\section*{Results}
+p-value: {{ "%.6f"|format(result.p_value) }}, Effect size d: {{ "%.4f"|format(result.effect_size_d) }}
+
+\section*{Interpretation}
+Decision: {{ interpretation.decision }}
+
+\section*{Formal Proof Checking}
+Lean available: {{ "Yes" if lean.available else "No" }}, Success: {{ "Yes" if lean.success else "No" }}
+
+\end{document}
