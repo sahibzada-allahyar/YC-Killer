@@ -1,0 +1,9 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lean_proof_engine"
+version = "0.0.1"
+description = "The reusable LEAN proof engine."
+dependencies = []
