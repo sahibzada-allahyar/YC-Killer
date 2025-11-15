@@ -1,0 +1,9 @@
+suite: ReplicationBench
+tasks:
+  - id: "astro.umap.reproduction"
+    input: "examples/gw/umap_reproduction/input.md"
+    compare:
+      figures:
+        - "umap_model_clusters.png"
+      tables:
+        - "js_divergence_summary.csv"

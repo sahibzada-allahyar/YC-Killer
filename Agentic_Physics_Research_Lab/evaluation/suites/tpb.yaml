@@ -1,0 +1,17 @@
+suite: TPBench
+tasks:
+  - id: "paper.pipeline.minimal"
+    input: "examples/minimal/input.md"
+    expect:
+      code_runs: true
+      plots_min: 3
+      results_tokens_min: 500
+      citations_ok: true
+  - id: "posterior.sharpness"
+    input: "examples/cosmo_snia/input.md"
+    expect:
+      posterior_targets:
+        H0:
+          width_95_max: 6.0
+        Omega_m:
+          width_95_max: 0.12
