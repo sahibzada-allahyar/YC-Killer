@@ -118,6 +118,13 @@ prisma/.env
 *.tsbuildinfo
 tsconfig.tsbuildinfo
 
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
 # Misc
 .env.backup
 .env.save

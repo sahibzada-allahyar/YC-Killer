@@ -28,7 +28,7 @@ export const ThinkingProcess: React.FC<ThinkingProcessProps> = ({ steps, isThink
                     ) : (
                         <BrainCircuit className="w-3 h-3 text-tokyonight-purple" />
                     )}
-                    <span>{isThinking ? 'THINKING PROCESS...' : 'THOUGHT PROCESS COMPLETED'}</span>
+                    <span>{isThinking ? 'RESEARCHING...' : 'RESEARCHING COMPLETED'}</span>
                 </div>
                 {isOpen ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
             </button>

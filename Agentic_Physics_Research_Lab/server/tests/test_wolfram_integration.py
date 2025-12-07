@@ -55,7 +55,6 @@ async def test_wolfram_agent_mock_integration():
 
 @pytest.mark.asyncio
 @pytest.mark.skipif(not HAS_WOLFRAM_KEYS, reason="Wolfram keys not found using .env")
-@pytest.mark.xfail(reason="wolframalpha library raises AssertionError on Content-Type in test env, but works in app")
 async def test_wolfram_live_integration():
     """
     Live integration test with Wolfram Alpha.

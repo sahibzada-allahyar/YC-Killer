@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Loader2, Bot, User, Atom } from 'lucide-react';
 import { ThinkingProcess } from './ThinkingProcess';
+import ReactMarkdown from 'react-markdown';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 interface Message {
     role: 'user' | 'assistant';
@@ -23,6 +26,14 @@ export const ChatInterface: React.FC = () => {
         scrollToBottom();
     }, [messages, currentThinkingSteps]);
 
+    const preprocessLaTeX = (content: string) => {
+        // Replace \[ ... \] with $$ ... $$
+        let processed = content.replace(/\\\[([\s\S]*?)\\\]/g, '$$$$$1$$$$');
+        // Replace \( ... \) with $ ... $
+        processed = processed.replace(/\\\(([\s\S]*?)\\\)/g, '$$$1$$');
+        return processed;
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!input.trim() || isLoading) return;
@@ -32,6 +43,9 @@ export const ChatInterface: React.FC = () => {
         setInput('');
         setIsLoading(true);
         setCurrentThinkingSteps([]);
+
+        let accumulatedThinkingSteps: { content: string }[] = [];
+        let assistantMessageContent = '';
 
         try {
             const response = await fetch('http://localhost:8000/api/chat', {
@@ -44,7 +58,6 @@ export const ChatInterface: React.FC = () => {
 
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
-            let assistantMessageContent = '';
 
             while (true) {
                 const { done, value } = await reader.read();
@@ -62,12 +75,12 @@ export const ChatInterface: React.FC = () => {
                             const data = JSON.parse(dataStr);
 
                             if (data.type === 'thought' || data.type === 'tool_result' || data.type === 'error') {
-                                setCurrentThinkingSteps(prev => [...prev, { content: data.content || JSON.stringify(data) }]);
+                                const step = { content: data.content || JSON.stringify(data) };
+                                accumulatedThinkingSteps.push(step);
+                                setCurrentThinkingSteps([...accumulatedThinkingSteps]);
                             } else if (data.type === 'token') {
                                 assistantMessageContent += data.content;
-                                // Update the partial message in the UI? 
-                                // For simplicity, we just accumulate and show at the end or update a partial state
-                                // Ideally we have a "streaming" message state.
+                                // Ideally update partial message here for streaming effect
                             }
                         } catch (e) {
                             console.error("Error parsing SSE:", e);
@@ -80,31 +93,18 @@ export const ChatInterface: React.FC = () => {
             setMessages(prev => [...prev, {
                 role: 'assistant',
                 content: assistantMessageContent,
-                thinkingSteps: currentThinkingSteps // This captures the steps generated *during* this response
-                // Note: state updates in loop might not be reflected here immediately due to closure, 
-                // but for this simple implementation let's rely on component state or just append.
+                thinkingSteps: accumulatedThinkingSteps
             }]);
-            // Actually we need to attach the accumulated steps to the finalized message.
-            // But `currentThinkingSteps` is state. Closures...
-            // Better approach: Update the LAST message if it's assistant, or append new one.
 
         } catch (error) {
             console.error('Error sending message:', error);
-            setCurrentThinkingSteps(prev => [...prev, { content: `Error: ${String(error)}` }]);
+            const errorStep = { content: `Error: ${String(error)}` };
+            accumulatedThinkingSteps.push(errorStep);
+            setCurrentThinkingSteps([...accumulatedThinkingSteps]);
         } finally {
             setIsLoading(false);
-            // We need to move the thinking steps to the permanent message history context if we want them to persist properly attached 
-            // OR we can just keep them 'live' until the next message.
-            // Let's refine the state management in a refactor if needed.
         }
     };
-
-    // Correction: We need to see the assistant message growing.
-    // We'll use a separate effect or just update messages state incrementally.
-    // Revised handleSubmit logic to be safer and simpler for streaming:
-
-    // ACTUALLY, let's just do a simpler implementation for this iteration
-    // where we hold "streamingMessage" state and merge it on completion.
 
     return (
         <div className="flex flex-col h-screen max-w-5xl mx-auto p-4 md:p-6 lg:p-8">
@@ -143,10 +143,17 @@ export const ChatInterface: React.FC = () => {
                             )}
 
                             <div className={`px-5 py-3 rounded-2xl ${msg.role === 'assistant'
-                                ? 'glass-panel text-tokyonight-fg rounded-tl-none'
+                                ? 'glass-panel text-tokyonight-fg rounded-tl-none overflow-hidden'
                                 : 'bg-tokyonight-purple/10 border border-tokyonight-purple/30 text-white rounded-tr-none'
                                 }`}>
-                                {msg.content}
+                                <div className="prose prose-invert max-w-none prose-p:leading-relaxed prose-pre:bg-tokyonight-dark/50 prose-pre:rounded-lg prose-pre:p-4">
+                                    <ReactMarkdown
+                                        remarkPlugins={[remarkMath]}
+                                        rehypePlugins={[rehypeKatex]}
+                                    >
+                                        {preprocessLaTeX(msg.content)}
+                                    </ReactMarkdown>
+                                </div>
                             </div>
                         </div>
                     </div>

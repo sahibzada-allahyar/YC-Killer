@@ -138,7 +138,8 @@ class WolframClient:
         candidates: Dict[str, ToolEstimate] = {}
         if self._mcp_client is not None:
             candidates["mcp"] = self._estimate("mcp", query)
-        if self._alpha_client is not None:
+        # Always consider alpha if app_id is present, we don't depend on the library anymore
+        if self._alpha_app_id:
             candidates["alpha"] = self._estimate("alpha", query)
         if self._wl_session is not None:
             candidates["wl"] = self._estimate("wl", query)
@@ -152,22 +153,95 @@ class WolframClient:
 
         est = candidates[choice]
         t0 = time.time()
-        if choice == "mcp":
-            # Example MCP call; adjust to your tool name / schema.
-            raw = self._mcp_client.call_tool("wolfram", {"query": query})  # type: ignore
-            result = raw.get("text") if isinstance(raw, dict) else raw
-        elif choice == "alpha":
-            res = self._alpha_client.query(query)
-            # Extract plaintext if possible; fall back to pods
-            try:
-                result = next(res.results).text
-                raw = res
-            except Exception:
-                result, raw = str(res), res
-        else:  # 'wl'
-            expr = wlexpr(query) if wlexpr is not None else query
-            result = self._wl_session.evaluate(expr)
-            raw = result
+        
+        try:
+            if choice == "mcp":
+                # Example MCP call; adjust to your tool name / schema.
+                raw = self._mcp_client.call_tool("wolfram", {"query": query})  # type: ignore
+                result = raw.get("text") if isinstance(raw, dict) else raw
+            elif choice == "alpha":
+                # Direct HTTP call to Wolfram Alpha to avoid strict library checks
+                import httpx
+                import xml.etree.ElementTree as ET
+                
+                # Use HTTPS to avoid 308 redirects
+                url = "https://api.wolframalpha.com/v2/query"
+                params = {
+                    "input": query,
+                    "appid": self._alpha_app_id,
+                    "format": "plaintext",
+                    "output": "xml"
+                }
+                
+                with httpx.Client(timeout=60.0, follow_redirects=True) as client:
+                    resp = client.get(url, params=params)
+                    resp.raise_for_status()
+                    
+                    # Parse XML
+                    root = ET.fromstring(resp.content)
+                    
+                    # Check for success
+                    success = root.get("success") == "true"
+                    if not success:
+                        # try to get error msg
+                        errs = root.findall(".//error/msg")
+                        if errs:
+                            raise RuntimeError(f"Wolfram Alpha API Error: {errs[0].text}")
+                            
+                        # Check for didyoumeans
+                        dyms = root.findall(".//didyoumean")
+                        if dyms:
+                            result = f"Did you mean: {', '.join([d.text for d in dyms if d.text])}?"
+                        else:
+                            result = "Wolfram Alpha could not understand the query."
+                    else:
+                        # Extract plaintext from the first 'Result' pod, or any primary pod
+                        # Strategy: Look for pod with title='Result'
+                        result_pod = None
+                        for pod in root.findall("pod"):
+                            if pod.get("title") == "Result":
+                                result_pod = pod
+                                break
+                        
+                        # Fallback: look for primary=true
+                        if not result_pod:
+                            for pod in root.findall("pod"):
+                                if pod.get("primary") == "true":
+                                    result_pod = pod
+                                    break
+                                    
+                        if result_pod:
+                            subpod = result_pod.find("subpod")
+                            if subpod is not None:
+                                plaintext = subpod.find("plaintext")
+                                if plaintext is not None and plaintext.text:
+                                    result = plaintext.text
+                                else:
+                                    result = "No plaintext result found in pod."
+                            else:
+                                 result = "Empty result pod."
+                        else:
+                            # Fallback: Just return the text of the first pod if no result/primary
+                            first_pod = root.find("pod")
+                            if first_pod is not None:
+                                subpod = first_pod.find("subpod")
+                                if subpod is not None and subpod.find("plaintext") is not None:
+                                     result = subpod.find("plaintext").text
+                                else:
+                                     result = "No result pod found."
+                            else:
+                                result = "No result pods found."
+                        
+                    raw = resp.text
+                    
+            else:  # 'wl'
+                expr = wlexpr(query) if wlexpr is not None else query
+                result = self._wl_session.evaluate(expr)
+                raw = result
+                
+        except Exception as e:
+            # Re-raise so agent catches it
+            raise e
 
         latency = time.time() - t0
         # Charge actual observed latency; cost/tokens remain estimate unless you meter them
