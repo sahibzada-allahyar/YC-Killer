@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+openai
+anthropic
+python-dotenv
+pytest
+httpx
+wolframalpha
+wolframclient

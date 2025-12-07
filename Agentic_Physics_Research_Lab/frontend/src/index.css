@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tokyonight-bg: #1a1b26;
+  --color-tokyonight-fg: #a9b1d6;
+  --color-tokyonight-test: #7aa2f7;
+  --color-tokyonight-purple: #bb9af7;
+  --color-tokyonight-red: #f7768e;
+  --color-tokyonight-green: #9ece6a;
+  --color-tokyonight-orange: #e0af68;
+  --color-tokyonight-cyan: #7dcfff;
+  --color-tokyonight-dark: #16161e;
+  --color-tokyonight-comment: #565f89;
+  --color-tokyonight-selection: #364a82;
+
+  --font-sans: 'Inter', sans-serif;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-tokyonight-bg);
+    color: var(--color-tokyonight-fg);
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background-color: color-mix(in srgb, var(--color-tokyonight-dark), transparent 60%);
+    backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in srgb, var(--color-tokyonight-purple), transparent 80%);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  }
+
+  .neon-border {
+    border: 1px solid color-mix(in srgb, var(--color-tokyonight-purple), transparent 50%);
+    box-shadow: 0 0 10px rgba(187, 154, 247, 0.2);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1b26;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #565f89;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bb9af7;
+}
