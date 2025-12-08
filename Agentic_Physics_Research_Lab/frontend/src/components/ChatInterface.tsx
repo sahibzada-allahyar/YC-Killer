@@ -115,7 +115,7 @@ export const ChatInterface: React.FC = () => {
                 </div>
                 <div>
                     <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-tokyonight-purple to-tokyonight-cyan">
-                        Physics Copilot
+                        Singularity Researcher Agent by Singularity Research Labs
                     </h1>
                     <div className="flex items-center gap-2 text-xs text-tokyonight-comment font-mono">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
