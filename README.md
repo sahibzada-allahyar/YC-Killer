@@ -1,4 +1,4 @@
-# AI Agents Library
+# YC Killer (an AI Agents Library )
 # by Singularity Research
 
 # 🌟 Star the Repo To Apply for the Job Posting
