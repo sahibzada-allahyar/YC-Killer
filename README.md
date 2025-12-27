@@ -1,3 +1,8 @@
+## Press Coverage
+
+- [Cambridge physicist and AI pioneer Sahibzada Allahyar achieves historic score in theoretical physics exam](https://www.nyjtech.com/article/cambridge-physicist-and-ai-pioneer-sahibzada-allahyar-achieves-historic-score-in-theoretical-physics-exam)
+- [YC Killer: How Cambridge physicist Sahibzada Allahyar built the world's most popular AI agents library](https://www.nyjtech.com/article/yc-killer-how-cambridge-physicist-sahibzada-allahyar-built-the-worlds-most-popular-ai-agents-library)
+- [Sahibzada Allahyar's Singularity Research: The elite lab uniting Harvard, MIT, and Cambridge's brightest minds to democratize AI](https://www.nyjtech.com/article/sahibzada-allahyars-singularity-research-the-elite-lab-uniting-harvard-mit-and-cambridges-brightest-minds-to-democratize-ai)
 # YC Killer (an AI Agents Library )
 # by Singularity Research
 
