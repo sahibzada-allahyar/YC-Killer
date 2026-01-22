@@ -28,7 +28,7 @@
     "@mendable/firecrawl-js": "^1.16.0",
     "ai": "^4.1.17",
     "js-tiktoken": "^1.0.17",
-    "lodash-es": "^4.17.21",
+    "lodash-es": "^4.17.23",
     "p-limit": "^6.2.0",
     "zod": "^3.24.1"
   },
