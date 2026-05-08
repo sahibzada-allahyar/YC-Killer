@@ -1,20 +1,15 @@
-## Press Coverage
 
-- [Cambridge physicist and AI pioneer Sahibzada Allahyar achieves historic score in theoretical physics exam](https://www.nyjtech.com/article/cambridge-physicist-and-ai-pioneer-sahibzada-allahyar-achieves-historic-score-in-theoretical-physics-exam)
-- [YC Killer: How Cambridge physicist Sahibzada Allahyar built the world's most popular AI agents library](https://www.nyjtech.com/article/yc-killer-how-cambridge-physicist-sahibzada-allahyar-built-the-worlds-most-popular-ai-agents-library)
-- [Sahibzada Allahyar's Singularity Research: The elite lab uniting Harvard, MIT, and Cambridge's brightest minds to democratize AI](https://www.nyjtech.com/article/sahibzada-allahyars-singularity-research-the-elite-lab-uniting-harvard-mit-and-cambridges-brightest-minds-to-democratize-ai)
-# YC Killer (an AI Agents Library )
-# by Singularity Research
 
 # 🌟 Star the Repo To Apply for the Job Posting
 
-> 🌟 **Join Our Mission**: We're systematically open-sourcing enterprise-grade AI agents to kill every YC company, one by one. If you have a stellar academic background and are excited about democratizing AI access, please star this repository and [join our Open Source AI Research and AI Engineering team](https://discord.gg/PfvtWTnhdQ).
+> 🌟 **Join Our Mission**: We're systematically open-sourcing enterprise-grade AI agents to kill every YC company, one by one. If you have a stellar academic background and are excited about democratizing AI access, please star this repository and [apply to join our team](https://forms.gle/LbQwU8yspMDN1jKz8).
 
 A library of enterprise-grade AI agents designed to democratize artificial intelligence and provide free, open-source alternatives to overvalued Y Combinator startups. Our mission is to make advanced AI technology accessible to everyone, not just well-funded companies.
 
 ## Our Mission
 
 We believe AI access is a human right. While Y Combinator companies build simple GPT wrappers and raise millions in funding, we're creating sophisticated, production-ready AI solutions and making them freely available to everyone. Our goal is to accelerate technologies that save humanity and make advanced AI accessible to all.
+
 
 ## Our Team
 
@@ -146,7 +141,17 @@ Please read the CONTRIBUTING.md file in each agent's directory for specific guid
 
 Each agent is licensed under the MIT License - see the LICENSE file in each agent's directory for details.
 
+## Press Coverage
+
+- [Cambridge physicist and AI pioneer Sahibzada Allahyar achieves historic score in theoretical physics exam](https://www.nyjtech.com/article/cambridge-physicist-and-ai-pioneer-sahibzada-allahyar-achieves-historic-score-in-theoretical-physics-exam)
+- [YC Killer: How Cambridge physicist Sahibzada Allahyar built the world's most popular AI agents library](https://www.nyjtech.com/article/yc-killer-how-cambridge-physicist-sahibzada-allahyar-built-the-worlds-most-popular-ai-agents-library)
+- [Sahibzada Allahyar's Singularity Research: The elite lab uniting Harvard, MIT, and Cambridge's brightest minds to democratize AI](https://www.nyjtech.com/article/sahibzada-allahyars-singularity-research-the-elite-lab-uniting-harvard-mit-and-cambridges-brightest-minds-to-democratize-ai)
+# YC Killer (an AI Agents Library )
+# by Singularity Research
+
+
 ## About Singularity Research
+
 
 Singularity Research is dedicated to democratizing AI through open source initiatives. We believe in making advanced AI technologies accessible to everyone, fostering innovation and collaboration in the AI community. Our goal is to accelerate technologies that save humanity and challenge the status quo of overvalued, underdeveloped AI solutions.
 
