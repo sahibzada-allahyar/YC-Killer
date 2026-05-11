@@ -54,7 +54,16 @@ Making Jarvis from Iron Man a real thing. A comprehensive AI personal assistant 
 - Real-time updates via WebSocket
 - Secure authentication with Google OAuth
 
-### 4. Agentic Call Center
+### 4. Nano-Claude-Code
+A Rust implementation of Claude Code that preserves the same agentic architecture while moving the runtime to Rust:
+- Terminal-native coding agent runtime
+- Persistent sessions and resumability
+- Tool orchestration for shell, file, workspace, and task operations
+- MCP/tool routing and provider integration
+- Permission-aware execution model
+- Demo smoke script for quick verification
+
+### 5. Agentic Call Center
 Putting a whole call center into a data centre by completely automating it with AI agents. AI voice based sales system:
 - AI-powered conversations using GPT-4 or other LLMs
 - Real-time speech-to-text and text-to-speech conversion
@@ -63,7 +72,7 @@ Putting a whole call center into a data centre by completely automating it with 
 - RLHF system for continuous improvement
 - Auto-scaling infrastructure
 
-### 5. Agentic AI Hospital
+### 6. Agentic AI Hospital
 [350+ GitHub Stars]: Democratizing access to Cambridge Doctor level medical care for the underprivileged in developing countries:
 - Dynamic team assembly based on query complexity
 - Comprehensive specialist network including primary care, nutrition, and specialists
@@ -72,7 +81,7 @@ Putting a whole call center into a data centre by completely automating it with 
 - Coordinated multi-agent responses
 - Integration with medical systems
 
-### 6. Agentic Professor
+### 7. Agentic Professor
 Agentic AI for 1-on-1 tutoring - it has whiteboard access, can display diagrams, voice capabilities and a wiki-agent does RAG on wikipedia articles. Long-term goal is to create a fully online schooling and tutoring system to democratize Cambridge University level quality education for the underprivileged in developing countries:
 - Upload homework images for automatic text extraction
 - Detailed explanations with mathematical notation
@@ -81,7 +90,7 @@ Agentic AI for 1-on-1 tutoring - it has whiteboard access, can display diagrams,
 - Interactive diagrams and visualizations
 - Progressive Web App (PWA) support
 
-### 7. Agentic Accounting Firm
+### 8. Agentic Accounting Firm
 A full accounting firm run by AI multi-agents:
 - Natural language processing for accounting operations
 - Voice command support via OpenAI's voice agent
