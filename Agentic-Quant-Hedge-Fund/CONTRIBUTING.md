@@ -134,7 +134,6 @@ When modifying LLM-related code:
 
 - Join our community discussions
 - Ask questions in GitHub issues
-- Contact the maintainers directly: sahibzada@singularityresearchlabs.com
 
 ## Recognition
 
@@ -144,4 +143,3 @@ Contributors will be recognized in:
 - Our team page for exceptional contributions
 
 Thank you for contributing to democratizing quantitative finance!
-

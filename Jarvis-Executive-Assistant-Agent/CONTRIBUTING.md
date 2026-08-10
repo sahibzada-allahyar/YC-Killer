@@ -137,6 +137,5 @@ If you need help, you can:
 * Check the documentation
 * Join our Discord community
 * Open an issue with the question label
-* Email sahibzada@singularityresearchlabs.com
 
 Thank you for contributing to Jarvis Executive Assistant! 🎉

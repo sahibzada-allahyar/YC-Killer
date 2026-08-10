@@ -2,7 +2,7 @@
 
 > Democratizing access to Cambridge Doctor level medical care for the underprivileged in developing countries.
 
-A sophisticated multi-agent healthcare system developed by Sahibzada A at Singularity Research, an organization dedicated to democratizing AI through open source. This system leverages Large Language Models (LLMs) to create an adaptive collaboration framework for medical decision-making, where multiple AI agents work together to provide comprehensive healthcare advice. The aim is to provide top tier healthcare access to everyone across the globe.
+A personal open-source project by Sahibzada Allahyar. This sophisticated multi-agent healthcare system leverages Large Language Models (LLMs) to create an adaptive collaboration framework for medical decision-making, where multiple AI agents work together to provide comprehensive healthcare advice. The aim is to provide top-tier healthcare access to everyone across the globe.
 
 ## Project Structure
 
@@ -107,10 +107,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Sahibzada A  
-Singularity Research  
-[Your preferred contact method/information]
+Sahibzada Allahyar
 
 ---
 
-Made with ❤️ by Singularity Research
+Created by [Sahibzada Allahyar](https://github.com/sahibzada-allahyar)

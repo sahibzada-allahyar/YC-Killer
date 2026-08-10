@@ -1,27 +1,12 @@
-# Agentic Quantitative Trading by Singularity Research
+# Agentic Quantitative Trading
 
 ### Fully autonomous Hedge Fund, run end-to-end entirely by AI agents.
-
-> 🌟 **Join Our Mission**: We're systematically democratizing quantitative finance by open-sourcing enterprise-grade trading systems that rival the most sophisticated hedge funds. If you have a stellar academic background and are excited about making advanced quant strategies accessible to everyone, please star this repository and [apply to join our team](https://www.singularityresearchlabs.com).
-
-
 
 A complete, production-ready agentic quantitative trading system that brings institutional-grade algorithmic trading capabilities to everyone. Our mission is to democratize quantitative finance and break down the barriers that have kept sophisticated trading strategies locked behind the walls of elite hedge funds.
 
 ## Our Mission
 
 We believe access to advanced quantitative trading strategies is a human right in the modern financial system. While hedge funds charge 2% management fees and 20% performance fees for strategies built on decades-old infrastructure, we're creating cutting-edge AI-powered trading systems and making them freely available to everyone. Our goal is to accelerate financial democratization and give retail traders the same tools used by institutional giants.
-
-## Our Team
-
-Our team consists of the most brilliant quantitative researchers and AI engineers in the world, including alumni from:
-- Google DeepMind
-- Harvard University
-- MIT
-- Stanford University
-- Cambridge University
-- Anthropic
-- Citadel
 
 ## Features
 
@@ -318,17 +303,6 @@ This system implements concepts from:
 - **"Machine Learning for Asset Managers"** - Marcos López de Prado
 - **Academic literature** on market microstructure, behavioral finance, and systematic trading
 
-## Apply to Collaborate
-
-We're looking for exceptional quantitative researchers and AI engineers who share our vision of democratizing finance:
-
-- **Quantitative Researchers**: PhD in Mathematics, Physics, Statistics, or Finance with experience in systematic trading
-- **AI Engineers**: Background in large language models, agentic systems, or financial AI
-- **Data Engineers**: Experience with high-frequency data processing and real-time systems
-- **Open Source Enthusiasts**: Passionate about making sophisticated tools accessible to everyone
-
-**Apply here**: [https://www.singularityresearchlabs.com](https://www.singularityresearchlabs.com)
-
 ## Contributing
 
 We welcome contributions from the community:
@@ -349,17 +323,8 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 This software is for educational and research purposes only. Trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Please consult with a qualified financial advisor before making any investment decisions.
 
-## Contact
-
-- **Email**: [sahibzada@singularityresearchlabs.com](mailto:sahibzada@singularityresearchlabs.com)
-- **Website**: [https://www.singularityresearchlabs.com](https://www.singularityresearchlabs.com)
-
-## About Singularity Research
-
-Singularity Research is dedicated to democratizing advanced technologies through open source initiatives. We believe in making institutional-grade AI and quantitative finance tools accessible to everyone, fostering innovation and breaking down barriers in finance and technology. Our goal is to accelerate technologies that empower individuals and challenge the monopolies of overfunded, underperforming institutions.
-
 ---
 
-**Made with ❤️ by Singularity Research Labs**
+**Created by [Sahibzada Allahyar](https://github.com/sahibzada-allahyar)**
 
 *"The best way to predict the future is to create it, and the best way to create it is to make it open source."*

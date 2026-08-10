@@ -128,5 +128,4 @@ The interesting part is that it is trying to carry the exact agentic architectur
 
 ## To get in touch with the author, Sahibzada Allahyar:
 
-- X: https://x.com/singularity_sah
 - LinkedIn: https://www.linkedin.com/in/sahibal/

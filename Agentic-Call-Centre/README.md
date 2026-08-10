@@ -179,7 +179,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Sahibzada A - Singularity Research
+Sahibzada Allahyar
 
 ## Acknowledgments
 

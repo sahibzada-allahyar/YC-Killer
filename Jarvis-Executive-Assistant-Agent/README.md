@@ -145,7 +145,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Authors
 
-- **Sahibzada A** - *Initial work* - [Singularity Research](https://github.com/singularity-research)
+- **Sahibzada Allahyar** - *Initial work* - [GitHub](https://github.com/sahibzada-allahyar)
 
 ## Acknowledgments
 

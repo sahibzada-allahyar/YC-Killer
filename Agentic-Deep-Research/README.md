@@ -2,7 +2,7 @@
 
 > An open source version of OpenAI's Deep Research. 
 
-An open source version of OpenAI's Deep Research. The goal behind Singularity Research is to democratize AI access as a human right and to accelerate technologies that save humanity.
+An open source version of OpenAI's Deep Research. The project aims to democratize AI access and accelerate technologies that benefit humanity.
 
 ## Features
 

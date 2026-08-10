@@ -106,7 +106,7 @@ async function main() {
 
         // Configure git remote
         try {
-            execSync('git remote add origin https://github.com/Singularity-Research-Labs/Ai-Tutor-Agent.git');
+            execSync('git remote add origin https://github.com/sahibzada-allahyar/Ai-Tutor-Agent.git');
         } catch {
             // Remote might already exist
         }
