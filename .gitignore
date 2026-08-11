@@ -65,6 +65,7 @@ test-results/
 .parcel-cache
 **/.cache/
 .npm/
+__pycache__/
 
 # OS generated files
 .DS_Store

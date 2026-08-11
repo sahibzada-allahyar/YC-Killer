@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yc-killer"
+version = "0.0.1"
+description = "Monorepo for Physics Copilot and LEAN Proof Engine."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "physics_copilot",
+    "lean_proof_engine"
+]
+
+[tool.hatch.envs.default]
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "httpx",
+    "redis",
+
+    # Dev/Tooling dependencies
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+    "pre-commit",
+]
+
+[tool.hatch.envs.default.scripts]
+fix = "ruff --fix physics_copilot lean_proof_engine && ruff format physics_copilot lean_proof_engine"
+lint = "ruff check physics_copilot lean_proof_engine && ruff format --check physics_copilot lean_proof_engine"
+typecheck = "mypy physics_copilot lean_proof_engine"
+test = "pytest {args:physics_copilot lean_proof_engine}"
+test-cov = "pytest --cov=physics_copilot --cov=lean_proof_engine --cov-report=term-missing --cov-fail-under=80 {args:physics_copilot lean_proof_engine}"
+setup-hooks = "pre-commit install"
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "I", "C90"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "physics_copilot/tests",
+    "lean_proof_engine/tests",
+]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_ignores = true
+strict = true
