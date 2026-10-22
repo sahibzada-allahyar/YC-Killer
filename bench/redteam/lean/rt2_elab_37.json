@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: export of a weaker namespaced copy to the frozen name. The export keyword is in the ban list -> CHEAT_REJECTED (textual ban scan)."
+}

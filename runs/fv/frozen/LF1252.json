@@ -1,0 +1,56 @@
+{
+ "id": "LF1252",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def is_valid_graph (n: Nat) (roads: List (Nat × Nat)) : Prop :=\n  ∀ (u v: Nat), (u,v) ∈ roads →\n    (1 ≤ u ∧ u ≤ n) ∧\n    (1 ≤ v ∧ v ≤ n) ∧\n    (u ≠ v) ∧\n    (∀ (u' v': Nat), (u',v') ∈ roads → (u',v') = (u,v) ∨ (u',v') ≠ (u,v))\n\ndef solve_city_paths (n: Nat) (roads: List (Nat × Nat)) (start: Nat) : Nat :=\n  sorry\n\ntheorem solve_city_paths_single_node :\n  solve_city_paths 1 [] 1 = 1 :=\nsorry\n\ntheorem solve_city_paths_two_nodes :\n  solve_city_paths 2 [(1,2)] 1 = 1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_city_paths 3 [(1, 2), (1, 3)] 1\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_city_paths 5 [(1, 2), (1, 3), (2, 4), (2, 5)] 1\n",
+ "warnings": [],
+ "preamble": "def is_valid_graph (n: Nat) (roads: List (Nat × Nat)) : Prop :=\n  ∀ (u v: Nat), (u,v) ∈ roads →\n    (1 ≤ u ∧ u ≤ n) ∧\n    (1 ≤ v ∧ v ≤ n) ∧\n    (u ≠ v) ∧\n    (∀ (u' v': Nat), (u',v') ∈ roads → (u',v') = (u,v) ∨ (u',v') ≠ (u,v))",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_city_paths 3 [(1, 2), (1, 3)] 1\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_city_paths 5 [(1, 2), (1, 3), (2, 4), (2, 5)] 1",
+ "chunks": [
+  {
+   "text": "def solve_city_paths (n: Nat) (roads: List (Nat × Nat)) (start: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_city_paths_single_node :\n  solve_city_paths 1 [] 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_city_paths_two_nodes :\n  solve_city_paths 2 [(1,2)] 1 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_city_paths_two_nodes": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "087bfdccda5467d5bb1c666aba8e70ef2a8afb2324699b41ef370c772fb56663",
+   "ctors": [],
+   "value": null
+  },
+  "solve_city_paths_single_node": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3fdd8ec93dfded93b98df37d3d09dae4ff31a5d3d5cfb0edbe56325e7f3c751c",
+   "ctors": [],
+   "value": null
+  },
+  "solve_city_paths": {
+   "kind": "def",
+   "role": "impl",
+   "type": "223feaaa40fcdd61b3ccee41433e248ef8a4f35db39c679a296b583c67c134d5",
+   "ctors": [],
+   "value": null
+  },
+  "is_valid_graph": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "ea5245a90011a2e065d667e4831a4ce0a55563b4530e17be9bb704b42ffc1a98",
+   "ctors": [],
+   "value": "f4a37537d4b7975c576948cb03816cda880911ce1e64ba47069701b867e0b97f"
+  }
+ },
+ "sha": "59c14b0d55f1"
+}

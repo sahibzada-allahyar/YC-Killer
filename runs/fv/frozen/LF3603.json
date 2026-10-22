@@ -1,0 +1,115 @@
+{
+ "id": "LF3603",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def orArrays (arr1 : List Nat) (arr2 : List Nat) (default : Nat := 0) : List Nat := sorry\n\ntheorem or_arrays_length (arr1 arr2 : List Nat) (default : Nat) :\n  (orArrays arr1 arr2 default).length = max arr1.length arr2.length := sorry\n\ntheorem or_arrays_elemwise (arr1 arr2 : List Nat) (default : Nat) (i : Nat) (h : i < (orArrays arr1 arr2 default).length) :\n  (orArrays arr1 arr2 default)[i]'h = \n    (if h1 : i < arr1.length then arr1[i]'h1 else default) ||| \n    (if h2 : i < arr2.length then arr2[i]'h2 else default) := sorry\n\ntheorem or_arrays_identity_right (arr : List Nat) : \n  orArrays arr (List.replicate arr.length 0) 0 = arr := sorry\n\ntheorem or_arrays_identity_left (arr : List Nat) :\n  orArrays (List.replicate arr.length 0) arr 0 = arr := sorry\n\ntheorem or_arrays_commutative (arr1 arr2 : List Nat) (default : Nat) :\n  orArrays arr1 arr2 default = orArrays arr2 arr1 default := sorry\n\ntheorem or_arrays_empty :\n  orArrays [] [] 0 = [] := sorry\n\ntheorem or_arrays_empty_right (arr : List Nat) :\n  orArrays arr [] 0 = arr := sorry\n\ntheorem or_arrays_empty_left (arr : List Nat) :\n  orArrays [] arr 0 = arr := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def orArrays (arr1 : List Nat) (arr2 : List Nat) (default : Nat := 0) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_length (arr1 arr2 : List Nat) (default : Nat) :\n  (orArrays arr1 arr2 default).length = max arr1.length arr2.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_elemwise (arr1 arr2 : List Nat) (default : Nat) (i : Nat) (h : i < (orArrays arr1 arr2 default).length) :\n  (orArrays arr1 arr2 default)[i]'h = \n    (if h1 : i < arr1.length then arr1[i]'h1 else default) ||| \n    (if h2 : i < arr2.length then arr2[i]'h2 else default) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_identity_right (arr : List Nat) : \n  orArrays arr (List.replicate arr.length 0) 0 = arr :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_identity_left (arr : List Nat) :\n  orArrays (List.replicate arr.length 0) arr 0 = arr :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_commutative (arr1 arr2 : List Nat) (default : Nat) :\n  orArrays arr1 arr2 default = orArrays arr2 arr1 default :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_empty :\n  orArrays [] [] 0 = [] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_empty_right (arr : List Nat) :\n  orArrays arr [] 0 = arr :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem or_arrays_empty_left (arr : List Nat) :\n  orArrays [] arr 0 = arr :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "or_arrays_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3d982dc5eeb40413d2900105a87024309a5da662ee2b804c1d9ee5bcfeb1fcef",
+   "ctors": [],
+   "value": null
+  },
+  "or_arrays_identity_right": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d28a5b22d3c82a62b70c08b974eb648b89a42ea9dd41470d0e989a79abbbd8e2",
+   "ctors": [],
+   "value": null
+  },
+  "or_arrays_identity_left": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "31733e89dedadc5fcbede63974a43ea4d70b288f883bcd78ac5cf350b46614f0",
+   "ctors": [],
+   "value": null
+  },
+  "or_arrays_empty_right": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "40682e018111fe31adc3edcd7c3df786091065a4c141f2f632d8fae89916d777",
+   "ctors": [],
+   "value": null
+  },
+  "or_arrays_empty_left": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b73b188391d8e32960d231ac56a933d04440bfda81d4dbbbdf6c8459559e7d37",
+   "ctors": [],
+   "value": null
+  },
+  "or_arrays_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bd5435429805eb20014580c33bd398371494c2ca568e8fe0ca96b5628ba3d282",
+   "ctors": [],
+   "value": null
+  },
+  "or_arrays_elemwise": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "855130647a0431253396d4a776357d2be8b1b2a4602b37fb6441df4e54f49d03",
+   "ctors": [],
+   "value": null
+  },
+  "or_arrays_commutative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a1a60ef4e566950f27e1b06fd56e0c9d0dcadc0c563df8496472ba35c3731766",
+   "ctors": [],
+   "value": null
+  },
+  "orArrays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "1848816b0532d534f1be52b8c6267d4b0d5662f006ac989c4bacfbf48d5d7502",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "397eca699439"
+}

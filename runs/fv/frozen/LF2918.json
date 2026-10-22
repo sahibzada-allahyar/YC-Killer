@@ -1,0 +1,71 @@
+{
+ "id": "LF2918",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def last_digit (n1 : Nat) (n2 : Nat) : Nat :=\n  sorry\n\ntheorem last_digit_range (n1 n2 : Nat) : \n  last_digit n1 n2 ≤ 9 \n  ∧ last_digit n1 n2 ≥ 0 :=\nsorry\n\ntheorem last_digit_zero_exp (n1 : Nat) :\n  last_digit n1 0 = 1 :=\nsorry\n\ntheorem last_digit_power_one (n1 : Nat) :\n  last_digit n1 1 = n1 % 10 :=\nsorry \n\ntheorem last_digit_powers_of_ten (n1 n2 : Nat) :\n  n1 % 10 = 0 ∧ n2 > 0 → last_digit n1 n2 = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval last_digit 4 1\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval last_digit 4 2\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval last_digit 9 7\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval last_digit 4 1\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval last_digit 4 2\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval last_digit 9 7",
+ "chunks": [
+  {
+   "text": "def last_digit (n1 : Nat) (n2 : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem last_digit_range (n1 n2 : Nat) : \n  last_digit n1 n2 ≤ 9 \n  ∧ last_digit n1 n2 ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem last_digit_zero_exp (n1 : Nat) :\n  last_digit n1 0 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem last_digit_power_one (n1 : Nat) :\n  last_digit n1 1 = n1 % 10 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem last_digit_powers_of_ten (n1 n2 : Nat) :\n  n1 % 10 = 0 ∧ n2 > 0 → last_digit n1 n2 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "last_digit_zero_exp": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d2d4aa94b7bec2baf981a6baf1228112774520c04a66855eb1ad50317e58bcc3",
+   "ctors": [],
+   "value": null
+  },
+  "last_digit_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2650c14a756166d387d5b2f65d8b506e018b1299ff454251f8ba233da41c5532",
+   "ctors": [],
+   "value": null
+  },
+  "last_digit_powers_of_ten": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e1fdab40163c3267b02b8e9257a709d1e57811c8e99c09da2af8971e53041922",
+   "ctors": [],
+   "value": null
+  },
+  "last_digit_power_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "58c9a8062c337de7277d7ebf74c3d99e3eb716af6f0b119ec168f8964eb72710",
+   "ctors": [],
+   "value": null
+  },
+  "last_digit": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f055742ad461"
+}

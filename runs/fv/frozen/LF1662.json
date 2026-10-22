@@ -1,0 +1,104 @@
+{
+ "id": "LF1662",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def two_by_n (n : Nat) (k : Nat) : Nat := sorry\n\ntheorem two_by_n_bounds (n k : Nat) (hn : n ≥ 1) (hk : k ≥ 1) :\n  two_by_n n k < 12345787 := sorry\n\ntheorem two_by_n_single_color (n : Nat) (hn : n ≥ 1) :\n  two_by_n n 1 = if n = 1 then 1 else 0 := sorry\n\ntheorem two_by_n_impossible (n : Nat) (k : Nat) (hn : n > 1) (hk : k ≤ 1) :\n  two_by_n n k = 0 := sorry\n\ntheorem two_by_n_exists_solution (n k : Nat) (hn : n ≥ 1) (hk : k ≥ 2) :\n  two_by_n n k > 0 := sorry\n\ntheorem two_by_n_deterministic (n : Nat) (k : Nat) (hn : n ≥ 1) (hk : k ≥ 1) :\n  two_by_n n k = two_by_n n k := sorry\n\ntheorem two_by_n_min_colors (n : Nat) (hn : n > 1) :\n  two_by_n n 2 > 0 := sorry\n\ntheorem two_by_n_monotonic (k : Nat) (hk : k ≥ 2) :\n  two_by_n 1 k ≤ two_by_n 2 k := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval two_by_n 1 1\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval two_by_n 4 2\n\n/--\ninfo: 168\n-/\n#guard_msgs in\n#eval two_by_n 5 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval two_by_n 1 1\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval two_by_n 4 2\n\n/--\ninfo: 168\n-/\n#guard_msgs in\n#eval two_by_n 5 3",
+ "chunks": [
+  {
+   "text": "def two_by_n (n : Nat) (k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_by_n_bounds (n k : Nat) (hn : n ≥ 1) (hk : k ≥ 1) :\n  two_by_n n k < 12345787 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_by_n_single_color (n : Nat) (hn : n ≥ 1) :\n  two_by_n n 1 = if n = 1 then 1 else 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_by_n_impossible (n : Nat) (k : Nat) (hn : n > 1) (hk : k ≤ 1) :\n  two_by_n n k = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_by_n_exists_solution (n k : Nat) (hn : n ≥ 1) (hk : k ≥ 2) :\n  two_by_n n k > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_by_n_deterministic (n : Nat) (k : Nat) (hn : n ≥ 1) (hk : k ≥ 1) :\n  two_by_n n k = two_by_n n k :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_by_n_min_colors (n : Nat) (hn : n > 1) :\n  two_by_n n 2 > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_by_n_monotonic (k : Nat) (hk : k ≥ 2) :\n  two_by_n 1 k ≤ two_by_n 2 k :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "two_by_n_single_color": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "99c134b74d3d09306b362b599a28df0a5e4bbfeff0565ea90c0bac481ea283d6",
+   "ctors": [],
+   "value": null
+  },
+  "two_by_n_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c41812a1de0c0d26755e6ecc3e5aaedaaf67d0c1e4efcbcfa6671cd42a99d7fc",
+   "ctors": [],
+   "value": null
+  },
+  "two_by_n_min_colors": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0671599c7788f2d27907c1156f1e15c697081fb2e23324d7da581775ac8eb827",
+   "ctors": [],
+   "value": null
+  },
+  "two_by_n_impossible": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "34a0c54856852d7e727d37ec13bb770e9e3290fc88e8a35086fbd4197d8405fe",
+   "ctors": [],
+   "value": null
+  },
+  "two_by_n_exists_solution": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4fcfd6cff312a1d7e011ec7259a1305667085e9b4fb8eccef8a5a5f07d8b5d77",
+   "ctors": [],
+   "value": null
+  },
+  "two_by_n_deterministic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9aff3e3cbf7749a619bcd0f70a532609e957e06b6ad91125c845ee50e7425ed9",
+   "ctors": [],
+   "value": null
+  },
+  "two_by_n_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c14ad965d247cf8f44fe96e347527e00403835ec57b117a2bee121a955d6a808",
+   "ctors": [],
+   "value": null
+  },
+  "two_by_n": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d22ca2befb23"
+}

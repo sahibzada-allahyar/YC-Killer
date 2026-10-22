@@ -1,0 +1,49 @@
+{
+ "id": "LF0058",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_min_chocolate_break_cost (n m k : Nat) : Nat :=\n  sorry\n\ntheorem zero_cost_for_exact_pieces (n m k : Nat)\n  (hn : n > 0) (hm : m > 0) (hk : k ≤ 25)\n  (h_exact : n * m = k) :\n  find_min_chocolate_break_cost n m k = 0 :=\nsorry \n\ntheorem zero_pieces_cost_nothing (n m k : Nat)\n  (hn : n > 0) (hm : m > 0)\n  (hk_zero : k = 0) :\n  find_min_chocolate_break_cost n m k = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_min_chocolate_break_cost 2 2 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_min_chocolate_break_cost 2 2 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval find_min_chocolate_break_cost 2 2 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_min_chocolate_break_cost 2 2 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_min_chocolate_break_cost 2 2 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval find_min_chocolate_break_cost 2 2 4",
+ "chunks": [
+  {
+   "text": "def find_min_chocolate_break_cost (n m k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zero_cost_for_exact_pieces (n m k : Nat)\n  (hn : n > 0) (hm : m > 0) (hk : k ≤ 25)\n  (h_exact : n * m = k) :\n  find_min_chocolate_break_cost n m k = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zero_pieces_cost_nothing (n m k : Nat)\n  (hn : n > 0) (hm : m > 0)\n  (hk_zero : k = 0) :\n  find_min_chocolate_break_cost n m k = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "zero_pieces_cost_nothing": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1abc907bde87a02f0877f8781d8ac5712776d61924d65ee7c09844acfacc3fad",
+   "ctors": [],
+   "value": null
+  },
+  "zero_cost_for_exact_pieces": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "23a6982712365117bc51d40b90c8a88727651df22707de730c5d59f3a0b811b1",
+   "ctors": [],
+   "value": null
+  },
+  "find_min_chocolate_break_cost": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "c422fd9a9e9c"
+}

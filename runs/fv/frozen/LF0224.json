@@ -1,0 +1,71 @@
+{
+ "id": "LF0224",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_vowels (s : String) (k : Nat) : Nat :=\nsorry\n\ndef count_vowels (s : String) : Nat :=\nsorry\n\ndef is_vowel (c : Char) : Bool :=\nsorry\n\ntheorem max_vowels_monotonic {s : String} {k : Nat}\n  (h1 : k < String.length s) :\n  max_vowels s k ≤ max_vowels s (k + 1) :=\nsorry\n\ntheorem max_vowels_empty {k : Nat}\n  (h1 : k > 0) :\n  max_vowels \"\" k = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval max_vowels \"abciiidef\" 3\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_vowels \"leetcode\" 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval max_vowels \"rhythms\" 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval max_vowels \"abciiidef\" 3\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_vowels \"leetcode\" 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval max_vowels \"rhythms\" 4",
+ "chunks": [
+  {
+   "text": "def max_vowels (s : String) (k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def count_vowels (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_vowel (c : Char) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_vowels_monotonic {s : String} {k : Nat}\n  (h1 : k < String.length s) :\n  max_vowels s k ≤ max_vowels s (k + 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_vowels_empty {k : Nat}\n  (h1 : k > 0) :\n  max_vowels \"\" k = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_vowels_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e7840f5bce841a82b5a7cb3b51d001a22e3704ae3249f4bc828ce398c467e4e6",
+   "ctors": [],
+   "value": null
+  },
+  "max_vowels_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "be88e305c9c21e94391aba1af5d55cd61de0857a234ffc66ab8357411839f39c",
+   "ctors": [],
+   "value": null
+  },
+  "max_vowels": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f2b1f6e147df9b829df4e0a1497329a0bc9708a1dd3f6de7cbf93488fea38076",
+   "ctors": [],
+   "value": null
+  },
+  "is_vowel": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e7c2f1d22077d750f96386ad05fbc41b9349526a6768f97022ddf4dd1a83ae96",
+   "ctors": [],
+   "value": null
+  },
+  "count_vowels": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "e2de9739ee61"
+}

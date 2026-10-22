@@ -1,0 +1,82 @@
+{
+ "id": "LF1450",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_yalalovichik_substrings (s: String) : Nat :=\n  sorry\n\ndef longest_run (s: String) : Nat :=\n  sorry\n\ntheorem count_always_nonnegative (s: String) (h: s.length > 0):\n  count_yalalovichik_substrings s ≥ 0 :=\nsorry\n\ntheorem single_char_count (c: Char):\n  count_yalalovichik_substrings (String.singleton c) = 1 :=\nsorry\n\ntheorem repeated_single_char (n: Nat) (h: n > 0):\n  let s := String.join (List.replicate n \"a\")\n  count_yalalovichik_substrings s = n :=\nsorry\n\ntheorem alternating_chars (n: Nat) (h: n > 0):\n  let s := String.join (List.replicate n \"ab\")\n  count_yalalovichik_substrings s = 2 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_yalalovichik_substrings \"xxx\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_yalalovichik_substrings \"aa\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_yalalovichik_substrings \"aaa\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_yalalovichik_substrings \"xxx\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_yalalovichik_substrings \"aa\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_yalalovichik_substrings \"aaa\"",
+ "chunks": [
+  {
+   "text": "def count_yalalovichik_substrings (s: String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def longest_run (s: String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_always_nonnegative (s: String) (h: s.length > 0):\n  count_yalalovichik_substrings s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_char_count (c: Char):\n  count_yalalovichik_substrings (String.singleton c) = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem repeated_single_char (n: Nat) (h: n > 0):\n  let s := String.join (List.replicate n \"a\")\n  count_yalalovichik_substrings s = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem alternating_chars (n: Nat) (h: n > 0):\n  let s := String.join (List.replicate n \"ab\")\n  count_yalalovichik_substrings s = 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_char_count": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6c5f609191629483f6f126cf29509da69f7b56b835206ed983c58d3ea9912101",
+   "ctors": [],
+   "value": null
+  },
+  "repeated_single_char": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6b53541f16e43c1a8ca87b4d6c6c66c9c3cc9cbe3aa5bf52f5eeb3e3dd20a26a",
+   "ctors": [],
+   "value": null
+  },
+  "longest_run": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "count_yalalovichik_substrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "count_always_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1044f223e917b27e5a7af072e60a1ee82c3e1b0fdd35d4603b2205985f441aed",
+   "ctors": [],
+   "value": null
+  },
+  "alternating_chars": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "67981fc1b6313cd415a72602380d41117e1d020d7f9cfb9f08c5ab78ca4245cf",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "462344136f34"
+}

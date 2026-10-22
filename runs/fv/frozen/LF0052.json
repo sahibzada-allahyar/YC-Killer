@@ -1,0 +1,71 @@
+{
+ "id": "LF0052",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_time_tasks (n : Nat) (difficulties : List Nat) : Nat := sorry\n\ntheorem min_time_tasks_modulo_bounds {n : Nat} {difficulties : List Nat} \n  (h : difficulties.length = n) (h1 : n > 0) : \n  min_time_tasks n difficulties < 10007 ∧ min_time_tasks n difficulties ≥ 0 := sorry\n\ntheorem min_time_tasks_permutation_invariant {n : Nat} {d1 d2 : List Nat} \n  (h : d1.length = n) (h2 : d2.length = n) (h3 : d1 = d2) :\n  min_time_tasks n d1 = min_time_tasks n d2 := sorry\n\ntheorem min_time_tasks_two_elements_commutative (a b : Nat) :\n  min_time_tasks 2 [a, b] = min_time_tasks 2 [b, a] := sorry\n\ntheorem min_time_tasks_two_elements_bounds (a b : Nat) \n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 100) (h4 : b ≤ 100) :\n  min_time_tasks 2 [a, b] < 10007 ∧ min_time_tasks 2 [a, b] ≥ 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_time_tasks 2 [1, 3]\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval min_time_tasks 3 [1, 2, 3]\n\n/--\ninfo: 20\n-/\n#guard_msgs in\n#eval min_time_tasks 4 [1, 2, 3, 4]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_time_tasks 2 [1, 3]\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval min_time_tasks 3 [1, 2, 3]\n\n/--\ninfo: 20\n-/\n#guard_msgs in\n#eval min_time_tasks 4 [1, 2, 3, 4]",
+ "chunks": [
+  {
+   "text": "def min_time_tasks (n : Nat) (difficulties : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_tasks_modulo_bounds {n : Nat} {difficulties : List Nat} \n  (h : difficulties.length = n) (h1 : n > 0) : \n  min_time_tasks n difficulties < 10007 ∧ min_time_tasks n difficulties ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_tasks_permutation_invariant {n : Nat} {d1 d2 : List Nat} \n  (h : d1.length = n) (h2 : d2.length = n) (h3 : d1 = d2) :\n  min_time_tasks n d1 = min_time_tasks n d2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_tasks_two_elements_commutative (a b : Nat) :\n  min_time_tasks 2 [a, b] = min_time_tasks 2 [b, a] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_tasks_two_elements_bounds (a b : Nat) \n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 100) (h4 : b ≤ 100) :\n  min_time_tasks 2 [a, b] < 10007 ∧ min_time_tasks 2 [a, b] ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_time_tasks_two_elements_commutative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a45697aa923f7a261b874e48af0dcf9487c5b415683bb54b09b06cc62b40c145",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_tasks_two_elements_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a3521c04634f77e359d5a0cec629d850608e26928becd83699b53ace6e6b1ea9",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_tasks_permutation_invariant": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d61cc45657e71ed6f80f78017472131933c12a9f9e048702d9741e55b6b7a4d9",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_tasks_modulo_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "24f502bb3488f922713a7db9ecf60de796baee25bb34d8461bbad4b7decf0c94",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_tasks": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "509626cb1c97"
+}

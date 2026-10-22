@@ -1,0 +1,60 @@
+{
+ "id": "LF3241",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def split (s : String) : List String :=\nsorry\n\ndef toNat (s : String) : Option Nat :=\nsorry\n\ndef scratch (tickets : List String) : Nat :=\nsorry\n\ntheorem scratch_non_negative (tickets : List String) :\n  scratch tickets ≥ 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1100\n-/\n#guard_msgs in\n#eval scratch [\"tiger tiger tiger 100\", \"rabbit dragon snake 100\", \"rat ox pig 1000\", \"dog cock sheep 10\", \"horse monkey rat 5\", \"dog dog dog 1000\"]\n\n/--\ninfo: 350\n-/\n#guard_msgs in\n#eval scratch [\"cat cat cat 50\", \"dog dog dog 100\", \"pig pig pig 200\"]\n\n/--\ninfo: 500\n-/\n#guard_msgs in\n#eval scratch [\"owl eagle hawk 100\", \"cat mouse dog 200\", \"fish fish fish 500\"]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1100\n-/\n#guard_msgs in\n#eval scratch [\"tiger tiger tiger 100\", \"rabbit dragon snake 100\", \"rat ox pig 1000\", \"dog cock sheep 10\", \"horse monkey rat 5\", \"dog dog dog 1000\"]\n\n/--\ninfo: 350\n-/\n#guard_msgs in\n#eval scratch [\"cat cat cat 50\", \"dog dog dog 100\", \"pig pig pig 200\"]\n\n/--\ninfo: 500\n-/\n#guard_msgs in\n#eval scratch [\"owl eagle hawk 100\", \"cat mouse dog 200\", \"fish fish fish 500\"]",
+ "chunks": [
+  {
+   "text": "def split (s : String) : List String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def toNat (s : String) : Option Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def scratch (tickets : List String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem scratch_non_negative (tickets : List String) :\n  scratch tickets ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "toNat": {
+   "kind": "def",
+   "role": "impl",
+   "type": "eca26b1240c31c61183d55771b698a51c9eca914ac8c6b4e5e0ab60d01b315db",
+   "ctors": [],
+   "value": null
+  },
+  "split": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d9270a133299276f917afc6321be123721135d1eaf5ce5a6fd9597f2d722c43f",
+   "ctors": [],
+   "value": null
+  },
+  "scratch_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b09a00f7a03aa08eb2defcf1d0e82f8f493d482de9baebc83c868bc13290f792",
+   "ctors": [],
+   "value": null
+  },
+  "scratch": {
+   "kind": "def",
+   "role": "impl",
+   "type": "36fc955d100209f88b69abd697cd4b13ab6ee1753a028e42d8bf74b2bd2d985b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "19d8106af378"
+}

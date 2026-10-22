@@ -1,0 +1,49 @@
+{
+ "id": "LF3265",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (n : Nat) : Nat := sorry\n\ntheorem solve_non_negative (n : Nat) : \n  solve n ≥ 0 := sorry\n\ntheorem solve_single_digit (n : Nat) (h : n < 10) :\n  solve n = n := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval solve 18\n\n/--\ninfo: 11\n-/\n#guard_msgs in\n#eval solve 29\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval solve 45\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval solve 18\n\n/--\ninfo: 11\n-/\n#guard_msgs in\n#eval solve 29\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval solve 45",
+ "chunks": [
+  {
+   "text": "def solve (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_non_negative (n : Nat) : \n  solve n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_single_digit (n : Nat) (h : n < 10) :\n  solve n = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_single_digit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5afec0b361a5e3ce125face7ab39ccc09d7b5d3690dc1a456e66f02ef657814e",
+   "ctors": [],
+   "value": null
+  },
+  "solve_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9df0d665c8a075bfdecd9ce4ea5e47b20998275d14eea5625731cfbe67be827c",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b672aae21d24"
+}

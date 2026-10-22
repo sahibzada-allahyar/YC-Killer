@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "Display hijack declared with a _root_ name from inside a namespace (instance _root_.hidR2 : Repr Nat). Namespace/_root_ name games do not hide it from the scan -> CHEAT_REJECTED."
+}

@@ -1,0 +1,49 @@
+{
+ "id": "LF0503",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def compare_and_calc (n1 n2 : Int) : Int := sorry\n\ntheorem compare_and_calc_spec (n1 n2 : Int) : \n  compare_and_calc n1 n2 = if n1 > n2 then n1 - n2 else n1 + n2 := sorry\n\ntheorem compare_and_calc_same (n : Int) : \n  compare_and_calc n n = n + n := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 54\n-/\n#guard_msgs in\n#eval compare_and_calc 82 28\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval compare_and_calc 10 20\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval compare_and_calc 0 0\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 54\n-/\n#guard_msgs in\n#eval compare_and_calc 82 28\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval compare_and_calc 10 20\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval compare_and_calc 0 0",
+ "chunks": [
+  {
+   "text": "def compare_and_calc (n1 n2 : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem compare_and_calc_spec (n1 n2 : Int) : \n  compare_and_calc n1 n2 = if n1 > n2 then n1 - n2 else n1 + n2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem compare_and_calc_same (n : Int) : \n  compare_and_calc n n = n + n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "compare_and_calc_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17fff2c47e9f2a1910387ca30d9cea134dcfef5094ee92c8997416835a7c5d75",
+   "ctors": [],
+   "value": null
+  },
+  "compare_and_calc_same": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6ab2e91a7eb0c5b1f9ab950972cabc497765040a98949711bb070d89070eeaa7",
+   "ctors": [],
+   "value": null
+  },
+  "compare_and_calc": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ea5267af2dfe"
+}

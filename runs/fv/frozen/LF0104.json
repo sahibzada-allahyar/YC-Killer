@@ -1,0 +1,49 @@
+{
+ "id": "LF0104",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_magic_candies (n : Nat) (k : Nat) (candies : List Nat) : Nat :=\n  sorry\n\ndef list_minimum (l : List Nat) : Nat :=\n  sorry\n\ntheorem solve_magic_candies_minimum_case\n  (k : Nat)\n  (h1 : k ≥ 1) (h2 : k ≤ 1000) :\n  solve_magic_candies 2 k [1, 1] = k - 1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_magic_candies 2 2 [1, 1]\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval solve_magic_candies 3 5 [1, 2, 3]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_magic_candies 3 7 [3, 2, 2]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_magic_candies 2 2 [1, 1]\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval solve_magic_candies 3 5 [1, 2, 3]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_magic_candies 3 7 [3, 2, 2]",
+ "chunks": [
+  {
+   "text": "def solve_magic_candies (n : Nat) (k : Nat) (candies : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def list_minimum (l : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_magic_candies_minimum_case\n  (k : Nat)\n  (h1 : k ≥ 1) (h2 : k ≤ 1000) :\n  solve_magic_candies 2 k [1, 1] = k - 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_magic_candies_minimum_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b71f835865b44d3fd1b80b547f67a6ea9ef5e628213d7547aab996cb3ded903d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_magic_candies": {
+   "kind": "def",
+   "role": "impl",
+   "type": "80d7a4d3f2b66acf9d3d7e09090df5394601f8920dfcfe2deeb74ed19c371174",
+   "ctors": [],
+   "value": null
+  },
+  "list_minimum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "61648b3164d0"
+}

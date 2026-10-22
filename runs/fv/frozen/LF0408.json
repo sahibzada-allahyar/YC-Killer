@@ -1,0 +1,82 @@
+{
+ "id": "LF0408",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def integer_replacement (n : Nat) : Nat := sorry\n\ntheorem integer_replacement_terminates (n : Nat) (h : n > 0) :\n  integer_replacement n ≥ 0 := sorry\n\ntheorem integer_replacement_is_nat (n : Nat) (h : n > 0) :\n  integer_replacement n = integer_replacement n := sorry\n\ntheorem integer_replacement_base_case_one :\n  integer_replacement 1 = 0 := sorry\n\ntheorem integer_replacement_base_case_two :\n  integer_replacement 2 = 1 := sorry\n\ntheorem integer_replacement_power_of_two (n : Nat) (h : n > 0) :\n  integer_replacement (2^n) = n := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval integer_replacement 8\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval integer_replacement 7\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval integer_replacement 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval integer_replacement 8\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval integer_replacement 7\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval integer_replacement 3",
+ "chunks": [
+  {
+   "text": "def integer_replacement (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem integer_replacement_terminates (n : Nat) (h : n > 0) :\n  integer_replacement n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem integer_replacement_is_nat (n : Nat) (h : n > 0) :\n  integer_replacement n = integer_replacement n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem integer_replacement_base_case_one :\n  integer_replacement 1 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem integer_replacement_base_case_two :\n  integer_replacement 2 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem integer_replacement_power_of_two (n : Nat) (h : n > 0) :\n  integer_replacement (2^n) = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "integer_replacement_terminates": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9e593a7c90dfd093c2d3618315863141ed4493fd260e925b6b40e8db610e4ca9",
+   "ctors": [],
+   "value": null
+  },
+  "integer_replacement_power_of_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1d52edf8407b71c68eb19426dc4ecdd477e90a8af0f410935db06da215283de4",
+   "ctors": [],
+   "value": null
+  },
+  "integer_replacement_is_nat": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dce958cb9ff9c52c849e36b169d252bc6a2f22186263d3fee7c6ac69615bf3c1",
+   "ctors": [],
+   "value": null
+  },
+  "integer_replacement_base_case_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7a9a4ea0787b15c8ce24218e0920db2f837fd0fa744a53af7666d9f7647a265f",
+   "ctors": [],
+   "value": null
+  },
+  "integer_replacement_base_case_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c6e445b66cf42e42b516db6bb56426a0591e884601a0edfdb53bc4752dd40163",
+   "ctors": [],
+   "value": null
+  },
+  "integer_replacement": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f556a75d9df7"
+}

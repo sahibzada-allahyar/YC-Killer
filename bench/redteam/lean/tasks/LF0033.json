@@ -1,0 +1,12 @@
+{
+ "id": "LF0033",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_000033",
+ "vc-description": "/-\nNumbers $1, 2, 3, \\dots n$ (each integer from $1$ to $n$ once) are written on a board. In one operation you can erase any two numbers $a$ and $b$ from the board and write one integer $\\frac{a + b}{2}$ rounded up instead.\n\nYou should perform the given operation $n - 1$ times and make the resulting number that will be left on the board as small as possible. \n\nFor example, if $n = 4$, the following course of action is optimal:  choose $a = 4$ and $b = 2$, so the new number is $3$, and the whiteboard contains $[1, 3, 3]$;  choose $a = 3$ and $b = 3$, so the new number is $3$, and the whiteboard contains $[1, 3]$;  choose $a = 1$ and $b = 3$, so the new number is $2$, and the whiteboard contains $[2]$. \n\nIt's easy to see that after $n - 1$ operations, there will be left only one number. Your goal is to minimize it.\n\n-----Input-----\n\nThe first line contains one integer $t$ ($1 \\le t \\le 1000$) — the number of test cases.\n\nThe only line of each test case contains one integer $n$ ($2 \\le n \\le 2 \\cdot 10^5$) — the number of integers written on the board initially.\n\nIt's guaranteed that the total sum of $n$ over test cases doesn't exceed $2 \\cdot 10^5$.\n\n-----Output-----\n\nFor each test case, in the first line, print the minimum possible number left on the board after $n - 1$ operations. Each of the next $n - 1$ lines should contain two integers — numbers $a$ and $b$ chosen and erased in each operation.\n\n-----Example-----\nInput\n1\n4\n\nOutput\n2\n2 4\n3 3\n3 1\n-/",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def minimize_board_operations (n: Nat) : Nat × List (Nat × Nat) := sorry\n\ntheorem minimize_board_operations_min_val {n: Nat} (h: 2 ≤ n) (h2: n ≤ 1000) :\n  (minimize_board_operations n).1 = 2 := sorry",
+ "vc-theorems": "",
+ "vc-postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible"
+}

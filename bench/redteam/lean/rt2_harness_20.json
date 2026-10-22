@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "SPEC_TAMPERED", "lens": "harness", "what": "zero-width space (U+200B) inside the frozen theorem header `findSum_six`; _norm does not strip it so the byte-identical chunk match fails. Correctly rejected."}

@@ -1,0 +1,71 @@
+{
+ "id": "LF0423",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def num_of_subarrays (arr : List Int) (k : Nat) (threshold : Int) : Nat :=\nsorry\n\ntheorem non_negative_result (arr : List Int) (k : Nat) (threshold : Int) :\n  num_of_subarrays arr k threshold ≥ 0 :=\nsorry\n\ntheorem empty_result_if_smaller (arr : List Int) (k : Nat) (threshold : Int) :\n  arr.length < k → num_of_subarrays arr k threshold = 0 :=\nsorry\n\ntheorem result_bounded_by_possible_subarrays (arr : List Int) (k : Nat) (threshold : Int) :\n  arr.length ≥ k → num_of_subarrays arr k threshold ≤ arr.length - k + 1 :=\nsorry\n\ntheorem k_equals_one_case (arr : List Int) (threshold : Int) :\n  num_of_subarrays arr 1 threshold = (arr.filter (fun x => x ≥ threshold)).length :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval num_of_subarrays [2, 2, 2, 2, 5, 5, 5, 8] 3 4\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval num_of_subarrays [1, 1, 1, 1, 1] 1 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval num_of_subarrays [11, 13, 17, 23, 29, 31, 7, 5, 2, 3] 3 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval num_of_subarrays [2, 2, 2, 2, 5, 5, 5, 8] 3 4\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval num_of_subarrays [1, 1, 1, 1, 1] 1 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval num_of_subarrays [11, 13, 17, 23, 29, 31, 7, 5, 2, 3] 3 5",
+ "chunks": [
+  {
+   "text": "def num_of_subarrays (arr : List Int) (k : Nat) (threshold : Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem non_negative_result (arr : List Int) (k : Nat) (threshold : Int) :\n  num_of_subarrays arr k threshold ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_result_if_smaller (arr : List Int) (k : Nat) (threshold : Int) :\n  arr.length < k → num_of_subarrays arr k threshold = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_bounded_by_possible_subarrays (arr : List Int) (k : Nat) (threshold : Int) :\n  arr.length ≥ k → num_of_subarrays arr k threshold ≤ arr.length - k + 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem k_equals_one_case (arr : List Int) (threshold : Int) :\n  num_of_subarrays arr 1 threshold = (arr.filter (fun x => x ≥ threshold)).length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "result_bounded_by_possible_subarrays": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "015ee593919a81e0ad1d607b78925d87fb6bfd8712af26ea62b3ec73eb0a00a0",
+   "ctors": [],
+   "value": null
+  },
+  "num_of_subarrays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f8eb16f5cf812ad5eafbb6d5da8298ad17917907f9a38c377b48e5d1c29c0436",
+   "ctors": [],
+   "value": null
+  },
+  "non_negative_result": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "151131e90a3d85299d852e62340364d5b9e18317e08160d8be0e47f5349a3e12",
+   "ctors": [],
+   "value": null
+  },
+  "k_equals_one_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "daafd5df9560bb24547d4fd6075142a1048e06462fc661fca58deb4bd4a37a6f",
+   "ctors": [],
+   "value": null
+  },
+  "empty_result_if_smaller": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "685862e56591e5fbfc4d0ed33c5a2a01a53a692a69a1fb1f9d7ea4a4b3d182e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "43b79a7aca4c"
+}

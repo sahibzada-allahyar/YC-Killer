@@ -1,0 +1,49 @@
+{
+ "id": "LF2476",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def array_sum_product : List (List Int) → Int\n  | _ => sorry\n\ntheorem array_sum_product_2x2_matrix {a b c d : Int} :\n  array_sum_product [[a, b], [c, d]] = (a + c) * (b + d) :=\nsorry\n\ntheorem array_sum_product_all_ones {rows cols : Nat} (h₁ : rows > 0) (h₂ : cols > 0) :\n  let matrix := List.replicate rows (List.replicate cols 1)\n  array_sum_product matrix = rows ^ cols :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 24\n-/\n#guard_msgs in\n#eval array_sum_product [[1, 2], [3, 4]]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval array_sum_product [[1, 1], [1, 1]]\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval array_sum_product [[1, 2], [2, 3]]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 24\n-/\n#guard_msgs in\n#eval array_sum_product [[1, 2], [3, 4]]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval array_sum_product [[1, 1], [1, 1]]\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval array_sum_product [[1, 2], [2, 3]]",
+ "chunks": [
+  {
+   "text": "def array_sum_product : List (List Int) → Int",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_sum_product_2x2_matrix {a b c d : Int} :\n  array_sum_product [[a, b], [c, d]] = (a + c) * (b + d) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_sum_product_all_ones {rows cols : Nat} (h₁ : rows > 0) (h₂ : cols > 0) :\n  let matrix := List.replicate rows (List.replicate cols 1)\n  array_sum_product matrix = rows ^ cols :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "array_sum_product_all_ones": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "be70a29cedf6969eeee73a72c72c808b90b181667ec8122511ab9d74162d4730",
+   "ctors": [],
+   "value": null
+  },
+  "array_sum_product_2x2_matrix": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "18128672c1ef5923b831128552eda2af62e29f574cebd99f193e6af92dfe807f",
+   "ctors": [],
+   "value": null
+  },
+  "array_sum_product": {
+   "kind": "def",
+   "role": "impl",
+   "type": "90765cfad57268c2400e97c46859f30afd23f3ca61993c91ff3c9784294be5db",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7d3b8330a7b2"
+}

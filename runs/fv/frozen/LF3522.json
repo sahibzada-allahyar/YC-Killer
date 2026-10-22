@@ -1,0 +1,49 @@
+{
+ "id": "LF3522",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def simple_multiplication (n : Int) : Int := sorry\n\ntheorem simple_multiplication_even (n : Int) \n  (h : n % 2 = 0) : \n  simple_multiplication n = n * 8 := sorry\n\ntheorem simple_multiplication_odd (n : Int)\n  (h : n % 2 = 1) :\n  simple_multiplication n = n * 9 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval simple_multiplication 2\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval simple_multiplication 1\n\n/--\ninfo: 64\n-/\n#guard_msgs in\n#eval simple_multiplication 8\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval simple_multiplication 2\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval simple_multiplication 1\n\n/--\ninfo: 64\n-/\n#guard_msgs in\n#eval simple_multiplication 8",
+ "chunks": [
+  {
+   "text": "def simple_multiplication (n : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem simple_multiplication_even (n : Int) \n  (h : n % 2 = 0) : \n  simple_multiplication n = n * 8 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem simple_multiplication_odd (n : Int)\n  (h : n % 2 = 1) :\n  simple_multiplication n = n * 9 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "simple_multiplication_odd": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9199fdfbcd4c142d016c8b38f41648c6468ee4b969de1734924b4d22c9551881",
+   "ctors": [],
+   "value": null
+  },
+  "simple_multiplication_even": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "95df24fef418c3bb938e2b930587b9b2768799ee9ed4ac8c809e7a124d9477c1",
+   "ctors": [],
+   "value": null
+  },
+  "simple_multiplication": {
+   "kind": "def",
+   "role": "impl",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "4b54ccb82e86"
+}

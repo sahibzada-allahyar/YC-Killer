@@ -1,0 +1,71 @@
+{
+ "id": "LF1370",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def MOD := (10^9) + 7\n\ndef getsum (n : Nat) : Nat :=\n  sorry\n\ntheorem getsum_base_cases :\n  (getsum 1 = 9) ∧ (getsum 2 = 99) :=\n  sorry\n\ntheorem getsum_positive (n : Nat) (h : n > 0) :\n  getsum n > 0 :=\n  sorry\n\ntheorem getsum_invalid_input (n : Nat) :\n  n = 0 → getsum n = 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval getsum 1\n\n/--\ninfo: 99\n-/\n#guard_msgs in\n#eval getsum 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval getsum 1\n\n/--\ninfo: 99\n-/\n#guard_msgs in\n#eval getsum 2",
+ "chunks": [
+  {
+   "text": "def MOD := (10^9) + 7",
+   "hole_after": false
+  },
+  {
+   "text": "def getsum (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem getsum_base_cases :\n  (getsum 1 = 9) ∧ (getsum 2 = 99) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem getsum_positive (n : Nat) (h : n > 0) :\n  getsum n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem getsum_invalid_input (n : Nat) :\n  n = 0 → getsum n = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "getsum_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e133ca16706bbc5bed88fb9a5f8689710d445736748e1ba11ebd992b717493e1",
+   "ctors": [],
+   "value": null
+  },
+  "getsum_invalid_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8f174f6cc18d89efe228c45569a450567458b32f4159f33911b01e6e097fb7ed",
+   "ctors": [],
+   "value": null
+  },
+  "getsum_base_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7b52e9d0f32844a69002fc98bca505b0803794579c0101425d307b13f8bd6718",
+   "ctors": [],
+   "value": null
+  },
+  "getsum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "MOD": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "1b5c1f86ccd03fc756d92dce8160c712f4c25a8ec4e0b6db783398df7f63cc33"
+  }
+ },
+ "sha": "ade51617b8c0"
+}

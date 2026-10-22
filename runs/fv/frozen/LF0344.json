@@ -1,0 +1,71 @@
+{
+ "id": "LF0344",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def numSubseq (nums : List Nat) (target : Nat) : Nat := sorry\n\ndef minimum (l : List Nat) : Option Nat := sorry\n\ntheorem numSubseq_non_negative (nums : List Nat) (target : Nat) :\n  target ≥ 2 →\n  nums.length ≥ 1 →\n  ∀ x ∈ nums, x ≥ 1 ∧ x ≤ 1000 →\n  numSubseq nums target ≥ 0 := sorry\n\ntheorem numSubseq_modulo_bound (nums : List Nat) (target : Nat) :\n  target ≥ 2 →\n  nums.length ≥ 1 →\n  ∀ x ∈ nums, x ≥ 1 ∧ x ≤ 1000 →\n  numSubseq nums target < 10^9 + 7 := sorry\n\ntheorem numSubseq_single_element (x : Nat) :\n  x ≥ 1 →\n  x ≤ 100 →\n  numSubseq [x] (x * 3) = if x * 2 ≤ x * 3 then 1 else 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval numSubseq [3, 5, 6, 7] 9\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval numSubseq [3, 3, 6, 8] 10\n\n/--\ninfo: 61\n-/\n#guard_msgs in\n#eval numSubseq [2, 3, 3, 4, 6, 7] 12\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval numSubseq [3, 5, 6, 7] 9\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval numSubseq [3, 3, 6, 8] 10\n\n/--\ninfo: 61\n-/\n#guard_msgs in\n#eval numSubseq [2, 3, 3, 4, 6, 7] 12",
+ "chunks": [
+  {
+   "text": "def numSubseq (nums : List Nat) (target : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def minimum (l : List Nat) : Option Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem numSubseq_non_negative (nums : List Nat) (target : Nat) :\n  target ≥ 2 →\n  nums.length ≥ 1 →\n  ∀ x ∈ nums, x ≥ 1 ∧ x ≤ 1000 →\n  numSubseq nums target ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem numSubseq_modulo_bound (nums : List Nat) (target : Nat) :\n  target ≥ 2 →\n  nums.length ≥ 1 →\n  ∀ x ∈ nums, x ≥ 1 ∧ x ≤ 1000 →\n  numSubseq nums target < 10^9 + 7 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem numSubseq_single_element (x : Nat) :\n  x ≥ 1 →\n  x ≤ 100 →\n  numSubseq [x] (x * 3) = if x * 2 ≤ x * 3 then 1 else 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "numSubseq_single_element": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1d9c2f813462e6ca996f4d5eaf4b6eae6744d72b9312777e212b02eb69ff0dc0",
+   "ctors": [],
+   "value": null
+  },
+  "numSubseq_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "68fbf64842bb7473d5e2f6c912a4e8b0f610655801a991a3ac9df85ba12c52b0",
+   "ctors": [],
+   "value": null
+  },
+  "numSubseq_modulo_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ab77b799be7754ff1c3ec0679095ae8fbefe04bec3f40491f82376e4cedcd5f8",
+   "ctors": [],
+   "value": null
+  },
+  "numSubseq": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e26fe6796b3f0d9441d167c053eb966bc6518ae4bb7a2287c700b20573eb9b45",
+   "ctors": [],
+   "value": null
+  },
+  "minimum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fb6c0f9f2baab3557ccdc17e16b2cd13297def579d65ff97e1a94a541989aa95",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7470c17eaf90"
+}

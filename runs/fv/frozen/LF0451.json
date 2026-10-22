@@ -1,0 +1,38 @@
+{
+ "id": "LF0451",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def numOfMinutes (n : Nat) (headID : Nat) (manager : List Int) (informTime : List Nat) : Nat :=\n  sorry\n\ntheorem single_employee_zero_time {n : Nat} (h : n = 1) :\n  numOfMinutes 1 0 [-1] [0] = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval numOfMinutes 1 0 [-1] [0]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval numOfMinutes 6 2 [2, 2, -1, 2, 2, 2] [0, 0, 1, 0, 0, 0]\n\n/--\ninfo: 21\n-/\n#guard_msgs in\n#eval numOfMinutes 7 6 [1, 2, 3, 4, 5, 6, -1] [0, 6, 5, 4, 3, 2, 1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval numOfMinutes 1 0 [-1] [0]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval numOfMinutes 6 2 [2, 2, -1, 2, 2, 2] [0, 0, 1, 0, 0, 0]\n\n/--\ninfo: 21\n-/\n#guard_msgs in\n#eval numOfMinutes 7 6 [1, 2, 3, 4, 5, 6, -1] [0, 6, 5, 4, 3, 2, 1]",
+ "chunks": [
+  {
+   "text": "def numOfMinutes (n : Nat) (headID : Nat) (manager : List Int) (informTime : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_employee_zero_time {n : Nat} (h : n = 1) :\n  numOfMinutes 1 0 [-1] [0] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_employee_zero_time": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5fe723e4fbe95974b8d31c53a313d3e7a70af45ddbf64439f400ed7cf97f0e2c",
+   "ctors": [],
+   "value": null
+  },
+  "numOfMinutes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2ecacf16b8b69e46df1768a05389b92aa294e926f5128d4adf7d1352eb97b1c6",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8b19bf551600"
+}

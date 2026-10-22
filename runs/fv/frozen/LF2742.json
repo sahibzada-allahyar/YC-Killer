@@ -1,0 +1,82 @@
+{
+ "id": "LF2742",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def validate (n : Nat) : Bool := sorry\n\ntheorem validate_is_boolean (n : Nat) : \n  validate n = true ∨ validate n = false := sorry\n\ntheorem validate_string_invariant (n : Nat) :\n  validate n = validate n := sorry\n\ntheorem validate_sixteen_digit_result {n : Nat} (h : 1000000000000000 ≤ n ∧ n ≤ 9999999999999999) :\n  validate n = true ∨ validate n = false := sorry\n\ntheorem validate_sixteen_digit_length {n : Nat} (h : 1000000000000000 ≤ n ∧ n ≤ 9999999999999999) :\n  (toString n).length = 16 := sorry\n\ntheorem validate_string_digit_consistency {n : Nat} {s : String} (h : toString n = s) :\n  validate n = validate (toString n |> String.toNat!) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def validate (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem validate_is_boolean (n : Nat) : \n  validate n = true ∨ validate n = false :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem validate_string_invariant (n : Nat) :\n  validate n = validate n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem validate_sixteen_digit_result {n : Nat} (h : 1000000000000000 ≤ n ∧ n ≤ 9999999999999999) :\n  validate n = true ∨ validate n = false :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem validate_sixteen_digit_length {n : Nat} (h : 1000000000000000 ≤ n ∧ n ≤ 9999999999999999) :\n  (toString n).length = 16 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem validate_string_digit_consistency {n : Nat} {s : String} (h : toString n = s) :\n  validate n = validate (toString n |> String.toNat!) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "validate_string_invariant": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a2bb27137e2ae53335c66d3f96bb730a83c00a4d7c5c51396241403347434da0",
+   "ctors": [],
+   "value": null
+  },
+  "validate_string_digit_consistency": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "110a67369993d29acab428a685034a5acb50658dd043136e8d2bd5f68718dbd5",
+   "ctors": [],
+   "value": null
+  },
+  "validate_sixteen_digit_result": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "587b53c6c9224bac878b5a942036d56b3b1c2104b63bc57f5fd4bcd5c23168bf",
+   "ctors": [],
+   "value": null
+  },
+  "validate_sixteen_digit_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5755692f8d5e80da0a5f95ac052883dfb714b0089a275f078c284724d936d8c5",
+   "ctors": [],
+   "value": null
+  },
+  "validate_is_boolean": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "792e3749e0b07cf2ae717a2a00d58e92547993051da4843dec6bf934baf71ee1",
+   "ctors": [],
+   "value": null
+  },
+  "validate": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7086b9a5a9ea"
+}

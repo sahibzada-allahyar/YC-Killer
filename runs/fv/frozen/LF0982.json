@@ -1,0 +1,60 @@
+{
+ "id": "LF0982",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_non_friend_pairs (n m : Nat) (pairs : List (Nat × Nat)) : Nat :=\n  sorry\n\ntheorem count_empty_pairs {n : Nat} (h1 : n > 0) (h2 : n ≤ 20) :\n  count_non_friend_pairs n 0 [] = n * (n-1) / 2 :=\n  sorry\n\ntheorem count_single_node :\n  count_non_friend_pairs 1 0 [] = 0 :=\n  sorry\n\ntheorem count_empty_graph {n : Nat} (h1 : n ≥ 2) (h2 : n ≤ 20) :\n  count_non_friend_pairs n 0 [] = n * (n-1) / 2 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_non_friend_pairs 5 3 [(1, 2), (3, 4), (1, 5)]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_non_friend_pairs 4 2 [(1, 2), (3, 4)]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_non_friend_pairs 3 0 []\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_non_friend_pairs 5 3 [(1, 2), (3, 4), (1, 5)]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_non_friend_pairs 4 2 [(1, 2), (3, 4)]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_non_friend_pairs 3 0 []",
+ "chunks": [
+  {
+   "text": "def count_non_friend_pairs (n m : Nat) (pairs : List (Nat × Nat)) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_empty_pairs {n : Nat} (h1 : n > 0) (h2 : n ≤ 20) :\n  count_non_friend_pairs n 0 [] = n * (n-1) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_single_node :\n  count_non_friend_pairs 1 0 [] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_empty_graph {n : Nat} (h1 : n ≥ 2) (h2 : n ≤ 20) :\n  count_non_friend_pairs n 0 [] = n * (n-1) / 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_single_node": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1877294401c5163d9e51752b2aab2d164c3e334971546c55efa98dbdf7800993",
+   "ctors": [],
+   "value": null
+  },
+  "count_non_friend_pairs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d540ce8eb6c6917c6aa32a361519fc2c8775bf7b5478e6fa37387be71b9eab1c",
+   "ctors": [],
+   "value": null
+  },
+  "count_empty_pairs": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7c5afd19c1de6bb7791fcb3cf68a7846f31bab3c21a8c7312fdfeae71b88af19",
+   "ctors": [],
+   "value": null
+  },
+  "count_empty_graph": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1b62a0cb2a04686921cb16f762b6e6ccfcfbb4d7c76f27526877bea40d37a9c8",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "4f7c0d526d61"
+}

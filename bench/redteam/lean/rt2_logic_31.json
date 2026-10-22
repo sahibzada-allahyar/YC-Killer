@@ -1,0 +1,1 @@
+{"task_id": "LF2518", "expect": "PROVED", "note": "honest probe: bracket-balance regex validity via structural recursion on List Char with char-literal patterns"}

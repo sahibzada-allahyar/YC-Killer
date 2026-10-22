@@ -1,0 +1,60 @@
+{
+ "id": "LF1193",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def last_two_digits_of_5powern (n : Nat) : Nat := sorry\n\ntheorem result_in_valid_range \n  (n : Nat) : \n  let result := last_two_digits_of_5powern n\n  0 ≤ result ∧ result ≤ 99 := sorry\n\ntheorem matches_manual_calculation\n  (n : Nat) :\n  last_two_digits_of_5powern n = (5^n : Nat) % 100 := sorry\n\ntheorem negative_input_undefined\n  (n : Int) :\n  n < 0 → last_two_digits_of_5powern n.toNat = last_two_digits_of_5powern 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval last_two_digits_of_5powern 2\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval last_two_digits_of_5powern 3\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval last_two_digits_of_5powern 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval last_two_digits_of_5powern 2\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval last_two_digits_of_5powern 3\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval last_two_digits_of_5powern 4",
+ "chunks": [
+  {
+   "text": "def last_two_digits_of_5powern (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_in_valid_range \n  (n : Nat) : \n  let result := last_two_digits_of_5powern n\n  0 ≤ result ∧ result ≤ 99 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem matches_manual_calculation\n  (n : Nat) :\n  last_two_digits_of_5powern n = (5^n : Nat) % 100 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem negative_input_undefined\n  (n : Int) :\n  n < 0 → last_two_digits_of_5powern n.toNat = last_two_digits_of_5powern 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "result_in_valid_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7cfccd0e7da9c971d1a783fe3a143368ab3bac29a2d3e9c60ccef18aa448ba39",
+   "ctors": [],
+   "value": null
+  },
+  "negative_input_undefined": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "04dfe36c3afe72f0964526710a4afd52675808e5f4641d63599790749a885723",
+   "ctors": [],
+   "value": null
+  },
+  "matches_manual_calculation": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4af0959811c66a463d14c750254d9ef53c2b88bf88f461231211bca3a921a6af",
+   "ctors": [],
+   "value": null
+  },
+  "last_two_digits_of_5powern": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d1951261c985"
+}

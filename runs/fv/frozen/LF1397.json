@@ -1,0 +1,60 @@
+{
+ "id": "LF1397",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_problems (A B C N T : Nat) : Nat :=\n  sorry\n\ntheorem solve_problems_equal_values (x N T : Nat)\n  (h1 : x > 0) (h2 : N > 0) \n  (h3 : x ≤ 1000) (h4 : N ≤ 1000) (h5 : T ≤ N) :\n  solve_problems x x x N T = x * N :=\n  sorry\n\ntheorem solve_problems_zero_T (A B C N : Nat)\n  (h1 : A = 1) (h2 : B = 2) (h3 : C = 3) (h4 : N = 5) :\n  solve_problems A B C N 0 = 15 :=\n  sorry\n\ntheorem solve_problems_full_T (A B C N : Nat)\n  (h1 : A = 1) (h2 : B = 2) (h3 : C = 3) (h4 : N = 5) :\n  solve_problems A B C N 5 = 5 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval solve_problems 1 2 3 3 1\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve_problems 2 2 2 3 1\n\n/--\ninfo: 29\n-/\n#guard_msgs in\n#eval solve_problems 5 7 5 5 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval solve_problems 1 2 3 3 1\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve_problems 2 2 2 3 1\n\n/--\ninfo: 29\n-/\n#guard_msgs in\n#eval solve_problems 5 7 5 5 3",
+ "chunks": [
+  {
+   "text": "def solve_problems (A B C N T : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_problems_equal_values (x N T : Nat)\n  (h1 : x > 0) (h2 : N > 0) \n  (h3 : x ≤ 1000) (h4 : N ≤ 1000) (h5 : T ≤ N) :\n  solve_problems x x x N T = x * N :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_problems_zero_T (A B C N : Nat)\n  (h1 : A = 1) (h2 : B = 2) (h3 : C = 3) (h4 : N = 5) :\n  solve_problems A B C N 0 = 15 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_problems_full_T (A B C N : Nat)\n  (h1 : A = 1) (h2 : B = 2) (h3 : C = 3) (h4 : N = 5) :\n  solve_problems A B C N 5 = 5 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_problems_zero_T": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "944a606a75833513a8608f685a322c354a56a9460bc2e5f398618b477cd14d6a",
+   "ctors": [],
+   "value": null
+  },
+  "solve_problems_full_T": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2531ace65ce8daae9247fa4f3a62e887daf41ccf5d73fc50d7e3ac40d62afea1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_problems_equal_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9516578952f189dd947b22d3516517fdea95bb353c1080413a06df9ed4d76508",
+   "ctors": [],
+   "value": null
+  },
+  "solve_problems": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b5c5f12e02ae541a0517ffe337cdebd11ac18a5d4ce6d4f3045552fd82a55572",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "eca98d5d364e"
+}

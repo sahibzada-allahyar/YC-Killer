@@ -1,0 +1,13 @@
+{
+  "name": "opencode-millennium-harness",
+  "version": "0.9.0",
+  "description": "Review the spec, not the code. A fresh-context executable-spec gate for OpenCode.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/server.ts",
+  "exports": { "./server": "./src/server.ts" },
+  "oc-themes": ["themes/millennium-harness.json", "themes/millennium-harness-blackboard.json", "themes/millennium-harness-vellum.json"],
+  "engines": { "opencode": ">=1.18.29 <2" },
+  "peerDependencies": { "@opencode-ai/plugin": ">=1.18.29 <2" },
+  "files": ["src", "themes"]
+}

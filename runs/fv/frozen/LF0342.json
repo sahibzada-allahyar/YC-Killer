@@ -1,0 +1,71 @@
+{
+ "id": "LF0342",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def broken_calc (start target : Nat) : Nat := sorry\n\ntheorem broken_calc_non_negative (start target : Nat) :\n  broken_calc start target ≥ 0 := sorry\n\ntheorem broken_calc_equal_case (x : Nat) :\n  broken_calc x x = 0 := sorry\n\ntheorem broken_calc_greater_case {start target : Nat} (h : start > target) :\n  broken_calc start target = start - target := sorry\n\ntheorem broken_calc_bounds :\n  broken_calc 1 (10^9) ≥ 0 ∧ broken_calc (10^9) 1 = 10^9 - 1 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval broken_calc 2 3\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval broken_calc 5 8\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval broken_calc 3 10\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval broken_calc 2 3\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval broken_calc 5 8\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval broken_calc 3 10",
+ "chunks": [
+  {
+   "text": "def broken_calc (start target : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem broken_calc_non_negative (start target : Nat) :\n  broken_calc start target ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem broken_calc_equal_case (x : Nat) :\n  broken_calc x x = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem broken_calc_greater_case {start target : Nat} (h : start > target) :\n  broken_calc start target = start - target :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem broken_calc_bounds :\n  broken_calc 1 (10^9) ≥ 0 ∧ broken_calc (10^9) 1 = 10^9 - 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "broken_calc_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fe00d7dc9d4cb2db40c01b87abb0174f7679c8c4fac11629daa65fc420d63a5e",
+   "ctors": [],
+   "value": null
+  },
+  "broken_calc_greater_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "193f5e51ae947f62a477ce9e990e010a24f27a2159524d6670c140c9beaf783e",
+   "ctors": [],
+   "value": null
+  },
+  "broken_calc_equal_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4906d48b744280e1f8b0eb37059661c32208204b2720f212835192209d9c0f21",
+   "ctors": [],
+   "value": null
+  },
+  "broken_calc_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8c4e324295f8eba99f78edd73370c509dad5cf5d37bec9257b5d07fa83583bab",
+   "ctors": [],
+   "value": null
+  },
+  "broken_calc": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "27d577f9106f"
+}

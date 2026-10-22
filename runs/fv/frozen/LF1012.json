@@ -1,0 +1,38 @@
+{
+ "id": "LF1012",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def check_forgotten_words (dictionary : List String) (phrases : List (List String)) : String :=\n  sorry\n\ntheorem check_repeated_word {word : String} {count : Nat} (h : count > 0) :\n  let dictionary := [word]\n  let phrases := List.replicate count [\"1\", word] \n  check_forgotten_words dictionary phrases = \"YES\" :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def check_forgotten_words (dictionary : List String) (phrases : List (List String)) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem check_repeated_word {word : String} {count : Nat} (h : count > 0) :\n  let dictionary := [word]\n  let phrases := List.replicate count [\"1\", word] \n  check_forgotten_words dictionary phrases = \"YES\" :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "check_repeated_word": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "33f65e71b575c1b5f0c0eadeb7d728f47bb1a933d04b46d5402142b829f3b853",
+   "ctors": [],
+   "value": null
+  },
+  "check_forgotten_words": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9dfde553f9c04b2b6ec41834cf752705046532e26097c83764466f10dd746466",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6f9be5258173"
+}

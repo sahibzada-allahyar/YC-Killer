@@ -1,0 +1,84 @@
+{
+ "id": "LA0081",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (n : Int) (packets : List Int) : Prop :=\n  n ≥ 1 ∧ packets.length = n ∧ ∀ i, 0 ≤ i ∧ i < packets.length → packets[i]! ≥ 1\n\ndef IsPossible (n : Int) (packets : List Int) : Prop :=\n  n ≥ 2 ∧ (n > 2 ∨ packets[0]! ≠ packets[1]!)\n\ndef SumPackets (packets : List Int) : Int :=\n  packets.sum\n\ndef ValidSolution (n : Int) (packets : List Int) (result : List Int) : Prop :=\n  (¬IsPossible n packets → result.length = 0) ∧\n  (IsPossible n packets → \n    result.length = 2 ∧ result[0]! = 1 ∧ 1 ≤ result[1]! ∧ result[1]! ≤ n ∧\n    ∃ minIndex, 0 ≤ minIndex ∧ minIndex < packets.length ∧ \n    result[1]! = minIndex + 1 ∧\n    (∀ j, 0 ≤ j ∧ j < packets.length → packets[minIndex]! ≤ packets[j]!) ∧\n    (∀ k, 0 ≤ k ∧ k < minIndex → packets[k]! > packets[minIndex]!))\n\n@[reducible, simp]\ndef solve_precond (n : Int) (packets : List Int) : Prop :=\n  ValidInput n packets\n\ndef solve (n : Int) (packets : List Int) (h_precond : solve_precond n packets) : List Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (packets : List Int) (result : List Int) (h_precond : solve_precond n packets) : Prop :=\n  ValidSolution n packets result\n\ntheorem solve_spec_satisfied (n : Int) (packets : List Int) (h_precond : solve_precond n packets) :\n    solve_postcond n packets (solve n packets h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (n : Int) (packets : List Int) : Prop :=\n  n ≥ 1 ∧ packets.length = n ∧ ∀ i, 0 ≤ i ∧ i < packets.length → packets[i]! ≥ 1\n\ndef IsPossible (n : Int) (packets : List Int) : Prop :=\n  n ≥ 2 ∧ (n > 2 ∨ packets[0]! ≠ packets[1]!)\n\ndef SumPackets (packets : List Int) : Int :=\n  packets.sum\n\ndef ValidSolution (n : Int) (packets : List Int) (result : List Int) : Prop :=\n  (¬IsPossible n packets → result.length = 0) ∧\n  (IsPossible n packets → \n    result.length = 2 ∧ result[0]! = 1 ∧ 1 ≤ result[1]! ∧ result[1]! ≤ n ∧\n    ∃ minIndex, 0 ≤ minIndex ∧ minIndex < packets.length ∧ \n    result[1]! = minIndex + 1 ∧\n    (∀ j, 0 ≤ j ∧ j < packets.length → packets[minIndex]! ≤ packets[j]!) ∧\n    (∀ k, 0 ≤ k ∧ k < minIndex → packets[k]! > packets[minIndex]!))\n\n@[reducible, simp]\ndef solve_precond (n : Int) (packets : List Int) : Prop :=\n  ValidInput n packets",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (packets : List Int) (h_precond : solve_precond n packets) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (packets : List Int) (result : List Int) (h_precond : solve_precond n packets) : Prop :=\n  ValidSolution n packets result",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (packets : List Int) (h_precond : solve_precond n packets) :\n    solve_postcond n packets (solve n packets h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "530fc7bc3a329c6835a6d71871a45dec1b0575ced6a2d016ef9fd542e684ecc8",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b3801015f913a180be97d3ba04728eeb29b42a5233f4bc2993a746d8791cb248",
+   "ctors": [],
+   "value": "bfab326dbc19ea99cf89ed6d1465c8076f4c55ddb4d8009852dfcd5a7650a16a"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "8a71bb6b6e5eb1fb8508a8005e7537c5e6ffa1bd07e93a00ded3712802c8cd33",
+   "ctors": [],
+   "value": "3cc6f8fcd3cca512e155e9429dcff373c2341361863feb5bd1a9b9d3418db3be"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c0967fa9545e1d05bb85ee50cf5d65450d302512f37624c3b38a9bfc13a12345",
+   "ctors": [],
+   "value": null
+  },
+  "ValidSolution": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "c6602e244bbed35f33751a71f5b8f860b7c9f6e7594f3e42368a61b4cda401a3",
+   "ctors": [],
+   "value": "733060c2650c7ecc775121c54f0b95942338127097a897c4029ba817ed6d0866"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b3801015f913a180be97d3ba04728eeb29b42a5233f4bc2993a746d8791cb248",
+   "ctors": [],
+   "value": "ce261d23c224c354d0e511e45176ad3cfcb7a8ab4346a8bea7b8334d248a5621"
+  },
+  "SumPackets": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": "474b2cda3ae7d207e6a92c4d25433a43f50d2e06071c229bf9bd4618c6f0827f"
+  },
+  "IsPossible": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b3801015f913a180be97d3ba04728eeb29b42a5233f4bc2993a746d8791cb248",
+   "ctors": [],
+   "value": "758971c8624a7afcdce0314d582f4c5a6614494240f44b14f6b739ab95380cea"
+  }
+ },
+ "sha": "e38fdbba2584"
+}

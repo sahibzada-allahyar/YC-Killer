@@ -1,0 +1,60 @@
+{
+ "id": "LF3797",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def possible_positions (pos : String) : List String := sorry\n\ntheorem knight_move_distance\n  (pos : String)\n  (h_valid : pos.length = 2 ∧ pos.get ⟨0⟩ ∈ ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] ∧ \n            pos.get ⟨1⟩ ∈ ['1', '2', '3', '4', '5', '6', '7', '8']) :\n  let src_x := (Char.toNat (pos.get ⟨0⟩)) - 96\n  let src_y := String.toNat! ⟨[pos.get ⟨1⟩]⟩\n  ∀ move ∈ possible_positions pos,\n    let dst_x := (Char.toNat (move.get ⟨0⟩)) - 96\n    let dst_y := String.toNat! ⟨[move.get ⟨1⟩]⟩\n    let dx := Nat.max (src_x) (dst_x) - Nat.min (src_x) (dst_x)\n    let dy := Nat.max (src_y) (dst_y) - Nat.min (src_y) (dst_y)\n    (dx = 1 ∧ dy = 2) ∨ (dx = 2 ∧ dy = 1) := sorry\n\ntheorem positions_within_board\n  (pos : String)\n  (h_valid : pos.length = 2 ∧ pos.get ⟨0⟩ ∈ ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] ∧ \n            pos.get ⟨1⟩ ∈ ['1', '2', '3', '4', '5', '6', '7', '8']) :\n  ∀ p ∈ possible_positions pos,\n    1 ≤ ((Char.toNat (p.get ⟨0⟩)) - 96) ∧ ((Char.toNat (p.get ⟨0⟩)) - 96) ≤ 8 ∧\n    1 ≤ String.toNat! ⟨[p.get ⟨1⟩]⟩ ∧ String.toNat! ⟨[p.get ⟨1⟩]⟩ ≤ 8 := sorry\n\ntheorem max_moves\n  (pos : String)\n  (h_valid : pos.length = 2 ∧ pos.get ⟨0⟩ ∈ ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] ∧ \n            pos.get ⟨1⟩ ∈ ['1', '2', '3', '4', '5', '6', '7', '8']) :\n  (possible_positions pos).length ≤ 8 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def possible_positions (pos : String) : List String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem knight_move_distance\n  (pos : String)\n  (h_valid : pos.length = 2 ∧ pos.get ⟨0⟩ ∈ ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] ∧ \n            pos.get ⟨1⟩ ∈ ['1', '2', '3', '4', '5', '6', '7', '8']) :\n  let src_x := (Char.toNat (pos.get ⟨0⟩)) - 96\n  let src_y := String.toNat! ⟨[pos.get ⟨1⟩]⟩\n  ∀ move ∈ possible_positions pos,\n    let dst_x := (Char.toNat (move.get ⟨0⟩)) - 96\n    let dst_y := String.toNat! ⟨[move.get ⟨1⟩]⟩\n    let dx := Nat.max (src_x) (dst_x) - Nat.min (src_x) (dst_x)\n    let dy := Nat.max (src_y) (dst_y) - Nat.min (src_y) (dst_y)\n    (dx = 1 ∧ dy = 2) ∨ (dx = 2 ∧ dy = 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem positions_within_board\n  (pos : String)\n  (h_valid : pos.length = 2 ∧ pos.get ⟨0⟩ ∈ ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] ∧ \n            pos.get ⟨1⟩ ∈ ['1', '2', '3', '4', '5', '6', '7', '8']) :\n  ∀ p ∈ possible_positions pos,\n    1 ≤ ((Char.toNat (p.get ⟨0⟩)) - 96) ∧ ((Char.toNat (p.get ⟨0⟩)) - 96) ≤ 8 ∧\n    1 ≤ String.toNat! ⟨[p.get ⟨1⟩]⟩ ∧ String.toNat! ⟨[p.get ⟨1⟩]⟩ ≤ 8 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_moves\n  (pos : String)\n  (h_valid : pos.length = 2 ∧ pos.get ⟨0⟩ ∈ ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] ∧ \n            pos.get ⟨1⟩ ∈ ['1', '2', '3', '4', '5', '6', '7', '8']) :\n  (possible_positions pos).length ≤ 8 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "possible_positions": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d9270a133299276f917afc6321be123721135d1eaf5ce5a6fd9597f2d722c43f",
+   "ctors": [],
+   "value": null
+  },
+  "positions_within_board": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "43b598d3b95947d19604636525405e15f05775301869dfce8f97f970e7f81fe2",
+   "ctors": [],
+   "value": null
+  },
+  "max_moves": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1dbc9d1218533fac5e9c88bd81d099b99d0a0c5464cbcbb7119d302c42c340f9",
+   "ctors": [],
+   "value": null
+  },
+  "knight_move_distance": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1c3775839ce31c1266d23d337f7662549aaeea4e1585176aadd07c6198ad2b9c",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "90e4ed8bce27"
+}

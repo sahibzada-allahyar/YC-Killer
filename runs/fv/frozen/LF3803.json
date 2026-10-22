@@ -1,0 +1,49 @@
+{
+ "id": "LF3803",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def digits_average (n : Nat) : Nat := sorry\n\ntheorem digits_average_result_in_range (n : Nat) (h : n > 0) : \n  digits_average n ≤ 9 ∧ digits_average n ≥ 0 := sorry\n\ntheorem single_digit_unchanged (n : Nat) (h1 : n > 0) (h2 : n ≤ 9) :\n  digits_average n = n := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval digits_average 246\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval digits_average 89\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval digits_average 3700\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval digits_average 246\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval digits_average 89\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval digits_average 3700",
+ "chunks": [
+  {
+   "text": "def digits_average (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem digits_average_result_in_range (n : Nat) (h : n > 0) : \n  digits_average n ≤ 9 ∧ digits_average n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_digit_unchanged (n : Nat) (h1 : n > 0) (h2 : n ≤ 9) :\n  digits_average n = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_digit_unchanged": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b1716af40e4f027b615f91de56c582a87a461ab8cc8b3b07ea61c9e6c1870662",
+   "ctors": [],
+   "value": null
+  },
+  "digits_average_result_in_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c8600a1d3fbe74640b4c2f1b438abbf5e155c1e51207e630b717cb2a72948a2c",
+   "ctors": [],
+   "value": null
+  },
+  "digits_average": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "9411babd6835"
+}

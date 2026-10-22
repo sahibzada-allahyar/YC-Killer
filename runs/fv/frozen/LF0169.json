@@ -1,0 +1,71 @@
+{
+ "id": "LF0169",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def maxDiff (n : Nat) : Nat :=\nsorry\n\ndef numDigits (n : Nat) : Nat :=\nsorry\n\ntheorem maxDiff_single_digit (n : Nat) (h : n < 10) : maxDiff n = 8 :=\nsorry\n\ntheorem maxDiff_properties (n : Nat) :\n  n ≥ 10 →\n  maxDiff n ≥ 0 ∧\n  maxDiff n ≤ 999999 :=\nsorry\n\ntheorem maxDiff_nonnegative (n : Nat) : maxDiff n ≥ 0 :=\nsorry\n\n-- Helper function to get number of digits\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 888\n-/\n#guard_msgs in\n#eval maxDiff 555\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval maxDiff 9\n\n/--\ninfo: 820000\n-/\n#guard_msgs in\n#eval maxDiff 123456\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Helper function to get number of digits\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 888\n-/\n#guard_msgs in\n#eval maxDiff 555\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval maxDiff 9\n\n/--\ninfo: 820000\n-/\n#guard_msgs in\n#eval maxDiff 123456",
+ "chunks": [
+  {
+   "text": "def maxDiff (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def numDigits (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem maxDiff_single_digit (n : Nat) (h : n < 10) : maxDiff n = 8 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem maxDiff_properties (n : Nat) :\n  n ≥ 10 →\n  maxDiff n ≥ 0 ∧\n  maxDiff n ≤ 999999 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem maxDiff_nonnegative (n : Nat) : maxDiff n ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "numDigits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "maxDiff_single_digit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "00cd58b7f141b2a0565c2346fb82cfd595043eaab99053bda6b457061fb7cd45",
+   "ctors": [],
+   "value": null
+  },
+  "maxDiff_properties": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c078dcb2c344c73714d619459af2a474ac554072cf495efe3601ea8112c56463",
+   "ctors": [],
+   "value": null
+  },
+  "maxDiff_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "297821f5847ef14fe84ae81ceabc11cea168394f5a0db09f37aa4e46eab54570",
+   "ctors": [],
+   "value": null
+  },
+  "maxDiff": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "370d676080d2"
+}

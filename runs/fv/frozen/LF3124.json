@@ -1,0 +1,49 @@
+{
+ "id": "LF3124",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def enough (cap on wait : Nat) : Nat := sorry\n\ntheorem enough_nonneg (cap on wait : Nat) :\n  cap > 0 → enough cap on wait ≥ 0 := sorry\n\ntheorem enough_fits (cap on wait : Nat) :\n  cap > 0 → on + wait ≤ cap → enough cap on wait = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval enough 10 5 5\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval enough 100 60 50\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval enough 20 5 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval enough 10 5 5\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval enough 100 60 50\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval enough 20 5 5",
+ "chunks": [
+  {
+   "text": "def enough (cap on wait : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem enough_nonneg (cap on wait : Nat) :\n  cap > 0 → enough cap on wait ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem enough_fits (cap on wait : Nat) :\n  cap > 0 → on + wait ≤ cap → enough cap on wait = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "enough_nonneg": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e5858c02af4e2cc36b878c16d146b32bbcd40cf5ed00751839d1bb4a1178fc3d",
+   "ctors": [],
+   "value": null
+  },
+  "enough_fits": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1de63060c03829ed0a8e0fdc0ed0a361fe7fe38e87f5eb36d5ab3ef0832be8f7",
+   "ctors": [],
+   "value": null
+  },
+  "enough": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "63b3d40601c5"
+}

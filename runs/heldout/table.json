@@ -1,0 +1,66 @@
+{
+ "lean": {
+  "attacked": {
+   "tasks": 20,
+   "loops": 100,
+   "files": 597
+  },
+  "exit0": {
+   "tasks": 20,
+   "loops": 76,
+   "files": 219
+  },
+  "benchmark_rule": {
+   "tasks": 20,
+   "loops": 75,
+   "files": 209
+  },
+  "rule_axioms": {
+   "tasks": 20,
+   "loops": 65,
+   "files": 178
+  },
+  "strongest": {
+   "tasks": 16,
+   "loops": 51,
+   "files": 116
+  },
+  "mh": {
+   "tasks": 0,
+   "loops": 0,
+   "files": 0
+  }
+ },
+ "dafny": {
+  "attacked": {
+   "tasks": 17,
+   "loops": 76,
+   "files": 357
+  },
+  "exit0": {
+   "tasks": 17,
+   "loops": 66,
+   "files": 175
+  },
+  "benchmark_rule": {
+   "tasks": 14,
+   "loops": 35,
+   "files": 59
+  },
+  "rule_axioms": {
+   "tasks": 0,
+   "loops": 0,
+   "files": 0
+  },
+  "strongest": {
+   "tasks": 5,
+   "loops": 6,
+   "files": 6
+  },
+  "mh": {
+   "tasks": 0,
+   "loops": 0,
+   "files": 0
+  }
+ }
+}

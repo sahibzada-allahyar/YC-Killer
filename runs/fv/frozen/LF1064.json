@@ -1,0 +1,63 @@
+{
+ "id": "LF1064",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def list_sum : List Nat → Nat\n  | [] => 0\n  | x::xs => x + list_sum xs\n\ndef alternating_elements : List Nat → List Nat\n  | [] => []\n  | [x] => [x]\n  | x::_::xs => x :: alternating_elements xs\n\ndef max_stones_removed (n : Nat) (piles : List Nat) : Nat :=\nsorry\n\ntheorem max_stones_removed_identity (n : Nat) (piles : List Nat) (h : piles.length > 0) :\n  max_stones_removed n piles = max_stones_removed n piles :=\nsorry\n\ntheorem max_stones_removed_n_independent (n₁ n₂ : Nat) (piles : List Nat) (h : piles.length > 0) :\n  max_stones_removed n₁ piles = max_stones_removed n₂ piles :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval max_stones_removed 3 [1, 2, 3]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval max_stones_removed 3 [1, 2, 1]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval max_stones_removed 4 [4, 3, 2, 1]\n",
+ "warnings": [],
+ "preamble": "def list_sum : List Nat → Nat\n  | [] => 0\n  | x::xs => x + list_sum xs\n\ndef alternating_elements : List Nat → List Nat\n  | [] => []\n  | [x] => [x]\n  | x::_::xs => x :: alternating_elements xs",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval max_stones_removed 3 [1, 2, 3]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval max_stones_removed 3 [1, 2, 1]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval max_stones_removed 4 [4, 3, 2, 1]",
+ "chunks": [
+  {
+   "text": "def max_stones_removed (n : Nat) (piles : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_stones_removed_identity (n : Nat) (piles : List Nat) (h : piles.length > 0) :\n  max_stones_removed n piles = max_stones_removed n piles :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_stones_removed_n_independent (n₁ n₂ : Nat) (piles : List Nat) (h : piles.length > 0) :\n  max_stones_removed n₁ piles = max_stones_removed n₂ piles :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_stones_removed_n_independent": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "05790ad8b34b8723506ced028913d13fe26a3cb640f0b420a4b7d6c00165177e",
+   "ctors": [],
+   "value": null
+  },
+  "max_stones_removed_identity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8395ad36fe1e5ef3981811fd61e798c72b96940296b66b5b830d5424222cde78",
+   "ctors": [],
+   "value": null
+  },
+  "max_stones_removed": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  },
+  "list_sum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "alternating_elements": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "dce81c3d4e4f1c562633cca8bdf499d19d1efd18d11534ccbcf10ca507f08558",
+   "ctors": [],
+   "value": "476a40debea6583697a806c86ae5c2fe0ede6706a87c8bfdc52fc7e31780ecdf"
+  }
+ },
+ "sha": "dc564d9c9b3d"
+}

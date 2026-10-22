@@ -1,0 +1,49 @@
+{
+ "id": "LF2789",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def summation (n : Nat) : Nat :=\n  sorry\n\ntheorem summation_formula (n : Nat) (h : n > 0) : \n  summation n = n * (n + 1) / 2 := \n  sorry\n\ntheorem summation_increasing {a b : Nat} (ha : a > 0) (hb : b > 0) :\n  summation (a + b) > summation a :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval summation 1\n\n/--\ninfo: 36\n-/\n#guard_msgs in\n#eval summation 8\n\n/--\ninfo: 253\n-/\n#guard_msgs in\n#eval summation 22\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval summation 1\n\n/--\ninfo: 36\n-/\n#guard_msgs in\n#eval summation 8\n\n/--\ninfo: 253\n-/\n#guard_msgs in\n#eval summation 22",
+ "chunks": [
+  {
+   "text": "def summation (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem summation_formula (n : Nat) (h : n > 0) : \n  summation n = n * (n + 1) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem summation_increasing {a b : Nat} (ha : a > 0) (hb : b > 0) :\n  summation (a + b) > summation a :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "summation_increasing": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "27dc1250769385a22e0ae313e29da5f3fc32a28b9735f60f7db524abdd0613b5",
+   "ctors": [],
+   "value": null
+  },
+  "summation_formula": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8567ae7370bb1188503b7f4f2320b5af703ee6a073b859f3d6b2c474cd06dffc",
+   "ctors": [],
+   "value": null
+  },
+  "summation": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "bbe8fc75dee9"
+}

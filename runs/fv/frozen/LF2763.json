@@ -1,0 +1,45 @@
+{
+ "id": "LF2763",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def pi : Float := 3.14159\n\ndef volume (radius height : Float) : Nat :=\n  sorry\n\ntheorem volume_zero :\n  volume 0 0 = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/-- π is approximated as 3.14159 -/\n\n/--\ninfo: 153\n-/\n#guard_msgs in\n#eval volume 7 3\n\n/--\ninfo: 98520\n-/\n#guard_msgs in\n#eval volume 56 30\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval volume 0 0\n",
+ "warnings": [],
+ "preamble": "def pi : Float := 3.14159",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/-- π is approximated as 3.14159 -/\n\n/--\ninfo: 153\n-/\n#guard_msgs in\n#eval volume 7 3\n\n/--\ninfo: 98520\n-/\n#guard_msgs in\n#eval volume 56 30\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval volume 0 0",
+ "chunks": [
+  {
+   "text": "def volume (radius height : Float) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem volume_zero :\n  volume 0 0 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "volume_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "de5f92e0592142d2358ebd8e3fe149b30a8b86d66bfaccbb98a44be12c1c833e",
+   "ctors": [],
+   "value": null
+  },
+  "volume": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4459e94bcbfcb4ebe856d7cfa93d9d2c6294cc2102291b1bd63eea0193f26c27",
+   "ctors": [],
+   "value": null
+  },
+  "pi": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "26de2934cec07700617c60dfd3722a7bf6f714412e208a6f8e76ea8956ea6ffe",
+   "ctors": [],
+   "value": "30844e7d4f94861c9e16634a239c35ec3da064c211b09b2c0b599930514a4189"
+  }
+ },
+ "sha": "7818591c13f7"
+}

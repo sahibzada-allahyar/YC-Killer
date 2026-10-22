@@ -1,0 +1,60 @@
+{
+ "id": "LF3831",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def chess_knight (pos : String) : Nat := sorry\n\ntheorem corner_positions (pos : String) :\n  (pos = \"a1\" ∨ pos = \"a8\" ∨ pos = \"h1\" ∨ pos = \"h8\") → chess_knight pos = 2 := sorry\n\ntheorem edge_positions (pos : String) :\n  ((pos.front = 'a' ∨ pos.front = 'h' ∨ \n    pos.back = '1' ∨ pos.back = '8') ∧\n   ¬(pos = \"a1\" ∨ pos = \"a8\" ∨ pos = \"h1\" ∨ pos = \"h8\")) →\n  chess_knight pos ≤ 4 := sorry\n\ntheorem center_max_moves :\n  chess_knight \"d4\" = 8 ∧ chess_knight \"e4\" = 8 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval chess_knight \"a1\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval chess_knight \"c2\"\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval chess_knight \"d4\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval chess_knight \"a1\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval chess_knight \"c2\"\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval chess_knight \"d4\"",
+ "chunks": [
+  {
+   "text": "def chess_knight (pos : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem corner_positions (pos : String) :\n  (pos = \"a1\" ∨ pos = \"a8\" ∨ pos = \"h1\" ∨ pos = \"h8\") → chess_knight pos = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem edge_positions (pos : String) :\n  ((pos.front = 'a' ∨ pos.front = 'h' ∨ \n    pos.back = '1' ∨ pos.back = '8') ∧\n   ¬(pos = \"a1\" ∨ pos = \"a8\" ∨ pos = \"h1\" ∨ pos = \"h8\")) →\n  chess_knight pos ≤ 4 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem center_max_moves :\n  chess_knight \"d4\" = 8 ∧ chess_knight \"e4\" = 8 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "edge_positions": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b5a503e41b4a02b84eee8117136dc711f2d41f7eec1a53d4d5da35675a35d1d0",
+   "ctors": [],
+   "value": null
+  },
+  "corner_positions": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f60f4cc4a1b09769252a44c8f47eb02b851b5cad1a81ecbf3b09067dbd459d70",
+   "ctors": [],
+   "value": null
+  },
+  "chess_knight": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "center_max_moves": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5f4f949c47922a45f20b3daa47d213c97a90c3881fac52405e1a578ef5854f6b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ca1cef4b61ba"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF2403",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def is_prefix_of_word (sentence search : String) : Int :=\n  sorry\n\ndef startsWith (s₁ s₂ : String) : Bool :=\n  sorry\n\ndef words (s : String) : List String :=\n  sorry\n\ntheorem empty_search_property {sentence : String} :\n  is_prefix_of_word sentence \"\" = 1 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval is_prefix_of_word \"i love eating burger\" \"burg\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval is_prefix_of_word \"this problem is an easy problem\" \"pro\"\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval is_prefix_of_word \"i am tired\" \"you\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval is_prefix_of_word \"i love eating burger\" \"burg\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval is_prefix_of_word \"this problem is an easy problem\" \"pro\"\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval is_prefix_of_word \"i am tired\" \"you\"",
+ "chunks": [
+  {
+   "text": "def is_prefix_of_word (sentence search : String) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def startsWith (s₁ s₂ : String) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def words (s : String) : List String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_search_property {sentence : String} :\n  is_prefix_of_word sentence \"\" = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "words": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d9270a133299276f917afc6321be123721135d1eaf5ce5a6fd9597f2d722c43f",
+   "ctors": [],
+   "value": null
+  },
+  "startsWith": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2b04460546516b4bd425ae6a08b45a393940f0c1b8d26d46da13d043d3cd3dd9",
+   "ctors": [],
+   "value": null
+  },
+  "is_prefix_of_word": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9ed218547bdbc09126d74d0f9ed6b7158a68c2c61ca98fa3e9e98284810dc528",
+   "ctors": [],
+   "value": null
+  },
+  "empty_search_property": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "baa198b299dfc830ad514d343d4189f95ae2d3820405950ca203cced1825d6dd",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2487b2c06f85"
+}

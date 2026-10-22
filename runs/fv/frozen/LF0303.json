@@ -1,0 +1,49 @@
+{
+ "id": "LF0303",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def candy (ratings : List Nat) : Nat := sorry\n\ntheorem candy_empty :\n  candy [] = 0 := sorry\n\ntheorem candy_single (rating : Nat) :\n  candy [rating] = 1 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval candy [1, 0, 2]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval candy [1, 2, 2]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval candy []\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval candy [1, 0, 2]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval candy [1, 2, 2]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval candy []",
+ "chunks": [
+  {
+   "text": "def candy (ratings : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem candy_empty :\n  candy [] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem candy_single (rating : Nat) :\n  candy [rating] = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "candy_single": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "76c33590b714ba1fa8ae7a4dbcfbf49492263daf2201a08b8f083894aa0770e7",
+   "ctors": [],
+   "value": null
+  },
+  "candy_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dc753c3284f641fc60e68418ccc82bfb4839c8791d1015deef49b38c727e8df6",
+   "ctors": [],
+   "value": null
+  },
+  "candy": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "da2503c76963"
+}

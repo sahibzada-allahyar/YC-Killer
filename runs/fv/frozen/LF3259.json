@@ -1,0 +1,38 @@
+{
+ "id": "LF3259",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def cipher (s : String) : String := sorry\n\ntheorem cipher_length_preservation {s : String} :\n  s.any (fun c => 97 ≤ c.toNat ∧ c.toNat ≤ 122 ∨ c = ' ') →\n  (cipher s).length = s.length := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def cipher (s : String) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem cipher_length_preservation {s : String} :\n  s.any (fun c => 97 ≤ c.toNat ∧ c.toNat ≤ 122 ∨ c = ' ') →\n  (cipher s).length = s.length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "cipher_length_preservation": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0e6ae59d670d769baa4a30436b6fb0bd07d050e80519008710e1efa5bc71953c",
+   "ctors": [],
+   "value": null
+  },
+  "cipher": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6f0513922b1b32500fef5a52f309f3291d42e6ae6f7d7e89b365f7e92e39e763",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8bf7a12c8295"
+}

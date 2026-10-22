@@ -1,0 +1,49 @@
+{
+ "id": "LF2971",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (n : Nat) : Int := sorry\n\ndef isPerfectSquare (n : Int) : Bool := sorry\n\ntheorem solve_output_nonnegative_or_minus_one (n : Nat) :\n  let result := solve n\n  result ≥ -1 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve 3\n\n/--\ninfo: 36\n-/\n#guard_msgs in\n#eval solve 13\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve 3\n\n/--\ninfo: 36\n-/\n#guard_msgs in\n#eval solve 13\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve 4",
+ "chunks": [
+  {
+   "text": "def solve (n : Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def isPerfectSquare (n : Int) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_output_nonnegative_or_minus_one (n : Nat) :\n  let result := solve n\n  result ≥ -1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_output_nonnegative_or_minus_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fed3cb60da918a97eec07564d4b10cd8bc6930fa448c2f96406ca9ff8b0a2e15",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "45a38ef37bfa45f8cc41c6298383eb8f5798e412291489dc25ee658dc8d1b5fe",
+   "ctors": [],
+   "value": null
+  },
+  "isPerfectSquare": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3664d6e8286e94d656f788e7e7614793096c29327d2c200ea2456f0e0bec1d1e",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "88cf80a3ec7b"
+}

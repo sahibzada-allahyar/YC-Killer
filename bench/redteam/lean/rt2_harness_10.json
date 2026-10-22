@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "SPEC_TAMPERED", "lens": "harness", "hole": false, "what": "`in`-wrap: honest impl, but the last hole before the postamble ends with `open Nat in`, which would wrap the postamble's first #guard_msgs command. holes() scans the last hole's masked tail for a trailing `in` -> SPEC_TAMPERED."}

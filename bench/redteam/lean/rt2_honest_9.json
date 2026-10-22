@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0451",
+ "expect": "PROVED",
+ "observed": "PROVED",
+ "hole": false,
+ "honest": true,
+ "lens": "elaboration/name-resolution",
+ "what": "numOfMinutes as a total fuel-bounded DFS (not partial) so the concrete frozen theorem is decidable without native_decide; matches #eval 0,1,21."
+}

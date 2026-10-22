@@ -1,0 +1,60 @@
+{
+ "id": "LF0027",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_moves_to_odd (arrays : List (List Nat)) : List Nat := sorry\n\ndef countTrailingZeros (n : Nat) : Nat := sorry\n\ntheorem result_same_length_as_input (arrays : List (List Nat)) :\n  List.length (min_moves_to_odd arrays) = List.length arrays :=\n  sorry\n\ntheorem result_is_non_negative (arrays : List (List Nat)) :\n  ∀ x ∈ min_moves_to_odd arrays, x ≥ 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [4]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[40, 6, 40, 3, 20, 1]]\n\n/--\ninfo: [10]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[1024]]\n\n/--\ninfo: [4]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[2, 4, 8, 16]]\n\n/--\ninfo: [0]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[3, 1, 7]]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [4]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[40, 6, 40, 3, 20, 1]]\n\n/--\ninfo: [10]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[1024]]\n\n/--\ninfo: [4]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[2, 4, 8, 16]]\n\n/--\ninfo: [0]\n-/\n#guard_msgs in\n#eval min_moves_to_odd [[3, 1, 7]]",
+ "chunks": [
+  {
+   "text": "def min_moves_to_odd (arrays : List (List Nat)) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def countTrailingZeros (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_same_length_as_input (arrays : List (List Nat)) :\n  List.length (min_moves_to_odd arrays) = List.length arrays :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_is_non_negative (arrays : List (List Nat)) :\n  ∀ x ∈ min_moves_to_odd arrays, x ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "result_same_length_as_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e2e1690e04cad388a80a9ba4bf257160ad05728c6504f219a9f1ac24b59dd089",
+   "ctors": [],
+   "value": null
+  },
+  "result_is_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f92748455c4e0621e052472ba26dc70b2ad18c31b8c708db7e336fd61ef40585",
+   "ctors": [],
+   "value": null
+  },
+  "min_moves_to_odd": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3e577eae586d87b3354f02f3ec5b5703bcb780a4cad3a3fae4bb0ff56ef1407c",
+   "ctors": [],
+   "value": null
+  },
+  "countTrailingZeros": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "fd6a24aff8c8"
+}

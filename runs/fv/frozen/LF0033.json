@@ -1,0 +1,38 @@
+{
+ "id": "LF0033",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def minimize_board_operations (n: Nat) : Nat × List (Nat × Nat) := sorry\n\ntheorem minimize_board_operations_min_val {n: Nat} (h: 2 ≤ n) (h2: n ≤ 1000) :\n  (minimize_board_operations n).1 = 2 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def minimize_board_operations (n: Nat) : Nat × List (Nat × Nat) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem minimize_board_operations_min_val {n: Nat} (h: 2 ≤ n) (h2: n ≤ 1000) :\n  (minimize_board_operations n).1 = 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "minimize_board_operations_min_val": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e16dd42a1f937e6047c266b6d524137c3ecb7a8197dffac5d094d0f85dc58034",
+   "ctors": [],
+   "value": null
+  },
+  "minimize_board_operations": {
+   "kind": "def",
+   "role": "impl",
+   "type": "95675894409e9ce33448355f45aebc0fec8cfce3947eada361f7219fc1da4811",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "44b5fe79d0fb"
+}

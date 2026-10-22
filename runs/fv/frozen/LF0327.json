@@ -1,0 +1,93 @@
+{
+ "id": "LF0327",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_steps_to_anagram (s1 s2 : String) : Nat :=\n  sorry\n\ntheorem anagram_non_negative (s1 s2 : String) :\n  min_steps_to_anagram s1 s2 ≥ 0 :=\n  sorry\n\ntheorem empty_strings_zero_steps :\n  min_steps_to_anagram \"\" \"\" = 0 :=\n  sorry\n\ntheorem same_string_zero_steps (s : String) :\n  min_steps_to_anagram s s = 0 :=\n  sorry\n\ntheorem anagram_symmetry (s : String) :\n  min_steps_to_anagram s s = 0 :=\n  sorry\n\ntheorem steps_bounded_by_length (s t : String) :\n  min_steps_to_anagram s t ≤ t.length :=\n  sorry\n\ntheorem empty_string_steps :\n  min_steps_to_anagram \"\" \"\" = 0 ∧\n  min_steps_to_anagram \"a\" \"\" = 0 ∧\n  min_steps_to_anagram \"\" \"a\" = 1 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_steps_to_anagram \"bab\" \"aba\"\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_steps_to_anagram \"leetcode\" \"practice\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_steps_to_anagram \"anagram\" \"mangaar\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_steps_to_anagram \"bab\" \"aba\"\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_steps_to_anagram \"leetcode\" \"practice\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_steps_to_anagram \"anagram\" \"mangaar\"",
+ "chunks": [
+  {
+   "text": "def min_steps_to_anagram (s1 s2 : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_non_negative (s1 s2 : String) :\n  min_steps_to_anagram s1 s2 ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_strings_zero_steps :\n  min_steps_to_anagram \"\" \"\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem same_string_zero_steps (s : String) :\n  min_steps_to_anagram s s = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_symmetry (s : String) :\n  min_steps_to_anagram s s = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem steps_bounded_by_length (s t : String) :\n  min_steps_to_anagram s t ≤ t.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_string_steps :\n  min_steps_to_anagram \"\" \"\" = 0 ∧\n  min_steps_to_anagram \"a\" \"\" = 0 ∧\n  min_steps_to_anagram \"\" \"a\" = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "steps_bounded_by_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1943e9bda0af415fd1b13edd6fa75b4213cd75a266444c59f22d177bfc4998a1",
+   "ctors": [],
+   "value": null
+  },
+  "same_string_zero_steps": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dc013ebe03921c0b7649ae22680ff4838244f35105aa450047320884c04622e7",
+   "ctors": [],
+   "value": null
+  },
+  "min_steps_to_anagram": {
+   "kind": "def",
+   "role": "impl",
+   "type": "faa97572308571ef4f892409b8c2cc195f3c362791f58d2fada480327724c43d",
+   "ctors": [],
+   "value": null
+  },
+  "empty_strings_zero_steps": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "426bcc4122ea1ff9f75aa0b3efb9144e9fe27512b7f1210022c8ab54aec1967c",
+   "ctors": [],
+   "value": null
+  },
+  "empty_string_steps": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f21570e4758dbcdada5dc7e1ae803cf9b22f913e5c3e4ca621009f91f06cbce0",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_symmetry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dc013ebe03921c0b7649ae22680ff4838244f35105aa450047320884c04622e7",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e1dd8e0fd83f12c99010c3096cf63a1b813454e7a9c05b49d58270b2cf1b073f",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "cc536edea28c"
+}

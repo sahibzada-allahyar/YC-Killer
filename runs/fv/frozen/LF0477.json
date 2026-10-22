@@ -1,0 +1,60 @@
+{
+ "id": "LF0477",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def kth_smallest_in_sorted_matrix (matrix : List (List Int)) (k : Nat) : Int :=\nsorry\n\ndef is_sorted (row : List Int) : Bool :=\nsorry\n\ndef is_matrix_sorted (matrix : List (List Int)) : Bool :=\nsorry\n\ntheorem empty_rows_handled_raises\n  (matrix : List (List Int))\n  (h1 : matrix = [] ∨ ¬∃row ∈ matrix, row ≠ []) :\n  ∀k, k ≠ 0 → kth_smallest_in_sorted_matrix matrix k = default :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval kth_smallest_in_sorted_matrix [[1, 5, 9], [10, 11, 13], [12, 13, 15]] 8\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval kth_smallest_in_sorted_matrix [[1, 2], [3, 4]] 3\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval kth_smallest_in_sorted_matrix [[1, 5, 9], [10, 11, 13], [12, 13, 15], [], []] 8\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval kth_smallest_in_sorted_matrix [[1, 5, 9], [10, 11, 13], [12, 13, 15]] 8\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval kth_smallest_in_sorted_matrix [[1, 2], [3, 4]] 3\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval kth_smallest_in_sorted_matrix [[1, 5, 9], [10, 11, 13], [12, 13, 15], [], []] 8",
+ "chunks": [
+  {
+   "text": "def kth_smallest_in_sorted_matrix (matrix : List (List Int)) (k : Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_sorted (row : List Int) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_matrix_sorted (matrix : List (List Int)) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_rows_handled_raises\n  (matrix : List (List Int))\n  (h1 : matrix = [] ∨ ¬∃row ∈ matrix, row ≠ []) :\n  ∀k, k ≠ 0 → kth_smallest_in_sorted_matrix matrix k = default :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "kth_smallest_in_sorted_matrix": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6bcdec556559d9de2fa4f0961750277cbd9207c4cb94403969ebe92316cbc9ac",
+   "ctors": [],
+   "value": null
+  },
+  "is_sorted": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b295506f1e9a51c9dbc47fa3287a9069c7ff4f012c5915f8730a719e58ab07c6",
+   "ctors": [],
+   "value": null
+  },
+  "is_matrix_sorted": {
+   "kind": "def",
+   "role": "impl",
+   "type": "a2752a7b41fec7bf4d86a34c175e76323224af885bbd91410928c083b5abd272",
+   "ctors": [],
+   "value": null
+  },
+  "empty_rows_handled_raises": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ad3fabb5d7334576039afa88b125d70087c2a9360d1918ece2224ad19bc6c919",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7015955dfbfd"
+}

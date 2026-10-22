@@ -1,0 +1,71 @@
+{
+ "id": "LF0489",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calculate (s : String) : Option Int := sorry\n\n@[simp] theorem calculate_positive_number (n : Int) \n  (h : 1 ≤ n ∧ n ≤ 100) : \n  calculate (toString n) = some n := sorry\n\ntheorem calculate_addition (a b : Int)\n  (h₁ : 1 ≤ a ∧ a ≤ 50) (h₂ : 1 ≤ b ∧ b ≤ 50) :\n  calculate (toString a ++ \"+\" ++ toString b) = some (a + b) := sorry\n\ntheorem calculate_multiplication (a b : Int)\n  (h₁ : 1 ≤ a ∧ a ≤ 50) (h₂ : 1 ≤ b ∧ b ≤ 50) :\n  calculate (toString a ++ \"*\" ++ toString b) = some (a * b) := sorry\n\ntheorem calculate_division (a b : Int)\n  (h₁ : 1 ≤ a ∧ a ≤ 50) (h₂ : 1 ≤ b ∧ b ≤ 50) :\n  calculate (toString a ++ \"/\" ++ toString b) = some (a / b) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval calculate \"3+2*2\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval calculate \" 3/2 \"\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval calculate \" 3+5 / 2 \"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval calculate \"3+2*2\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval calculate \" 3/2 \"\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval calculate \" 3+5 / 2 \"",
+ "chunks": [
+  {
+   "text": "def calculate (s : String) : Option Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[simp] theorem calculate_positive_number (n : Int) \n  (h : 1 ≤ n ∧ n ≤ 100) : \n  calculate (toString n) = some n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calculate_addition (a b : Int)\n  (h₁ : 1 ≤ a ∧ a ≤ 50) (h₂ : 1 ≤ b ∧ b ≤ 50) :\n  calculate (toString a ++ \"+\" ++ toString b) = some (a + b) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calculate_multiplication (a b : Int)\n  (h₁ : 1 ≤ a ∧ a ≤ 50) (h₂ : 1 ≤ b ∧ b ≤ 50) :\n  calculate (toString a ++ \"*\" ++ toString b) = some (a * b) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calculate_division (a b : Int)\n  (h₁ : 1 ≤ a ∧ a ≤ 50) (h₂ : 1 ≤ b ∧ b ≤ 50) :\n  calculate (toString a ++ \"/\" ++ toString b) = some (a / b) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "calculate_positive_number": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "79fed62089296975cbaa7be5913c2952e11d28030d0f3fba5eae9bb7eab2be4e",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_multiplication": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "98a32325b96bc1b8fb4a415224ed71b3eb206ae3e0939012d36e84f145fc87ba",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_division": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5ad891442ec516a3aff937f1089bb9115949fbd5ddbc1bdb6f43e477d1545cc8",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_addition": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "56ce1ae2137ae6d5783125706306746fbdd325370eecb306be2ce868996cf3fe",
+   "ctors": [],
+   "value": null
+  },
+  "calculate": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4ab5741b55468a847a4e3d2f7ca3929a2ded5284e8124a1e3e72254aa4262611",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "4ef75a29cb52"
+}

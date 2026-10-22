@@ -1,0 +1,71 @@
+{
+ "id": "LF0830",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calculate_compression_length (n k : Nat) : Float :=\n  sorry\n\ntheorem compression_length_positive (n k : Nat) (h1 : n > 0) (h2 : k > 0) :\n  calculate_compression_length n k > 0 :=\n  sorry\n\ntheorem compression_length_upper_bound (n k : Nat) (h1 : n > 0) (h2 : k > 0) :\n  calculate_compression_length n k ≤ Float.ofNat (2 * n) :=\n  sorry\n\ntheorem compression_length_monotonic (n k : Nat) (h1 : n > 0) (h2 : k > 0) :\n  calculate_compression_length (n + 1) k ≥ calculate_compression_length n k :=\n  sorry\n\ntheorem compression_length_k_one (n : Nat) (h : n > 0) :\n  (calculate_compression_length n 1 - 2).abs < 0.01 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def calculate_compression_length (n k : Nat) : Float :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem compression_length_positive (n k : Nat) (h1 : n > 0) (h2 : k > 0) :\n  calculate_compression_length n k > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem compression_length_upper_bound (n k : Nat) (h1 : n > 0) (h2 : k > 0) :\n  calculate_compression_length n k ≤ Float.ofNat (2 * n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem compression_length_monotonic (n k : Nat) (h1 : n > 0) (h2 : k > 0) :\n  calculate_compression_length (n + 1) k ≥ calculate_compression_length n k :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem compression_length_k_one (n : Nat) (h : n > 0) :\n  (calculate_compression_length n 1 - 2).abs < 0.01 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "compression_length_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ec55bccf59071a9fbec5fcfd4032ee98f4961b3e5379c5e40c24d9eafc40bd5f",
+   "ctors": [],
+   "value": null
+  },
+  "compression_length_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2e469dfa1438e1f30153c0f6ec196115a25ba4bb476523e114af288eda16e250",
+   "ctors": [],
+   "value": null
+  },
+  "compression_length_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "65b7b2de03b5f4c271fe036f3c3d28dd2339c5cdf4c57ecfc3901f234ca39b30",
+   "ctors": [],
+   "value": null
+  },
+  "compression_length_k_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "df573941a1d447e74cd6f0770aa8fe1d278b4806fe6917010662336ac0a3e59f",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_compression_length": {
+   "kind": "def",
+   "role": "impl",
+   "type": "22915332e5e3d8eb0f9f795bb41380f7b22821ce9c004d03bdf8ed493e6591fc",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d8e85fc52630"
+}

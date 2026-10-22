@@ -1,0 +1,40 @@
+{
+ "id": "LT0610",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do\n\ndef expandtabs {n : Nat} (a : Vector String n) (tabsize : Vector Nat n) : Id (Vector String n) :=\n  sorry\n\ntheorem expandtabs_spec {n : Nat} (a : Vector String n) (tabsize : Vector Nat n) \n    (h_positive : ∀ i : Fin n, tabsize.get i > 0) :\n    ⦃⌜∀ i : Fin n, tabsize.get i > 0⌝⦄\n    expandtabs a tabsize\n    ⦃⇓r => ⌜∀ i : Fin n, \n      let orig_str := a.get i\n      let result_str := r.get i\n      let tab_sz := tabsize.get i\n      -- Core property: result contains no tab characters\n      (∀ c ∈ result_str.toList, c ≠ '\\t') ∧\n      -- Identity property: strings without tabs remain unchanged\n      (orig_str.toList.all (· ≠ '\\t') → result_str = orig_str) ∧\n      -- Length property: result is at least as long as original\n      (result_str.length ≥ orig_str.length) ∧\n      -- Tab expansion property: tabs are replaced by 1 to tab_sz spaces\n      (orig_str.toList.contains '\\t' → result_str.length > orig_str.length) ∧\n      -- Character preservation: non-tab characters appear in same relative order\n      (∃ (mapping : Nat → Nat), \n        (∀ j : Nat, j < orig_str.length → \n          orig_str.toList[j]! ≠ '\\t' → \n          mapping j < result_str.length ∧ \n          result_str.toList[mapping j]! = orig_str.toList[j]!) ∧\n        (∀ j k : Nat, j < k → k < orig_str.length → \n          orig_str.toList[j]! ≠ '\\t' → orig_str.toList[k]! ≠ '\\t' → \n          mapping j < mapping k))⌝⦄ := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def expandtabs {n : Nat} (a : Vector String n) (tabsize : Vector Nat n) : Id (Vector String n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem expandtabs_spec {n : Nat} (a : Vector String n) (tabsize : Vector Nat n) \n    (h_positive : ∀ i : Fin n, tabsize.get i > 0) :\n    ⦃⌜∀ i : Fin n, tabsize.get i > 0⌝⦄\n    expandtabs a tabsize\n    ⦃⇓r => ⌜∀ i : Fin n, \n      let orig_str := a.get i\n      let result_str := r.get i\n      let tab_sz := tabsize.get i\n      -- Core property: result contains no tab characters\n      (∀ c ∈ result_str.toList, c ≠ '\\t') ∧\n      -- Identity property: strings without tabs remain unchanged\n      (orig_str.toList.all (· ≠ '\\t') → result_str = orig_str) ∧\n      -- Length property: result is at least as long as original\n      (result_str.length ≥ orig_str.length) ∧\n      -- Tab expansion property: tabs are replaced by 1 to tab_sz spaces\n      (orig_str.toList.contains '\\t' → result_str.length > orig_str.length) ∧\n      -- Character preservation: non-tab characters appear in same relative order\n      (∃ (mapping : Nat → Nat), \n        (∀ j : Nat, j < orig_str.length → \n          orig_str.toList[j]! ≠ '\\t' → \n          mapping j < result_str.length ∧ \n          result_str.toList[mapping j]! = orig_str.toList[j]!) ∧\n        (∀ j k : Nat, j < k → k < orig_str.length → \n          orig_str.toList[j]! ≠ '\\t' → orig_str.toList[k]! ≠ '\\t' → \n          mapping j < mapping k))⌝⦄ := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init",
+  "Std.Do.Triple",
+  "Std.Tactic.Do"
+ ],
+ "constants": {
+  "expandtabs_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9b45c06d16ac1a38c00d9c554104aea5a670f521f8a641e239b70364bad13a75",
+   "ctors": [],
+   "value": null
+  },
+  "expandtabs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "95ba05309716a00cfa6b2048987d999498a6c15a8d601e220d8b7d14ddc2d583",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "be06fc83f1eb"
+}

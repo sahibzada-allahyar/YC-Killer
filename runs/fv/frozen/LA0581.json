@@ -1,0 +1,91 @@
+{
+ "id": "LA0581",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (input : String) : Prop :=\n  input.length > 2 ∧\n  (∃ i, 0 < i ∧ i < input.length ∧ input.data[i]? = some ' ') ∧\n  (∀ i, 0 ≤ i ∧ i < input.length → (input.data[i]? = some ' ' ∨ input.data[i]? = some '\\n' ∨ (∃ c, input.data[i]? = some c ∧ 'a' ≤ c ∧ c ≤ 'z'))) ∧\n  (∃ i, 0 < i ∧ i < input.length ∧ input.data[i]? = some ' ' ∧ \n   (∀ j, 0 ≤ j ∧ j < i → input.data[j]? ≠ some ' ' ∧ input.data[j]? ≠ some '\\n') ∧\n   (∀ j, i+1 ≤ j ∧ j < input.length → input.data[j]? ≠ some ' ' ∧ input.data[j]? ≠ some '\\n'))\n\ndef ValidOutput (output : String) : Prop :=\n  output.length > 0 ∧\n  output.data[output.length-1]? = some '\\n' ∧\n  (∀ i, 0 ≤ i ∧ i < output.length-1 → (∃ c, output.data[i]? = some c ∧ 'a' ≤ c ∧ c ≤ 'z'))\n\ndef findSpacePos (input : String) : Nat := 0\n\ndef ExtractStrings (input : String) : String × String :=\n  let spacePos := findSpacePos input\n  let s := ⟨input.data.take spacePos⟩\n  let t := if input.data[input.length-1]? = some '\\n' \n           then ⟨(input.data.drop (spacePos+1)).dropLast⟩\n           else ⟨input.data.drop (spacePos+1)⟩\n  (s, t)\n\ndef CorrectConcatenation (input : String) (output : String) : Prop :=\n  let (s, t) := ExtractStrings input\n  output = t ++ s ++ \"\\n\"\n\n@[reducible, simp]\ndef solve_precond (input : String) : Prop :=\n  ValidInput input\n\ndef solve (input : String) (h_precond : solve_precond input) : String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (input : String) (result : String) (h_precond : solve_precond input) : Prop :=\n  ValidOutput result ∧ CorrectConcatenation input result\n\ntheorem solve_spec_satisfied (input : String) (h_precond : solve_precond input) :\n    solve_postcond input (solve input h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (input : String) : Prop :=\n  input.length > 2 ∧\n  (∃ i, 0 < i ∧ i < input.length ∧ input.data[i]? = some ' ') ∧\n  (∀ i, 0 ≤ i ∧ i < input.length → (input.data[i]? = some ' ' ∨ input.data[i]? = some '\\n' ∨ (∃ c, input.data[i]? = some c ∧ 'a' ≤ c ∧ c ≤ 'z'))) ∧\n  (∃ i, 0 < i ∧ i < input.length ∧ input.data[i]? = some ' ' ∧ \n   (∀ j, 0 ≤ j ∧ j < i → input.data[j]? ≠ some ' ' ∧ input.data[j]? ≠ some '\\n') ∧\n   (∀ j, i+1 ≤ j ∧ j < input.length → input.data[j]? ≠ some ' ' ∧ input.data[j]? ≠ some '\\n'))\n\ndef ValidOutput (output : String) : Prop :=\n  output.length > 0 ∧\n  output.data[output.length-1]? = some '\\n' ∧\n  (∀ i, 0 ≤ i ∧ i < output.length-1 → (∃ c, output.data[i]? = some c ∧ 'a' ≤ c ∧ c ≤ 'z'))\n\ndef findSpacePos (input : String) : Nat := 0\n\ndef ExtractStrings (input : String) : String × String :=\n  let spacePos := findSpacePos input\n  let s := ⟨input.data.take spacePos⟩\n  let t := if input.data[input.length-1]? = some '\\n' \n           then ⟨(input.data.drop (spacePos+1)).dropLast⟩\n           else ⟨input.data.drop (spacePos+1)⟩\n  (s, t)\n\ndef CorrectConcatenation (input : String) (output : String) : Prop :=\n  let (s, t) := ExtractStrings input\n  output = t ++ s ++ \"\\n\"\n\n@[reducible, simp]\ndef solve_precond (input : String) : Prop :=\n  ValidInput input",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (input : String) (h_precond : solve_precond input) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (input : String) (result : String) (h_precond : solve_precond input) : Prop :=\n  ValidOutput result ∧ CorrectConcatenation input result",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (input : String) (h_precond : solve_precond input) :\n    solve_postcond input (solve input h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d3ade88fd0a500615cc47dc1e9138460f5809f79886a7693073d0f7a1d1efbd1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "aa58d3cb9c4440692f68a8294b79e9c0015fa68686ad9602c4c1c27cf39265c3"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "22ab09579fb734d2d97ec937057320ab40349d79e0e538356b8e4f6ad3874259",
+   "ctors": [],
+   "value": "9ae66a420f4c2ff9392d5918fde34fbe34377b9a9186367981edef3caea04c28"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "786a1db51943776aa9deb09fe54242a097b01ea390cad93f9121bbffc9e9ccfa",
+   "ctors": [],
+   "value": null
+  },
+  "findSpacePos": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": "820f0aa820d9c49a6c06305d2f6ebd007c2a0d5ae61f00fd1e76bd19cbd71b82"
+  },
+  "ValidOutput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "e49b772b8d5b6363e182569282aac715855db5b64891ab0012f4bada35693b22"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "833462597349fe356a19b3e322379e0bdc5dc00c90160809607f53ac64990fc1"
+  },
+  "ExtractStrings": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0eb15fdf3fcf41b4543759ecade4a4353eea4fc1e731e2d53231258c32f8983b",
+   "ctors": [],
+   "value": "a63f82516bad022284127529d948b777bf5db9457d3a41bdf7e87bb7ddbb7fee"
+  },
+  "CorrectConcatenation": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "486f51109f7ab4ee989b85447347127a3c22659579c11af900a2c5c43d6b4ea7",
+   "ctors": [],
+   "value": "679868f630cf793ef1baba99a8459f8ed8790ee37089b2a48bfcc3c180ee1917"
+  }
+ },
+ "sha": "456836beb48b"
+}

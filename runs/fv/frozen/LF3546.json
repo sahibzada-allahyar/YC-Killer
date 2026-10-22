@@ -1,0 +1,60 @@
+{
+ "id": "LF3546",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_missing_numbers (arr : List Int) : List Int := sorry\n\ntheorem empty_or_single_returns_empty (arr : List Int) : \n  arr.length ≤ 1 → find_missing_numbers arr = [] := sorry\n\ntheorem no_originals_in_result {arr : List Int} (h : arr.Nodup) :\n  ∀ x ∈ find_missing_numbers arr, x ∉ arr := sorry\n\ntheorem result_is_sorted (arr : List Int) :\n  ∀ i j, i < j → \n  i < (find_missing_numbers arr).length →\n  j < (find_missing_numbers arr).length →\n  (find_missing_numbers arr)[i]! ≤ (find_missing_numbers arr)[j]! := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [-1, 0, 2, 3]\n-/\n#guard_msgs in\n#eval find_missing_numbers [-3, -2, 1, 4]\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval find_missing_numbers [-1, 0, 1, 2, 3, 4]\n\n/--\ninfo: [-3, -2, -1, 0, 1, 2, 3]\n-/\n#guard_msgs in\n#eval find_missing_numbers [-4, 4]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [-1, 0, 2, 3]\n-/\n#guard_msgs in\n#eval find_missing_numbers [-3, -2, 1, 4]\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval find_missing_numbers [-1, 0, 1, 2, 3, 4]\n\n/--\ninfo: [-3, -2, -1, 0, 1, 2, 3]\n-/\n#guard_msgs in\n#eval find_missing_numbers [-4, 4]",
+ "chunks": [
+  {
+   "text": "def find_missing_numbers (arr : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_or_single_returns_empty (arr : List Int) : \n  arr.length ≤ 1 → find_missing_numbers arr = [] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem no_originals_in_result {arr : List Int} (h : arr.Nodup) :\n  ∀ x ∈ find_missing_numbers arr, x ∉ arr :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_is_sorted (arr : List Int) :\n  ∀ i j, i < j → \n  i < (find_missing_numbers arr).length →\n  j < (find_missing_numbers arr).length →\n  (find_missing_numbers arr)[i]! ≤ (find_missing_numbers arr)[j]! :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "result_is_sorted": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2f5c147acd4152b5c6a421c90bc9356f8584ff32d7394187e637a00a4dea21a6",
+   "ctors": [],
+   "value": null
+  },
+  "no_originals_in_result": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "87e4c7198796589150349e7191f5ed68d2b617b1221853b0170f087cd4c42529",
+   "ctors": [],
+   "value": null
+  },
+  "find_missing_numbers": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ff8c7dcd009bee99c01691be3ac149aece3fe289c6b9eaccbc0960acfd5422ff",
+   "ctors": [],
+   "value": null
+  },
+  "empty_or_single_returns_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fbaf847ab7f66696623a6f6e3f2de8f17cab7291a01c36222a863f8c1399b9ba",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "fa09d089d323"
+}

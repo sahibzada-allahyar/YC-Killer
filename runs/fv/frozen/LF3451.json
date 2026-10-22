@@ -1,0 +1,60 @@
+{
+ "id": "LF3451",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def gematria (s : String) : Nat :=\n  sorry\n\ntheorem gematria_returns_nat (s : String) :\n  gematria s ≥ 0 :=\n  sorry\n\ntheorem gematria_case_insensitive (s : String) :\n  gematria s = gematria s.toLower ∧\n  gematria s = gematria s.toUpper :=\n  sorry\n\ntheorem gematria_concatenation (s₁ s₂ : String) :\n  gematria (s₁ ++ s₂) = gematria s₁ + gematria s₂ :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 775\n-/\n#guard_msgs in\n#eval gematria \"love\"\n\n/--\ninfo: 716\n-/\n#guard_msgs in\n#eval gematria \"JAELS\"\n\n/--\ninfo: 738\n-/\n#guard_msgs in\n#eval gematria \"Devil\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 775\n-/\n#guard_msgs in\n#eval gematria \"love\"\n\n/--\ninfo: 716\n-/\n#guard_msgs in\n#eval gematria \"JAELS\"\n\n/--\ninfo: 738\n-/\n#guard_msgs in\n#eval gematria \"Devil\"",
+ "chunks": [
+  {
+   "text": "def gematria (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem gematria_returns_nat (s : String) :\n  gematria s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem gematria_case_insensitive (s : String) :\n  gematria s = gematria s.toLower ∧\n  gematria s = gematria s.toUpper :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem gematria_concatenation (s₁ s₂ : String) :\n  gematria (s₁ ++ s₂) = gematria s₁ + gematria s₂ :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "gematria_returns_nat": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "38f3fd30de7845ca409c78ad6f97c3e9478fb978a491e53a26147999ebe9c961",
+   "ctors": [],
+   "value": null
+  },
+  "gematria_concatenation": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4ec0f3b031fca709fc7d9684aaff06934fd2f96ba41e1d728d70843908bf7de6",
+   "ctors": [],
+   "value": null
+  },
+  "gematria_case_insensitive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17cc613a6988521f07c95b3df23e7ae680567f89cbfe78be2c9941e2db8ee1eb",
+   "ctors": [],
+   "value": null
+  },
+  "gematria": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6c4c1f7c0107"
+}

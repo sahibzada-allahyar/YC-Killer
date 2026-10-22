@@ -1,0 +1,82 @@
+{
+ "id": "LF1344",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_cheat_possibilities (a b : Nat) : Int :=\n  sorry\n\ndef countDivisors (n : Nat) : Nat :=\n  sorry\n\ntheorem same_numbers_returns_negative_one\n  {x : Nat} (h : x > 0) (h2 : x ≤ 1000) :\n  solve_cheat_possibilities x x = -1 :=\nsorry\n\ntheorem result_is_symmetric\n  {a b : Nat} (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) :\n  solve_cheat_possibilities a b = solve_cheat_possibilities b a :=\nsorry\n\ntheorem result_is_nonnegative_for_different\n  {a b : Nat} (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) (h5 : a ≠ b) :\n  solve_cheat_possibilities a b ≥ 0 :=\nsorry\n\ntheorem perfect_squares_have_odd_factors\n  {n : Nat} (h1 : n > 0) (h2 : n ≤ 100) :\n  solve_cheat_possibilities 0 (n * n) % 2 = 1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_cheat_possibilities 2 6\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve_cheat_possibilities 5 5\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_cheat_possibilities 10 14\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_cheat_possibilities 2 6\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve_cheat_possibilities 5 5\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_cheat_possibilities 10 14",
+ "chunks": [
+  {
+   "text": "def solve_cheat_possibilities (a b : Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def countDivisors (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem same_numbers_returns_negative_one\n  {x : Nat} (h : x > 0) (h2 : x ≤ 1000) :\n  solve_cheat_possibilities x x = -1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_is_symmetric\n  {a b : Nat} (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) :\n  solve_cheat_possibilities a b = solve_cheat_possibilities b a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_is_nonnegative_for_different\n  {a b : Nat} (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) (h5 : a ≠ b) :\n  solve_cheat_possibilities a b ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem perfect_squares_have_odd_factors\n  {n : Nat} (h1 : n > 0) (h2 : n ≤ 100) :\n  solve_cheat_possibilities 0 (n * n) % 2 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_cheat_possibilities": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7ab8380d4662fddba2227a81e2fb9c700cae7088c8dbd571810fcbdb4b50ae92",
+   "ctors": [],
+   "value": null
+  },
+  "same_numbers_returns_negative_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e4046026bd708651d87cf4bb680550613b389d4000c4bb81f337ba743c0a3eb4",
+   "ctors": [],
+   "value": null
+  },
+  "result_is_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6f60755d34d0a9d8d90a874b36266d51a8818a7b6263e95db45eac564441b9f2",
+   "ctors": [],
+   "value": null
+  },
+  "result_is_nonnegative_for_different": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ba5cfddcd8f1da2f9b8745071fe7dab28124c8087a77570bb596594839948ddc",
+   "ctors": [],
+   "value": null
+  },
+  "perfect_squares_have_odd_factors": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "519dd403ad819c45e8ee71fafed7738b53548566949bf4ed74f1431f93c274bc",
+   "ctors": [],
+   "value": null
+  },
+  "countDivisors": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6f02061e7e75"
+}

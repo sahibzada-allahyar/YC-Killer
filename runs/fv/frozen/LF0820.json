@@ -1,0 +1,49 @@
+{
+ "id": "LF0820",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def MOD := 1000000007\n\ndef solve_yalalovichik (s : String) : Nat := sorry\n\ntheorem single_digit_identity (c : Char) (h : c.isDigit) :\n  solve_yalalovichik (String.mk [c]) = c.toNat - '0'.toNat := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 123231312\n-/\n#guard_msgs in\n#eval solve_yalalovichik \"123\"\n\n/--\ninfo: 3443\n-/\n#guard_msgs in\n#eval solve_yalalovichik \"34\"\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve_yalalovichik \"9\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 123231312\n-/\n#guard_msgs in\n#eval solve_yalalovichik \"123\"\n\n/--\ninfo: 3443\n-/\n#guard_msgs in\n#eval solve_yalalovichik \"34\"\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve_yalalovichik \"9\"",
+ "chunks": [
+  {
+   "text": "def MOD := 1000000007",
+   "hole_after": false
+  },
+  {
+   "text": "def solve_yalalovichik (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_digit_identity (c : Char) (h : c.isDigit) :\n  solve_yalalovichik (String.mk [c]) = c.toNat - '0'.toNat :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_yalalovichik": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "single_digit_identity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6e9959bdc8d0c83053b497f3f87950a8532052d307039743b705c8ba9872a87b",
+   "ctors": [],
+   "value": null
+  },
+  "MOD": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "76bb31d53adfdb40dd9a8aadd10cd539ce35d9911ea2ef640f0705e32842fc2b"
+  }
+ },
+ "sha": "0055099ba77b"
+}

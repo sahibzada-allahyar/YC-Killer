@@ -1,0 +1,71 @@
+{
+ "id": "LF4401",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def score (n : Nat) : Nat := sorry\n\ntheorem score_non_negative (n : Nat) : score n ≥ 0 := sorry\n\ntheorem score_monotonic (n : Nat) : \n  n > 0 → score n ≥ score (n-1) := sorry\n\ntheorem score_bit_properties (n : Nat) :\n  n > 0 → score n = 2^(Nat.log2 (score n) + 1) - 1 := sorry\n\ntheorem score_zero : score 0 = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval score 0\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval score 1\n\n/--\ninfo: 63\n-/\n#guard_msgs in\n#eval score 49\n\n/--\ninfo: 1048575\n-/\n#guard_msgs in\n#eval score 1000000\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval score 0\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval score 1\n\n/--\ninfo: 63\n-/\n#guard_msgs in\n#eval score 49\n\n/--\ninfo: 1048575\n-/\n#guard_msgs in\n#eval score 1000000",
+ "chunks": [
+  {
+   "text": "def score (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem score_non_negative (n : Nat) : score n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem score_monotonic (n : Nat) : \n  n > 0 → score n ≥ score (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem score_bit_properties (n : Nat) :\n  n > 0 → score n = 2^(Nat.log2 (score n) + 1) - 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem score_zero : score 0 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "score_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "abe30a76547a6d30761e6fbac1b8817847f8f44bad88faa7effa5647ff4d3ac8",
+   "ctors": [],
+   "value": null
+  },
+  "score_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9e4a99255241a2a31e172ae5aafabd1bb09c260b135138d1c9c0d95dcd2862b7",
+   "ctors": [],
+   "value": null
+  },
+  "score_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cf9aa9d7cf66499be02e748417cf2e9825c3710d6967d1a403fd0ca0979c4bcc",
+   "ctors": [],
+   "value": null
+  },
+  "score_bit_properties": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d944238ca42fdd1fa7299caf47f2754480b877d639117f5820237ab4e3165c5f",
+   "ctors": [],
+   "value": null
+  },
+  "score": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1b9666c365d2"
+}

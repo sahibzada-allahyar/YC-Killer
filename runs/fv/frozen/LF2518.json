@@ -1,0 +1,38 @@
+{
+ "id": "LF2518",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def is_valid_regex (s : String) : Bool := sorry \n\ntheorem any_string_input_returns_bool (s : String) :\n  (is_valid_regex s = true) ∨ (is_valid_regex s = false) :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def is_valid_regex (s : String) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem any_string_input_returns_bool (s : String) :\n  (is_valid_regex s = true) ∨ (is_valid_regex s = false) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "is_valid_regex": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": null
+  },
+  "any_string_input_returns_bool": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a77da8ba7165e0c391fcf8b8b4ef063fd2b71d8aa5bcd742b39955a288b6675a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a8c89763935f"
+}

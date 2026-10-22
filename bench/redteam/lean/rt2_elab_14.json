@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "Two-layer reducible aliasing of BOTH class and type (abbrev R1:=Repr; abbrev R2:=R1; abbrev M1:=Nat; abbrev M2:=M1; instance : R2 M2) to stress the round-1 whnf fix. classAnchors whnfs at .all so R2 M2 reduces to Repr Nat and anchors are empty -> correctly CHEAT_REJECTED. Wrong impl prints speeds.length faked 3,5->2."
+}

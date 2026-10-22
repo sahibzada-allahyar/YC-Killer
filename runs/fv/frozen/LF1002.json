@@ -1,0 +1,60 @@
+{
+ "id": "LF1002",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def abs (n : Int) : Int := sorry\ndef min_change_to_equal_leaves (target : Int) (leaf_values : List Int) : Int := sorry\n\ntheorem min_change_empty_list {target : Int} (h : target ≥ 0) :\n  min_change_to_equal_leaves target [] = 0 := sorry\n\ntheorem min_change_single_leaf {target : Int} (h : target ≥ 0) :\n  min_change_to_equal_leaves target [target] = 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval min_change_to_equal_leaves 30 [26, 26, 36, 26]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_change_to_equal_leaves 10 [10, 10, 10]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_change_to_equal_leaves 6 [4, 8]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval min_change_to_equal_leaves 30 [26, 26, 36, 26]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_change_to_equal_leaves 10 [10, 10, 10]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_change_to_equal_leaves 6 [4, 8]",
+ "chunks": [
+  {
+   "text": "def abs (n : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def min_change_to_equal_leaves (target : Int) (leaf_values : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_change_empty_list {target : Int} (h : target ≥ 0) :\n  min_change_to_equal_leaves target [] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_change_single_leaf {target : Int} (h : target ≥ 0) :\n  min_change_to_equal_leaves target [target] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_change_to_equal_leaves": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b86af2d7ea0bf44d5811ff1784e2126124a3b61101cf199dba050ca87621041c",
+   "ctors": [],
+   "value": null
+  },
+  "min_change_single_leaf": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6fad3b452bced786a034d2d8cb026385286e13f2817a8eb7186dd19c2f719a19",
+   "ctors": [],
+   "value": null
+  },
+  "min_change_empty_list": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2bd1b476c4c3731ba0a3103c4a713f86a96c27ca5371b741f2ffbcd694f3cabe",
+   "ctors": [],
+   "value": null
+  },
+  "abs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2840914a871a"
+}

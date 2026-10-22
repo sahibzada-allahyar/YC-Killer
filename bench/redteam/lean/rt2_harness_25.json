@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "what": "over-rejection probe: an UNRELATED `namespace Shadow` helper named `findSum_six : True` plus the real frozen `findSum_six`. The namespaced helper has a different full name, the real theorem is honestly proven and fingerprinted -> PROVED (correct; confirms a same-short-name helper is not over-rejected)."}

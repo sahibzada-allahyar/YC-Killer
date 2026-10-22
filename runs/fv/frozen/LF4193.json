@@ -1,0 +1,82 @@
+{
+ "id": "LF4193",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def expression_matter (a b c : Nat) : Nat := sorry\n\ntheorem result_greater_than_inputs (a b c : Nat) \n  (h₁ : 1 ≤ a ∧ a ≤ 10) \n  (h₂ : 1 ≤ b ∧ b ≤ 10)\n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≥ max a (max b c) := sorry\n\ntheorem result_greater_than_sum (a b c : Nat)\n  (h₁ : 1 ≤ a ∧ a ≤ 10)\n  (h₂ : 1 ≤ b ∧ b ≤ 10) \n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≥ a + b + c := sorry\n\ntheorem result_greater_than_min_products (a b c : Nat)\n  (h₁ : 1 ≤ a ∧ a ≤ 10)\n  (h₂ : 1 ≤ b ∧ b ≤ 10)\n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≥ min (a*b*c) (min ((a+b)*c) (a*(b+c))) := sorry\n\ntheorem result_bounded_above (a b c : Nat)\n  (h₁ : 1 ≤ a ∧ a ≤ 10)\n  (h₂ : 1 ≤ b ∧ b ≤ 10)\n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≤ max (a*b*c) (max (a+b+c) (max ((a+b)*c) (a*(b+c)))) := sorry\n\ntheorem result_equal_inputs (x : Nat)\n  (h : 1 ≤ x ∧ x ≤ 10) :\n  expression_matter x x x = max (x*x*x) (max (3*x) (2*x*x)) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval expression_matter 1 2 3\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval expression_matter 1 1 1\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval expression_matter 9 1 1\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval expression_matter 1 2 3\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval expression_matter 1 1 1\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval expression_matter 9 1 1",
+ "chunks": [
+  {
+   "text": "def expression_matter (a b c : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_greater_than_inputs (a b c : Nat) \n  (h₁ : 1 ≤ a ∧ a ≤ 10) \n  (h₂ : 1 ≤ b ∧ b ≤ 10)\n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≥ max a (max b c) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_greater_than_sum (a b c : Nat)\n  (h₁ : 1 ≤ a ∧ a ≤ 10)\n  (h₂ : 1 ≤ b ∧ b ≤ 10) \n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≥ a + b + c :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_greater_than_min_products (a b c : Nat)\n  (h₁ : 1 ≤ a ∧ a ≤ 10)\n  (h₂ : 1 ≤ b ∧ b ≤ 10)\n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≥ min (a*b*c) (min ((a+b)*c) (a*(b+c))) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_bounded_above (a b c : Nat)\n  (h₁ : 1 ≤ a ∧ a ≤ 10)\n  (h₂ : 1 ≤ b ∧ b ≤ 10)\n  (h₃ : 1 ≤ c ∧ c ≤ 10) :\n  expression_matter a b c ≤ max (a*b*c) (max (a+b+c) (max ((a+b)*c) (a*(b+c)))) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_equal_inputs (x : Nat)\n  (h : 1 ≤ x ∧ x ≤ 10) :\n  expression_matter x x x = max (x*x*x) (max (3*x) (2*x*x)) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "result_greater_than_sum": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bf558ee7ad337c0beaa50f10d7be3a4214aee8bfa312a83d68d8e531495de52f",
+   "ctors": [],
+   "value": null
+  },
+  "result_greater_than_min_products": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "de0b968aa56e58bec0ec503b229b0e28268c003e26a619a548c6c053c623ff7b",
+   "ctors": [],
+   "value": null
+  },
+  "result_greater_than_inputs": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c0c616aadd07b3adc447a48f0bf61ff0aae48aa76a5623edb69737f324787c68",
+   "ctors": [],
+   "value": null
+  },
+  "result_equal_inputs": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2474f22d976f5e1b724b9e12712f7aa41b7e753d83ff76ec103b723ed015f205",
+   "ctors": [],
+   "value": null
+  },
+  "result_bounded_above": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8885cd6cdd4f2ded06110d502d9b4626ddc413847d5d78113b9efe699247da8c",
+   "ctors": [],
+   "value": null
+  },
+  "expression_matter": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "94d588796263"
+}

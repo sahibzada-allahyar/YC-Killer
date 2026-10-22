@@ -1,0 +1,71 @@
+{
+ "id": "LF2701",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_adjacent_pairs (s : String) : Nat :=\n  sorry\n\ntheorem count_adjacent_pairs_nonnegative (s : String) :\n  count_adjacent_pairs s ≥ 0 :=\n  sorry\n\ntheorem count_adjacent_pairs_max_bound (words : List String) :\n  count_adjacent_pairs (String.join (List.intersperse \" \" words)) ≤ words.length / 2 :=\n  sorry\n\ntheorem count_adjacent_pairs_empty_or_single (words : List String) :\n  words.length ≤ 1 → count_adjacent_pairs (String.join (List.intersperse \" \" words)) = 0 :=\n  sorry\n\ntheorem count_adjacent_pairs_case_insensitive (s : String) :\n  count_adjacent_pairs s = count_adjacent_pairs (s.toUpper) ∧\n  count_adjacent_pairs s = count_adjacent_pairs (s.toLower) :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_adjacent_pairs \"\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_adjacent_pairs \"dog DOG cat\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_adjacent_pairs \"cat cat dog dog cat cat\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_adjacent_pairs \"\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_adjacent_pairs \"dog DOG cat\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_adjacent_pairs \"cat cat dog dog cat cat\"",
+ "chunks": [
+  {
+   "text": "def count_adjacent_pairs (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_adjacent_pairs_nonnegative (s : String) :\n  count_adjacent_pairs s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_adjacent_pairs_max_bound (words : List String) :\n  count_adjacent_pairs (String.join (List.intersperse \" \" words)) ≤ words.length / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_adjacent_pairs_empty_or_single (words : List String) :\n  words.length ≤ 1 → count_adjacent_pairs (String.join (List.intersperse \" \" words)) = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_adjacent_pairs_case_insensitive (s : String) :\n  count_adjacent_pairs s = count_adjacent_pairs (s.toUpper) ∧\n  count_adjacent_pairs s = count_adjacent_pairs (s.toLower) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_adjacent_pairs_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1b93018033971c41db4b1b8539d7f50814996cc6b42ae0aa17d4bbaf2cd166be",
+   "ctors": [],
+   "value": null
+  },
+  "count_adjacent_pairs_max_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e7b5f90ac1ca328dbf653ad7fe2dc54acc90b4b43cd8281ae853039499d7b704",
+   "ctors": [],
+   "value": null
+  },
+  "count_adjacent_pairs_empty_or_single": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "eb1194f1a86fb421c155692948f5cd1e884eae389b80db1ca07e5fb1a33bae5a",
+   "ctors": [],
+   "value": null
+  },
+  "count_adjacent_pairs_case_insensitive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3485ce5f5cc61730293d94046c90a812ae2fb5cb9fe9be03aa2834005f60e35a",
+   "ctors": [],
+   "value": null
+  },
+  "count_adjacent_pairs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "c70203fcc940"
+}

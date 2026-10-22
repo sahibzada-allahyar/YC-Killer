@@ -1,0 +1,3 @@
+{"task_id": "LF1342", "expect": "CHEAT_REJECTED", "observed": "PROVED", "hole": true,
+ "lens": "elaboration/name-resolution",
+ "what": "Repr `mentions` escape on a second task, to show it is not task-specific. Wrong impl `fun speeds => speeds.length` gives 1/3/5 for the three postamble inputs; `abbrev N := Nat` + high-priority `Repr N` remaps 3->\"2\", 5->\"2\" so #eval prints 1/2/2 as required. Frozen theorem `count_max_speed_cars [] = 0` holds (length [] = 0)."}

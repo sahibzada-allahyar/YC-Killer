@@ -1,0 +1,82 @@
+{
+ "id": "LF2257",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_bad_prices (prices : List Int) : Nat := sorry\n\ntheorem count_bad_prices_non_negative (prices : List Int) :\n  count_bad_prices prices ≥ 0 := sorry\n\ntheorem count_bad_prices_upper_bound (prices : List Int) : \n  count_bad_prices prices ≤ prices.length := sorry\n\ntheorem count_bad_prices_singleton (price : Int) :\n  count_bad_prices [price] = 0 := sorry\n\ntheorem count_bad_prices_empty :\n  count_bad_prices [] = 0 := sorry\n\ntheorem count_bad_prices_all_same (n : Nat) (x : Int) :\n  count_bad_prices (List.replicate n x) = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_bad_prices [3, 9, 4, 6, 7, 5]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_bad_prices [1000000]\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval count_bad_prices [31, 41, 59, 26, 53, 58, 97, 93, 23, 84]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_bad_prices [3, 9, 4, 6, 7, 5]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_bad_prices [1000000]\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval count_bad_prices [31, 41, 59, 26, 53, 58, 97, 93, 23, 84]",
+ "chunks": [
+  {
+   "text": "def count_bad_prices (prices : List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_bad_prices_non_negative (prices : List Int) :\n  count_bad_prices prices ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_bad_prices_upper_bound (prices : List Int) : \n  count_bad_prices prices ≤ prices.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_bad_prices_singleton (price : Int) :\n  count_bad_prices [price] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_bad_prices_empty :\n  count_bad_prices [] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_bad_prices_all_same (n : Nat) (x : Int) :\n  count_bad_prices (List.replicate n x) = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_bad_prices_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d7f38ad31e3aeeae061f338259ceb762e3ef329380625962811bcc7ec583055c",
+   "ctors": [],
+   "value": null
+  },
+  "count_bad_prices_singleton": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "82ccda8817b03e471b812546431b51726ca44ea5b014b39d2f21300a80582d29",
+   "ctors": [],
+   "value": null
+  },
+  "count_bad_prices_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "90270cf60a351754cc3a36e3d13ab939d7f531823121c822a26fb3a70095cc30",
+   "ctors": [],
+   "value": null
+  },
+  "count_bad_prices_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "216585569d3aecd91429ef7f1002f7b395b2567f35ac34aa07c8147c8aaf705d",
+   "ctors": [],
+   "value": null
+  },
+  "count_bad_prices_all_same": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f4df90274a058f80b43f00175bc109653721c10cb95c308669565d2cf9496ef8",
+   "ctors": [],
+   "value": null
+  },
+  "count_bad_prices": {
+   "kind": "def",
+   "role": "impl",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "5aa003639501"
+}

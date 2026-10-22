@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "hole": false, "what": "benign-command probe (LF3680 has an empty preamble, so there is no start-anchor to violate): a bare `set_option maxRecDepth 4000` at the top is a legitimate, non-banned hole command and the impl is honest -> correctly PROVED. Not a hole and not a false rejection."}

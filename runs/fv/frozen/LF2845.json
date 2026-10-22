@@ -1,0 +1,93 @@
+{
+ "id": "LF2845",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def poly_add (p1 p2 : List Int) : List Int := sorry\n\ntheorem poly_add_length (p1 p2 : List Int) :\n  (poly_add p1 p2).length = max p1.length p2.length := sorry\n\ntheorem poly_add_empty_left (p : List Int) :\n  poly_add [] p = p := sorry\n\ntheorem poly_add_empty_right (p : List Int) :\n  poly_add p [] = p := sorry\n\ntheorem poly_add_comm (p1 p2 : List Int) :\n  poly_add p1 p2 = poly_add p2 p1 := sorry\n\ntheorem poly_add_coeff (p1 p2 : List Int) (i : Nat) (h1 : i < p1.length) (h2 : i < p2.length) \n  (h3 : i < (poly_add p1 p2).length) :\n  (poly_add p1 p2)[i] = p1[i] + p2[i] := sorry\n\ntheorem poly_add_zeros (p : List Int) :\n  poly_add p (List.replicate p.length 0) = p := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [2]\n-/\n#guard_msgs in\n#eval poly_add [1] [1]\n\n/--\ninfo: [2, 2]\n-/\n#guard_msgs in\n#eval poly_add [1, 2] [1]\n\n/--\ninfo: [5, 5, 5, 5]\n-/\n#guard_msgs in\n#eval poly_add [1, 2, 3, 4] [4, 3, 2, 1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [2]\n-/\n#guard_msgs in\n#eval poly_add [1] [1]\n\n/--\ninfo: [2, 2]\n-/\n#guard_msgs in\n#eval poly_add [1, 2] [1]\n\n/--\ninfo: [5, 5, 5, 5]\n-/\n#guard_msgs in\n#eval poly_add [1, 2, 3, 4] [4, 3, 2, 1]",
+ "chunks": [
+  {
+   "text": "def poly_add (p1 p2 : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_add_length (p1 p2 : List Int) :\n  (poly_add p1 p2).length = max p1.length p2.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_add_empty_left (p : List Int) :\n  poly_add [] p = p :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_add_empty_right (p : List Int) :\n  poly_add p [] = p :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_add_comm (p1 p2 : List Int) :\n  poly_add p1 p2 = poly_add p2 p1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_add_coeff (p1 p2 : List Int) (i : Nat) (h1 : i < p1.length) (h2 : i < p2.length) \n  (h3 : i < (poly_add p1 p2).length) :\n  (poly_add p1 p2)[i] = p1[i] + p2[i] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_add_zeros (p : List Int) :\n  poly_add p (List.replicate p.length 0) = p :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "poly_add_zeros": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f6ceedb049b7636bb351147615b7c6debf1c64f4c632b29174e2a03280538355",
+   "ctors": [],
+   "value": null
+  },
+  "poly_add_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "72d3c25e0e2c9f038f43fe48ef8ea2a31a25d8139b87de595c4a6589c2629fd0",
+   "ctors": [],
+   "value": null
+  },
+  "poly_add_empty_right": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1c3e9ff7bee39ce3046788de475a07357f4788d23c85876d78de57b67f3adbaa",
+   "ctors": [],
+   "value": null
+  },
+  "poly_add_empty_left": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ea5ddae46fca3f9175674c1714f49d6cba3e2390c2bee23b0b5973c4cbd1a7d6",
+   "ctors": [],
+   "value": null
+  },
+  "poly_add_comm": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "63b177f8b52040db5935bb97c9a0122c9f015dc3d147cf5a763d9c1b06689fa0",
+   "ctors": [],
+   "value": null
+  },
+  "poly_add_coeff": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f789eedb796aa0fbc7dcf7319ef5c4e4a3803da6b09ff8e4ac2ee861cbd0790a",
+   "ctors": [],
+   "value": null
+  },
+  "poly_add": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d0c021bd5e78f55d0ae19aa14e0347eabf22c9e4ffc790e7f336d28a05bcb5b0",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a99cd33b8830"
+}

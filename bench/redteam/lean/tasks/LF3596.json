@@ -1,0 +1,12 @@
+{
+ "id": "LF3596",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_003596",
+ "vc-description": "/-\nYou've just recently been hired to calculate scores for a  Dart Board game!\n\nScoring specifications:\n\n* 0 points - radius above 10\n* 5 points - radius between 5 and 10 inclusive\n* 10 points - radius less than 5\n\n**If all radii are less than 5, award 100 BONUS POINTS!**\n\nWrite a function that accepts an array of radii (can be integers and/or floats), and returns a total score using the above specification.\n\nAn empty array should return 0.\n\n## Examples:\n-/",
+ "vc-preamble": "def throw_points (r : Float) : Nat :=\n  if r < 5 then 10\n  else if r ≤ 10 then 5\n  else 0\n\ndef bonus_points (radiuses : List Float) : Nat :=\n  match radiuses with\n  | [] => 0\n  | xs => if (∀ r ∈ xs, r < 5) then 100 else 0",
+ "vc-helpers": "",
+ "vc-definitions": "def score_throws (radiuses : List Float) : Nat :=\nsorry",
+ "vc-theorems": "theorem score_throws_empty :\n  score_throws [] = 0 :=\nsorry",
+ "vc-postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval score_throws [1, 5, 11]\n\n/--\ninfo: 140\n-/\n#guard_msgs in\n#eval score_throws [1, 2, 3, 4]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval score_throws []"
+}

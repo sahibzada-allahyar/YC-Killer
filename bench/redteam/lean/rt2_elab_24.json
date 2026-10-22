@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "UNPROVED",
+ "observed": "UNPROVED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "ToString Nat hijack. #eval of a Nat dispatches display through Repr, not ToString, so the real values 1,3,5 print and #guard_msgs fails -> UNPROVED (inert, like round-1 rt2_elab_9 for Int). ToString is in POSTAMBLE_CLASSES anyway."
+}

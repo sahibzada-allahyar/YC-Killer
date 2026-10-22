@@ -1,0 +1,56 @@
+{
+ "id": "LF0748",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum (xs : List Nat) : Nat :=\n  xs.foldl (· + ·) 0\n\ndef find_min_event_time (n : Nat) (times : List (List Nat)) : Nat := sorry\n\ntheorem min_event_time_single (times : List (List Nat))\n  (h1 : times = [[1,1,1]]) :\n  find_min_event_time 1 times = 3 :=\nsorry\n\ntheorem min_event_time_equal (times : List (List Nat))\n  (h1 : times = [[5,5,5], [5,5,5]]) :\n  find_min_event_time 2 times = 20 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 74\n-/\n#guard_msgs in\n#eval find_min_event_time 3 [[18, 7, 6], [23, 10, 27], [20, 9, 14]]\n\n/--\ninfo: 11\n-/\n#guard_msgs in\n#eval find_min_event_time 2 [[5, 2, 1], [3, 2, 1]]\n\n/--\ninfo: 20\n-/\n#guard_msgs in\n#eval find_min_event_time 1 [[10, 5, 5]]\n",
+ "warnings": [],
+ "preamble": "def sum (xs : List Nat) : Nat :=\n  xs.foldl (· + ·) 0",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 74\n-/\n#guard_msgs in\n#eval find_min_event_time 3 [[18, 7, 6], [23, 10, 27], [20, 9, 14]]\n\n/--\ninfo: 11\n-/\n#guard_msgs in\n#eval find_min_event_time 2 [[5, 2, 1], [3, 2, 1]]\n\n/--\ninfo: 20\n-/\n#guard_msgs in\n#eval find_min_event_time 1 [[10, 5, 5]]",
+ "chunks": [
+  {
+   "text": "def find_min_event_time (n : Nat) (times : List (List Nat)) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_event_time_single (times : List (List Nat))\n  (h1 : times = [[1,1,1]]) :\n  find_min_event_time 1 times = 3 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_event_time_equal (times : List (List Nat))\n  (h1 : times = [[5,5,5], [5,5,5]]) :\n  find_min_event_time 2 times = 20 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "2ad819a10f5fb6b5214d96a8ef96ace908bc6b642346ffaff9e8cdf0c1fc038c"
+  },
+  "min_event_time_single": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "565dc8f95280240e08c75a29fff658e95d28d798cc4a7e0b3525dfa4311513b5",
+   "ctors": [],
+   "value": null
+  },
+  "min_event_time_equal": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c30a9ef643ec0aed7818050048bb5d9efe8bf30c7cb8a2e04777624270bed434",
+   "ctors": [],
+   "value": null
+  },
+  "find_min_event_time": {
+   "kind": "def",
+   "role": "impl",
+   "type": "549d49ea9dae548ce717c1e71e506e9fae34b67a0ddf036cb0cbc130567d3991",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "19121ce25d5b"
+}

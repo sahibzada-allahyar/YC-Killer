@@ -1,0 +1,38 @@
+{
+ "id": "LF4298",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_next_power (val : Nat) (pow : Nat) : Nat := sorry\n\ntheorem find_next_power_greater \n  (val : Nat) (pow : Nat)\n  (h1 : val ≥ 1) (h2 : pow ≥ 2) (h3 : pow ≤ 8) :\n  find_next_power val pow > val := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 13824\n-/\n#guard_msgs in\n#eval find_next_power 12385 3\n\n/--\ninfo: 1419857\n-/\n#guard_msgs in\n#eval find_next_power 1245678 5\n\n/--\ninfo: 1771561\n-/\n#guard_msgs in\n#eval find_next_power 1245678 6\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 13824\n-/\n#guard_msgs in\n#eval find_next_power 12385 3\n\n/--\ninfo: 1419857\n-/\n#guard_msgs in\n#eval find_next_power 1245678 5\n\n/--\ninfo: 1771561\n-/\n#guard_msgs in\n#eval find_next_power 1245678 6",
+ "chunks": [
+  {
+   "text": "def find_next_power (val : Nat) (pow : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_next_power_greater \n  (val : Nat) (pow : Nat)\n  (h1 : val ≥ 1) (h2 : pow ≥ 2) (h3 : pow ≤ 8) :\n  find_next_power val pow > val :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "find_next_power_greater": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cd8af0b7a3a905ee52adbd13b4f1092f50296decfd5c1f1d181039f27e331293",
+   "ctors": [],
+   "value": null
+  },
+  "find_next_power": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "813ae299ed26"
+}

@@ -1,0 +1,82 @@
+{
+ "id": "LF4333",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def over_the_road (address n : Nat) : Nat :=\n  sorry\n\ntheorem over_the_road_in_range (address n : Nat) :\n  address > 0 → address ≤ 2*n → \n  1 ≤ over_the_road address n ∧ over_the_road address n ≤ 2*n :=\n  sorry\n\ntheorem over_the_road_involution (address n : Nat) :\n  address > 0 → address ≤ 2*n →\n  over_the_road (over_the_road address n) n = address :=\n  sorry \n\ntheorem over_the_road_sum (address n : Nat) :\n  address > 0 → address ≤ 2*n →\n  address + over_the_road address n = 2*n + 1 :=\n  sorry\n\ntheorem over_the_road_parity (address n : Nat) :\n  address > 0 → address ≤ 2*n →\n  (address % 2 = 0 ↔ over_the_road address n % 2 = 1) :=\n  sorry\n\ntheorem over_the_road_examples :\n  over_the_road 1 3 = 6 ∧ \n  over_the_road 3 3 = 4 ∧ \n  over_the_road 2 3 = 5 :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval over_the_road 1 3\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval over_the_road 3 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval over_the_road 2 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval over_the_road 1 3\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval over_the_road 3 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval over_the_road 2 3",
+ "chunks": [
+  {
+   "text": "def over_the_road (address n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem over_the_road_in_range (address n : Nat) :\n  address > 0 → address ≤ 2*n → \n  1 ≤ over_the_road address n ∧ over_the_road address n ≤ 2*n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem over_the_road_involution (address n : Nat) :\n  address > 0 → address ≤ 2*n →\n  over_the_road (over_the_road address n) n = address :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem over_the_road_sum (address n : Nat) :\n  address > 0 → address ≤ 2*n →\n  address + over_the_road address n = 2*n + 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem over_the_road_parity (address n : Nat) :\n  address > 0 → address ≤ 2*n →\n  (address % 2 = 0 ↔ over_the_road address n % 2 = 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem over_the_road_examples :\n  over_the_road 1 3 = 6 ∧ \n  over_the_road 3 3 = 4 ∧ \n  over_the_road 2 3 = 5 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "over_the_road_sum": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "860d7058ed683cacc7e90791a09f7e1bb68aca979d781b5254a2cb656aa3e6dd",
+   "ctors": [],
+   "value": null
+  },
+  "over_the_road_parity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c9b385078d400fa14603ace36c7a3f1b2a7ddded30bcaf1b05c81302e9e83189",
+   "ctors": [],
+   "value": null
+  },
+  "over_the_road_involution": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5651a4fccf838d8739ffbb6571046f23a15eb8afb169756892ca5b9089b14db7",
+   "ctors": [],
+   "value": null
+  },
+  "over_the_road_in_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b412fef0e4b7115de77a112a7762b1fe4228779b028cf58ead876fec6c0c2ff1",
+   "ctors": [],
+   "value": null
+  },
+  "over_the_road_examples": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f33695fd77d380e693c3c3ea7557ef30035c3f43ac327e4071fcf77d5846a48b",
+   "ctors": [],
+   "value": null
+  },
+  "over_the_road": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "20154f1f6b82"
+}

@@ -1,0 +1,40 @@
+{
+ "id": "LT0617",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do\n\ndef isdecimal {n : Nat} (a : Vector String n) : Id (Vector Bool n) :=\n  sorry\n\ntheorem isdecimal_spec {n : Nat} (a : Vector String n) :\n    ⦃⌜True⌝⦄\n    isdecimal a\n    ⦃⇓result => ⌜∀ i : Fin n, \n        (result.get i = true ↔ \n            ((a.get i).length > 0 ∧ \n             ∀ c : Char, c ∈ (a.get i).toList → c.isDigit = true)) ∧\n        -- Empty string property: empty strings always return false\n        (a.get i = \"\" → result.get i = false)⌝⦄ := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def isdecimal {n : Nat} (a : Vector String n) : Id (Vector Bool n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem isdecimal_spec {n : Nat} (a : Vector String n) :\n    ⦃⌜True⌝⦄\n    isdecimal a\n    ⦃⇓result => ⌜∀ i : Fin n, \n        (result.get i = true ↔ \n            ((a.get i).length > 0 ∧ \n             ∀ c : Char, c ∈ (a.get i).toList → c.isDigit = true)) ∧\n        -- Empty string property: empty strings always return false\n        (a.get i = \"\" → result.get i = false)⌝⦄ := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init",
+  "Std.Do.Triple",
+  "Std.Tactic.Do"
+ ],
+ "constants": {
+  "isdecimal_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4db723e27d49d2d8a612ed8bcee0e4069a8f16faa4a9b40c746d271c9da3e41a",
+   "ctors": [],
+   "value": null
+  },
+  "isdecimal": {
+   "kind": "def",
+   "role": "impl",
+   "type": "bb3b009c71c294bd42ad0626087b9263837e22fc4e8675931373e009b888b514",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "96ce3076416f"
+}

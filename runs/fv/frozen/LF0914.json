@@ -1,0 +1,82 @@
+{
+ "id": "LF0914",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_even_sum_pairs (a b : Nat) : Nat :=\n  sorry\n\ntheorem count_even_sum_pairs_positive (a b : Nat) \n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) : \n  count_even_sum_pairs a b ≥ 0 :=\nsorry\n\ntheorem count_even_sum_pairs_symmetric (a b : Nat)\n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) :\n  count_even_sum_pairs a b = count_even_sum_pairs b a :=\nsorry\n\ntheorem count_even_sum_pairs_same_input (n : Nat)\n  (h1 : n > 0) (h2 : n ≤ 1000) :\n  count_even_sum_pairs n n ≥ n / 2 :=\nsorry\n\ntheorem count_even_sum_pairs_small_inputs :\n  count_even_sum_pairs 1 1 = 1 ∧ \n  count_even_sum_pairs 1 2 = 1 ∧ \n  count_even_sum_pairs 2 2 = 2 :=\nsorry\n\ntheorem count_even_sum_pairs_bounds (a b : Nat)\n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) :\n  count_even_sum_pairs a b ≤ a * b :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_even_sum_pairs 1 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_even_sum_pairs 2 3\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval count_even_sum_pairs 4 6\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_even_sum_pairs 1 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_even_sum_pairs 2 3\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval count_even_sum_pairs 4 6",
+ "chunks": [
+  {
+   "text": "def count_even_sum_pairs (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_even_sum_pairs_positive (a b : Nat) \n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) : \n  count_even_sum_pairs a b ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_even_sum_pairs_symmetric (a b : Nat)\n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) :\n  count_even_sum_pairs a b = count_even_sum_pairs b a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_even_sum_pairs_same_input (n : Nat)\n  (h1 : n > 0) (h2 : n ≤ 1000) :\n  count_even_sum_pairs n n ≥ n / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_even_sum_pairs_small_inputs :\n  count_even_sum_pairs 1 1 = 1 ∧ \n  count_even_sum_pairs 1 2 = 1 ∧ \n  count_even_sum_pairs 2 2 = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_even_sum_pairs_bounds (a b : Nat)\n  (h1 : a > 0) (h2 : b > 0) (h3 : a ≤ 1000) (h4 : b ≤ 1000) :\n  count_even_sum_pairs a b ≤ a * b :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_even_sum_pairs_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "342c3fc9f43c12caf95b140e6d676d0b172dd930335759b34dc65d0cd4c3aefd",
+   "ctors": [],
+   "value": null
+  },
+  "count_even_sum_pairs_small_inputs": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "742e063ebed6d783a7bc53458c5f79d32da0d5d24e7498fe27ff4932e138f958",
+   "ctors": [],
+   "value": null
+  },
+  "count_even_sum_pairs_same_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9c597c067037fb733a3a3a41e9e02a4e2650c1da71fe098f03439227fbcb114c",
+   "ctors": [],
+   "value": null
+  },
+  "count_even_sum_pairs_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c23c4579bf33fdce13997e14e38a2773c2e8e458621392e317caf4524abd100b",
+   "ctors": [],
+   "value": null
+  },
+  "count_even_sum_pairs_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8ecc96a85f2cb946d98c9742366b6f7e60482280bec701edabadbb8ace1fd496",
+   "ctors": [],
+   "value": null
+  },
+  "count_even_sum_pairs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "cd621d4dc8a3"
+}

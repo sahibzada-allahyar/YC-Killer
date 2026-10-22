@@ -1,0 +1,82 @@
+{
+ "id": "LF1497",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_remaining_stones (n1 n2 m : Nat) : Nat :=\n  sorry\n\ntheorem min_remaining_stones_non_negative (n1 n2 m : Nat) :\n  min_remaining_stones n1 n2 m ≥ 0 :=\n  sorry\n\ntheorem min_remaining_stones_bounded (n1 n2 m : Nat) :\n  min_remaining_stones n1 n2 m ≤ n1 + n2 :=\n  sorry\n\ntheorem min_remaining_stones_zero_moves (n : Nat) :\n  min_remaining_stones n n 0 = n + n :=\n  sorry\n\ntheorem min_remaining_stones_symmetric (n1 n2 m : Nat) :\n  min_remaining_stones n1 n2 m = min_remaining_stones n2 n1 m :=\n  sorry\n\ntheorem min_remaining_stones_equal_piles_even (n m : Nat) (h : m > 0) :\n  min_remaining_stones n n m % 2 = 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_remaining_stones 1 1 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_remaining_stones 1 2 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_remaining_stones 4 5 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_remaining_stones 1 1 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_remaining_stones 1 2 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_remaining_stones 4 5 2",
+ "chunks": [
+  {
+   "text": "def min_remaining_stones (n1 n2 m : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_remaining_stones_non_negative (n1 n2 m : Nat) :\n  min_remaining_stones n1 n2 m ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_remaining_stones_bounded (n1 n2 m : Nat) :\n  min_remaining_stones n1 n2 m ≤ n1 + n2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_remaining_stones_zero_moves (n : Nat) :\n  min_remaining_stones n n 0 = n + n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_remaining_stones_symmetric (n1 n2 m : Nat) :\n  min_remaining_stones n1 n2 m = min_remaining_stones n2 n1 m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_remaining_stones_equal_piles_even (n m : Nat) (h : m > 0) :\n  min_remaining_stones n n m % 2 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_remaining_stones_zero_moves": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4053b2e511214ec4b44feecf2fd7deac54d8db074c51fdf9d97f6b3f83970055",
+   "ctors": [],
+   "value": null
+  },
+  "min_remaining_stones_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6a1658285f8699f6fa293bd4a287da19889a79e56ad116120ff84de2868dda70",
+   "ctors": [],
+   "value": null
+  },
+  "min_remaining_stones_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "00096c2971910024a652c33d26eefd1217e2debb0c84cb45bb8e39f7a97b30c1",
+   "ctors": [],
+   "value": null
+  },
+  "min_remaining_stones_equal_piles_even": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f58ac086c95d827f03dc65837b67876141919270429ccf64ed4c96419fcb7f6b",
+   "ctors": [],
+   "value": null
+  },
+  "min_remaining_stones_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "408038b4896e7d292fdab07db69b1820b43cbb7fc9ba715e9f42385fa66e6388",
+   "ctors": [],
+   "value": null
+  },
+  "min_remaining_stones": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "074ccf7f8873"
+}

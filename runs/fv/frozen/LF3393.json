@@ -1,0 +1,49 @@
+{
+ "id": "LF3393",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def fib_digits (n : Nat) : List (Nat × Nat) := sorry\n\ntheorem fib_digits_bounds {n : Nat} (h : n ≥ 10) :\n  let result := fib_digits n\n  (∀ (count digit : Nat), (count, digit) ∈ result → \n    count > 0 ∧ digit ≤ 9) := sorry\n\ntheorem fib_digits_total_count {n : Nat} (h : n ≥ 10) :\n  let result := fib_digits n\n  let pairs := result.toArray\n  let counts := Array.map Prod.fst pairs\n  (Array.size counts > 0) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def fib_digits (n : Nat) : List (Nat × Nat) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem fib_digits_bounds {n : Nat} (h : n ≥ 10) :\n  let result := fib_digits n\n  (∀ (count digit : Nat), (count, digit) ∈ result → \n    count > 0 ∧ digit ≤ 9) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem fib_digits_total_count {n : Nat} (h : n ≥ 10) :\n  let result := fib_digits n\n  let pairs := result.toArray\n  let counts := Array.map Prod.fst pairs\n  (Array.size counts > 0) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "fib_digits_total_count": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4099967402a1fec2ae2d2dc55818880f930af5b3677dd541157e1e9f74b91e17",
+   "ctors": [],
+   "value": null
+  },
+  "fib_digits_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cf04c4c1030ee45e30bcc55edfd8ab77dac43dc48dc6f82c37fe635ea2e4864e",
+   "ctors": [],
+   "value": null
+  },
+  "fib_digits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fcd67cdb38b2468c726c0e7ffb0da1c544261dc7a300eee1db217598682c3cc9",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "bc8493174a38"
+}

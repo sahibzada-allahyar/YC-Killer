@@ -1,0 +1,38 @@
+{
+ "id": "LF4124",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def int_rac (n : Nat) (guess : Nat) : Nat :=\n  sorry\n\ntheorem int_rac_perfect_squares_consistency (x : Nat)\n  (h1 : x ≥ 1) (h2 : x ≤ 20) :\n  let n := x * x\n  let guess1 := max 1 (x - 1) \n  let guess2 := x + 1\n  Nat.sub (int_rac n guess1) (int_rac n guess2) ≤ 1 ∧ \n  Nat.sub (int_rac n guess2) (int_rac n guess1) ≤ 1 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval int_rac 25 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval int_rac 125348 300\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval int_rac 125348981764 356243\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval int_rac 25 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval int_rac 125348 300\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval int_rac 125348981764 356243",
+ "chunks": [
+  {
+   "text": "def int_rac (n : Nat) (guess : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem int_rac_perfect_squares_consistency (x : Nat)\n  (h1 : x ≥ 1) (h2 : x ≤ 20) :\n  let n := x * x\n  let guess1 := max 1 (x - 1) \n  let guess2 := x + 1\n  Nat.sub (int_rac n guess1) (int_rac n guess2) ≤ 1 ∧ \n  Nat.sub (int_rac n guess2) (int_rac n guess1) ≤ 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "int_rac_perfect_squares_consistency": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "42594e890bebc23dfe3fc6c74495e61237869c53de76c5931811d623e3e9bae6",
+   "ctors": [],
+   "value": null
+  },
+  "int_rac": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ccf4e3846b22"
+}

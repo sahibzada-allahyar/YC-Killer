@@ -1,0 +1,63 @@
+{
+ "id": "LA0207",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def isPalindrome (s : String) : Bool :=\n  if h : s.length / 2 ≤ s.length then\n    (List.range (s.length / 2)).all (fun i => s.data[i]! = s.data[s.length - 1 - i]!)\n  else\n    true\n\n@[reducible, simp]\ndef solve_precond (s : String) (k : Int) : Prop :=\n  k > 0\n\ndef solve (s : String) (k : Int) (h_precond : solve_precond s k) : String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (s : String) (k : Int) (result : String) (h_precond : solve_precond s k) : Prop :=\n  (result = \"YES\" ∨ result = \"NO\") ∧\n  (s.length % k.natAbs ≠ 0 → result = \"NO\") ∧\n  (s.length % k.natAbs = 0 ∧ (∀ i, 0 ≤ i ∧ i < k → \n      isPalindrome (s.drop (i.natAbs * (s.length / k.natAbs)) |>.take (s.length / k.natAbs))) → result = \"YES\") ∧\n  (s.length % k.natAbs = 0 ∧ (∃ i, 0 ≤ i ∧ i < k ∧ \n      ¬isPalindrome (s.drop (i.natAbs * (s.length / k.natAbs)) |>.take (s.length / k.natAbs))) → result = \"NO\")\n\ntheorem solve_spec_satisfied (s : String) (k : Int) (h_precond : solve_precond s k) :\n    solve_postcond s k (solve s k h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def isPalindrome (s : String) : Bool :=\n  if h : s.length / 2 ≤ s.length then\n    (List.range (s.length / 2)).all (fun i => s.data[i]! = s.data[s.length - 1 - i]!)\n  else\n    true\n\n@[reducible, simp]\ndef solve_precond (s : String) (k : Int) : Prop :=\n  k > 0",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (s : String) (k : Int) (h_precond : solve_precond s k) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (s : String) (k : Int) (result : String) (h_precond : solve_precond s k) : Prop :=\n  (result = \"YES\" ∨ result = \"NO\") ∧\n  (s.length % k.natAbs ≠ 0 → result = \"NO\") ∧\n  (s.length % k.natAbs = 0 ∧ (∀ i, 0 ≤ i ∧ i < k → \n      isPalindrome (s.drop (i.natAbs * (s.length / k.natAbs)) |>.take (s.length / k.natAbs))) → result = \"YES\") ∧\n  (s.length % k.natAbs = 0 ∧ (∃ i, 0 ≤ i ∧ i < k ∧ \n      ¬isPalindrome (s.drop (i.natAbs * (s.length / k.natAbs)) |>.take (s.length / k.natAbs))) → result = \"NO\")",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (s : String) (k : Int) (h_precond : solve_precond s k) :\n    solve_postcond s k (solve s k h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6f326170b51f90fd58d8b7afbf6614b64b1f1f4c56e04f23d6fbce8365daeef4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7cade44278b6db053dd16f9e938904ff9129be9a015c491207db3e3c8d92f882",
+   "ctors": [],
+   "value": "8327723d820355ac3eb9125d35a19d018a3d442d79022dbc34b097032a606892"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "287157d3e93351930501739bed37e06bd454efda5c84526823c238a2e8133cd8",
+   "ctors": [],
+   "value": "8a6dd778e070b0be4f9481e33637a31c4c3833531aa5e7c9734c5a1deddf91ae"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "46b175a00065f871547942733ad2b78f63aad734bc6db9fe39ba43613add58bd",
+   "ctors": [],
+   "value": null
+  },
+  "isPalindrome": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": "f1360066562ff37d7a18c5db062bddea9e79c6ebb5761fdd7ebce0204ee9fbd6"
+  }
+ },
+ "sha": "39465bac0404"
+}

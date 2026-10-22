@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "UNPROVED", "lens": "harness", "hole": false, "what": "guard_msgs relaxation attempt: a bare (persisting) `set_option guard_msgs.diff true` before the frozen postamble + wrong impl (n+8). #guard_msgs still errors on mismatch -> no olean -> UNPROVED."}

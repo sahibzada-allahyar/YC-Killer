@@ -1,0 +1,104 @@
+{
+ "id": "LF1352",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def decode_string (s : String) : Nat := sorry\n\ntheorem decode_string_empty :\n  decode_string \"\" = 0 := sorry\n\ntheorem decode_string_single_zero :\n  decode_string \"0\" = 0 := sorry\n\ntheorem decode_string_leading_zero :\n  decode_string \"01\" = 0 := sorry\n\ntheorem decode_string_single_digit {d : Char} \n  (h1 : d.isDigit)\n  (h2 : d ≠ '0') :\n  decode_string (String.mk [d]) = 1 := sorry\n\ntheorem decode_string_twelve :\n  decode_string \"12\" = 2 := sorry\n\ntheorem decode_string_226 :\n  decode_string \"226\" = 3 := sorry\n\ntheorem decode_string_eleven :\n  decode_string \"11\" = 2 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval decode_string \"12\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval decode_string \"226\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval decode_string \"123\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval decode_string \"12\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval decode_string \"226\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval decode_string \"123\"",
+ "chunks": [
+  {
+   "text": "def decode_string (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_string_empty :\n  decode_string \"\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_string_single_zero :\n  decode_string \"0\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_string_leading_zero :\n  decode_string \"01\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_string_single_digit {d : Char} \n  (h1 : d.isDigit)\n  (h2 : d ≠ '0') :\n  decode_string (String.mk [d]) = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_string_twelve :\n  decode_string \"12\" = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_string_226 :\n  decode_string \"226\" = 3 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_string_eleven :\n  decode_string \"11\" = 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "decode_string_twelve": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a1a399904ac93e1167d8acaddcbf5c09e509531ebacb2f3de3cca07dddc53a53",
+   "ctors": [],
+   "value": null
+  },
+  "decode_string_single_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "163e60eea8bc8729627c41b813768883cfd3389c328bb4f421c117edc8673edb",
+   "ctors": [],
+   "value": null
+  },
+  "decode_string_single_digit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8e28e93bc883407aebd68685428a8b0b474872d39cd5f3b50a66fbd0416148d5",
+   "ctors": [],
+   "value": null
+  },
+  "decode_string_leading_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "adaa9b46702f8e156376af665e1bb8da0aed68d77edae65d6f441cb3fef3c30a",
+   "ctors": [],
+   "value": null
+  },
+  "decode_string_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a324717fe097815fbb6aa4bccf0c0b48c695a34ff6d2b0f05fd6520f451a4b38",
+   "ctors": [],
+   "value": null
+  },
+  "decode_string_eleven": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e6cc3c5e4594a3be8a774cbd5a3f2738fbb46a86d323be7344dddb1bbb5bf8c5",
+   "ctors": [],
+   "value": null
+  },
+  "decode_string_226": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bb747aebface6865d55923369a44fda99bb1709eaa08f992dba843c9b7d86cda",
+   "ctors": [],
+   "value": null
+  },
+  "decode_string": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "bc6dc1834162"
+}

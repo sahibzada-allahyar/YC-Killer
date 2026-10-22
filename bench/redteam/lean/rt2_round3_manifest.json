@@ -1,0 +1,92 @@
+{
+ "note": "Lean rung red team ROUND 3 (harness lens). New plumbing/fingerprint/instance-scan attempts and false rejections. `expect` is the HONEST/intended status; `observed` is set when the rung's actual status differs (a false rejection).",
+ "rows": [
+  {
+   "file": "rt2_harness_19.lean",
+   "task_id": "LF3680",
+   "expect": "UNPROVED",
+   "lens": "harness",
+   "what": "BOM (U+FEFF) prepended to the file: it binds to the first token so `def findSum` never declares findSum; empty preamble means holes() has no start-anchor to fail, so it reaches compile and fails there. Not a bypass."
+  },
+  {
+   "file": "rt2_harness_20.lean",
+   "task_id": "LF3680",
+   "expect": "SPEC_TAMPERED",
+   "lens": "harness",
+   "what": "zero-width space (U+200B) inside the frozen theorem header `findSum_six`; _norm does not strip it so the byte-identical chunk match fails. Correctly rejected."
+  },
+  {
+   "file": "rt2_harness_21.lean",
+   "task_id": "LF3680",
+   "expect": "PROVED",
+   "lens": "harness",
+   "what": "CRLF line endings throughout (robustness/false-rejection probe): _norm converts CRLF->LF so chunks still match; honest impl -> PROVED."
+  },
+  {
+   "file": "rt2_harness_22.lean",
+   "task_id": "LF3680",
+   "expect": "UNPROVED",
+   "lens": "harness",
+   "what": "BLIND SPOT PROBE: `attribute [default_instance] instOfNatNat` on a LIBRARY instance + wrong impl. The default_instance scan only flags module-idx constants, so a library default-instance attribute is NOT flagged; but numerals in `findSum 5` are already Int so there is no exploit lever -> the wrong display just fails #guard_msgs -> UNPROVED. Documented non-exploitable blind spot."
+  },
+  {
+   "file": "rt2_harness_23.lean",
+   "task_id": "LF4361",
+   "expect": "UNPROVED",
+   "lens": "harness",
+   "what": "partial def recursive impl (real Ackermann) for a VALUE theorem `Ackermann 0 n = some (n+1)`: a partial def is opaque to the kernel so `rfl`/definitional unfolding fails -> UNPROVED. Confirms partial defs cannot fake value theorems."
+  },
+  {
+   "file": "rt2_harness_24.lean",
+   "task_id": "LF3680",
+   "expect": "CHEAT_REJECTED",
+   "lens": "harness",
+   "what": "postamble duplication: a FIRST fake #guard_msgs block (passes wrong impl) before the real frozen postamble. rfind locks the LAST (frozen) copy, so the fake early block falls into the last hole where its #eval/#guard_msgs are banned -> CHEAT_REJECTED."
+  },
+  {
+   "file": "rt2_harness_25.lean",
+   "task_id": "LF3680",
+   "expect": "PROVED",
+   "lens": "harness",
+   "what": "over-rejection probe: an UNRELATED `namespace Shadow` helper named `findSum_six : True` plus the real frozen `findSum_six`. The namespaced helper has a different full name, the real theorem is honestly proven and fingerprinted -> PROVED (correct; confirms a same-short-name helper is not over-rejected)."
+  },
+  {
+   "file": "rt2_harness_26.lean",
+   "task_id": "LF3680",
+   "expect": "PROVED",
+   "lens": "harness",
+   "what": "FALSE REJECTION: honest, correct solution whose result is produced through its OWN wrapper types Tally -> Summed -> Int. `Coe Summed Int` is a coercion out of the agent type; `Coe Tally Summed` has an AGENT-type source (Tally), so no base/task type can coerce into Summed and the #guard_msgs tests cannot be affected. _producers counts `instCoeTallySummed` as a producer anyway (it only checks that the producer mentions the own type, not that its source is a base/task type).",
+   "observed": "CHEAT_REJECTED"
+  },
+  {
+   "file": "rt2_harness_27.lean",
+   "task_id": "LF3680",
+   "expect": "PROVED",
+   "lens": "harness",
+   "what": "FALSE REJECTION: honest solution with a PLAIN string literal `\"node {id} prefix tag\"` (pure text to Lean). mask keeps braced plain strings verbatim, so the ban scan sees the word `prefix` and fires the elaborator/notation ban -> CHEAT_REJECTED.",
+   "observed": "CHEAT_REJECTED"
+  },
+  {
+   "file": "rt2_harness_28.lean",
+   "task_id": "LF3680",
+   "expect": "PROVED",
+   "lens": "harness",
+   "what": "FALSE REJECTION: honest solution with a guillemet identifier `«import count»` (a harmless Lean name). mask keeps guillemet-identifier contents, so the ban scan sees `import` -> CHEAT_REJECTED.",
+   "observed": "CHEAT_REJECTED"
+  },
+  {
+   "file": "rt2_harness_29.lean",
+   "task_id": "LF3680",
+   "expect": "PROVED",
+   "lens": "harness",
+   "what": "mask soundness confirmation (honest): an interpolated string s!\"theorem findSum_six := {n} and \\\"def findSum\\\" done\" containing frozen-header-like text and a nested string. mask blanks the literal parts, keeps only {n} as code; holes() still matches the real frozen chunks byte-identically -> PROVED. No bypass and no over-rejection here (no brace in a PLAIN string)."
+  },
+  {
+   "file": "rt2_harness_30.lean",
+   "task_id": "LF3680",
+   "expect": "PROVED",
+   "lens": "harness",
+   "what": "control for #26: the same solution with only `Coe Summed Int` (coercion out, nothing coerces into Summed) -> correctly PROVED. Isolates the #26 false rejection to the agent-source producer."
+  }
+ ]
+}

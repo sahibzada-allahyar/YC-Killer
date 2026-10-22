@@ -1,0 +1,63 @@
+{
+ "id": "LF0896",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def isSorted (l : List Int) : Bool :=\n  match l with\n  | [] => true\n  | [_] => true\n  | x::y::xs => x ≤ y ∧ isSorted (y::xs)\n\ndef count (x : Int) (l : List Int) : Nat :=\n  match l with\n  | [] => 0\n  | h::t => (if h = x then 1 else 0) + count x t\n\ndef find_unique_balls (arr1 arr2 : List Int) : List Int := sorry\n\ntheorem unique_balls_elements_from_inputs {arr1 arr2 : List Int} :\n  let result := find_unique_balls arr1 arr2\n  ∀ x ∈ result, x ∈ arr1 ++ arr2 :=\nsorry\n\ntheorem identical_arrays_empty {arr : List Int} :\n  find_unique_balls arr arr = [] :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 5, 6]\n-/\n#guard_msgs in\n#eval find_unique_balls [1, 2, 3, 4] [2, 3, 4, 5, 6]\n\n/--\ninfo: [1, 2, 3, 4, 5, 6]\n-/\n#guard_msgs in\n#eval find_unique_balls [1, 2, 3] [4, 5, 6]\n\n/--\ninfo: [4]\n-/\n#guard_msgs in\n#eval find_unique_balls [1, 1, 2, 3] [2, 2, 3, 4]\n",
+ "warnings": [],
+ "preamble": "def isSorted (l : List Int) : Bool :=\n  match l with\n  | [] => true\n  | [_] => true\n  | x::y::xs => x ≤ y ∧ isSorted (y::xs)\n\ndef count (x : Int) (l : List Int) : Nat :=\n  match l with\n  | [] => 0\n  | h::t => (if h = x then 1 else 0) + count x t",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 5, 6]\n-/\n#guard_msgs in\n#eval find_unique_balls [1, 2, 3, 4] [2, 3, 4, 5, 6]\n\n/--\ninfo: [1, 2, 3, 4, 5, 6]\n-/\n#guard_msgs in\n#eval find_unique_balls [1, 2, 3] [4, 5, 6]\n\n/--\ninfo: [4]\n-/\n#guard_msgs in\n#eval find_unique_balls [1, 1, 2, 3] [2, 2, 3, 4]",
+ "chunks": [
+  {
+   "text": "def find_unique_balls (arr1 arr2 : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem unique_balls_elements_from_inputs {arr1 arr2 : List Int} :\n  let result := find_unique_balls arr1 arr2\n  ∀ x ∈ result, x ∈ arr1 ++ arr2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem identical_arrays_empty {arr : List Int} :\n  find_unique_balls arr arr = [] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "unique_balls_elements_from_inputs": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8ef40e07189953409f0d9d4c711ba90cf6475b65b69354003cfd2c37f3833053",
+   "ctors": [],
+   "value": null
+  },
+  "isSorted": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b295506f1e9a51c9dbc47fa3287a9069c7ff4f012c5915f8730a719e58ab07c6",
+   "ctors": [],
+   "value": "4681ec17dc25b4e16cf613ec03bc670de5fbbd0648e928908ab11561ebd5ec8b"
+  },
+  "identical_arrays_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c64f9409e2d48e408d90e9bb6bc438c7b4f297193596077a71bff77baaebfd24",
+   "ctors": [],
+   "value": null
+  },
+  "find_unique_balls": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d0c021bd5e78f55d0ae19aa14e0347eabf22c9e4ffc790e7f336d28a05bcb5b0",
+   "ctors": [],
+   "value": null
+  },
+  "count": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "cb161e241370ca049af02441a14fd88b94d452880baeafedd8d62694a555177e",
+   "ctors": [],
+   "value": "afc8da27a96cb7747bf0dccd7afe4ee6d944a812792367c511893cd16f89e41a"
+  }
+ },
+ "sha": "48ebe6f677e7"
+}

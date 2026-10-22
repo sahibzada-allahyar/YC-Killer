@@ -1,0 +1,56 @@
+{
+ "id": "LF3157",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def countOnes (n : Nat) : Nat :=\n  if n = 0 then 0\n  else if n % 2 = 1\n  then countOnes (n / 2) + 1\n  else countOnes (n / 2)\n\ndef evil (n : Nat) : String :=\nsorry\n\ntheorem evil_result_valid (n : Nat) :\n  (evil n = \"It's Evil!\") ∨ (evil n = \"It's Odious!\") :=\nsorry\n\ntheorem evil_xor_property (n m : Nat) :\n  let n_evil := evil n = \"It's Evil!\"\n  let m_evil := evil m = \"It's Evil!\"\n  let xor_evil := evil (n ^^^ m) = \"It's Evil!\"\n  (n_evil = m_evil) = xor_evil :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: \"It's Odious!\"\n-/\n#guard_msgs in\n#eval evil 1\n\n/--\ninfo: \"It's Odious!\"\n-/\n#guard_msgs in\n#eval evil 2\n\n/--\ninfo: \"It's Evil!\"\n-/\n#guard_msgs in\n#eval evil 3\n",
+ "warnings": [],
+ "preamble": "def countOnes (n : Nat) : Nat :=\n  if n = 0 then 0\n  else if n % 2 = 1\n  then countOnes (n / 2) + 1\n  else countOnes (n / 2)",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: \"It's Odious!\"\n-/\n#guard_msgs in\n#eval evil 1\n\n/--\ninfo: \"It's Odious!\"\n-/\n#guard_msgs in\n#eval evil 2\n\n/--\ninfo: \"It's Evil!\"\n-/\n#guard_msgs in\n#eval evil 3",
+ "chunks": [
+  {
+   "text": "def evil (n : Nat) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem evil_result_valid (n : Nat) :\n  (evil n = \"It's Evil!\") ∨ (evil n = \"It's Odious!\") :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem evil_xor_property (n m : Nat) :\n  let n_evil := evil n = \"It's Evil!\"\n  let m_evil := evil m = \"It's Evil!\"\n  let xor_evil := evil (n ^^^ m) = \"It's Evil!\"\n  (n_evil = m_evil) = xor_evil :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "evil_xor_property": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "92651178067c3b399824b33063abde92bc69c17280a0da68d4baa43f5054a8a2",
+   "ctors": [],
+   "value": null
+  },
+  "evil_result_valid": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6437a18ed8430e02a91def13d6a73cf602da371f4ba655c553fe8118f11b4adc",
+   "ctors": [],
+   "value": null
+  },
+  "evil": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d2b1af5b6fc058b72a00e7dd112351c1777e0f29a3338a76ccfe5c7c63d63258",
+   "ctors": [],
+   "value": null
+  },
+  "countOnes": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": "981fdcb073f78a3d7a00d568398a216b7cd37d4d44bd1507fd47d66b0f1155e2"
+  }
+ },
+ "sha": "b505393fa0d2"
+}

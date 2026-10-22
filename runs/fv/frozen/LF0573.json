@@ -1,0 +1,82 @@
+{
+ "id": "LF0573",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_jumps (s : String) : Nat :=\n  sorry\n\ntheorem solve_jumps_nonnegative (s : String) :\n  0 ≤ solve_jumps s :=\n  sorry\n\ntheorem solve_jumps_bounded_by_gaps (s : String) :\n  solve_jumps s ≤ (s.data.filter (· = '.') |>.length) :=\n  sorry\n\ntheorem solve_jumps_trivial_cases1 :\n  solve_jumps \"####\" = 0 :=\n  sorry\n\ntheorem solve_jumps_trivial_cases2 :\n  solve_jumps \"#.#\" = 1 :=\n  sorry\n\ntheorem solve_jumps_single_gap (n : Nat) (h : n > 0) :\n  let passage := \"#\" ++ String.mk (List.replicate n '.') ++ \"#\"\n  solve_jumps passage = 1 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_jumps \"####\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_jumps \"##.#..#\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_jumps \"##..#.#\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_jumps \"##.#....#\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_jumps \"####\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_jumps \"##.#..#\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_jumps \"##..#.#\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_jumps \"##.#....#\"",
+ "chunks": [
+  {
+   "text": "def solve_jumps (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_jumps_nonnegative (s : String) :\n  0 ≤ solve_jumps s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_jumps_bounded_by_gaps (s : String) :\n  solve_jumps s ≤ (s.data.filter (· = '.') |>.length) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_jumps_trivial_cases1 :\n  solve_jumps \"####\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_jumps_trivial_cases2 :\n  solve_jumps \"#.#\" = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_jumps_single_gap (n : Nat) (h : n > 0) :\n  let passage := \"#\" ++ String.mk (List.replicate n '.') ++ \"#\"\n  solve_jumps passage = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_jumps_trivial_cases2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "26dc06e25426cd72466e33816991f6ab0a7a3dfed247fcdddf494484004d9ca4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_jumps_trivial_cases1": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "73758863ead5d59b3fe1b4824b6fa358cfe889c87907fa24d435cce407dcbf99",
+   "ctors": [],
+   "value": null
+  },
+  "solve_jumps_single_gap": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7001f1d7569c8350d5094987de91fab6cc86c229e28ca0a115a8e7cedb95d569",
+   "ctors": [],
+   "value": null
+  },
+  "solve_jumps_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8b85aee8ed952c6671e65f60111f08c45b43a8a607e2c3199fe589d13e66ec9f",
+   "ctors": [],
+   "value": null
+  },
+  "solve_jumps_bounded_by_gaps": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9e376350d39ac66780cb7ef7a2e65712312dc2053e655602c942f2d2a7992805",
+   "ctors": [],
+   "value": null
+  },
+  "solve_jumps": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d4040733c687"
+}

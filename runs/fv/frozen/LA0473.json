@@ -1,0 +1,154 @@
+{
+ "id": "LA0473",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def split_lines (s : String) : List String :=\n  []\n\ndef parse_first_line_bamboo (line : String) : (Nat × Nat × Nat × Nat) :=\n  (0, 0, 0, 0)\n\ndef parse_bamboo_length (line : String) : Nat :=\n  0\n\ndef int_to_string (n : Nat) : String :=\n  \"\"\n\ndef string_to_int (s : String) : Nat :=\n  0\n\ndef AbsDiff (a b : Nat) : Nat :=\n  if a ≥ b then a - b else b - a\n\ndef CountGroupMembers (assignment : List Nat) (group : Nat) : Nat :=\n  match assignment with\n  | [] => 0\n  | h :: t => (if h = group then 1 else 0) + CountGroupMembers t group\n\ndef CalculateGroupSum (input : String) (assignment : List Nat) (group : Nat) : Nat :=\n  0\n\ndef HasAllThreeGroups (assignment : List Nat) : Prop :=\n  (∃ i, i < assignment.length ∧ assignment[i]! = 1) ∧\n  (∃ i, i < assignment.length ∧ assignment[i]! = 2) ∧\n  (∃ i, i < assignment.length ∧ assignment[i]! = 3)\n\ndef CompositionCost (assignment : List Nat) : Nat :=\n  let group_a_size := CountGroupMembers assignment 1\n  let group_b_size := CountGroupMembers assignment 2\n  let group_c_size := CountGroupMembers assignment 3\n  (if group_a_size > 0 then (group_a_size - 1) * 10 else 0) +\n  (if group_b_size > 0 then (group_b_size - 1) * 10 else 0) +\n  (if group_c_size > 0 then (group_c_size - 1) * 10 else 0)\n\ndef AdjustmentCost (input : String) (assignment : List Nat) : Nat :=\n  let lines := split_lines input\n  let (N, A, B, C) := parse_first_line_bamboo lines[0]!\n  let sum_a := CalculateGroupSum input assignment 1\n  let sum_b := CalculateGroupSum input assignment 2\n  let sum_c := CalculateGroupSum input assignment 3\n  AbsDiff sum_a A + AbsDiff sum_b B + AbsDiff sum_c C\n\ndef CalculateAssignmentCost (input : String) (assignment : List Nat) : Nat :=\n  CompositionCost assignment + AdjustmentCost input assignment\n\ndef ValidInput (input : String) : Prop :=\n  ∃ lines, (lines = split_lines input ∧\n  lines.length ≥ 2 ∧\n  ∃ N A B C, \n      parse_first_line_bamboo lines[0]! = (N, A, B, C) ∧\n      3 ≤ N ∧ N ≤ 8 ∧\n      1 ≤ C ∧ C < B ∧ B < A ∧ A ≤ 1000 ∧\n      lines.length ≥ N + 1 ∧\n      ∀ i, 1 ≤ i ∧ i ≤ N → \n          ∃ li, parse_bamboo_length lines[i]! = li ∧ 1 ≤ li ∧ li ≤ 1000)\n\ndef ValidAssignment (input : String) (assignment : List Nat) : Prop :=\n  ValidInput input →\n  ∃ lines N A B C, \n      lines = split_lines input ∧\n      parse_first_line_bamboo lines[0]! = (N, A, B, C) ∧\n      assignment.length = N ∧\n      (∀ i, i < N → assignment[i]! < 4) ∧\n      HasAllThreeGroups assignment\n\n@[reducible, simp]\ndef solve_precond (stdin_input : String) : Prop :=\n  stdin_input.length > 0 ∧\n  (stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' ∨ ∃ i, 0 ≤ i ∧ i < stdin_input.length ∧ stdin_input.get! ⟨i⟩ = '\\n') ∧\n  ValidInput (stdin_input ++ (if stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' then \"\" else \"\\n\"))\n\ndef solve (stdin_input : String) (h_precond : solve_precond stdin_input) : String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (stdin_input : String) (result : String) (h_precond : solve_precond stdin_input) : Prop :=\n  result.length > 0 ∧\n  result.get! ⟨result.length - 1⟩ = '\\n' ∧\n  (∃ val, val ≥ 0 ∧ result = int_to_string val ++ \"\\n\") ∧\n  (∀ assignment, ValidAssignment (stdin_input ++ (if stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' then \"\" else \"\\n\")) assignment →\n      string_to_int (result.take (result.length - 1)) ≤ CalculateAssignmentCost (stdin_input ++ (if stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' then \"\" else \"\\n\")) assignment)\n\ntheorem solve_spec_satisfied (stdin_input : String) (h_precond : solve_precond stdin_input) :\n    solve_postcond stdin_input (solve stdin_input h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def split_lines (s : String) : List String :=\n  []\n\ndef parse_first_line_bamboo (line : String) : (Nat × Nat × Nat × Nat) :=\n  (0, 0, 0, 0)\n\ndef parse_bamboo_length (line : String) : Nat :=\n  0\n\ndef int_to_string (n : Nat) : String :=\n  \"\"\n\ndef string_to_int (s : String) : Nat :=\n  0\n\ndef AbsDiff (a b : Nat) : Nat :=\n  if a ≥ b then a - b else b - a\n\ndef CountGroupMembers (assignment : List Nat) (group : Nat) : Nat :=\n  match assignment with\n  | [] => 0\n  | h :: t => (if h = group then 1 else 0) + CountGroupMembers t group\n\ndef CalculateGroupSum (input : String) (assignment : List Nat) (group : Nat) : Nat :=\n  0\n\ndef HasAllThreeGroups (assignment : List Nat) : Prop :=\n  (∃ i, i < assignment.length ∧ assignment[i]! = 1) ∧\n  (∃ i, i < assignment.length ∧ assignment[i]! = 2) ∧\n  (∃ i, i < assignment.length ∧ assignment[i]! = 3)\n\ndef CompositionCost (assignment : List Nat) : Nat :=\n  let group_a_size := CountGroupMembers assignment 1\n  let group_b_size := CountGroupMembers assignment 2\n  let group_c_size := CountGroupMembers assignment 3\n  (if group_a_size > 0 then (group_a_size - 1) * 10 else 0) +\n  (if group_b_size > 0 then (group_b_size - 1) * 10 else 0) +\n  (if group_c_size > 0 then (group_c_size - 1) * 10 else 0)\n\ndef AdjustmentCost (input : String) (assignment : List Nat) : Nat :=\n  let lines := split_lines input\n  let (N, A, B, C) := parse_first_line_bamboo lines[0]!\n  let sum_a := CalculateGroupSum input assignment 1\n  let sum_b := CalculateGroupSum input assignment 2\n  let sum_c := CalculateGroupSum input assignment 3\n  AbsDiff sum_a A + AbsDiff sum_b B + AbsDiff sum_c C\n\ndef CalculateAssignmentCost (input : String) (assignment : List Nat) : Nat :=\n  CompositionCost assignment + AdjustmentCost input assignment\n\ndef ValidInput (input : String) : Prop :=\n  ∃ lines, (lines = split_lines input ∧\n  lines.length ≥ 2 ∧\n  ∃ N A B C, \n      parse_first_line_bamboo lines[0]! = (N, A, B, C) ∧\n      3 ≤ N ∧ N ≤ 8 ∧\n      1 ≤ C ∧ C < B ∧ B < A ∧ A ≤ 1000 ∧\n      lines.length ≥ N + 1 ∧\n      ∀ i, 1 ≤ i ∧ i ≤ N → \n          ∃ li, parse_bamboo_length lines[i]! = li ∧ 1 ≤ li ∧ li ≤ 1000)\n\ndef ValidAssignment (input : String) (assignment : List Nat) : Prop :=\n  ValidInput input →\n  ∃ lines N A B C, \n      lines = split_lines input ∧\n      parse_first_line_bamboo lines[0]! = (N, A, B, C) ∧\n      assignment.length = N ∧\n      (∀ i, i < N → assignment[i]! < 4) ∧\n      HasAllThreeGroups assignment\n\n@[reducible, simp]\ndef solve_precond (stdin_input : String) : Prop :=\n  stdin_input.length > 0 ∧\n  (stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' ∨ ∃ i, 0 ≤ i ∧ i < stdin_input.length ∧ stdin_input.get! ⟨i⟩ = '\\n') ∧\n  ValidInput (stdin_input ++ (if stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' then \"\" else \"\\n\"))",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (stdin_input : String) (h_precond : solve_precond stdin_input) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (stdin_input : String) (result : String) (h_precond : solve_precond stdin_input) : Prop :=\n  result.length > 0 ∧\n  result.get! ⟨result.length - 1⟩ = '\\n' ∧\n  (∃ val, val ≥ 0 ∧ result = int_to_string val ++ \"\\n\") ∧\n  (∀ assignment, ValidAssignment (stdin_input ++ (if stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' then \"\" else \"\\n\")) assignment →\n      string_to_int (result.take (result.length - 1)) ≤ CalculateAssignmentCost (stdin_input ++ (if stdin_input.get! ⟨stdin_input.length - 1⟩ = '\\n' then \"\" else \"\\n\")) assignment)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (stdin_input : String) (h_precond : solve_precond stdin_input) :\n    solve_postcond stdin_input (solve stdin_input h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "string_to_int": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": "820f0aa820d9c49a6c06305d2f6ebd007c2a0d5ae61f00fd1e76bd19cbd71b82"
+  },
+  "split_lines": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d9270a133299276f917afc6321be123721135d1eaf5ce5a6fd9597f2d722c43f",
+   "ctors": [],
+   "value": "b9ef215cff7089d6c8eca715ca09b860fe31cb459b907efd0123fddd6db54b3a"
+  },
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d3ade88fd0a500615cc47dc1e9138460f5809f79886a7693073d0f7a1d1efbd1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "47260ae464d984e2d0a2eb78ccdc3d4b09ef8aa8c39a0bccb942b7a82638026a"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "22ab09579fb734d2d97ec937057320ab40349d79e0e538356b8e4f6ad3874259",
+   "ctors": [],
+   "value": "e463dc77008bb866a43a75b9b4c4af336e0211bed89ab7c0ed238489d1fd810d"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "786a1db51943776aa9deb09fe54242a097b01ea390cad93f9121bbffc9e9ccfa",
+   "ctors": [],
+   "value": null
+  },
+  "parse_first_line_bamboo": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "dc20a61bd283a26f315b2b9c71d98d1eb86ca4f386ad083fd503020ab2bb33b3",
+   "ctors": [],
+   "value": "bc2fb56146ac87d4c8f27eef3afc4848b75a4e8101f2b54f0bddf78435fa2a06"
+  },
+  "parse_bamboo_length": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": "820f0aa820d9c49a6c06305d2f6ebd007c2a0d5ae61f00fd1e76bd19cbd71b82"
+  },
+  "int_to_string": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d2b1af5b6fc058b72a00e7dd112351c1777e0f29a3338a76ccfe5c7c63d63258",
+   "ctors": [],
+   "value": "739166831169e6c56f6b5f4ac6cd6e7f2c3b0b48a6b556ed84611687e341e2c0"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "e84c1e3dba7c3d1e665351461f045fb449d7cdd7c1e64198e888cada38f0ff4d"
+  },
+  "ValidAssignment": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b085562c22baee242369e1dca5cd17e178644f2a88d10375812d6e85e5227bad",
+   "ctors": [],
+   "value": "3dc4ee327591c20df937dd6bc1c28fe1545f9394d883db1a3f904157198b426e"
+  },
+  "HasAllThreeGroups": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "28e17fc8968baa6ca7eae923a3d5488b40989348603ccf82b0cb720cc672a75e",
+   "ctors": [],
+   "value": "8e1dea52fab465f1b8f99cade7438f943bf44b1bddc28c72eebf22c77ac62669"
+  },
+  "CountGroupMembers": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "e26fe6796b3f0d9441d167c053eb966bc6518ae4bb7a2287c700b20573eb9b45",
+   "ctors": [],
+   "value": "6bdd76e93bb1e9d356e49b2be81073e7406547851812b46f6e16c39ac2e23e28"
+  },
+  "CompositionCost": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "63588f008c97f9af0a603be86f67d811085caaef56f5d365919e0f0087077ad7"
+  },
+  "CalculateGroupSum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "e951a520721f20fcbea4c82a3d5e9621ecd7c1eb99f80d59f4cce2713cbc4f6f",
+   "ctors": [],
+   "value": "a28426cd0e2f1d466b858b5afa8e1b5e3945972d3bbe0a5e782ae3ce9e442ea0"
+  },
+  "CalculateAssignmentCost": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3848cafe83367507c7309b94dca21f2c7d0bd0a520e26f0a12b588171443ead4",
+   "ctors": [],
+   "value": "8165f014964973805eb5d29d60ba72420d47d72b42cc9da92894f3d4640fc1c4"
+  },
+  "AdjustmentCost": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3848cafe83367507c7309b94dca21f2c7d0bd0a520e26f0a12b588171443ead4",
+   "ctors": [],
+   "value": "cccba6f0efab6faac4be48af9671fbc77bd4320ad324b640d8bf266f2fd82076"
+  },
+  "AbsDiff": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": "20d1c4faeceb3718aadf91fcf609373345d7a7aa758574a2a12c8ab38af4bd8e"
+  }
+ },
+ "sha": "183af2f1d28e"
+}

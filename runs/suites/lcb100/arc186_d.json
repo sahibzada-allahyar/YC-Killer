@@ -1,0 +1,1 @@
+{"pid": "arc186_d", "kind": "stdin", "func": null, "status": "SPEC_INVALID", "sha": "", "n_refs": 0, "inputs": [], "expected": [], "report": {"specs": {"spec_0.py": "ref fails an example", "spec_1.py": "ref fails an example", "spec_2.py": "ref fails an example"}}}

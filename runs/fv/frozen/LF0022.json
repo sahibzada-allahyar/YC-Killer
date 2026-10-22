@@ -1,0 +1,49 @@
+{
+ "id": "LF0022",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calc_seq (a k : Nat) : Nat :=\n  sorry\n\ndef hasZeroDigit (n : Nat) : Bool :=\n  sorry\n\ntheorem calc_seq_basic_properties {a k : Nat} (ha : a > 0) (hk : k > 0) :\n  let result := calc_seq a k\n\n  result ≥ 0 ∧\n\n  calc_seq a 1 = a ∧\n\n  (k > 1 → result ≥ a) :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 42\n-/\n#guard_msgs in\n#eval calc_seq 1 4\n\n/--\ninfo: 487\n-/\n#guard_msgs in\n#eval calc_seq 487 1\n\n/--\ninfo: 628\n-/\n#guard_msgs in\n#eval calc_seq 487 7\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 42\n-/\n#guard_msgs in\n#eval calc_seq 1 4\n\n/--\ninfo: 487\n-/\n#guard_msgs in\n#eval calc_seq 487 1\n\n/--\ninfo: 628\n-/\n#guard_msgs in\n#eval calc_seq 487 7",
+ "chunks": [
+  {
+   "text": "def calc_seq (a k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def hasZeroDigit (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_seq_basic_properties {a k : Nat} (ha : a > 0) (hk : k > 0) :\n  let result := calc_seq a k\n\n  result ≥ 0 ∧\n\n  calc_seq a 1 = a ∧\n\n  (k > 1 → result ≥ a) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "hasZeroDigit": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  },
+  "calc_seq_basic_properties": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9ca1308f997da9d1526df27f7a3024372d7e711cca3477231763d0232c806602",
+   "ctors": [],
+   "value": null
+  },
+  "calc_seq": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6d8d3413508d"
+}

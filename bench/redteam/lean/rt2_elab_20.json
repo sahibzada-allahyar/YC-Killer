@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "... to the frozen name. `export` is in the ban list -> CHEAT_REJECTED."
+}

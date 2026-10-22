@@ -1,0 +1,8 @@
+{
+ "id": "DA0545",
+ "source": "apps",
+ "source-id": "apps_test_4340",
+ "preamble": "function TransformElement(x: int): int\n{\n    if x % 2 == 0 then x - 1 else x\n}\n\npredicate ValidTransformation(input: seq<int>, output: seq<int>)\n{\n    |output| == |input| &&\n    forall i :: 0 <= i < |input| ==> output[i] == TransformElement(input[i])\n}",
+ "spec": "method solve(a: seq<int>) returns (result: seq<int>)\n    ensures ValidTransformation(a, result)",
+ "postamble": ""
+}

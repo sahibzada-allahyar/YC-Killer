@@ -1,0 +1,1 @@
+{"task_id":"LF3680","expect":"PROVED","lens":"harness","hole":false,"what":"honest false-rejection probe: many instances (Add, OfNat 0, Repr (Array Acc), Coe Int Acc, DecidablePred) all anchored on the agent structure Acc; stresses the anchors/classAnchors scan"}

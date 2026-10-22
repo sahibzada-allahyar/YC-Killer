@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: class-with-Repr-field projection escape. class MyR where f : Repr Nat; instance : MyR; attribute [instance] MyR.f. MyR is pulled into the scanned closure (feeds[Repr] gets MyR via the projection) and MyR.f's type is Repr Nat (anchors empty) -> all four constants flagged, CHEAT_REJECTED."
+}

@@ -1,0 +1,71 @@
+{
+ "id": "LF1354",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_sabotages_at_level_5 (n : Nat) : Nat :=\n  sorry\n\ntheorem count_sabotages_nonnegative (n : Nat) (h : n ≥ 1) :\n  count_sabotages_at_level_5 n ≥ 0 :=\n  sorry\n\ntheorem count_sabotages_monotonic (n : Nat) (h : n > 1) :\n  count_sabotages_at_level_5 n ≥ count_sabotages_at_level_5 (n-1) :=\n  sorry\n\ntheorem count_sabotages_small_numbers (n : Nat) (h₁ : n ≥ 1) (h₂ : n < 16) :\n  count_sabotages_at_level_5 n = 0 :=\n  sorry\n\ntheorem count_sabotages_bounded (n : Nat) (h : n ≥ 1) :\n  count_sabotages_at_level_5 n ≤ 45 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_sabotages_at_level_5 6\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_sabotages_at_level_5 20\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_sabotages_at_level_5 1000\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_sabotages_at_level_5 6\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_sabotages_at_level_5 20\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_sabotages_at_level_5 1000",
+ "chunks": [
+  {
+   "text": "def count_sabotages_at_level_5 (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_sabotages_nonnegative (n : Nat) (h : n ≥ 1) :\n  count_sabotages_at_level_5 n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_sabotages_monotonic (n : Nat) (h : n > 1) :\n  count_sabotages_at_level_5 n ≥ count_sabotages_at_level_5 (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_sabotages_small_numbers (n : Nat) (h₁ : n ≥ 1) (h₂ : n < 16) :\n  count_sabotages_at_level_5 n = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_sabotages_bounded (n : Nat) (h : n ≥ 1) :\n  count_sabotages_at_level_5 n ≤ 45 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_sabotages_small_numbers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4a32727161ed5f3a766139cd57c5f058d3891b46839990f14b0aac5f2aff0d61",
+   "ctors": [],
+   "value": null
+  },
+  "count_sabotages_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7805fdd802975219da545e05e8322f60daf6bf494f7e7fce69284b3ce8acff63",
+   "ctors": [],
+   "value": null
+  },
+  "count_sabotages_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7f9a4f234c63928d378df5da3292f9f210b8536498b9fe3fee70c7732fdb2645",
+   "ctors": [],
+   "value": null
+  },
+  "count_sabotages_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "480b4745c31e27799078c71cb450c134aa2646ed0ed240e66a4545c03be47d4c",
+   "ctors": [],
+   "value": null
+  },
+  "count_sabotages_at_level_5": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "30110f6b312f"
+}

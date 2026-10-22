@@ -1,0 +1,60 @@
+{
+ "id": "LF3996",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_number (n : Nat) (x : Nat) : Nat :=\n  sorry\n\ntheorem count_number_non_negative (n : Nat) (x : Nat) (h : n > 0) :\n  count_number n x ≥ 0 :=\nsorry\n\ntheorem count_number_upper_bound (n : Nat) (x : Nat) (h : n > 0) : \n  count_number n x ≤ n :=\nsorry\n\ntheorem count_number_above_max (n : Nat) (h : n > 0) :\n  count_number n (n*n + 1) = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_number 5 5\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_number 10 5\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_number 6 12\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_number 5 5\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_number 10 5\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_number 6 12",
+ "chunks": [
+  {
+   "text": "def count_number (n : Nat) (x : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_number_non_negative (n : Nat) (x : Nat) (h : n > 0) :\n  count_number n x ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_number_upper_bound (n : Nat) (x : Nat) (h : n > 0) : \n  count_number n x ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_number_above_max (n : Nat) (h : n > 0) :\n  count_number n (n*n + 1) = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_number_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "747ec9dc16c8e57fff39922bc499b03b5f1d9ee69185bd1356cdba98970fd67b",
+   "ctors": [],
+   "value": null
+  },
+  "count_number_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "74f370993aca6fa917cfdaf49cddcb3b945418bece1cef64cce8c163c8fc8852",
+   "ctors": [],
+   "value": null
+  },
+  "count_number_above_max": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8897758633538fab5fd64c9658ef6534caaf33d1a5af4afe5f66dc70b4eec461",
+   "ctors": [],
+   "value": null
+  },
+  "count_number": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "24463cfbd263"
+}

@@ -1,0 +1,115 @@
+{
+ "id": "LF3281",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def final_grade (exam : Int) (projects : Int) : Int :=\n  sorry\n\ntheorem final_grade_output_range (exam : Int) (projects : Int) :\n  final_grade exam projects = 0 ∨ \n  final_grade exam projects = 75 ∨\n  final_grade exam projects = 90 ∨ \n  final_grade exam projects = 100 :=\nsorry\n\ntheorem final_grade_high_scores (exam projects : Int) :\n  (exam > 90 ∨ projects > 10) → final_grade exam projects = 100 :=\nsorry\n\ntheorem final_grade_medium_high_scores (exam projects : Int) :\n  (exam > 75 ∧ exam ≤ 90 ∧ projects ≥ 5 ∧ projects ≤ 10) → \n  final_grade exam projects = 90 :=\nsorry\n\ntheorem final_grade_medium_scores (exam projects : Int) :\n  (exam > 50 ∧ exam ≤ 75 ∧ projects ≥ 2 ∧ projects ≤ 4) → \n  final_grade exam projects = 75 :=\nsorry\n\ntheorem final_grade_low_scores (exam projects : Int) :\n  (exam ≤ 50 ∧ projects ≤ 1) → final_grade exam projects = 0 :=\nsorry\n\ntheorem final_grade_high_exam (exam projects : Int) :\n  exam > 90 → final_grade exam projects = 100 :=\nsorry\n\ntheorem final_grade_many_projects (exam projects : Int) :\n  projects > 10 → final_grade exam projects = 100 :=\nsorry\n\ntheorem final_grade_low_both (exam projects : Int) :\n  exam ≤ 50 ∧ projects ≤ 1 → final_grade exam projects = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 100\n-/\n#guard_msgs in\n#eval final_grade 100 12\n\n/--\ninfo: 90\n-/\n#guard_msgs in\n#eval final_grade 85 5\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval final_grade 55 0\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 100\n-/\n#guard_msgs in\n#eval final_grade 100 12\n\n/--\ninfo: 90\n-/\n#guard_msgs in\n#eval final_grade 85 5\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval final_grade 55 0",
+ "chunks": [
+  {
+   "text": "def final_grade (exam : Int) (projects : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_output_range (exam : Int) (projects : Int) :\n  final_grade exam projects = 0 ∨ \n  final_grade exam projects = 75 ∨\n  final_grade exam projects = 90 ∨ \n  final_grade exam projects = 100 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_high_scores (exam projects : Int) :\n  (exam > 90 ∨ projects > 10) → final_grade exam projects = 100 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_medium_high_scores (exam projects : Int) :\n  (exam > 75 ∧ exam ≤ 90 ∧ projects ≥ 5 ∧ projects ≤ 10) → \n  final_grade exam projects = 90 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_medium_scores (exam projects : Int) :\n  (exam > 50 ∧ exam ≤ 75 ∧ projects ≥ 2 ∧ projects ≤ 4) → \n  final_grade exam projects = 75 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_low_scores (exam projects : Int) :\n  (exam ≤ 50 ∧ projects ≤ 1) → final_grade exam projects = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_high_exam (exam projects : Int) :\n  exam > 90 → final_grade exam projects = 100 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_many_projects (exam projects : Int) :\n  projects > 10 → final_grade exam projects = 100 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_grade_low_both (exam projects : Int) :\n  exam ≤ 50 ∧ projects ≤ 1 → final_grade exam projects = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "final_grade_output_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "90f6d5913dd0d22364cb2d8b7a7e1b403f4ff165d71881603598a533ed6b637c",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade_medium_scores": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c44087dc83a596c5bfab40b4603e8c1ceb1bc207b64574573e893139aefaaecc",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade_medium_high_scores": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e188bdde8bf7807caf8369e17873c9277c53094bb8b055501afe00598bb0effb",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade_many_projects": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5ed4307f84f5b7887792c51da62f90e41b8a05e4b3a595b749a870eef61a24f5",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade_low_scores": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "30bddefff30106276c4641f19e13afc17cd09ceb3f0aa6f1fb6861dc09eacb2a",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade_low_both": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "30bddefff30106276c4641f19e13afc17cd09ceb3f0aa6f1fb6861dc09eacb2a",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade_high_scores": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7d67d64b52ea6d9fb28f9745b576cc2b7151a14a39922b05d2d1e04514191c1a",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade_high_exam": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7b8bb038b806c4feb3262464fb663174e3840d10a4fd6a3ab28b8248b84ee3c7",
+   "ctors": [],
+   "value": null
+  },
+  "final_grade": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "23574f5e1fbd"
+}

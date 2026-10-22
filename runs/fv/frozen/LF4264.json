@@ -1,0 +1,60 @@
+{
+ "id": "LF4264",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solution (s : String) : Nat := sorry\n\ndef isValidRoman (s : String) : Bool := sorry\n\ntheorem single_repeated_numerals {roman : String} (c : Char)\n  (h1 : roman.data.all (· = c))\n  (h2 : c ∈ ['M', 'D', 'C', 'L', 'X', 'V', 'I']) :\n  solution roman = solution (toString c) * roman.length := sorry\n\ntheorem subtractive_pairs_less :\n  solution \"IV\" < solution \"VI\" ∧\n  solution \"IX\" < solution \"XI\" ∧ \n  solution \"XL\" < solution \"LX\" ∧\n  solution \"XC\" < solution \"CX\" ∧\n  solution \"CD\" < solution \"DC\" ∧\n  solution \"CM\" < solution \"MC\" := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def solution (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def isValidRoman (s : String) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_repeated_numerals {roman : String} (c : Char)\n  (h1 : roman.data.all (· = c))\n  (h2 : c ∈ ['M', 'D', 'C', 'L', 'X', 'V', 'I']) :\n  solution roman = solution (toString c) * roman.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem subtractive_pairs_less :\n  solution \"IV\" < solution \"VI\" ∧\n  solution \"IX\" < solution \"XI\" ∧ \n  solution \"XL\" < solution \"LX\" ∧\n  solution \"XC\" < solution \"CX\" ∧\n  solution \"CD\" < solution \"DC\" ∧\n  solution \"CM\" < solution \"MC\" :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "subtractive_pairs_less": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3bd02ce7d9856602b842ea56f17610c7aa64274c05e5eb3641ab39704cd8fae7",
+   "ctors": [],
+   "value": null
+  },
+  "solution": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "single_repeated_numerals": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c0f85224b446f928e89cd070aae977a84c342203a3cddde5cbc3f8b58c99fc5a",
+   "ctors": [],
+   "value": null
+  },
+  "isValidRoman": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "5d35a26a129a"
+}

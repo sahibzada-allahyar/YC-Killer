@@ -1,0 +1,104 @@
+{
+ "id": "LF2880",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def levenshtein (s1 s2 : String) : Nat :=\n  sorry\n\ndef repeatChar (c : Char) (n : Nat) : String :=\nsorry\n\ntheorem levenshtein_nonneg (s1 s2 : String) :\n  levenshtein s1 s2 ≥ 0 :=\nsorry\n\ntheorem levenshtein_identity (s : String) :\n  levenshtein s s = 0 :=\nsorry\n\ntheorem levenshtein_symm (s1 s2 : String) :\n  levenshtein s1 s2 = levenshtein s2 s1 :=\nsorry\n\ntheorem levenshtein_triangle (s1 s2 s3 : String) :\n  levenshtein s1 s2 ≤ levenshtein s1 s3 + levenshtein s3 s2 :=\nsorry\n\ntheorem levenshtein_empty_string (s : String) :\n  levenshtein s \"\" = s.length :=\nsorry\n\ntheorem levenshtein_empty_string_rev (s : String) :\n  levenshtein \"\" s = s.length :=\nsorry\n\n-- Repeated char prepending\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval levenshtein \"kitten\" \"sitting\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval levenshtein \"book\" \"back\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval levenshtein \"peter\" \"peter\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Repeated char prepending\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval levenshtein \"kitten\" \"sitting\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval levenshtein \"book\" \"back\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval levenshtein \"peter\" \"peter\"",
+ "chunks": [
+  {
+   "text": "def levenshtein (s1 s2 : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def repeatChar (c : Char) (n : Nat) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem levenshtein_nonneg (s1 s2 : String) :\n  levenshtein s1 s2 ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem levenshtein_identity (s : String) :\n  levenshtein s s = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem levenshtein_symm (s1 s2 : String) :\n  levenshtein s1 s2 = levenshtein s2 s1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem levenshtein_triangle (s1 s2 s3 : String) :\n  levenshtein s1 s2 ≤ levenshtein s1 s3 + levenshtein s3 s2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem levenshtein_empty_string (s : String) :\n  levenshtein s \"\" = s.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem levenshtein_empty_string_rev (s : String) :\n  levenshtein \"\" s = s.length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "repeatChar": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d0a9b215e389362cde2017331531b02bc35adb2900b16c9f6cbec60a5c7bee2b",
+   "ctors": [],
+   "value": null
+  },
+  "levenshtein_triangle": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "43ee4538d392700f7ebf3c6151afbc0b2f77c857a8ab08175aecda220cc0aacf",
+   "ctors": [],
+   "value": null
+  },
+  "levenshtein_symm": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4d7264f9b42fb0942d8d44d9ba9b8f4b34d3fa45797a857b0bc9d4e8ff0e6ade",
+   "ctors": [],
+   "value": null
+  },
+  "levenshtein_nonneg": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "47e9675855ddb5c71530d468653982161685cadecaa49efe9d3e403b5e34ed1c",
+   "ctors": [],
+   "value": null
+  },
+  "levenshtein_identity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c536fe6f8e955df6a4670006be20223d0d226732d97da51b91897f1a2395565e",
+   "ctors": [],
+   "value": null
+  },
+  "levenshtein_empty_string_rev": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a9d85c9353588efc3e5c54913766401722b8bd878faadef8eea785e7bf5858fc",
+   "ctors": [],
+   "value": null
+  },
+  "levenshtein_empty_string": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e7ee74dff32ec66b4ef001278fb4b83db92b5484f5145540cf15689a13a84e26",
+   "ctors": [],
+   "value": null
+  },
+  "levenshtein": {
+   "kind": "def",
+   "role": "impl",
+   "type": "faa97572308571ef4f892409b8c2cc195f3c362791f58d2fada480327724c43d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "fe8e8bd42717"
+}

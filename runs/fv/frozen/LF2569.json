@@ -1,0 +1,93 @@
+{
+ "id": "LF2569",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def create_anagram (s t : String) : Nat :=\n  sorry\n\ntheorem anagram_non_negative (s t : String) :\n  create_anagram s t ≥ 0 :=\n  sorry\n\ntheorem anagram_self (s : String) :\n  create_anagram s s = 0 :=\n  sorry\n\ntheorem anagram_empty :\n  create_anagram \"\" \"\" = 0 :=\n  sorry\n\ntheorem anagram_length_bound (s t : String) :\n  create_anagram s t ≤ String.length s :=\n  sorry\n\ntheorem anagram_repeated (s : String) :\n  create_anagram s (s ++ s) = 0 ∧\n  create_anagram (s ++ s) s = String.length s :=\n  sorry\n\ntheorem anagram_permutation (s : String) :\n  -- simplified condition since we can't sort without Mathlib\n  create_anagram s s = 0 :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval create_anagram \"AABAA\" \"BBAAA\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval create_anagram \"OVGHK\" \"RPGUC\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval create_anagram \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB\" \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAC\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval create_anagram \"AABAA\" \"BBAAA\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval create_anagram \"OVGHK\" \"RPGUC\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval create_anagram \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB\" \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAC\"",
+ "chunks": [
+  {
+   "text": "def create_anagram (s t : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_non_negative (s t : String) :\n  create_anagram s t ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_self (s : String) :\n  create_anagram s s = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_empty :\n  create_anagram \"\" \"\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_length_bound (s t : String) :\n  create_anagram s t ≤ String.length s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_repeated (s : String) :\n  create_anagram s (s ++ s) = 0 ∧\n  create_anagram (s ++ s) s = String.length s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem anagram_permutation (s : String) :\n  -- simplified condition since we can't sort without Mathlib\n  create_anagram s s = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "create_anagram": {
+   "kind": "def",
+   "role": "impl",
+   "type": "faa97572308571ef4f892409b8c2cc195f3c362791f58d2fada480327724c43d",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_self": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "82961e81456185d2493bca8ee097a99b148775e1478db3c61671625c7db26f54",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_repeated": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cc4bc48397de4ef6b5e6734c077bd2a05606814fed27c4a2ec8fb3e129e8d112",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_permutation": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "82961e81456185d2493bca8ee097a99b148775e1478db3c61671625c7db26f54",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ec0aa0a92f83975a2a70b7cc21ac3729183f746b2f75f3d1be00d523d8c669ec",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_length_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d5a7c3e6d9b6c902c65ab525cb07d68f7a45704366e450c40ab6175d25ff74c9",
+   "ctors": [],
+   "value": null
+  },
+  "anagram_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4b1012347f5ccba3f700ab535b33ba4ae9ee8258e6c588710313f4ae326bf373",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f5e1d484afe4"
+}

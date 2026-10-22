@@ -1,0 +1,1 @@
+{"task_id": "LF3045", "expect": "PROVED", "note": "curated OK; two-point lookup wrong impl PROVED. Composite return (List (List Int)) means curation only tries default [] (fails first pin -> OK); a lookup reproduces both pinned points. allPos left constant."}

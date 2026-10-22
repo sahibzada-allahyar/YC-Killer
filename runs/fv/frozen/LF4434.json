@@ -1,0 +1,82 @@
+{
+ "id": "LF4434",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def expanded_form (x : Float) : String := sorry\n\ntheorem expanded_form_basic_test_1 : \n  expanded_form 1.24 = \"1 + 2/10 + 4/100\" := sorry\n\ntheorem expanded_form_basic_test_2 :\n  expanded_form 7.304 = \"7 + 3/10 + 4/1000\" := sorry\n\ntheorem expanded_form_decimal_only :\n  expanded_form 0.04 = \"4/100\" := sorry\n\ntheorem expanded_form_trailing_zeros_1 :\n  expanded_form 2.1 = \"2 + 1/10\" := sorry\n\ntheorem expanded_form_trailing_zeros_2 :\n  expanded_form 0.001 = \"1/1000\" := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def expanded_form (x : Float) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem expanded_form_basic_test_1 : \n  expanded_form 1.24 = \"1 + 2/10 + 4/100\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem expanded_form_basic_test_2 :\n  expanded_form 7.304 = \"7 + 3/10 + 4/1000\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem expanded_form_decimal_only :\n  expanded_form 0.04 = \"4/100\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem expanded_form_trailing_zeros_1 :\n  expanded_form 2.1 = \"2 + 1/10\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem expanded_form_trailing_zeros_2 :\n  expanded_form 0.001 = \"1/1000\" :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "expanded_form_trailing_zeros_2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4ca0ba0ca89de34ee5c687070699346a20e44004f39180de186cb57282df805f",
+   "ctors": [],
+   "value": null
+  },
+  "expanded_form_trailing_zeros_1": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "92663c0c1133ff64f0e6e08c3dd4b3691e768d79a1f41b717189623a23596662",
+   "ctors": [],
+   "value": null
+  },
+  "expanded_form_decimal_only": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "215bc6b103c8d285d84d6c8a6ed985ca454fcef261fea894445abf8bdcd08c79",
+   "ctors": [],
+   "value": null
+  },
+  "expanded_form_basic_test_2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "47ea7601cfbf34c526131ced628fee9469f70acf60edb2a4617f406e78974350",
+   "ctors": [],
+   "value": null
+  },
+  "expanded_form_basic_test_1": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "82cd78ee92111c2fe9f50ee36de0fb86cf74b85f7ba82d0ca7d3d8dc812f566d",
+   "ctors": [],
+   "value": null
+  },
+  "expanded_form": {
+   "kind": "def",
+   "role": "impl",
+   "type": "59b78e7d4745be4ebdf42c20525507c8c3a50ffb60a29c62f08501fe49495159",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "0207cf34b969"
+}

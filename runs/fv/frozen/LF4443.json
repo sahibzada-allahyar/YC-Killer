@@ -1,0 +1,38 @@
+{
+ "id": "LF4443",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def common (lst1 lst2 lst3 : List Int) : Int := sorry\n\ntheorem common_disjoint (lst : List Int) : \n  lst ≠ [] → \n  let shifted1 := lst.map (· + 10000)\n  let shifted2 := lst.map (· + 20000)\n  common lst shifted1 shifted2 = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def common (lst1 lst2 lst3 : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem common_disjoint (lst : List Int) : \n  lst ≠ [] → \n  let shifted1 := lst.map (· + 10000)\n  let shifted2 := lst.map (· + 20000)\n  common lst shifted1 shifted2 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "common_disjoint": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1d56eba64192c200578e3fe278b5c7cd8dcfe4633a554eed06fc0edb2e2ee1c5",
+   "ctors": [],
+   "value": null
+  },
+  "common": {
+   "kind": "def",
+   "role": "impl",
+   "type": "027da69977cd5d38ff97eb43210fa8f0e544af1002ee4193c3b7b99b0f05cea1",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "18d6a21d5f47"
+}

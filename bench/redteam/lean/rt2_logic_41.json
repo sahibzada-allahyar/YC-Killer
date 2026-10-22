@@ -1,0 +1,1 @@
+{"task_id": "LF0033", "expect": "PROVED", "note": "curated OK; constant wrong impl (2, []) PROVED. Only .1=2 is pinned; the operations list .2 is unconstrained. Default (0,[]) fails so curation marks it OK."}

@@ -1,0 +1,49 @@
+{
+ "id": "LF4647",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_feelings (input : String) (feelings : List String) : String :=\n  sorry\n\ntheorem count_feelings_bounds\n  {input : String}\n  {feelings : List String}\n  (h1 : input.length > 0)\n  (h2 : feelings ≠ [])\n  : let result := count_feelings input feelings\n    let count := String.toNat! (result.take (result.length - (if result.startsWith \"1 \" then 9 else 10)))\n    count ≥ 0 ∧ count ≤ feelings.length :=\n  sorry\n\ntheorem count_feelings_exact_match\n  {feeling : String}\n  (h : feeling.length > 0)\n  : count_feelings feeling [feeling] = \"1 feeling.\" :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def count_feelings (input : String) (feelings : List String) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_feelings_bounds\n  {input : String}\n  {feelings : List String}\n  (h1 : input.length > 0)\n  (h2 : feelings ≠ [])\n  : let result := count_feelings input feelings\n    let count := String.toNat! (result.take (result.length - (if result.startsWith \"1 \" then 9 else 10)))\n    count ≥ 0 ∧ count ≤ feelings.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_feelings_exact_match\n  {feeling : String}\n  (h : feeling.length > 0)\n  : count_feelings feeling [feeling] = \"1 feeling.\" :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_feelings_exact_match": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c04743b2bc4f5444ae1f5205eb9793d008c0262351e7ccd14932a43c31f1fe8c",
+   "ctors": [],
+   "value": null
+  },
+  "count_feelings_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5281a37366672bf4148c88433a14c6ba2ef10df01796a7cd4779f390054cdcf2",
+   "ctors": [],
+   "value": null
+  },
+  "count_feelings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4aaeffd74698cd09f67aae6abd695e007bef3f899fdea4eecbb2f30dc57ae186",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ccd51b0f71a9"
+}

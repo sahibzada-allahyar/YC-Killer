@@ -1,0 +1,71 @@
+{
+ "id": "LF3978",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def summation_of_primes (n : Nat) : Nat := sorry\n\ntheorem summation_increases (n : Nat) (h : n ≥ 2) : \n  summation_of_primes n ≥ summation_of_primes (n-1) := sorry\n\ntheorem sum_less_than_square (n : Nat) (h : n ≥ 2) :\n  summation_of_primes n < n * n := sorry\n\ntheorem known_small_values :\n  summation_of_primes 2 = 2 ∧ \n  summation_of_primes 3 = 5 ∧\n  summation_of_primes 5 = 10 := sorry\n\ntheorem sum_is_positive (n : Nat) (h : n ≥ 2) :\n  summation_of_primes n > 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 17\n-/\n#guard_msgs in\n#eval summation_of_primes 10\n\n/--\ninfo: 77\n-/\n#guard_msgs in\n#eval summation_of_primes 20\n\n/--\ninfo: 1060\n-/\n#guard_msgs in\n#eval summation_of_primes 100\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 17\n-/\n#guard_msgs in\n#eval summation_of_primes 10\n\n/--\ninfo: 77\n-/\n#guard_msgs in\n#eval summation_of_primes 20\n\n/--\ninfo: 1060\n-/\n#guard_msgs in\n#eval summation_of_primes 100",
+ "chunks": [
+  {
+   "text": "def summation_of_primes (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem summation_increases (n : Nat) (h : n ≥ 2) : \n  summation_of_primes n ≥ summation_of_primes (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_less_than_square (n : Nat) (h : n ≥ 2) :\n  summation_of_primes n < n * n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem known_small_values :\n  summation_of_primes 2 = 2 ∧ \n  summation_of_primes 3 = 5 ∧\n  summation_of_primes 5 = 10 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_is_positive (n : Nat) (h : n ≥ 2) :\n  summation_of_primes n > 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "summation_of_primes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "summation_increases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5d9365e787193c8273eced487cb199c128d34a79452430bc2875e6e181eaa3e1",
+   "ctors": [],
+   "value": null
+  },
+  "sum_less_than_square": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ad1c485f67433db290546b0f4fcfa2c8b4cdc7005eae91cac4d8f67c25651db5",
+   "ctors": [],
+   "value": null
+  },
+  "sum_is_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6349fb265efb25472df8be142de713c50c4ad7bd40824471acbf931b5cd6e003",
+   "ctors": [],
+   "value": null
+  },
+  "known_small_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "eef1a80f7fc2810951a682196e33780103dec026b2e06fff8cffa7c4441d746d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "17bdecbbc508"
+}

@@ -1,0 +1,38 @@
+{
+ "id": "LF2340",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def busy_student (startTime : List Int) (endTime : List Int) (queryTime : Int) : Int :=\n  sorry\n\ntheorem busy_student_empty_lists :\n  busy_student [] [] 5 = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval busy_student [1, 2, 3] [3, 2, 7] 4\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval busy_student [4] [4] 4\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval busy_student [1, 1, 1, 1] [1, 3, 2, 4] 7\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval busy_student [1, 2, 3] [3, 2, 7] 4\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval busy_student [4] [4] 4\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval busy_student [1, 1, 1, 1] [1, 3, 2, 4] 7",
+ "chunks": [
+  {
+   "text": "def busy_student (startTime : List Int) (endTime : List Int) (queryTime : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem busy_student_empty_lists :\n  busy_student [] [] 5 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "busy_student_empty_lists": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "870c758a1995b7f0930b38ff83480c83792c6524a648feb986c70a20374b21a8",
+   "ctors": [],
+   "value": null
+  },
+  "busy_student": {
+   "kind": "def",
+   "role": "impl",
+   "type": "15d9dcaf0f2b82b79cc7ec6b0c416a1db3b76aad8f0cad3e87b99be686d3cd7e",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "60e8eb98d3f4"
+}

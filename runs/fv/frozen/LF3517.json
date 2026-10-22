@@ -1,0 +1,38 @@
+{
+ "id": "LF3517",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_for_x (equation : String) : Int := sorry\n\ntheorem simple_equation (c : Int) (h : -50 ≤ c ∧ c ≤ 50) :\n  solve_for_x s!\"x={c}\" = c := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def solve_for_x (equation : String) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem simple_equation (c : Int) (h : -50 ≤ c ∧ c ≤ 50) :\n  solve_for_x s!\"x={c}\" = c :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_for_x": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9902d19591b27fb48348685e0a7163895afa53ad7c590eb1b9c1c21989da1def",
+   "ctors": [],
+   "value": null
+  },
+  "simple_equation": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "31d9a4eb53173cfed5cf09913d792057d49ee4f445cd80ad225147a0fbc23d0b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "baf2f7e3a140"
+}

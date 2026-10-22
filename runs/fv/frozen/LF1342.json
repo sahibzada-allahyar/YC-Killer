@@ -1,0 +1,38 @@
+{
+ "id": "LF1342",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_max_speed_cars (speeds : List Int) : Nat :=\n  sorry\n\ntheorem count_max_speed_cars_empty_list :\n  count_max_speed_cars [] = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_max_speed_cars [10]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_max_speed_cars [8, 3, 6]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_max_speed_cars [4, 5, 1, 2, 3]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_max_speed_cars [10]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_max_speed_cars [8, 3, 6]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_max_speed_cars [4, 5, 1, 2, 3]",
+ "chunks": [
+  {
+   "text": "def count_max_speed_cars (speeds : List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_max_speed_cars_empty_list :\n  count_max_speed_cars [] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_max_speed_cars_empty_list": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "525dcbd5b5c24c7d0f3fc04d57e0b28ce8b67021a295fdf494239ffe8328aba1",
+   "ctors": [],
+   "value": null
+  },
+  "count_max_speed_cars": {
+   "kind": "def",
+   "role": "impl",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b8ccdaf4325b"
+}

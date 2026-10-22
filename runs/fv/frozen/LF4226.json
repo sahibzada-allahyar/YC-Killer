@@ -1,0 +1,71 @@
+{
+ "id": "LF4226",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def nth_even (n : Nat) : Nat := sorry\n\ntheorem nth_even_increases_monotonically {n : Nat} (h : n > 0) : \n  nth_even (n + 1) > nth_even n := sorry\n\ntheorem nth_even_is_even {n : Nat} (h : n > 0) :\n  nth_even n % 2 = 0 := sorry\n\ntheorem nth_even_formula {n : Nat} (h : n > 0) :\n  nth_even n = 2 * (n - 1) := sorry\n\ntheorem nth_even_reverses_with_division {n : Nat} (h1 : n > 0) (h2 : n ≤ 10000) :\n  (nth_even n) / 2 + 1 = n := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval nth_even 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval nth_even 2\n\n/--\ninfo: 198\n-/\n#guard_msgs in\n#eval nth_even 100\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval nth_even 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval nth_even 2\n\n/--\ninfo: 198\n-/\n#guard_msgs in\n#eval nth_even 100",
+ "chunks": [
+  {
+   "text": "def nth_even (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem nth_even_increases_monotonically {n : Nat} (h : n > 0) : \n  nth_even (n + 1) > nth_even n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem nth_even_is_even {n : Nat} (h : n > 0) :\n  nth_even n % 2 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem nth_even_formula {n : Nat} (h : n > 0) :\n  nth_even n = 2 * (n - 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem nth_even_reverses_with_division {n : Nat} (h1 : n > 0) (h2 : n ≤ 10000) :\n  (nth_even n) / 2 + 1 = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "nth_even_reverses_with_division": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ef002bf1f999c5aa43830b84c60a155ec4455ee78c036a1f74d0e0114c900b8a",
+   "ctors": [],
+   "value": null
+  },
+  "nth_even_is_even": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2440a7faed05708d73216075a8225a8103f5a6a58f8d4e84c376d3e0fc6a303a",
+   "ctors": [],
+   "value": null
+  },
+  "nth_even_increases_monotonically": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fcbbfca8f5b7c952b622e55bbd387d78cb1da17bba8f0cff56c479048d5d47d6",
+   "ctors": [],
+   "value": null
+  },
+  "nth_even_formula": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d87d9a32f78cd636f7b0c25dd69be0ddb388029419433ea2e9e68e062f0602e3",
+   "ctors": [],
+   "value": null
+  },
+  "nth_even": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "80da114d357d"
+}

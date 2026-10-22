@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "Display hijack as a PRIVATE high-priority instance (private instance hidR : Repr Nat). Privacy does not hide it: the scan iterates every module constant, so _private.Solution.0.hidR is analysed -> CHEAT_REJECTED."
+}

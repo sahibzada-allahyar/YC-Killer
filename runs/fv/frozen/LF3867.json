@@ -1,0 +1,60 @@
+{
+ "id": "LF3867",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def first_n_smallest (arr : List Int) (n : Nat) : List Int := sorry\n\ntheorem first_n_smallest_length {arr : List Int} {n : Nat} (h : 0 < arr.length)\n  (hn : n ≤ arr.length) :\n  (first_n_smallest arr n).length = n := sorry\n\ntheorem first_n_smallest_contains_input {arr : List Int} {n : Nat} (h : 0 < arr.length)\n  (hn : n ≤ arr.length) :\n  ∀ x ∈ first_n_smallest arr n, x ∈ arr := sorry\n\ntheorem first_n_smallest_full_length {arr : List Int} (h : 0 < arr.length) :\n  first_n_smallest arr arr.length = arr := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 2, 3]\n-/\n#guard_msgs in\n#eval first_n_smallest [1, 2, 3, 4, 5] 3\n\n/--\ninfo: [3, 2, 1]\n-/\n#guard_msgs in\n#eval first_n_smallest [5, 4, 3, 2, 1] 3\n\n/--\ninfo: [1, 2, 1]\n-/\n#guard_msgs in\n#eval first_n_smallest [1, 2, 3, 4, 1] 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 2, 3]\n-/\n#guard_msgs in\n#eval first_n_smallest [1, 2, 3, 4, 5] 3\n\n/--\ninfo: [3, 2, 1]\n-/\n#guard_msgs in\n#eval first_n_smallest [5, 4, 3, 2, 1] 3\n\n/--\ninfo: [1, 2, 1]\n-/\n#guard_msgs in\n#eval first_n_smallest [1, 2, 3, 4, 1] 3",
+ "chunks": [
+  {
+   "text": "def first_n_smallest (arr : List Int) (n : Nat) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem first_n_smallest_length {arr : List Int} {n : Nat} (h : 0 < arr.length)\n  (hn : n ≤ arr.length) :\n  (first_n_smallest arr n).length = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem first_n_smallest_contains_input {arr : List Int} {n : Nat} (h : 0 < arr.length)\n  (hn : n ≤ arr.length) :\n  ∀ x ∈ first_n_smallest arr n, x ∈ arr :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem first_n_smallest_full_length {arr : List Int} (h : 0 < arr.length) :\n  first_n_smallest arr arr.length = arr :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "first_n_smallest_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7acf1ba4671d9762495c130a1be9669072514ba393b005c812f2fbd5ad973cc0",
+   "ctors": [],
+   "value": null
+  },
+  "first_n_smallest_full_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6082c630285f09158547e391898945ff4b812a2a5e6167c18915358ae03cdb70",
+   "ctors": [],
+   "value": null
+  },
+  "first_n_smallest_contains_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9b7f7a172d3466dd34ef70a098f566ac1e1f77ad39beeb931001d940d58ac4cf",
+   "ctors": [],
+   "value": null
+  },
+  "first_n_smallest": {
+   "kind": "def",
+   "role": "impl",
+   "type": "89346befeae163d40cd3ce43c2cd31d0750ec08dd2c5101d907819a0c685a3c3",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "276c2a2e2e28"
+}

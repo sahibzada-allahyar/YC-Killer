@@ -1,0 +1,9 @@
+{
+ "task_id": "LF1342",
+ "expect": "PROVED",
+ "observed": "PROVED",
+ "hole": false,
+ "honest": true,
+ "lens": "elaboration/name-resolution",
+ "what": "correct count-of-visible-maxima impl PLUS a scoped Repr instance on the agent's own structure Cnt inside a namespace, then open. The scoped-on-agent instance + open is correctly allowed (anchored on agent type Cnt) -> PROVED; false-rejection control that name-resolution games on the AGENT's own type are not over-rejected."
+}

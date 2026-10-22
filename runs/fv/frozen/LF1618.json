@@ -1,0 +1,49 @@
+{
+ "id": "LF1618",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def rev (s : String) : Nat := sorry \ndef solve (s1 s2 : String) : Nat := sorry\n\ntheorem solve_commutativity {a b : Nat} :\n  solve (toString a) (toString b) = solve (toString b) (toString a) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def rev (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def solve (s1 s2 : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_commutativity {a b : Nat} :\n  solve (toString a) (toString b) = solve (toString b) (toString a) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_commutativity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f40ba7706253698be92f90a160b0df06bd852599bbbca4ee9fd356967485944e",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "faa97572308571ef4f892409b8c2cc195f3c362791f58d2fada480327724c43d",
+   "ctors": [],
+   "value": null
+  },
+  "rev": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "178a9f1f1b4e"
+}

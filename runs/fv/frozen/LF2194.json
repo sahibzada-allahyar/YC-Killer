@@ -1,0 +1,82 @@
+{
+ "id": "LF2194",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (n : Nat) (pairs : List (Nat × Nat)) : Nat := sorry \n\ntheorem solve_non_negative (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs ≥ 0 := sorry\n\ntheorem solve_upper_bound (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs ≤ pairs.foldl (fun acc p => acc + p.1) 0 := sorry\n\ntheorem solve_positive_implies_exists_gt (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs > 0 → ∃ p ∈ pairs, p.1 > p.2 := sorry\n\ntheorem solve_is_total_minus_one_b (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs > 0 → \n  ∃ b, b ∈ pairs.map (fun p => p.2) ∧ \n       solve n pairs = pairs.foldl (fun acc p => acc + p.1) 0 - b := sorry\n\ntheorem solve_identical_pairs (n : Nat) (val : Nat) :\n  let pairs := List.replicate n (val, val)\n  solve n pairs = 0 := sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve 2 [(1, 2), (3, 2)]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve 3 [(8, 3), (0, 1), (4, 8)]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve 1 [(1, 1)]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve 2 [(1, 2), (3, 2)]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve 3 [(8, 3), (0, 1), (4, 8)]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve 1 [(1, 1)]",
+ "chunks": [
+  {
+   "text": "def solve (n : Nat) (pairs : List (Nat × Nat)) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_non_negative (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_upper_bound (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs ≤ pairs.foldl (fun acc p => acc + p.1) 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_positive_implies_exists_gt (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs > 0 → ∃ p ∈ pairs, p.1 > p.2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_is_total_minus_one_b (n : Nat) (pairs : List (Nat × Nat)) :\n  solve n pairs > 0 → \n  ∃ b, b ∈ pairs.map (fun p => p.2) ∧ \n       solve n pairs = pairs.foldl (fun acc p => acc + p.1) 0 - b :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_identical_pairs (n : Nat) (val : Nat) :\n  let pairs := List.replicate n (val, val)\n  solve n pairs = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4c1cd74be7bd4eeaa32121db6a7198620a0a6f722325beabb36011a7e7798f27",
+   "ctors": [],
+   "value": null
+  },
+  "solve_positive_implies_exists_gt": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8f3db1997efdd8e8001530cf3bf866508d3b70f6d3c630c6b299cea4d2ee4c40",
+   "ctors": [],
+   "value": null
+  },
+  "solve_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c6f69cb90c35bf8d7a695dc3fc85d37159dc9a29af3673061b1b7cbdd5aef3a9",
+   "ctors": [],
+   "value": null
+  },
+  "solve_is_total_minus_one_b": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b18270d2bb8a81ab09065769791f8abe9dbfba07f279b59645e0a7dc378784c1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_identical_pairs": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9ff2932a62bd58573383dd2148b490ffc2967c7862c8711ce1f50e370c782f1d",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4138617bb69bef1400cda857bb80c982bc594aaa585c247616bc053089f936be",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "33904cd0805f"
+}

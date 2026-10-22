@@ -1,0 +1,93 @@
+{
+ "id": "LF0797",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_array_xor (n : Nat) (arr : List Nat) : Nat := sorry\n\ntheorem xor_self_cancel (x : Nat) : \n  solve_array_xor 2 [x, x] = 0 := sorry\n\ntheorem xor_commutative (n : Nat) (arr : List Nat) : \n  solve_array_xor n arr = solve_array_xor n arr.reverse := sorry\n\ntheorem xor_zero_identity (x : Nat) : \n  solve_array_xor 2 [x, 0] = x := sorry\n\ntheorem single_element (x : Nat) :\n  solve_array_xor 1 [x] = x := sorry\n\ntheorem even_duplicates_zero (x : Nat) :\n  solve_array_xor 4 [x, x, x, x] = 0 := sorry\n\ntheorem odd_duplicates_self (x : Nat) :\n  solve_array_xor 3 [x, x, x] = x := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval solve_array_xor 5 [8, 4, 1, 5, 0]\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval solve_array_xor 5 [1, 2, 4, 0, 8]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_array_xor 2 [10, 10]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval solve_array_xor 5 [8, 4, 1, 5, 0]\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval solve_array_xor 5 [1, 2, 4, 0, 8]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_array_xor 2 [10, 10]",
+ "chunks": [
+  {
+   "text": "def solve_array_xor (n : Nat) (arr : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem xor_self_cancel (x : Nat) : \n  solve_array_xor 2 [x, x] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem xor_commutative (n : Nat) (arr : List Nat) : \n  solve_array_xor n arr = solve_array_xor n arr.reverse :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem xor_zero_identity (x : Nat) : \n  solve_array_xor 2 [x, 0] = x :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_element (x : Nat) :\n  solve_array_xor 1 [x] = x :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem even_duplicates_zero (x : Nat) :\n  solve_array_xor 4 [x, x, x, x] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem odd_duplicates_self (x : Nat) :\n  solve_array_xor 3 [x, x, x] = x :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "xor_zero_identity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1bc0cb0e45fc0fc0e6398fffc8fde7c66b65f9a3e48d3410d026d2e93c8ef46c",
+   "ctors": [],
+   "value": null
+  },
+  "xor_self_cancel": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c2d7f5ccaf952dd9bc4fb15afb550b2c56aea11faa88670661d07624cf74531f",
+   "ctors": [],
+   "value": null
+  },
+  "xor_commutative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "64cdcdc08e51a776b67fea6061bd26d264084273570e352b7b9f7ff2acea2e40",
+   "ctors": [],
+   "value": null
+  },
+  "solve_array_xor": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  },
+  "single_element": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b7ed46c464e173103ddb29c860a8fc7860f8e4a86bf5e532200508a60d1d29c4",
+   "ctors": [],
+   "value": null
+  },
+  "odd_duplicates_self": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3b75d89fb121d573d093d8c1b129f58dd3b2289ca52b47c9fbd02c7a7381dc43",
+   "ctors": [],
+   "value": null
+  },
+  "even_duplicates_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a634423da269306838c544348393e66452b74c47231572a2ac9ec0e68bc591a6",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ed0bfc3e9c7e"
+}

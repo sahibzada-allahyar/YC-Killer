@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "PROVED",
+ "observed": "PROVED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3 FALSE-REJECTION PROBE: honest clean solution (no instances) that passes all three #guard_msgs tests and proves the trivial theorem by rfl. Correctly PROVED."
+}

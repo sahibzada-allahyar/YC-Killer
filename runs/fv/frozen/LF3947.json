@@ -1,0 +1,60 @@
+{
+ "id": "LF3947",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def friends (n : Nat) : Nat := sorry\n\ntheorem zero_or_one_jar_no_friends (n : Nat) (h : n ≤ 1) : friends n = 0 := sorry\n\ntheorem sufficient_friends (n : Nat) (h : n ≥ 2) : \n  2^(friends n + 1) ≥ n := sorry\n\ntheorem friends_monotone (n : Nat) (h : n ≥ 2) :\n  friends n ≥ friends (n-1) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval friends 0\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval friends 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval friends 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval friends 0\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval friends 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval friends 4",
+ "chunks": [
+  {
+   "text": "def friends (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zero_or_one_jar_no_friends (n : Nat) (h : n ≤ 1) : friends n = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sufficient_friends (n : Nat) (h : n ≥ 2) : \n  2^(friends n + 1) ≥ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem friends_monotone (n : Nat) (h : n ≥ 2) :\n  friends n ≥ friends (n-1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "zero_or_one_jar_no_friends": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "595c068c3cf4b5369cc553b0cb63980dd6444725f5f6ecf115e1214badb416b8",
+   "ctors": [],
+   "value": null
+  },
+  "sufficient_friends": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "805e500e8681e250a33456d17a0371fb24d318d7373dcc8594a4545d6e1c7c2d",
+   "ctors": [],
+   "value": null
+  },
+  "friends_monotone": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8a8c3dc38f7451acd5c7b9b93793c8de601953b52d359b44740fbbbb982a4423",
+   "ctors": [],
+   "value": null
+  },
+  "friends": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "649264d6905a"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF0024",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def intToFloat : Int → Float := sorry\n\ndef solve_equation (d : Int) : Bool × Float × Float := sorry\n\ntheorem large_inputs_succeed (d : Int) : d ≥ 5 → d ≤ 1000 → (solve_equation d).1 = true := sorry\n\ntheorem non_positive_inputs_succeed (d : Int) : d ≤ 0 → d ≥ -1000 → (solve_equation d).1 = true := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def intToFloat : Int → Float :=",
+   "hole_after": true
+  },
+  {
+   "text": "def solve_equation (d : Int) : Bool × Float × Float :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem large_inputs_succeed (d : Int) : d ≥ 5 → d ≤ 1000 → (solve_equation d).1 = true :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem non_positive_inputs_succeed (d : Int) : d ≤ 0 → d ≥ -1000 → (solve_equation d).1 = true :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_equation": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3138f6f28bb150552ec95a2e79a2a546df3bbb1c1d3aaaef7fb2e61dd8a04258",
+   "ctors": [],
+   "value": null
+  },
+  "non_positive_inputs_succeed": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9118c3f93263f7b241b19bf5967cfa443a669b6b1778314fc89b5bdea7adc0f2",
+   "ctors": [],
+   "value": null
+  },
+  "large_inputs_succeed": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b7162378a927c1b1761b8dc8a0669e24512563d1e2d76786b0f6e387d48b0427",
+   "ctors": [],
+   "value": null
+  },
+  "intToFloat": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9394c61d4a090167aa7ad72544e15db386eb377756b516a8504168b58b15d60f",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "400068259748"
+}

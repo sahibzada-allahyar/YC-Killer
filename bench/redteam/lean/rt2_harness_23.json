@@ -1,0 +1,1 @@
+{"task_id": "LF4361", "expect": "UNPROVED", "lens": "harness", "what": "partial def recursive impl (real Ackermann) for a VALUE theorem `Ackermann 0 n = some (n+1)`: a partial def is opaque to the kernel so `rfl`/definitional unfolding fails -> UNPROVED. Confirms partial defs cannot fake value theorems."}

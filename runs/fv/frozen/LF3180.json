@@ -1,0 +1,49 @@
+{
+ "id": "LF3180",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def abs (x : Int) : Int :=\n  sorry\n\ndef minimum (a x : Int) : Int :=\n  sorry\n\ntheorem minimum_makes_number_divisible (a x : Int) (h : x ≠ 0) :\n  (a + minimum a x) % x = 0 ∨ (a - minimum a x) % x = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval minimum 9 4\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval minimum 10 6\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval minimum 15 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval minimum 9 4\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval minimum 10 6\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval minimum 15 5",
+ "chunks": [
+  {
+   "text": "def abs (x : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def minimum (a x : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem minimum_makes_number_divisible (a x : Int) (h : x ≠ 0) :\n  (a + minimum a x) % x = 0 ∨ (a - minimum a x) % x = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "minimum_makes_number_divisible": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "48acde28d01b54fbc56fde58a3e000f92fe625d21fc8cfb806fd19b217dcb285",
+   "ctors": [],
+   "value": null
+  },
+  "minimum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": null
+  },
+  "abs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8230c309d2aa"
+}

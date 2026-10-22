@@ -1,0 +1,82 @@
+{
+ "id": "LF0430",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def mirrorReflection (p q : Nat) : Nat :=\n  sorry\n\ntheorem mirror_reflection_range (p q : Nat) (hp : p > 0) (hq : q > 0) :\n  let r := mirrorReflection p q\n  r = 0 ∨ r = 1 ∨ r = 2 :=\nsorry\n\ntheorem mirror_reflection_reduction (p q : Nat) (hp : p > 0) (hq : q > 0) :\n  let p2 := p\n  let q2 := q\n  mirrorReflection p q = mirrorReflection p2 q2 :=\nsorry\n\ntheorem mirror_reflection_even_odd (n : Nat) (hn : n > 0) :\n  mirrorReflection (2*n) (2*n-1) = 2 :=\nsorry\n\ntheorem mirror_reflection_odd_even (n : Nat) (hn : n > 0) :\n  mirrorReflection (2*n-1) (2*n) = 0 :=\nsorry\n\ntheorem mirror_reflection_both_odd (n : Nat) (hn : n > 0) :\n  mirrorReflection (2*n-1) (2*n-1) = 1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval mirrorReflection 2 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval mirrorReflection 4 2\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval mirrorReflection 5 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval mirrorReflection 2 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval mirrorReflection 4 2\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval mirrorReflection 5 5",
+ "chunks": [
+  {
+   "text": "def mirrorReflection (p q : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mirror_reflection_range (p q : Nat) (hp : p > 0) (hq : q > 0) :\n  let r := mirrorReflection p q\n  r = 0 ∨ r = 1 ∨ r = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mirror_reflection_reduction (p q : Nat) (hp : p > 0) (hq : q > 0) :\n  let p2 := p\n  let q2 := q\n  mirrorReflection p q = mirrorReflection p2 q2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mirror_reflection_even_odd (n : Nat) (hn : n > 0) :\n  mirrorReflection (2*n) (2*n-1) = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mirror_reflection_odd_even (n : Nat) (hn : n > 0) :\n  mirrorReflection (2*n-1) (2*n) = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mirror_reflection_both_odd (n : Nat) (hn : n > 0) :\n  mirrorReflection (2*n-1) (2*n-1) = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "mirror_reflection_reduction": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bb0d8d9601e63754bdb8042adf1b28ec4e3b7d151ee5412d6cbb8ae9c8cf4411",
+   "ctors": [],
+   "value": null
+  },
+  "mirror_reflection_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e1ccf35a21e7b8cf7c8833d616d4cb43b1edf899ea62f0723a7c57eca2392b30",
+   "ctors": [],
+   "value": null
+  },
+  "mirror_reflection_odd_even": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8afc3830bf06ada536b4b48c261a4c2132589328215eb7d74cd2190781258721",
+   "ctors": [],
+   "value": null
+  },
+  "mirror_reflection_even_odd": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e1ca4a756ee2c291c1825eb2e013d3163898c7a20a38e5cf0aa112787c57fdda",
+   "ctors": [],
+   "value": null
+  },
+  "mirror_reflection_both_odd": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2b135ae82f5df96a8651ed26af7ec1036b8164f53d474f364de8ff0dbc45772b",
+   "ctors": [],
+   "value": null
+  },
+  "mirrorReflection": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6e863c38a530"
+}

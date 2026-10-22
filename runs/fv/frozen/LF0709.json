@@ -1,0 +1,49 @@
+{
+ "id": "LF0709",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def diagonal_difference (matrix : List (List Int)) : Int := sorry\n\ndef is_square_matrix (matrix : List (List Int)) : Bool := sorry\n\ntheorem diagonal_difference_single_element\n  (x : Int) :\n  diagonal_difference [[x]] = 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval diagonal_difference [[11, 2, 4], [4, 5, 6], [10, 8, -12]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval diagonal_difference [[1, 2], [3, 4]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval diagonal_difference [[5]]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval diagonal_difference [[11, 2, 4], [4, 5, 6], [10, 8, -12]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval diagonal_difference [[1, 2], [3, 4]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval diagonal_difference [[5]]",
+ "chunks": [
+  {
+   "text": "def diagonal_difference (matrix : List (List Int)) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_square_matrix (matrix : List (List Int)) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem diagonal_difference_single_element\n  (x : Int) :\n  diagonal_difference [[x]] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "is_square_matrix": {
+   "kind": "def",
+   "role": "impl",
+   "type": "a2752a7b41fec7bf4d86a34c175e76323224af885bbd91410928c083b5abd272",
+   "ctors": [],
+   "value": null
+  },
+  "diagonal_difference_single_element": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3ae2d410284e485033088915a7207a9b1779414fbbf28fc46730164cd2473e9c",
+   "ctors": [],
+   "value": null
+  },
+  "diagonal_difference": {
+   "kind": "def",
+   "role": "impl",
+   "type": "90765cfad57268c2400e97c46859f30afd23f3ca61993c91ff3c9784294be5db",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "185b4c1c0253"
+}

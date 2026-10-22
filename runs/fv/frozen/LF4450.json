@@ -1,0 +1,71 @@
+{
+ "id": "LF4450",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def esrever (s : String) : String := sorry\n\ntheorem esrever_preserves_length (s : String) (h : s ≠ \"\") :\n  String.length (esrever s) = String.length s := sorry\n\ntheorem empty_string_reversed_empty : \n  esrever \"\" = \"\" := sorry \n\ntheorem double_reverse_equals_original (s : String) (h : s ≠ \"\") : \n  esrever (esrever s) = s := sorry\n\n/- For any character that appears in the string, it appears the same number of times\n    in the reversed string -/\n\ntheorem reverse_maintains_character_counts (s : String) (h : s ≠ \"\") (c : Char) :\n  (s.data.countP (· = c)) = ((esrever s).data.countP (· = c)) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def esrever (s : String) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem esrever_preserves_length (s : String) (h : s ≠ \"\") :\n  String.length (esrever s) = String.length s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_string_reversed_empty : \n  esrever \"\" = \"\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem double_reverse_equals_original (s : String) (h : s ≠ \"\") : \n  esrever (esrever s) = s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem reverse_maintains_character_counts (s : String) (h : s ≠ \"\") (c : Char) :\n  (s.data.countP (· = c)) = ((esrever s).data.countP (· = c)) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "reverse_maintains_character_counts": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "64e32695bda78b9a6c8df0c0c869cbb8f558f73bf0571b79e22991bffdb6085e",
+   "ctors": [],
+   "value": null
+  },
+  "esrever_preserves_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dc8badcb049a1e0f8fed742638c7f17416eea89ffb681f10c5ac4d4da6ebc3cd",
+   "ctors": [],
+   "value": null
+  },
+  "esrever": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6f0513922b1b32500fef5a52f309f3291d42e6ae6f7d7e89b365f7e92e39e763",
+   "ctors": [],
+   "value": null
+  },
+  "empty_string_reversed_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "781801c2592ca14b79f9a0d23ffa5df07b64810da56ad570687a3e0878bc63fa",
+   "ctors": [],
+   "value": null
+  },
+  "double_reverse_equals_original": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "45d5fce815bd8c3a85befbd256baccf7385f50ec8ef0d69fdce8ae8ced723e19",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1dba8c35e562"
+}

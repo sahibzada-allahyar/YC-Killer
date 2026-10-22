@@ -1,0 +1,82 @@
+{
+ "id": "LF0560",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_min_valid_sequence (s : String) : Nat :=\n  sorry\n\ntheorem output_positive (s : String) :\n  find_min_valid_sequence s ≥ 1 :=\n  sorry\n\ntheorem equals_removal (s : String) :\n  let no_equals := s.replace \"=\" \"\"\n  find_min_valid_sequence s = find_min_valid_sequence no_equals :=\n  sorry\n\ntheorem empty_string :\n  find_min_valid_sequence \"\" = 1 :=\n  sorry\n\ntheorem single_equals :\n  find_min_valid_sequence \"=\" = 1 :=\n  sorry\n\ntheorem multiple_equals :\n  find_min_valid_sequence \"===\" = 1 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<<<\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<><\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<=>\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<=<\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<<<\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<><\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<=>\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_min_valid_sequence \"<=<\"",
+ "chunks": [
+  {
+   "text": "def find_min_valid_sequence (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem output_positive (s : String) :\n  find_min_valid_sequence s ≥ 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem equals_removal (s : String) :\n  let no_equals := s.replace \"=\" \"\"\n  find_min_valid_sequence s = find_min_valid_sequence no_equals :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_string :\n  find_min_valid_sequence \"\" = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_equals :\n  find_min_valid_sequence \"=\" = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem multiple_equals :\n  find_min_valid_sequence \"===\" = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_equals": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1d2a146c10e4e3342737a2c1b9e9e3a8e5c839c826b0ac18403a4cf4b57485e5",
+   "ctors": [],
+   "value": null
+  },
+  "output_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0902e781528ca8d95cb7420ad103ea9adefaa0a6e179af70925a4809f0adbce0",
+   "ctors": [],
+   "value": null
+  },
+  "multiple_equals": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f364233bb935757e34eae037a31174737ccfbfe134ad8011c2119fa8e49b4c22",
+   "ctors": [],
+   "value": null
+  },
+  "find_min_valid_sequence": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "equals_removal": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e04599353b9e53659b079a9202d0706ce8f85bd0f4c838ea24fdfa213c92ea97",
+   "ctors": [],
+   "value": null
+  },
+  "empty_string": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4986e60dc9676dc855e2ec9194e7e32abd2eee67315f21cfb3fb0a439637bd79",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2df2d1821ce6"
+}

@@ -1,0 +1,3 @@
+{"task_id": "LF3680", "expect": "CHEAT_REJECTED", "observed": "PROVED", "hole": true,
+ "lens": "elaboration/name-resolution",
+ "what": "Same `mentions` escape as a `scoped instance` inside `namespace Hack ... end Hack` then `open Hack`. The scoped Repr N (abbrev N := Int) becomes active after `open` and fakes the #eval display while surviving the instance scan via the agent-const mention of N."}

@@ -1,0 +1,1 @@
+{"task_id": "LF1021", "expect": "PROVED", "note": "curated OK; near-constant wrong impl PROVED. Curation triviality battery (default/pure-default/passthrough bodies) misses a one-point lookup body that satisfies the only non-trivial theorem (one_stays_one)."}

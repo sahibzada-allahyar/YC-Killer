@@ -1,0 +1,63 @@
+{
+ "id": "LF0764",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def Command := Nat × Nat\n\n/- Given commands are valid if they are within matrix bounds n×m -/\n\ndef valid_commands : Nat → Nat → List Command → Bool\n  | n, m, cmds => cmds.all fun c => c.1 ≤ n && c.2 ≤ m\n\n/- Solve strange matrix takes dimensions n,m and list of commands, returns list of sums -/\n\ndef solve_strange_matrix (n m k : Nat) (cmds : List Command) : List Int :=\n  sorry\n\ntheorem single_column\n  (n : Nat)\n  (h : n > 0) :\n  let result := solve_strange_matrix n 1 0 []\n  -- All entries are 0 for single column\n  ∀ i : Nat, i < n → result.get! i = 0 :=\nsorry\n\ntheorem single_row\n  (m : Nat)\n  (h : m > 0) :\n  let result := solve_strange_matrix 1 m 0 []\n  -- Single row has length 1\n  result.length = 1 ∧\n  -- Result is m-1\n  result.get! 0 = m - 1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "def Command := Nat × Nat\n\n/- Given commands are valid if they are within matrix bounds n×m -/\n\ndef valid_commands : Nat → Nat → List Command → Bool\n  | n, m, cmds => cmds.all fun c => c.1 ≤ n && c.2 ≤ m\n\n/- Solve strange matrix takes dimensions n,m and list of commands, returns list of sums -/",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def solve_strange_matrix (n m k : Nat) (cmds : List Command) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_column\n  (n : Nat)\n  (h : n > 0) :\n  let result := solve_strange_matrix n 1 0 []\n  -- All entries are 0 for single column\n  ∀ i : Nat, i < n → result.get! i = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_row\n  (m : Nat)\n  (h : m > 0) :\n  let result := solve_strange_matrix 1 m 0 []\n  -- Single row has length 1\n  result.length = 1 ∧\n  -- Result is m-1\n  result.get! 0 = m - 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "valid_commands": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "fc672c82fdbf11106e4f52f95c5fe8d4b807764b7e8111f05f2226c5d88f7afc",
+   "ctors": [],
+   "value": "96761c6581694deeb03561d72a417d83bbf9562e8274e5576e211e8e7316bb44"
+  },
+  "solve_strange_matrix": {
+   "kind": "def",
+   "role": "impl",
+   "type": "af1da571e23f5af158626db4b678b753dabead789e300510dc8c457dcf50eb8d",
+   "ctors": [],
+   "value": null
+  },
+  "single_row": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "720e4cef1aabde7cef398627c052d7a994b96776abb9000ad2d33cecbfec20d5",
+   "ctors": [],
+   "value": null
+  },
+  "single_column": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c9440ce7886b6e882e9f7bb80fbd5a734a40604b7c6eeeb0cd1a5503dfaf3c6f",
+   "ctors": [],
+   "value": null
+  },
+  "Command": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1b133736844cb3655471652fa096eadf95e48b74d4c77c6231b4f02d12479713",
+   "ctors": [],
+   "value": "027cd6dbb0de7604e178bb0011cbd97065b7e8de38be95fdffa25506068ffc7d"
+  }
+ },
+ "sha": "271f29c324a5"
+}

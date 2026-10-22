@@ -1,0 +1,49 @@
+{
+ "id": "LF0480",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_substrings_in_wraparound (s: String) : Nat := sorry\n\ntheorem output_always_positive (s: String) : \n  find_substrings_in_wraparound s ≥ 0 := sorry\n\ntheorem single_char_min (s: String) :\n  s.length ≥ 1 → find_substrings_in_wraparound s ≥ 1 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval find_substrings_in_wraparound \"a\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_substrings_in_wraparound \"cac\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval find_substrings_in_wraparound \"zab\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval find_substrings_in_wraparound \"a\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_substrings_in_wraparound \"cac\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval find_substrings_in_wraparound \"zab\"",
+ "chunks": [
+  {
+   "text": "def find_substrings_in_wraparound (s: String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem output_always_positive (s: String) : \n  find_substrings_in_wraparound s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_char_min (s: String) :\n  s.length ≥ 1 → find_substrings_in_wraparound s ≥ 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_char_min": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9335186c16691e73c834636fb53ea2119de8956c10ec04da48acf637ae9b90c6",
+   "ctors": [],
+   "value": null
+  },
+  "output_always_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7ad616a51069c651e9f654213be227c5dd46afbdcb4d3a72a65f4892f2a0530d",
+   "ctors": [],
+   "value": null
+  },
+  "find_substrings_in_wraparound": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "12eeff7f6af5"
+}

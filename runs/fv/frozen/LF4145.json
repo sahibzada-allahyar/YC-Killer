@@ -1,0 +1,56 @@
+{
+ "id": "LF4145",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum_list : List Nat → Nat\n  | [] => 0\n  | x::xs => x + sum_list xs\n\ndef lost_sheep (friday : List Nat) (saturday : List Nat) (total : Nat) : Nat :=\nsorry\n\ntheorem lost_sheep_reverse_invariant (friday : List Nat) (saturday : List Nat) (total : Nat) :\n  lost_sheep friday saturday total = lost_sheep friday.reverse saturday.reverse total :=\nsorry\n\ntheorem lost_sheep_empty_lists (total : Nat) :\n  lost_sheep [] [] total = total :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval lost_sheep [1, 2] [3, 4] 15\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval lost_sheep [3, 1, 2] [4, 5] 21\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval lost_sheep [5, 1, 4] [5, 4] 29\n",
+ "warnings": [],
+ "preamble": "def sum_list : List Nat → Nat\n  | [] => 0\n  | x::xs => x + sum_list xs",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval lost_sheep [1, 2] [3, 4] 15\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval lost_sheep [3, 1, 2] [4, 5] 21\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval lost_sheep [5, 1, 4] [5, 4] 29",
+ "chunks": [
+  {
+   "text": "def lost_sheep (friday : List Nat) (saturday : List Nat) (total : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem lost_sheep_reverse_invariant (friday : List Nat) (saturday : List Nat) (total : Nat) :\n  lost_sheep friday saturday total = lost_sheep friday.reverse saturday.reverse total :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem lost_sheep_empty_lists (total : Nat) :\n  lost_sheep [] [] total = total :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_list": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "lost_sheep_reverse_invariant": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "84f62ee0464aeae52b175b9bf0c377781051cbf234c0a6a7cb2308db0c9bfad2",
+   "ctors": [],
+   "value": null
+  },
+  "lost_sheep_empty_lists": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1d17d5fb99818cbafb34a06163af28ae7aa8e15902795ef138c3f8d9b9b808f3",
+   "ctors": [],
+   "value": null
+  },
+  "lost_sheep": {
+   "kind": "def",
+   "role": "impl",
+   "type": "1f5ce0836ac14eae2958ef6df3b257f72f6bacadc557366e2701c8c40310d662",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "822e4611682e"
+}

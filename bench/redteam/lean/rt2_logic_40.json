@@ -1,0 +1,1 @@
+{"task_id": "LF4361", "expect": "PROVED", "note": "curated OK; wrong non-recursive impl `if m=0 then some (n+1) else none` PROVED. The sole theorem pins only the m=0 arm; Ackermann for m>=1 returns none (wrong). Default body `none` fails the theorem so curation marks it OK."}

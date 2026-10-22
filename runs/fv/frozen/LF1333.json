@@ -1,0 +1,38 @@
+{
+ "id": "LF1333",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calculate_packing_cost (N K1 K2 P1 P2 P3 P4 : Nat) : Nat :=\n  sorry\n\ntheorem same_costs_divisible (N K1 K2 cost : Nat)\n  (h1 : N > 0) (h2 : K1 > 0) (h3 : K2 > 0) (h4 : cost > 0) :\n  (calculate_packing_cost N K1 K2 cost cost cost cost) % cost = 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval calculate_packing_cost 4 1 4 2 2 2 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval calculate_packing_cost 4 1 4 2 2 2 2",
+ "chunks": [
+  {
+   "text": "def calculate_packing_cost (N K1 K2 P1 P2 P3 P4 : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem same_costs_divisible (N K1 K2 cost : Nat)\n  (h1 : N > 0) (h2 : K1 > 0) (h3 : K2 > 0) (h4 : cost > 0) :\n  (calculate_packing_cost N K1 K2 cost cost cost cost) % cost = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "same_costs_divisible": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0a8062713e25106ac233c13645748467ff5d390d072870984c1b835159996e20",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_packing_cost": {
+   "kind": "def",
+   "role": "impl",
+   "type": "46d0767b3d29cb724eadbcaa625042dc4bf8262702c18517e2bb5014104eb508",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "3bd3e34e40aa"
+}

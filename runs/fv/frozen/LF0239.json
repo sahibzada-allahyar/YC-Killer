@@ -1,0 +1,82 @@
+{
+ "id": "LF0239",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def flipgame (fronts : List Nat) (backs : List Nat) : Nat :=\nsorry\n\ntheorem flipgame_result_in_input_lists (fronts backs : List Nat) :\n  fronts.length = backs.length →\n  let result := flipgame fronts backs\n  result ≠ 0 →\n  result ∈ fronts ∨ result ∈ backs :=\nsorry\n\ntheorem flipgame_result_not_same_card (fronts backs : List Nat) :\n  fronts.length = backs.length →\n  let result := flipgame fronts backs\n  result ≠ 0 →\n  ¬∃ i, i < fronts.length ∧ fronts[i]! = backs[i]! ∧ fronts[i]! = result :=\nsorry\n\ntheorem flipgame_result_is_minimal (fronts backs : List Nat) :\n  fronts.length = backs.length →\n  let result := flipgame fronts backs\n  result ≠ 0 →\n  ∀ n, (n ∈ fronts ∨ n ∈ backs) →\n    (¬∃ i, i < fronts.length ∧ fronts[i]! = backs[i]! ∧ fronts[i]! = n) →\n    result ≤ n :=\nsorry\n\ntheorem flipgame_identical_numbers (n length : Nat) :\n  length > 0 →\n  flipgame (List.replicate length n) (List.replicate length n) = 0 :=\nsorry\n\ntheorem flipgame_two_different_numbers (n1 n2 : Nat) :\n  n1 ≠ n2 →\n  n1 > 0 →\n  n2 > 0 →\n  flipgame [n1] [n2] = min n1 n2 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval flipgame [1, 2, 4, 4, 7] [1, 3, 4, 1, 3]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval flipgame [1, 1] [1, 1]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval flipgame [1, 2] [2, 1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval flipgame [1, 2, 4, 4, 7] [1, 3, 4, 1, 3]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval flipgame [1, 1] [1, 1]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval flipgame [1, 2] [2, 1]",
+ "chunks": [
+  {
+   "text": "def flipgame (fronts : List Nat) (backs : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem flipgame_result_in_input_lists (fronts backs : List Nat) :\n  fronts.length = backs.length →\n  let result := flipgame fronts backs\n  result ≠ 0 →\n  result ∈ fronts ∨ result ∈ backs :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem flipgame_result_not_same_card (fronts backs : List Nat) :\n  fronts.length = backs.length →\n  let result := flipgame fronts backs\n  result ≠ 0 →\n  ¬∃ i, i < fronts.length ∧ fronts[i]! = backs[i]! ∧ fronts[i]! = result :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem flipgame_result_is_minimal (fronts backs : List Nat) :\n  fronts.length = backs.length →\n  let result := flipgame fronts backs\n  result ≠ 0 →\n  ∀ n, (n ∈ fronts ∨ n ∈ backs) →\n    (¬∃ i, i < fronts.length ∧ fronts[i]! = backs[i]! ∧ fronts[i]! = n) →\n    result ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem flipgame_identical_numbers (n length : Nat) :\n  length > 0 →\n  flipgame (List.replicate length n) (List.replicate length n) = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem flipgame_two_different_numbers (n1 n2 : Nat) :\n  n1 ≠ n2 →\n  n1 > 0 →\n  n2 > 0 →\n  flipgame [n1] [n2] = min n1 n2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "flipgame_two_different_numbers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b9edde913bce2e4b8101078647ff81e9da3631013e74e52d38bf09783e3a1cfb",
+   "ctors": [],
+   "value": null
+  },
+  "flipgame_result_not_same_card": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e7c32f71cc049f164ce38830e07b56b0728bbad23c879846d3fb5b82895cf7a5",
+   "ctors": [],
+   "value": null
+  },
+  "flipgame_result_is_minimal": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "76b20a975626210c96022e8ee3681358239edd4e55e3455408bbfda929534ba0",
+   "ctors": [],
+   "value": null
+  },
+  "flipgame_result_in_input_lists": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "08eb439a98745500b2e3d5dc4c7086d30f1b6cd43c5b9d30b098907043d05c2f",
+   "ctors": [],
+   "value": null
+  },
+  "flipgame_identical_numbers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cc167eedb4c8721b681b57cb1fd9ea185c29ea9f54ed72b5ed8877298c71c585",
+   "ctors": [],
+   "value": null
+  },
+  "flipgame": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7e5b9793e5b256793ff88f953ae64ca4710f4800d8453e58c5bc628bd65d7695",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "73891c97350b"
+}

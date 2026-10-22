@@ -1,0 +1,71 @@
+{
+ "id": "LF1108",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_chopstick_pairs (n : Nat) (d : Nat) (lengths : List Nat) : Nat := sorry\n\ntheorem max_chopstick_pairs_non_negative (n : Nat) (d : Nat) (lengths : List Nat)\n  (hn : n ≥ 2) (hlen : lengths.length = n) :\n  max_chopstick_pairs n d lengths ≥ 0 := sorry\n\ntheorem max_chopstick_pairs_upper_bound (n : Nat) (d : Nat) (lengths : List Nat)\n  (hn : n ≥ 2) (hlen : lengths.length = n) :\n  max_chopstick_pairs n d lengths ≤ n/2 := sorry\n\ntheorem max_chopstick_pairs_permutation_invariant (n : Nat) (d : Nat) (lengths1 lengths2 : List Nat)  \n  (hn : n ≥ 2) (hlen1 : lengths1.length = n) (hlen2 : lengths2.length = n)\n  (hperm : lengths2.isPerm lengths1) :\n  max_chopstick_pairs n d lengths1 = max_chopstick_pairs n d lengths2 := sorry\n\ntheorem max_chopstick_pairs_monotone_d (n : Nat) (d : Nat) (lengths : List Nat)\n  (hn : n ≥ 2) (hlen : lengths.length = n) (hd : d > 0) :\n  max_chopstick_pairs n d lengths ≥ max_chopstick_pairs n (d-1) lengths := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_chopstick_pairs 5 2 [1, 3, 3, 9, 4]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval max_chopstick_pairs 3 1 [1, 2, 4]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_chopstick_pairs 4 0 [1, 1, 2, 2]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_chopstick_pairs 5 2 [1, 3, 3, 9, 4]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval max_chopstick_pairs 3 1 [1, 2, 4]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_chopstick_pairs 4 0 [1, 1, 2, 2]",
+ "chunks": [
+  {
+   "text": "def max_chopstick_pairs (n : Nat) (d : Nat) (lengths : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_chopstick_pairs_non_negative (n : Nat) (d : Nat) (lengths : List Nat)\n  (hn : n ≥ 2) (hlen : lengths.length = n) :\n  max_chopstick_pairs n d lengths ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_chopstick_pairs_upper_bound (n : Nat) (d : Nat) (lengths : List Nat)\n  (hn : n ≥ 2) (hlen : lengths.length = n) :\n  max_chopstick_pairs n d lengths ≤ n/2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_chopstick_pairs_permutation_invariant (n : Nat) (d : Nat) (lengths1 lengths2 : List Nat)  \n  (hn : n ≥ 2) (hlen1 : lengths1.length = n) (hlen2 : lengths2.length = n)\n  (hperm : lengths2.isPerm lengths1) :\n  max_chopstick_pairs n d lengths1 = max_chopstick_pairs n d lengths2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_chopstick_pairs_monotone_d (n : Nat) (d : Nat) (lengths : List Nat)\n  (hn : n ≥ 2) (hlen : lengths.length = n) (hd : d > 0) :\n  max_chopstick_pairs n d lengths ≥ max_chopstick_pairs n (d-1) lengths :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_chopstick_pairs_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2b915438e82364c804cc83343991f67f3c1ca61ba3f60a76bda22a1e0925ce0d",
+   "ctors": [],
+   "value": null
+  },
+  "max_chopstick_pairs_permutation_invariant": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "254449f09346248e1f19d8db0b04f607cd4ab8950dead636cf830818a2af9d13",
+   "ctors": [],
+   "value": null
+  },
+  "max_chopstick_pairs_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "31e90d721473da06bb4e5ccfd3f25f98eff8c7e4a38e5a5b327ca9c3e8a03f6d",
+   "ctors": [],
+   "value": null
+  },
+  "max_chopstick_pairs_monotone_d": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2c495c10b615a5ea441b2d88ead25ad69d0cc0450e71a4611c2b95931f603b23",
+   "ctors": [],
+   "value": null
+  },
+  "max_chopstick_pairs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "80d7a4d3f2b66acf9d3d7e09090df5394601f8920dfcfe2deeb74ed19c371174",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b067adcdf38b"
+}

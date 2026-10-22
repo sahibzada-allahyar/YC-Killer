@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "UNPROVED",
+ "observed": "UNPROVED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: id-wrapper. def rr : id (Repr Nat) := ...; attribute [instance] rr. Instance resolution does not unfold id at .instances transparency, so rr is never used for the Repr Nat goal -> real values printed -> #guard_msgs mismatch -> UNPROVED (inert). Check would also flag it (whnf id -> Repr) had it fired."
+}

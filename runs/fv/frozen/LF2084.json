@@ -1,0 +1,71 @@
+{
+ "id": "LF2084",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_max_banknotes (start g1 g2 : Int) (notes : List Int) : Int :=\nsorry\n\ntheorem count_max_banknotes_basic_properties\n  (start g1 g2 : Int) (notes : List Int) :\n  let result := count_max_banknotes start g1 g2 notes\n  result ≥ 0 ∧ \n  result ≤ notes.length ∧\n  result = (notes.filter (fun n => g1 < n ∧ n < g2)).length :=\nsorry\n\ntheorem count_max_banknotes_guard_order \n  (start g1 g2 : Int) (notes : List Int) (h : notes.length > 0) :\n  let res1 := count_max_banknotes start g1 g2 notes\n  let res2 := count_max_banknotes start g2 g1 notes\n  res1 = 0 ∨ res2 = 0 :=\nsorry\n\ntheorem count_max_banknotes_empty_notes\n  (start g1 g2 : Int) :\n  count_max_banknotes start g1 g2 [] = 0 :=\nsorry\n\ntheorem count_max_banknotes_start_irrelevant\n  (start g1 g2 : Int) (notes : List Int) :\n  count_max_banknotes start g1 g2 notes = \n  count_max_banknotes (start + 1) g1 g2 notes :=\nsorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_max_banknotes 5 3 7 [4, 7, 5, 5, 3, 6, 2, 8]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_max_banknotes 6 5 7 [1, 5, 7, 92, 3]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_max_banknotes 3 2 4 [3]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_max_banknotes 5 3 7 [4, 7, 5, 5, 3, 6, 2, 8]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_max_banknotes 6 5 7 [1, 5, 7, 92, 3]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_max_banknotes 3 2 4 [3]",
+ "chunks": [
+  {
+   "text": "def count_max_banknotes (start g1 g2 : Int) (notes : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_max_banknotes_basic_properties\n  (start g1 g2 : Int) (notes : List Int) :\n  let result := count_max_banknotes start g1 g2 notes\n  result ≥ 0 ∧ \n  result ≤ notes.length ∧\n  result = (notes.filter (fun n => g1 < n ∧ n < g2)).length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_max_banknotes_guard_order \n  (start g1 g2 : Int) (notes : List Int) (h : notes.length > 0) :\n  let res1 := count_max_banknotes start g1 g2 notes\n  let res2 := count_max_banknotes start g2 g1 notes\n  res1 = 0 ∨ res2 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_max_banknotes_empty_notes\n  (start g1 g2 : Int) :\n  count_max_banknotes start g1 g2 [] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_max_banknotes_start_irrelevant\n  (start g1 g2 : Int) (notes : List Int) :\n  count_max_banknotes start g1 g2 notes = \n  count_max_banknotes (start + 1) g1 g2 notes :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_max_banknotes_start_irrelevant": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f1a95b1976abf31e9b53dc36306a80d304c7fb8c25c7f2d3e413b9319195c929",
+   "ctors": [],
+   "value": null
+  },
+  "count_max_banknotes_guard_order": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d8ff833d26d05a722cc50b8bce5154de4cdfe898da55f4b11fd9a27bafc3f5fd",
+   "ctors": [],
+   "value": null
+  },
+  "count_max_banknotes_empty_notes": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4d0f15ba181c98a590d08dd36e1dc74a7801f64d13911f84d0315965dae29769",
+   "ctors": [],
+   "value": null
+  },
+  "count_max_banknotes_basic_properties": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0ac45a85e231553f64e9cdf677ad2e2924a258a0d803e6d722a91f04e33dd764",
+   "ctors": [],
+   "value": null
+  },
+  "count_max_banknotes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "a1a9a6d3edebec1ffd875ffae7c338b13c6a9b7f0b1a2338c51ab6ec3c13f1c2",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "da357b2f9214"
+}

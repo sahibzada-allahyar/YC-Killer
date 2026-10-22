@@ -1,0 +1,60 @@
+{
+ "id": "LF3110",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def arr : Nat → List Nat\n| n => sorry\n\ntheorem arr_length (n : Nat) : (arr n).length = n := sorry\n\ntheorem arr_sequence (n : Nat) (i : Nat) (h : i < n) : \n  (arr n).get ⟨i, by rw [arr_length n]; exact h⟩ = i := sorry \n\ntheorem arr_empty : arr 0 = [] := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0, 1, 2, 3]\n-/\n#guard_msgs in\n#eval arr 4\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval arr 0\n\n/--\ninfo: [0, 1]\n-/\n#guard_msgs in\n#eval arr 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0, 1, 2, 3]\n-/\n#guard_msgs in\n#eval arr 4\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval arr 0\n\n/--\ninfo: [0, 1]\n-/\n#guard_msgs in\n#eval arr 2",
+ "chunks": [
+  {
+   "text": "def arr : Nat → List Nat",
+   "hole_after": true
+  },
+  {
+   "text": "theorem arr_length (n : Nat) : (arr n).length = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem arr_sequence (n : Nat) (i : Nat) (h : i < n) : \n  (arr n).get ⟨i, by rw [arr_length n]; exact h⟩ = i :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem arr_empty : arr 0 = [] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "arr_sequence": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3b3a48d23b70727908f7edd522ce072d49d2e60ef44db48295e9508683fadadc",
+   "ctors": [],
+   "value": null
+  },
+  "arr_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d7e63e244b3fd855377dc581e9cc86ee7901818dd18b6d019194a62190f79ee1",
+   "ctors": [],
+   "value": null
+  },
+  "arr_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0f24dd9a9ed1c0481eec3b7d9cb94bba9b542bc3a0756af67c6cd7d3ca51b9a1",
+   "ctors": [],
+   "value": null
+  },
+  "arr": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "126a56040b7d"
+}

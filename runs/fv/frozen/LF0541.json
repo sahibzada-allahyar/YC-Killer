@@ -1,0 +1,67 @@
+{
+ "id": "LF0541",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def manhattan_distance (x y : Int) : Nat :=\n  Int.natAbs x + Int.natAbs y\n\ndef find_robot_position (t : Nat) : Int × Int :=\n  sorry\n\ntheorem coordinates_are_integers (t : Nat) (h : t > 0) :\n  let (x, y) := find_robot_position t\n  True :=\nsorry\n\ntheorem position_uniqueness (t : Nat) (h : t > 0) :\n  find_robot_position t = find_robot_position t :=\nsorry\n\ntheorem first_position_is_up :\n  find_robot_position 1 = (0, 1) :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (0, 1)\n-/\n#guard_msgs in\n#eval find_robot_position 1\n\n/--\ninfo: (-1, 1)\n-/\n#guard_msgs in\n#eval find_robot_position 2\n\n/--\ninfo: (2, 4)\n-/\n#guard_msgs in\n#eval find_robot_position 50\n",
+ "warnings": [],
+ "preamble": "def manhattan_distance (x y : Int) : Nat :=\n  Int.natAbs x + Int.natAbs y",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (0, 1)\n-/\n#guard_msgs in\n#eval find_robot_position 1\n\n/--\ninfo: (-1, 1)\n-/\n#guard_msgs in\n#eval find_robot_position 2\n\n/--\ninfo: (2, 4)\n-/\n#guard_msgs in\n#eval find_robot_position 50",
+ "chunks": [
+  {
+   "text": "def find_robot_position (t : Nat) : Int × Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem coordinates_are_integers (t : Nat) (h : t > 0) :\n  let (x, y) := find_robot_position t\n  True :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem position_uniqueness (t : Nat) (h : t > 0) :\n  find_robot_position t = find_robot_position t :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem first_position_is_up :\n  find_robot_position 1 = (0, 1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "position_uniqueness": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "545807a485a4a992f5454258777c6d6dce12851a3425085cdf84c8f081cce829",
+   "ctors": [],
+   "value": null
+  },
+  "manhattan_distance": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "c325d0779f97401f79b1c91600fac7c4243102ffef18b6021044a769f0630ef8",
+   "ctors": [],
+   "value": "5ef2cfebf394f3544ec62d3f66216880015ee1e19eb21fbbb8cf45b46bdaa884"
+  },
+  "first_position_is_up": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f031eec8fae3b35b2524692f79c479f13276b86ec948a7112e2a04414306fbd0",
+   "ctors": [],
+   "value": null
+  },
+  "find_robot_position": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c4f251deed71868dfa95c2c7b05cbe004a12b0399133921f824f8383576d7f67",
+   "ctors": [],
+   "value": null
+  },
+  "coordinates_are_integers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b74cfe37eda1e75b2599316badf65222138a975086a3b119ea74c7ac4f6159fc",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1b7981f810d8"
+}

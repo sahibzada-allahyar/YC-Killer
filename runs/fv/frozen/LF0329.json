@@ -1,0 +1,71 @@
+{
+ "id": "LF0329",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def failure (pattern : String) : List Nat := sorry\n\ndef findGoodStrings (n : Nat) (s1 s2 evil : String) : Nat := sorry\n\ntheorem findGoodStrings_single_char :\n  findGoodStrings 1 \"a\" \"a\" \"b\" = 1 := sorry\n\ntheorem findGoodStrings_evil_prefix :\n  findGoodStrings 4 \"abcd\" \"abcd\" \"abc\" = 0 := sorry\n\ntheorem findGoodStrings_full_range :\n  findGoodStrings 1 \"a\" \"z\" \"zz\" = 26 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 51\n-/\n#guard_msgs in\n#eval findGoodStrings 2 \"aa\" \"da\" \"b\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval findGoodStrings 8 \"leetcode\" \"leetgoes\" \"leet\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval findGoodStrings 2 \"gx\" \"gz\" \"x\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 51\n-/\n#guard_msgs in\n#eval findGoodStrings 2 \"aa\" \"da\" \"b\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval findGoodStrings 8 \"leetcode\" \"leetgoes\" \"leet\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval findGoodStrings 2 \"gx\" \"gz\" \"x\"",
+ "chunks": [
+  {
+   "text": "def failure (pattern : String) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def findGoodStrings (n : Nat) (s1 s2 evil : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem findGoodStrings_single_char :\n  findGoodStrings 1 \"a\" \"a\" \"b\" = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem findGoodStrings_evil_prefix :\n  findGoodStrings 4 \"abcd\" \"abcd\" \"abc\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem findGoodStrings_full_range :\n  findGoodStrings 1 \"a\" \"z\" \"zz\" = 26 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "findGoodStrings_single_char": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "901fff487fa2c4a2bc70da3f777c690953825495f5e716ee7e8f8f054289dee9",
+   "ctors": [],
+   "value": null
+  },
+  "findGoodStrings_full_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c27bd62d92d87cd7e863dae3fcbd91918dbc01904778c1cc4be6c582c1497c00",
+   "ctors": [],
+   "value": null
+  },
+  "findGoodStrings_evil_prefix": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "71120359dc04144a8d9673a45b4086df89d1720ced508788a38b68e0ab0c4144",
+   "ctors": [],
+   "value": null
+  },
+  "findGoodStrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b291cf0b46f8b5e22e1e48850ebe83d6eb92d3f1343b02878e276e5b6655451",
+   "ctors": [],
+   "value": null
+  },
+  "failure": {
+   "kind": "def",
+   "role": "impl",
+   "type": "226a0126496e97e0388dd232e47252781f7e5b627c9846f575bbce3147dbb6c8",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "451a0d34bd76"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "LA0074",
+ "language": "lean",
+ "source": "apps",
+ "source-id": "apps_test_302",
+ "vc-description": "",
+ "vc-preamble": "def pow (base exp : Nat) : Nat :=\n  if exp = 0 then 1 else base * pow base (exp - 1)\n\ndef repunit (n : Nat) : Nat :=\n  if n = 0 then 0 \n  else if n = 1 then 1\n  else if n = 2 then 11\n  else if n = 3 then 111\n  else if n = 4 then 1111\n  else if n = 5 then 11111\n  else n\n\ndef ValidInput (n : Nat) : Prop := True\n\ndef ValidOutput (n result : Nat) : Prop :=\n  (n = 0 → result = 0) ∧ (n > 0 → result > 0)\n\n@[reducible, simp]\ndef solve_precond (n : Nat) : Prop := ValidInput n",
+ "vc-helpers": "",
+ "vc-definitions": "def solve (n : Nat) (h_precond : solve_precond n) : Nat := sorry",
+ "vc-theorems": "@[reducible, simp]\ndef solve_postcond (n result : Nat) (h_precond : solve_precond n) : Prop :=\n  ValidOutput n result\n\ntheorem solve_spec_satisfied (n : Nat) (h_precond : solve_precond n) :\n    solve_postcond n (solve n h_precond) h_precond := by\n  sorry",
+ "vc-postamble": ""
+}

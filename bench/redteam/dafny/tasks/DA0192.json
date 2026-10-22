@@ -1,0 +1,8 @@
+{
+ "id": "DA0192",
+ "source": "apps",
+ "source-id": "apps_test_960",
+ "preamble": "predicate ValidInput(n: int, k: int) {\n  n >= 1 && k >= 2\n}\n\npredicate SatisfiesConstraint(x: int, n: int, k: int) {\n  x > 0 && k > 0 && (x / k) * (x % k) == n\n}",
+ "spec": "method solve(n: int, k: int) returns (result: int)\n  requires ValidInput(n, k)\n  ensures result > 0\n  ensures SatisfiesConstraint(result, n, k)\n  ensures forall x :: x > 0 && (x / k) * (x % k) == n ==> result <= x",
+ "postamble": ""
+}

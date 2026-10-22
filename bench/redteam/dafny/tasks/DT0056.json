@@ -1,0 +1,8 @@
+{
+ "id": "DT0056",
+ "source": "numpy_triple",
+ "source-id": "array_manipulation_hsplit",
+ "preamble": "/*\n * Dafny specification for numpy.hsplit functionality.\n * Splits a 1D array into k equal horizontal sub-arrays.\n */",
+ "spec": "method hsplit(arr: seq<real>, k: nat) returns (result: seq<seq<real>>)\n  requires k > 0\n  requires |arr| % k == 0\n  ensures |result| == k\n  ensures forall i :: 0 <= i < k ==> |result[i]| == |arr| / k\n  ensures forall i, j :: 0 <= i < k && 0 <= j < |arr| / k ==>\n    result[i][j] == arr[i * (|arr| / k) + j]\n  ensures forall idx :: 0 <= idx < |arr| ==>\n    exists part_idx, elem_idx :: \n      0 <= part_idx < k && \n      0 <= elem_idx < |arr| / k &&\n      idx == part_idx * (|arr| / k) + elem_idx &&\n      arr[idx] == result[part_idx][elem_idx]\n  ensures var flattened := seq(|arr|, i requires 0 <= i < |arr| => \n    result[i / (|arr| / k)][i % (|arr| / k)]);\n    flattened == arr",
+ "postamble": ""
+}

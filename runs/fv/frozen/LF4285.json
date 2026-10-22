@@ -1,0 +1,38 @@
+{
+ "id": "LF4285",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_product (l: List Int) : Option Int := sorry\n\ntheorem max_product_symmetric (nums: List Int) :\n  max_product nums = max_product nums.reverse := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 20\n-/\n#guard_msgs in\n#eval max_product [2, 1, 5, 0, 4, 3]\n\n/--\ninfo: 72\n-/\n#guard_msgs in\n#eval max_product [7, 8, 9]\n\n/--\ninfo: 104874\n-/\n#guard_msgs in\n#eval max_product [33, 231, 454, 11, 9, 99, 57]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 20\n-/\n#guard_msgs in\n#eval max_product [2, 1, 5, 0, 4, 3]\n\n/--\ninfo: 72\n-/\n#guard_msgs in\n#eval max_product [7, 8, 9]\n\n/--\ninfo: 104874\n-/\n#guard_msgs in\n#eval max_product [33, 231, 454, 11, 9, 99, 57]",
+ "chunks": [
+  {
+   "text": "def max_product (l: List Int) : Option Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_product_symmetric (nums: List Int) :\n  max_product nums = max_product nums.reverse :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_product_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5854ca818605e446d66e1aec131d88d90681b47792fc4c6f654809a47c30d7e5",
+   "ctors": [],
+   "value": null
+  },
+  "max_product": {
+   "kind": "def",
+   "role": "impl",
+   "type": "5135ee3a5dfe4c7d050b2e974669ccf13a6bb441ad821ee7daa2164a3bb1c7fe",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "e52b95cc2f98"
+}

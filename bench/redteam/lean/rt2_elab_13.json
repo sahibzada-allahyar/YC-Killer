@@ -1,0 +1,2 @@
+{"task_id": "LF2340", "expect": "PROVED", "observed": "PROVED", "hole": false, "honest": true,
+ "what": "HONEST false-rejection probe for the instance scan: defines agent structure `Interval` with `deriving Repr, DecidableEq` plus an explicit `instance : ToString Interval`. These are instances of POSTAMBLE_CLASSES on an AGENT type; the scan's `mentions` exception correctly allows them (mention agent const Interval). Correctly PROVED -> confirms the scan does not false-reject legitimate instances on agent-introduced types."}

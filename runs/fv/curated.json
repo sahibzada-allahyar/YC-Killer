@@ -1,0 +1,3561 @@
+{
+ "pool_sha256": "e4deacc056213863603b396ad030b3c275a58ac6676bc3878fb8fa6bb9b0e81a",
+ "split_sha256": "9bb972f5a657f885615e4fc07ecebadfca810b2341e7c651a9b9846e99c8fe69",
+ "curator": {
+  "lean": {
+   "rules": "fv-curate-v2: TRIVIAL_THEOREMS per theorem; one compile per (variant, tactic); infra errors uncurated",
+   "toolchains": {
+    "lean": "4.23.0-rc2",
+    "dafny": "4.11.0"
+   },
+   "battery": {
+    "impl": {
+     "default": "exact default",
+     "pure default": "exact pure default",
+     "passthrough": "exact {arg}"
+    },
+    "proof": [
+     "rfl",
+     "trivial",
+     "omega",
+     "simp_all",
+     "intros; simp_all",
+     "simp_all{u}",
+     "intros; simp_all{u}",
+     "decide"
+    ],
+    "std_do": [
+     "mvcgen <;> simp_all",
+     "mvcgen{u} <;> simp_all{u}"
+    ],
+    "max_variants": 64
+   },
+   "sources_sha256": {
+    "bench/fv/curate.py": "3f2f6adf57739f0af9ee67fe04fbc3164a7ffe92b17ef8e0296fc5ffbd5996df",
+    "sorryless/lean.py": "23c376ee308312b2b76853d8b50c4040e5da02075d2053d2efb39a41716157f8",
+    "sorryless/lean_check/Check.lean": "bb098bde2e581fc42120116d84c7ae11808e8a029e0cfdc53bbe8f57c6d75d15"
+   },
+   "stamp": "40ea260ae74c8117"
+  },
+  "dafny": {
+   "rules": "fv-curate-v2: TRIVIAL_THEOREMS per theorem; one compile per (variant, tactic); infra errors uncurated",
+   "toolchains": {
+    "lean": "4.23.0-rc2",
+    "dafny": "4.11.0"
+   },
+   "battery": {
+    "impl": {
+     "default": "exact default",
+     "pure default": "exact pure default",
+     "passthrough": "exact {arg}"
+    },
+    "proof": [
+     "rfl",
+     "trivial",
+     "omega",
+     "simp_all",
+     "intros; simp_all",
+     "simp_all{u}",
+     "intros; simp_all{u}",
+     "decide"
+    ],
+    "std_do": [
+     "mvcgen <;> simp_all",
+     "mvcgen{u} <;> simp_all{u}"
+    ],
+    "max_variants": 64
+   },
+   "sources_sha256": {
+    "bench/fv/curate.py": "3f2f6adf57739f0af9ee67fe04fbc3164a7ffe92b17ef8e0296fc5ffbd5996df",
+    "sorryless/dafny.py": "3341ef4990f34290f054fc17538ac701cd0187ffbd7ca361bd60f4a2ab49c303"
+   },
+   "stamp": "d3c5cc9879a56c7e"
+  }
+ },
+ "counts": {
+  "dev": {
+   "L-fv": {
+    "pool": 300,
+    "curated": 300,
+    "complete": true,
+    "OK": 192,
+    "BROKEN": 1,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 102,
+    "LOCK_FAIL": 5,
+    "ok_components": 192,
+    "ok_components_multicell": 0,
+    "why": {
+     "every theorem trivial under one variant": 82,
+     "every theorem trivial under one variant, which passes the postamble (VACUOUS)": 10,
+     "every theorem trivial, under different variants": 10,
+     "skeleton+postamble: error other than a sorry abort": 1,
+     "sorry outside a declaration body": 5
+    }
+   },
+   "L-apps": {
+    "pool": 29,
+    "curated": 29,
+    "complete": true,
+    "OK": 29,
+    "BROKEN": 0,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 29,
+    "ok_components_multicell": 19,
+    "why": {}
+   },
+   "L-np": {
+    "pool": 7,
+    "curated": 7,
+    "complete": true,
+    "OK": 7,
+    "BROKEN": 0,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 7,
+    "ok_components_multicell": 4,
+    "why": {}
+   },
+   "D-np": {
+    "pool": 23,
+    "curated": 23,
+    "complete": true,
+    "OK": 15,
+    "BROKEN": 8,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 15,
+    "ok_components_multicell": 4,
+    "why": {
+     "frozen parts do not resolve": 8
+    }
+   },
+   "D-apps": {
+    "pool": 27,
+    "curated": 27,
+    "complete": true,
+    "OK": 19,
+    "BROKEN": 7,
+    "VACUOUS": 1,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 19,
+    "ok_components_multicell": 19,
+    "why": {
+     "default body PROVED": 1,
+     "frozen parts do not resolve": 7
+    }
+   }
+  },
+  "test": {
+   "L-fv": {
+    "pool": 678,
+    "curated": 0,
+    "complete": false,
+    "OK": 0,
+    "BROKEN": 0,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 0,
+    "ok_components_multicell": 0,
+    "why": {}
+   },
+   "L-apps": {
+    "pool": 47,
+    "curated": 0,
+    "complete": false,
+    "OK": 0,
+    "BROKEN": 0,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 0,
+    "ok_components_multicell": 0,
+    "why": {}
+   },
+   "L-np": {
+    "pool": 19,
+    "curated": 0,
+    "complete": false,
+    "OK": 0,
+    "BROKEN": 0,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 0,
+    "ok_components_multicell": 0,
+    "why": {}
+   },
+   "D-np": {
+    "pool": 77,
+    "curated": 0,
+    "complete": false,
+    "OK": 0,
+    "BROKEN": 0,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 0,
+    "ok_components_multicell": 0,
+    "why": {}
+   },
+   "D-apps": {
+    "pool": 53,
+    "curated": 0,
+    "complete": false,
+    "OK": 0,
+    "BROKEN": 0,
+    "VACUOUS": 0,
+    "TRIVIAL_THEOREMS": 0,
+    "LOCK_FAIL": 0,
+    "ok_components": 0,
+    "ok_components_multicell": 0,
+    "why": {}
+   }
+  }
+ },
+ "ok_ids": {
+  "dev": {
+   "L-fv": [
+    "LF2845",
+    "LF3947",
+    "LF4125",
+    "LF0913",
+    "LF0128",
+    "LF1724",
+    "LF0820",
+    "LF1449",
+    "LF2283",
+    "LF2401",
+    "LF0104",
+    "LF0748",
+    "LF2244",
+    "LF1380",
+    "LF3523",
+    "LF4158",
+    "LF3393",
+    "LF2084",
+    "LF2407",
+    "LF2521",
+    "LF0239",
+    "LF1102",
+    "LF4226",
+    "LF0344",
+    "LF1450",
+    "LF1126",
+    "LF2079",
+    "LF2742",
+    "LF1141",
+    "LF3522",
+    "LF1007",
+    "LF2631",
+    "LF0327",
+    "LF3588",
+    "LF1398",
+    "LF1068",
+    "LF4144",
+    "LF2789",
+    "LF4194",
+    "LF1352",
+    "LF1093",
+    "LF3867",
+    "LF3185",
+    "LF1099",
+    "LF2427",
+    "LF4434",
+    "LF2995",
+    "LF0342",
+    "LF4647",
+    "LF1397",
+    "LF0864",
+    "LF3327",
+    "LF3359",
+    "LF0797",
+    "LF3012",
+    "LF4418",
+    "LF3157",
+    "LF1088",
+    "LF2738",
+    "LF0560",
+    "LF1430",
+    "LF1021",
+    "LF3831",
+    "LF0830",
+    "LF2476",
+    "LF3473",
+    "LF2569",
+    "LF4319",
+    "LF0914",
+    "LF1193",
+    "LF0179",
+    "LF4111",
+    "LF0021",
+    "LF1692",
+    "LF3621",
+    "LF1500",
+    "LF0247",
+    "LF2035",
+    "LF2918",
+    "LF0033",
+    "LF4335",
+    "LF3795",
+    "LF3584",
+    "LF4410",
+    "LF2403",
+    "LF0068",
+    "LF3680",
+    "LF3628",
+    "LF4298",
+    "LF2887",
+    "LF1861",
+    "LF0985",
+    "LF1330",
+    "LF1528",
+    "LF0573",
+    "LF2986",
+    "LF2812",
+    "LF0557",
+    "LF0303",
+    "LF4464",
+    "LF1662",
+    "LF0423",
+    "LF1318",
+    "LF1089",
+    "LF3978",
+    "LF1218",
+    "LF2191",
+    "LF4271",
+    "LF2474",
+    "LF0503",
+    "LF0944",
+    "LF2229",
+    "LF2774",
+    "LF4095",
+    "LF1408",
+    "LF1150",
+    "LF0553",
+    "LF0376",
+    "LF4540",
+    "LF0152",
+    "LF2772",
+    "LF2886",
+    "LF0024",
+    "LF3281",
+    "LF3252",
+    "LF1199",
+    "LF0614",
+    "LF2880",
+    "LF0042",
+    "LF3665",
+    "LF1351",
+    "LF0764",
+    "LF0628",
+    "LF4241",
+    "LF0982",
+    "LF1448",
+    "LF1978",
+    "LF4460",
+    "LF1105",
+    "LF3652",
+    "LF3406",
+    "LF1370",
+    "LF0489",
+    "LF3395",
+    "LF4401",
+    "LF3797",
+    "LF1497",
+    "LF0329",
+    "LF0169",
+    "LF3110",
+    "LF3188",
+    "LF0541",
+    "LF0951",
+    "LF0241",
+    "LF2551",
+    "LF4260",
+    "LF3616",
+    "LF1460",
+    "LF1134",
+    "LF3456",
+    "LF0073",
+    "LF1412",
+    "LF4361",
+    "LF3603",
+    "LF3186",
+    "LF0926",
+    "LF2386",
+    "LF3160",
+    "LF0197",
+    "LF4193",
+    "LF0408",
+    "LF3546",
+    "LF3045",
+    "LF0507",
+    "LF2016",
+    "LF3517",
+    "LF1597",
+    "LF2527",
+    "LF0480",
+    "LF0735",
+    "LF3399",
+    "LF4264",
+    "LF0430",
+    "LF1344",
+    "LF4333",
+    "LF1012",
+    "LF3059",
+    "LF4186",
+    "LF4373",
+    "LF0009",
+    "LF0323",
+    "LF0027"
+   ],
+   "L-apps": [
+    "LA0461",
+    "LA0394",
+    "LA0389",
+    "LA0314",
+    "LA0192",
+    "LA0309",
+    "LA0572",
+    "LA0214",
+    "LA0473",
+    "LA0635",
+    "LA0258",
+    "LA0485",
+    "LA0081",
+    "LA0385",
+    "LA0238",
+    "LA0433",
+    "LA0207",
+    "LA0507",
+    "LA0319",
+    "LA0215",
+    "LA0076",
+    "LA0391",
+    "LA0392",
+    "LA0587",
+    "LA0626",
+    "LA0061",
+    "LA0581",
+    "LA0024",
+    "LA0384"
+   ],
+   "L-np": [
+    "LT0131",
+    "LT0606",
+    "LT0648",
+    "LT0617",
+    "LT0643",
+    "LT0063",
+    "LT0610"
+   ],
+   "D-np": [
+    "DT0210",
+    "DT0654",
+    "DT0610",
+    "DT0388",
+    "DT0328",
+    "DT0268",
+    "DT0225",
+    "DT0473",
+    "DT0201",
+    "DT0128",
+    "DT0072",
+    "DT0606",
+    "DT0648",
+    "DT0063",
+    "DT0056"
+   ],
+   "D-apps": [
+    "DA0394",
+    "DA0207",
+    "DA0258",
+    "DA0572",
+    "DA0309",
+    "DA0385",
+    "DA0238",
+    "DA0384",
+    "DA0626",
+    "DA0215",
+    "DA0081",
+    "DA0192",
+    "DA0485",
+    "DA0314",
+    "DA0214",
+    "DA0076",
+    "DA0581",
+    "DA0061",
+    "DA0024"
+   ]
+  },
+  "test": {
+   "L-fv": [],
+   "L-apps": [],
+   "L-np": [],
+   "D-np": [],
+   "D-apps": []
+  }
+ },
+ "tasks": {
+  "DA0024": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0061": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0076": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0081": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0149": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "unresolved identifier: splitLines | unresolved identifier: parseInteger | incorrect type for selection into ? (got int)"
+  },
+  "DA0192": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0207": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0214": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0215": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0238": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0258": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0309": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0314": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0319": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "unresolved identifier: swapAdjacent"
+  },
+  "DA0384": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0385": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0389": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "unresolved identifier: isqrt_helper"
+  },
+  "DA0391": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "unresolved identifier: Split | unresolved identifier: StringToInt | incorrect type for selection into ? (got int)"
+  },
+  "DA0392": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "unresolved identifier: int_to_string"
+  },
+  "DA0394": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0433": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "unresolved identifier: computeFinalBoundsHelper"
+  },
+  "DA0473": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "VACUOUS",
+   "reason": "default body PROVED",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "{\n  result := \"\";\n}"
+  },
+  "DA0485": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0572": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0581": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DA0587": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "unresolved identifier: SimulateQueries | type of the receiver is not fully determined at this program point | second argument to \"in\" must be a set, multiset, or sequence with elements of type int, or a map with domain int (instead got ?)"
+  },
+  "DA0626": {
+   "cell": "D-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0056": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0063": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0072": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0128": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0131": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0133": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0201": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0210": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0225": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0268": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0328": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0388": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0425": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0446": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0473": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0579": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0585": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0606": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0610": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0617": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0643": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "frozen parts do not resolve",
+   "stamp": "d3c5cc9879a56c7e",
+   "detail": "this symbol not expected in Dafny"
+  },
+  "DT0648": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "DT0654": {
+   "cell": "D-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "default body UNPROVED",
+   "stamp": "d3c5cc9879a56c7e"
+  },
+  "LA0024": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LA0061": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0076": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0081": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0192": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LA0207": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0214": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0215": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LA0238": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LA0258": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LA0309": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0314": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0319": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0384": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0385": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0389": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0391": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0392": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0394": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0433": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0461": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0473": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0485": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0507": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0572": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0581": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LA0587": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0626": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LA0635": {
+   "cell": "L-apps",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_spec_satisfied: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0009": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_not_exceed_input_length: simp_all [count_alice_score, countOnes, sortByLengthDesc, getAlternateSum] with count_alice_score=default, countOnes=default, sortByLengthDesc=default, getAlternateSum=default\nresult_nonnegative: omega with count_alice_score=default, countOnes=default, sortByLengthDesc=default, getAlternateSum=default\nempty_or_zeros_returns_zero: simp_all [count_alice_score, countOnes, sortByLengthDesc, getAlternateSum] with count_alice_score=default, countOnes=default, sortByLengthDesc=default, getAlternateSum=default\nall_ones_full_score: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0021": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_smallest_k_positive: no trivial proof\nfind_smallest_k_bounded: simp_all [find_smallest_k, bxor] with find_smallest_k=default, bxor=default\nfind_smallest_k_permutation_invariant: simp_all [find_smallest_k, bxor] with find_smallest_k=default, bxor=default\n3 variant(s) x 8 tactics"
+  },
+  "LF0022": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "calc_seq_basic_properties: simp_all [calc_seq, hasZeroDigit] with calc_seq=passthrough a, hasZeroDigit=default\n3 variant(s) x 8 tactics"
+  },
+  "LF0024": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "large_inputs_succeed: no trivial proof\nnon_positive_inputs_succeed: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0027": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_same_length_as_input: no trivial proof\nresult_is_non_negative: omega with min_moves_to_odd=default, countTrailingZeros=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0033": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "minimize_board_operations_min_val: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0042": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_returns_nat: omega with solve_binary_substrings=default\nresult_ge_ones_count: no trivial proof\npower_two_string_bounds: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0052": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_time_tasks_modulo_bounds: simp_all [min_time_tasks] with min_time_tasks=default\nmin_time_tasks_permutation_invariant: rfl with min_time_tasks=default\nmin_time_tasks_two_elements_commutative: rfl with min_time_tasks=default\nmin_time_tasks_two_elements_bounds: simp_all [min_time_tasks] with min_time_tasks=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0058": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "zero_cost_for_exact_pieces: rfl with find_min_chocolate_break_cost=default\nzero_pieces_cost_nothing: rfl with find_min_chocolate_break_cost=default\n4 variant(s) x 8 tactics"
+  },
+  "LF0068": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_cost_non_negative: omega with min_cost_clear_mines=default\nmines_exist_min_cost: simp_all [min_cost_clear_mines] with min_cost_clear_mines=passthrough a\ncost_upper_bound: simp_all [min_cost_clear_mines] with min_cost_clear_mines=default\nsingle_mine_cost: rfl with min_cost_clear_mines=passthrough a\nsingle_mine_cost_with_gap: rfl with min_cost_clear_mines=passthrough a\nnew_activation_cheaper: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0073": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "merge_sorted_arrays_case1: no trivial proof\nmerge_sorted_arrays_case2: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0093": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "LOCK_FAIL",
+   "reason": "sorry outside a declaration body",
+   "stamp": "40ea260ae74c8117",
+   "detail": "`sorry` outside a declaration body in vc-theorems: 'theorem solve_color_array_equal_values_alternate\\n  {n : Nat} {arr : List Nat} (h : arr.length > 0) :\\n  let firstVal := a'"
+  },
+  "LF0104": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_magic_candies_minimum_case: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0128": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_digit_valid: no trivial proof\nsingle_zero_invalid: rfl with String.repeat=default, number_of_arrays=default\n4 variant(s) x 8 tactics"
+  },
+  "LF0152": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "maxArea_single_cut: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0169": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "maxDiff_single_digit: no trivial proof\nmaxDiff_properties: simp_all [maxDiff, numDigits] with maxDiff=default, numDigits=default\nmaxDiff_nonnegative: omega with maxDiff=default, numDigits=default\n4 variant(s) x 8 tactics"
+  },
+  "LF0179": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "trap_empty: rfl with trap=default\ntrap_singleton: rfl with trap=default\ntrap_valley: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0197": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "num_unique_bst_base_cases: no trivial proof\nnum_unique_bst_positive: no trivial proof\nnum_unique_bst_increasing: no trivial proof\nnum_unique_bst_deterministic: rfl with num_unique_bst=default\nnum_unique_bst_known_values: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0224": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_vowels_monotonic: simp_all [max_vowels, count_vowels, is_vowel] with max_vowels=default, count_vowels=default, is_vowel=default\nmax_vowels_empty: rfl with max_vowels=default, count_vowels=default, is_vowel=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0239": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "flipgame_result_in_input_lists: simp_all [flipgame] with flipgame=default\nflipgame_result_not_same_card: simp_all [flipgame] with flipgame=default\nflipgame_result_is_minimal: simp_all [flipgame] with flipgame=default\nflipgame_identical_numbers: simp_all [flipgame] with flipgame=default\nflipgame_two_different_numbers: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0241": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "optimal_division_empty: simp_all [optimalDivision] with optimalDivision=default\noptimal_division_single: no trivial proof\noptimal_division_two: no trivial proof\ndivision_format_parts: no trivial proof\nfirst_number_preserved: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0247": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "clumsy_one: no trivial proof\nclumsy_two: no trivial proof\nclumsy_bounds_larger: no trivial proof\nclumsy_monotonic_small: simp_all [clumsy] with clumsy=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0278": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_nonnegative: simp_all [smallestRangeII] with smallestRangeII=default\nsingle_element_gives_zero: rfl with smallestRangeII=default\nempty_list_gives_zero: rfl with smallestRangeII=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0287": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "total_n_queens_nonneg: omega with total_n_queens=default\ntotal_n_queens_unique: simp_all with total_n_queens=default\n2 variant(s) x 8 tactics\ntrivial solution (total_n_queens=default) with the postamble: rung PROVED"
+  },
+  "LF0303": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "candy_empty: rfl with candy=default\ncandy_single: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0323": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "minimum_palindromes: no trivial proof\nempty_string: rfl with count_palindromic_substrings=default, is_palindrome=default, string_reverse=default, string_repeat=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0327": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "anagram_non_negative: omega with min_steps_to_anagram=default\nempty_strings_zero_steps: rfl with min_steps_to_anagram=default\nsame_string_zero_steps: rfl with min_steps_to_anagram=default\nanagram_symmetry: rfl with min_steps_to_anagram=default\nsteps_bounded_by_length: simp_all [min_steps_to_anagram] with min_steps_to_anagram=default\nempty_string_steps: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0329": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "findGoodStrings_single_char: rfl with failure=default, findGoodStrings=passthrough n\nfindGoodStrings_evil_prefix: rfl with failure=default, findGoodStrings=default\nfindGoodStrings_full_range: no trivial proof\n6 variant(s) x 8 tactics"
+  },
+  "LF0330": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "num_triplets_nonnegative: omega with num_triplets=default\nnum_triplets_symmetric: rfl with num_triplets=default\nnum_triplets_empty_first: rfl with num_triplets=default\nnum_triplets_empty_second: rfl with num_triplets=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0339": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "positive_scaling: simp_all [maximum_sum_with_deletion, list_maximum, list_sum] with maximum_sum_with_deletion=default, list_maximum=default, list_sum=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0342": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "broken_calc_non_negative: omega with broken_calc=default\nbroken_calc_equal_case: rfl with broken_calc=default\nbroken_calc_greater_case: no trivial proof\nbroken_calc_bounds: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0344": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "numSubseq_non_negative: omega with numSubseq=default, minimum=default\nnumSubseq_modulo_bound: simp_all [numSubseq, minimum] with numSubseq=default, minimum=default\nnumSubseq_single_element: no trivial proof\n4 variant(s) x 8 tactics"
+  },
+  "LF0364": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_price_zero_profit: rfl with max_profit=default, pairwise_profits=default, isSorted=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0372": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_subarray_len_empty: rfl with min_subarray_len=default, sum_list=default, slice=default\n4 variant(s) x 8 tactics"
+  },
+  "LF0376": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_vowel_permutation_positive: trivial with count_vowel_permutation=passthrough n\ncount_vowel_permutation_bounded: simp_all [count_vowel_permutation] with count_vowel_permutation=default\ncount_vowel_permutation_base_one: no trivial proof\ncount_vowel_permutation_base_two: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0382": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "numWays_non_negative: omega with count_char=default, numWays=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0408": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "integer_replacement_terminates: omega with integer_replacement=default\ninteger_replacement_is_nat: rfl with integer_replacement=default\ninteger_replacement_base_case_one: rfl with integer_replacement=default\ninteger_replacement_base_case_two: no trivial proof\ninteger_replacement_power_of_two: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0423": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "non_negative_result: omega with num_of_subarrays=default\nempty_result_if_smaller: simp_all [num_of_subarrays] with num_of_subarrays=default\nresult_bounded_by_possible_subarrays: simp_all [num_of_subarrays] with num_of_subarrays=default\nk_equals_one_case: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0430": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "mirror_reflection_range: simp_all [mirrorReflection] with mirrorReflection=default\nmirror_reflection_reduction: rfl with mirrorReflection=default\nmirror_reflection_even_odd: no trivial proof\nmirror_reflection_odd_even: rfl with mirrorReflection=default\nmirror_reflection_both_odd: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0451": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_employee_zero_time: rfl with numOfMinutes=default\n3 variant(s) x 8 tactics"
+  },
+  "LF0457": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sum_four_divisors_nonnegative: omega with sum_four_divisors=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0477": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "empty_rows_handled_raises: simp_all [kth_smallest_in_sorted_matrix, is_sorted, is_matrix_sorted] with kth_smallest_in_sorted_matrix=default, is_sorted=default, is_matrix_sorted=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0480": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "output_always_positive: omega with find_substrings_in_wraparound=default\nsingle_char_min: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0489": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "calculate_positive_number: no trivial proof\ncalculate_addition: no trivial proof\ncalculate_multiplication: no trivial proof\ncalculate_division: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0503": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "compare_and_calc_spec: no trivial proof\ncompare_and_calc_same: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0507": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_ways_positive: trivial with count_ways_to_climb=passthrough n\ncount_ways_upper_bound: simp_all [count_ways_to_climb] with count_ways_to_climb=default\ncount_ways_lower_bound: no trivial proof\ncount_ways_base_cases: trivial with count_ways_to_climb=passthrough n\ncount_ways_even: no trivial proof\ncount_ways_odd: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0521": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "queens_symmetry_rotate_180: rfl with solve_queens=default\nqueens_square_board_nonnegative: omega with solve_queens=default\nqueens_corner_symmetry: rfl with solve_queens=default\nqueens_basic_properties: simp_all [solve_queens] with solve_queens=default\n5 variant(s) x 8 tactics"
+  },
+  "LF0539": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_outputs_are_digits: trivial with solve=default, stringToNat=default\n1 variant(s) x 8 tactics\ntrivial solution (solve=default, stringToNat=default) with the postamble: rung PROVED"
+  },
+  "LF0540": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_max_sequence_length_empty: rfl with find_max_sequence_length=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0541": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "coordinates_are_integers: trivial with find_robot_position=default\nposition_uniqueness: rfl with find_robot_position=default\nfirst_position_is_up: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0553": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_format_no: no trivial proof\nminimal_valid_case: no trivial proof\nsmall_invalid_case: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0557": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_fruit_diff_nonnegative: omega with min_fruit_diff=default\nmin_fruit_diff_bounded: simp_all [min_fruit_diff] with min_fruit_diff=default\nmin_fruit_diff_with_enough_gold: simp_all [min_fruit_diff] with min_fruit_diff=default\nmin_fruit_diff_equal_fruits: rfl with min_fruit_diff=default\nmin_fruit_diff_no_gold: no trivial proof\n4 variant(s) x 8 tactics"
+  },
+  "LF0560": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "output_positive: no trivial proof\nequals_removal: rfl with find_min_valid_sequence=default\nempty_string: no trivial proof\nsingle_equals: no trivial proof\nmultiple_equals: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0573": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_jumps_nonnegative: omega with solve_jumps=default\nsolve_jumps_bounded_by_gaps: simp_all [solve_jumps] with solve_jumps=default\nsolve_jumps_trivial_cases1: rfl with solve_jumps=default\nsolve_jumps_trivial_cases2: no trivial proof\nsolve_jumps_single_gap: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0582": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_bounds: simp_all [count_valid_shifts, verify_shift] with count_valid_shifts=default, verify_shift=default\nall_same_gives_zero: rfl with count_valid_shifts=default, verify_shift=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0608": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_subarrays_singleton: rfl with solve_subarrays=default, count_valid_subarrays=default\nsolve_subarrays_alternating_nonneg: omega with solve_subarrays=default, count_valid_subarrays=default\n4 variant(s) x 8 tactics"
+  },
+  "LF0614": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_tallest_in_list: no trivial proof\nlength_preserved: omega with find_tallest_mountain=default\nsingle_mountain_height: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0617": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_quadruples_returns_natural: omega with count_quadruples=default\ncount_quadruples_binary_for_four: simp_all [count_quadruples] with count_quadruples=default\ninsufficient_elements_gives_zero: rfl with count_quadruples=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0626": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "chocolate_distribution_bounds: simp_all [solve_chocolate_distribution] with solve_chocolate_distribution=default\nzero_chocolates: rfl with solve_chocolate_distribution=default\nperfect_distribution: simp_all [solve_chocolate_distribution] with solve_chocolate_distribution=default\nedge_cases_bounds: simp_all [solve_chocolate_distribution] with solve_chocolate_distribution=default\n3 variant(s) x 8 tactics"
+  },
+  "LF0628": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_random_generator_range: simp_all [solve_random_generator] with solve_random_generator=default\nsolve_random_generator_n1: no trivial proof\nsolve_random_generator_n2: no trivial proof\nsolve_random_generator_n_gt_2: simp_all [solve_random_generator] with solve_random_generator=default\nsolve_random_generator_invalid: no trivial proof\nsolve_random_generator_edge_cases: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0643": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_non_negative: omega with sum_odds_in_range=default, solve_alternate_odd_sum=default\nsame_start_end_even: simp_all [sum_odds_in_range, solve_alternate_odd_sum] with sum_odds_in_range=default, solve_alternate_odd_sum=default\nempty_range: simp_all [sum_odds_in_range, solve_alternate_odd_sum] with sum_odds_in_range=default, solve_alternate_odd_sum=default\n12 variant(s) x 8 tactics"
+  },
+  "LF0664": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "return_number_returns_input: rfl with return_number=passthrough n\nreturn_number_nonneg: trivial with return_number=passthrough n\nreturn_number_nonpos: trivial with return_number=passthrough n\n2 variant(s) x 8 tactics\ntrivial solution (return_number=passthrough n) with the postamble: rung PROVED"
+  },
+  "LF0679": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "phi_positive: trivial with phi=passthrough n, solve_passcode=default\nphi_upper_bound: simp_all [phi, solve_passcode] with phi=default, solve_passcode=default\nphi_one: rfl with phi=passthrough n, solve_passcode=default\nsolve_passcode_positive: trivial with phi=default, solve_passcode=passthrough a\nsolve_passcode_upper_bound: simp_all [phi, solve_passcode] with phi=default, solve_passcode=default\nsolve_passcode_one: rfl with phi=default, solve_passcode=passthrough m\nsolve_passcode_coprime: rfl with phi=default, solve_passcode=default\nsolve_passcode_gcd: rfl with phi=default, solve_passcode=default\n6 variant(s) x 8 tactics"
+  },
+  "LF0701": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_special_substrings_all_zeros: rfl with count_special_substrings=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0709": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "diagonal_difference_single_element: rfl with diagonal_difference=default, is_square_matrix=default\n1 variant(s) x 8 tactics"
+  },
+  "LF0735": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "check_divisible_permutations_valid_output: simp_all [digits, check_divisible_permutations] with digits=default, check_divisible_permutations=default\ncheck_divisible_permutations_single_digits: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0748": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_event_time_single: no trivial proof\nmin_event_time_equal: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0764": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_column: no trivial proof\nsingle_row: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0797": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "xor_self_cancel: rfl with solve_array_xor=default\nxor_commutative: rfl with solve_array_xor=default\nxor_zero_identity: no trivial proof\nsingle_element: no trivial proof\neven_duplicates_zero: rfl with solve_array_xor=default\nodd_duplicates_self: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0808": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "empty_payments: rfl with calculate_maintenance_due=default\n2 variant(s) x 8 tactics"
+  },
+  "LF0820": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_digit_identity: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0828": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "singleton_array: rfl with find_largest_gcd_subarray=passthrough n\n2 variant(s) x 8 tactics"
+  },
+  "LF0830": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "compression_length_positive: no trivial proof\ncompression_length_upper_bound: no trivial proof\ncompression_length_monotonic: no trivial proof\ncompression_length_k_one: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0864": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_range: simp_all [solve_proxy_attendance, countP] with solve_proxy_attendance=default, countP=default\nall_present: rfl with solve_proxy_attendance=default, countP=default\ntoo_many_absences: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF0896": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "unique_balls_elements_from_inputs: simp_all [find_unique_balls] with find_unique_balls=passthrough arr1\nidentical_arrays_empty: rfl with find_unique_balls=default\n3 variant(s) x 8 tactics"
+  },
+  "LF0897": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_time_always_positive: trivial with min_time_to_eat_bananas=passthrough n\nmin_time_monotonic: simp_all [min_time_to_eat_bananas] with min_time_to_eat_bananas=default\nmin_time_upper_bound: simp_all [min_time_to_eat_bananas] with min_time_to_eat_bananas=default\nmin_time_small_inputs_1: rfl with min_time_to_eat_bananas=passthrough n\nmin_time_small_inputs_2: rfl with min_time_to_eat_bananas=passthrough n\n2 variant(s) x 8 tactics"
+  },
+  "LF0913": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_pool_area_quadratic: no trivial proof\nmax_pool_area_positive: trivial with max_pool_area=passthrough r\nmax_pool_area_zero_iff: rfl with max_pool_area=passthrough r\n2 variant(s) x 8 tactics"
+  },
+  "LF0914": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_even_sum_pairs_positive: omega with count_even_sum_pairs=default\ncount_even_sum_pairs_symmetric: rfl with count_even_sum_pairs=default\ncount_even_sum_pairs_same_input: no trivial proof\ncount_even_sum_pairs_small_inputs: trivial with count_even_sum_pairs=passthrough a\ncount_even_sum_pairs_bounds: simp_all [count_even_sum_pairs] with count_even_sum_pairs=default\n3 variant(s) x 8 tactics"
+  },
+  "LF0926": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "calculate_series_sum_positive: trivial with calculate_series_sum=passthrough n\ncalculate_series_sum_increasing: no trivial proof\ncalculate_series_sum_known_values: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0944": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_max_diff_non_negative: simp_all [find_max_diff, list_max, list_min, list_sort] with find_max_diff=default, list_max=default, list_min=default, list_sort=default\nfind_max_diff_reverse_invariant: rfl with find_max_diff=default, list_max=default, list_min=default, list_sort=default\nfind_max_diff_single_element: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF0950": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "good_rectangles_positive: trivial with solve_good_rectangles=passthrough M\ngood_rectangles_symmetric: rfl with solve_good_rectangles=default\ngood_rectangles_edge_case_k_gt_one: trivial with solve_good_rectangles=passthrough M\n4 variant(s) x 8 tactics"
+  },
+  "LF0951": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "jem_laziness_positive: trivial with solve_jem_laziness=passthrough n\nsingle_problem_case: rfl with solve_jem_laziness=passthrough m\nincreases_with_problems: simp_all [solve_jem_laziness] with solve_jem_laziness=default\nincreases_with_breaks: simp_all [solve_jem_laziness] with solve_jem_laziness=default\nincreases_with_initial_time: simp_all [solve_jem_laziness] with solve_jem_laziness=default\nsingle_problem_edge_case: rfl with solve_jem_laziness=passthrough n\ntwo_problems_case: no trivial proof\n4 variant(s) x 8 tactics"
+  },
+  "LF0982": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_empty_pairs: no trivial proof\ncount_single_node: rfl with count_non_friend_pairs=default\ncount_empty_graph: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF0985": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_late_submissions_non_negative: omega with count_late_submissions=default\ncount_late_submissions_upper_bound: simp_all [count_late_submissions] with count_late_submissions=default\ncount_late_submissions_manual_count: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1002": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_change_empty_list: rfl with abs=default, min_change_to_equal_leaves=default\nmin_change_single_leaf: rfl with abs=default, min_change_to_equal_leaves=default\n4 variant(s) x 8 tactics"
+  },
+  "LF1007": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_crowds_nonnegative: no trivial proof\nsolve_crowds_small_n: rfl with solve_crowds=default\nsolve_crowds_upper_bound: no trivial proof\nsolve_crowds_known_values_3: no trivial proof\nsolve_crowds_known_values_4: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1011": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_good_pairs_bounds: simp_all [gcd, count_good_pairs] with gcd=default, count_good_pairs=default\ncount_good_pairs_monotonic: simp_all [gcd, count_good_pairs] with gcd=default, count_good_pairs=default\n9 variant(s) x 8 tactics"
+  },
+  "LF1012": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "check_repeated_word: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1021": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_smaller_than_input: no trivial proof\nresult_nonnegative: omega with solve_min_value=default\nops_nonnegative: omega with solve_min_value=default\nlarger_numbers_get_smaller: no trivial proof\nfunction_is_deterministic: rfl with solve_min_value=default\none_stays_one: no trivial proof\nsingle_digit_not_increase: trivial with solve_min_value=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1050": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "output_bounds: simp_all [min_ops_to_zeros] with min_ops_to_zeros=default\nempty_string: rfl with min_ops_to_zeros=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1064": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_stones_removed_identity: rfl with max_stones_removed=default\nmax_stones_removed_n_independent: rfl with max_stones_removed=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1068": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "bound_lower: omega with solve_kabir_game=default\nbound_upper: trivial with solve_kabir_game=default\nresult_in_mod_range: simp_all [solve_kabir_game] with solve_kabir_game=default\nk_affects_result: no trivial proof\nsmall_inputs_bound: simp_all [solve_kabir_game] with solve_kabir_game=default\n3 variant(s) x 8 tactics"
+  },
+  "LF1071": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "monotonic_increasing: simp_all [calculate_goodness_sum, num_digits] with calculate_goodness_sum=default, num_digits=default\n6 variant(s) x 8 tactics"
+  },
+  "LF1088": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "cupcakes_non_negative: no trivial proof\ncupcakes_positive: no trivial proof\ncupcakes_commutative: rfl with calculate_cupcakes=default\ncupcakes_zero_cases: trivial with calculate_cupcakes=default\n3 variant(s) x 8 tactics"
+  },
+  "LF1089": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_regions_always_positive: trivial with max_regions_after_v_roads=passthrough n\nmax_regions_monotonic: simp_all [max_regions_after_v_roads] with max_regions_after_v_roads=passthrough n\nmax_regions_known_values: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1093": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "vaccine_distribution_positive: trivial with solve_vaccine_distribution=passthrough N\nvaccine_distribution_D_one: rfl with solve_vaccine_distribution=passthrough N\nvaccine_distribution_min_days: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF1099": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "calc_max_sweetness_positive: trivial with calc_max_sweetness=passthrough n\ncalc_max_sweetness_upper_bound: simp_all [calc_max_sweetness] with calc_max_sweetness=default\ncalc_max_sweetness_multiple: rfl with calc_max_sweetness=default\ncalc_max_sweetness_n_one: rfl with calc_max_sweetness=passthrough k\ncalc_max_sweetness_n_gt_one: no trivial proof\ncalc_max_sweetness_k_zero: rfl with calc_max_sweetness=default\ncalc_max_sweetness_step_two: rfl with calc_max_sweetness=default\ncalc_max_sweetness_step_three: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF1102": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_valid_mapping_returns_yes_or_no: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1105": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "output_is_positive: trivial with find_minimum_sum_pair=passthrough n, isPrime=default\nprime_input_returns_plus_one: simp_all [find_minimum_sum_pair, isPrime] with find_minimum_sum_pair=default, isPrime=default\neven_number_property: simp_all [find_minimum_sum_pair, isPrime] with find_minimum_sum_pair=default, isPrime=default\none_returns_two: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1108": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_chopstick_pairs_non_negative: omega with max_chopstick_pairs=default\nmax_chopstick_pairs_upper_bound: simp_all [max_chopstick_pairs] with max_chopstick_pairs=default\nmax_chopstick_pairs_permutation_invariant: rfl with max_chopstick_pairs=default\nmax_chopstick_pairs_monotone_d: simp_all [max_chopstick_pairs] with max_chopstick_pairs=default\n3 variant(s) x 8 tactics"
+  },
+  "LF1126": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sort_problems_maintains_difficulty_order: no trivial proof\nsort_problems_single_problem: no trivial proof\nsort_problems_minimal_case: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1129": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_structure: simp_all [convert_string] with convert_string=default\nvowels_removed: simp_all [convert_string] with convert_string=default\n2 variant(s) x 8 tactics\ntrivial solution (convert_string=default) with the postamble: rung PROVED"
+  },
+  "LF1134": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_ands_nonnegative: omega with count_ands=default\ncount_ands_upper_bound: simp_all [count_ands] with count_ands=default\ncount_ands_repetition: no trivial proof\ncount_ands_case_insensitive: rfl with count_ands=default\ncount_ands_empty: rfl with count_ands=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1141": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_pool_shots_bounds: no trivial proof\nsolve_pool_shots_boundary: no trivial proof\nsolve_pool_shots_cycle: rfl with solve_pool_shots=default\nsolve_pool_shots_equal_pos: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1150": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_menus_positive: trivial with min_menus_for_price=passthrough price, bin_ones=default\nmin_menus_binary_bound: simp_all [min_menus_for_price, bin_ones] with min_menus_for_price=default, bin_ones=default\npower_two_property: no trivial proof\nedge_case_2048: no trivial proof\nedge_case_4096: no trivial proof\nedge_case_2047: no trivial proof\n4 variant(s) x 8 tactics"
+  },
+  "LF1151": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "empty_misspelled_returns_empty: rfl with find_correct_spellings=default\nempty_dict_returns_empty: rfl with find_correct_spellings=default\nexact_matches_returned: simp_all [find_correct_spellings] with find_correct_spellings=passthrough dict_words\n3 variant(s) x 8 tactics"
+  },
+  "LF1154": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_removable_steps_le_n: simp_all [max_removable_steps, count_char] with max_removable_steps=default, count_char=default\nmax_removable_steps_empty: simp_all [max_removable_steps, count_char] with max_removable_steps=passthrough n, count_char=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1193": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_in_valid_range: simp_all [last_two_digits_of_5powern] with last_two_digits_of_5powern=default\nmatches_manual_calculation: no trivial proof\nnegative_input_undefined: simp_all [last_two_digits_of_5powern] with last_two_digits_of_5powern=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1199": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_operations_cost_lower_bound: no trivial proof\nmin_operations_cost_non_negative: omega with min_operations_cost=default\nmin_operations_cost_preserves_input: trivial with min_operations_cost=default\nmin_operations_cost_two_ones: no trivial proof\nmin_operations_cost_same_numbers: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1218": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "valid_ring_topology_length: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1252": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_city_paths_single_node: rfl with solve_city_paths=passthrough n\nsolve_city_paths_two_nodes: rfl with solve_city_paths=passthrough start\n3 variant(s) x 8 tactics"
+  },
+  "LF1257": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "not_less_than_input: simp_all [sorted, largest_digit_rearrangement] with sorted=default, largest_digit_rearrangement=passthrough n\nrearrangement_idempotent: rfl with sorted=default, largest_digit_rearrangement=default\npreserves_length: rfl with sorted=default, largest_digit_rearrangement=passthrough n\n4 variant(s) x 8 tactics"
+  },
+  "LF1291": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "remainder_divides_result: simp_all [min_candies_for_party, gcd] with min_candies_for_party=default, gcd=default\n6 variant(s) x 8 tactics"
+  },
+  "LF1312": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_element_is_zero: rfl with solve_temperature_scales=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1318": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_plates_result_bounds: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1330": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_non_negative: omega with solve=default\nsolve_formula: no trivial proof\nsolve_monotonic: no trivial proof\nsolve_base_case_one: rfl with solve=default\nsolve_base_case_two: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1333": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "same_costs_divisible: rfl with calculate_packing_cost=default\n8 variant(s) x 8 tactics"
+  },
+  "LF1334": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_pizza_time_bounds: simp_all [max_pizza_time, count_ones] with max_pizza_time=default, count_ones=default\nmax_pizza_time_upper_bound: simp_all [max_pizza_time, count_ones] with max_pizza_time=default, count_ones=default\nmax_pizza_time_all_ones: simp_all [max_pizza_time, count_ones] with max_pizza_time=passthrough n, count_ones=default\nmax_pizza_time_all_zeros: simp_all [max_pizza_time, count_ones] with max_pizza_time=passthrough k, count_ones=default\n3 variant(s) x 8 tactics"
+  },
+  "LF1342": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_max_speed_cars_empty_list: rfl with count_max_speed_cars=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1344": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "same_numbers_returns_negative_one: no trivial proof\nresult_is_symmetric: rfl with solve_cheat_possibilities=default, countDivisors=default\nresult_is_nonnegative_for_different: simp_all [solve_cheat_possibilities, countDivisors] with solve_cheat_possibilities=default, countDivisors=default\nperfect_squares_have_odd_factors: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1351": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "zeros_add_no_carry: rfl with count_binary_additions=default\none_zero_no_carry: rfl with count_binary_additions=default\nzero_one_one_carry: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1352": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "decode_string_empty: rfl with decode_string=default\ndecode_string_single_zero: rfl with decode_string=default\ndecode_string_leading_zero: rfl with decode_string=default\ndecode_string_single_digit: no trivial proof\ndecode_string_twelve: no trivial proof\ndecode_string_226: no trivial proof\ndecode_string_eleven: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1354": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_sabotages_nonnegative: omega with count_sabotages_at_level_5=default\ncount_sabotages_monotonic: simp_all [count_sabotages_at_level_5] with count_sabotages_at_level_5=default\ncount_sabotages_small_numbers: rfl with count_sabotages_at_level_5=default\ncount_sabotages_bounded: simp_all [count_sabotages_at_level_5] with count_sabotages_at_level_5=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1370": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "getsum_base_cases: no trivial proof\ngetsum_positive: trivial with getsum=passthrough n\ngetsum_invalid_input: simp_all [getsum] with getsum=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1380": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_sokka_journey_non_negative: omega with solve_sokka_journey=default\nsolve_sokka_journey_less_than_modulo: simp_all [solve_sokka_journey] with solve_sokka_journey=default\nsolve_sokka_journey_minimum_input: rfl with solve_sokka_journey=default\nsolve_sokka_journey_three_input: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1397": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_problems_equal_values: no trivial proof\nsolve_problems_zero_T: no trivial proof\nsolve_problems_full_T: trivial with solve_problems=passthrough N\n6 variant(s) x 8 tactics"
+  },
+  "LF1398": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_bounds: simp_all [count_balanced_substrings] with count_balanced_substrings=default\nall_fours: no trivial proof\nsingle_char_substrings: no trivial proof\nempty_and_single: no trivial proof\nconsecutive_sevens_reduce: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1408": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_perimeter_fence_non_negative: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1412": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_recipe_book_returns_lists: no trivial proof\nsolve_recipe_book_contains_one: no trivial proof\nsolve_recipe_book_no_duplicates_in_groups: omega with solve_recipe_book=default, format_output=default\nsolve_recipe_book_optimal_groups: no trivial proof\nformat_output_valid: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1430": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "robbery_prob_numerator: no trivial proof\nrobbery_prob_denominator: no trivial proof\nrobbery_prob_consistent: rfl with calc_robbery_probability=default\nrobbery_prob_monotonic: simp_all [calc_robbery_probability] with calc_robbery_probability=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1448": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "invalid_chars_check: rfl with check_string_chars=default\nempty_string_check: no trivial proof\nempty_chars_check: rfl with check_string_chars=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1449": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_square_plots_positive: trivial with min_square_plots=passthrough length\nmin_square_plots_symmetric: rfl with min_square_plots=default\nmin_square_plots_double_dims: rfl with min_square_plots=default\nmin_square_plots_equal_dims: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF1450": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_always_nonnegative: omega with count_yalalovichik_substrings=default, longest_run=default\nsingle_char_count: no trivial proof\nrepeated_single_char: no trivial proof\nalternating_chars: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1460": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "calculate_wonder_sum_length: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1474": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "calc_layer_sum_single_digit_pos: trivial with calc_layer_sum=passthrough n\ncalc_layer_sum_zero_is_zero: rfl with calc_layer_sum=default\ncalc_layer_sum_one_is_one: rfl with calc_layer_sum=passthrough n\ncalc_layer_sum_same_digits: rfl with calc_layer_sum=default\ncalc_layer_sum_order_indep: rfl with calc_layer_sum=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1497": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_remaining_stones_non_negative: omega with min_remaining_stones=default\nmin_remaining_stones_bounded: simp_all [min_remaining_stones] with min_remaining_stones=default\nmin_remaining_stones_zero_moves: no trivial proof\nmin_remaining_stones_symmetric: rfl with min_remaining_stones=default\nmin_remaining_stones_equal_piles_even: rfl with min_remaining_stones=default\n4 variant(s) x 8 tactics"
+  },
+  "LF1500": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_series_increases: simp_all [solve_series] with solve_series=passthrough n\nsolve_series_one: rfl with solve_series=passthrough n\nsolve_series_large_bound: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF1505": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_element_array: rfl with count_possible_arrays=passthrough N\nresult_bounds: simp_all [count_possible_arrays] with count_possible_arrays=default\nsymmetry: rfl with count_possible_arrays=default\n3 variant(s) x 8 tactics"
+  },
+  "LF1519": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_non_negative: omega with solve_rubiks_cuboid=default\nsolve_commutative: trivial with solve_rubiks_cuboid=default\nsmall_cubes_zero: simp_all [solve_rubiks_cuboid] with solve_rubiks_cuboid=default\nincreases_with_size: simp_all [solve_rubiks_cuboid] with solve_rubiks_cuboid=default\n4 variant(s) x 8 tactics"
+  },
+  "LF1528": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_leq_max: no trivial proof\nmin_geq_max_input: no trivial proof\nmax_leq_sum: no trivial proof\nmin_eq_max_conditions: no trivial proof\nzero_pair_equals_nonzero: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1549": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_qaq_subsequences_nonnegative: omega with count_qaq_subsequences=default\ncount_qaq_subsequences_lt_two_q: simp_all [count_qaq_subsequences] with count_qaq_subsequences=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1597": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_subsequences_non_negative: simp_all [count_subsequences] with count_subsequences=default\ncount_subsequences_empty_needle: no trivial proof\ncount_subsequences_empty_haystack: simp_all [count_subsequences] with count_subsequences=default\ncount_subsequences_identical: no trivial proof\ncount_subsequences_repeated_chars: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1618": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_commutativity: rfl with rev=default, solve=default\n1 variant(s) x 8 tactics\ntrivial solution (rev=default, solve=default) with the postamble: rung PROVED"
+  },
+  "LF1662": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "two_by_n_bounds: simp_all [two_by_n] with two_by_n=default\ntwo_by_n_single_color: no trivial proof\ntwo_by_n_impossible: rfl with two_by_n=default\ntwo_by_n_exists_solution: trivial with two_by_n=passthrough n\ntwo_by_n_deterministic: rfl with two_by_n=default\ntwo_by_n_min_colors: simp_all [two_by_n] with two_by_n=passthrough k\ntwo_by_n_monotonic: simp_all [two_by_n] with two_by_n=default\n3 variant(s) x 8 tactics"
+  },
+  "LF1692": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sequence_bounded: simp_all [find_sequence_value] with find_sequence_value=default\nbase_cases: no trivial proof\nsequence_monotonic: simp_all [find_sequence_value] with find_sequence_value=default\n2 variant(s) x 8 tactics"
+  },
+  "LF1724": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solution_size: no trivial proof\nqueens_in_bounds: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF1861": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "people_indexes_valid_indices: no trivial proof\npeople_indexes_empty: rfl with List.isSubsetOf=default, people_indexes=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1973": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_non_negative: omega with solve=default\nsolve_symmetric_ab: rfl with solve=default\nsolve_symmetric_bc: rfl with solve=default\n1 variant(s) x 8 tactics"
+  },
+  "LF1978": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_node_case: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2016": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_non_negative: omega with count_pretty_substrings=default\ncount_bounded_by_length: simp_all [count_pretty_substrings] with count_pretty_substrings=default\nbalanced_parens_pretty: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2035": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "empty_relationships_power_two: no trivial proof\nresult_within_modulo_bounds: simp_all [is_valid_relationship, solve_love_triangles, DisjointSet.find_set, DisjointSet.union] with is_valid_relationship=default, solve_love_triangles=default, DisjointSet.find_set=default, DisjointSet.union=passthrough ds\ncontradictory_relationships_zero: rfl with is_valid_relationship=default, solve_love_triangles=default, DisjointSet.find_set=default, DisjointSet.union=passthrough ds\nresult_modularity: rfl with is_valid_relationship=default, solve_love_triangles=default, DisjointSet.find_set=default, DisjointSet.union=passthrough ds\n4 variant(s) x 8 tactics"
+  },
+  "LF2036": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_lost_milk_non_negative: omega with min_lost_milk=default, count_facing=default\nmin_lost_milk_length: simp_all with min_lost_milk=default, count_facing=default\n4 variant(s) x 8 tactics"
+  },
+  "LF2079": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_distinct_or_values_singleton: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2084": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_max_banknotes_basic_properties: no trivial proof\ncount_max_banknotes_guard_order: simp_all [count_max_banknotes] with count_max_banknotes=default\ncount_max_banknotes_empty_notes: rfl with count_max_banknotes=default\ncount_max_banknotes_start_irrelevant: rfl with count_max_banknotes=default\n4 variant(s) x 8 tactics"
+  },
+  "LF2146": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "min_cost_workout_empty: rfl with min_cost_workout=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2191": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_good_substrings_result_structure: no trivial proof\nsolve_good_substrings_first_element_values: no trivial proof\nsolve_good_substrings_count_bound: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2194": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_non_negative: omega with solve=default\nsolve_upper_bound: simp_all [solve] with solve=default\nsolve_positive_implies_exists_gt: simp_all [solve] with solve=default\nsolve_is_total_minus_one_b: simp_all [solve] with solve=default\nsolve_identical_pairs: rfl with solve=default\n2 variant(s) x 8 tactics"
+  },
+  "LF2229": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "shortest_length_non_negative: omega with get_shortest_string_length=default\nshortest_length_at_most_input: simp_all [get_shortest_string_length] with get_shortest_string_length=default\nAB_reduces_length: no trivial proof\nBB_reduces_length: no trivial proof\nrepeated_B_reduces_to_zero_or_one: simp_all [get_shortest_string_length] with get_shortest_string_length=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2244": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_3uniform_hypertrees_nonneg: omega with count_3uniform_hypertrees=default\ncount_3uniform_hypertrees_base_cases: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF2257": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_bad_prices_non_negative: omega with count_bad_prices=default\ncount_bad_prices_upper_bound: simp_all [count_bad_prices] with count_bad_prices=default\ncount_bad_prices_singleton: rfl with count_bad_prices=default\ncount_bad_prices_empty: rfl with count_bad_prices=default\ncount_bad_prices_all_same: rfl with count_bad_prices=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2283": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_brackets_non_negative: omega with solve_brackets=default, repeat_char=default\nsolve_brackets_empty: rfl with solve_brackets=default, repeat_char=default\nsolve_brackets_balanced: rfl with solve_brackets=default, repeat_char=default\nsolve_brackets_single_close: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2340": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "busy_student_empty_lists: rfl with busy_student=default\n2 variant(s) x 8 tactics"
+  },
+  "LF2376": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "depth_never_negative: omega with min_operations=default\nup_directory_at_root: rfl with min_operations=default\ncurrent_directory_neutral: rfl with min_operations=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2377": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "maximum_product_scales: simp_all [maximum_product] with maximum_product=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2386": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "maxprofit_bounds_pair: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2401": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "tribonacci_base_zero: rfl with tribonacci=default\ntribonacci_base_one: rfl with tribonacci=passthrough n\ntribonacci_base_two: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF2403": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "empty_search_property: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2407": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "shortest_subarray_bounds: no trivial proof\nsingle_element_list: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2419": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "distance_symmetric: rfl with distanceBetweenBusStops=default\ndistance_nonnegative: omega with distanceBetweenBusStops=default\nsame_stop_zero: rfl with distanceBetweenBusStops=default\n3 variant(s) x 8 tactics"
+  },
+  "LF2427": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "num_identical_pairs_non_negative: omega with numIdenticalPairs=default\nempty_or_single_is_zero: simp_all [numIdenticalPairs] with numIdenticalPairs=default\nall_same_values: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2474": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "format_numbers_equal_line_lengths: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2476": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "array_sum_product_2x2_matrix: no trivial proof\narray_sum_product_all_ones: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2514": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "symmetric_subscribers_non_negative: omega with symmetric_subscribers=default\nsymmetric_subscribers_upper_bound: simp_all [symmetric_subscribers] with symmetric_subscribers=default\nsymmetric_subscribers_identical_lists: rfl with symmetric_subscribers=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2518": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "any_string_input_returns_bool: simp_all with is_valid_regex=default\n1 variant(s) x 8 tactics\ntrivial solution (is_valid_regex=default) with the postamble: rung PROVED"
+  },
+  "LF2521": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "prod2sum_output_length: no trivial proof\nprod2sum_sublist_length: no trivial proof\nprod2sum_nonneg_values: no trivial proof\nprod2sum_sublists_sorted: no trivial proof\nprod2sum_list_sorted: no trivial proof\nprod2sum_reversible: rfl with prod2sum=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2527": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "convert_from_zero_cases: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF2537": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "look_and_say_first_value: rfl with look_and_say_and_sum=passthrough n\n2 variant(s) x 8 tactics"
+  },
+  "LF2551": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "ordering_beers_zero: no trivial proof\nordering_beers_one: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2569": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "anagram_non_negative: omega with create_anagram=default\nanagram_self: rfl with create_anagram=default\nanagram_empty: rfl with create_anagram=default\nanagram_length_bound: simp_all [create_anagram] with create_anagram=default\nanagram_repeated: no trivial proof\nanagram_permutation: rfl with create_anagram=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2631": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_abc_sumsqcube_sorted: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2665": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "LOCK_FAIL",
+   "reason": "sorry outside a declaration body",
+   "stamp": "40ea260ae74c8117",
+   "detail": "`sorry` outside a declaration body in vc-theorems: 'theorem per_decreasing {n : Nat} {result : List Nat} :\\n  result = per n →\\n  ∀ i, ∀ h : i < result.length - 1,\\n  result.g'"
+  },
+  "LF2701": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_adjacent_pairs_nonnegative: omega with count_adjacent_pairs=default\ncount_adjacent_pairs_max_bound: simp_all [count_adjacent_pairs] with count_adjacent_pairs=default\ncount_adjacent_pairs_empty_or_single: simp_all [count_adjacent_pairs] with count_adjacent_pairs=default\ncount_adjacent_pairs_case_insensitive: trivial with count_adjacent_pairs=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2718": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "gap_bounded: simp_all [gap] with gap=default\nno_gaps_all_ones: rfl with gap=default\nleading_trailing_zeros: rfl with gap=default\nsingle_bit_no_gap: rfl with gap=default\n2 variant(s) x 8 tactics"
+  },
+  "LF2738": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "check_integers: no trivial proof\ncheck_strings: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2742": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "validate_is_boolean: simp_all with validate=default\nvalidate_string_invariant: rfl with validate=default\nvalidate_sixteen_digit_result: simp_all with validate=default\nvalidate_sixteen_digit_length: no trivial proof\nvalidate_string_digit_consistency: rfl with validate=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2763": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "BROKEN",
+   "reason": "skeleton+postamble: error other than a sorry abort",
+   "stamp": "40ea260ae74c8117",
+   "detail": "Solution.lean:13:35: error: unexpected token '/--'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'"
+  },
+  "LF2772": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_multiples_empty_when_limit_less: rfl with find_multiples=default\nfind_multiples_all_divisible: trivial with find_multiples=default\nfind_multiples_all_within_limit: trivial with find_multiples=default\nfind_multiples_ordered: trivial with find_multiples=default\nfind_multiples_first_element: no trivial proof\nfind_multiples_consecutive_diff: trivial with find_multiples=default\nfind_multiples_same_limit: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2774": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "array_diff_elements_from_a: simp_all [array_diff] with array_diff=passthrough a\narray_diff_no_elements_from_b: no trivial proof\narray_diff_preserves_order: no trivial proof\narray_diff_empty_b: rfl with array_diff=passthrough a\narray_diff_identical_lists: rfl with array_diff=default\n3 variant(s) x 8 tactics"
+  },
+  "LF2789": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "summation_formula: no trivial proof\nsummation_increasing: simp_all [summation] with summation=passthrough n\n2 variant(s) x 8 tactics"
+  },
+  "LF2812": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "riders_positive: no trivial proof\nriders_bounded: simp_all [riders, calc_min_riders] with riders=default, calc_min_riders=default\nriders_short_distances: no trivial proof\nriders_long_distances: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2845": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "poly_add_length: no trivial proof\npoly_add_empty_left: rfl with poly_add=passthrough p2\npoly_add_empty_right: rfl with poly_add=passthrough p1\npoly_add_comm: rfl with poly_add=default\npoly_add_coeff: trivial with poly_add=default\npoly_add_zeros: rfl with poly_add=passthrough p1\n3 variant(s) x 8 tactics"
+  },
+  "LF2880": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "levenshtein_nonneg: omega with levenshtein=default, repeatChar=default\nlevenshtein_identity: rfl with levenshtein=default, repeatChar=default\nlevenshtein_symm: rfl with levenshtein=default, repeatChar=default\nlevenshtein_triangle: simp_all [levenshtein, repeatChar] with levenshtein=default, repeatChar=default\nlevenshtein_empty_string: no trivial proof\nlevenshtein_empty_string_rev: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2886": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "abacaba_is_lowercase: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2887": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "obtain_max_number_twos: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2918": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "last_digit_range: simp_all [last_digit] with last_digit=default\nlast_digit_zero_exp: no trivial proof\nlast_digit_power_one: no trivial proof\nlast_digit_powers_of_ten: simp_all [last_digit] with last_digit=default\n3 variant(s) x 8 tactics"
+  },
+  "LF2925": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "array_center_is_subset: simp_all [list_minimum, array_center, mean, list_index_of] with list_minimum=default, array_center=passthrough lst, mean=default, list_index_of=default\n2 variant(s) x 8 tactics"
+  },
+  "LF2971": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_output_nonnegative_or_minus_one: simp_all [solve, isPerfectSquare] with solve=default, isPerfectSquare=default\n1 variant(s) x 8 tactics"
+  },
+  "LF2986": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "happy_numbers_consistent: rfl with is_happy=default, happy_numbers=default\nhappy_numbers_specific_values: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF2995": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "binary_cleaner_properties: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3012": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_odd_pentaFib_nonnegative: omega with count_odd_pentaFib=default\ncount_odd_pentaFib_first_terms: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3045": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "m_zero_zero: no trivial proof\nzero_one: rfl with guess_it=default, allPos=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3059": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_job_returns_itself: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3110": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "arr_length: no trivial proof\narr_sequence: no trivial proof\narr_empty: rfl with arr=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3124": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "enough_nonneg: omega with enough=default\nenough_fits: simp_all [enough] with enough=default\n4 variant(s) x 8 tactics"
+  },
+  "LF3139": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "strings_crossover_non_negative: omega with strings_crossover=default\nstrings_crossover_max_pairs: simp_all [strings_crossover] with strings_crossover=default\nstrings_crossover_length_mismatch: simp_all [strings_crossover] with strings_crossover=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3157": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "evil_result_valid: no trivial proof\nevil_xor_property: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3159": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "odometer_never_negative: omega with faulty_odometer=default\nodometer_always_smaller: simp_all [faulty_odometer] with faulty_odometer=default\nodometer_consistent: rfl with faulty_odometer=default\nodometer_zero: rfl with faulty_odometer=default\n2 variant(s) x 8 tactics"
+  },
+  "LF3160": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "hotdog_prices_monotonic: simp_all [sale_hotdogs] with sale_hotdogs=default\nhotdog_price_tiers_less_than_5: no trivial proof\nhotdog_price_tiers_less_than_10: no trivial proof\nhotdog_price_tiers_10_or_more: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3180": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "minimum_makes_number_divisible: simp_all [abs, minimum] with abs=default, minimum=passthrough a\n6 variant(s) x 8 tactics"
+  },
+  "LF3185": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_longest_in_list: no trivial proof\nfind_longest_has_max_len: no trivial proof\nties_return_first: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3186": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "poly_subtract_length: no trivial proof\npoly_subtract_self: no trivial proof\npoly_subtract_empty: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3188": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_non_negative_or_minus_one: simp_all [solve] with solve=default\nsolve_impossible_single_digit: no trivial proof\nsolve_leading_zeros: simp_all with solve=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3241": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "scratch_non_negative: omega with split=default, toNat=default, scratch=default\n2 variant(s) x 8 tactics"
+  },
+  "LF3252": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "digitize_length: no trivial proof\ndigitize_values: no trivial proof\ndigitize_reconstruction: no trivial proof\ndigitize_zero: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3259": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "cipher_length_preservation: simp_all [cipher] with cipher=passthrough s\n2 variant(s) x 8 tactics\ntrivial solution (cipher=passthrough s) with the postamble: rung PROVED"
+  },
+  "LF3265": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_non_negative: omega with solve=default\nsolve_single_digit: rfl with solve=passthrough n\n2 variant(s) x 8 tactics"
+  },
+  "LF3281": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "final_grade_output_range: simp_all [final_grade] with final_grade=default\nfinal_grade_high_scores: no trivial proof\nfinal_grade_medium_high_scores: no trivial proof\nfinal_grade_medium_scores: no trivial proof\nfinal_grade_low_scores: simp_all [final_grade] with final_grade=default\nfinal_grade_high_exam: no trivial proof\nfinal_grade_many_projects: no trivial proof\nfinal_grade_low_both: simp_all [final_grade] with final_grade=default\n3 variant(s) x 8 tactics"
+  },
+  "LF3303": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sequence_sum_equal_bounds: rfl with sequence_sum=passthrough a\nsequence_sum_positive_monotone: simp_all [sequence_sum] with sequence_sum=passthrough a\n4 variant(s) x 8 tactics"
+  },
+  "LF3327": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "vowel_indices_in_bounds: no trivial proof\nvowel_indices_ascending: omega with vowel_indices=default\nvowel_indices_points_to_vowels: no trivial proof\nvowel_indices_finds_all_vowels: no trivial proof\nvowel_indices_unique: omega with vowel_indices=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3359": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "owned_cat_and_dog_output_types: no trivial proof\nowned_cat_and_dog_monotonic: simp_all [owned_cat_and_dog] with owned_cat_and_dog=default\nowned_cat_and_dog_zero_years: no trivial proof\nowned_cat_and_dog_formula: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3389": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_two_identical_bounded: simp_all [solve] with solve=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3393": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "fib_digits_bounds: no trivial proof\nfib_digits_total_count: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3395": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "choose_self: no trivial proof\nchoose_zero: no trivial proof\nchoose_symmetry: rfl with choose=default\nchoose_gt_n: rfl with choose=default\nchoose_pos: no trivial proof\npascal_triangle: rfl with choose=default\n3 variant(s) x 8 tactics"
+  },
+  "LF3399": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "binary_array_to_number_zero: rfl with binary_array_to_number=default\nbinary_array_to_number_one: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3406": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "doors_non_negative: omega with doors=default, sqrt=default\ndoors_squared_leq: simp_all [doors, sqrt] with doors=default, sqrt=default\ndoors_plus_one_squared_gt: no trivial proof\ndoors_perfect_squares: no trivial proof\n4 variant(s) x 8 tactics"
+  },
+  "LF3451": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "gematria_returns_nat: omega with gematria=default\ngematria_case_insensitive: trivial with gematria=default\ngematria_concatenation: rfl with gematria=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3456": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "distribute_length: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3473": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_paths_one_by_one: rfl with choose=default, count_paths=default\ncount_paths_non_negative: omega with choose=default, count_paths=default\ncount_paths_only_vertical: no trivial proof\ncount_paths_only_horizontal: no trivial proof\ncount_paths_start_equals_target: no trivial proof\n6 variant(s) x 8 tactics"
+  },
+  "LF3478": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "not_primes_empty_for_equal_bounds: rfl with not_primes=default, is_prime=default, all_dig_prime=default\nnot_primes_empty_for_invalid_range: rfl with not_primes=default, is_prime=default, all_dig_prime=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3516": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "order_non_negative: omega with order=default, ceil=default\nadding_pizzas_increases_time: simp_all [order, ceil] with order=default, ceil=default\n12 variant(s) x 8 tactics\ntrivial solution (order=default, ceil=default) with the postamble: rung PROVED"
+  },
+  "LF3517": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "simple_equation: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3522": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "simple_multiplication_even: no trivial proof\nsimple_multiplication_odd: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3523": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "ulam_sequence_length: no trivial proof\nulam_sequence_deterministic: rfl with ulam_sequence=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3535": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "array_change_returns_nonnegative: omega with array_change=default, sum=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3546": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "empty_or_single_returns_empty: no trivial proof\nno_originals_in_result: no trivial proof\nresult_is_sorted: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3584": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "digits_positive: no trivial proof\nsingle_digit_numbers: no trivial proof\ndigits_equals_string_length: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3588": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "past_valid_time: no trivial proof\npast_zero_seconds: no trivial proof\npast_midnight: rfl with past=default\n4 variant(s) x 8 tactics"
+  },
+  "LF3592": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "LOCK_FAIL",
+   "reason": "sorry outside a declaration body",
+   "stamp": "40ea260ae74c8117",
+   "detail": "`sorry` outside a declaration body in vc-theorems: 'theorem generate_diagonal_first_element\\n  {d l : Nat}\\n  (h : l > 0) :\\n  (generate_diagonal d l).get ⟨0, sorry⟩ = 1 :=\\n  '"
+  },
+  "LF3596": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "score_throws_empty: rfl with score_throws=default\n1 variant(s) x 8 tactics"
+  },
+  "LF3603": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "or_arrays_length: no trivial proof\nor_arrays_elemwise: no trivial proof\nor_arrays_identity_right: rfl with orArrays=passthrough arr1\nor_arrays_identity_left: rfl with orArrays=passthrough arr2\nor_arrays_commutative: no trivial proof\nor_arrays_empty: rfl with orArrays=passthrough arr1\nor_arrays_empty_right: rfl with orArrays=passthrough arr1\nor_arrays_empty_left: rfl with orArrays=passthrough arr2\n2 variant(s) x 8 tactics"
+  },
+  "LF3616": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "charCheck_return_type: no trivial proof\ncharCheck_with_spaces: no trivial proof\ncharCheck_without_spaces: no trivial proof\ncharCheck_empty_max: no trivial proof\ncharCheck_spaces_consistency: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3621": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "coprimes_all_less: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF3628": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "pair_zeros_length_valid: simp_all [pair_zeros] with pair_zeros=passthrough xs\npair_zeros_preserves_nonzero: simp_all [pair_zeros] with pair_zeros=passthrough xs\npair_zeros_zero_count: no trivial proof\npair_zeros_preserves_ordering: rfl with pair_zeros=passthrough xs\n2 variant(s) x 8 tactics"
+  },
+  "LF3640": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_digit_palindromes: simp_all [palin, is_palindrome, num_length] with palin=passthrough pos, is_palindrome=default, num_length=default\n6 variant(s) x 8 tactics"
+  },
+  "LF3652": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "f_is_positive: no trivial proof\nf_initial_terms: no trivial proof\nf_base_case: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF3656": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "close_to_zero_returns_from_input_or_zero: omega with close_to_zero=default, abs=default\nempty_string_returns_zero: rfl with close_to_zero=default, abs=default\n2 variant(s) x 8 tactics"
+  },
+  "LF3665": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "apples_always_positive: no trivial proof\napples_increases: no trivial proof\nminimum_case: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3668": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "final_attack_value_empty: rfl with gcd=default, final_attack_value=passthrough x\n6 variant(s) x 8 tactics"
+  },
+  "LF3678": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "product_sans_n_length: rfl with product_sans_n=passthrough nums, List.product=default\n2 variant(s) x 8 tactics"
+  },
+  "LF3680": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "findSum_six: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3795": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "dot_correct_dimensions: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3797": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "knight_move_distance: no trivial proof\npositions_within_board: no trivial proof\nmax_moves: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3799": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "reverse_bits_nonneg: omega with reverse_bits=default, count_ones=default\nreverse_bits_preserves_ones: rfl with reverse_bits=default, count_ones=default\nreverse_bits_preserves_power_of_two: simp_all [reverse_bits, count_ones] with reverse_bits=default, count_ones=default\nreverse_bits_zero: rfl with reverse_bits=default, count_ones=default\nreverse_bits_one: rfl with reverse_bits=passthrough n, count_ones=default\n4 variant(s) x 8 tactics"
+  },
+  "LF3803": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "digits_average_result_in_range: simp_all [digits_average] with digits_average=default\nsingle_digit_unchanged: rfl with digits_average=passthrough n\n2 variant(s) x 8 tactics"
+  },
+  "LF3831": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "corner_positions: no trivial proof\nedge_positions: simp_all [chess_knight] with chess_knight=default\ncenter_max_moves: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF3852": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "last_element_always_included: rfl with solve=passthrough arr\nresult_subset_of_input: simp_all [solve] with solve=passthrough arr\n2 variant(s) x 8 tactics"
+  },
+  "LF3867": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "first_n_smallest_length: no trivial proof\nfirst_n_smallest_contains_input: simp_all [first_n_smallest] with first_n_smallest=passthrough arr\nfirst_n_smallest_full_length: rfl with first_n_smallest=passthrough arr\n2 variant(s) x 8 tactics"
+  },
+  "LF3870": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "LOCK_FAIL",
+   "reason": "sorry outside a declaration body",
+   "stamp": "40ea260ae74c8117",
+   "detail": "`sorry` outside a declaration body in vc-theorems: 'theorem constant_list_gives_negative_one {lst : List Int} (h : lst.length ≥ 2) :\\n  let val := lst.get ⟨0, sorry⟩\\n  let c'"
+  },
+  "LF3871": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "LOCK_FAIL",
+   "reason": "sorry outside a declaration body",
+   "stamp": "40ea260ae74c8117",
+   "detail": "`sorry` outside a declaration body in vc-theorems: 'theorem constant_sequence {arr : List Int} (h : arr.length ≥ 2) :\\n  let constant_arr := List.replicate arr.length (arr.g'"
+  },
+  "LF3947": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "zero_or_one_jar_no_friends: rfl with friends=default\nsufficient_friends: no trivial proof\nfriends_monotone: simp_all [friends] with friends=default\n2 variant(s) x 8 tactics"
+  },
+  "LF3968": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sc_non_negative: omega with sc=default\nsc_zero_when_gaps_exceed_perimeter: rfl with sc=default\nsc_perimeter_relation: trivial with sc=default\nsc_square_identity: rfl with sc=default\nsc_symmetry: rfl with sc=default\n4 variant(s) x 8 tactics"
+  },
+  "LF3978": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "summation_increases: simp_all [summation_of_primes] with summation_of_primes=default\nsum_less_than_square: no trivial proof\nknown_small_values: no trivial proof\nsum_is_positive: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF3996": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_number_non_negative: omega with count_number=default\ncount_number_upper_bound: simp_all [count_number] with count_number=default\ncount_number_above_max: rfl with count_number=default\n3 variant(s) x 8 tactics"
+  },
+  "LF4095": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_zeros_nonnegative: omega with count_zeros=default\ncount_zeros_upper_bound: simp_all [count_zeros] with count_zeros=default\ncount_zeros_concatenation: rfl with count_zeros=default\ncount_zeros_case_insensitive: simp_all [count_zeros] with count_zeros=default\ncount_zeros_parentheses: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4111": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "mem_alloc_positive: no trivial proof\nmem_alloc_preserves_input: rfl with mem_alloc=default\nmem_alloc_deterministic: rfl with mem_alloc=default\n1 variant(s) x 8 tactics"
+  },
+  "LF4119": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "rectangles_symmetry: rfl with rectangles=default\nrectangles_non_negative: omega with rectangles=default\nrectangles_single_line_n: rfl with rectangles=default\nrectangles_single_line_m: rfl with rectangles=default\nrectangles_monotonic_n: simp_all [rectangles] with rectangles=default\nrectangles_monotonic_m: simp_all [rectangles] with rectangles=default\n3 variant(s) x 8 tactics"
+  },
+  "LF4124": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "int_rac_perfect_squares_consistency: simp_all [int_rac] with int_rac=default\n3 variant(s) x 8 tactics"
+  },
+  "LF4125": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "pre_fizz_returns_sequential_integers: no trivial proof\npre_fizz_length: no trivial proof\npre_fizz_elements_increasing: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4144": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_digit: rfl with digits=default, combinations=default\ntwo_digits: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4145": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "lost_sheep_reverse_invariant: rfl with lost_sheep=default\nlost_sheep_empty_lists: rfl with lost_sheep=passthrough total\n2 variant(s) x 8 tactics"
+  },
+  "LF4158": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sum_no_duplicates_empty: rfl with sum_no_duplicates=default\nsum_no_duplicates_singles: no trivial proof\nsum_no_duplicates_none: simp_all [sum_no_duplicates] with sum_no_duplicates=default\nsum_no_duplicates_all_duplicates: simp_all [sum_no_duplicates] with sum_no_duplicates=default\n1 variant(s) x 8 tactics"
+  },
+  "LF4186": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "is_prime_not_small: simp_all [is_prime, end_one, solve] with is_prime=default, end_one=default, solve=default\nis_prime_no_factors: simp_all [is_prime, end_one, solve] with is_prime=default, end_one=default, solve=default\nprime_multiplication: simp_all [is_prime, end_one, solve] with is_prime=default, end_one=default, solve=default\nend_one_is_bool: simp_all with is_prime=default, end_one=default, solve=default\nend_one_for_one: no trivial proof\nend_one_special_cases: no trivial proof\nsolve_bounded: simp_all [is_prime, end_one, solve] with is_prime=default, end_one=default, solve=default\nsolve_wrong_order: simp_all [is_prime, end_one, solve] with is_prime=default, end_one=default, solve=default\nsolve_unit_range: simp_all [is_prime, end_one, solve] with is_prime=default, end_one=default, solve=default\n3 variant(s) x 8 tactics"
+  },
+  "LF4193": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "result_greater_than_inputs: no trivial proof\nresult_greater_than_sum: no trivial proof\nresult_greater_than_min_products: no trivial proof\nresult_bounded_above: simp_all [expression_matter] with expression_matter=default\nresult_equal_inputs: no trivial proof\n4 variant(s) x 8 tactics"
+  },
+  "LF4194": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "mango_cost_less_than_full: simp_all [mango] with mango=default\nmango_non_negative: omega with mango=default\nmango_every_third_free: no trivial proof\nmango_zero_price: simp_all [mango] with mango=default\nmango_single_quantity: simp_all [mango] with mango=passthrough price\n3 variant(s) x 8 tactics"
+  },
+  "LF4222": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial, under different variants",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sumax_positive: trivial with sumin=default, sumax=passthrough n, sumsum=default, sumOfMins=default, sumOfMaxs=default, sumOfSums=default\nsumsum_equals_sumin_plus_sumax: rfl with sumin=default, sumax=default, sumsum=default, sumOfMins=default, sumOfMaxs=default, sumOfSums=default\nsumin_positive: trivial with sumin=passthrough n, sumax=default, sumsum=default, sumOfMins=default, sumOfMaxs=default, sumOfSums=default\nsumin_le_sumax: simp_all [sumin, sumax, sumsum, sumOfMins, sumOfMaxs, sumOfSums] with sumin=default, sumax=default, sumsum=default, sumOfMins=default, sumOfMaxs=default, sumOfSums=default\nsumax_ge_sumin: simp_all [sumin, sumax, sumsum, sumOfMins, sumOfMaxs, sumOfSums] with sumin=default, sumax=default, sumsum=default, sumOfMins=default, sumOfMaxs=default, sumOfSums=default\nsumsum_positive: trivial with sumin=default, sumax=default, sumsum=passthrough n, sumOfMins=default, sumOfMaxs=default, sumOfSums=default\n64 variant(s) x 8 tactics"
+  },
+  "LF4226": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "nth_even_increases_monotonically: simp_all [nth_even] with nth_even=passthrough n\nnth_even_is_even: rfl with nth_even=default\nnth_even_formula: no trivial proof\nnth_even_reverses_with_division: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF4240": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "start_smoking_nonnegative: omega with start_smoking=default\n3 variant(s) x 8 tactics"
+  },
+  "LF4241": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_simple_sequence: no trivial proof\nfind_symmetric_sequence: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4260": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "points_draws: no trivial proof\npoints_wins: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4264": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "single_repeated_numerals: simp_all [solution, isValidRoman] with solution=default, isValidRoman=default\nsubtractive_pairs_less: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4271": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "matrix_size_matches_input: no trivial proof\nmatrix_has_ones_on_diagonal: no trivial proof\nmatrix_has_zeros_off_diagonal: no trivial proof\nempty_matrix: rfl with get_matrix=default\n1 variant(s) x 8 tactics"
+  },
+  "LF4285": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "max_product_symmetric: rfl with max_product=default\n2 variant(s) x 8 tactics"
+  },
+  "LF4298": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "find_next_power_greater: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF4319": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "row_weights_single_element: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4333": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "over_the_road_in_range: trivial with over_the_road=passthrough address\nover_the_road_involution: simp_all [over_the_road] with over_the_road=passthrough address\nover_the_road_sum: no trivial proof\nover_the_road_parity: no trivial proof\nover_the_road_examples: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF4335": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "smallest_integer_result_nonnegative: omega with smallest_integer=default\nsmallest_integer_not_in_matrix: no trivial proof\nnegative_numbers_ignored: rfl with smallest_integer=default\n1 variant(s) x 8 tactics"
+  },
+  "LF4361": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "ack_m0_property: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF4373": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "powers_of_two_length: no trivial proof\npowers_of_two_first_one: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4401": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "score_non_negative: omega with score=default\nscore_monotonic: simp_all [score] with score=default\nscore_bit_properties: no trivial proof\nscore_zero: rfl with score=default\n2 variant(s) x 8 tactics"
+  },
+  "LF4410": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "solve_positive: no trivial proof\nsolve_monotonic: no trivial proof\nsolve_deterministic: rfl with solve=default, is_composite=default, isDigitIn=default\nsolve_zero: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF4418": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "string_to_number_roundtrip: no trivial proof\nstring_to_number_invalid_empty: simp_all [string_to_number] with string_to_number=default\nstring_to_number_invalid_nondigit: rfl with string_to_number=default\n1 variant(s) x 8 tactics"
+  },
+  "LF4434": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "expanded_form_basic_test_1: no trivial proof\nexpanded_form_basic_test_2: no trivial proof\nexpanded_form_decimal_only: no trivial proof\nexpanded_form_trailing_zeros_1: no trivial proof\nexpanded_form_trailing_zeros_2: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4440": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sum_fib_nonnegative: omega with sum_fib=default\nsum_fib_base_case_1: rfl with sum_fib=passthrough n\nsum_fib_base_case_2: rfl with sum_fib=passthrough n\n2 variant(s) x 8 tactics"
+  },
+  "LF4443": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "common_disjoint: simp_all [common] with common=default\n1 variant(s) x 8 tactics\ntrivial solution (common=default) with the postamble: rung PROVED"
+  },
+  "LF4450": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant, which passes the postamble (VACUOUS)",
+   "stamp": "40ea260ae74c8117",
+   "detail": "esrever_preserves_length: rfl with esrever=passthrough s\nempty_string_reversed_empty: rfl with esrever=default\ndouble_reverse_equals_original: rfl with esrever=passthrough s\nreverse_maintains_character_counts: rfl with esrever=passthrough s\n2 variant(s) x 8 tactics\ntrivial solution (esrever=passthrough s) with the postamble: rung PROVED"
+  },
+  "LF4460": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "remainder_properties: no trivial proof\nremainder_matches_modulo: no trivial proof\n3 variant(s) x 8 tactics"
+  },
+  "LF4464": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "square_matrix: no trivial proof\ndiagonal_ones: no trivial proof\nnon_diagonal_zeros: no trivial proof\nsymmetry: no trivial proof\n1 variant(s) x 8 tactics"
+  },
+  "LF4465": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "TRIVIAL_THEOREMS",
+   "reason": "every theorem trivial under one variant",
+   "stamp": "40ea260ae74c8117",
+   "detail": "sort_array_preserves_length: rfl with sort_array=passthrough arr\nsort_array_preserves_elements: simp_all [sort_array] with sort_array=passthrough arr\nsort_array_empty: rfl with sort_array=default\n2 variant(s) x 8 tactics"
+  },
+  "LF4540": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "hotpo_terminates_at_one: omega with hotpo=default\nhotpo_base_case: rfl with hotpo=default\nhotpo_positive_for_greater_than_one: no trivial proof\nhotpo_even_numbers: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LF4647": {
+   "cell": "L-fv",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "count_feelings_bounds: rfl with count_feelings=passthrough input\ncount_feelings_exact_match: no trivial proof\n2 variant(s) x 8 tactics"
+  },
+  "LT0063": {
+   "cell": "L-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "repeat_spec: no trivial proof\n1 variant(s) x 10 tactics\n«repeat»: no trivial body typechecks"
+  },
+  "LT0131": {
+   "cell": "L-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "mintypecode_spec: no trivial proof\n3 variant(s) x 10 tactics"
+  },
+  "LT0606": {
+   "cell": "L-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "decode_spec: no trivial proof\n2 variant(s) x 10 tactics"
+  },
+  "LT0610": {
+   "cell": "L-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "expandtabs_spec: no trivial proof\n3 variant(s) x 10 tactics"
+  },
+  "LT0617": {
+   "cell": "L-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "isdecimal_spec: no trivial proof\n2 variant(s) x 10 tactics"
+  },
+  "LT0643": {
+   "cell": "L-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "startswith_spec: no trivial proof\n2 variant(s) x 10 tactics"
+  },
+  "LT0648": {
+   "cell": "L-np",
+   "part": "dev",
+   "status": "OK",
+   "reason": "a theorem has no trivial proof",
+   "stamp": "40ea260ae74c8117",
+   "detail": "translate_spec: no trivial proof\n3 variant(s) x 10 tactics"
+  }
+ }
+}

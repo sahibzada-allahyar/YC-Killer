@@ -1,0 +1,38 @@
+{
+ "id": "LF0152",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def maxArea (h w : Nat) (horizontalCuts verticalCuts : List Nat) : Nat := sorry\n\ntheorem maxArea_single_cut\n  (h w : Nat)\n  (h_ge : h ≥ 2)\n  (w_ge : w ≥ 2) :\n  maxArea h w [h/2] [w/2] = max (h/2) (h - h/2) * max (w/2) (w - w/2) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval maxArea 5 4 [1, 2, 4] [1, 3]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval maxArea 5 4 [3, 1] [1]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval maxArea 5 4 [3] [3]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval maxArea 5 4 [1, 2, 4] [1, 3]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval maxArea 5 4 [3, 1] [1]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval maxArea 5 4 [3] [3]",
+ "chunks": [
+  {
+   "text": "def maxArea (h w : Nat) (horizontalCuts verticalCuts : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem maxArea_single_cut\n  (h w : Nat)\n  (h_ge : h ≥ 2)\n  (w_ge : w ≥ 2) :\n  maxArea h w [h/2] [w/2] = max (h/2) (h - h/2) * max (w/2) (w - w/2) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "maxArea_single_cut": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "25f1d44c2b36020f2ee47a2bd481fa7ae81df16081684d498feeb4b5a57eee28",
+   "ctors": [],
+   "value": null
+  },
+  "maxArea": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6946c6e2c7f02b0f27dab79ae0bb1fbd1409124b027f73797a3244b05e458573",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8a5e5e9c46e4"
+}

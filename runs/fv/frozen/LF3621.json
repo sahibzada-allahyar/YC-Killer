@@ -1,0 +1,60 @@
+{
+ "id": "LF3621",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def gcd (a b : Nat) : Nat := sorry\n\ndef coprimes (n : Nat) : List Nat :=\nsorry\n\ndef countCoprimes (n : Nat) : Nat :=\n  (List.range n).filter (fun x => gcd x n = 1) |>.length\n\ntheorem coprimes_all_less (n : Nat) (h : n ≥ 2) :\n  ∀ x ∈ coprimes n, x > 0 ∧ x < n :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval coprimes 2\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval coprimes 3\n\n/--\ninfo: [1, 3, 7, 9]\n-/\n#guard_msgs in\n#eval coprimes 10\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval coprimes 2\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval coprimes 3\n\n/--\ninfo: [1, 3, 7, 9]\n-/\n#guard_msgs in\n#eval coprimes 10",
+ "chunks": [
+  {
+   "text": "def gcd (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def coprimes (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def countCoprimes (n : Nat) : Nat :=\n  (List.range n).filter (fun x => gcd x n = 1) |>.length",
+   "hole_after": false
+  },
+  {
+   "text": "theorem coprimes_all_less (n : Nat) (h : n ≥ 2) :\n  ∀ x ∈ coprimes n, x > 0 ∧ x < n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "gcd": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "countCoprimes": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": "f4f5ed8203418d7e15a6b560ddcc3560afd5fe149763f704554adc866f9bee55"
+  },
+  "coprimes_all_less": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4653f622735ececfa876f1c4f096ae4452d803a6ebec9f25d476ceab45bdf0fe",
+   "ctors": [],
+   "value": null
+  },
+  "coprimes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7a19b8ec8949"
+}

@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "what": "control for #26: the same solution with only `Coe Summed Int` (coercion out, nothing coerces into Summed) -> correctly PROVED. Isolates the #26 false rejection to the agent-source producer."}

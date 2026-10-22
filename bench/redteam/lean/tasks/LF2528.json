@@ -1,0 +1,12 @@
+{
+ "id": "LF2528",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_002528",
+ "vc-description": "/-\nThere's a waiting room with N chairs set in single row. Chairs are consecutively numbered from 1 to N. First is closest to the entrance (which is exit as well).\n\nFor some reason people choose a chair in the following way\n\n1. Find a place as far from other people as possible\n2. Find a place as close to exit as possible\n\nAll chairs must be occupied before the first person will be served\n\nSo it looks like this for 10 chairs and 10 patients\n\nChairs\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\nPatients\n1\n7\n5\n8\n3\n9\n4\n6\n10\n2\n\nYour task is to find last patient's chair's number. \n\nInput - N - integer greater than 2 - number of chairs.\nOutput should positive integer too - last patient's chair's number\n\nHave fun :)\n-/",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def last_chair (n : Nat) : Nat :=\n  sorry",
+ "vc-theorems": "theorem last_chair_range {n : Nat} (h : n ≥ 3) :\n  1 ≤ last_chair n ∧ last_chair n ≤ n := by\n  sorry\n\ntheorem last_chair_value {n : Nat} (h : n ≥ 3) :\n  last_chair n = n - 1 := by\n  sorry",
+ "vc-postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval last_chair 10\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval last_chair 5\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval last_chair 3"
+}

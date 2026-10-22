@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: display hijack via attribute [local instance] on a plain def lr : Repr Nat. local attributes are not recorded in the .olean, but Check scans every class-typed module constant regardless -> anchors empty -> CHEAT_REJECTED."
+}

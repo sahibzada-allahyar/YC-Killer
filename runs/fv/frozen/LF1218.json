@@ -1,0 +1,38 @@
+{
+ "id": "LF1218",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def computer_network_design (n m : Nat) : List (Int × Int) := sorry\n\ntheorem valid_ring_topology_length (n : Nat) (h : n > 0) (h2 : n ≤ 100) :\n  List.length (computer_network_design n n) = n := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def computer_network_design (n m : Nat) : List (Int × Int) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem valid_ring_topology_length (n : Nat) (h : n > 0) (h2 : n ≤ 100) :\n  List.length (computer_network_design n n) = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "valid_ring_topology_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5c3ac021735f25b871f422e8b7882c50fa40e523f632c81cde2bcc82b0548d2a",
+   "ctors": [],
+   "value": null
+  },
+  "computer_network_design": {
+   "kind": "def",
+   "role": "impl",
+   "type": "5c6c8fac5da460a64e1cf0a0a5457f7714808e2db2bc5841359992490e9ae60b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "361d80e0a0ff"
+}

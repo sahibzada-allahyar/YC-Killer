@@ -1,0 +1,71 @@
+{
+ "id": "LF4540",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def hotpo (n : Nat) : Nat := sorry\n\ntheorem hotpo_terminates_at_one (n : Nat) (h : n > 0) : \n  hotpo n ≥ 0 := sorry\n\ntheorem hotpo_base_case :\n  hotpo 1 = 0 := sorry\n\ntheorem hotpo_positive_for_greater_than_one (n : Nat) (h : n > 1) :\n  hotpo n > 0 := sorry\n\ntheorem hotpo_even_numbers (n : Nat) (h : n > 0) (heven : n % 2 = 0) :\n  hotpo n = hotpo (n / 2) + 1 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval hotpo 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval hotpo 5\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval hotpo 6\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval hotpo 23\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval hotpo 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval hotpo 5\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval hotpo 6\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval hotpo 23",
+ "chunks": [
+  {
+   "text": "def hotpo (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotpo_terminates_at_one (n : Nat) (h : n > 0) : \n  hotpo n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotpo_base_case :\n  hotpo 1 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotpo_positive_for_greater_than_one (n : Nat) (h : n > 1) :\n  hotpo n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotpo_even_numbers (n : Nat) (h : n > 0) (heven : n % 2 = 0) :\n  hotpo n = hotpo (n / 2) + 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "hotpo_terminates_at_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "449d0259a78d03a63312d16ae8c2f2b323c3cedea8eabd033bba32e013a98d70",
+   "ctors": [],
+   "value": null
+  },
+  "hotpo_positive_for_greater_than_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "644438a9c7263e128ecc979a91182f616ccb77fc8470f049d620c45ea5e11a9d",
+   "ctors": [],
+   "value": null
+  },
+  "hotpo_even_numbers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1e5a30fd372950d377ee9b376dc240bc956fc012bd09b5ad365e4152b614a81e",
+   "ctors": [],
+   "value": null
+  },
+  "hotpo_base_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e262f670ea2362f2ddda9eaec0dd3a9392d0589afe9a64dca909d200096235cf",
+   "ctors": [],
+   "value": null
+  },
+  "hotpo": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d759fb45294d"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF2407",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_freq (l: List Int) : Nat :=\n  sorry\n\ndef find_shortest_subarray (l : List Int) : Nat :=\n  sorry\n\ntheorem shortest_subarray_bounds {l : List Int} (h: l ≠ []) :\n  1 ≤ find_shortest_subarray l ∧ find_shortest_subarray l ≤ l.length :=\nsorry\n\ntheorem single_element_list {l : List Int} (h: l.length = 1) :\n  find_shortest_subarray l = 1 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_shortest_subarray [1, 2, 2, 3, 1]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval find_shortest_subarray [1, 2, 2, 3, 1, 4, 2]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_shortest_subarray [1, 1, 2, 2, 2, 1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_shortest_subarray [1, 2, 2, 3, 1]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval find_shortest_subarray [1, 2, 2, 3, 1, 4, 2]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_shortest_subarray [1, 1, 2, 2, 2, 1]",
+ "chunks": [
+  {
+   "text": "def max_freq (l: List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def find_shortest_subarray (l : List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem shortest_subarray_bounds {l : List Int} (h: l ≠ []) :\n  1 ≤ find_shortest_subarray l ∧ find_shortest_subarray l ≤ l.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_element_list {l : List Int} (h: l.length = 1) :\n  find_shortest_subarray l = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_element_list": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cc673f3300995257ce79853aa09608862c58ca1ca51ec2776c4b2bc7bbf7cc24",
+   "ctors": [],
+   "value": null
+  },
+  "shortest_subarray_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a7322c93de767e651c89b75aad012e868058ae5174e56d1fee4ca04d741dd2cc",
+   "ctors": [],
+   "value": null
+  },
+  "max_freq": {
+   "kind": "def",
+   "role": "impl",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": null
+  },
+  "find_shortest_subarray": {
+   "kind": "def",
+   "role": "impl",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a579866ae4ae"
+}

@@ -1,0 +1,71 @@
+{
+ "id": "LF4158",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum_no_duplicates (nums : List Int) : Int :=\nsorry\n\ntheorem sum_no_duplicates_empty :\n  sum_no_duplicates [] = 0 :=\nsorry\n\ntheorem sum_no_duplicates_singles (nums : List Int) :\n  let count := nums.foldl (fun acc n => \n    match acc.find? (fun p => p.1 = n) with\n    | none => (n, 1) :: acc\n    | some _ => acc.map (fun p => if p.1 = n then (p.1, p.2 + 1) else p)\n    ) []\n  let singles := count.filter (fun p => p.2 = 1)\n  sum_no_duplicates nums = singles.foldl (fun acc p => acc + p.1) 0 :=\nsorry \n\ntheorem sum_no_duplicates_none (nums : List Int) :\n  let count := nums.foldl (fun acc n => \n    match acc.find? (fun p => p.1 = n) with\n    | none => (n, 1) :: acc\n    | some _ => acc.map (fun p => if p.1 = n then (p.1, p.2 + 1) else p)\n    ) []\n  count.filter (fun p => p.2 = 1) = [] →\n  sum_no_duplicates nums = 0 :=\nsorry\n\ntheorem sum_no_duplicates_all_duplicates (nums : List Int) :\n  nums.length > 1 →\n  sum_no_duplicates (nums ++ nums) = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval sum_no_duplicates [3, 4, 3, 6]\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval sum_no_duplicates [1, 1, 2, 3]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval sum_no_duplicates []\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval sum_no_duplicates [3, 4, 3, 6]\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval sum_no_duplicates [1, 1, 2, 3]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval sum_no_duplicates []",
+ "chunks": [
+  {
+   "text": "def sum_no_duplicates (nums : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_no_duplicates_empty :\n  sum_no_duplicates [] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_no_duplicates_singles (nums : List Int) :\n  let count := nums.foldl (fun acc n => \n    match acc.find? (fun p => p.1 = n) with\n    | none => (n, 1) :: acc\n    | some _ => acc.map (fun p => if p.1 = n then (p.1, p.2 + 1) else p)\n    ) []\n  let singles := count.filter (fun p => p.2 = 1)\n  sum_no_duplicates nums = singles.foldl (fun acc p => acc + p.1) 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_no_duplicates_none (nums : List Int) :\n  let count := nums.foldl (fun acc n => \n    match acc.find? (fun p => p.1 = n) with\n    | none => (n, 1) :: acc\n    | some _ => acc.map (fun p => if p.1 = n then (p.1, p.2 + 1) else p)\n    ) []\n  count.filter (fun p => p.2 = 1) = [] →\n  sum_no_duplicates nums = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_no_duplicates_all_duplicates (nums : List Int) :\n  nums.length > 1 →\n  sum_no_duplicates (nums ++ nums) = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_no_duplicates_singles": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17b75263f0b05037e7bfe012b0b923d84381cdc70fc33f38c6096d37a01d8fa3",
+   "ctors": [],
+   "value": null
+  },
+  "sum_no_duplicates_none": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3344668b97c65741dfe1f117a26d8ed07f544cd7902970192cece9d2ff7f4f4d",
+   "ctors": [],
+   "value": null
+  },
+  "sum_no_duplicates_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8817d1de922ba393f0788fa94305f13c2413e91729637c0e1e9ddc82eb184954",
+   "ctors": [],
+   "value": null
+  },
+  "sum_no_duplicates_all_duplicates": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "535b1176547add026f51240004342536cb1b7435fc5c00ebd31ae8a1483a5395",
+   "ctors": [],
+   "value": null
+  },
+  "sum_no_duplicates": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "612c65391b00"
+}

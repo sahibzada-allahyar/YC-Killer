@@ -1,0 +1,60 @@
+{
+ "id": "LF0735",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def digits (n : Nat) : List Nat :=\n  sorry\n\ndef check_divisible_permutations (n : Nat) : Nat :=\n  sorry\n\ntheorem check_divisible_permutations_valid_output (n : Nat) :\n  n > 0 → check_divisible_permutations n = 0 ∨ check_divisible_permutations n = 1 :=\nsorry\n\ntheorem check_divisible_permutations_single_digits :\n  check_divisible_permutations 1 = 0 ∧ check_divisible_permutations 2 = 1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval check_divisible_permutations 19\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_divisible_permutations 385\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_divisible_permutations 246\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval check_divisible_permutations 19\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_divisible_permutations 385\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_divisible_permutations 246",
+ "chunks": [
+  {
+   "text": "def digits (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def check_divisible_permutations (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem check_divisible_permutations_valid_output (n : Nat) :\n  n > 0 → check_divisible_permutations n = 0 ∨ check_divisible_permutations n = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem check_divisible_permutations_single_digits :\n  check_divisible_permutations 1 = 0 ∧ check_divisible_permutations 2 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "digits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  },
+  "check_divisible_permutations_valid_output": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ddb12e9e84737cd010a8ec2a74e47becc3342c424b1af7aa935c40fb7f43844f",
+   "ctors": [],
+   "value": null
+  },
+  "check_divisible_permutations_single_digits": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c8bc536c8912474a72dc42cb247812c8c574f5fdbffe488025578eb8ac9eafa1",
+   "ctors": [],
+   "value": null
+  },
+  "check_divisible_permutations": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d10e3cb9e904"
+}

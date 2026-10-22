@@ -1,0 +1,9 @@
+
+== dafny: 299 unique files, 72 loops, 17 tasks (errors 0)
+  verify_default           files   58  loops  35/72  tasks  14/17
+  verify_allow_warnings    files  169  loops  66/72  tasks  17/17
+  plus_audit               files   15  loops  14/72  tasks   9/17
+  plus_diff_regex          files    9  loops   9/72  tasks   8/17
+  vericoding               files   17  loops  10/72  tasks   8/17
+  strongest                files    6  loops   6/72  tasks   5/17
+  mh                       files    0  loops   0/72  tasks   0/17

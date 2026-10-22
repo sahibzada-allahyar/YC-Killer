@@ -1,0 +1,60 @@
+{
+ "id": "LF2514",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def symmetric_subscribers (eng : List Int) (french : List Int) : Nat := sorry\n\ntheorem symmetric_subscribers_non_negative \n  (eng : List Int) (french : List Int) : \n  symmetric_subscribers eng french ≥ 0 := sorry\n\ntheorem symmetric_subscribers_upper_bound \n  (eng : List Int) (french : List Int) :\n  symmetric_subscribers eng french ≤ List.length eng + List.length french := sorry\n\ntheorem symmetric_subscribers_identical_lists\n  (nums : List Int) :\n  symmetric_subscribers nums nums = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval symmetric_subscribers [1, 2, 3, 4, 5, 6, 7, 8, 9] [10, 1, 2, 3, 11, 21, 55, 6, 8]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval symmetric_subscribers [1, 2, 3] [3, 4, 5]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval symmetric_subscribers [1, 2] [3, 4]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval symmetric_subscribers [1, 2, 3, 4, 5, 6, 7, 8, 9] [10, 1, 2, 3, 11, 21, 55, 6, 8]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval symmetric_subscribers [1, 2, 3] [3, 4, 5]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval symmetric_subscribers [1, 2] [3, 4]",
+ "chunks": [
+  {
+   "text": "def symmetric_subscribers (eng : List Int) (french : List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem symmetric_subscribers_non_negative \n  (eng : List Int) (french : List Int) : \n  symmetric_subscribers eng french ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem symmetric_subscribers_upper_bound \n  (eng : List Int) (french : List Int) :\n  symmetric_subscribers eng french ≤ List.length eng + List.length french :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem symmetric_subscribers_identical_lists\n  (nums : List Int) :\n  symmetric_subscribers nums nums = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "symmetric_subscribers_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f6450182fcc76f62d5e1705de33bc48c69247130a9ac60762e467575399710a6",
+   "ctors": [],
+   "value": null
+  },
+  "symmetric_subscribers_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "925d29c766cad80c9ca93e3152bef27e543451f56e607daef19bef0ab7ab00a9",
+   "ctors": [],
+   "value": null
+  },
+  "symmetric_subscribers_identical_lists": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "14313ad7a371ef3dfb262cf6d2b59100e5fb0f43c11d4a925f08d178e77806b2",
+   "ctors": [],
+   "value": null
+  },
+  "symmetric_subscribers": {
+   "kind": "def",
+   "role": "impl",
+   "type": "759b328f58a77bf93504ce09a9bea58d98ffd1fe9fece38045c167aec0fdf742",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8bc6c1e0593a"
+}

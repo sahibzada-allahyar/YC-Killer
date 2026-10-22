@@ -1,0 +1,82 @@
+{
+ "id": "LF1330",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (n : Nat) : Nat :=\n  sorry\n\ntheorem solve_non_negative (n : Nat) (h : n ≥ 1) : \n  solve n ≥ 0 := \n  sorry\n\ntheorem solve_formula (n : Nat) (h : n ≥ 1) :\n  solve n = ((n-1)*n)/2 :=\n  sorry\n\ntheorem solve_monotonic (n : Nat) (h : n ≥ 2) :\n  solve n > solve (n-1) :=\n  sorry\n\ntheorem solve_base_case_one : \n  solve 1 = 0 :=\n  sorry\n\ntheorem solve_base_case_two :\n  solve 2 = 1 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 21\n-/\n#guard_msgs in\n#eval solve 7\n\n/--\ninfo: 36\n-/\n#guard_msgs in\n#eval solve 9\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval solve 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 21\n-/\n#guard_msgs in\n#eval solve 7\n\n/--\ninfo: 36\n-/\n#guard_msgs in\n#eval solve 9\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval solve 5",
+ "chunks": [
+  {
+   "text": "def solve (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_non_negative (n : Nat) (h : n ≥ 1) : \n  solve n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_formula (n : Nat) (h : n ≥ 1) :\n  solve n = ((n-1)*n)/2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_monotonic (n : Nat) (h : n ≥ 2) :\n  solve n > solve (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_base_case_one : \n  solve 1 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_base_case_two :\n  solve 2 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dafa9db883c6c61f9ce0ea39e7ef77c560e92a23ae99db205d9d1f5ff6ffc5e2",
+   "ctors": [],
+   "value": null
+  },
+  "solve_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a42cf7d42656b4d9ad9401245e572ec1d2ed9507f62a7f8ba1f46d30fdb94022",
+   "ctors": [],
+   "value": null
+  },
+  "solve_formula": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "30986a9ee051893997e3eab56ac93f80d90776a60ddaff9834d123a624c80e47",
+   "ctors": [],
+   "value": null
+  },
+  "solve_base_case_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7b89217eb66e7cbeea581e94dde76b09859cc112ab027363e47e443fea388222",
+   "ctors": [],
+   "value": null
+  },
+  "solve_base_case_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6a49a88dbb5226c95986f7df0560d40ba0cc417e4a9487466547145231c0b4ac",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6e10be32dab0"
+}

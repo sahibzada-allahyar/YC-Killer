@@ -1,0 +1,49 @@
+{
+ "id": "LF1460",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def MOD := 1000000007\n\ndef calculate_wonder_sum (strings : List String) : List Nat :=\n  sorry\n\ntheorem calculate_wonder_sum_length (strings : List String) :\n  strings ≠ [] →\n  List.length (calculate_wonder_sum strings) = List.length strings :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [903, 7630]\n-/\n#guard_msgs in\n#eval calculate_wonder_sum [\"cab\", \"sdef\"]\n\n/--\ninfo: [100]\n-/\n#guard_msgs in\n#eval calculate_wonder_sum [\"a\"]\n\n/--\ninfo: [2625]\n-/\n#guard_msgs in\n#eval calculate_wonder_sum [\"z\"]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [903, 7630]\n-/\n#guard_msgs in\n#eval calculate_wonder_sum [\"cab\", \"sdef\"]\n\n/--\ninfo: [100]\n-/\n#guard_msgs in\n#eval calculate_wonder_sum [\"a\"]\n\n/--\ninfo: [2625]\n-/\n#guard_msgs in\n#eval calculate_wonder_sum [\"z\"]",
+ "chunks": [
+  {
+   "text": "def MOD := 1000000007",
+   "hole_after": false
+  },
+  {
+   "text": "def calculate_wonder_sum (strings : List String) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calculate_wonder_sum_length (strings : List String) :\n  strings ≠ [] →\n  List.length (calculate_wonder_sum strings) = List.length strings :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "calculate_wonder_sum_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dde86a7b7751aa7c66a7e2ab5d3650ef2b2c71b13053293cc87351886cf78845",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_wonder_sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "30f39438e495640fe2594134adc25376ec8f9489e43da5a6679a6bdcaaf4dfdd",
+   "ctors": [],
+   "value": null
+  },
+  "MOD": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "76bb31d53adfdb40dd9a8aadd10cd539ce35d9911ea2ef640f0705e32842fc2b"
+  }
+ },
+ "sha": "1f1d952f9d25"
+}

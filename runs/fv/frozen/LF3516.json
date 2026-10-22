@@ -1,0 +1,60 @@
+{
+ "id": "LF3516",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def order (pizzas salads appetizers : Nat) : Nat := sorry\n\ndef ceil (n : Nat) (d : Nat) : Nat := sorry\n\ntheorem order_non_negative (pizzas salads appetizers : Nat) : \n  order pizzas salads appetizers ≥ 0 := sorry\n\ntheorem adding_pizzas_increases_time (pizzas : Nat) :\n  order (pizzas + 1) 0 0 ≥ order pizzas 0 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def order (pizzas salads appetizers : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def ceil (n : Nat) (d : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem order_non_negative (pizzas salads appetizers : Nat) : \n  order pizzas salads appetizers ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem adding_pizzas_increases_time (pizzas : Nat) :\n  order (pizzas + 1) 0 0 ≥ order pizzas 0 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "order_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ad1633845ec55fe010e860ff37ef32d4035a4e2ff6b7b3140d13b63481e223a2",
+   "ctors": [],
+   "value": null
+  },
+  "order": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  },
+  "ceil": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "adding_pizzas_increases_time": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "14aaf5298201f6d603cc9e6f74eedf09840db6514f2271810094d7cb2596f670",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "11777fcb1066"
+}

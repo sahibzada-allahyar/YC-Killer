@@ -1,0 +1,84 @@
+{
+ "id": "LA0461",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def customMin (a b : Int) : Int :=\n  if a ≤ b then a else b\n\ndef SpiralOrder (row col n : Int) : Int :=\n  let layer := customMin (customMin row col) (customMin (n-1-row) (n-1-col))\n  let layerStart := 4 * layer * (n - layer - 1) + layer\n  if row = layer then\n    layerStart + (col - layer)\n  else if col = n - 1 - layer then\n    layerStart + (n - 2 * layer - 1) + (row - layer)\n  else if row = n - 1 - layer then\n    layerStart + 2 * (n - 2 * layer - 1) + (n - 1 - layer - col)\n  else\n    layerStart + 3 * (n - 2 * layer - 1) + (n - 1 - layer - row)\n\ndef ValidInput (n : Int) : Prop :=\n  n ≥ 1\n\ndef ValidSpiralMatrix (matrix : List (List Int)) (n : Int) : Prop :=\n  matrix.length = n.natAbs ∧ (∀ row ∈ matrix, row.length = n.natAbs) ∧\n  (∀ i j : Nat, i < n.natAbs ∧ j < n.natAbs → matrix[i]![j]! = SpiralOrder i j n + 1)\n\n@[reducible, simp]\ndef solve_precond (n : Int) : Prop :=\n  ValidInput n\n\ndef solve (n : Int) (h_precond : solve_precond n) : List (List Int) :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (result : List (List Int)) (h_precond : solve_precond n) : Prop :=\n  ValidSpiralMatrix result n ∧\n  result.length = n.natAbs ∧ (∀ row ∈ result, row.length = n.natAbs) ∧\n  (∀ i j : Nat, i < n.natAbs ∧ j < n.natAbs → 1 ≤ result[i]![j]! ∧ result[i]![j]! ≤ n * n) ∧\n  (∀ v, 1 ≤ v ∧ v ≤ n * n → ∃ i j : Nat, i < n.natAbs ∧ j < n.natAbs ∧ result[i]![j]! = v)\n\ntheorem solve_spec_satisfied (n : Int) (h_precond : solve_precond n) :\n    solve_postcond n (solve n h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def customMin (a b : Int) : Int :=\n  if a ≤ b then a else b\n\ndef SpiralOrder (row col n : Int) : Int :=\n  let layer := customMin (customMin row col) (customMin (n-1-row) (n-1-col))\n  let layerStart := 4 * layer * (n - layer - 1) + layer\n  if row = layer then\n    layerStart + (col - layer)\n  else if col = n - 1 - layer then\n    layerStart + (n - 2 * layer - 1) + (row - layer)\n  else if row = n - 1 - layer then\n    layerStart + 2 * (n - 2 * layer - 1) + (n - 1 - layer - col)\n  else\n    layerStart + 3 * (n - 2 * layer - 1) + (n - 1 - layer - row)\n\ndef ValidInput (n : Int) : Prop :=\n  n ≥ 1\n\ndef ValidSpiralMatrix (matrix : List (List Int)) (n : Int) : Prop :=\n  matrix.length = n.natAbs ∧ (∀ row ∈ matrix, row.length = n.natAbs) ∧\n  (∀ i j : Nat, i < n.natAbs ∧ j < n.natAbs → matrix[i]![j]! = SpiralOrder i j n + 1)\n\n@[reducible, simp]\ndef solve_precond (n : Int) : Prop :=\n  ValidInput n",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (h_precond : solve_precond n) : List (List Int) :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (result : List (List Int)) (h_precond : solve_precond n) : Prop :=\n  ValidSpiralMatrix result n ∧\n  result.length = n.natAbs ∧ (∀ row ∈ result, row.length = n.natAbs) ∧\n  (∀ i j : Nat, i < n.natAbs ∧ j < n.natAbs → 1 ≤ result[i]![j]! ∧ result[i]![j]! ≤ n * n) ∧\n  (∀ v, 1 ≤ v ∧ v ≤ n * n → ∃ i j : Nat, i < n.natAbs ∧ j < n.natAbs ∧ result[i]![j]! = v)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (h_precond : solve_precond n) :\n    solve_postcond n (solve n h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4d711dd1fd5eb47de56df70269ac5510c9bfe264ec8d683fb46847cb775e5992",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "210450b15331ed1f8cfa53700581351d2750398147a2c342a2a8aaae0e4b5a33",
+   "ctors": [],
+   "value": "b484f610dac640d215240fbf4837dc6c7b429ab9beafdbddc4044fc89eb697f6"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "16e75c30c57a0b9d7a526f2e93d987ac06959fb463d3aed43824f6eba212f37a",
+   "ctors": [],
+   "value": "45e2f8c19ddbd236974f836b59a4ec30554830cde98907273e71d45a1e4a58d8"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "cae3615c0dacf9505ed44e2b190c20ae9bd411925c034f510991567e55fc2607",
+   "ctors": [],
+   "value": null
+  },
+  "customMin": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": "58ca492ebfa4af6a1f999f9081e6cf40374e653ca12af1f95a66e1f37d9878f0"
+  },
+  "ValidSpiralMatrix": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "4177b13606653e926e39b04420a6867c1e7cf5ede452bc929479aae25dfa7ab9",
+   "ctors": [],
+   "value": "494b6cf8da9a36b145e0da1235dbd2d0c7777525ada89074d4ab80a5953bcf34"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "210450b15331ed1f8cfa53700581351d2750398147a2c342a2a8aaae0e4b5a33",
+   "ctors": [],
+   "value": "ff2ce85e5b5f2001dcb27925b442e3d025d833cd904552bbe085b3f2e7979be6"
+  },
+  "SpiralOrder": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1d3b373f8c966cd1a5dba7bc9c84881879c6e05d023bee5d2a8e92915b8bfa7e",
+   "ctors": [],
+   "value": "4fe2cec29a249af462991f03482699cbb7b4eb22a0834c7272f0541d33ca9de9"
+  }
+ },
+ "sha": "4ed074a8fa17"
+}

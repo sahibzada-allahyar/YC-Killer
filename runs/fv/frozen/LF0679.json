@@ -1,0 +1,126 @@
+{
+ "id": "LF0679",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def phi (n : Nat) : Nat :=\n  sorry\n\ndef solve_passcode (a m : Nat) : Nat :=\n  sorry\n\ntheorem phi_positive (n : Nat) (h : n > 0) : phi n > 0 :=\nsorry\n\ntheorem phi_upper_bound (n : Nat) : phi n ≤ n :=\nsorry\n\ntheorem phi_one : phi 1 = 1 :=\nsorry\n\ntheorem solve_passcode_positive (a m : Nat) (h₁ : a > 0) (h₂ : m > 0) :\n  solve_passcode a m > 0 :=\nsorry\n\ntheorem solve_passcode_upper_bound (a m : Nat) (h₁ : a > 0) (h₂ : m > 0) :\n  solve_passcode a m ≤ m :=\nsorry\n\ntheorem solve_passcode_one (a : Nat) (h : a > 0) :\n  solve_passcode a 1 = 1 :=\nsorry\n\ntheorem solve_passcode_coprime (a m : Nat) (h₁ : a > 0) (h₂ : m > 0)\n  (h₃ : Nat.gcd a m = 1) :\n  solve_passcode a m = phi m :=\nsorry\n\ntheorem solve_passcode_gcd (a m : Nat) (h₁ : a > 0) (h₂ : m > 0) :\n  solve_passcode a m = phi (m / Nat.gcd a m) :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve_passcode 4 9\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_passcode 5 10\n\n/--\ninfo: 9999999966\n-/\n#guard_msgs in\n#eval solve_passcode 42 9999999967\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve_passcode 4 9\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_passcode 5 10\n\n/--\ninfo: 9999999966\n-/\n#guard_msgs in\n#eval solve_passcode 42 9999999967",
+ "chunks": [
+  {
+   "text": "def phi (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def solve_passcode (a m : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem phi_positive (n : Nat) (h : n > 0) : phi n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem phi_upper_bound (n : Nat) : phi n ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem phi_one : phi 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_passcode_positive (a m : Nat) (h₁ : a > 0) (h₂ : m > 0) :\n  solve_passcode a m > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_passcode_upper_bound (a m : Nat) (h₁ : a > 0) (h₂ : m > 0) :\n  solve_passcode a m ≤ m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_passcode_one (a : Nat) (h : a > 0) :\n  solve_passcode a 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_passcode_coprime (a m : Nat) (h₁ : a > 0) (h₂ : m > 0)\n  (h₃ : Nat.gcd a m = 1) :\n  solve_passcode a m = phi m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_passcode_gcd (a m : Nat) (h₁ : a > 0) (h₂ : m > 0) :\n  solve_passcode a m = phi (m / Nat.gcd a m) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_passcode_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ef88caeeb052e3d017f9731d280483a4ee40ecd690626b7e739a939df7192da4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_passcode_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8d037e46e4ce3de9eadd67b3f67ae329b313a90259de223646a852a461350653",
+   "ctors": [],
+   "value": null
+  },
+  "solve_passcode_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e5d136f7bed9431a6056d9e35c80a7086ccb6b2ade9704b38591a75ea79863da",
+   "ctors": [],
+   "value": null
+  },
+  "solve_passcode_gcd": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bcf226373f64d8383c81271bbcd52906cf3c4f2ea6af602bc5ada662ddbf3e0d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_passcode_coprime": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c442c705a01798c6bb6afacf8c936501c043fe7f1fe8a31e9212090b6ff10548",
+   "ctors": [],
+   "value": null
+  },
+  "solve_passcode": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "phi_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "41bce212cf233b985899e34c8d3a3611df6088c2d44ddda7d4588651830361d4",
+   "ctors": [],
+   "value": null
+  },
+  "phi_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3d8647f62c77da713d5196a75a0839e356597d5f896deaab7da0ad75726349f9",
+   "ctors": [],
+   "value": null
+  },
+  "phi_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "21f43f824a849ffbe57e5d5cd29e24543f51f32d9a6f4d42eeb84c08145a2479",
+   "ctors": [],
+   "value": null
+  },
+  "phi": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "bf82f834afd9"
+}

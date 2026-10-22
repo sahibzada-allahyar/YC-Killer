@@ -1,0 +1,49 @@
+{
+ "id": "LF2386",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def maxProfit (prices: List Nat) : Nat :=\n  sorry\n\ndef maxPairwiseDiff (prices: List Nat) : Nat :=\n  sorry\n\ntheorem maxprofit_bounds_pair (a b: Nat) :\n  maxProfit [a, b] = max 0 (b - a) :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval maxProfit [7, 1, 5, 3, 6, 4]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval maxProfit [1, 2, 3, 4, 5]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval maxProfit [7, 6, 4, 3, 1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval maxProfit [7, 1, 5, 3, 6, 4]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval maxProfit [1, 2, 3, 4, 5]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval maxProfit [7, 6, 4, 3, 1]",
+ "chunks": [
+  {
+   "text": "def maxProfit (prices: List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def maxPairwiseDiff (prices: List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem maxprofit_bounds_pair (a b: Nat) :\n  maxProfit [a, b] = max 0 (b - a) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "maxprofit_bounds_pair": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c0c1b9f3245cf983372feef5d80bdde11303a3c2c0f35c91db1ced32dd5762b2",
+   "ctors": [],
+   "value": null
+  },
+  "maxProfit": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "maxPairwiseDiff": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b154c072b698"
+}

@@ -1,0 +1,8 @@
+date,commit,config_hash,split,arm,n,pass,se,decision,note
+2026-10-11,-,-,matharena-arxivphys-0826,peek,1,-,-,none,viewed row 1 prefix while inspecting dataset schema (no tuning)
+2026-10-11,47c4359,specv2-k3-r2,FreshCP-VAL,A2/B2/C1,38,A82.9/B82.9/C97.4,,look-1 INVALID,E2 on VAL (first validation look)
+2026-10-11,63b31c7,specv2-k3,FreshCP-VAL,E1 selectors,38,see FINDINGS,,look-2,E1 selector study on VAL
+2026-10-11,63b31c7,specv2-k3-r2-out64k-missingfires,FreshCP-VAL,A2/B2/C1,38,A92.1/B96.1/C94.7,,look-3 (frozen config),re-run after fixing 16K output cap + no-solution gate
+fv,L1,2026-10-11,9107c7f,probe DEV fvprobe1 (oc 94 tasks; cc 59 Lean),pending
+fv,L1b,2026-10-11,4593090,probe DEV fvprobe-ds (DeepSeek V4.1 Flash via OpenRouter; 94 tasks),pending
+fv,L1c,2026-10-11,4593090,probe DEV fvprobe-glm (GLM-5.3 Flash via OpenRouter; 94 tasks),pending

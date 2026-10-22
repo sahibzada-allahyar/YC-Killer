@@ -1,0 +1,40 @@
+{
+ "id": "LT0648",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do\n\ndef translate {n m : Nat} (a : Vector String n) (table : Vector UInt8 256) \n    (deletechars : Vector UInt8 m) : Id (Vector String n) :=\n  sorry\n\ntheorem translate_spec {n m : Nat} (a : Vector String n) (table : Vector UInt8 256) \n    (deletechars : Vector UInt8 m) :\n    ⦃⌜True⌝⦄\n    translate a table deletechars\n    ⦃⇓result => ⌜∀ i : Fin n,\n      -- Length property: result length ≤ original length (due to deletion)\n      (result.get i).length ≤ (a.get i).length ∧\n\n      -- Deletion property: no character from deletechars appears in result\n      (∀ c : Char, c ∈ (result.get i).data →\n        ¬(∃ j : Fin m, c.toNat.toUInt8 = deletechars.get j)) ∧\n\n      -- Translation property: each character in result comes from table translation\n      (∀ c : Char, c ∈ (result.get i).data →\n        ∃ (orig_char : UInt8) (table_idx : Fin 256),\n          orig_char = table_idx.val.toUInt8 ∧\n          c = Char.ofNat (table.get table_idx).toNat ∧\n          -- The original character existed in input and wasn't deleted\n          (∃ orig_char_val : Char, orig_char_val ∈ (a.get i).data ∧\n            orig_char_val.toNat.toUInt8 = orig_char ∧\n            ¬(∃ j : Fin m, orig_char = deletechars.get j))) ∧\n\n      -- Completeness property: all non-deleted characters are translated and included\n      (∀ orig_char : Char, orig_char ∈ (a.get i).data →\n        ¬(∃ j : Fin m, orig_char.toNat.toUInt8 = deletechars.get j) →\n        ∃ translated_char : Char, translated_char ∈ (result.get i).data ∧\n          ∃ table_idx : Fin 256,\n            orig_char.toNat = table_idx.val ∧\n            translated_char = Char.ofNat (table.get table_idx).toNat) ∧\n\n      -- Identity on empty deletechars: if no characters to delete, only translation occurs\n      (m = 0 → (result.get i).length = (a.get i).length ∧\n        (result.get i).data.length = (a.get i).data.length ∧\n        ∀ k : Nat, k < (a.get i).data.length →\n          ∃ table_idx : Fin 256,\n            (a.get i).data[k]!.toNat = table_idx.val ∧\n            (result.get i).data[k]! = Char.ofNat (table.get table_idx).toNat) ∧\n\n      -- Empty string preservation: empty inputs produce empty outputs  \n      ((a.get i).length = 0 → (result.get i).length = 0)\n    ⌝⦄ := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def translate {n m : Nat} (a : Vector String n) (table : Vector UInt8 256) \n    (deletechars : Vector UInt8 m) : Id (Vector String n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem translate_spec {n m : Nat} (a : Vector String n) (table : Vector UInt8 256) \n    (deletechars : Vector UInt8 m) :\n    ⦃⌜True⌝⦄\n    translate a table deletechars\n    ⦃⇓result => ⌜∀ i : Fin n,\n      -- Length property: result length ≤ original length (due to deletion)\n      (result.get i).length ≤ (a.get i).length ∧\n\n      -- Deletion property: no character from deletechars appears in result\n      (∀ c : Char, c ∈ (result.get i).data →\n        ¬(∃ j : Fin m, c.toNat.toUInt8 = deletechars.get j)) ∧\n\n      -- Translation property: each character in result comes from table translation\n      (∀ c : Char, c ∈ (result.get i).data →\n        ∃ (orig_char : UInt8) (table_idx : Fin 256),\n          orig_char = table_idx.val.toUInt8 ∧\n          c = Char.ofNat (table.get table_idx).toNat ∧\n          -- The original character existed in input and wasn't deleted\n          (∃ orig_char_val : Char, orig_char_val ∈ (a.get i).data ∧\n            orig_char_val.toNat.toUInt8 = orig_char ∧\n            ¬(∃ j : Fin m, orig_char = deletechars.get j))) ∧\n\n      -- Completeness property: all non-deleted characters are translated and included\n      (∀ orig_char : Char, orig_char ∈ (a.get i).data →\n        ¬(∃ j : Fin m, orig_char.toNat.toUInt8 = deletechars.get j) →\n        ∃ translated_char : Char, translated_char ∈ (result.get i).data ∧\n          ∃ table_idx : Fin 256,\n            orig_char.toNat = table_idx.val ∧\n            translated_char = Char.ofNat (table.get table_idx).toNat) ∧\n\n      -- Identity on empty deletechars: if no characters to delete, only translation occurs\n      (m = 0 → (result.get i).length = (a.get i).length ∧\n        (result.get i).data.length = (a.get i).data.length ∧\n        ∀ k : Nat, k < (a.get i).data.length →\n          ∃ table_idx : Fin 256,\n            (a.get i).data[k]!.toNat = table_idx.val ∧\n            (result.get i).data[k]! = Char.ofNat (table.get table_idx).toNat) ∧\n\n      -- Empty string preservation: empty inputs produce empty outputs  \n      ((a.get i).length = 0 → (result.get i).length = 0)\n    ⌝⦄ := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init",
+  "Std.Do.Triple",
+  "Std.Tactic.Do"
+ ],
+ "constants": {
+  "translate_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7feebfc698d659467de5ae656982ee03de7b6f3f8aa684a7024aca9601213685",
+   "ctors": [],
+   "value": null
+  },
+  "translate": {
+   "kind": "def",
+   "role": "impl",
+   "type": "355eeffc6a91e662ef3000d27e3cf332f5fc5ba2bcaf7268457b7adc7f4070d8",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "736f34e1888f"
+}

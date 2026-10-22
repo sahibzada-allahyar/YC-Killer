@@ -1,0 +1,74 @@
+{
+ "id": "LF0617",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def listMax : List Int → Int\n  | [] => 0\n  | (x::xs) => max x (listMax xs)\n\ndef listSum : List Int → Int\n  | [] => 0\n  | (x::xs) => x + listSum xs\n\ndef count_quadruples (n : Nat) (target : Int) (nums : List Int) : Nat :=\n  sorry\n\ntheorem count_quadruples_returns_natural\n  (nums : List Int) (target : Int) (h : nums.length ≥ 4) :\n  count_quadruples nums.length target nums ≥ 0 :=\nsorry\n\ntheorem count_quadruples_binary_for_four\n  (nums : List Int) (target : Int) (h : nums.length = 4) :\n  count_quadruples nums.length target nums = 0 ∨\n  count_quadruples nums.length target nums = 1 :=\nsorry\n\ntheorem insufficient_elements_gives_zero\n  (nums : List Int) (target : Int) (h : nums.length < 4) :\n  count_quadruples nums.length target nums = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_quadruples 6 20 [3, 1, 1, 2, 5, 10]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_quadruples 6 13 [1, 2, 3, 4, 5, 4]\n",
+ "warnings": [],
+ "preamble": "def listMax : List Int → Int\n  | [] => 0\n  | (x::xs) => max x (listMax xs)\n\ndef listSum : List Int → Int\n  | [] => 0\n  | (x::xs) => x + listSum xs",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_quadruples 6 20 [3, 1, 1, 2, 5, 10]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_quadruples 6 13 [1, 2, 3, 4, 5, 4]",
+ "chunks": [
+  {
+   "text": "def count_quadruples (n : Nat) (target : Int) (nums : List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_quadruples_returns_natural\n  (nums : List Int) (target : Int) (h : nums.length ≥ 4) :\n  count_quadruples nums.length target nums ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_quadruples_binary_for_four\n  (nums : List Int) (target : Int) (h : nums.length = 4) :\n  count_quadruples nums.length target nums = 0 ∨\n  count_quadruples nums.length target nums = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem insufficient_elements_gives_zero\n  (nums : List Int) (target : Int) (h : nums.length < 4) :\n  count_quadruples nums.length target nums = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "listSum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": "efcdabd63d08c390fe10cb01c45a4dc1ea18e5c12cfdcc617a288298fb8f8bf6"
+  },
+  "listMax": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": "c31ec86392d48f1d913168fbfbcbd19a84820fede50c46eae97f73439ada6d60"
+  },
+  "insufficient_elements_gives_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ca83a3827b20ff1ffa229f2d02bb56d2c26565e959d32018f971343e8149393b",
+   "ctors": [],
+   "value": null
+  },
+  "count_quadruples_returns_natural": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "15b55be05cd2de9e8ade3dbc1d7bbb27ac0e5cf6db012f5ac3faa949034f4ed6",
+   "ctors": [],
+   "value": null
+  },
+  "count_quadruples_binary_for_four": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f6d96c6db5e1e4847802ea4b656e773334cb40396767bb6f3939e67355a3899e",
+   "ctors": [],
+   "value": null
+  },
+  "count_quadruples": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b6020162743a13f45027cbe319a9faa72d3e1bcb7f4fe39035571679fd42946f",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "e7096f663d39"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "LF4240",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_004240",
+ "vc-description": "/-\nTimothy (age: 16) really likes to smoke. Unfortunately, he is too young to buy his own cigarettes and that's why he has to be extremely efficient in smoking.\n\nIt's now your task to create a function that calculates how many cigarettes Timothy can smoke out of the given amounts of `bars` and `boxes`:\n\n- a bar has 10 boxes of cigarettes,\n- a box has 18 cigarettes,\n- out of 5 stubs (cigarettes ends) Timothy is able to roll a new one,\n- of course the self made cigarettes also have an end which can be used to create a new one...\n\nPlease note that Timothy never starts smoking cigarettes that aren't \"full size\" so the amount of smoked cigarettes is always an integer.\n-/",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def start_smoking (bars : Nat) (boxes : Nat) : Nat :=\nsorry",
+ "vc-theorems": "theorem start_smoking_nonnegative (bars boxes : Nat) :\n  start_smoking bars boxes ≥ 0 := sorry",
+ "vc-postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 22\n-/\n#guard_msgs in\n#eval start_smoking 0 1\n\n/--\ninfo: 224\n-/\n#guard_msgs in\n#eval start_smoking 1 0\n\n/--\ninfo: 247\n-/\n#guard_msgs in\n#eval start_smoking 1 1"
+}

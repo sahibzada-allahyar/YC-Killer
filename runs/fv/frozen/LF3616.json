@@ -1,0 +1,82 @@
+{
+ "id": "LF3616",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def charCheck (text : String) (max_len : Nat) (spaces : Bool) : Bool × String := sorry\n\ntheorem charCheck_return_type \n  (text : String) (max_len : Nat) (spaces : Bool) :\n  let result := charCheck text max_len spaces\n  result.1 = true ∨ result.1 = false ∧ result.2.length ≤ max_len := sorry\n\ntheorem charCheck_with_spaces \n  (text : String) (max_len : Nat) :\n  let result := charCheck text max_len true \n  result.2 = text.take max_len ∧ result.1 = (text.length ≤ max_len) := sorry\n\ntheorem charCheck_without_spaces\n  (text : String) (max_len : Nat) :\n  let result := charCheck text max_len false\n  let text_no_spaces := text.replace \" \" \"\"\n  result.2 = text_no_spaces.take max_len ∧ \n  result.1 = (text_no_spaces.length ≤ max_len) := sorry\n\ntheorem charCheck_empty_max\n  (text : String) :\n  let result := charCheck text 0 true\n  result.1 = (text.length = 0) ∧\n  result.2 = \"\" := sorry\n\ntheorem charCheck_spaces_consistency\n  (text : String) :\n  let result_with_spaces := charCheck text text.length true\n  let result_no_spaces := charCheck text text.length false\n  result_with_spaces.2.replace \" \" \"\" = result_no_spaces.2 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def charCheck (text : String) (max_len : Nat) (spaces : Bool) : Bool × String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem charCheck_return_type \n  (text : String) (max_len : Nat) (spaces : Bool) :\n  let result := charCheck text max_len spaces\n  result.1 = true ∨ result.1 = false ∧ result.2.length ≤ max_len :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem charCheck_with_spaces \n  (text : String) (max_len : Nat) :\n  let result := charCheck text max_len true \n  result.2 = text.take max_len ∧ result.1 = (text.length ≤ max_len) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem charCheck_without_spaces\n  (text : String) (max_len : Nat) :\n  let result := charCheck text max_len false\n  let text_no_spaces := text.replace \" \" \"\"\n  result.2 = text_no_spaces.take max_len ∧ \n  result.1 = (text_no_spaces.length ≤ max_len) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem charCheck_empty_max\n  (text : String) :\n  let result := charCheck text 0 true\n  result.1 = (text.length = 0) ∧\n  result.2 = \"\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem charCheck_spaces_consistency\n  (text : String) :\n  let result_with_spaces := charCheck text text.length true\n  let result_no_spaces := charCheck text text.length false\n  result_with_spaces.2.replace \" \" \"\" = result_no_spaces.2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "charCheck_without_spaces": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "453dbe681240d3d6499539cd15c520ecacc3ea5d372fe1760b5e9541ff541f4c",
+   "ctors": [],
+   "value": null
+  },
+  "charCheck_with_spaces": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "64d11f25f790d4001180bea460fb07dbd6b5325f4221f2054ed0e6d3ec0ead7b",
+   "ctors": [],
+   "value": null
+  },
+  "charCheck_spaces_consistency": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "31e4584f64c80c915567419c347aedfab91093f827c6aabd8803e3204c988749",
+   "ctors": [],
+   "value": null
+  },
+  "charCheck_return_type": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "703096e52cb08c00c87a7b4fc47fb5f0e0d96ff20e553a212e6a5b379ec9d238",
+   "ctors": [],
+   "value": null
+  },
+  "charCheck_empty_max": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "022ce9f9087c6816187006673647524a5ed1e4bf3dd26dd06b81a231d6ce5c72",
+   "ctors": [],
+   "value": null
+  },
+  "charCheck": {
+   "kind": "def",
+   "role": "impl",
+   "type": "00faaef6b7cd4433a87e25de5c063e0c7d4f6cc0bbad2690120173e4f2819b47",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "be1ef1a3c009"
+}

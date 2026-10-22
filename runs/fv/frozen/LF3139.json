@@ -1,0 +1,60 @@
+{
+ "id": "LF3139",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def strings_crossover (arr : List String) (result : String) : Nat :=\n  sorry\n\ntheorem strings_crossover_non_negative (arr : List String) (result : String) :\n  strings_crossover arr result ≥ 0 :=\nsorry\n\ntheorem strings_crossover_max_pairs (arr : List String) (result : String) : \n  strings_crossover arr result ≤ (arr.length * (arr.length - 1)) / 2 :=\nsorry\n\ntheorem strings_crossover_length_mismatch (arr : List String) (result : String) :\n  (arr.head?.map String.length ≠ some result.length) →\n  strings_crossover arr result = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval strings_crossover [\"abc\", \"aaa\", \"aba\", \"bab\"] \"bbb\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval strings_crossover [\"aacccc\", \"bbcccc\"] \"abdddd\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval strings_crossover [\"a\", \"b\", \"c\", \"d\", \"e\"] \"c\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval strings_crossover [\"abc\", \"aaa\", \"aba\", \"bab\"] \"bbb\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval strings_crossover [\"aacccc\", \"bbcccc\"] \"abdddd\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval strings_crossover [\"a\", \"b\", \"c\", \"d\", \"e\"] \"c\"",
+ "chunks": [
+  {
+   "text": "def strings_crossover (arr : List String) (result : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem strings_crossover_non_negative (arr : List String) (result : String) :\n  strings_crossover arr result ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem strings_crossover_max_pairs (arr : List String) (result : String) : \n  strings_crossover arr result ≤ (arr.length * (arr.length - 1)) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem strings_crossover_length_mismatch (arr : List String) (result : String) :\n  (arr.head?.map String.length ≠ some result.length) →\n  strings_crossover arr result = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "strings_crossover_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7c94919926da4c69d475bb489b64bd7b1ba55c45a182cdb3ac252f868bb42f67",
+   "ctors": [],
+   "value": null
+  },
+  "strings_crossover_max_pairs": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6e41bf884237b70dc2974f2f22cc587cb847d1f85b53159001243ff87abee143",
+   "ctors": [],
+   "value": null
+  },
+  "strings_crossover_length_mismatch": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "024724114af9ec3b4b48e17699f033548521e84d477f60330e83bfae3c40e36e",
+   "ctors": [],
+   "value": null
+  },
+  "strings_crossover": {
+   "kind": "def",
+   "role": "impl",
+   "type": "8c277fd973890d8b7dc58704c226a7ce678d1f55ad8590ee2d661a29d6d1a9d9",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "75a01c847712"
+}

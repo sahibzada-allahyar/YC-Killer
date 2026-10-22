@@ -1,0 +1,12 @@
+{
+ "id": "LF1207",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_001207",
+ "vc-description": "/-\nOur chef has been assigned a task to make a necklace of length N, from gold, diamond and platinum.There is single kind of gold, two types of diamond and three types of platinum available.\nA necklace can be represented as strings of the form (G)∗(D1|D2)∗(P1|P2|P3)∗$ (G)*(D1|D2)*(P1|P2|P3)* $ where (x|y) means we can use x or y and ∗$ * $ means we can repeat the previous parenthesized expression 0 or more times.\nInstead of making necklace he choose to count all such distinct necklaces possible for a given length N.\n\n-----Input:-----\n-The first line of the input contains a single integer T$T$ denoting the number of test cases. The description of T$T$ test cases follows.\n-Only line of every test case contains an integer N$N$ denoting the length of the necklace required.\n\n-----Output:-----\nFor each test case, print the number of all such distinct necklaces, with given length. As the number can be really large, print it modulo  109+7$10^{9}+7$.\n\n-----Constraints-----\n- 1≤T≤10000$1 \\leq T \\leq 10000$\n- 2≤N≤1000000000$2 \\leq N \\leq 1000000000$\n- String S$S$ consists of only upper case english alphabets.\n\n-----Subtasks-----\n- 20 points : 1≤N≤5$1 \\leq N \\leq 5$\n- 70 points : Original$Original$ Constraints$Constraints$\n\n-----Sample Input:-----\n2\n1\n2\n\n-----Sample Output:-----\n6\n25\n-/",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def count_necklace_combinations (n : Nat) : Nat :=\n  sorry",
+ "vc-theorems": "theorem count_necklace_combinations_range (n : Nat) :\n  n ≥ 1 → count_necklace_combinations n ≥ 0 ∧ count_necklace_combinations n < 1000000007 := by\n  sorry",
+ "vc-postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_necklace_combinations 1\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval count_necklace_combinations 2\n\n/--\ninfo: 90\n-/\n#guard_msgs in\n#eval count_necklace_combinations 3"
+}

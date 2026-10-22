@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: scoped instance Repr Nat (plain BASE type, no abbrev alias) inside namespace + open. Scoped-ness does not hide it from the per-constant scan; anchors empty -> CHEAT_REJECTED. (round-1 rt2_elab_4 was the alias version; this confirms the plain base-type scoped case.)"
+}

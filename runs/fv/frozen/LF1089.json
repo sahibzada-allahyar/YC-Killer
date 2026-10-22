@@ -1,0 +1,60 @@
+{
+ "id": "LF1089",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_regions_after_v_roads (n: Nat) : Nat :=\nsorry\n\ntheorem max_regions_always_positive (n: Nat) (h: n > 0) : \n  max_regions_after_v_roads n > 0 :=\nsorry\n\ntheorem max_regions_monotonic (n: Nat) (h: n > 0) :\n  max_regions_after_v_roads n < max_regions_after_v_roads (n + 1) := \nsorry\n\ntheorem max_regions_known_values :\n  max_regions_after_v_roads 1 = 2 ∧ \n  max_regions_after_v_roads 2 = 7 ∧\n  max_regions_after_v_roads 3 = 16 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_regions_after_v_roads 1\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval max_regions_after_v_roads 2\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval max_regions_after_v_roads 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_regions_after_v_roads 1\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval max_regions_after_v_roads 2\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval max_regions_after_v_roads 3",
+ "chunks": [
+  {
+   "text": "def max_regions_after_v_roads (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_regions_always_positive (n: Nat) (h: n > 0) : \n  max_regions_after_v_roads n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_regions_monotonic (n: Nat) (h: n > 0) :\n  max_regions_after_v_roads n < max_regions_after_v_roads (n + 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_regions_known_values :\n  max_regions_after_v_roads 1 = 2 ∧ \n  max_regions_after_v_roads 2 = 7 ∧\n  max_regions_after_v_roads 3 = 16 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_regions_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "943c815802fcdfb1e9d6a9888a64e7ccc3a79098672142af88a2e58ec2df6dc1",
+   "ctors": [],
+   "value": null
+  },
+  "max_regions_known_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "55c67e6b84f96b74e8d82baf8637309700080e9de6088ad4fd138baea43fd57f",
+   "ctors": [],
+   "value": null
+  },
+  "max_regions_always_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "43a28ea999a0886201ff3283240f163e3d4d0d03645b775698e1c277d159b717",
+   "ctors": [],
+   "value": null
+  },
+  "max_regions_after_v_roads": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b4f65a87604c"
+}

@@ -1,0 +1,82 @@
+{
+ "id": "LF0897",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_time_to_eat_bananas (n : Nat) : Nat := sorry\n\ntheorem min_time_always_positive (n : Nat) (h : n > 0) : \n  min_time_to_eat_bananas n > 0 := sorry\n\ntheorem min_time_monotonic (n : Nat) (h : n > 0) :\n  min_time_to_eat_bananas n ≤ min_time_to_eat_bananas (n + 1) := sorry\n\ntheorem min_time_upper_bound (n : Nat) (h : n > 0) :\n  min_time_to_eat_bananas n ≤ 2 * n := sorry\n\ntheorem min_time_small_inputs_1 :\n  min_time_to_eat_bananas 1 = 1 := sorry\n\ntheorem min_time_small_inputs_2 :\n  min_time_to_eat_bananas 2 = 2 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_time_to_eat_bananas 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_time_to_eat_bananas 4\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_time_to_eat_bananas 7\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_time_to_eat_bananas 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_time_to_eat_bananas 4\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_time_to_eat_bananas 7",
+ "chunks": [
+  {
+   "text": "def min_time_to_eat_bananas (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_always_positive (n : Nat) (h : n > 0) : \n  min_time_to_eat_bananas n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_monotonic (n : Nat) (h : n > 0) :\n  min_time_to_eat_bananas n ≤ min_time_to_eat_bananas (n + 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_upper_bound (n : Nat) (h : n > 0) :\n  min_time_to_eat_bananas n ≤ 2 * n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_small_inputs_1 :\n  min_time_to_eat_bananas 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_time_small_inputs_2 :\n  min_time_to_eat_bananas 2 = 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_time_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fd48869f4369414519f743ce3d38b2db472bae7c8c655c2d3e0d82b55f2d0114",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_to_eat_bananas": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_small_inputs_2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0fd3aff2aa328eba0138d5681ad984c6b18ade69ada0164eeb65e81bef958e4c",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_small_inputs_1": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dbb17ba358115d0da9d580c40bdd23e038c38463b61c2f4ac7a4e863ba894c62",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7987d446240368621512eabe05b04dbd65390a315c896d738809064c7f412521",
+   "ctors": [],
+   "value": null
+  },
+  "min_time_always_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bd7f88a00508487807fdf3f1019dbdc03b9b08ab3f9c50ae75423df731a11d54",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "c477a2d66357"
+}

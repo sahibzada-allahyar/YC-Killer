@@ -1,0 +1,67 @@
+{
+ "id": "LF1154",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def absDiff (x y : Nat) : Nat :=\n  if x ≥ y then x - y else y - x\n\ndef max_removable_steps (n : Nat) (s : String) : Nat := sorry\n\ndef count_char (s : String) (c : Char) : Nat :=\nsorry\n\ntheorem max_removable_steps_le_n {n : Nat} {s : String} :\n  n > 0 → max_removable_steps n s ≤ n :=\nsorry\n\ntheorem max_removable_steps_empty {n : Nat} :\n  n > 0 → max_removable_steps n \"\" = n :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_removable_steps 7 \"ULUDLLU\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval max_removable_steps 4 \"RUUR\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval max_removable_steps 4 \"LRLR\"\n",
+ "warnings": [],
+ "preamble": "def absDiff (x y : Nat) : Nat :=\n  if x ≥ y then x - y else y - x",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval max_removable_steps 7 \"ULUDLLU\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval max_removable_steps 4 \"RUUR\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval max_removable_steps 4 \"LRLR\"",
+ "chunks": [
+  {
+   "text": "def max_removable_steps (n : Nat) (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def count_char (s : String) (c : Char) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_removable_steps_le_n {n : Nat} {s : String} :\n  n > 0 → max_removable_steps n s ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_removable_steps_empty {n : Nat} :\n  n > 0 → max_removable_steps n \"\" = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_removable_steps_le_n": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "596b248f83c63ca273ad4643089ae3a5ddeb476f2c0118415a29baa4b0c74906",
+   "ctors": [],
+   "value": null
+  },
+  "max_removable_steps_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d16ed373dca6099b10d72e137842a8a636aba8c776bb86f444fa75eda32dd6ae",
+   "ctors": [],
+   "value": null
+  },
+  "max_removable_steps": {
+   "kind": "def",
+   "role": "impl",
+   "type": "367f3065ac91b8b3050ba85c6b51af690f6cfcd13c7494afe469d92db52913a4",
+   "ctors": [],
+   "value": null
+  },
+  "count_char": {
+   "kind": "def",
+   "role": "impl",
+   "type": "37a11728be2c95ecae70bca41e76796383556a4bfe9b49bfb5dfdeaa4c3132fd",
+   "ctors": [],
+   "value": null
+  },
+  "absDiff": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": "20d1c4faeceb3718aadf91fcf609373345d7a7aa758574a2a12c8ab38af4bd8e"
+  }
+ },
+ "sha": "2bac8bc53196"
+}

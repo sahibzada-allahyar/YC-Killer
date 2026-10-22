@@ -1,0 +1,49 @@
+{
+ "id": "LF2551",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ordering_beers (beers : Int) : String := sorry\n\ntheorem ordering_beers_zero :\n  ordering_beers 0 = \"Woda mineralna poprosze\" := sorry\n\ntheorem ordering_beers_one :\n  ordering_beers 1 = \"Jedno piwo poprosze\" := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def ordering_beers (beers : Int) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem ordering_beers_zero :\n  ordering_beers 0 = \"Woda mineralna poprosze\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem ordering_beers_one :\n  ordering_beers 1 = \"Jedno piwo poprosze\" :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "ordering_beers_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b405a5e2d1a9494d9588b332487759dc9c203ff2204c2a7e547a77ae9ad1f06d",
+   "ctors": [],
+   "value": null
+  },
+  "ordering_beers_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e04751682d5a52735114596ae3591a5a6a726335df584023ffc4f6955c827104",
+   "ctors": [],
+   "value": null
+  },
+  "ordering_beers": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6ee11f3b1bba7b29bab86d0966bbc8b7cdf4b3a6916980de885b1ecc6b9d47ad",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7329c42ea4c7"
+}

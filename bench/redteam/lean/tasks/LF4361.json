@@ -1,0 +1,12 @@
+{
+ "id": "LF4361",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_004361",
+ "vc-description": "/-\nThe Ackermann function is a famous function that played a big role in computability theory as the first example of a total computable function that is not primitive recursive.\n\nSince then the function has been a bit simplified but is still of good use. Due to its definition in terms of extremely deep recursion it can be used as a benchmark of a compiler's ability to optimize recursion. \n\nThe goal of this kata is to code a function which will be given two inputs, m and n, and will return the Ackermann number A(m,n) defined by:\n\n```\nA(m,n) = n+1                          if m=0  \nA(m,n) = A(m-1,1)                     if m>0 , n=0\nA(m,n) = A(m-1,A(m,n-1))              if m,n > 0\n```\n\nm,n should be non-negative integers, the function should return null (Javascript), None (Python), or nil (Ruby) for other type, non-integer and negative numbers. In C, input is restricted to integer type.\n-/",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def Ackermann : Nat → Nat → Option Nat \n| m, n => sorry",
+ "vc-theorems": "theorem ack_m0_property (n : Nat) :\n  Ackermann 0 n = some (n + 1) :=\nsorry",
+ "vc-postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible"
+}

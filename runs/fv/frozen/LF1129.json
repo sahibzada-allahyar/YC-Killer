@@ -1,0 +1,49 @@
+{
+ "id": "LF1129",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def convert_string (s : String) : String := sorry\n\ntheorem result_structure \n    (s : String) :\n    let result := convert_string s\n    result = \"\" ∨ \n    (result.data.head? = some '.' ∧\n     ∀ part ∈ result.split (· = '.'), part.length ≤ 1) := sorry\n\ntheorem vowels_removed\n    (s : String) :\n    let result := convert_string s\n    let vowels := \"aeiou\".data\n    ∀ c ∈ result.data, c ∉ vowels := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def convert_string (s : String) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_structure \n    (s : String) :\n    let result := convert_string s\n    result = \"\" ∨ \n    (result.data.head? = some '.' ∧\n     ∀ part ∈ result.split (· = '.'), part.length ≤ 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vowels_removed\n    (s : String) :\n    let result := convert_string s\n    let vowels := \"aeiou\".data\n    ∀ c ∈ result.data, c ∉ vowels :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "vowels_removed": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5df86150394645f153c80d78d912c269819d90feb79e3904061064abee082d85",
+   "ctors": [],
+   "value": null
+  },
+  "result_structure": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "42d309b75d217b24c25cd92b95b9fcd036891c1dfa3c0d68c283622a8ab9ee00",
+   "ctors": [],
+   "value": null
+  },
+  "convert_string": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6f0513922b1b32500fef5a52f309f3291d42e6ae6f7d7e89b365f7e92e39e763",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "05ecede06925"
+}

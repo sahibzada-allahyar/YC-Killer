@@ -1,0 +1,49 @@
+{
+ "id": "LF2244",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_3uniform_hypertrees (n : Nat) : Nat :=\n  sorry\n\ntheorem count_3uniform_hypertrees_nonneg (n : Nat) :\n  count_3uniform_hypertrees n ≥ 0 := \n  sorry\n\ntheorem count_3uniform_hypertrees_base_cases :\n  count_3uniform_hypertrees 0 = 0 ∧ \n  count_3uniform_hypertrees 1 = 1 ∧\n  count_3uniform_hypertrees 2 = 0 :=\n  sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def count_3uniform_hypertrees (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_3uniform_hypertrees_nonneg (n : Nat) :\n  count_3uniform_hypertrees n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_3uniform_hypertrees_base_cases :\n  count_3uniform_hypertrees 0 = 0 ∧ \n  count_3uniform_hypertrees 1 = 1 ∧\n  count_3uniform_hypertrees 2 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_3uniform_hypertrees_nonneg": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0037a6bc900631a349f9f5b9cab13b6471cc65f938710d21380d3a419919f9f3",
+   "ctors": [],
+   "value": null
+  },
+  "count_3uniform_hypertrees_base_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "95ff93b69da67d02f3a4bb3fc4921e974f27b5272cf69ddaa76157d53b73bd5c",
+   "ctors": [],
+   "value": null
+  },
+  "count_3uniform_hypertrees": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8765ea7da6c0"
+}

@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "what": "CRLF line endings throughout (robustness/false-rejection probe): _norm converts CRLF->LF so chunks still match; honest impl -> PROVED."}

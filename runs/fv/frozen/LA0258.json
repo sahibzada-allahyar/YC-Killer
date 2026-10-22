@@ -1,0 +1,77 @@
+{
+ "id": "LA0258",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum_window (heights : List Int) (start : Nat) (k : Nat) : Int :=\n  match k with\n  | 0 => 0\n  | 1 => heights[start]!\n  | k + 1 => heights[start]! + sum_window heights (start + 1) k\ntermination_by k\n\ndef ValidInput (n : Int) (k : Int) (heights : List Int) : Prop :=\n  1 ≤ k ∧ k ≤ n ∧ heights.length = n.toNat ∧ ∀ i, 0 ≤ i ∧ i < n → 1 ≤ heights[i.toNat]! ∧ heights[i.toNat]! ≤ 100\n\ndef ValidResult (result : Int) (n : Int) (k : Int) (heights : List Int) : Prop :=\n  1 ≤ result ∧ result ≤ n - k + 1 ∧\n  (∀ start, 0 ≤ start ∧ start ≤ n - k → \n    sum_window heights (result - 1).toNat k.toNat ≤ sum_window heights start.toNat k.toNat) ∧\n  (∀ start, 0 ≤ start ∧ start < result - 1 →\n    sum_window heights start.toNat k.toNat > sum_window heights (result - 1).toNat k.toNat)\n\n@[reducible, simp]\ndef solve_precond (n : Int) (k : Int) (heights : List Int) : Prop :=\n  ValidInput n k heights\n\ndef solve (n : Int) (k : Int) (heights : List Int) (h_precond : solve_precond n k heights) : Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (k : Int) (heights : List Int) (result : Int) (h_precond : solve_precond n k heights) : Prop :=\n  ValidResult result n k heights\n\ntheorem solve_spec_satisfied (n : Int) (k : Int) (heights : List Int) (h_precond : solve_precond n k heights) :\n    solve_postcond n k heights (solve n k heights h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def sum_window (heights : List Int) (start : Nat) (k : Nat) : Int :=\n  match k with\n  | 0 => 0\n  | 1 => heights[start]!\n  | k + 1 => heights[start]! + sum_window heights (start + 1) k\ntermination_by k\n\ndef ValidInput (n : Int) (k : Int) (heights : List Int) : Prop :=\n  1 ≤ k ∧ k ≤ n ∧ heights.length = n.toNat ∧ ∀ i, 0 ≤ i ∧ i < n → 1 ≤ heights[i.toNat]! ∧ heights[i.toNat]! ≤ 100\n\ndef ValidResult (result : Int) (n : Int) (k : Int) (heights : List Int) : Prop :=\n  1 ≤ result ∧ result ≤ n - k + 1 ∧\n  (∀ start, 0 ≤ start ∧ start ≤ n - k → \n    sum_window heights (result - 1).toNat k.toNat ≤ sum_window heights start.toNat k.toNat) ∧\n  (∀ start, 0 ≤ start ∧ start < result - 1 →\n    sum_window heights start.toNat k.toNat > sum_window heights (result - 1).toNat k.toNat)\n\n@[reducible, simp]\ndef solve_precond (n : Int) (k : Int) (heights : List Int) : Prop :=\n  ValidInput n k heights",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (k : Int) (heights : List Int) (h_precond : solve_precond n k heights) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (k : Int) (heights : List Int) (result : Int) (h_precond : solve_precond n k heights) : Prop :=\n  ValidResult result n k heights",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (k : Int) (heights : List Int) (h_precond : solve_precond n k heights) :\n    solve_postcond n k heights (solve n k heights h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_window": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "6a1d09ab4ec446e1f538e575e4047ff3181e92d90939aeff1a66381c64092c6f",
+   "ctors": [],
+   "value": "9364dafc25948c469bad9f2efb0589393b70be9a2427d14c45ea725d49d508a5"
+  },
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cd4c3587ff83129bdce5f889c8ccffcbc9a546e44376c5f1501e0d3693e2e2d2",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d40d5e85c062aae3710c64df388f7d3356b1dc43c3aaaf1beabed3793997bc28",
+   "ctors": [],
+   "value": "124794db27edd77df94f6b8cefa4f7459cdb92a06263a5863faf38bf93ba15bf"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "8605ecc8b4fddc9f0513c45bc2fcd8f777978efac98ad090b97fa1fbfc1f2d36",
+   "ctors": [],
+   "value": "767684f5d51c0ffc352d04e9ec0bb0dc7a5301f6c1c35d82c7737a331a942f99"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "636f9f001368053b723d7738941837a003222cbf2739778b47d37fb83f5b84b3",
+   "ctors": [],
+   "value": null
+  },
+  "ValidResult": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "26382bede843e9e6e5ef09d6cf05b098da143562a6d93caea567a77625472cb9",
+   "ctors": [],
+   "value": "fd7307142ec99eddd3789ec90154a2658dffd85121f023461309a86fc7fae5ed"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d40d5e85c062aae3710c64df388f7d3356b1dc43c3aaaf1beabed3793997bc28",
+   "ctors": [],
+   "value": "bf69a2397985684a5bb21e239a4e3b944783a1e947dfe446f7267bd7af54eb0b"
+  }
+ },
+ "sha": "5db9475af22a"
+}

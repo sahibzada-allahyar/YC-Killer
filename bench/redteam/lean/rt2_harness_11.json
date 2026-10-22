@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "hole": false, "what": "robustness probe: an unclosed `section Helper` opened before the postamble. section does not prefix constant names, so the appended EOF sentinel is still top-level; Lean accepts an unclosed section. Expect PROVED (documents that this is not over-rejected and not a bypass)."}

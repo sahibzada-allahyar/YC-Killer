@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "Negative control: plain high-priority instance : Repr Nat (no aliasing). anchors empty -> CHEAT_REJECTED. Baseline for 14/18/19."
+}

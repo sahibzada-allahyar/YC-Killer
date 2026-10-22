@@ -1,0 +1,60 @@
+{
+ "id": "LF1692",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_sequence_value (n : Nat) : Nat := sorry\n\ntheorem sequence_bounded (n : Nat) :\n  let result := find_sequence_value n\n  0 ≤ result ∧ result ≤ n := sorry\n\ntheorem base_cases :\n  find_sequence_value 0 = 0 ∧\n  find_sequence_value 1 = 1 ∧\n  find_sequence_value 2 = 2 ∧ \n  find_sequence_value 3 = 2 := sorry\n\ntheorem sequence_monotonic (n : Nat) :\n  n ≥ 4 →\n  find_sequence_value n ≥ find_sequence_value (n-1) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval find_sequence_value 0\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_sequence_value 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_sequence_value 10\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval find_sequence_value 0\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_sequence_value 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_sequence_value 10",
+ "chunks": [
+  {
+   "text": "def find_sequence_value (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sequence_bounded (n : Nat) :\n  let result := find_sequence_value n\n  0 ≤ result ∧ result ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem base_cases :\n  find_sequence_value 0 = 0 ∧\n  find_sequence_value 1 = 1 ∧\n  find_sequence_value 2 = 2 ∧ \n  find_sequence_value 3 = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sequence_monotonic (n : Nat) :\n  n ≥ 4 →\n  find_sequence_value n ≥ find_sequence_value (n-1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sequence_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9d4ed12e92d76e9fcf2460036692942a272ad4746409f621304d3586ea75e5e5",
+   "ctors": [],
+   "value": null
+  },
+  "sequence_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bd300c4fcfc9b6b03c0bbc0c47b7b6d2228491acb19b3bb551741a7f9d1ff9f2",
+   "ctors": [],
+   "value": null
+  },
+  "find_sequence_value": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "base_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b220f626edd30059adecceeac1c4e2ac55ce8851ba4e6329ff2e21c2b4bb9397",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "e63da59d8a3a"
+}

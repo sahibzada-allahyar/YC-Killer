@@ -1,0 +1,40 @@
+{
+ "id": "LT0643",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do\n\ndef startswith {n : Nat} (a : Vector String n) (prefixes : Vector String n) : Id (Vector Bool n) :=\n  sorry\n\ntheorem startswith_spec {n : Nat} (a : Vector String n) (prefixes : Vector String n) :\n    ⦃⌜True⌝⦄\n    startswith a prefixes\n    ⦃⇓r => ⌜∀ i : Fin n, \n      -- Main specification: result matches String.startsWith for each pair\n      (r.get i = (a.get i).startsWith (prefixes.get i)) ∧\n      -- Mathematical property: if result is true, prefix appears at the beginning\n      (r.get i = true → \n        (prefixes.get i).length ≤ (a.get i).length ∧\n        (a.get i).take (prefixes.get i).length = (prefixes.get i)) ∧\n      -- Mathematical property: if result is false, prefix does not appear at the beginning\n      (r.get i = false → \n        (prefixes.get i).length > (a.get i).length ∨\n        (a.get i).take (prefixes.get i).length ≠ (prefixes.get i))⌝⦄ := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def startswith {n : Nat} (a : Vector String n) (prefixes : Vector String n) : Id (Vector Bool n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem startswith_spec {n : Nat} (a : Vector String n) (prefixes : Vector String n) :\n    ⦃⌜True⌝⦄\n    startswith a prefixes\n    ⦃⇓r => ⌜∀ i : Fin n, \n      -- Main specification: result matches String.startsWith for each pair\n      (r.get i = (a.get i).startsWith (prefixes.get i)) ∧\n      -- Mathematical property: if result is true, prefix appears at the beginning\n      (r.get i = true → \n        (prefixes.get i).length ≤ (a.get i).length ∧\n        (a.get i).take (prefixes.get i).length = (prefixes.get i)) ∧\n      -- Mathematical property: if result is false, prefix does not appear at the beginning\n      (r.get i = false → \n        (prefixes.get i).length > (a.get i).length ∨\n        (a.get i).take (prefixes.get i).length ≠ (prefixes.get i))⌝⦄ := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init",
+  "Std.Do.Triple",
+  "Std.Tactic.Do"
+ ],
+ "constants": {
+  "startswith_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0cc144d556a4512fb286b412198cc3f735ec6fee16e3639923291c432a59091e",
+   "ctors": [],
+   "value": null
+  },
+  "startswith": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2d71069607b95057e32e255f1eff24ae89cefc3f1a4539432a36235852dbbbb2",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2d4fa9cd4fab"
+}

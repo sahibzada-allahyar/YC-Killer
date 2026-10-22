@@ -1,0 +1,82 @@
+{
+ "id": "LF3968",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sc (width length gaps : Nat) : Nat := sorry\n\ntheorem sc_non_negative\n  (width length gaps : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0)\n  (h3 : gaps > 0) :\n  sc width length gaps ≥ 0 := sorry\n\ntheorem sc_zero_when_gaps_exceed_perimeter\n  (width length gaps : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0)\n  (h3 : gaps > 0)\n  (h4 : gaps > 2*width + 2*length - 4) :\n  sc width length gaps = 0 := sorry\n\ntheorem sc_perimeter_relation\n  (width length gaps : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0)\n  (h3 : gaps > 0)\n  (h4 : sc width length gaps > 0) :\n  (gaps + 1) * sc width length gaps = 2*width + 2*length - 4 := sorry\n\ntheorem sc_square_identity \n  (size : Nat)\n  (h : size > 0) :\n  sc size size 1 = sc size size 1 := sorry\n\ntheorem sc_symmetry\n  (width length : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0) :\n  sc width length 1 = sc length width 1 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval sc 3 3 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval sc 3 3 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval sc 3 3 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval sc 3 3 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval sc 3 3 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval sc 3 3 2",
+ "chunks": [
+  {
+   "text": "def sc (width length gaps : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sc_non_negative\n  (width length gaps : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0)\n  (h3 : gaps > 0) :\n  sc width length gaps ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sc_zero_when_gaps_exceed_perimeter\n  (width length gaps : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0)\n  (h3 : gaps > 0)\n  (h4 : gaps > 2*width + 2*length - 4) :\n  sc width length gaps = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sc_perimeter_relation\n  (width length gaps : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0)\n  (h3 : gaps > 0)\n  (h4 : sc width length gaps > 0) :\n  (gaps + 1) * sc width length gaps = 2*width + 2*length - 4 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sc_square_identity \n  (size : Nat)\n  (h : size > 0) :\n  sc size size 1 = sc size size 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sc_symmetry\n  (width length : Nat)\n  (h1 : width > 0)\n  (h2 : length > 0) :\n  sc width length 1 = sc length width 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sc_zero_when_gaps_exceed_perimeter": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4c8798c4f01e71ce685322fe723fe0d161a8126381c5b0b2966eb80bf9f274ab",
+   "ctors": [],
+   "value": null
+  },
+  "sc_symmetry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7043e4b24c94a0ec2728fe7859d2368f9c9e01cdd39849be8083e2587a090fbe",
+   "ctors": [],
+   "value": null
+  },
+  "sc_square_identity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "600063f768f902a593051b66660823e619b9d45c8456b4afc32278d40f73bb4a",
+   "ctors": [],
+   "value": null
+  },
+  "sc_perimeter_relation": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3026072cad5b4ba529cc265058d0186ec200a76eb29e8607797bf805b718aeff",
+   "ctors": [],
+   "value": null
+  },
+  "sc_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ace412cf8e1a8e8cd23cdf062f3ab63160f86cb0fd1ea2b0f0fd5be69dc221bc",
+   "ctors": [],
+   "value": null
+  },
+  "sc": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "60ae21bd1c8c"
+}

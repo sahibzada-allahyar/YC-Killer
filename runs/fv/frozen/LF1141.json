@@ -1,0 +1,71 @@
+{
+ "id": "LF1141",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_pool_shots (N K x y : Nat) : Nat × Nat := sorry\n\ntheorem solve_pool_shots_bounds \n  (N K x y : Nat) (h1 : x ≤ N) (h2 : y ≤ N) :\n  let (rx, ry) := solve_pool_shots N K x y\n  rx ≤ N ∧ ry ≤ N := sorry\n\ntheorem solve_pool_shots_boundary \n  (N K x y : Nat) (h1 : x ≤ N) (h2 : y ≤ N) (h3 : x ≠ y) :\n  let (rx, ry) := solve_pool_shots N K x y\n  rx = 0 ∨ rx = N ∨ ry = 0 ∨ ry = N := sorry\n\ntheorem solve_pool_shots_cycle\n  (N K x y : Nat) (h1 : x ≤ N) (h2 : y ≤ N) :\n  solve_pool_shots N K x y = solve_pool_shots N (K + 4) x y := sorry\n\ntheorem solve_pool_shots_equal_pos\n  (N K pos : Nat) (h : pos ≤ N) :\n  solve_pool_shots N K pos pos = (N, N) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (5, 5)\n-/\n#guard_msgs in\n#eval solve_pool_shots 5 5 4 4\n\n/--\ninfo: (3, 5)\n-/\n#guard_msgs in\n#eval solve_pool_shots 5 2 3 1\n\n/--\ninfo: (6, 10)\n-/\n#guard_msgs in\n#eval solve_pool_shots 10 1 3 7\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (5, 5)\n-/\n#guard_msgs in\n#eval solve_pool_shots 5 5 4 4\n\n/--\ninfo: (3, 5)\n-/\n#guard_msgs in\n#eval solve_pool_shots 5 2 3 1\n\n/--\ninfo: (6, 10)\n-/\n#guard_msgs in\n#eval solve_pool_shots 10 1 3 7",
+ "chunks": [
+  {
+   "text": "def solve_pool_shots (N K x y : Nat) : Nat × Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_pool_shots_bounds \n  (N K x y : Nat) (h1 : x ≤ N) (h2 : y ≤ N) :\n  let (rx, ry) := solve_pool_shots N K x y\n  rx ≤ N ∧ ry ≤ N :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_pool_shots_boundary \n  (N K x y : Nat) (h1 : x ≤ N) (h2 : y ≤ N) (h3 : x ≠ y) :\n  let (rx, ry) := solve_pool_shots N K x y\n  rx = 0 ∨ rx = N ∨ ry = 0 ∨ ry = N :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_pool_shots_cycle\n  (N K x y : Nat) (h1 : x ≤ N) (h2 : y ≤ N) :\n  solve_pool_shots N K x y = solve_pool_shots N (K + 4) x y :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_pool_shots_equal_pos\n  (N K pos : Nat) (h : pos ≤ N) :\n  solve_pool_shots N K pos pos = (N, N) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_pool_shots_equal_pos": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "55946fc68ba3c15eb9062c1ccba4eb9e134adde9e347e74c2bec4ad82092c1fe",
+   "ctors": [],
+   "value": null
+  },
+  "solve_pool_shots_cycle": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1b86510dc021b07e0639ee82e26ac176aad2b0e1aee4651a373f91a04d32bb7e",
+   "ctors": [],
+   "value": null
+  },
+  "solve_pool_shots_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "30faffe254b452c8015473c382780a0fe973f2440e0c9b08a162e7fd14fdba48",
+   "ctors": [],
+   "value": null
+  },
+  "solve_pool_shots_boundary": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8593d99b5ba79533b116f3deaef05b7b1edf2f25f852087fe45a78a015d1d8fc",
+   "ctors": [],
+   "value": null
+  },
+  "solve_pool_shots": {
+   "kind": "def",
+   "role": "impl",
+   "type": "cdf4e411844b851a0068d6d773127d25ea1986da27890e572f6d7da3b16e207b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "33eeb0e1cc80"
+}

@@ -1,0 +1,84 @@
+{
+ "id": "LA0214",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def comb2 (n : Int) : Int :=\n  n * (n - 1) / 2\n\ndef ValidInput (n m : Int) : Prop :=\n  1 ≤ m ∧ m ≤ n\n\ndef MinFriendshipPairs (n m : Int) : Int :=\n  let k := n / m\n  let p := n % m\n  p * comb2 (k + 1) + (m - p) * comb2 k\n\ndef MaxFriendshipPairs (n m : Int) : Int :=\n  comb2 (n - m + 1)\n\n@[reducible, simp]\ndef solve_precond (n m : Int) : Prop :=\n  ValidInput n m\n\ndef solve (n m : Int) (h_precond : solve_precond n m) : Int × Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n m : Int) (result : Int × Int) (h_precond : solve_precond n m) : Prop :=\n  let min_pairs := result.1\n  let max_pairs := result.2\n  min_pairs ≥ 0 ∧ \n  max_pairs ≥ 0 ∧ \n  min_pairs ≤ max_pairs ∧ \n  min_pairs = MinFriendshipPairs n m ∧ \n  max_pairs = MaxFriendshipPairs n m\n\ntheorem solve_spec_satisfied (n m : Int) (h_precond : solve_precond n m) :\n    solve_postcond n m (solve n m h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def comb2 (n : Int) : Int :=\n  n * (n - 1) / 2\n\ndef ValidInput (n m : Int) : Prop :=\n  1 ≤ m ∧ m ≤ n\n\ndef MinFriendshipPairs (n m : Int) : Int :=\n  let k := n / m\n  let p := n % m\n  p * comb2 (k + 1) + (m - p) * comb2 k\n\ndef MaxFriendshipPairs (n m : Int) : Int :=\n  comb2 (n - m + 1)\n\n@[reducible, simp]\ndef solve_precond (n m : Int) : Prop :=\n  ValidInput n m",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n m : Int) (h_precond : solve_precond n m) : Int × Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n m : Int) (result : Int × Int) (h_precond : solve_precond n m) : Prop :=\n  let min_pairs := result.1\n  let max_pairs := result.2\n  min_pairs ≥ 0 ∧ \n  max_pairs ≥ 0 ∧ \n  min_pairs ≤ max_pairs ∧ \n  min_pairs = MinFriendshipPairs n m ∧ \n  max_pairs = MaxFriendshipPairs n m",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n m : Int) (h_precond : solve_precond n m) :\n    solve_postcond n m (solve n m h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "71a1109a7cb7ab22d973068036ce14f778b7bc3389c7c091ad557e3e290fe44d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "6c55caadba544e20471b83194c8d47f40ba4110a96686b310f5725d74788c78a"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "e024064fe6b3d57561452baec0affce452dab79d1acf4d374e6b8088d3d3af15",
+   "ctors": [],
+   "value": "c961706711da873262e83431025fe6a3b9aebbd686069291f7be2105cdff677c"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2630500b0ebd030735c5c6c925979839d74696534ef9ec90059c1109651a1c72",
+   "ctors": [],
+   "value": null
+  },
+  "comb2": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": "7cbb06376548c0f724c6909fb43eeabca5205b1bee5f737f672434d0c6e1f635"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "9d5f57e9bf66098cdbcf09ad9cb6531b34d62bf096e9147f2c3319b5347e5525"
+  },
+  "MinFriendshipPairs": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": "92652e7831d9fd04cf9c6004ca28a746e62158dfd4ff48b4bfa2043bc623aa37"
+  },
+  "MaxFriendshipPairs": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": "4c0173053698ef8adc2de91fbbda909d4b6b1a94560ad7f3b71c2f6e15403518"
+  }
+ },
+ "sha": "55447a6392cf"
+}

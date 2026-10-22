@@ -1,0 +1,71 @@
+{
+ "id": "LF0864",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_proxy_attendance (D : Nat) (S : String) : Int :=\n  sorry\n\ndef countP (s : String) : Nat :=\n  sorry\n\ntheorem result_range {D : Nat} {S : String} (h : D ≥ 5) (h2 : D ≤ 100) (h3 : S.length = D) :\n  let result := solve_proxy_attendance D S\n  result = -1 ∨ result ≥ 0 :=\nsorry\n\ntheorem all_present {D : Nat} (h : D ≥ 5) (h2 : D ≤ 100) :\n  solve_proxy_attendance D (String.mk (List.replicate D 'P')) = 0 :=\nsorry\n\ntheorem too_many_absences {D : Nat} (h : D ≥ 5) (h2 : D ≤ 100) :\n  solve_proxy_attendance D (String.mk (List.replicate D 'A')) = -1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_proxy_attendance 9 \"PAAPPAPPP\"\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve_proxy_attendance 5 \"PAAAA\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_proxy_attendance 8 \"PPPPPPPP\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_proxy_attendance 9 \"PAAPPAPPP\"\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve_proxy_attendance 5 \"PAAAA\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_proxy_attendance 8 \"PPPPPPPP\"",
+ "chunks": [
+  {
+   "text": "def solve_proxy_attendance (D : Nat) (S : String) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def countP (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_range {D : Nat} {S : String} (h : D ≥ 5) (h2 : D ≤ 100) (h3 : S.length = D) :\n  let result := solve_proxy_attendance D S\n  result = -1 ∨ result ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem all_present {D : Nat} (h : D ≥ 5) (h2 : D ≤ 100) :\n  solve_proxy_attendance D (String.mk (List.replicate D 'P')) = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem too_many_absences {D : Nat} (h : D ≥ 5) (h2 : D ≤ 100) :\n  solve_proxy_attendance D (String.mk (List.replicate D 'A')) = -1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "too_many_absences": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "49cc20dcdc02c0447f4f71bb3374b1b33f59049def0dc769c8b834c4b57555f0",
+   "ctors": [],
+   "value": null
+  },
+  "solve_proxy_attendance": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e4e53150a65880cc25f43cba6dee685a6d7826c77c520244a5788a64a16f2a36",
+   "ctors": [],
+   "value": null
+  },
+  "result_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1876b1d19dee2b69bd000cc8c602e75f70682d7cef7c84a1836d12083261b638",
+   "ctors": [],
+   "value": null
+  },
+  "countP": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "all_present": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a3b4d11236b10e5ec5e3ac28a6c11cc344c45113fc250cb2835ddf79b6ead7eb",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a302649ff431"
+}

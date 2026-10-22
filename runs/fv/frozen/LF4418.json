@@ -1,0 +1,60 @@
+{
+ "id": "LF4418",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def string_to_number (s : String) : Int := sorry\n\ntheorem string_to_number_roundtrip (n : Int) : \n  string_to_number (toString n) = n := sorry\n\ntheorem string_to_number_invalid_empty :\n  ∀ s : String, s = \"\" → string_to_number s = 0 := sorry\n\ntheorem string_to_number_invalid_nondigit (s : String)\n  (h: ∃ c ∈ s.data, c < '0' ∨ c > '9') :\n  string_to_number s = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1234\n-/\n#guard_msgs in\n#eval string_to_number \"1234\"\n\n/--\ninfo: -7\n-/\n#guard_msgs in\n#eval string_to_number \"-7\"\n\n/--\ninfo: 605\n-/\n#guard_msgs in\n#eval string_to_number \"605\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1234\n-/\n#guard_msgs in\n#eval string_to_number \"1234\"\n\n/--\ninfo: -7\n-/\n#guard_msgs in\n#eval string_to_number \"-7\"\n\n/--\ninfo: 605\n-/\n#guard_msgs in\n#eval string_to_number \"605\"",
+ "chunks": [
+  {
+   "text": "def string_to_number (s : String) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem string_to_number_roundtrip (n : Int) : \n  string_to_number (toString n) = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem string_to_number_invalid_empty :\n  ∀ s : String, s = \"\" → string_to_number s = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem string_to_number_invalid_nondigit (s : String)\n  (h: ∃ c ∈ s.data, c < '0' ∨ c > '9') :\n  string_to_number s = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "string_to_number_roundtrip": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7105d08a40b5d7a53e41831c9dd79efa3cff8b4461d4d302f485d35b2e950703",
+   "ctors": [],
+   "value": null
+  },
+  "string_to_number_invalid_nondigit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f6a695edede250fe3c5178464cbf50018b90a39e3620c7882c475e75a1cf73ae",
+   "ctors": [],
+   "value": null
+  },
+  "string_to_number_invalid_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ecb93eaaaf3a5dbb168040143aa0885fbbe80a15f55611492c48f7e2f80eddfa",
+   "ctors": [],
+   "value": null
+  },
+  "string_to_number": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9902d19591b27fb48348685e0a7163895afa53ad7c590eb1b9c1c21989da1def",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "82f80a3acaf1"
+}

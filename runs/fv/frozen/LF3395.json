@@ -1,0 +1,93 @@
+{
+ "id": "LF3395",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def choose (n k : Nat) : Nat :=\n  sorry\n\ntheorem choose_self (n : Nat) : choose n n = 1 :=\n  sorry\n\ntheorem choose_zero (n : Nat) : choose n 0 = 1 :=\n  sorry\n\ntheorem choose_symmetry {n k : Nat} (h : k ≤ n) : \n  choose n k = choose n (n - k) :=\n  sorry\n\ntheorem choose_gt_n {n k : Nat} (h : n < k) : \n  choose n k = 0 :=\n  sorry \n\ntheorem choose_pos {n k : Nat} (h : k ≤ n) : \n  choose n k > 0 :=\n  sorry\n\ntheorem pascal_triangle (n k : Nat) (h : 0 < k) (h2 : k ≤ n) :\n  choose n k = choose (n-1) (k-1) + choose (n-1) k :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval choose 1 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval choose 5 4\n\n/--\ninfo: 252\n-/\n#guard_msgs in\n#eval choose 10 5\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval choose 10 20\n\n/--\ninfo: 2598960\n-/\n#guard_msgs in\n#eval choose 52 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval choose 1 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval choose 5 4\n\n/--\ninfo: 252\n-/\n#guard_msgs in\n#eval choose 10 5\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval choose 10 20\n\n/--\ninfo: 2598960\n-/\n#guard_msgs in\n#eval choose 52 5",
+ "chunks": [
+  {
+   "text": "def choose (n k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem choose_self (n : Nat) : choose n n = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem choose_zero (n : Nat) : choose n 0 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem choose_symmetry {n k : Nat} (h : k ≤ n) : \n  choose n k = choose n (n - k) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem choose_gt_n {n k : Nat} (h : n < k) : \n  choose n k = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem choose_pos {n k : Nat} (h : k ≤ n) : \n  choose n k > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pascal_triangle (n k : Nat) (h : 0 < k) (h2 : k ≤ n) :\n  choose n k = choose (n-1) (k-1) + choose (n-1) k :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "pascal_triangle": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3a0ee69fd7e04f8cb297a14997015efd1a43c30965d15849c36516245e4bc1f4",
+   "ctors": [],
+   "value": null
+  },
+  "choose_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a375fe9ebb123c6c656e8f6fd8c69bbfdcca3cbfb5f8f9021d04d7c66caa6046",
+   "ctors": [],
+   "value": null
+  },
+  "choose_symmetry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "08292879f2b9fad43d6d90e14294de8860c4a3714542e2db42c6dac0b84dcfa6",
+   "ctors": [],
+   "value": null
+  },
+  "choose_self": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c0cc72912ecf6ada5bcab7a9193d1d269b40bd3f234ef615f06d927efc7d7665",
+   "ctors": [],
+   "value": null
+  },
+  "choose_pos": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2d1580002962ddc11a593c99d2ec2020b2c3a11cd14bbd902d655f68290721cb",
+   "ctors": [],
+   "value": null
+  },
+  "choose_gt_n": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "49de31ca77948c4aaa726c5fde480e9bf29e92e6fd2faa21b277c0ba8628a567",
+   "ctors": [],
+   "value": null
+  },
+  "choose": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "bf409b127c93"
+}

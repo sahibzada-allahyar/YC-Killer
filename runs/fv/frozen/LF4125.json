@@ -1,0 +1,60 @@
+{
+ "id": "LF4125",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def pre_fizz (n : Nat) : List Nat :=\n  sorry\n\ntheorem pre_fizz_returns_sequential_integers (n : Nat) (h : n > 0) : \n  pre_fizz n = List.range' 1 n := sorry\n\ntheorem pre_fizz_length (n : Nat) (h : n > 0) :\n  (pre_fizz n).length = n := sorry \n\ntheorem pre_fizz_elements_increasing (n : Nat) (h : n > 0) :\n  ∀ i : Nat, i < (pre_fizz n).length - 1 → \n    (pre_fizz n)[i]! < (pre_fizz n)[i+1]! := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval pre_fizz 1\n\n/--\ninfo: [1, 2, 3]\n-/\n#guard_msgs in\n#eval pre_fizz 3\n\n/--\ninfo: [1, 2, 3, 4, 5]\n-/\n#guard_msgs in\n#eval pre_fizz 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval pre_fizz 1\n\n/--\ninfo: [1, 2, 3]\n-/\n#guard_msgs in\n#eval pre_fizz 3\n\n/--\ninfo: [1, 2, 3, 4, 5]\n-/\n#guard_msgs in\n#eval pre_fizz 5",
+ "chunks": [
+  {
+   "text": "def pre_fizz (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pre_fizz_returns_sequential_integers (n : Nat) (h : n > 0) : \n  pre_fizz n = List.range' 1 n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pre_fizz_length (n : Nat) (h : n > 0) :\n  (pre_fizz n).length = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pre_fizz_elements_increasing (n : Nat) (h : n > 0) :\n  ∀ i : Nat, i < (pre_fizz n).length - 1 → \n    (pre_fizz n)[i]! < (pre_fizz n)[i+1]! :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "pre_fizz_returns_sequential_integers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3c5bddb1eeaf92e62e4e129a4c1f9f3fd09c3dfd235bb94bbc1008e401ca399b",
+   "ctors": [],
+   "value": null
+  },
+  "pre_fizz_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b3f979c9225a7a380aa2b4d31b64a90aae72522e9d54cd28c3c8160110b1bd83",
+   "ctors": [],
+   "value": null
+  },
+  "pre_fizz_elements_increasing": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "99f509c43d88c2f98405f997bc4fae081015d58f823fb52bfa5cd174f27519b5",
+   "ctors": [],
+   "value": null
+  },
+  "pre_fizz": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a22bae6874fc"
+}

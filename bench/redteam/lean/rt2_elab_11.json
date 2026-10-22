@@ -1,0 +1,2 @@
+{"task_id": "LF2340", "expect": "PROVED", "observed": "PROVED", "hole": false, "honest": true,
+ "what": "HONEST solution (false-rejection probe): filter zip with decide on Int comparisons, Int.ofNat coercion. Correctly PROVED."}

@@ -1,0 +1,71 @@
+{
+ "id": "LF0521",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_queens (n m x y : Nat) : Nat := sorry \n\ntheorem queens_symmetry_rotate_180 {n m x y : Nat} (h1 : x ≤ n) (h2 : y ≤ m) :\n  solve_queens n m x y = solve_queens n m (n-x+1) (m-y+1) := sorry\n\ntheorem queens_square_board_nonnegative {n x y : Nat} (h1 : x ≤ n) (h2 : y ≤ n) :\n  0 ≤ solve_queens n n x y := sorry\n\ntheorem queens_corner_symmetry {n m : Nat} (h1 : n ≥ 2) (h2 : m ≥ 2) :\n  solve_queens n m 1 1 = solve_queens n m n m := sorry\n\ntheorem queens_basic_properties {n m x y : Nat} \n  (h1 : n ≥ 2) (h2 : m ≥ 2) (h3 : x ≤ n) (h4 : y ≤ m) :\n  let result := solve_queens n m x y\n  let total := (n*m)*(n*m-1)\n  (0 ≤ result) ∧ \n  (result % 2 = 0) ∧\n  (result ≤ total) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 24\n-/\n#guard_msgs in\n#eval solve_queens 3 3 2 2\n\n/--\ninfo: 94\n-/\n#guard_msgs in\n#eval solve_queens 4 4 2 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 24\n-/\n#guard_msgs in\n#eval solve_queens 3 3 2 2\n\n/--\ninfo: 94\n-/\n#guard_msgs in\n#eval solve_queens 4 4 2 3",
+ "chunks": [
+  {
+   "text": "def solve_queens (n m x y : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem queens_symmetry_rotate_180 {n m x y : Nat} (h1 : x ≤ n) (h2 : y ≤ m) :\n  solve_queens n m x y = solve_queens n m (n-x+1) (m-y+1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem queens_square_board_nonnegative {n x y : Nat} (h1 : x ≤ n) (h2 : y ≤ n) :\n  0 ≤ solve_queens n n x y :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem queens_corner_symmetry {n m : Nat} (h1 : n ≥ 2) (h2 : m ≥ 2) :\n  solve_queens n m 1 1 = solve_queens n m n m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem queens_basic_properties {n m x y : Nat} \n  (h1 : n ≥ 2) (h2 : m ≥ 2) (h3 : x ≤ n) (h4 : y ≤ m) :\n  let result := solve_queens n m x y\n  let total := (n*m)*(n*m-1)\n  (0 ≤ result) ∧ \n  (result % 2 = 0) ∧\n  (result ≤ total) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_queens": {
+   "kind": "def",
+   "role": "impl",
+   "type": "8855244c5ab9044575808a037d3936872b255d70b03450dc0941ae25a11b7ad6",
+   "ctors": [],
+   "value": null
+  },
+  "queens_symmetry_rotate_180": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7d30113d105adb4e2b879f2a76ba30d56ff1d3bb51d61be35c7c0e033a583f0b",
+   "ctors": [],
+   "value": null
+  },
+  "queens_square_board_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9190754a441000a1afb317506cc2867aa2366e8d382db0887a1daf1da3d6a51b",
+   "ctors": [],
+   "value": null
+  },
+  "queens_corner_symmetry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3939e7780269b354c9a9246cf9fba866eb875aa34496747f08645db8f76d7675",
+   "ctors": [],
+   "value": null
+  },
+  "queens_basic_properties": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "72eef2d2b6f30fc5a6811592020c03b89f2c10e4b5209d2be88f0c1c418e4f96",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "70849fbd4a50"
+}

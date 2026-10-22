@@ -1,0 +1,54 @@
+{
+ "id": "LT0131",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do\n\n/-- NumPy type character to precedence mapping based on the default typeset 'GDFgdf'\n    Lower values indicate higher precedence (smaller/more restrictive types) -/\ndef typechar_precedence : Char → Nat\n  | 'g' => 0  -- longdouble (most restrictive in numerical sense)\n  | 'd' => 1  -- double\n  | 'f' => 2  -- float\n  | 'F' => 3  -- csingle (complex float)\n  | 'D' => 4  -- cdouble (complex double)\n  | 'G' => 5  -- clongdouble (complex long double)\n  | _   => 6  -- other types (lowest precedence)\n/-- Check if a type character is in the given typeset -/\ndef char_in_typeset {n : Nat} (c : Char) (typeset : Vector Char n) : Bool :=\n  typeset.toList.contains c\n\ndef mintypecode {n m : Nat} (typechars : Vector Char n) (typeset : Vector Char m) (default : Char) : Id Char :=\n  sorry\n\ntheorem mintypecode_spec {n m : Nat} (typechars : Vector Char n) (typeset : Vector Char m) (default : Char) \n    (h_typeset : typeset.toList = ['G', 'D', 'F', 'g', 'd', 'f']) :\n    ⦃⌜typeset.toList = ['G', 'D', 'F', 'g', 'd', 'f']⌝⦄\n    mintypecode typechars typeset default\n    ⦃⇓result => ⌜\n      -- Case 1: No input types in typeset - return default\n      (∀ c ∈ typechars.toList, ¬(char_in_typeset c typeset) → result = default) ∧\n\n      -- Case 2: Special rule - if both 'F' and 'd' are in intersection, return 'D'\n      (∃ (intersection : List Char), \n        intersection = (typechars.toList.filter (fun c => char_in_typeset c typeset)) ∧\n        intersection.length > 0 ∧\n        ('F' ∈ intersection ∧ 'd' ∈ intersection → result = 'D')) ∧\n\n      -- Case 3: Normal case - return minimum precedence type from intersection\n      (∃ (intersection : List Char),\n        intersection = (typechars.toList.filter (fun c => char_in_typeset c typeset)) ∧\n        intersection.length > 0 ∧\n        ¬('F' ∈ intersection ∧ 'd' ∈ intersection) →\n        (result ∈ intersection ∧ \n         ∀ c ∈ intersection, typechar_precedence result ≤ typechar_precedence c)) ∧\n\n      -- Validity: result is either from intersection or default\n      (result ∈ (typechars.toList.filter (fun c => char_in_typeset c typeset)) ∨ \n       result = default) ∧\n\n      -- Safety property: result can handle all input types\n      (∀ c ∈ typechars.toList, char_in_typeset c typeset → \n        typechar_precedence result ≤ typechar_precedence c ∨ \n        (result = 'D' ∧ ('F' ∈ typechars.toList ∧ 'd' ∈ typechars.toList)))\n    ⌝⦄ := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do\n\n/-- NumPy type character to precedence mapping based on the default typeset 'GDFgdf'\n    Lower values indicate higher precedence (smaller/more restrictive types) -/\ndef typechar_precedence : Char → Nat\n  | 'g' => 0  -- longdouble (most restrictive in numerical sense)\n  | 'd' => 1  -- double\n  | 'f' => 2  -- float\n  | 'F' => 3  -- csingle (complex float)\n  | 'D' => 4  -- cdouble (complex double)\n  | 'G' => 5  -- clongdouble (complex long double)\n  | _   => 6  -- other types (lowest precedence)\n/-- Check if a type character is in the given typeset -/\ndef char_in_typeset {n : Nat} (c : Char) (typeset : Vector Char n) : Bool :=\n  typeset.toList.contains c",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def mintypecode {n m : Nat} (typechars : Vector Char n) (typeset : Vector Char m) (default : Char) : Id Char :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mintypecode_spec {n m : Nat} (typechars : Vector Char n) (typeset : Vector Char m) (default : Char) \n    (h_typeset : typeset.toList = ['G', 'D', 'F', 'g', 'd', 'f']) :\n    ⦃⌜typeset.toList = ['G', 'D', 'F', 'g', 'd', 'f']⌝⦄\n    mintypecode typechars typeset default\n    ⦃⇓result => ⌜\n      -- Case 1: No input types in typeset - return default\n      (∀ c ∈ typechars.toList, ¬(char_in_typeset c typeset) → result = default) ∧\n\n      -- Case 2: Special rule - if both 'F' and 'd' are in intersection, return 'D'\n      (∃ (intersection : List Char), \n        intersection = (typechars.toList.filter (fun c => char_in_typeset c typeset)) ∧\n        intersection.length > 0 ∧\n        ('F' ∈ intersection ∧ 'd' ∈ intersection → result = 'D')) ∧\n\n      -- Case 3: Normal case - return minimum precedence type from intersection\n      (∃ (intersection : List Char),\n        intersection = (typechars.toList.filter (fun c => char_in_typeset c typeset)) ∧\n        intersection.length > 0 ∧\n        ¬('F' ∈ intersection ∧ 'd' ∈ intersection) →\n        (result ∈ intersection ∧ \n         ∀ c ∈ intersection, typechar_precedence result ≤ typechar_precedence c)) ∧\n\n      -- Validity: result is either from intersection or default\n      (result ∈ (typechars.toList.filter (fun c => char_in_typeset c typeset)) ∨ \n       result = default) ∧\n\n      -- Safety property: result can handle all input types\n      (∀ c ∈ typechars.toList, char_in_typeset c typeset → \n        typechar_precedence result ≤ typechar_precedence c ∨ \n        (result = 'D' ∧ ('F' ∈ typechars.toList ∧ 'd' ∈ typechars.toList)))\n    ⌝⦄ := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init",
+  "Std.Do.Triple",
+  "Std.Tactic.Do"
+ ],
+ "constants": {
+  "typechar_precedence": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "2987348ce4e0ea9e1d53952dbcd5cbf5c173ec585b7c5ad1ff482a35e8c2c689",
+   "ctors": [],
+   "value": "67aaf75ebcdc8a99e42d54715e9793480cda0694af9792f5cb913007e4e1d484"
+  },
+  "mintypecode_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4ecb6c1866027e62cfe39a5746892be7394bd31dc2b7973037f754f2036e204d",
+   "ctors": [],
+   "value": null
+  },
+  "mintypecode": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7527dd48c24163374c5d8c2f81da220bfbe5df5877b047f1c6f03c07557da470",
+   "ctors": [],
+   "value": null
+  },
+  "char_in_typeset": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "9c164ad1ce49e934963fdb89f1bdab4327dd7a3700cd681bd1c0e8fe154fba94",
+   "ctors": [],
+   "value": "08d0ad66687cdc6438b3fc5951a4f999c0e28fdddee2bbf5b9a7d95d93191151"
+  }
+ },
+ "sha": "df5d2b008d9d"
+}

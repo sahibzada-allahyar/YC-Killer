@@ -1,0 +1,49 @@
+{
+ "id": "LF3303",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sequence_sum (a b step : Int) : Int :=\n  sorry\n\ntheorem sequence_sum_equal_bounds {a step : Int}\n  (h_step_nonzero : step ≠ 0) : \n  sequence_sum a a step = a :=\n  sorry\n\ntheorem sequence_sum_positive_monotone {a step : Int}\n  (h_a_pos : a > 0)\n  (h_step_pos : step > 0)\n  (b : Int)\n  (h_b : b = a + step * 3) :\n  sequence_sum a b step ≥ a :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval sequence_sum 2 6 2\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval sequence_sum 1 5 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval sequence_sum 1 5 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval sequence_sum 2 6 2\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval sequence_sum 1 5 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval sequence_sum 1 5 3",
+ "chunks": [
+  {
+   "text": "def sequence_sum (a b step : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sequence_sum_equal_bounds {a step : Int}\n  (h_step_nonzero : step ≠ 0) : \n  sequence_sum a a step = a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sequence_sum_positive_monotone {a step : Int}\n  (h_a_pos : a > 0)\n  (h_step_pos : step > 0)\n  (b : Int)\n  (h_b : b = a + step * 3) :\n  sequence_sum a b step ≥ a :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sequence_sum_positive_monotone": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5c1167051cc87f993474feb5af0f72bc6e5b46f918afa3a98a3eb51691d71e5a",
+   "ctors": [],
+   "value": null
+  },
+  "sequence_sum_equal_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7e6c2a62a1f68a5974f964e716b246f61b1cb201180e47154d4d6e125b09d776",
+   "ctors": [],
+   "value": null
+  },
+  "sequence_sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "1d3b373f8c966cd1a5dba7bc9c84881879c6e05d023bee5d2a8e92915b8bfa7e",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a88a13d6df48"
+}

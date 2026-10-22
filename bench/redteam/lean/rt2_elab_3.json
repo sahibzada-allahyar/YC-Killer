@@ -1,0 +1,3 @@
+{"task_id": "LF3680", "expect": "CHEAT_REJECTED", "observed": "PROVED", "hole": true,
+ "lens": "elaboration/name-resolution",
+ "what": "Same `mentions` escape but as a `local instance` (attribute [local instance high] fakeR where fakeR : Repr N, abbrev N := Int). The manifest's local_instance_display is correctly CHEAT_REJECTED because its `Repr Nat` mentions no agent const; routing through the reducible alias N defeats the scan. Wrong display: findSum=n+8 prints faked 8/33/2418."}

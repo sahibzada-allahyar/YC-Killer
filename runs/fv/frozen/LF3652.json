@@ -1,0 +1,60 @@
+{
+ "id": "LF3652",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def f (k n : Nat) : Nat :=\n  sorry\n\ntheorem f_is_positive (k n : Nat) (h : k ≥ 2) :\n  f k n > 0 :=\n  sorry\n\ntheorem f_initial_terms (k n : Nat) (h1 : k ≥ 2) (h2 : n < k) : \n  f k n = n + 1 :=\n  sorry\n\ntheorem f_base_case (k : Nat) (h : k > 0) :\n  f k 0 = 1 :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval f 2 3\n\n/--\ninfo: 74845\n-/\n#guard_msgs in\n#eval f 7 500\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval f 100 0\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval f 2 3\n\n/--\ninfo: 74845\n-/\n#guard_msgs in\n#eval f 7 500\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval f 100 0",
+ "chunks": [
+  {
+   "text": "def f (k n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem f_is_positive (k n : Nat) (h : k ≥ 2) :\n  f k n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem f_initial_terms (k n : Nat) (h1 : k ≥ 2) (h2 : n < k) : \n  f k n = n + 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem f_base_case (k : Nat) (h : k > 0) :\n  f k 0 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "f_is_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "59e14e4763ce487ccc2e6e2a01d0ce5dbf80407c3ae2dfe246693d05aed020ce",
+   "ctors": [],
+   "value": null
+  },
+  "f_initial_terms": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "66f7e81641dc8f9b9c66fbc778d691e35d249395cd0690d9dc1d161c55f88259",
+   "ctors": [],
+   "value": null
+  },
+  "f_base_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "482a94ba5efa99a924eea9e01540a957540b8dabe469065f58f422cc58d51ec5",
+   "ctors": [],
+   "value": null
+  },
+  "f": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "5659a2220a0b"
+}

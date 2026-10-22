@@ -1,0 +1,82 @@
+{
+ "id": "LF1398",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_balanced_substrings (s : String) : Nat :=\n  sorry\n\ntheorem result_bounds (s : String) : \n  s.all (fun c => c = '4' || c = '7') → \n  let n := s.length\n  let total := n * (n + 1) / 2\n  0 ≤ count_balanced_substrings s ∧ count_balanced_substrings s ≤ total :=\n  sorry\n\ntheorem all_fours (s : String) :\n  s.all (fun c => c = '4') →\n  let n := s.length\n  count_balanced_substrings s = n * (n + 1) / 2 :=\n  sorry\n\ntheorem single_char_substrings (s : String) :\n  s.length > 0 →\n  s.all (fun c => c = '4' || c = '7') →\n  count_balanced_substrings s ≥ (s.toList.filter (· = '4')).length :=\n  sorry\n\ntheorem empty_and_single (s : String) :\n  s.all (fun c => c = '4' || c = '7') →\n  (s.length = 0 → count_balanced_substrings s = 0) ∧\n  (s.length = 1 → count_balanced_substrings s = if s = \"4\" then 1 else 0) :=\n  sorry\n\ntheorem consecutive_sevens_reduce (s : String) :\n  s.all (fun c => c = '4' || c = '7') →\n  let n := s.length\n  let total := n * (n + 1) / 2\n  let consecutive_reduction := \n    s.toList.foldl\n      (fun (acc, consec) c => \n        if c = '7' \n        then (acc + consec + 1, consec + 1)\n        else (acc, 0))\n      (0, 0)\n  count_balanced_substrings s = total - consecutive_reduction.1 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"47\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"74\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"477\"\n\n/--\ninfo: 23\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"4747477\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"47\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"74\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"477\"\n\n/--\ninfo: 23\n-/\n#guard_msgs in\n#eval count_balanced_substrings \"4747477\"",
+ "chunks": [
+  {
+   "text": "def count_balanced_substrings (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_bounds (s : String) : \n  s.all (fun c => c = '4' || c = '7') → \n  let n := s.length\n  let total := n * (n + 1) / 2\n  0 ≤ count_balanced_substrings s ∧ count_balanced_substrings s ≤ total :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem all_fours (s : String) :\n  s.all (fun c => c = '4') →\n  let n := s.length\n  count_balanced_substrings s = n * (n + 1) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_char_substrings (s : String) :\n  s.length > 0 →\n  s.all (fun c => c = '4' || c = '7') →\n  count_balanced_substrings s ≥ (s.toList.filter (· = '4')).length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_and_single (s : String) :\n  s.all (fun c => c = '4' || c = '7') →\n  (s.length = 0 → count_balanced_substrings s = 0) ∧\n  (s.length = 1 → count_balanced_substrings s = if s = \"4\" then 1 else 0) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem consecutive_sevens_reduce (s : String) :\n  s.all (fun c => c = '4' || c = '7') →\n  let n := s.length\n  let total := n * (n + 1) / 2\n  let consecutive_reduction := \n    s.toList.foldl\n      (fun (acc, consec) c => \n        if c = '7' \n        then (acc + consec + 1, consec + 1)\n        else (acc, 0))\n      (0, 0)\n  count_balanced_substrings s = total - consecutive_reduction.1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_char_substrings": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3a76d6287aac7882f6793b4eb3c5552aab6e5de3340f44a0fa1de501718c1471",
+   "ctors": [],
+   "value": null
+  },
+  "result_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3fc202efa9bafaa9eba397195afccb10a4b96345e451ce62e9552960e5312dd3",
+   "ctors": [],
+   "value": null
+  },
+  "empty_and_single": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a7faa6a4074dbba763c3dddee21c9890023a117d588b2f58879b6655da087b80",
+   "ctors": [],
+   "value": null
+  },
+  "count_balanced_substrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "consecutive_sevens_reduce": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cac66a419c29d7915df04751f5ba269733d0fd9bf119f221a4e923fbfed1a4f1",
+   "ctors": [],
+   "value": null
+  },
+  "all_fours": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5a42b52775d92087536c4f9232073bbe01e216af443f46e7e4d574d5092a76af",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1c853a1acf56"
+}

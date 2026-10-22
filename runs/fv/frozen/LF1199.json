@@ -1,0 +1,82 @@
+{
+ "id": "LF1199",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_operations_cost (n : Nat) (numbers : List Nat) : Nat :=\n  sorry\n\ntheorem min_operations_cost_lower_bound {n : Nat} {numbers : List Nat} \n  (h1: n ≥ 2) (h2: numbers.length = n) : \n  ∃ min_num : Nat, min_num ∈ numbers ∧ min_operations_cost n numbers ≥ min_num * (numbers.length - 1) :=\n  sorry\n\ntheorem min_operations_cost_non_negative {n : Nat} {numbers : List Nat}\n  (h1: n ≥ 2) :\n  min_operations_cost n numbers ≥ 0 := \n  sorry\n\ntheorem min_operations_cost_preserves_input {n : Nat} {numbers : List Nat}\n  (h1: n ≥ 2) :\n  min_operations_cost n numbers = min_operations_cost n numbers ∧ numbers = numbers :=\n  sorry\n\ntheorem min_operations_cost_two_ones :\n  min_operations_cost 2 [1, 1] = 1 :=\n  sorry\n\ntheorem min_operations_cost_same_numbers :\n  min_operations_cost 3 [5, 5, 5] = 10 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_operations_cost 2 [3, 4]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval min_operations_cost 3 [4, 2, 5]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_operations_cost 4 [1, 5, 2, 4]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_operations_cost 2 [3, 4]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval min_operations_cost 3 [4, 2, 5]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_operations_cost 4 [1, 5, 2, 4]",
+ "chunks": [
+  {
+   "text": "def min_operations_cost (n : Nat) (numbers : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_operations_cost_lower_bound {n : Nat} {numbers : List Nat} \n  (h1: n ≥ 2) (h2: numbers.length = n) : \n  ∃ min_num : Nat, min_num ∈ numbers ∧ min_operations_cost n numbers ≥ min_num * (numbers.length - 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_operations_cost_non_negative {n : Nat} {numbers : List Nat}\n  (h1: n ≥ 2) :\n  min_operations_cost n numbers ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_operations_cost_preserves_input {n : Nat} {numbers : List Nat}\n  (h1: n ≥ 2) :\n  min_operations_cost n numbers = min_operations_cost n numbers ∧ numbers = numbers :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_operations_cost_two_ones :\n  min_operations_cost 2 [1, 1] = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_operations_cost_same_numbers :\n  min_operations_cost 3 [5, 5, 5] = 10 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_operations_cost_two_ones": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "83c35503756af2edccdad515dbfc54660199273b867aff169611cf3be6b1684c",
+   "ctors": [],
+   "value": null
+  },
+  "min_operations_cost_same_numbers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "30b4fc4394242a9391267091dad12723488d781e34b0b1f9a78c04d715589b22",
+   "ctors": [],
+   "value": null
+  },
+  "min_operations_cost_preserves_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d12277558e26a8ce7b661f92847d6ee54e73fbaad98367312bb1ed080e829ff2",
+   "ctors": [],
+   "value": null
+  },
+  "min_operations_cost_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e9d587931bb52514a1b8558bf9f612757308decbfea268a5c9fb8416c8899c17",
+   "ctors": [],
+   "value": null
+  },
+  "min_operations_cost_lower_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e5365475aabf79b6e4169efbdd6582288f01dd44302cc39a034ac0fdd329b3d7",
+   "ctors": [],
+   "value": null
+  },
+  "min_operations_cost": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f60fef803121"
+}

@@ -1,0 +1,71 @@
+{
+ "id": "LF2191",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_good_substrings : String → Nat × Nat :=\n  fun _ => sorry\n\ndef reverseString : String → String :=\n  fun _ => sorry\n\ntheorem solve_good_substrings_result_structure\n    {s : String}\n    (h : s.length > 0) :\n    let result := solve_good_substrings s\n    result.1 > 0 ∧ result.2 > 0 :=\n  sorry\n\ntheorem solve_good_substrings_first_element_values\n    {s : String}\n    (h : s.length > 0) :\n    let result := solve_good_substrings s\n    result.1 = 1 ∨ result.1 = 2 ∨ result.1 = s.length :=\n  sorry\n\ntheorem solve_good_substrings_count_bound\n    {s : String}\n    (h : s.length > 0) :\n    let result := solve_good_substrings s\n    result.2 ≤ s.length - 1 ∨ result.2 = 1 :=\n  sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (1, 1)\n-/\n#guard_msgs in\n#eval solve_good_substrings \"aab\"\n\n/--\ninfo: (2, 3)\n-/\n#guard_msgs in\n#eval solve_good_substrings \"bcbc\"\n\n/--\ninfo: (3, 1)\n-/\n#guard_msgs in\n#eval solve_good_substrings \"ddd\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (1, 1)\n-/\n#guard_msgs in\n#eval solve_good_substrings \"aab\"\n\n/--\ninfo: (2, 3)\n-/\n#guard_msgs in\n#eval solve_good_substrings \"bcbc\"\n\n/--\ninfo: (3, 1)\n-/\n#guard_msgs in\n#eval solve_good_substrings \"ddd\"",
+ "chunks": [
+  {
+   "text": "def solve_good_substrings : String → Nat × Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def reverseString : String → String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_good_substrings_result_structure\n    {s : String}\n    (h : s.length > 0) :\n    let result := solve_good_substrings s\n    result.1 > 0 ∧ result.2 > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_good_substrings_first_element_values\n    {s : String}\n    (h : s.length > 0) :\n    let result := solve_good_substrings s\n    result.1 = 1 ∨ result.1 = 2 ∨ result.1 = s.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_good_substrings_count_bound\n    {s : String}\n    (h : s.length > 0) :\n    let result := solve_good_substrings s\n    result.2 ≤ s.length - 1 ∨ result.2 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_good_substrings_result_structure": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b56242af81bb21bd5382c54c3eff82423ce89e58919c20b8561686ca42eadcf4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_good_substrings_first_element_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c4dae2714f92f0e36817c7bf73b2ba7c3f30fbe4e8afa2819a9b42921e386bf6",
+   "ctors": [],
+   "value": null
+  },
+  "solve_good_substrings_count_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6cc967e7561b6b4fea204c8861ce02254e8feb80777409f123bcc51ddf520dde",
+   "ctors": [],
+   "value": null
+  },
+  "solve_good_substrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "5e3b8d581e6ca81b868602d802f3f8bd29c6b360b94e2a1090ac70b5ea426fd5",
+   "ctors": [],
+   "value": null
+  },
+  "reverseString": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6f0513922b1b32500fef5a52f309f3291d42e6ae6f7d7e89b365f7e92e39e763",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "260615fd9f6d"
+}

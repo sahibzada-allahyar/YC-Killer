@@ -1,0 +1,67 @@
+{
+ "id": "LF1500",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def MOD := 1000000007\n\ndef solve_series (n : Nat) : Nat :=\n  sorry\n\ntheorem solve_series_increases (n : Nat) (h : n > 0) (h2 : n ≤ 100) :\n  solve_series (n+1) > solve_series n :=\nsorry\n\ntheorem solve_series_one :\n  solve_series 1 = 1 :=\nsorry\n\ntheorem solve_series_large_bound (n : Nat) (h : n = 1000000) :\n  solve_series n < MOD :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 561\n-/\n#guard_msgs in\n#eval solve_series 8\n\n/--\ninfo: 1081\n-/\n#guard_msgs in\n#eval solve_series 10\n\n/--\ninfo: 31\n-/\n#guard_msgs in\n#eval solve_series 3\n",
+ "warnings": [],
+ "preamble": "def MOD := 1000000007",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 561\n-/\n#guard_msgs in\n#eval solve_series 8\n\n/--\ninfo: 1081\n-/\n#guard_msgs in\n#eval solve_series 10\n\n/--\ninfo: 31\n-/\n#guard_msgs in\n#eval solve_series 3",
+ "chunks": [
+  {
+   "text": "def solve_series (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_series_increases (n : Nat) (h : n > 0) (h2 : n ≤ 100) :\n  solve_series (n+1) > solve_series n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_series_one :\n  solve_series 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_series_large_bound (n : Nat) (h : n = 1000000) :\n  solve_series n < MOD :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_series_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "48c9708dddba05af318f2269c1947ba7c8dd6951020df0266caa8cea56e957b9",
+   "ctors": [],
+   "value": null
+  },
+  "solve_series_large_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "91e83afcedf88a8a26c069eccd71e5f76fb70fa1ed7c2f03512de6d61284311d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_series_increases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "91f0ab7bab1436bb908c79ec09fdc9ede200252011fd7746e0fde7283919fc89",
+   "ctors": [],
+   "value": null
+  },
+  "solve_series": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "MOD": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "76bb31d53adfdb40dd9a8aadd10cd539ce35d9911ea2ef640f0705e32842fc2b"
+  }
+ },
+ "sha": "6a4d66bef251"
+}

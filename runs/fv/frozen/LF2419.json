@@ -1,0 +1,71 @@
+{
+ "id": "LF2419",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def distanceBetweenBusStops (distance : List Nat) (start dest : Nat) : Nat := sorry \n\ndef sumList : List Nat → Nat \n  | [] => 0\n  | (x::xs) => x + sumList xs\n\ntheorem distance_symmetric {distance : List Nat} {start dest : Nat} \n  (h : distance.length > 0) :\n  distanceBetweenBusStops distance start dest = \n  distanceBetweenBusStops distance dest start := sorry\n\ntheorem distance_nonnegative {distance : List Nat} {start dest : Nat}\n  (h : distance.length > 0) :\n  distanceBetweenBusStops distance start dest ≥ 0 := sorry\n\ntheorem same_stop_zero {distance : List Nat} {start : Nat}\n  (h : distance.length > 0) :\n  distanceBetweenBusStops distance start start = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval distanceBetweenBusStops [1, 2, 3, 4] 0 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval distanceBetweenBusStops [1, 2, 3, 4] 0 2\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval distanceBetweenBusStops [1, 2, 3, 4] 0 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval distanceBetweenBusStops [1, 2, 3, 4] 0 1\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval distanceBetweenBusStops [1, 2, 3, 4] 0 2\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval distanceBetweenBusStops [1, 2, 3, 4] 0 3",
+ "chunks": [
+  {
+   "text": "def distanceBetweenBusStops (distance : List Nat) (start dest : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sumList : List Nat → Nat \n  | [] => 0\n  | (x::xs) => x + sumList xs",
+   "hole_after": false
+  },
+  {
+   "text": "theorem distance_symmetric {distance : List Nat} {start dest : Nat} \n  (h : distance.length > 0) :\n  distanceBetweenBusStops distance start dest = \n  distanceBetweenBusStops distance dest start :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem distance_nonnegative {distance : List Nat} {start dest : Nat}\n  (h : distance.length > 0) :\n  distanceBetweenBusStops distance start dest ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem same_stop_zero {distance : List Nat} {start : Nat}\n  (h : distance.length > 0) :\n  distanceBetweenBusStops distance start start = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sumList": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "same_stop_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "854cf6a420a4d2f8de1f0a03b88cf8f3d710da49cefb7cc2adc5a29e0914934b",
+   "ctors": [],
+   "value": null
+  },
+  "distance_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6acf2799265373915c252e44d906d2e742fba3b6c384c2a89ca293fece572e8d",
+   "ctors": [],
+   "value": null
+  },
+  "distance_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ebf8e70cc17bbc4ea5118840ab2a23470982bfb7920cc1246bfbd20329112680",
+   "ctors": [],
+   "value": null
+  },
+  "distanceBetweenBusStops": {
+   "kind": "def",
+   "role": "impl",
+   "type": "546e7638269bb6c3cae614c6b3c9596b9a6edc3523dd9f81c95ce09734622e16",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2ac2fdfc4d47"
+}

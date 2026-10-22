@@ -1,0 +1,89 @@
+{
+ "id": "LF0557",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def abs (n : Int) : Int :=\n  if n ≥ 0 then n else -n\n\ndef min_fruit_diff (apples oranges gold : Nat) : Nat :=\n  sorry\n\ntheorem min_fruit_diff_nonnegative (apples oranges gold : Nat) :\n  min_fruit_diff apples oranges gold ≥ 0 :=\n  sorry\n\ntheorem min_fruit_diff_bounded (apples oranges gold : Nat) : \n  min_fruit_diff apples oranges gold ≤ (if apples ≥ oranges then apples - oranges else oranges - apples) :=\n  sorry\n\ntheorem min_fruit_diff_with_enough_gold (apples oranges gold : Nat) :\n  gold ≥ (if apples ≥ oranges then apples - oranges else oranges - apples) → \n  min_fruit_diff apples oranges gold ≤ 1 :=\n  sorry\n\ntheorem min_fruit_diff_equal_fruits (fruit gold : Nat) :\n  min_fruit_diff fruit fruit gold = 0 :=\n  sorry\n\ntheorem min_fruit_diff_no_gold (apples oranges : Nat) :\n  min_fruit_diff apples oranges 0 = (if apples ≥ oranges then apples - oranges else oranges - apples) :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_fruit_diff 3 4 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_fruit_diff 5 2 1\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_fruit_diff 3 4 3\n",
+ "warnings": [],
+ "preamble": "def abs (n : Int) : Int :=\n  if n ≥ 0 then n else -n",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_fruit_diff 3 4 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_fruit_diff 5 2 1\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_fruit_diff 3 4 3",
+ "chunks": [
+  {
+   "text": "def min_fruit_diff (apples oranges gold : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_fruit_diff_nonnegative (apples oranges gold : Nat) :\n  min_fruit_diff apples oranges gold ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_fruit_diff_bounded (apples oranges gold : Nat) : \n  min_fruit_diff apples oranges gold ≤ (if apples ≥ oranges then apples - oranges else oranges - apples) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_fruit_diff_with_enough_gold (apples oranges gold : Nat) :\n  gold ≥ (if apples ≥ oranges then apples - oranges else oranges - apples) → \n  min_fruit_diff apples oranges gold ≤ 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_fruit_diff_equal_fruits (fruit gold : Nat) :\n  min_fruit_diff fruit fruit gold = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_fruit_diff_no_gold (apples oranges : Nat) :\n  min_fruit_diff apples oranges 0 = (if apples ≥ oranges then apples - oranges else oranges - apples) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_fruit_diff_with_enough_gold": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3ad3d0a8027efbce09f97e9c52453bbc63d9cbbe1567ad26a0f63761288566f1",
+   "ctors": [],
+   "value": null
+  },
+  "min_fruit_diff_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17f396ad7fe513d743d72be632d6b9f79bdfb4df7a714b6a47da1093e5a08aaf",
+   "ctors": [],
+   "value": null
+  },
+  "min_fruit_diff_no_gold": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a3a3681f105f07a5f38c803b400cf5ec1ef8bcb950100aef708417da44f8deb6",
+   "ctors": [],
+   "value": null
+  },
+  "min_fruit_diff_equal_fruits": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "13eb096e90581072fc74af86f6f435373e83e0b1bcf1a972269d23a55f078ed8",
+   "ctors": [],
+   "value": null
+  },
+  "min_fruit_diff_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e5046074a27661a4697fb314ade75f7314c3a76b3e83e24cdd5fa499cea191ea",
+   "ctors": [],
+   "value": null
+  },
+  "min_fruit_diff": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  },
+  "abs": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": "4c117040f3f3c9da32a757012c1ed9219951fd7fc7809d0eb11b937db374d97a"
+  }
+ },
+ "sha": "3df44c40cdcd"
+}

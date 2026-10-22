@@ -1,0 +1,1 @@
+{"task_id": "LF0457", "expect": "PROVED", "note": "false-rejection probe (round 3): honest solution defining its own structure Money with deriving Repr and a Coe out of it, used internally; rung PROVES it. No false rejection (own-type instances + coercion-out allowed)."}

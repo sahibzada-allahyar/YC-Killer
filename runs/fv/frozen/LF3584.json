@@ -1,0 +1,60 @@
+{
+ "id": "LF3584",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def digits (n : Int) : Nat :=\nsorry\n\ntheorem digits_positive (n : Nat) :\n  digits n > 0 :=\nsorry\n\ntheorem single_digit_numbers (n : Nat) (h : n > 0 ∧ n < 10) : \n  digits n = 1 :=\nsorry \n\ntheorem digits_equals_string_length (n : Int) :\n  digits (Int.natAbs n) = String.length (toString (Int.natAbs n)) :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval digits 5\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval digits 12345\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval digits 9876543210\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval digits 5\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval digits 12345\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval digits 9876543210",
+ "chunks": [
+  {
+   "text": "def digits (n : Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem digits_positive (n : Nat) :\n  digits n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_digit_numbers (n : Nat) (h : n > 0 ∧ n < 10) : \n  digits n = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem digits_equals_string_length (n : Int) :\n  digits (Int.natAbs n) = String.length (toString (Int.natAbs n)) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_digit_numbers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fc8cf776004eaf0df4955c000be24873a687b72b68347a7c920cf51960997be4",
+   "ctors": [],
+   "value": null
+  },
+  "digits_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0c118fa8b04cd7be5eeebc8d27e78f10d11cd2afef2ddc14af4c75fb1738eb76",
+   "ctors": [],
+   "value": null
+  },
+  "digits_equals_string_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "766d89f2469be6c776a63d3d95c0e92c530da290e6b985824e5b6d26e6ce1287",
+   "ctors": [],
+   "value": null
+  },
+  "digits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "524a075ddc01466a1bebe061a50daa0e50a256deeea2df055ba8230f3d5c1cf1",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2e2b3cd9b5c0"
+}

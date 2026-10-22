@@ -1,0 +1,82 @@
+{
+ "id": "LF1134",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_ands (s : String) : Nat := sorry\n\ntheorem count_ands_nonnegative {words : List String} : \n  count_ands (String.join (List.intersperse \" \" words)) ≥ 0 := sorry\n\ntheorem count_ands_upper_bound {words : List String} :\n  count_ands (String.join (List.intersperse \" \" words)) ≤ words.length := sorry\n\ntheorem count_ands_repetition {n : Nat} :\n  count_ands (String.join (List.replicate n \" and \")) = n := sorry\n\ntheorem count_ands_case_insensitive (s : String) :\n  count_ands (s.toLower) = count_ands (s.toUpper) := sorry\n\ntheorem count_ands_empty :\n  count_ands \"\" = 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def count_ands (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ands_nonnegative {words : List String} : \n  count_ands (String.join (List.intersperse \" \" words)) ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ands_upper_bound {words : List String} :\n  count_ands (String.join (List.intersperse \" \" words)) ≤ words.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ands_repetition {n : Nat} :\n  count_ands (String.join (List.replicate n \" and \")) = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ands_case_insensitive (s : String) :\n  count_ands (s.toLower) = count_ands (s.toUpper) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ands_empty :\n  count_ands \"\" = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_ands_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "aa07c0f7a944de82e11c01e177096d8d1730fcacdf187b687ce16e9eafcaf701",
+   "ctors": [],
+   "value": null
+  },
+  "count_ands_repetition": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "358d889e8e10ff9019f1703c177f1c9581c764756fd38c024462a89152c456e2",
+   "ctors": [],
+   "value": null
+  },
+  "count_ands_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7ebb7d79cf03db218bd87f8ae12b30278fc489b47fffa72a5d90899233c9c5bf",
+   "ctors": [],
+   "value": null
+  },
+  "count_ands_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "46660b0f43c99684384fa987ee216e50ec5a36ef2f8a9881fb62b5a1cfb03549",
+   "ctors": [],
+   "value": null
+  },
+  "count_ands_case_insensitive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "128b886d6b82e75e5fcc30c4641a7abd057a145822b951f1ca9716043d5d4d6d",
+   "ctors": [],
+   "value": null
+  },
+  "count_ands": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f7c1d6ecb7d6"
+}

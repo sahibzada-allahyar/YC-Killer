@@ -1,0 +1,52 @@
+{
+ "id": "LF3596",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def throw_points (r : Float) : Nat :=\n  if r < 5 then 10\n  else if r ≤ 10 then 5\n  else 0\n\ndef bonus_points (radiuses : List Float) : Nat :=\n  match radiuses with\n  | [] => 0\n  | xs => if (∀ r ∈ xs, r < 5) then 100 else 0\n\ndef score_throws (radiuses : List Float) : Nat :=\nsorry\n\ntheorem score_throws_empty :\n  score_throws [] = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval score_throws [1, 5, 11]\n\n/--\ninfo: 140\n-/\n#guard_msgs in\n#eval score_throws [1, 2, 3, 4]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval score_throws []\n",
+ "warnings": [],
+ "preamble": "def throw_points (r : Float) : Nat :=\n  if r < 5 then 10\n  else if r ≤ 10 then 5\n  else 0\n\ndef bonus_points (radiuses : List Float) : Nat :=\n  match radiuses with\n  | [] => 0\n  | xs => if (∀ r ∈ xs, r < 5) then 100 else 0",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval score_throws [1, 5, 11]\n\n/--\ninfo: 140\n-/\n#guard_msgs in\n#eval score_throws [1, 2, 3, 4]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval score_throws []",
+ "chunks": [
+  {
+   "text": "def score_throws (radiuses : List Float) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem score_throws_empty :\n  score_throws [] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "throw_points": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d576f499dcc37c323f3b33d49256e42f5b069172fc857eca150e94d3ecb7b211",
+   "ctors": [],
+   "value": "4956a90f57d0d2fd95c003a9eb2f631fb199128916017d9708b85e0d83bae9c3"
+  },
+  "score_throws_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1a5901873174cd883585f6dfb3c6077447c836a821f0769781519d6979e4b111",
+   "ctors": [],
+   "value": null
+  },
+  "score_throws": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6bad85a185a3cc747a27751c5d26473a4cc53e725e93964170a7234304a3c224",
+   "ctors": [],
+   "value": null
+  },
+  "bonus_points": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "6bad85a185a3cc747a27751c5d26473a4cc53e725e93964170a7234304a3c224",
+   "ctors": [],
+   "value": "e19436fbceb6ea9bc4fb75ad2dc17e73dca56dcf500e8d8c825450c919933ed1"
+  }
+ },
+ "sha": "dfcd8e7e9b95"
+}

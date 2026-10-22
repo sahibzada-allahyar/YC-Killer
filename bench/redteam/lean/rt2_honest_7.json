@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0457",
+ "expect": "PROVED",
+ "observed": "PROVED",
+ "hole": false,
+ "honest": true,
+ "lens": "elaboration/name-resolution",
+ "what": "sum_four_divisors over Nat; theorem >= 0 by Nat.zero_le; real divisor-count compute matches the three #guard_msgs tests (32,0,32)."
+}

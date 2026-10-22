@@ -1,0 +1,1 @@
+{"task_id": "LF2738", "expect": "PROVED", "note": "non-recursive partial def elaborates to a normal def (kind def); correct impl, honestly PROVED. Not a cheat."}

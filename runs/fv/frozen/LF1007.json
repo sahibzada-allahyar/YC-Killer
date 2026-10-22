@@ -1,0 +1,89 @@
+{
+ "id": "LF1007",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def MOD := 1000000007\n\ndef solve_crowds (n : Nat) : Nat :=\n  sorry\n\ntheorem solve_crowds_nonnegative (n : Nat) :\n  solve_crowds n ≥ 0 ∧ solve_crowds n < MOD :=\nsorry\n\ntheorem solve_crowds_small_n (n : Nat) (h : n ≤ 2) :\n  solve_crowds n = 0 :=\nsorry\n\ntheorem solve_crowds_upper_bound (n : Nat) (h : n ≥ 3) :\n  solve_crowds n < 2^n :=\nsorry\n\ntheorem solve_crowds_known_values_3 :\n  solve_crowds 3 = 1 :=\nsorry\n\ntheorem solve_crowds_known_values_4 :\n  solve_crowds 4 = 3 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_crowds 3\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_crowds 4\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_crowds 2\n",
+ "warnings": [],
+ "preamble": "def MOD := 1000000007",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_crowds 3\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_crowds 4\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_crowds 2",
+ "chunks": [
+  {
+   "text": "def solve_crowds (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_crowds_nonnegative (n : Nat) :\n  solve_crowds n ≥ 0 ∧ solve_crowds n < MOD :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_crowds_small_n (n : Nat) (h : n ≤ 2) :\n  solve_crowds n = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_crowds_upper_bound (n : Nat) (h : n ≥ 3) :\n  solve_crowds n < 2^n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_crowds_known_values_3 :\n  solve_crowds 3 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_crowds_known_values_4 :\n  solve_crowds 4 = 3 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_crowds_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cb975176ca06073e50cc5818fcff9ae6154ed794fb776dbb5fb72265a4712d56",
+   "ctors": [],
+   "value": null
+  },
+  "solve_crowds_small_n": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8c606c09caf06020260e3c0d39b03304c924193c7dfa7d8ec883cea2e7f1ece4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_crowds_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "651df78186ecfa79daefbc89f4c342cc78f6b5a24b2caf23b94a71cd75f454c8",
+   "ctors": [],
+   "value": null
+  },
+  "solve_crowds_known_values_4": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6f2eafa2fcc5f181564e648ce2bbae562ff734e4a705b94d15a3e6d0d2a8168d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_crowds_known_values_3": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cde649592b4edbf30668365e2dc7c0d01edd456af2ac1570473dfdb5df2a0d1d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_crowds": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "MOD": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "76bb31d53adfdb40dd9a8aadd10cd539ce35d9911ea2ef640f0705e32842fc2b"
+  }
+ },
+ "sha": "2d6c7c026c28"
+}

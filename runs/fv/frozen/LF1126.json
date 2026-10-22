@@ -1,0 +1,60 @@
+{
+ "id": "LF1126",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sort_problems_by_difficulty (P S : Nat) (problem_data : List (List Nat)) : List Nat :=\n  sorry\n\n-- Main Properties\n\ntheorem sort_problems_maintains_difficulty_order\n  (P S : Nat) (problem_data : List (List Nat))\n  (h1 : P > 0) (h2 : S > 0)\n  (h3 : problem_data.length = 2 * P) :\n  let result := sort_problems_by_difficulty P S problem_data\n  let difficulty_score (p : Nat) := \n    let scores := problem_data[2*p-2]!\n    let solvers := problem_data[2*p-1]!\n    (List.filter (fun p => p.1 > p.2) (List.zip solvers (List.drop 1 solvers))).length\n  ∀ i j, i < j → j < result.length →\n    difficulty_score (result[i]!) ≤ difficulty_score (result[j]!)\n  := sorry\n\n-- Edge Cases\n\ntheorem sort_problems_single_problem\n  (S : Nat) (scores solvers : List Nat) (h : S > 0) :\n  sort_problems_by_difficulty 1 S [scores, solvers] = [1]\n  := sorry\n\ntheorem sort_problems_minimal_case :\n  sort_problems_by_difficulty 1 1 [[1], [1]] = [1]\n  := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [2, 1, 3]\n-/\n#guard_msgs in\n#eval sort_problems_by_difficulty 3 3 [[16, 24, 60], [498, 861, 589], [14, 24, 62], [72, 557, 819], [16, 15, 69], [435, 779, 232]]\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval sort_problems_by_difficulty 2 2 [[10, 20], [100, 50], [15, 25], [200, 150]]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [2, 1, 3]\n-/\n#guard_msgs in\n#eval sort_problems_by_difficulty 3 3 [[16, 24, 60], [498, 861, 589], [14, 24, 62], [72, 557, 819], [16, 15, 69], [435, 779, 232]]\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval sort_problems_by_difficulty 2 2 [[10, 20], [100, 50], [15, 25], [200, 150]]",
+ "chunks": [
+  {
+   "text": "def sort_problems_by_difficulty (P S : Nat) (problem_data : List (List Nat)) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sort_problems_maintains_difficulty_order\n  (P S : Nat) (problem_data : List (List Nat))\n  (h1 : P > 0) (h2 : S > 0)\n  (h3 : problem_data.length = 2 * P) :\n  let result := sort_problems_by_difficulty P S problem_data\n  let difficulty_score (p : Nat) := \n    let scores := problem_data[2*p-2]!\n    let solvers := problem_data[2*p-1]!\n    (List.filter (fun p => p.1 > p.2) (List.zip solvers (List.drop 1 solvers))).length\n  ∀ i j, i < j → j < result.length →\n    difficulty_score (result[i]!) ≤ difficulty_score (result[j]!)\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sort_problems_single_problem\n  (S : Nat) (scores solvers : List Nat) (h : S > 0) :\n  sort_problems_by_difficulty 1 S [scores, solvers] = [1]\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sort_problems_minimal_case :\n  sort_problems_by_difficulty 1 1 [[1], [1]] = [1]\n  :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sort_problems_single_problem": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f35edc172c945f0f7a0fa6ae122e821062f95654c17cc44eb127a6f998a177b2",
+   "ctors": [],
+   "value": null
+  },
+  "sort_problems_minimal_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4709ad8377e816f53c167e4df3aca74d882f4d8849a0c041905fe3bed31ab3cc",
+   "ctors": [],
+   "value": null
+  },
+  "sort_problems_maintains_difficulty_order": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "66c7fc8aee9a6f0972cc760beb395ec88f5a540cb3805ff645d083e2f2453a03",
+   "ctors": [],
+   "value": null
+  },
+  "sort_problems_by_difficulty": {
+   "kind": "def",
+   "role": "impl",
+   "type": "1958cd2a9a2a44bb6f7c21a63512b1f677ce72905ab8b9494f319292335f668b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "64fb849de88c"
+}

@@ -1,0 +1,104 @@
+{
+ "id": "LF0009",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_alice_score (s : String) : Nat :=\n  sorry\n\ndef countOnes (s : String) : Nat :=\n  sorry\n\ndef sortByLengthDesc (ls : List String) : List String :=\n  sorry\n\ndef getAlternateSum (ls : List String) : Nat :=\n  sorry\n\ntheorem result_not_exceed_input_length\n  (s : String) :\n  count_alice_score s ≤ s.length :=\nsorry\n\ntheorem result_nonnegative\n  (s : String) :\n  count_alice_score s ≥ 0 :=\nsorry\n\ntheorem empty_or_zeros_returns_zero\n  (s : String) :\n  (s.isEmpty ∨ s.all (· = '0')) → count_alice_score s = 0 :=\nsorry\n\ntheorem all_ones_full_score\n  (s : String) :\n  s.all (· = '1') →\n  s.length > 0 →\n  count_alice_score s = s.length :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_alice_score \"01111001\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_alice_score \"111111\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_alice_score \"101010101\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_alice_score \"01111001\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_alice_score \"111111\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_alice_score \"101010101\"",
+ "chunks": [
+  {
+   "text": "def count_alice_score (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def countOnes (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sortByLengthDesc (ls : List String) : List String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def getAlternateSum (ls : List String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_not_exceed_input_length\n  (s : String) :\n  count_alice_score s ≤ s.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_nonnegative\n  (s : String) :\n  count_alice_score s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_or_zeros_returns_zero\n  (s : String) :\n  (s.isEmpty ∨ s.all (· = '0')) → count_alice_score s = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem all_ones_full_score\n  (s : String) :\n  s.all (· = '1') →\n  s.length > 0 →\n  count_alice_score s = s.length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sortByLengthDesc": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c47384215ddc73b6f9d1d2d97fd69361260dfb31ed2ba9fe63b8e6084869a6ea",
+   "ctors": [],
+   "value": null
+  },
+  "result_not_exceed_input_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d8fef75c501e7082492be09a34e83e12b808d5431089815dbb929485312641b9",
+   "ctors": [],
+   "value": null
+  },
+  "result_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7f67b7ee6724d28cff3d86c614b6acd069f41c31f913dc05b0fd6ec28b626bb4",
+   "ctors": [],
+   "value": null
+  },
+  "getAlternateSum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "36fc955d100209f88b69abd697cd4b13ab6ee1753a028e42d8bf74b2bd2d985b",
+   "ctors": [],
+   "value": null
+  },
+  "empty_or_zeros_returns_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ad01339e4dd7ceb65455eb0d6a3b9e59aaad09fa0854ee112896ab9d21f32c00",
+   "ctors": [],
+   "value": null
+  },
+  "count_alice_score": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "countOnes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "all_ones_full_score": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7b1e401c61bb07d0fd921bd2639bc635b46f40605c6df649287c929b5472f901",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "5a5db6d1813f"
+}

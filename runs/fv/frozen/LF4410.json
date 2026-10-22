@@ -1,0 +1,93 @@
+{
+ "id": "LF4410",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (n : Nat) : Nat :=\nsorry\n\ndef is_composite (n : Nat) : Bool :=\nsorry\n\ndef isDigitIn (d : Char) (n : Nat) : Bool :=\nsorry\n\ntheorem solve_positive (n : Nat) :\n  solve n > 0 :=\nsorry\n\ntheorem solve_monotonic {n : Nat} (h : n > 0) :\n  solve n > solve (n-1) :=\nsorry\n\ntheorem solve_deterministic (n : Nat) :\n  solve n = solve n :=\nsorry\n\ntheorem solve_zero :\n  solve 0 = 1 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve 2\n\n/--\ninfo: 44\n-/\n#guard_msgs in\n#eval solve 10\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve 2\n\n/--\ninfo: 44\n-/\n#guard_msgs in\n#eval solve 10",
+ "chunks": [
+  {
+   "text": "def solve (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_composite (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def isDigitIn (d : Char) (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_positive (n : Nat) :\n  solve n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_monotonic {n : Nat} (h : n > 0) :\n  solve n > solve (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_deterministic (n : Nat) :\n  solve n = solve n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_zero :\n  solve 0 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bb21ad86f01ba7eee573ab7e09c8d48be599646752d741d77ade65d726569dcd",
+   "ctors": [],
+   "value": null
+  },
+  "solve_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "81b29b1fa0eee607f3cfd16c3ddd9758c1fdcdfe01e482cd929be7440649516c",
+   "ctors": [],
+   "value": null
+  },
+  "solve_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7c32999886f73d4f6e0619033a5a791f5631101dbbae8abb96e3650adeb9657c",
+   "ctors": [],
+   "value": null
+  },
+  "solve_deterministic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "38fa11cfc3db9b4232bdbd992a4cc956df163aede783a5afee68d9b3277ccb03",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "is_composite": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  },
+  "isDigitIn": {
+   "kind": "def",
+   "role": "impl",
+   "type": "357b5c2df7fae3b30f2dcff0f982824d929c37ceb558de4ba357b719dc7260e1",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "adb92f51c555"
+}

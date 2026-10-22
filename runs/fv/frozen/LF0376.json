@@ -1,0 +1,71 @@
+{
+ "id": "LF0376",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_vowel_permutation (n : Nat) : Nat := sorry\n\ntheorem count_vowel_permutation_positive (n : Nat) (h : n > 0): \n  count_vowel_permutation n > 0 := sorry\n\ntheorem count_vowel_permutation_bounded (n : Nat) (h : n > 0):\n  count_vowel_permutation n < 1000000007 := sorry\n\ntheorem count_vowel_permutation_base_one :\n  count_vowel_permutation 1 = 5 := sorry\n\ntheorem count_vowel_permutation_base_two :\n  count_vowel_permutation 2 = 10 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval count_vowel_permutation 1\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval count_vowel_permutation 2\n\n/--\ninfo: 68\n-/\n#guard_msgs in\n#eval count_vowel_permutation 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval count_vowel_permutation 1\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval count_vowel_permutation 2\n\n/--\ninfo: 68\n-/\n#guard_msgs in\n#eval count_vowel_permutation 5",
+ "chunks": [
+  {
+   "text": "def count_vowel_permutation (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_vowel_permutation_positive (n : Nat) (h : n > 0): \n  count_vowel_permutation n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_vowel_permutation_bounded (n : Nat) (h : n > 0):\n  count_vowel_permutation n < 1000000007 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_vowel_permutation_base_one :\n  count_vowel_permutation 1 = 5 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_vowel_permutation_base_two :\n  count_vowel_permutation 2 = 10 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_vowel_permutation_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5ada7f08d84b32ba01cc8d08673f2a5ede1c710210a66d32e480cc53f99439a1",
+   "ctors": [],
+   "value": null
+  },
+  "count_vowel_permutation_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8be5064c483d8fdd83d8e1cb490ae0068ee2c78cc1a7e4b61d04856b16810d52",
+   "ctors": [],
+   "value": null
+  },
+  "count_vowel_permutation_base_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "527a5ea96170d7a3b5f30ce39ac44063eeb35218f17f3f9d4e6ea49d947a6d5b",
+   "ctors": [],
+   "value": null
+  },
+  "count_vowel_permutation_base_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "10ff6b4b183aff8bc997991468d47ab6480a042afb9158f9cd3e1b44aa730fcc",
+   "ctors": [],
+   "value": null
+  },
+  "count_vowel_permutation": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "681e8f420902"
+}

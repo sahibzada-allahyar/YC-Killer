@@ -1,0 +1,82 @@
+{
+ "id": "LF4095",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_zeros (s: String) : Nat :=\n  sorry\n\ntheorem count_zeros_nonnegative (s: String) :\n  count_zeros s ≥ 0 := sorry\n\ntheorem count_zeros_upper_bound (s: String) :\n  count_zeros s ≤ 2 * s.length := sorry\n\ntheorem count_zeros_concatenation (s: String) :\n  count_zeros (s ++ s) = count_zeros s * 2 := sorry\n\ntheorem count_zeros_case_insensitive (c: Char) :\n  c ∈ ['d', 'o', 'p', 'q'] →\n  count_zeros (String.mk [c]) = count_zeros (String.mk [c.toUpper]) := sorry\n\ntheorem count_zeros_parentheses :\n  count_zeros \"()\" = 1 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_zeros \"\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_zeros \"0oO0oO\"\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval count_zeros \"abcdefghijklmnopqrstuvwxyz\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_zeros \"\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_zeros \"0oO0oO\"\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval count_zeros \"abcdefghijklmnopqrstuvwxyz\"",
+ "chunks": [
+  {
+   "text": "def count_zeros (s: String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_zeros_nonnegative (s: String) :\n  count_zeros s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_zeros_upper_bound (s: String) :\n  count_zeros s ≤ 2 * s.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_zeros_concatenation (s: String) :\n  count_zeros (s ++ s) = count_zeros s * 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_zeros_case_insensitive (c: Char) :\n  c ∈ ['d', 'o', 'p', 'q'] →\n  count_zeros (String.mk [c]) = count_zeros (String.mk [c.toUpper]) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_zeros_parentheses :\n  count_zeros \"()\" = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_zeros_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "be21fbcf8fedf98f880c16161d75da8348c1c5fda9a32633141078e1b9fab038",
+   "ctors": [],
+   "value": null
+  },
+  "count_zeros_parentheses": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "05aa614447242ce36331c5f0a82b5478d7da08bf6953405cfc08ee858019d594",
+   "ctors": [],
+   "value": null
+  },
+  "count_zeros_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0e4e47013dfcb47b5b9b08951855bd6df388f7f889737ccf7b3ba746dd87ef94",
+   "ctors": [],
+   "value": null
+  },
+  "count_zeros_concatenation": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fa9c5e471f1d44b814238e71f09575424b7450bdd7bb7af4c5c46782dbe6a20d",
+   "ctors": [],
+   "value": null
+  },
+  "count_zeros_case_insensitive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "686f9b11b7501b97d0b390bec36e3905c22ef2455708f3f7f21d654707d67e27",
+   "ctors": [],
+   "value": null
+  },
+  "count_zeros": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "761c3b070696"
+}

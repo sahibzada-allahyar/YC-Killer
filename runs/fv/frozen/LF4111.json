@@ -1,0 +1,67 @@
+{
+ "id": "LF4111",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def list_sum (xs : List Nat) : Nat :=\n  xs.foldl (· + ·) 0\n\ndef mem_alloc (banks : List Nat) : Nat :=\nsorry\n\ntheorem mem_alloc_positive (banks : List Nat) (h : banks.length = 16) :\n  mem_alloc banks > 0 :=\nsorry\n\ntheorem mem_alloc_preserves_input (banks : List Nat) (h : banks.length = 16) :\n  mem_alloc banks = mem_alloc banks :=\nsorry\n\ntheorem mem_alloc_deterministic (banks : List Nat) (h : banks.length = 16) :\n  mem_alloc banks = mem_alloc banks :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 70\n-/\n#guard_msgs in\n#eval mem_alloc [5, 1, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 600]\n\n/--\ninfo: 316\n-/\n#guard_msgs in\n#eval mem_alloc [53, 21, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 60]\n\n/--\ninfo: 826\n-/\n#guard_msgs in\n#eval mem_alloc [14, 21, 10, 0, 1, 7, 0, 14, 3, 12, 8, 10, 17, 12, 0, 19]\n",
+ "warnings": [],
+ "preamble": "def list_sum (xs : List Nat) : Nat :=\n  xs.foldl (· + ·) 0",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 70\n-/\n#guard_msgs in\n#eval mem_alloc [5, 1, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 600]\n\n/--\ninfo: 316\n-/\n#guard_msgs in\n#eval mem_alloc [53, 21, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 60]\n\n/--\ninfo: 826\n-/\n#guard_msgs in\n#eval mem_alloc [14, 21, 10, 0, 1, 7, 0, 14, 3, 12, 8, 10, 17, 12, 0, 19]",
+ "chunks": [
+  {
+   "text": "def mem_alloc (banks : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mem_alloc_positive (banks : List Nat) (h : banks.length = 16) :\n  mem_alloc banks > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mem_alloc_preserves_input (banks : List Nat) (h : banks.length = 16) :\n  mem_alloc banks = mem_alloc banks :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mem_alloc_deterministic (banks : List Nat) (h : banks.length = 16) :\n  mem_alloc banks = mem_alloc banks :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "mem_alloc_preserves_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "40607670e6ac09adbe5cb70b3eacbdaa498f4dbaf1db51dd4607dc98c5a1438d",
+   "ctors": [],
+   "value": null
+  },
+  "mem_alloc_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e7d28785a5ba5bef2a1453a8fa9a5bf5e382900a85ed1e59550b16f9ae331764",
+   "ctors": [],
+   "value": null
+  },
+  "mem_alloc_deterministic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "40607670e6ac09adbe5cb70b3eacbdaa498f4dbaf1db51dd4607dc98c5a1438d",
+   "ctors": [],
+   "value": null
+  },
+  "mem_alloc": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "list_sum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "2ad819a10f5fb6b5214d96a8ef96ace908bc6b642346ffaff9e8cdf0c1fc038c"
+  }
+ },
+ "sha": "fd077af2e453"
+}

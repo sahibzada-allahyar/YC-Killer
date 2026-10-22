@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0457",
+ "expect": "PROVED",
+ "observed": "PROVED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3 FALSE-REJECTION PROBE: honest solution with own structure Wrap, instance Coe Wrap Nat (coercion OUT of the own type with NOTHING coercing in), plus LE/LT/Min/Max/Ord/Hashable/ToString on Wrap. The round-2 coe-out fix accepts the Coe-out (no producer); the other classes are own-anchored or unscanned -> correctly PROVED."
+}

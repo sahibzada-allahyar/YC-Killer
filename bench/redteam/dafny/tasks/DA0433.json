@@ -1,0 +1,8 @@
+{
+ "id": "DA0433",
+ "source": "apps",
+ "source-id": "apps_test_2435",
+ "preamble": "predicate ValidInput(testCases: seq<(int, int, seq<(int, int)>)>)\n{\n    |testCases| >= 0 &&\n    forall i :: 0 <= i < |testCases| ==> \n        var (n, x, operations) := testCases[i];\n        n >= 1 && 1 <= x <= n && |operations| >= 0 &&\n        (forall j :: 0 <= j < |operations| ==> \n            var (l, r) := operations[j];\n            1 <= l <= r <= n)\n}\n\nfunction computeFinalBounds(x: int, operations: seq<(int, int)>): (int, int)\n    requires forall j :: 0 <= j < |operations| ==> \n        var (l, r) := operations[j];\n        l <= r\n{\n    computeFinalBoundsHelper(x, x, operations, 0)\n}\n\npredicate ValidResults(testCases: seq<(int, int, seq<(int, int)>)>, results: seq<int>)\n    requires ValidInput(testCases)\n{\n    |results| == |testCases| &&\n    forall i :: 0 <= i < |testCases| ==> \n        var (n, x, operations) := testCases[i];\n        var finalBounds := computeFinalBounds(x, operations);\n        results[i] == finalBounds.1 - finalBounds.0 + 1 &&\n        finalBounds.0 <= x <= finalBounds.1 &&\n        results[i] >= 1 &&\n        1 <= finalBounds.0 <= finalBounds.1 <= n\n}",
+ "spec": "method solve(testCases: seq<(int, int, seq<(int, int)>)>) returns (results: seq<int>)\n    requires ValidInput(testCases)\n    ensures ValidResults(testCases, results)",
+ "postamble": ""
+}

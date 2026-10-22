@@ -1,0 +1,38 @@
+{
+ "id": "LF4361",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def Ackermann : Nat → Nat → Option Nat \n| m, n => sorry\n\ntheorem ack_m0_property (n : Nat) :\n  Ackermann 0 n = some (n + 1) :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def Ackermann : Nat → Nat → Option Nat ",
+   "hole_after": true
+  },
+  {
+   "text": "theorem ack_m0_property (n : Nat) :\n  Ackermann 0 n = some (n + 1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "ack_m0_property": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3b8a720825664ff73ff5698f808f3ff64f7c5a3897346c0aa5f3f6596d88ab4b",
+   "ctors": [],
+   "value": null
+  },
+  "Ackermann": {
+   "kind": "def",
+   "role": "impl",
+   "type": "65f1848ccf34a3ae4e5f34e4410072bd4225155ee06b5ce9b67a535fde4fbd7e",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "70fcb485afbb"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF1093",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_vaccine_distribution (N D : Nat) (ages : List Nat) : Nat :=\n  sorry\n\ntheorem vaccine_distribution_positive (N D : Nat) (ages : List Nat) \n    (h1 : N > 0) (h2 : D > 0) (h3 : ages.length > 0) :\n  solve_vaccine_distribution N D ages > 0 := sorry\n\ntheorem vaccine_distribution_D_one (N D : Nat) (ages : List Nat)\n    (h : D = 1) (h1 : N > 0) :\n  solve_vaccine_distribution N D ages = N := sorry\n\ntheorem vaccine_distribution_min_days (N D : Nat) (ages : List Nat)\n    (h1 : N > 0) (h2 : D > 0) :\n  solve_vaccine_distribution N D ages ≥ (N + D - 1) / D := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval solve_vaccine_distribution 10 1 [10, 20, 30, 40, 50, 60, 90, 80, 100, 1]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_vaccine_distribution 5 2 [9, 80, 27, 72, 79]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_vaccine_distribution 3 2 [80, 90, 100]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval solve_vaccine_distribution 10 1 [10, 20, 30, 40, 50, 60, 90, 80, 100, 1]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_vaccine_distribution 5 2 [9, 80, 27, 72, 79]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_vaccine_distribution 3 2 [80, 90, 100]",
+ "chunks": [
+  {
+   "text": "def solve_vaccine_distribution (N D : Nat) (ages : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vaccine_distribution_positive (N D : Nat) (ages : List Nat) \n    (h1 : N > 0) (h2 : D > 0) (h3 : ages.length > 0) :\n  solve_vaccine_distribution N D ages > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vaccine_distribution_D_one (N D : Nat) (ages : List Nat)\n    (h : D = 1) (h1 : N > 0) :\n  solve_vaccine_distribution N D ages = N :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vaccine_distribution_min_days (N D : Nat) (ages : List Nat)\n    (h1 : N > 0) (h2 : D > 0) :\n  solve_vaccine_distribution N D ages ≥ (N + D - 1) / D :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "vaccine_distribution_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e21d372bc50854c17bf3659d63ab564a141657f0778a41e623ae3a72fc896476",
+   "ctors": [],
+   "value": null
+  },
+  "vaccine_distribution_min_days": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e69d229ef064be1e530185abf17a95750bb0e561559ed0e5e094c960b186d330",
+   "ctors": [],
+   "value": null
+  },
+  "vaccine_distribution_D_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "32f24dbb4b8f9aa5bdc5a065a3d3e233eccb4e32d431c0f3f7903f43fa867863",
+   "ctors": [],
+   "value": null
+  },
+  "solve_vaccine_distribution": {
+   "kind": "def",
+   "role": "impl",
+   "type": "80d7a4d3f2b66acf9d3d7e09090df5394601f8920dfcfe2deeb74ed19c371174",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8d3ea1096481"
+}

@@ -1,0 +1,6 @@
+{"trial": "da0215__5odcxN6", "millennium_A": "UNPROVED", "violations": [], "plain_A": "REJECT", "sorry_warning": false, "millennium_B_final": "UNPROVED"}
+{"trial": "dt0056__im7MUL5", "millennium_A": "UNPROVED", "violations": [], "plain_A": "REJECT", "sorry_warning": false, "millennium_B_final": "UNPROVED"}
+{"trial": "dt0072__3T6NxFj", "millennium_A": "UNPROVED", "violations": [], "plain_A": "REJECT", "sorry_warning": false, "millennium_B_final": "UNPROVED"}
+{"trial": "la0238__spKAYcc", "millennium_A": "CHEAT_REJECTED", "violations": ["banned construct: sorry (`sorry`)"], "plain_A": "ACCEPT", "sorry_warning": true, "millennium_B_final": "CHEAT_REJECTED"}
+{"trial": "la0581__HiSTshv", "millennium_A": "SPEC_TAMPERED", "violations": ["the preamble (vc-preamble) was modified or is not at the start of the file"], "plain_A": "ACCEPT", "sorry_warning": false, "millennium_B_final": "SPEC_TAMPERED"}
+{"trial": "lf2244__zee63Ek", "millennium_A": "CHEAT_REJECTED", "violations": ["banned construct: sorry (`sorry`)"], "plain_A": "ACCEPT", "sorry_warning": true, "millennium_B_final": "CHEAT_REJECTED"}

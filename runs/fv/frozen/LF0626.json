@@ -1,0 +1,71 @@
+{
+ "id": "LF0626",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_chocolate_distribution (n k : Nat) : Nat :=\n  sorry\n\ntheorem chocolate_distribution_bounds {n k : Nat} (n_pos : n > 0):\n  let result := solve_chocolate_distribution n k\n  result ≥ 0 ∧ result ≤ 2*n-1\n  := sorry\n\ntheorem zero_chocolates {n : Nat} (n_pos : n > 0):\n  solve_chocolate_distribution n 0 = 0\n  := sorry \n\ntheorem perfect_distribution {n : Nat} (n_pos : n > 0):\n  ∀ m : Nat, solve_chocolate_distribution n (n * m) = 0\n  := sorry\n\ntheorem edge_cases_bounds :\n  ∀ n k : Nat,\n  n > 0 →\n  let result := solve_chocolate_distribution n k\n  result ≥ 0 ∧ result ≤ 2*n-1\n  := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_chocolate_distribution 3 2\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_chocolate_distribution 2 2\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_chocolate_distribution 3 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_chocolate_distribution 3 2\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_chocolate_distribution 2 2\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_chocolate_distribution 3 4",
+ "chunks": [
+  {
+   "text": "def solve_chocolate_distribution (n k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem chocolate_distribution_bounds {n k : Nat} (n_pos : n > 0):\n  let result := solve_chocolate_distribution n k\n  result ≥ 0 ∧ result ≤ 2*n-1\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zero_chocolates {n : Nat} (n_pos : n > 0):\n  solve_chocolate_distribution n 0 = 0\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem perfect_distribution {n : Nat} (n_pos : n > 0):\n  ∀ m : Nat, solve_chocolate_distribution n (n * m) = 0\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem edge_cases_bounds :\n  ∀ n k : Nat,\n  n > 0 →\n  let result := solve_chocolate_distribution n k\n  result ≥ 0 ∧ result ≤ 2*n-1\n  :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "zero_chocolates": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a9332cee8fbca9c3bb4d5cf3895734a6cb12ba7d5310af0f930d4c64747b70d1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_chocolate_distribution": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "perfect_distribution": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "72ef760ae212021cba7b1e37121f4882ceba26f58880da0dff166d52a413f593",
+   "ctors": [],
+   "value": null
+  },
+  "edge_cases_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f958dbc1f1962aeb6546e53de636070e28e355457233e6e82e60521cbf3b431b",
+   "ctors": [],
+   "value": null
+  },
+  "chocolate_distribution_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "98077cb27d44273369a3d955e274e508920f842261ac0584c557ba48c267bc88",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b4742c2a675e"
+}

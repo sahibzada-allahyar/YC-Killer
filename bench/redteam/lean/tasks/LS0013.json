@@ -1,0 +1,12 @@
+{
+ "id": "LS0013",
+ "language": "lean",
+ "source": "numpy_simple",
+ "source-id": "NpCopy-spec",
+ "vc-description": "",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def copy {n : Nat} (arr : Vector Int n) : Vector Int n :=\nsorry",
+ "vc-theorems": "theorem copy_spec {n : Nat} (arr : Vector Int n) :\n  (copy arr).toList.length = n ∧\n  ∀ i : Fin n, (copy arr)[i] = arr[i] :=\nsorry",
+ "vc-postamble": ""
+}

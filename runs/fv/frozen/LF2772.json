@@ -1,0 +1,104 @@
+{
+ "id": "LF2772",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_multiples (n : Nat) (limit : Nat) : List Nat :=\nsorry\n\ntheorem find_multiples_empty_when_limit_less {n : Nat} {limit : Nat} \n  (h : limit < n) : find_multiples n limit = [] :=\nsorry\n\ntheorem find_multiples_all_divisible {n : Nat} {limit : Nat} {x : Nat}\n  (h : x ∈ find_multiples n limit) : \n  x % n = 0 :=\nsorry\n\ntheorem find_multiples_all_within_limit {n : Nat} {limit : Nat} {x : Nat}\n  (h : x ∈ find_multiples n limit) :\n  x ≤ limit :=\nsorry\n\ntheorem find_multiples_ordered {n : Nat} {limit : Nat} {i j : Nat}\n  (hi : i < (find_multiples n limit).length)\n  (hj : j < (find_multiples n limit).length)\n  (h : i < j) :\n  (find_multiples n limit)[i] < (find_multiples n limit)[j] :=\nsorry\n\ntheorem find_multiples_first_element {n : Nat} {limit : Nat}\n  (h : limit ≥ n) :\n  (find_multiples n limit).head? = some n :=\nsorry\n\ntheorem find_multiples_consecutive_diff {n : Nat} {limit : Nat} {i : Nat}\n  (h : i + 1 < (find_multiples n limit).length) :\n  (find_multiples n limit)[i+1] - (find_multiples n limit)[i] = n :=\nsorry\n\ntheorem find_multiples_same_limit {n : Nat} :\n  find_multiples n n = [n] :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [5, 10, 15, 20, 25]\n-/\n#guard_msgs in\n#eval find_multiples 5 25\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval find_multiples 1 2\n\n/--\ninfo: [4, 8, 12, 16, 20, 24]\n-/\n#guard_msgs in\n#eval find_multiples 4 27\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [5, 10, 15, 20, 25]\n-/\n#guard_msgs in\n#eval find_multiples 5 25\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval find_multiples 1 2\n\n/--\ninfo: [4, 8, 12, 16, 20, 24]\n-/\n#guard_msgs in\n#eval find_multiples 4 27",
+ "chunks": [
+  {
+   "text": "def find_multiples (n : Nat) (limit : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_multiples_empty_when_limit_less {n : Nat} {limit : Nat} \n  (h : limit < n) : find_multiples n limit = [] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_multiples_all_divisible {n : Nat} {limit : Nat} {x : Nat}\n  (h : x ∈ find_multiples n limit) : \n  x % n = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_multiples_all_within_limit {n : Nat} {limit : Nat} {x : Nat}\n  (h : x ∈ find_multiples n limit) :\n  x ≤ limit :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_multiples_ordered {n : Nat} {limit : Nat} {i j : Nat}\n  (hi : i < (find_multiples n limit).length)\n  (hj : j < (find_multiples n limit).length)\n  (h : i < j) :\n  (find_multiples n limit)[i] < (find_multiples n limit)[j] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_multiples_first_element {n : Nat} {limit : Nat}\n  (h : limit ≥ n) :\n  (find_multiples n limit).head? = some n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_multiples_consecutive_diff {n : Nat} {limit : Nat} {i : Nat}\n  (h : i + 1 < (find_multiples n limit).length) :\n  (find_multiples n limit)[i+1] - (find_multiples n limit)[i] = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_multiples_same_limit {n : Nat} :\n  find_multiples n n = [n] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "find_multiples_same_limit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e767b929f932b9b8246dd5008abdcd3e91d6a53aa73e29dca072338bcb47e21b",
+   "ctors": [],
+   "value": null
+  },
+  "find_multiples_ordered": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2ff598986cccbe0a3a072f0b6cf3d11569199f26c62389e61c2e6f5df04b7201",
+   "ctors": [],
+   "value": null
+  },
+  "find_multiples_first_element": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "58b1e9df00301bb9b135c6e187145d0a9306d4ccfc41368aa163638bbc04d485",
+   "ctors": [],
+   "value": null
+  },
+  "find_multiples_empty_when_limit_less": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "db6ba93e2cd8e65577da09ba293ed1cd026bc78fa4b4398f261fbb78b855a9e8",
+   "ctors": [],
+   "value": null
+  },
+  "find_multiples_consecutive_diff": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "015c482a19a26c14ab5afbe20c944b7237954900ce3cd684b1ca810a6c722ac9",
+   "ctors": [],
+   "value": null
+  },
+  "find_multiples_all_within_limit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "aecb4e4ce874ca5c729c390856a3a9b13bd6a83d6143d3f751e750df14f39ff2",
+   "ctors": [],
+   "value": null
+  },
+  "find_multiples_all_divisible": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e8e71243b65adde0fe8cf29686dc81045df45a1aeccd34a80c9b5dc82d107740",
+   "ctors": [],
+   "value": null
+  },
+  "find_multiples": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f2ba374ba4706f2aa1603f3b155fbdb8ef992a2fe510afa257275fac663f718d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "503000078602"
+}

@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "BEq Int (base type) high priority, with an otherwise CORRECT implementation, to confirm BEq is scanned even when the solution is honest. anchors empty -> CHEAT_REJECTED. (A BEq hijack could change == inside a computation; the scan covers it.)"
+}

@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "what": "FALSE REJECTION: honest solution with a PLAIN string literal `\"node {id} prefix tag\"` (pure text to Lean). mask keeps braced plain strings verbatim, so the ban scan sees the word `prefix` and fires the elaborator/notation ban -> CHEAT_REJECTED.", "observed": "CHEAT_REJECTED"}

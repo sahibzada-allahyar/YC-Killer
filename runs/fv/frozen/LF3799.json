@@ -1,0 +1,93 @@
+{
+ "id": "LF3799",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def reverse_bits (n : Nat) : Nat :=\nsorry\n\ndef count_ones (n : Nat) : Nat :=\nsorry\n\ntheorem reverse_bits_nonneg (n : Nat) :\n  reverse_bits n ≥ 0 :=\nsorry\n\ntheorem reverse_bits_preserves_ones (n : Nat) (h : n < 2^32) :\n  count_ones n = count_ones (reverse_bits n) :=\nsorry\n\ntheorem reverse_bits_preserves_power_of_two (n : Nat) (h : n < 2^32)\n  (h₁ : n ≠ 0) (h₂ : n &&& (n - 1) = 0) :\n  (reverse_bits n) &&& ((reverse_bits n) - 1) = 0 :=\nsorry\n\ntheorem reverse_bits_zero :\n  reverse_bits 0 = 0 :=\nsorry\n\ntheorem reverse_bits_one :\n  reverse_bits 1 = 1 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 267\n-/\n#guard_msgs in\n#eval reverse_bits 417\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval reverse_bits 0\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval reverse_bits 1024\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 267\n-/\n#guard_msgs in\n#eval reverse_bits 417\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval reverse_bits 0\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval reverse_bits 1024",
+ "chunks": [
+  {
+   "text": "def reverse_bits (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def count_ones (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem reverse_bits_nonneg (n : Nat) :\n  reverse_bits n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem reverse_bits_preserves_ones (n : Nat) (h : n < 2^32) :\n  count_ones n = count_ones (reverse_bits n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem reverse_bits_preserves_power_of_two (n : Nat) (h : n < 2^32)\n  (h₁ : n ≠ 0) (h₂ : n &&& (n - 1) = 0) :\n  (reverse_bits n) &&& ((reverse_bits n) - 1) = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem reverse_bits_zero :\n  reverse_bits 0 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem reverse_bits_one :\n  reverse_bits 1 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "reverse_bits_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bd21071303fd4958355117721be1badec62df9123015aeb8197432325e40e4a8",
+   "ctors": [],
+   "value": null
+  },
+  "reverse_bits_preserves_power_of_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e4da4331bffe5532e651832ec838c33e78a998a9edf7c4e2728d3eec81ea7897",
+   "ctors": [],
+   "value": null
+  },
+  "reverse_bits_preserves_ones": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8ad57a2473ebcfcd64e8fa0c254f56cd98fe05d7581fd7055048a2107cfeed8e",
+   "ctors": [],
+   "value": null
+  },
+  "reverse_bits_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3e93d4a5aa8126bb93c42a1054ea1e125e5d41072fea7a3f8ebfd7097f29399f",
+   "ctors": [],
+   "value": null
+  },
+  "reverse_bits_nonneg": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6e19b201ca0a2787ef2488b7cbecb9133bbb761e4674772044ffe56833e98aeb",
+   "ctors": [],
+   "value": null
+  },
+  "reverse_bits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "count_ones": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "0ec81a9845ee"
+}

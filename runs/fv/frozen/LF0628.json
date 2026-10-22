@@ -1,0 +1,93 @@
+{
+ "id": "LF0628",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_random_generator (n s : Nat) : Int :=\nsorry\n\ntheorem solve_random_generator_range (n s : Nat) :\n  solve_random_generator n s ≥ -1 := \nsorry\n\ntheorem solve_random_generator_n1 (s : Nat) :\n  solve_random_generator 1 s = s := \nsorry\n\ntheorem solve_random_generator_n2 (s : Nat) :\n  s > 1 → solve_random_generator 2 s = s - 1 :=\nsorry\n\ntheorem solve_random_generator_n_gt_2 (n s : Nat) :\n  n > 2 → s > 1 → solve_random_generator n s = 0 :=\nsorry\n\ntheorem solve_random_generator_invalid (n s : Nat) :\n  s ≤ 1 → n > 1 → solve_random_generator n s = -1 :=\nsorry\n\ntheorem solve_random_generator_edge_cases :\n  solve_random_generator 1 0 = 0 ∧ \n  solve_random_generator 2 1 = -1 ∧\n  solve_random_generator 10 1 = -1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval solve_random_generator 1 5\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_random_generator 2 2\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_random_generator 3 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval solve_random_generator 1 5\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_random_generator 2 2\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_random_generator 3 5",
+ "chunks": [
+  {
+   "text": "def solve_random_generator (n s : Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_random_generator_range (n s : Nat) :\n  solve_random_generator n s ≥ -1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_random_generator_n1 (s : Nat) :\n  solve_random_generator 1 s = s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_random_generator_n2 (s : Nat) :\n  s > 1 → solve_random_generator 2 s = s - 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_random_generator_n_gt_2 (n s : Nat) :\n  n > 2 → s > 1 → solve_random_generator n s = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_random_generator_invalid (n s : Nat) :\n  s ≤ 1 → n > 1 → solve_random_generator n s = -1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_random_generator_edge_cases :\n  solve_random_generator 1 0 = 0 ∧ \n  solve_random_generator 2 1 = -1 ∧\n  solve_random_generator 10 1 = -1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_random_generator_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "566580ba2da2191b53899bb19148ec43daefcaff21f1d3d6febbba88017bffb2",
+   "ctors": [],
+   "value": null
+  },
+  "solve_random_generator_n_gt_2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d1a7d2281d0e04b1231cb2bdb8d01b34d3bc34c746ddeae4eff8f6846a679f7d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_random_generator_n2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "386e84a8807249aa004fe4383b772cb8f9317c9f066a412fc62ed299e4705486",
+   "ctors": [],
+   "value": null
+  },
+  "solve_random_generator_n1": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c448bd8005df00d08eb53c83dc1cd5ea06b6b742b68a1aae80d0ef031dd1ad55",
+   "ctors": [],
+   "value": null
+  },
+  "solve_random_generator_invalid": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "81645dad7b312a3855720c749cce6a57890f03372ffc25aeb3f4abb241b83b1e",
+   "ctors": [],
+   "value": null
+  },
+  "solve_random_generator_edge_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "25819e32fd0108a4ac1a7802c32b6271832db8b1f7e4e06fd6649230e60f40f1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_random_generator": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7ab8380d4662fddba2227a81e2fb9c700cae7088c8dbd571810fcbdb4b50ae92",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "fd9dcfbed26c"
+}

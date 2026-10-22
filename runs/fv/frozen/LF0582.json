@@ -1,0 +1,60 @@
+{
+ "id": "LF0582",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_valid_shifts (n : Nat) (nums : List Nat) : Nat :=\nsorry\n\ndef verify_shift (arr : List Nat) (shift_pos : Nat) : Bool :=\nsorry\n\ntheorem result_bounds (n : Nat) (nums : List Nat)\n  (h1 : 2 ≤ n) (h2 : n ≤ 20) (h3 : nums.length = n) :\n  0 ≤ count_valid_shifts n nums ∧ count_valid_shifts n nums ≤ n :=\nsorry\n\ntheorem all_same_gives_zero (n : Nat)\n  (h1 : 2 ≤ n) (h2 : n ≤ 20) :\n  count_valid_shifts n (List.replicate n 1) = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_valid_shifts 6 [1, 1, 2, 1, 1, 1]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_valid_shifts 6 [1, 1, 2, 1, 1, 2]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_valid_shifts 4 [1, 2, 1, 1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_valid_shifts 6 [1, 1, 2, 1, 1, 1]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_valid_shifts 6 [1, 1, 2, 1, 1, 2]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_valid_shifts 4 [1, 2, 1, 1]",
+ "chunks": [
+  {
+   "text": "def count_valid_shifts (n : Nat) (nums : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def verify_shift (arr : List Nat) (shift_pos : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_bounds (n : Nat) (nums : List Nat)\n  (h1 : 2 ≤ n) (h2 : n ≤ 20) (h3 : nums.length = n) :\n  0 ≤ count_valid_shifts n nums ∧ count_valid_shifts n nums ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem all_same_gives_zero (n : Nat)\n  (h1 : 2 ≤ n) (h2 : n ≤ 20) :\n  count_valid_shifts n (List.replicate n 1) = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "verify_shift": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ca0a1ca3f5d2c4d31e6defe0c4aae9db185c89c4d06605266e3f3b6547cd9a4d",
+   "ctors": [],
+   "value": null
+  },
+  "result_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2eba59ee635cd2b8d207360acdf098dab15e9e6bd1be425f657a8b85f05401ef",
+   "ctors": [],
+   "value": null
+  },
+  "count_valid_shifts": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  },
+  "all_same_gives_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17a5b6d14edf9d135dc6c296ee61494cac766f363e0b0affb800e89c0a80f882",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "88afaaed444c"
+}

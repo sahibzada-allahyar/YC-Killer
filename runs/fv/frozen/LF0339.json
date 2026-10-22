@@ -1,0 +1,60 @@
+{
+ "id": "LF0339",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def maximum_sum_with_deletion (arr : List Int) : Int :=\n  sorry\n\ndef list_maximum (arr : List Int) : Int :=\n  sorry\n\ndef list_sum (arr : List Int) : Int :=\n  sorry\n\ntheorem positive_scaling {arr : List Int} {scale : Int}\n  (h : arr ≠ []) (hs : scale > 0) :\n  maximum_sum_with_deletion (List.map (· * scale) arr) =\n  maximum_sum_with_deletion arr * scale :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval maximum_sum_with_deletion [1, -2, 0, 3]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval maximum_sum_with_deletion [1, -2, -2, 3]\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval maximum_sum_with_deletion [-1, -1, -1, -1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval maximum_sum_with_deletion [1, -2, 0, 3]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval maximum_sum_with_deletion [1, -2, -2, 3]\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval maximum_sum_with_deletion [-1, -1, -1, -1]",
+ "chunks": [
+  {
+   "text": "def maximum_sum_with_deletion (arr : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def list_maximum (arr : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def list_sum (arr : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem positive_scaling {arr : List Int} {scale : Int}\n  (h : arr ≠ []) (hs : scale > 0) :\n  maximum_sum_with_deletion (List.map (· * scale) arr) =\n  maximum_sum_with_deletion arr * scale :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "positive_scaling": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "33314805e6f253f8a8c6da4f93a1c0fcaf2c7981a60bbd74f134b5b13c10aaf8",
+   "ctors": [],
+   "value": null
+  },
+  "maximum_sum_with_deletion": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  },
+  "list_sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  },
+  "list_maximum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8d839073b20c"
+}

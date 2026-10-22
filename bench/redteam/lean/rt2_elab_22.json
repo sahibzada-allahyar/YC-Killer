@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "scoped notation NN => (0 : Nat) used to stub the implementation. The keyword 'notation' is in the ban list (which also covers infix/prefix/macro/elab/syntax) -> CHEAT_REJECTED."
+}

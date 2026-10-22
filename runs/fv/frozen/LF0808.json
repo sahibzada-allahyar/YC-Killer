@@ -1,0 +1,38 @@
+{
+ "id": "LF0808",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calculate_maintenance_due (n : Nat) (payments : List String) : Nat :=\n  sorry\n\ntheorem empty_payments (n : Nat) :\n  calculate_maintenance_due n [] = 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval calculate_maintenance_due 2 [\"1\", \"1\"]\n\n/--\ninfo: 2200\n-/\n#guard_msgs in\n#eval calculate_maintenance_due 2 [\"0\", \"0\"]\n\n/--\ninfo: 2300\n-/\n#guard_msgs in\n#eval calculate_maintenance_due 3 [\"0\", \"1\", \"0\"]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval calculate_maintenance_due 2 [\"1\", \"1\"]\n\n/--\ninfo: 2200\n-/\n#guard_msgs in\n#eval calculate_maintenance_due 2 [\"0\", \"0\"]\n\n/--\ninfo: 2300\n-/\n#guard_msgs in\n#eval calculate_maintenance_due 3 [\"0\", \"1\", \"0\"]",
+ "chunks": [
+  {
+   "text": "def calculate_maintenance_due (n : Nat) (payments : List String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_payments (n : Nat) :\n  calculate_maintenance_due n [] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "empty_payments": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8c7de24eec5034a304d35d26ce29c48f6b56d21d9d07c5fb6b9710fd6f6f4a8d",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_maintenance_due": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c6415e68ee8f5ec59cf6feb6bd9899f694b5f1dea155b02c752e6e68fe00a0af",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f230983ad0df"
+}

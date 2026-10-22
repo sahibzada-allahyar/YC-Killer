@@ -1,0 +1,82 @@
+{
+ "id": "LF0323",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_palindromic_substrings (s: String) : Nat :=\n  sorry\n\ndef is_palindrome (s : String) : Bool :=\n  sorry\n\ndef string_reverse (s : String) : String :=\n  sorry\n\ndef string_repeat (c : Char) (n : Nat) : String :=\n  sorry\n\ntheorem minimum_palindromes (s : String) (h : s.length > 0) :\n  count_palindromic_substrings s ≥ s.length :=\nsorry\n\ntheorem empty_string :\n  count_palindromic_substrings \"\" = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_palindromic_substrings \"abc\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_palindromic_substrings \"aaa\"\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval count_palindromic_substrings \"racecar\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_palindromic_substrings \"abc\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_palindromic_substrings \"aaa\"\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval count_palindromic_substrings \"racecar\"",
+ "chunks": [
+  {
+   "text": "def count_palindromic_substrings (s: String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_palindrome (s : String) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def string_reverse (s : String) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def string_repeat (c : Char) (n : Nat) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem minimum_palindromes (s : String) (h : s.length > 0) :\n  count_palindromic_substrings s ≥ s.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_string :\n  count_palindromic_substrings \"\" = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "string_reverse": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6f0513922b1b32500fef5a52f309f3291d42e6ae6f7d7e89b365f7e92e39e763",
+   "ctors": [],
+   "value": null
+  },
+  "string_repeat": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d0a9b215e389362cde2017331531b02bc35adb2900b16c9f6cbec60a5c7bee2b",
+   "ctors": [],
+   "value": null
+  },
+  "minimum_palindromes": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "eb05f918b50d7a9ab46d5e338c0f6fde3fbc69a70ebedf4a59d58b5b1fe9bbcd",
+   "ctors": [],
+   "value": null
+  },
+  "is_palindrome": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": null
+  },
+  "empty_string": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4cb811dcae9fd143dc1c88de4a5a88197dbf05d9642c40c8fb7c0e57ca45ff64",
+   "ctors": [],
+   "value": null
+  },
+  "count_palindromic_substrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "acfee0b1e5ff"
+}

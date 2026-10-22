@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "UNPROVED",
+ "observed": "UNPROVED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "Std.ToFormat Nat hijack. Also inert: #eval uses Repr for Nat, not ToFormat -> UNPROVED. Std.ToFormat is in POSTAMBLE_CLASSES anyway."
+}

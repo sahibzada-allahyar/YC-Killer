@@ -1,0 +1,60 @@
+{
+ "id": "LF0382",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def MOD := 1000000007\n\ndef count_char (s : String) (c : Char) : Nat :=\n  sorry\n\ndef numWays (s : String) : Nat :=\n  sorry\n\ntheorem numWays_non_negative (s : String) :\n  numWays s ≥ 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval numWays \"10101\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval numWays \"1001\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval numWays \"0000\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval numWays \"10101\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval numWays \"1001\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval numWays \"0000\"",
+ "chunks": [
+  {
+   "text": "def MOD := 1000000007",
+   "hole_after": false
+  },
+  {
+   "text": "def count_char (s : String) (c : Char) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def numWays (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem numWays_non_negative (s : String) :\n  numWays s ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "numWays_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6f0823761debbb10e3564dbf692f7c9b9d2368828bc613ad47d52468113353a1",
+   "ctors": [],
+   "value": null
+  },
+  "numWays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "count_char": {
+   "kind": "def",
+   "role": "impl",
+   "type": "37a11728be2c95ecae70bca41e76796383556a4bfe9b49bfb5dfdeaa4c3132fd",
+   "ctors": [],
+   "value": null
+  },
+  "MOD": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "76bb31d53adfdb40dd9a8aadd10cd539ce35d9911ea2ef640f0705e32842fc2b"
+  }
+ },
+ "sha": "ad6942878383"
+}

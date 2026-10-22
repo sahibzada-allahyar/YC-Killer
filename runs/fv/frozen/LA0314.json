@@ -1,0 +1,84 @@
+{
+ "id": "LA0314",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def f (n x : Int) : Int :=\n  let y := n / x\n  y + x * y * (y - 1) / 2\n\ndef IsDivisor (d n : Int) : Prop :=\n  d > 0 ∧ n % d = 0\n\ndef IsSorted (s : List Int) : Prop :=\n  ∀ i j, 0 ≤ i ∧ i < j ∧ j < s.length → s[i]! ≤ s[j]!\n\ndef NoDuplicates (s : List Int) : Prop :=\n  ∀ i j, 0 ≤ i ∧ i < j ∧ j < s.length → s[i]! ≠ s[j]!\n\n@[reducible, simp]\ndef solve_precond (n : Int) : Prop :=\n  n ≥ 2\n\ndef solve (n : Int) (h_precond : solve_precond n) : List Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (result : List Int) (h_precond : solve_precond n) : Prop :=\n  NoDuplicates result ∧ \n  IsSorted result ∧ \n  (∀ v, v ∈ result ↔ ∃ d, IsDivisor d n ∧ v = f n d) ∧ \n  result.length > 0\n\ntheorem solve_spec_satisfied (n : Int) (h_precond : solve_precond n) :\n    solve_postcond n (solve n h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def f (n x : Int) : Int :=\n  let y := n / x\n  y + x * y * (y - 1) / 2\n\ndef IsDivisor (d n : Int) : Prop :=\n  d > 0 ∧ n % d = 0\n\ndef IsSorted (s : List Int) : Prop :=\n  ∀ i j, 0 ≤ i ∧ i < j ∧ j < s.length → s[i]! ≤ s[j]!\n\ndef NoDuplicates (s : List Int) : Prop :=\n  ∀ i j, 0 ≤ i ∧ i < j ∧ j < s.length → s[i]! ≠ s[j]!\n\n@[reducible, simp]\ndef solve_precond (n : Int) : Prop :=\n  n ≥ 2",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (h_precond : solve_precond n) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (result : List Int) (h_precond : solve_precond n) : Prop :=\n  NoDuplicates result ∧ \n  IsSorted result ∧ \n  (∀ v, v ∈ result ↔ ∃ d, IsDivisor d n ∧ v = f n d) ∧ \n  result.length > 0",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (h_precond : solve_precond n) :\n    solve_postcond n (solve n h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4d711dd1fd5eb47de56df70269ac5510c9bfe264ec8d683fb46847cb775e5992",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "210450b15331ed1f8cfa53700581351d2750398147a2c342a2a8aaae0e4b5a33",
+   "ctors": [],
+   "value": "23b54c435fce4650594df8eacb973d2d8881615787ea2003a94cb4398f3c128b"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "ec96ef06dbeb5eeafb23aae4ccbbf23e28c130ad01b2142e87727b898a39a46a",
+   "ctors": [],
+   "value": "6750c219ed699fa355640bf154694f2ed7d6f8be0599241c13bb51a5febe1fe7"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ca1221917d1d3827da50cd3d9bed1e48cdf113ede559c905731e492411ef16a5",
+   "ctors": [],
+   "value": null
+  },
+  "f": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": "0fec26ce452bb2134f9990db49290764dad3e6d3bb9f8e5a5d0c9bc19171e0bd"
+  },
+  "NoDuplicates": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "396167b6b12a33dd094f131bfde64289eef0fdb5dc3c1e95658e78bc6498f71d",
+   "ctors": [],
+   "value": "6e5e94f94aff578955bcc5e6332603daf1b1eddc2461262645ffea6b25725784"
+  },
+  "IsSorted": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "396167b6b12a33dd094f131bfde64289eef0fdb5dc3c1e95658e78bc6498f71d",
+   "ctors": [],
+   "value": "06771f8f38ace28558ea70387d3c716530249f0806d931f2fc4665cbf0dba09c"
+  },
+  "IsDivisor": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "644b67a4342d0363d79cae088f8e275d1850a0d58c5c341bae8443ef2020b8ce"
+  }
+ },
+ "sha": "ca38dd44f179"
+}

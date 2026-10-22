@@ -1,0 +1,38 @@
+{
+ "id": "LF4240",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def start_smoking (bars : Nat) (boxes : Nat) : Nat :=\nsorry\n\ntheorem start_smoking_nonnegative (bars boxes : Nat) :\n  start_smoking bars boxes ≥ 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 22\n-/\n#guard_msgs in\n#eval start_smoking 0 1\n\n/--\ninfo: 224\n-/\n#guard_msgs in\n#eval start_smoking 1 0\n\n/--\ninfo: 247\n-/\n#guard_msgs in\n#eval start_smoking 1 1\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 22\n-/\n#guard_msgs in\n#eval start_smoking 0 1\n\n/--\ninfo: 224\n-/\n#guard_msgs in\n#eval start_smoking 1 0\n\n/--\ninfo: 247\n-/\n#guard_msgs in\n#eval start_smoking 1 1",
+ "chunks": [
+  {
+   "text": "def start_smoking (bars : Nat) (boxes : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem start_smoking_nonnegative (bars boxes : Nat) :\n  start_smoking bars boxes ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "start_smoking_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "74e4e9a15b2c6417c5e40c0afd5c0e37624b0cb6f65fe2dc889defe0ed76d20b",
+   "ctors": [],
+   "value": null
+  },
+  "start_smoking": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "29d1463f6c5a"
+}

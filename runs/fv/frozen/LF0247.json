@@ -1,0 +1,78 @@
+{
+ "id": "LF0247",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def abs (n : Int) : Int := \n  if n < 0 then -n else n\n\ndef clumsy (n : Nat) : Int := sorry\n\ntheorem clumsy_one :\n  clumsy 1 = 1 := sorry\n\ntheorem clumsy_two :\n  clumsy 2 = 2 := sorry\n\ntheorem clumsy_bounds_larger (n : Nat) (h : n ≥ 3) (h2 : n ≤ 100) :\n  n - 1 ≤ clumsy n ∧ clumsy n ≤ n + 3 := sorry\n\ntheorem clumsy_monotonic_small (n : Nat) (h : n ≤ 4) (h2 : n ≥ 1) :\n  ∀ i, 1 ≤ i → i < n → clumsy i ≤ clumsy (i+1) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval clumsy 4\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval clumsy 10\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval clumsy 1\n",
+ "warnings": [],
+ "preamble": "def abs (n : Int) : Int := \n  if n < 0 then -n else n",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval clumsy 4\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval clumsy 10\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval clumsy 1",
+ "chunks": [
+  {
+   "text": "def clumsy (n : Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem clumsy_one :\n  clumsy 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem clumsy_two :\n  clumsy 2 = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem clumsy_bounds_larger (n : Nat) (h : n ≥ 3) (h2 : n ≤ 100) :\n  n - 1 ≤ clumsy n ∧ clumsy n ≤ n + 3 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem clumsy_monotonic_small (n : Nat) (h : n ≤ 4) (h2 : n ≥ 1) :\n  ∀ i, 1 ≤ i → i < n → clumsy i ≤ clumsy (i+1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "clumsy_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fe39b6bf5679c0925402b12539f80ef429340f58d258ad7c3f53a84eef8864ca",
+   "ctors": [],
+   "value": null
+  },
+  "clumsy_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "47abefbe5ec1cf5e6a4817108ca9a631b68a405ca2609384b051353a6cd57cc0",
+   "ctors": [],
+   "value": null
+  },
+  "clumsy_monotonic_small": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "489279886cf3d1a5e4b25333f713b3a109a89dfa6135fa39dc5edce57769b440",
+   "ctors": [],
+   "value": null
+  },
+  "clumsy_bounds_larger": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8e4fb6effbb96b838c396661046096ec15ef0f6e81f68604ef5b0681dc8a73bc",
+   "ctors": [],
+   "value": null
+  },
+  "clumsy": {
+   "kind": "def",
+   "role": "impl",
+   "type": "45a38ef37bfa45f8cc41c6298383eb8f5798e412291489dc25ee658dc8d1b5fe",
+   "ctors": [],
+   "value": null
+  },
+  "abs": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": "086677c34e57e8fc2bd172c86edf70266bb3ddfbde024a625f459802181a4868"
+  }
+ },
+ "sha": "3517973d0082"
+}

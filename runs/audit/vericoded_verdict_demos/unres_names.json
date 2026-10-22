@@ -1,0 +1,1095 @@
+[
+{
+"id": "DA0001",
+"names": [
+"abs"
+],
+"other": []
+},
+{
+"id": "DA0009",
+"names": [
+"IntToStringFunc",
+"MaxSeqFunc",
+"MinSeqFunc",
+"SplitIntsFunc",
+"SplitLinesFunc",
+"ValidIntLine"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type int"
+]
+},
+{
+"id": "DA0012",
+"names": [
+"goldenRatioRelation",
+"parseInt",
+"parseInts",
+"splitLines",
+"xorSequence"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0014",
+"names": [
+"gcd"
+],
+"other": []
+},
+{
+"id": "DA0015",
+"names": [
+"Max3",
+"MaxCharFreq",
+"ParseInt",
+"SplitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type seq<char>"
+]
+},
+{
+"id": "DA0019",
+"names": [
+"removeFirstX",
+"reverse",
+"rotatePuzzleLeft",
+"splitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0020",
+"names": [
+"ComputeConstantEnd",
+"ComputeDecreasingEnd",
+"ComputeIncreasingEnd"
+],
+"other": []
+},
+{
+"id": "DA0022",
+"names": [
+"UnitWord"
+],
+"other": []
+},
+{
+"id": "DA0025",
+"names": [
+"GreedyStep"
+],
+"other": []
+},
+{
+"id": "DA0027",
+"names": [
+"CountNewlines"
+],
+"other": []
+},
+{
+"id": "DA0028",
+"names": [
+"find_char"
+],
+"other": []
+},
+{
+"id": "DA0030",
+"names": [
+"ParseInt",
+"ParseIntArray",
+"SplitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0034",
+"names": [
+"parseInput",
+"simulateTrainsHelper"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type int"
+]
+},
+{
+"id": "DA0036",
+"names": [
+"min"
+],
+"other": []
+},
+{
+"id": "DA0040",
+"names": [
+"IntToString",
+"SplitSpaces",
+"StringToInt",
+"TrimNewline"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0046",
+"names": [
+"min"
+],
+"other": []
+},
+{
+"id": "DA0055",
+"names": [
+"abs"
+],
+"other": []
+},
+{
+"id": "DA0058",
+"names": [
+"GenerateSquaresHelper",
+"IntToStringHelper",
+"IsSubsequenceHelper"
+],
+"other": []
+},
+{
+"id": "DA0066",
+"names": [
+"ParseLine",
+"SplitByChar",
+"SplitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type string"
+]
+},
+{
+"id": "DA0073",
+"names": [
+"sum"
+],
+"other": []
+},
+{
+"id": "DA0075",
+"names": [
+"min"
+],
+"other": []
+},
+{
+"id": "DA0086",
+"names": [
+"minPossibleSumUpToIndex",
+"sum"
+],
+"other": []
+},
+{
+"id": "DA0093",
+"names": [
+"IntToString",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0106",
+"names": [
+"AllGridCharactersValid",
+"CanReachTargetWithBFS",
+"ContainsRequiredNewlines",
+"CoordinatesWithinBounds",
+"CountSurroundingIntactIce",
+"EndsWithNewlineOrCanAppend",
+"GridContainsOnlyValidChars",
+"HasExactlyRequiredLines",
+"HasValidStructure",
+"IsAdjacent"
+],
+"other": []
+},
+{
+"id": "DA0113",
+"names": [
+"abs",
+"tirednessForSteps"
+],
+"other": []
+},
+{
+"id": "DA0114",
+"names": [
+"formatOutputHelper",
+"parseIntFunc",
+"processTestCasesHelper",
+"splitFunc"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0118",
+"names": [
+"IntToString",
+"SplitLinesFunc",
+"SplitSpacesFunc",
+"StringToInt",
+"SumUpToSize"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0125",
+"names": [
+"SplitOnSpace"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type seq<char>"
+]
+},
+{
+"id": "DA0127",
+"names": [
+"toString"
+],
+"other": []
+},
+{
+"id": "DA0130",
+"names": [
+"CountOccurrences",
+"CountPermutationsReachingGoal",
+"FindEnd",
+"FindStart",
+"ParseTwoInts",
+"SplitLines",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"type of the receiver is not fully determined at this program point"
+]
+},
+{
+"id": "DA0141",
+"names": [
+"SortPairsFunc",
+"SplitLinesHelper"
+],
+"other": []
+},
+{
+"id": "DA0150",
+"names": [
+"gcd",
+"intToString"
+],
+"other": []
+},
+{
+"id": "DA0162",
+"names": [
+"CountFromPrimitives",
+"ExtractInteger",
+"IntToString",
+"IntegerSquareRoot"
+],
+"other": []
+},
+{
+"id": "DA0163",
+"names": [
+"IntToString"
+],
+"other": []
+},
+{
+"id": "DA0166",
+"names": [
+"ParseInt",
+"ParseIntSeq",
+"SplitLines",
+"SplitSpaces"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"second argument to \"in\" must be a set, multiset, or sequence with elements of type int, or a map with domain int (instead got ?)"
+]
+},
+{
+"id": "DA0170",
+"names": [
+"int_to_string",
+"power"
+],
+"other": []
+},
+{
+"id": "DA0184",
+"names": [
+"sum"
+],
+"other": []
+},
+{
+"id": "DA0186",
+"names": [
+"IntToString"
+],
+"other": []
+},
+{
+"id": "DA0188",
+"names": [
+"max"
+],
+"other": []
+},
+{
+"id": "DA0189",
+"names": [
+"CountValidSquares",
+"IntToStringFunc",
+"SplitLinesFunc",
+"SplitSpacesFunc",
+"StringToIntFunc"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0196",
+"names": [
+"MinIndex"
+],
+"other": []
+},
+{
+"id": "DA0197",
+"names": [
+"CreateAllHandlePairs",
+"GreedyAssignmentWorks",
+"ParseInt",
+"ParseIntSequence",
+"ParseNames",
+"SortHandlePairs",
+"SplitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"type of the receiver is not fully determined at this program point"
+]
+},
+{
+"id": "DA0201",
+"names": [
+"intToStringHelper"
+],
+"other": []
+},
+{
+"id": "DA0213",
+"names": [
+"intToString"
+],
+"other": []
+},
+{
+"id": "DA0222",
+"names": [
+"IntToString",
+"MaxConsecutiveWinsUpTo",
+"SplitLines",
+"SplitString",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type string"
+]
+},
+{
+"id": "DA0225",
+"names": [
+"parseInt",
+"splitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"multi-selection has type ? which is incompatible with expected type seq<char>",
+"sequence has type ? which is incompatible with expected type char"
+]
+},
+{
+"id": "DA0231",
+"names": [
+"SplitLinesHelper",
+"SplitOnSpace",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0235",
+"names": [
+"optimalMaxDistance"
+],
+"other": []
+},
+{
+"id": "DA0241",
+"names": [
+"parseInt",
+"parseRectanglesFromLines",
+"split"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0247",
+"names": [
+"CalculateMinimumBulletsHelper"
+],
+"other": []
+},
+{
+"id": "DA0269",
+"names": [
+"calculate_balance",
+"count_char",
+"find_char",
+"nat_to_string",
+"reverse",
+"rfind_char"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0272",
+"names": [
+"SplitLines",
+"SplitWhitespace",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"multi-selection has type ? which is incompatible with expected type seq<char>",
+"sequence has type ? which is incompatible with expected type seq<char>"
+]
+},
+{
+"id": "DA0282",
+"names": [
+"min"
+],
+"other": []
+},
+{
+"id": "DA0294",
+"names": [
+"SplitLines",
+"SplitSpaces",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type string"
+]
+},
+{
+"id": "DA0298",
+"names": [
+"countRecordsFromIndex",
+"indexOf"
+],
+"other": []
+},
+{
+"id": "DA0303",
+"names": [
+"BuildGrid",
+"FormatGrid",
+"ProcessOperations",
+"SplitLines",
+"SplitString",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"type of the receiver is not fully determined at this program point"
+]
+},
+{
+"id": "DA0307",
+"names": [
+"SplitLines",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type seq<char>"
+]
+},
+{
+"id": "DA0318",
+"names": [
+"Power",
+"SumWithDecreasingPowers",
+"SumWithIncreasingPowers"
+],
+"other": []
+},
+{
+"id": "DA0322",
+"names": [
+"min5"
+],
+"other": []
+},
+{
+"id": "DA0323",
+"names": [
+"LastOccurrenceHelper"
+],
+"other": []
+},
+{
+"id": "DA0334",
+"names": [
+"Combination",
+"Power"
+],
+"other": []
+},
+{
+"id": "DA0335",
+"names": [
+"determineWinner"
+],
+"other": []
+},
+{
+"id": "DA0337",
+"names": [
+"pow"
+],
+"other": []
+},
+{
+"id": "DA0344",
+"names": [
+"parseIntHelper"
+],
+"other": []
+},
+{
+"id": "DA0346",
+"names": [
+"countDashes",
+"countOnes",
+"extractM",
+"extractMFromLine",
+"extractN",
+"extractQuery",
+"joinWithNewlines",
+"min",
+"splitLines",
+"toString"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"second argument to \"in\" must be a set, multiset, or sequence with elements of type seq<char>, or a map with domain seq<char> (instead got ?)",
+"sequence has type ? which is incompatible with expected type string",
+"type of the receiver is not fully determined at this program point"
+]
+},
+{
+"id": "DA0349",
+"names": [
+"find_unvisited",
+"get_cycle_length",
+"mark_cycle_visited"
+],
+"other": []
+},
+{
+"id": "DA0351",
+"names": [
+"calculateAnswer",
+"intToString",
+"parseInputFunc"
+],
+"other": [
+"type of the receiver is not fully determined at this program point"
+]
+},
+{
+"id": "DA0354",
+"names": [
+"greedy_palindrome_count"
+],
+"other": []
+},
+{
+"id": "DA0359",
+"names": [
+"pow"
+],
+"other": []
+},
+{
+"id": "DA0373",
+"names": [
+"ComputeOptimalMoves",
+"IsLeafNode",
+"NoDuplicates"
+],
+"other": []
+},
+{
+"id": "DA0377",
+"names": [
+"Min"
+],
+"other": []
+},
+{
+"id": "DA0379",
+"names": [
+"Max",
+"MaxGapSquared",
+"MaxInNestedSeq",
+"SumRange"
+],
+"other": []
+},
+{
+"id": "DA0395",
+"names": [
+"BuildComponentGraph",
+"BuildSameColorComponents",
+"ParseInt",
+"ParseIntSeq",
+"SplitLines",
+"TreeDiameter",
+"TrimWhitespace"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"multi-selection has type ? which is incompatible with expected type seq<char>",
+"second argument to \"in\" must be a set, multiset, or sequence with elements of type char, or a map with domain char (instead got ?)",
+"sequence has type ? which is incompatible with expected type int",
+"sequence has type ? which is incompatible with expected type string"
+]
+},
+{
+"id": "DA0398",
+"names": [
+"IntToString"
+],
+"other": []
+},
+{
+"id": "DA0402",
+"names": [
+"MaxSeq",
+"SplitScore"
+],
+"other": []
+},
+{
+"id": "DA0406",
+"names": [
+"RepeatChar"
+],
+"other": []
+},
+{
+"id": "DA0410",
+"names": [
+"intToString",
+"isValidInteger",
+"parseInteger",
+"split"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type seq<char>"
+]
+},
+{
+"id": "DA0411",
+"names": [
+"SplitByNewlines",
+"SplitBySpaces",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0428",
+"names": [
+"getDistinctLines",
+"groupLinesBySlope",
+"isValidCoordinateLine",
+"isValidFirstLine",
+"parseFirstLineAsNat",
+"splitLines",
+"sumOverSlopeGroups"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0435",
+"names": [
+"IntToStringHelper",
+"ParseIntArrayHelper",
+"ParseIntHelper",
+"SplitLinesHelper",
+"gcd"
+],
+"other": []
+},
+{
+"id": "DA0437",
+"names": [
+"abs"
+],
+"other": []
+},
+{
+"id": "DA0440",
+"names": [
+"gcd"
+],
+"other": []
+},
+{
+"id": "DA0450",
+"names": [
+"FormatResultsHelper",
+"GetPairsFromLines",
+"ParseInt",
+"SplitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0451",
+"names": [
+"ParseInt",
+"SplitLines",
+"SplitSpaces"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type seq<char>"
+]
+},
+{
+"id": "DA0453",
+"names": [
+"isLimitedPrimeHelper"
+],
+"other": []
+},
+{
+"id": "DA0454",
+"names": [
+"ParseInt",
+"SplitLines",
+"SplitSpaces"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0462",
+"names": [
+"ComputePaths",
+"InitializePath"
+],
+"other": []
+},
+{
+"id": "DA0465",
+"names": [
+"intToString"
+],
+"other": []
+},
+{
+"id": "DA0491",
+"names": [
+"IntToString",
+"MaxDivisibleBy3SegmentsHelper"
+],
+"other": []
+},
+{
+"id": "DA0492",
+"names": [
+"sum_mins"
+],
+"other": []
+},
+{
+"id": "DA0493",
+"names": [
+"max"
+],
+"other": []
+},
+{
+"id": "DA0503",
+"names": [
+"f"
+],
+"other": []
+},
+{
+"id": "DA0510",
+"names": [
+"FindSpaceHelper",
+"StringToIntHelper"
+],
+"other": []
+},
+{
+"id": "DA0511",
+"names": [
+"IntToString"
+],
+"other": []
+},
+{
+"id": "DA0520",
+"names": [
+"IntToString",
+"IsValidInteger",
+"SplitString",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0559",
+"names": [
+"intToString",
+"isValidInteger",
+"replace",
+"split",
+"stringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0560",
+"names": [
+"ParseIntegerHelper"
+],
+"other": []
+},
+{
+"id": "DA0563",
+"names": [
+"parseInput"
+],
+"other": []
+},
+{
+"id": "DA0568",
+"names": [
+"SplitBySpace",
+"SplitLines",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type string"
+]
+},
+{
+"id": "DA0576",
+"names": [
+"intToString",
+"parseInputPure"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type int"
+]
+},
+{
+"id": "DA0583",
+"names": [
+"generateOutputHelper",
+"parseIntsHelper"
+],
+"other": []
+},
+{
+"id": "DA0593",
+"names": [
+"SplitOnSpaces"
+],
+"other": []
+},
+{
+"id": "DA0596",
+"names": [
+"find_newline"
+],
+"other": []
+},
+{
+"id": "DA0598",
+"names": [
+"IntToString",
+"ParseIntSpec",
+"SplitByNewlineSpec",
+"SplitBySpaceSpec"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0602",
+"names": [
+"abs"
+],
+"other": []
+},
+{
+"id": "DA0614",
+"names": [
+"IntToString",
+"Sqrt",
+"StringToInt"
+],
+"other": []
+},
+{
+"id": "DA0618",
+"names": [
+"ExtractNumbers"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type int"
+]
+},
+{
+"id": "DA0640",
+"names": [
+"Min",
+"ParseIntArray",
+"SplitByNewlines",
+"StringToInt",
+"Sum"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type int",
+"sequence has type ? which is incompatible with expected type string"
+]
+},
+{
+"id": "DA0645",
+"names": [
+"IsValidCheckpointLine",
+"IsValidInteger",
+"ParseCheckpoints",
+"ParseInt",
+"SplitLines"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0646",
+"names": [
+"intToStringPure",
+"parseThreeNumbers"
+],
+"other": [
+"type of the receiver is not fully determined at this program point"
+]
+},
+{
+"id": "DA0652",
+"names": [
+"split"
+],
+"other": [
+"incorrect type for selection into ? (got int)",
+"sequence has type ? which is incompatible with expected type string"
+]
+},
+{
+"id": "DA0660",
+"names": [
+"IsValidInt",
+"SplitStringPure",
+"StringToIntPure"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+},
+{
+"id": "DA0666",
+"names": [
+"IntToString",
+"IsValidInteger",
+"SplitString",
+"StringToInt"
+],
+"other": [
+"incorrect type for selection into ? (got int)"
+]
+}
+]

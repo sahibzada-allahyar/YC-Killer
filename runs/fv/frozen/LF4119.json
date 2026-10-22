@@ -1,0 +1,93 @@
+{
+ "id": "LF4119",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def rectangles (n m : Nat) : Nat :=\n  sorry\n\ntheorem rectangles_symmetry\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles n m = rectangles m n :=\n  sorry\n\ntheorem rectangles_non_negative\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles n m ≥ 0 :=\n  sorry\n\ntheorem rectangles_single_line_n\n  (n : Nat)\n  (h : n ≥ 1) :\n  rectangles 1 n = 0 :=\n  sorry\n\ntheorem rectangles_single_line_m\n  (n : Nat)\n  (h : n ≥ 1) :\n  rectangles n 1 = 0 :=\n  sorry\n\ntheorem rectangles_monotonic_n\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles (n + 1) m ≥ rectangles n m :=\n  sorry\n\ntheorem rectangles_monotonic_m\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles n (m + 1) ≥ rectangles n m :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval rectangles 2 3\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval rectangles 2 2\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval rectangles 3 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval rectangles 2 3\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval rectangles 2 2\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval rectangles 3 3",
+ "chunks": [
+  {
+   "text": "def rectangles (n m : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem rectangles_symmetry\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles n m = rectangles m n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem rectangles_non_negative\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles n m ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem rectangles_single_line_n\n  (n : Nat)\n  (h : n ≥ 1) :\n  rectangles 1 n = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem rectangles_single_line_m\n  (n : Nat)\n  (h : n ≥ 1) :\n  rectangles n 1 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem rectangles_monotonic_n\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles (n + 1) m ≥ rectangles n m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem rectangles_monotonic_m\n  (n m : Nat)\n  (h1 : n ≥ 2)\n  (h2 : m ≥ 2) :\n  rectangles n (m + 1) ≥ rectangles n m :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "rectangles_symmetry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5c6a7e493c11d3b7d4f1d3954a719c1b3c66623d8a03abed60119ee7b2864ec8",
+   "ctors": [],
+   "value": null
+  },
+  "rectangles_single_line_n": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cf1c96820e7c4a4051ba0c3d794290867a70e0ef90c574bb0ef17693ebd7251c",
+   "ctors": [],
+   "value": null
+  },
+  "rectangles_single_line_m": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e441ff6803331101b1d04df5c0196424cfd7c7297c7c392786b99d29fbe27648",
+   "ctors": [],
+   "value": null
+  },
+  "rectangles_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4d332acac943820e36932b5702fb85b7a24ac207dcb843affbf137dbdc8abf9e",
+   "ctors": [],
+   "value": null
+  },
+  "rectangles_monotonic_n": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f9d0c13d44f26b2bc2d0a27ad7cb3389b0eca4fe6e41e6d3f9a366cab990bbf4",
+   "ctors": [],
+   "value": null
+  },
+  "rectangles_monotonic_m": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ccef3533a7affbf15143c3467393a925efcd8e614c9b155be5cf2a8773147741",
+   "ctors": [],
+   "value": null
+  },
+  "rectangles": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a352538ec3ad"
+}

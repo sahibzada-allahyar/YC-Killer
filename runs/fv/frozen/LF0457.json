@@ -1,0 +1,38 @@
+{
+ "id": "LF0457",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum_four_divisors (nums: List Nat) : Nat := sorry\n\ntheorem sum_four_divisors_nonnegative (nums: List Nat) : \n  sum_four_divisors nums ≥ 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 32\n-/\n#guard_msgs in\n#eval sum_four_divisors [21, 4, 7]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval sum_four_divisors [1, 2, 3, 4]\n\n/--\ninfo: 32\n-/\n#guard_msgs in\n#eval sum_four_divisors [21]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 32\n-/\n#guard_msgs in\n#eval sum_four_divisors [21, 4, 7]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval sum_four_divisors [1, 2, 3, 4]\n\n/--\ninfo: 32\n-/\n#guard_msgs in\n#eval sum_four_divisors [21]",
+ "chunks": [
+  {
+   "text": "def sum_four_divisors (nums: List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_four_divisors_nonnegative (nums: List Nat) : \n  sum_four_divisors nums ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_four_divisors_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2b2c172f535f819134569d988cd4b1d9918d079d8d1b0f3a59f73cf577f30bb1",
+   "ctors": [],
+   "value": null
+  },
+  "sum_four_divisors": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "3e175bb7635f"
+}

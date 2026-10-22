@@ -1,0 +1,71 @@
+{
+ "id": "LF1380",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_sokka_journey (n: Nat) : Nat :=\n  sorry\n\ntheorem solve_sokka_journey_non_negative (n: Nat) (h: n ≥ 2) : \n  solve_sokka_journey n ≥ 0 := sorry\n\ntheorem solve_sokka_journey_less_than_modulo (n: Nat) (h: n ≥ 2) :\n  solve_sokka_journey n < 1000000007 := sorry\n\ntheorem solve_sokka_journey_minimum_input :\n  solve_sokka_journey 2 = 0 := sorry\n\ntheorem solve_sokka_journey_three_input :\n  solve_sokka_journey 3 = 333333336 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 200000002\n-/\n#guard_msgs in\n#eval solve_sokka_journey 5\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_sokka_journey 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 200000002\n-/\n#guard_msgs in\n#eval solve_sokka_journey 5\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_sokka_journey 2",
+ "chunks": [
+  {
+   "text": "def solve_sokka_journey (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_sokka_journey_non_negative (n: Nat) (h: n ≥ 2) : \n  solve_sokka_journey n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_sokka_journey_less_than_modulo (n: Nat) (h: n ≥ 2) :\n  solve_sokka_journey n < 1000000007 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_sokka_journey_minimum_input :\n  solve_sokka_journey 2 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_sokka_journey_three_input :\n  solve_sokka_journey 3 = 333333336 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_sokka_journey_three_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7065e6d19cf120d24e762dfb32aad04e384e8a96cadb9b5da8185f8f1655bc07",
+   "ctors": [],
+   "value": null
+  },
+  "solve_sokka_journey_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7b58ee92197f3eb988afdee944880712c8e26a3e7b009ef8dd4535f688f819bf",
+   "ctors": [],
+   "value": null
+  },
+  "solve_sokka_journey_minimum_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9478fd1f87486bb3df932185e92ce53cfeac2f0ca4075249a51ea2f8ca08c694",
+   "ctors": [],
+   "value": null
+  },
+  "solve_sokka_journey_less_than_modulo": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7a9b19b93ccb239e1a1b78d9ee33164e65533c698b4beabe24f54ab43a31b1da",
+   "ctors": [],
+   "value": null
+  },
+  "solve_sokka_journey": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "00ba4a09aa16"
+}

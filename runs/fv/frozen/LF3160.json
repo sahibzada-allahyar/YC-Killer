@@ -1,0 +1,71 @@
+{
+ "id": "LF3160",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sale_hotdogs (n: Nat) : Nat :=\n  sorry\n\ntheorem hotdog_prices_monotonic {n: Nat} (h: n > 1) : \n  sale_hotdogs n / n ≤ sale_hotdogs (n-1) / (n-1) :=\nsorry\n\ntheorem hotdog_price_tiers_less_than_5 {n: Nat} (h: n > 0 ∧ n < 5) :\n  sale_hotdogs n = n * 100 :=\nsorry\n\ntheorem hotdog_price_tiers_less_than_10 {n: Nat} (h: n ≥ 5 ∧ n < 10) :\n  sale_hotdogs n = n * 95 :=\nsorry \n\ntheorem hotdog_price_tiers_10_or_more {n: Nat} (h: n ≥ 10) :\n  sale_hotdogs n = n * 90 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 300\n-/\n#guard_msgs in\n#eval sale_hotdogs 3\n\n/--\ninfo: 665\n-/\n#guard_msgs in\n#eval sale_hotdogs 7\n\n/--\ninfo: 9000\n-/\n#guard_msgs in\n#eval sale_hotdogs 100\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 300\n-/\n#guard_msgs in\n#eval sale_hotdogs 3\n\n/--\ninfo: 665\n-/\n#guard_msgs in\n#eval sale_hotdogs 7\n\n/--\ninfo: 9000\n-/\n#guard_msgs in\n#eval sale_hotdogs 100",
+ "chunks": [
+  {
+   "text": "def sale_hotdogs (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotdog_prices_monotonic {n: Nat} (h: n > 1) : \n  sale_hotdogs n / n ≤ sale_hotdogs (n-1) / (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotdog_price_tiers_less_than_5 {n: Nat} (h: n > 0 ∧ n < 5) :\n  sale_hotdogs n = n * 100 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotdog_price_tiers_less_than_10 {n: Nat} (h: n ≥ 5 ∧ n < 10) :\n  sale_hotdogs n = n * 95 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem hotdog_price_tiers_10_or_more {n: Nat} (h: n ≥ 10) :\n  sale_hotdogs n = n * 90 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sale_hotdogs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "hotdog_prices_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d59e9ade23249cd101230df536dd824a2228eb1a80ff02f32126abe210ba5307",
+   "ctors": [],
+   "value": null
+  },
+  "hotdog_price_tiers_less_than_5": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fcb6a6d4d20675bbc0fca82f209de8c82d35d3caca8161dad3ff7980407ef1a3",
+   "ctors": [],
+   "value": null
+  },
+  "hotdog_price_tiers_less_than_10": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "84bf289e221e38f8f156d9c5cc5785124e10a690e4ee49529b8961047a068c04",
+   "ctors": [],
+   "value": null
+  },
+  "hotdog_price_tiers_10_or_more": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7d8391afa3736814734a76144d60def1ce6db46ee448f8cb2b8876bbde3b1772",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "eeb5187b3150"
+}

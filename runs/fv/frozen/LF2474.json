@@ -1,0 +1,49 @@
+{
+ "id": "LF2474",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def format_numbers (n : Nat) : String := sorry\n\ndef length_nat (s : List String) : Nat := s.length\n\ntheorem format_numbers_equal_line_lengths (n : Nat)\n  (h : 0 < n ∧ n ≤ 100) :\n  ∀ i j, i < n → j < n → \n  (((format_numbers n).splitOn \"\\n\")[i]!).length = \n  (((format_numbers n).splitOn \"\\n\")[j]!).length :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def format_numbers (n : Nat) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def length_nat (s : List String) : Nat := s.length",
+   "hole_after": false
+  },
+  {
+   "text": "theorem format_numbers_equal_line_lengths (n : Nat)\n  (h : 0 < n ∧ n ≤ 100) :\n  ∀ i j, i < n → j < n → \n  (((format_numbers n).splitOn \"\\n\")[i]!).length = \n  (((format_numbers n).splitOn \"\\n\")[j]!).length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "length_nat": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "36fc955d100209f88b69abd697cd4b13ab6ee1753a028e42d8bf74b2bd2d985b",
+   "ctors": [],
+   "value": "c13f5c9fdff20d48319d23142567b3aeec299c2df39d25c8201149ee4dbf4544"
+  },
+  "format_numbers_equal_line_lengths": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "20e957d57b85b0c4853419abd5bc480ac91187119fd3ee0a2cfcdc63fcbe6512",
+   "ctors": [],
+   "value": null
+  },
+  "format_numbers": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d2b1af5b6fc058b72a00e7dd112351c1777e0f29a3338a76ccfe5c7c63d63258",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1e1daca8263b"
+}

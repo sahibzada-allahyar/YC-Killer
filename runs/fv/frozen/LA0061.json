@@ -1,0 +1,84 @@
+{
+ "id": "LA0061",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_occurrences (s : List Nat) (value : Nat) : Nat :=\n  match s with\n  | [] => 0\n  | h :: t => if h = value then 1 + count_occurrences t value else count_occurrences t value\n\ndef sum_seq (s : List Nat) : Nat :=\n  match s with\n  | [] => 0\n  | h :: t => h + sum_seq t\n\ndef subarray_matches_desired (subarray : List Nat) (desired : List Nat) (m : Nat) : Prop :=\n  desired.length = m ∧\n  ∀ color, 1 ≤ color ∧ color ≤ m → count_occurrences subarray color = desired.get! (color - 1)\n\ndef ValidInput (n m : Nat) (colors desired : List Nat) : Prop :=\n  colors.length = n ∧\n  desired.length = m ∧\n  (∀ i, 0 ≤ i ∧ i < colors.length → 1 ≤ colors.get! i ∧ colors.get! i ≤ m) ∧\n  (∀ i, 0 ≤ i ∧ i < desired.length → 0 ≤ desired.get! i) ∧\n  sum_seq desired ≤ n\n\n@[reducible, simp]\ndef solve_precond (n m : Nat) (colors desired : List Nat) : Prop :=\n  ValidInput n m colors desired\n\ndef solve (n m : Nat) (colors desired : List Nat) (h_precond : solve_precond n m colors desired) : String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n m : Nat) (colors desired : List Nat) (result : String) (h_precond : solve_precond n m colors desired) : Prop :=\n  (result = \"YES\" ↔ ∃ i j, 0 ≤ i ∧ i ≤ j ∧ j < n ∧ subarray_matches_desired (colors.drop i |>.take (j + 1 - i)) desired m) ∧\n  (result = \"YES\" ∨ result = \"NO\")\n\ntheorem solve_spec_satisfied (n m : Nat) (colors desired : List Nat) (h_precond : solve_precond n m colors desired) :\n    solve_postcond n m colors desired (solve n m colors desired h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def count_occurrences (s : List Nat) (value : Nat) : Nat :=\n  match s with\n  | [] => 0\n  | h :: t => if h = value then 1 + count_occurrences t value else count_occurrences t value\n\ndef sum_seq (s : List Nat) : Nat :=\n  match s with\n  | [] => 0\n  | h :: t => h + sum_seq t\n\ndef subarray_matches_desired (subarray : List Nat) (desired : List Nat) (m : Nat) : Prop :=\n  desired.length = m ∧\n  ∀ color, 1 ≤ color ∧ color ≤ m → count_occurrences subarray color = desired.get! (color - 1)\n\ndef ValidInput (n m : Nat) (colors desired : List Nat) : Prop :=\n  colors.length = n ∧\n  desired.length = m ∧\n  (∀ i, 0 ≤ i ∧ i < colors.length → 1 ≤ colors.get! i ∧ colors.get! i ≤ m) ∧\n  (∀ i, 0 ≤ i ∧ i < desired.length → 0 ≤ desired.get! i) ∧\n  sum_seq desired ≤ n\n\n@[reducible, simp]\ndef solve_precond (n m : Nat) (colors desired : List Nat) : Prop :=\n  ValidInput n m colors desired",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n m : Nat) (colors desired : List Nat) (h_precond : solve_precond n m colors desired) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n m : Nat) (colors desired : List Nat) (result : String) (h_precond : solve_precond n m colors desired) : Prop :=\n  (result = \"YES\" ↔ ∃ i j, 0 ≤ i ∧ i ≤ j ∧ j < n ∧ subarray_matches_desired (colors.drop i |>.take (j + 1 - i)) desired m) ∧\n  (result = \"YES\" ∨ result = \"NO\")",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n m : Nat) (colors desired : List Nat) (h_precond : solve_precond n m colors desired) :\n    solve_postcond n m colors desired (solve n m colors desired h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_seq": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "subarray_matches_desired": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "96e35f992b081ef54229bde19ec38e44e8625dff659cd08c685ce4a68d9c4a98",
+   "ctors": [],
+   "value": "ad1374e06158f91e438a433aab79de275a9a1bdb7b50f0dab64043c14956eb37"
+  },
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "92b99db5ce8d4f634509aac93567ec98492d5c6d45bf3316f5553799b8e39281",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "37ccfda51b01447f87fa6d2c4d609727a4915a79a764897925114ff6ad2f77ea",
+   "ctors": [],
+   "value": "e136d01e4acd74211efd011a003d2ce70a6c4d9c9611c8eddf489164f43f8677"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1949b2c28b51a2c86a6567295b05a0983f12e1756f9aa8e3e5818f3befa7a201",
+   "ctors": [],
+   "value": "beb5106d306710c89f1d3e8327f795779c6bf175fa54eb67d8e966d7eef1a9e0"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "83ef667c701c01eca99d57b3247fa04ced2c1af4ad47fd0ce22070654d18aaf0",
+   "ctors": [],
+   "value": null
+  },
+  "count_occurrences": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "e26fe6796b3f0d9441d167c053eb966bc6518ae4bb7a2287c700b20573eb9b45",
+   "ctors": [],
+   "value": "968b863832cee993e1aa08c4e8f21b317eefebd12c5a05e4b17eb8ee15db3cf0"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "37ccfda51b01447f87fa6d2c4d609727a4915a79a764897925114ff6ad2f77ea",
+   "ctors": [],
+   "value": "12b7e4c2a6b0ce4f380be57d5d5ec897f14378c68fd921edcd28c6852b19586d"
+  }
+ },
+ "sha": "b4747ed365f4"
+}

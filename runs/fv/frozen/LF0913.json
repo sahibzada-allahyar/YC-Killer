@@ -1,0 +1,60 @@
+{
+ "id": "LF0913",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_pool_area (r : Nat) : Nat := sorry\n\ntheorem max_pool_area_quadratic {r : Nat} : \n  max_pool_area r = 2 * (r * r) := sorry\n\ntheorem max_pool_area_positive {r : Nat} (h : r > 0) : \n  max_pool_area r > 0 := sorry\n\ntheorem max_pool_area_zero_iff {r : Nat} :\n  max_pool_area r = 0 ↔ r = 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def max_pool_area (r : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_pool_area_quadratic {r : Nat} : \n  max_pool_area r = 2 * (r * r) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_pool_area_positive {r : Nat} (h : r > 0) : \n  max_pool_area r > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_pool_area_zero_iff {r : Nat} :\n  max_pool_area r = 0 ↔ r = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_pool_area_zero_iff": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e5d6e5e045cfb31dfc34f8b75f3017f17afed67917106501cd763b61b021a7c2",
+   "ctors": [],
+   "value": null
+  },
+  "max_pool_area_quadratic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "512f8769661ffef7c84c81ff78216b559707a2067a105b0b48aeaf7578bb1513",
+   "ctors": [],
+   "value": null
+  },
+  "max_pool_area_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f504ff39c69efc57eea7d6ab206ce41a01a954ac1ab6059a47a66f0f535e02db",
+   "ctors": [],
+   "value": null
+  },
+  "max_pool_area": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1c777c8f4b0a"
+}

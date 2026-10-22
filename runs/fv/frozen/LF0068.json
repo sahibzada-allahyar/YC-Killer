@@ -1,0 +1,93 @@
+{
+ "id": "LF0068",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_cost_clear_mines (a b : Nat) (mine_map : String) : Nat := sorry \n\ntheorem min_cost_non_negative (a b : Nat) (mine_map : String) :\n  min_cost_clear_mines a b mine_map ≥ 0 := sorry\n\ntheorem mines_exist_min_cost (a b : Nat) (mine_map : String) :\n  (∃ c, c ∈ mine_map.data ∧ c = '1') →\n  min_cost_clear_mines a b mine_map ≥ a := sorry\n\ntheorem cost_upper_bound (a b : Nat) (mine_map : String) :\n  min_cost_clear_mines a b mine_map ≤ a * (mine_map.data.filter (· = '1')).length := sorry\n\ntheorem single_mine_cost (a b : Nat) :\n  min_cost_clear_mines a b \"1\" = a := sorry\n\ntheorem single_mine_cost_with_gap (a b : Nat) :\n  min_cost_clear_mines a b \"010\" = a := sorry\n\ntheorem new_activation_cheaper :\n  min_cost_clear_mines 2 3 \"101\" = 4 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_cost_clear_mines 1 1 \"01000010\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_cost_clear_mines 5 1 \"01101110\"\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_cost_clear_mines 3 2 \"1011\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_cost_clear_mines 1 1 \"01000010\"\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_cost_clear_mines 5 1 \"01101110\"\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_cost_clear_mines 3 2 \"1011\"",
+ "chunks": [
+  {
+   "text": "def min_cost_clear_mines (a b : Nat) (mine_map : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_cost_non_negative (a b : Nat) (mine_map : String) :\n  min_cost_clear_mines a b mine_map ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mines_exist_min_cost (a b : Nat) (mine_map : String) :\n  (∃ c, c ∈ mine_map.data ∧ c = '1') →\n  min_cost_clear_mines a b mine_map ≥ a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem cost_upper_bound (a b : Nat) (mine_map : String) :\n  min_cost_clear_mines a b mine_map ≤ a * (mine_map.data.filter (· = '1')).length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_mine_cost (a b : Nat) :\n  min_cost_clear_mines a b \"1\" = a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_mine_cost_with_gap (a b : Nat) :\n  min_cost_clear_mines a b \"010\" = a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem new_activation_cheaper :\n  min_cost_clear_mines 2 3 \"101\" = 4 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_mine_cost_with_gap": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cfe13bb269afb618027a4e5c2f1c8bf0be22a53762e3da69eb7b0dbb1ab08e06",
+   "ctors": [],
+   "value": null
+  },
+  "single_mine_cost": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f8cbc2f59e5b11d8947e5faf1644d61f94f9c28c8f36c8ca64cbba65dfa0f139",
+   "ctors": [],
+   "value": null
+  },
+  "new_activation_cheaper": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3d7ecfc14b4c0c621aaa479abd7f61c306e93b34602adebec6b39902ec1d3dbd",
+   "ctors": [],
+   "value": null
+  },
+  "mines_exist_min_cost": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8ee1b248ada1a7c7d1ad376ede3c7cf37693bc3349df03c2db4ff34dfc43f7b0",
+   "ctors": [],
+   "value": null
+  },
+  "min_cost_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9bd76985af33cafa1a5b2b43b871fa4195f9ac623a4bff9a4002e7db76d6c4d2",
+   "ctors": [],
+   "value": null
+  },
+  "min_cost_clear_mines": {
+   "kind": "def",
+   "role": "impl",
+   "type": "8f3bb7f6cfe7f8e755608c0d26bd1064d519d13992147b316d4aebcb83f93950",
+   "ctors": [],
+   "value": null
+  },
+  "cost_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8d6064c159bb2df64da03f487a0f7d8e3bf028bcdc64f1900dac9f71674c1236",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8d96110a2675"
+}

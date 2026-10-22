@@ -1,0 +1,60 @@
+{
+ "id": "LF3186",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def poly_subtract : List Int → List Int → List Int\n  | p1, p2 => sorry\n\ntheorem poly_subtract_length (p1 p2 : List Int) :\n  p1.length > 0 ∨ p2.length > 0 →\n  (poly_subtract p1 p2).length ≤ max p1.length p2.length := sorry\n\ntheorem poly_subtract_self (p : List Int) :\n  ∀ x ∈ poly_subtract p p, x = 0 := sorry\n\ntheorem poly_subtract_empty (p : List Int) :\n  poly_subtract p [] = p := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval poly_subtract [] []\n\n/--\ninfo: [1, 2, 3, 4, 5, 6]\n-/\n#guard_msgs in\n#eval poly_subtract [1, 2, 3, 4, 5, 6] []\n\n/--\ninfo: [-1, -2, -3, -4, -5, -6]\n-/\n#guard_msgs in\n#eval poly_subtract [] [1, 2, 3, 4, 5, 6]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval poly_subtract [] []\n\n/--\ninfo: [1, 2, 3, 4, 5, 6]\n-/\n#guard_msgs in\n#eval poly_subtract [1, 2, 3, 4, 5, 6] []\n\n/--\ninfo: [-1, -2, -3, -4, -5, -6]\n-/\n#guard_msgs in\n#eval poly_subtract [] [1, 2, 3, 4, 5, 6]",
+ "chunks": [
+  {
+   "text": "def poly_subtract : List Int → List Int → List Int",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_subtract_length (p1 p2 : List Int) :\n  p1.length > 0 ∨ p2.length > 0 →\n  (poly_subtract p1 p2).length ≤ max p1.length p2.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_subtract_self (p : List Int) :\n  ∀ x ∈ poly_subtract p p, x = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem poly_subtract_empty (p : List Int) :\n  poly_subtract p [] = p :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "poly_subtract_self": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6b477fbcc9fbfed7a6fd4e2c52182aa14ea2ee6c10fdc617833c528ed0810012",
+   "ctors": [],
+   "value": null
+  },
+  "poly_subtract_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8a1a27f77be52b360397ef5cdd01a59eab6ceb002d2c2067848fdf9eb67314bd",
+   "ctors": [],
+   "value": null
+  },
+  "poly_subtract_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "45901d0a5cb7bf7cb93c12f80092c82cf7d1a001c47570cd86f5d8de85b59775",
+   "ctors": [],
+   "value": null
+  },
+  "poly_subtract": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d0c021bd5e78f55d0ae19aa14e0347eabf22c9e4ffc790e7f336d28a05bcb5b0",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "92fac0317de0"
+}

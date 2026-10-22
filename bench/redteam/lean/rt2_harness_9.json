@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "CHEAT_REJECTED", "lens": "harness", "hole": false, "what": "comment-swap variant: the frozen theorem header is placed inside a /- -/ comment with a weaker real `findSum_six : True`. Splitting at the in-comment chunk match leaves the hole holding an unterminated `/-`, flagged by the ban scan -> CHEAT_REJECTED (not PROVED)."}

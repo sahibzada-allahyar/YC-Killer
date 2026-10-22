@@ -1,0 +1,71 @@
+{
+ "id": "LF4464",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def x (n : Nat) : List (List Nat) := sorry\n\ntheorem square_matrix (n : Nat) (h: n > 0) :\n  let result := x n\n  List.length result = n ∧\n  ∀ row ∈ result, List.length row = n :=\nsorry\n\ntheorem diagonal_ones (n : Nat) (h: n > 0) :\n  let result := x n\n  (∀ i, i < n → List.get! (List.get! result i) i = 1) ∧\n  (∀ i, i < n → List.get! (List.get! result i) (n-1-i) = 1) :=\nsorry\n\ntheorem non_diagonal_zeros (n : Nat) (h: n > 0) :\n  let result := x n\n  ∀ i j, i < n → j < n → i ≠ j → j ≠ (n-1-i) →\n    List.get! (List.get! result i) j = 0 :=\nsorry\n\ntheorem symmetry (n : Nat) (h: n > 0) :\n  let result := x n\n  (∀ i j, i < n → j < n → List.get! (List.get! result i) j = \n              List.get! (List.get! result (n-1-i)) (n-1-j)) ∧\n  (∀ i j, i < n → j < n → List.get! (List.get! result i) j = \n              List.get! (List.get! result j) i) :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [[1, 0, 1], [0, 1, 0], [1, 0, 1]]\n-/\n#guard_msgs in\n#eval x 3\n\n/--\ninfo: [[1, 0, 0, 1], [0, 1, 1, 0], [0, 1, 1, 0], [1, 0, 0, 1]]\n-/\n#guard_msgs in\n#eval x 4\n\n/--\ninfo: [[1, 0, 0, 0, 1], [0, 1, 0, 1, 0], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 0, 0, 1]]\n-/\n#guard_msgs in\n#eval x 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [[1, 0, 1], [0, 1, 0], [1, 0, 1]]\n-/\n#guard_msgs in\n#eval x 3\n\n/--\ninfo: [[1, 0, 0, 1], [0, 1, 1, 0], [0, 1, 1, 0], [1, 0, 0, 1]]\n-/\n#guard_msgs in\n#eval x 4\n\n/--\ninfo: [[1, 0, 0, 0, 1], [0, 1, 0, 1, 0], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 0, 0, 1]]\n-/\n#guard_msgs in\n#eval x 5",
+ "chunks": [
+  {
+   "text": "def x (n : Nat) : List (List Nat) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem square_matrix (n : Nat) (h: n > 0) :\n  let result := x n\n  List.length result = n ∧\n  ∀ row ∈ result, List.length row = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem diagonal_ones (n : Nat) (h: n > 0) :\n  let result := x n\n  (∀ i, i < n → List.get! (List.get! result i) i = 1) ∧\n  (∀ i, i < n → List.get! (List.get! result i) (n-1-i) = 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem non_diagonal_zeros (n : Nat) (h: n > 0) :\n  let result := x n\n  ∀ i j, i < n → j < n → i ≠ j → j ≠ (n-1-i) →\n    List.get! (List.get! result i) j = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem symmetry (n : Nat) (h: n > 0) :\n  let result := x n\n  (∀ i j, i < n → j < n → List.get! (List.get! result i) j = \n              List.get! (List.get! result (n-1-i)) (n-1-j)) ∧\n  (∀ i j, i < n → j < n → List.get! (List.get! result i) j = \n              List.get! (List.get! result j) i) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "x": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7b59345b57261bba75d56a7ba6456dbb923cf83509cb39dc3a874b7db4d2e3d5",
+   "ctors": [],
+   "value": null
+  },
+  "symmetry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "aeca21cede2f526bb707173c72fa9c2db8b207ef69b7b6b05cdd836e0312034d",
+   "ctors": [],
+   "value": null
+  },
+  "square_matrix": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "27119ddc4bcd8d08e357db6af9b1cdec800b20030641e1ed722170164c242d06",
+   "ctors": [],
+   "value": null
+  },
+  "non_diagonal_zeros": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b7f9fc1cc578480054c14de21cce2073f4589155b52c9f7f71bedb79b26bef86",
+   "ctors": [],
+   "value": null
+  },
+  "diagonal_ones": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dc6bab89ed7e072d3155495bb3860aa6fb3b640f713740d86ee75a0f51c5f6ab",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "73c451f7ff46"
+}

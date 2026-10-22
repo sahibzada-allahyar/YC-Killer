@@ -1,0 +1,60 @@
+{
+ "id": "LF1071",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calculate_goodness_sum (a b : Nat) : Nat :=\n  sorry\n\ndef MOD := 1000000007\n\ndef num_digits (n : Nat) : Nat :=\n  sorry\n\ntheorem monotonic_increasing (n : Nat) (h : 1 < n) (h2 : n ≤ 10000) :\n  calculate_goodness_sum 1 (n-1) ≤ calculate_goodness_sum 1 n :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 75\n-/\n#guard_msgs in\n#eval calculate_goodness_sum 9 12\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval calculate_goodness_sum 1 5\n\n/--\ninfo: 66\n-/\n#guard_msgs in\n#eval calculate_goodness_sum 10 12\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 75\n-/\n#guard_msgs in\n#eval calculate_goodness_sum 9 12\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval calculate_goodness_sum 1 5\n\n/--\ninfo: 66\n-/\n#guard_msgs in\n#eval calculate_goodness_sum 10 12",
+ "chunks": [
+  {
+   "text": "def calculate_goodness_sum (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def MOD := 1000000007",
+   "hole_after": false
+  },
+  {
+   "text": "def num_digits (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem monotonic_increasing (n : Nat) (h : 1 < n) (h2 : n ≤ 10000) :\n  calculate_goodness_sum 1 (n-1) ≤ calculate_goodness_sum 1 n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "num_digits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "monotonic_increasing": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "148b8b6e5263134a231b737f2e6135083c80254807aeeec1d02d7ca414bca6d4",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_goodness_sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "MOD": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "76bb31d53adfdb40dd9a8aadd10cd539ce35d9911ea2ef640f0705e32842fc2b"
+  }
+ },
+ "sha": "ce54b6ebe725"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "DA0108",
+ "source": "apps",
+ "source-id": "apps_test_548",
+ "preamble": "predicate AllEven(a: seq<int>)\n{\n    forall i :: 0 <= i < |a| ==> a[i] % 2 == 0\n}\n\npredicate HasOdd(a: seq<int>)\n{\n    exists i :: 0 <= i < |a| && a[i] % 2 == 1\n}",
+ "spec": "method solve(a: seq<int>) returns (result: string)\n    ensures result == \"Second\" <==> AllEven(a)\n    ensures result == \"First\" <==> HasOdd(a)\n    ensures result == \"First\" || result == \"Second\"",
+ "postamble": ""
+}

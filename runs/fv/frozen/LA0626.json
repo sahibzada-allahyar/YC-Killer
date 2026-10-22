@@ -1,0 +1,91 @@
+{
+ "id": "LA0626",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (scores : List Int) : Prop :=\n  scores.length > 0 ∧ scores.length ≤ 100 ∧\n  ∀ i, 0 ≤ i ∧ i < scores.length → 1 ≤ scores[i]! ∧ scores[i]! ≤ 100\n\ndef sum (scores : List Int) : Int :=\n  scores.foldl (· + ·) 0\n\ndef AllMultiplesOf10 (scores : List Int) : Bool :=\n  scores.all (fun x => x % 10 = 0)\n\ndef IsSmallestNonMultiple (scores : List Int) (value : Int) : Prop :=\n  value ∈ scores ∧ \n  value % 10 ≠ 0 ∧\n  ∀ x, x ∈ scores ∧ x % 10 ≠ 0 → value ≤ x\n\ndef CorrectResult (scores : List Int) (result : Int) : Prop :=\n  let totalSum := sum scores\n  if totalSum % 10 ≠ 0 then\n    result = totalSum\n  else if AllMultiplesOf10 scores then\n    result = 0\n  else\n    ∃ smallestNonMultiple, \n      IsSmallestNonMultiple scores smallestNonMultiple ∧\n      result = totalSum - smallestNonMultiple\n\n@[reducible, simp]\ndef solve_precond (scores : List Int) : Prop :=\n  ValidInput scores\n\ndef solve (scores : List Int) (h_precond : solve_precond scores) : Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (scores : List Int) (result : Int) (h_precond : solve_precond scores) : Prop :=\n  CorrectResult scores result\n\ntheorem solve_spec_satisfied (scores : List Int) (h_precond : solve_precond scores) :\n    solve_postcond scores (solve scores h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (scores : List Int) : Prop :=\n  scores.length > 0 ∧ scores.length ≤ 100 ∧\n  ∀ i, 0 ≤ i ∧ i < scores.length → 1 ≤ scores[i]! ∧ scores[i]! ≤ 100\n\ndef sum (scores : List Int) : Int :=\n  scores.foldl (· + ·) 0\n\ndef AllMultiplesOf10 (scores : List Int) : Bool :=\n  scores.all (fun x => x % 10 = 0)\n\ndef IsSmallestNonMultiple (scores : List Int) (value : Int) : Prop :=\n  value ∈ scores ∧ \n  value % 10 ≠ 0 ∧\n  ∀ x, x ∈ scores ∧ x % 10 ≠ 0 → value ≤ x\n\ndef CorrectResult (scores : List Int) (result : Int) : Prop :=\n  let totalSum := sum scores\n  if totalSum % 10 ≠ 0 then\n    result = totalSum\n  else if AllMultiplesOf10 scores then\n    result = 0\n  else\n    ∃ smallestNonMultiple, \n      IsSmallestNonMultiple scores smallestNonMultiple ∧\n      result = totalSum - smallestNonMultiple\n\n@[reducible, simp]\ndef solve_precond (scores : List Int) : Prop :=\n  ValidInput scores",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (scores : List Int) (h_precond : solve_precond scores) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (scores : List Int) (result : Int) (h_precond : solve_precond scores) : Prop :=\n  CorrectResult scores result",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (scores : List Int) (h_precond : solve_precond scores) :\n    solve_postcond scores (solve scores h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": "43d3aaa6fa2f0c2749204bf4ac7bb3cd6d24cd978cfff860d28d053ac950b98b"
+  },
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e3d1dea17518c5699afbc7664b8d482c2a544d2f3e870ed4c0164cba1cbd7beb",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "396167b6b12a33dd094f131bfde64289eef0fdb5dc3c1e95658e78bc6498f71d",
+   "ctors": [],
+   "value": "6665224ee26c32dbe89d9479105ebaa2e64b17d7d3a13b97510ce9f082909477"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "9a38bb7b55cd16f7847403705b93aec0005356661990e955c8b7484f03abeeca",
+   "ctors": [],
+   "value": "b339a214d5cdb267938756c4b5cee759633e29eacbc3ef98dfda5ccf40cd3bce"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "296567c171cb8a153750062dbaa1b7415daf3fd674b9814ef7b77885c1eafc98",
+   "ctors": [],
+   "value": null
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "396167b6b12a33dd094f131bfde64289eef0fdb5dc3c1e95658e78bc6498f71d",
+   "ctors": [],
+   "value": "54d83dd12f0de69038440741f0a384a192ce81181e8e8e8d1b1e2f334136ad3a"
+  },
+  "IsSmallestNonMultiple": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d08e296f0e0f694683af0d7567ffaf4ad9ba8dd50868e750842b39001e8fed94",
+   "ctors": [],
+   "value": "61afc0d550ec5585246474f0c3ed6dcab6244e1b1d8cf156bf58f2ac273c4f31"
+  },
+  "CorrectResult": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d08e296f0e0f694683af0d7567ffaf4ad9ba8dd50868e750842b39001e8fed94",
+   "ctors": [],
+   "value": "1b34e8273c848aee43f2439c0bf47118976c81c38c5467e98bdfa96ee442f9bf"
+  },
+  "AllMultiplesOf10": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b295506f1e9a51c9dbc47fa3287a9069c7ff4f012c5915f8730a719e58ab07c6",
+   "ctors": [],
+   "value": "89a8d55dec73b85b3a4333139c5544cc84bb8b70fc22e0ac2366d6c24f73ac7f"
+  }
+ },
+ "sha": "357fbab7ec4c"
+}

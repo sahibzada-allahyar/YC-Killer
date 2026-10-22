@@ -1,0 +1,104 @@
+{
+ "id": "LF0951",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_jem_laziness (n b m : Nat) : Nat :=\n  sorry\n\ntheorem jem_laziness_positive (n b m : Nat) \n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n b m > 0 :=\n  sorry\n\ntheorem single_problem_case (b m : Nat)\n    (h1 : b > 0) (h2 : m > 0) :\n  solve_jem_laziness 1 b m = m :=\n  sorry\n\ntheorem increases_with_problems (n b m : Nat)\n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n b m ≥ solve_jem_laziness (n-1) b m :=\n  sorry\n\ntheorem increases_with_breaks (n b m : Nat)\n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n (b+1) m ≥ solve_jem_laziness n b m :=\n  sorry\n\ntheorem increases_with_initial_time (n b m : Nat)\n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n b (m+1) ≥ solve_jem_laziness n b m :=\n  sorry\n\ntheorem single_problem_edge_case :\n  solve_jem_laziness 1 1 1 = 1 :=\n  sorry\n\ntheorem two_problems_case :\n  solve_jem_laziness 2 5 1 = 8 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 45\n-/\n#guard_msgs in\n#eval solve_jem_laziness 9 1 2\n\n/--\ninfo: 131351258112\n-/\n#guard_msgs in\n#eval solve_jem_laziness 123456 123456 123456\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval solve_jem_laziness 4 1 1\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 45\n-/\n#guard_msgs in\n#eval solve_jem_laziness 9 1 2\n\n/--\ninfo: 131351258112\n-/\n#guard_msgs in\n#eval solve_jem_laziness 123456 123456 123456\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval solve_jem_laziness 4 1 1",
+ "chunks": [
+  {
+   "text": "def solve_jem_laziness (n b m : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem jem_laziness_positive (n b m : Nat) \n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n b m > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_problem_case (b m : Nat)\n    (h1 : b > 0) (h2 : m > 0) :\n  solve_jem_laziness 1 b m = m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem increases_with_problems (n b m : Nat)\n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n b m ≥ solve_jem_laziness (n-1) b m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem increases_with_breaks (n b m : Nat)\n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n (b+1) m ≥ solve_jem_laziness n b m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem increases_with_initial_time (n b m : Nat)\n    (h1 : n > 0) (h2 : b > 0) (h3 : m > 0) :\n  solve_jem_laziness n b (m+1) ≥ solve_jem_laziness n b m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_problem_edge_case :\n  solve_jem_laziness 1 1 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_problems_case :\n  solve_jem_laziness 2 5 1 = 8 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "two_problems_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f2e0d26bd2d17b167e99149dde239f8b93171739aa9d444302c6a57d2d57f9f4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_jem_laziness": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  },
+  "single_problem_edge_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f5a70e503d0338f66e90e6fc9f7715d6da3c5a8bf06e9e0e1870ef44a4a9ac52",
+   "ctors": [],
+   "value": null
+  },
+  "single_problem_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "778cbabb833aa0c3587c183af8da5b0b9845e206ea52ef083a67283898b88452",
+   "ctors": [],
+   "value": null
+  },
+  "jem_laziness_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ba10cdd65f7365645d5a469a9fbf2c0dc33336d5547c4896abf83ada3598d6c8",
+   "ctors": [],
+   "value": null
+  },
+  "increases_with_problems": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ce709583a15d1c4a6e4e3e17f7ff50620ac9bf83e94645649446c2c1f56bd9c0",
+   "ctors": [],
+   "value": null
+  },
+  "increases_with_initial_time": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "add783ac425ac81e164d79d383d706dec74e961bd5a585d7cd5adf9fa4016125",
+   "ctors": [],
+   "value": null
+  },
+  "increases_with_breaks": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "28defce94ce47f620352d1b08e3dcbb39ffce883846b6d9ab2b7953c25ef91f2",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "635803ab8802"
+}

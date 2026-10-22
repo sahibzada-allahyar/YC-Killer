@@ -1,0 +1,49 @@
+{
+ "id": "LF4460",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def remainder (dividend divisor : Nat) : Nat := sorry\n\ntheorem remainder_properties {dividend divisor : Nat} (h : divisor > 0) : \n  let r := remainder dividend divisor\n  (r ≥ 0) ∧ \n  (r < divisor) ∧ \n  (dividend = (dividend / divisor) * divisor + r)\n  := sorry\n\ntheorem remainder_matches_modulo {dividend divisor : Nat} (h : divisor > 0) :\n  remainder dividend divisor = dividend % divisor := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval remainder 3 2\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval remainder 19 2\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval remainder 27 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval remainder 3 2\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval remainder 19 2\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval remainder 27 5",
+ "chunks": [
+  {
+   "text": "def remainder (dividend divisor : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem remainder_properties {dividend divisor : Nat} (h : divisor > 0) : \n  let r := remainder dividend divisor\n  (r ≥ 0) ∧ \n  (r < divisor) ∧ \n  (dividend = (dividend / divisor) * divisor + r)\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem remainder_matches_modulo {dividend divisor : Nat} (h : divisor > 0) :\n  remainder dividend divisor = dividend % divisor :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "remainder_properties": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b0deae0e15966ba63ecb6c21f5097824e3c8e104a1c5200b86261a9df7d98b46",
+   "ctors": [],
+   "value": null
+  },
+  "remainder_matches_modulo": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d2223b0671f43e4455f64768ce5223889b349838bde5481e354b555cd62198c1",
+   "ctors": [],
+   "value": null
+  },
+  "remainder": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "e3b9f7b506f9"
+}

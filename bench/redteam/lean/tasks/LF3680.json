@@ -1,0 +1,12 @@
+{
+ "id": "LF3680",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_003680",
+ "vc-description": "/-\nYour task is to write function ```findSum```.\n\nUpto and including ```n```, this function will return the sum of all multiples of 3 and 5.\n\nFor example:\n\n```findSum(5)``` should return 8 (3 + 5)\n\n```findSum(10)``` should return 33 (3 + 5 + 6 + 9 + 10)\n-/",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def findSum (n : Int) : Int := sorry\n\ntheorem findSum_six :\n  findSum 6 = 14 := sorry",
+ "vc-theorems": "",
+ "vc-postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval findSum 5\n\n/--\ninfo: 33\n-/\n#guard_msgs in\n#eval findSum 10\n\n/--\ninfo: 2418\n-/\n#guard_msgs in\n#eval findSum 100"
+}

@@ -1,0 +1,49 @@
+{
+ "id": "LF4373",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def powers_of_two (n : Nat) : List Nat := sorry\n\ntheorem powers_of_two_length (n : Nat) :\n  (powers_of_two n).length = n + 1 := sorry\n\ntheorem powers_of_two_first_one (n : Nat) :\n  (powers_of_two n).head! = 1 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval powers_of_two 0\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval powers_of_two 1\n\n/--\ninfo: [1, 2, 4, 8, 16]\n-/\n#guard_msgs in\n#eval powers_of_two 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval powers_of_two 0\n\n/--\ninfo: [1, 2]\n-/\n#guard_msgs in\n#eval powers_of_two 1\n\n/--\ninfo: [1, 2, 4, 8, 16]\n-/\n#guard_msgs in\n#eval powers_of_two 4",
+ "chunks": [
+  {
+   "text": "def powers_of_two (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem powers_of_two_length (n : Nat) :\n  (powers_of_two n).length = n + 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem powers_of_two_first_one (n : Nat) :\n  (powers_of_two n).head! = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "powers_of_two_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1c5076f2b08726dfaaeacc20f4d1942bd40bcdc7124ee0f7e3d412605804b2cd",
+   "ctors": [],
+   "value": null
+  },
+  "powers_of_two_first_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6ae979a31ef9db7ba4e7fe5adc774a06d5cc415ae1e45d566952ef66eeb011b1",
+   "ctors": [],
+   "value": null
+  },
+  "powers_of_two": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "fa66d389060d"
+}

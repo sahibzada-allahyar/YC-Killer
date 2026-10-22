@@ -1,0 +1,98 @@
+{
+ "id": "LA0238",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (n k : Int) (A : List Int) : Prop :=\n  1 ≤ k ∧ k ≤ n ∧ n ≤ 100 ∧\n  n % k = 0 ∧\n  A.length = n.natAbs ∧\n  ∀ i, 0 ≤ i ∧ i < A.length → A[i]! = 1 ∨ A[i]! = 2\n\ndef CountOnesInColumn (A : List Int) (n k col : Int) : Int :=\n  (List.range n.natAbs).filter (fun j => j % k.natAbs = col.natAbs ∧ j < A.length ∧ A[j]! = 1) |>.length\n\ndef CountTwosInColumn (A : List Int) (n k col : Int) : Int :=\n  (List.range n.natAbs).filter (fun j => j % k.natAbs = col.natAbs ∧ j < A.length ∧ A[j]! = 2) |>.length\n\ndef MinChangesForColumn (A : List Int) (n k col : Int) : Int :=\n  let count1 := CountOnesInColumn A n k col\n  let count2 := CountTwosInColumn A n k col\n  if count1 < count2 then count1 else count2\n\npartial def SumMinChangesHelper (A : List Int) (n k col : Int) : Int :=\n  if col = k then 0 \n  else MinChangesForColumn A n k col + SumMinChangesHelper A n k (col + 1)\n\ndef SumMinChangesForAllColumns (A : List Int) (n k : Int) : Int :=\n  SumMinChangesHelper A n k 0\n\n@[reducible, simp]\ndef solve_precond (n k : Int) (A : List Int) : Prop :=\n  ValidInput n k A\n\ndef solve (n k : Int) (A : List Int) (h_precond : solve_precond n k A) : Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n k : Int) (A : List Int) (result : Int) (h_precond : solve_precond n k A) : Prop :=\n  0 ≤ result ∧ result ≤ n ∧ result = SumMinChangesForAllColumns A n k\n\ntheorem solve_spec_satisfied (n k : Int) (A : List Int) (h_precond : solve_precond n k A) :\n    solve_postcond n k A (solve n k A h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (n k : Int) (A : List Int) : Prop :=\n  1 ≤ k ∧ k ≤ n ∧ n ≤ 100 ∧\n  n % k = 0 ∧\n  A.length = n.natAbs ∧\n  ∀ i, 0 ≤ i ∧ i < A.length → A[i]! = 1 ∨ A[i]! = 2\n\ndef CountOnesInColumn (A : List Int) (n k col : Int) : Int :=\n  (List.range n.natAbs).filter (fun j => j % k.natAbs = col.natAbs ∧ j < A.length ∧ A[j]! = 1) |>.length\n\ndef CountTwosInColumn (A : List Int) (n k col : Int) : Int :=\n  (List.range n.natAbs).filter (fun j => j % k.natAbs = col.natAbs ∧ j < A.length ∧ A[j]! = 2) |>.length\n\ndef MinChangesForColumn (A : List Int) (n k col : Int) : Int :=\n  let count1 := CountOnesInColumn A n k col\n  let count2 := CountTwosInColumn A n k col\n  if count1 < count2 then count1 else count2\n\npartial def SumMinChangesHelper (A : List Int) (n k col : Int) : Int :=\n  if col = k then 0 \n  else MinChangesForColumn A n k col + SumMinChangesHelper A n k (col + 1)\n\ndef SumMinChangesForAllColumns (A : List Int) (n k : Int) : Int :=\n  SumMinChangesHelper A n k 0\n\n@[reducible, simp]\ndef solve_precond (n k : Int) (A : List Int) : Prop :=\n  ValidInput n k A",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n k : Int) (A : List Int) (h_precond : solve_precond n k A) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n k : Int) (A : List Int) (result : Int) (h_precond : solve_precond n k A) : Prop :=\n  0 ≤ result ∧ result ≤ n ∧ result = SumMinChangesForAllColumns A n k",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n k : Int) (A : List Int) (h_precond : solve_precond n k A) :\n    solve_postcond n k A (solve n k A h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cd4c3587ff83129bdce5f889c8ccffcbc9a546e44376c5f1501e0d3693e2e2d2",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d40d5e85c062aae3710c64df388f7d3356b1dc43c3aaaf1beabed3793997bc28",
+   "ctors": [],
+   "value": "124794db27edd77df94f6b8cefa4f7459cdb92a06263a5863faf38bf93ba15bf"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "8605ecc8b4fddc9f0513c45bc2fcd8f777978efac98ad090b97fa1fbfc1f2d36",
+   "ctors": [],
+   "value": "e2154d6c6bf09605b9613bbe9d634b00681adada0cafcf58a1b45a2c1523c3fa"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "636f9f001368053b723d7738941837a003222cbf2739778b47d37fb83f5b84b3",
+   "ctors": [],
+   "value": null
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d40d5e85c062aae3710c64df388f7d3356b1dc43c3aaaf1beabed3793997bc28",
+   "ctors": [],
+   "value": "e2a68e6bf22d1698583e3c00b9a209ad3263908dde387ca7c41ff04d043ffc7e"
+  },
+  "SumMinChangesHelper": {
+   "kind": "opaque",
+   "role": "frozen",
+   "type": "1d6d349bf805690a067fb0217038d90b82507ca36d8624a33581694641b00f05",
+   "ctors": [],
+   "value": "cd2989157495371b9dc5b3fe274cff21a6cf36ae1f7bfec2820a832ff167a609"
+  },
+  "SumMinChangesForAllColumns": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "259aa8b55a682645d043de0b447759edafd7ea3d94a5cdf686bf763e3959c752",
+   "ctors": [],
+   "value": "7f74090026539195e75e455a53929fa6d89b8bddf46b1f48cb7746f26426b0ca"
+  },
+  "MinChangesForColumn": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1d6d349bf805690a067fb0217038d90b82507ca36d8624a33581694641b00f05",
+   "ctors": [],
+   "value": "810860704fab75b776faa59f2b15e360f6fc0cf83dc45109b71a9f82c1b1c7c4"
+  },
+  "CountTwosInColumn": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1d6d349bf805690a067fb0217038d90b82507ca36d8624a33581694641b00f05",
+   "ctors": [],
+   "value": "c39880e2a73786d4018995fc9ba6e242ec9ce0c17aca74ad156c195d71500c9e"
+  },
+  "CountOnesInColumn": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1d6d349bf805690a067fb0217038d90b82507ca36d8624a33581694641b00f05",
+   "ctors": [],
+   "value": "8edb0bdac2fccee4e5bac47cf9b6dbfef9d8e86e120f9d3e2fced6d2111bb1a5"
+  }
+ },
+ "sha": "062bfc787819"
+}

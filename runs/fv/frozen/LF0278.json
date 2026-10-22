@@ -1,0 +1,74 @@
+{
+ "id": "LF0278",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def maximum (xs: List Int) : Int := match xs with\n  | [] => 0\n  | h::t => t.foldl max h\n\ndef minimum (xs: List Int) : Int := match xs with\n  | [] => 0\n  | h::t => t.foldl min h\n\ndef smallestRangeII (nums: List Int) (k: Int) : Int := sorry\n\ntheorem result_nonnegative (nums: List Int) (k: Int) (h: k ≥ 0) :\n  smallestRangeII nums k ≥ 0 := sorry\n\ntheorem single_element_gives_zero (x: Int) (k: Int) :\n  smallestRangeII [x] k = 0 := sorry\n\ntheorem empty_list_gives_zero (k: Int) :\n  smallestRangeII [] k = 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval smallestRangeII [1] 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval smallestRangeII [0, 10] 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval smallestRangeII [1, 3, 6] 3\n",
+ "warnings": [],
+ "preamble": "def maximum (xs: List Int) : Int := match xs with\n  | [] => 0\n  | h::t => t.foldl max h\n\ndef minimum (xs: List Int) : Int := match xs with\n  | [] => 0\n  | h::t => t.foldl min h",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval smallestRangeII [1] 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval smallestRangeII [0, 10] 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval smallestRangeII [1, 3, 6] 3",
+ "chunks": [
+  {
+   "text": "def smallestRangeII (nums: List Int) (k: Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_nonnegative (nums: List Int) (k: Int) (h: k ≥ 0) :\n  smallestRangeII nums k ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_element_gives_zero (x: Int) (k: Int) :\n  smallestRangeII [x] k = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_list_gives_zero (k: Int) :\n  smallestRangeII [] k = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "smallestRangeII": {
+   "kind": "def",
+   "role": "impl",
+   "type": "0fab2b07c0bd92407e6684fb29b8d15410a3961d678fec46dfea9889b0e84663",
+   "ctors": [],
+   "value": null
+  },
+  "single_element_gives_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fb614be54948dfa187fb53dfca037ed76ed6733adb8fd4ab953f31a632eed9f6",
+   "ctors": [],
+   "value": null
+  },
+  "result_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2b3ee4b04a9838dec2689f8d0724159d0bb86cd3c4bb57294910d5062c4b78b4",
+   "ctors": [],
+   "value": null
+  },
+  "minimum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": "8eff5583c19f0da635f0d4550c76f84c31d28cfc8d577502867fd5cf25e9c7b5"
+  },
+  "maximum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": "9d84d83f0544af5256cebee277158c5153f557dca47ad944d6050038462eb682"
+  },
+  "empty_list_gives_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ca4ad146613be542c1aaaa24a31ea5d5bbeb1e7d766d24282da05ef4ce79cf76",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ff03c030cedf"
+}

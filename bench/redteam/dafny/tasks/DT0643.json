@@ -1,0 +1,8 @@
+{
+ "id": "DT0643",
+ "source": "numpy_triple",
+ "source-id": "strings_startswith",
+ "preamble": "// Check if strings in array start with given prefixes\n  ensures |StartsWith(a, prefixes)| == |a|\n  ensures forall i :: 0 <= i < |a| ==> \n    // Main specification: result matches string prefix check for each pair\n    StartsWith(a, prefixes)[i] == (|prefixes[i]| <= |a[i]| && a[i][0..|prefixes[i]|] == prefixes[i])\n  ensures forall i :: 0 <= i < |a| ==> \n    // Mathematical property: if result is true, prefix appears at the beginning\n    (StartsWith(a, prefixes)[i] == true ==> \n      |prefixes[i]| <= |a[i]| && a[i][0..|prefixes[i]|] == prefixes[i])\n  ensures forall i :: 0 <= i < |a| ==> \n    // Mathematical property: if result is false, prefix does not appear at the beginning\n    (StartsWith(a, prefixes)[i] == false ==> \n      |prefixes[i]| > |a[i]| || (|prefixes[i]| <= |a[i]| && a[i][0..|prefixes[i]|] != prefixes[i]))",
+ "spec": "function StartsWith(a: seq<string>, prefixes: seq<string>): seq<bool>\n  requires |a|",
+ "postamble": ""
+}

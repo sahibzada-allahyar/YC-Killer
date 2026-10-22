@@ -1,0 +1,49 @@
+{
+ "id": "LF2738",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def check {α : Type} [BEq α] (lst : List α) (x : α) : Bool := sorry\n\ntheorem check_integers (lst : List Int) (x : Int) :\n  check lst x = lst.contains x := sorry\n\ntheorem check_strings (lst : List String) (x : String) :\n  check lst x = lst.contains x := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def check {α : Type} [BEq α] (lst : List α) (x : α) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem check_integers (lst : List Int) (x : Int) :\n  check lst x = lst.contains x :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem check_strings (lst : List String) (x : String) :\n  check lst x = lst.contains x :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "check_strings": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4c6c19939fb351c3e9152e7496a6376517f050bbb7c1fd93b0acca8636574ca3",
+   "ctors": [],
+   "value": null
+  },
+  "check_integers": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a0c0b1d54dd2a96cbcbd146bd9b0dfced498a98f86c20f167bf6d1bb27864ead",
+   "ctors": [],
+   "value": null
+  },
+  "check": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e655716b38022c0425dcd4995bfa29fe87c29014e762cd6c7e9557a2c6c832ab",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2b6b50268b3c"
+}

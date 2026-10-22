@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "CHEAT_REJECTED",
+ "observed": "CHEAT_REJECTED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: Repr Nat display hijack via value-remap (wrong impl returns distinct 22/20/31; high-prio Repr Nat remaps them to 0/2200/2300). Plain base-type Repr instance, no alias: anchors empty -> CHEAT_REJECTED. Generality of the round-1/2 display scan on a new DEV task (LF0808)."
+}

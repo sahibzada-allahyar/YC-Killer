@@ -1,0 +1,52 @@
+{
+ "id": "LF0540",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_fibonacci_sequence (arr : List Int) : Nat :=\n  let rec helper (i : Nat) (curr_max curr_fib : Nat) : Nat :=\n    if i ≥ arr.length then curr_max\n    else match arr.get? i, arr.get? (i-1), arr.get? (i-2) with\n    | some x, some y, some z =>\n      if x = y + z then\n        helper (i+1) (max curr_max (curr_fib + 1)) (curr_fib + 1)\n      else\n        helper (i+1) curr_max 2\n    | _, _, _ => curr_max\n  termination_by arr.length - i\n  helper 2 2 2\n\ndef find_max_sequence_length (n : Nat) (arr : List Int) : Nat :=\n  sorry\n\ntheorem find_max_sequence_length_empty :\n  find_max_sequence_length 0 [] = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_max_sequence_length 5 [2, 3, 5, 1, 2]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_max_sequence_length 3 [1, 2, 3]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_max_sequence_length 2 [1, 2]\n",
+ "warnings": [],
+ "preamble": "def count_fibonacci_sequence (arr : List Int) : Nat :=\n  let rec helper (i : Nat) (curr_max curr_fib : Nat) : Nat :=\n    if i ≥ arr.length then curr_max\n    else match arr.get? i, arr.get? (i-1), arr.get? (i-2) with\n    | some x, some y, some z =>\n      if x = y + z then\n        helper (i+1) (max curr_max (curr_fib + 1)) (curr_fib + 1)\n      else\n        helper (i+1) curr_max 2\n    | _, _, _ => curr_max\n  termination_by arr.length - i\n  helper 2 2 2",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_max_sequence_length 5 [2, 3, 5, 1, 2]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval find_max_sequence_length 3 [1, 2, 3]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval find_max_sequence_length 2 [1, 2]",
+ "chunks": [
+  {
+   "text": "def find_max_sequence_length (n : Nat) (arr : List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_max_sequence_length_empty :\n  find_max_sequence_length 0 [] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "find_max_sequence_length_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4a4d46d07122f1ba40d91942cebb5c23f805de04b8913b25c3678b2d5e126098",
+   "ctors": [],
+   "value": null
+  },
+  "find_max_sequence_length": {
+   "kind": "def",
+   "role": "impl",
+   "type": "1270d93f127c2477bdd492d2d6ddc779871152a08c53cf95d7a086b61711ad82",
+   "ctors": [],
+   "value": null
+  },
+  "count_fibonacci_sequence.helper": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "8c89a2d50e2882a299da824baae2bef9ce39fcaab296913a667ab743109ec854",
+   "ctors": [],
+   "value": "05bd8f4e8c7b4f2ed32e6cedd5a1b83d6d914028c7071707b0e520e3b7b53478"
+  },
+  "count_fibonacci_sequence": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": "057703b9f9b5d6868a12372f6cbcb60676c74cab1000744a9f73de4225f4ea45"
+  }
+ },
+ "sha": "be7001ca744e"
+}

@@ -1,0 +1,91 @@
+{
+ "id": "LA0572",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def CharToDigit (c : Char) : Int :=\n  if '0' ≤ c ∧ c ≤ '9' then (c.toNat - '0'.toNat : Int) else 0\n\ndef StringToInt (s : String) : Int :=\n  let chars := s.toList\n  if chars.length = 0 then 0\n  else if chars.length = 1 then CharToDigit chars[0]!\n  else if chars.length = 2 then CharToDigit chars[0]! * 10 + CharToDigit chars[1]!\n  else if chars.length = 4 then CharToDigit chars[0]! * 1000 + CharToDigit chars[1]! * 100 + CharToDigit chars[2]! * 10 + CharToDigit chars[3]!\n  else 0\n\ndef IsValidDateString (s : String) (y m d : Int) : Prop :=\n  let chars := s.toList\n  s.length ≥ 10 ∧ \n  (if h : 4 < chars.length then chars[4]! = '/' else False) ∧ \n  (if h : 7 < chars.length then chars[7]! = '/' else False) ∧\n  StringToInt (s.take 4) = y ∧\n  StringToInt (s.drop 5 |>.take 2) = m ∧\n  StringToInt (s.drop 8 |>.take 2) = d\n\ndef ValidInput (s : String) : Prop :=\n  ∃ y m d, IsValidDateString s y m d ∧ y = 2019 ∧ 1 ≤ m ∧ m ≤ 12 ∧ 1 ≤ d ∧ d ≤ 31\n\ndef CorrectOutput (s : String) (result : String) : Prop :=\n  ∃ y m d, IsValidDateString s y m d ∧ y = 2019 ∧ 1 ≤ m ∧ m ≤ 12 ∧ 1 ≤ d ∧ d ≤ 31 ∧ \n  ((m < 4 ∨ (m = 4 ∧ d ≤ 30)) → result = \"Heisei\") ∧ \n  ((m > 4 ∨ (m = 4 ∧ d > 30)) → result = \"TBD\")\n\n@[reducible, simp]\ndef solve_precond (stdin_input : String) : Prop :=\n  stdin_input.length > 0 ∧ ValidInput stdin_input\n\ndef solve (stdin_input : String) (h_precond : solve_precond stdin_input) : String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (stdin_input : String) (result : String) (h_precond : solve_precond stdin_input) : Prop :=\n  CorrectOutput stdin_input result\n\ntheorem solve_spec_satisfied (stdin_input : String) (h_precond : solve_precond stdin_input) :\n    solve_postcond stdin_input (solve stdin_input h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def CharToDigit (c : Char) : Int :=\n  if '0' ≤ c ∧ c ≤ '9' then (c.toNat - '0'.toNat : Int) else 0\n\ndef StringToInt (s : String) : Int :=\n  let chars := s.toList\n  if chars.length = 0 then 0\n  else if chars.length = 1 then CharToDigit chars[0]!\n  else if chars.length = 2 then CharToDigit chars[0]! * 10 + CharToDigit chars[1]!\n  else if chars.length = 4 then CharToDigit chars[0]! * 1000 + CharToDigit chars[1]! * 100 + CharToDigit chars[2]! * 10 + CharToDigit chars[3]!\n  else 0\n\ndef IsValidDateString (s : String) (y m d : Int) : Prop :=\n  let chars := s.toList\n  s.length ≥ 10 ∧ \n  (if h : 4 < chars.length then chars[4]! = '/' else False) ∧ \n  (if h : 7 < chars.length then chars[7]! = '/' else False) ∧\n  StringToInt (s.take 4) = y ∧\n  StringToInt (s.drop 5 |>.take 2) = m ∧\n  StringToInt (s.drop 8 |>.take 2) = d\n\ndef ValidInput (s : String) : Prop :=\n  ∃ y m d, IsValidDateString s y m d ∧ y = 2019 ∧ 1 ≤ m ∧ m ≤ 12 ∧ 1 ≤ d ∧ d ≤ 31\n\ndef CorrectOutput (s : String) (result : String) : Prop :=\n  ∃ y m d, IsValidDateString s y m d ∧ y = 2019 ∧ 1 ≤ m ∧ m ≤ 12 ∧ 1 ≤ d ∧ d ≤ 31 ∧ \n  ((m < 4 ∨ (m = 4 ∧ d ≤ 30)) → result = \"Heisei\") ∧ \n  ((m > 4 ∨ (m = 4 ∧ d > 30)) → result = \"TBD\")\n\n@[reducible, simp]\ndef solve_precond (stdin_input : String) : Prop :=\n  stdin_input.length > 0 ∧ ValidInput stdin_input",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (stdin_input : String) (h_precond : solve_precond stdin_input) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (stdin_input : String) (result : String) (h_precond : solve_precond stdin_input) : Prop :=\n  CorrectOutput stdin_input result",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (stdin_input : String) (h_precond : solve_precond stdin_input) :\n    solve_postcond stdin_input (solve stdin_input h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d3ade88fd0a500615cc47dc1e9138460f5809f79886a7693073d0f7a1d1efbd1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "d1934a6a3c84710d4b7fa8e2adefa01bb90b03ba546db3d999da6cc7a28aa14e"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "22ab09579fb734d2d97ec937057320ab40349d79e0e538356b8e4f6ad3874259",
+   "ctors": [],
+   "value": "8db9b2b9c518c03cb943857711e7124cc63fd5385656dea1a4ebb9fbe5baec2a"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "786a1db51943776aa9deb09fe54242a097b01ea390cad93f9121bbffc9e9ccfa",
+   "ctors": [],
+   "value": null
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "7ead9e7775548af2da4cbd2d09b43626fa499fd26941884982f845e13e65d1e8"
+  },
+  "StringToInt": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "9902d19591b27fb48348685e0a7163895afa53ad7c590eb1b9c1c21989da1def",
+   "ctors": [],
+   "value": "237975f0e90bd1b21d488960fd65e175a975028935e35b38707a66894f0cf40e"
+  },
+  "IsValidDateString": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "6b1acae80202ca07276e129fc15d4b82e57decf4cedda9b4b185e7c18af7c578",
+   "ctors": [],
+   "value": "c6005ca9874f63bab50db7b9b9c1874655128ef974f1d751c966c68bcd6630dd"
+  },
+  "CorrectOutput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "486f51109f7ab4ee989b85447347127a3c22659579c11af900a2c5c43d6b4ea7",
+   "ctors": [],
+   "value": "99e2febd415d8e011af27242c8cb44a4c63c84c2ccc54cbfb797a07ce02d729e"
+  },
+  "CharToDigit": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7f26250c8f76d6341575c72b9398405e0d15f045b1306357623a3452313c2a5f",
+   "ctors": [],
+   "value": "469f97b978c16ad420b0a63e01854abcae778f61dc4cf2c40ac61626dc25e1c4"
+  }
+ },
+ "sha": "929bdfbc4ad1"
+}

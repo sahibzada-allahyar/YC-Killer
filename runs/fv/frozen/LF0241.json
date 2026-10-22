@@ -1,0 +1,82 @@
+{
+ "id": "LF0241",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def optimalDivision (nums: List Nat) : String := sorry\n\ntheorem optimal_division_empty (nums: List Nat) :\n  nums = [] → optimalDivision nums = \"\" := sorry\n\ntheorem optimal_division_single (n: Nat) :\n  optimalDivision [n] = toString n := sorry\n\ntheorem optimal_division_two (n m: Nat) :\n  optimalDivision [n, m] = toString n ++ \"/\" ++ toString m := sorry\n\ntheorem division_format_parts (nums: List Nat) :\n  nums.length ≥ 3 →\n  let parts := (optimalDivision nums).splitOn \"/\"\n  parts.length = nums.length ∧\n  parts[0]! = toString nums[0]! ∧ \n  parts[1]!.startsWith \"(\" ∧\n  parts[parts.length - 1]!.endsWith \")\" := sorry\n\ntheorem first_number_preserved (nums: List Nat) :\n  nums ≠ [] →\n  (optimalDivision nums).startsWith (toString nums[0]!) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def optimalDivision (nums: List Nat) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem optimal_division_empty (nums: List Nat) :\n  nums = [] → optimalDivision nums = \"\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem optimal_division_single (n: Nat) :\n  optimalDivision [n] = toString n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem optimal_division_two (n m: Nat) :\n  optimalDivision [n, m] = toString n ++ \"/\" ++ toString m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem division_format_parts (nums: List Nat) :\n  nums.length ≥ 3 →\n  let parts := (optimalDivision nums).splitOn \"/\"\n  parts.length = nums.length ∧\n  parts[0]! = toString nums[0]! ∧ \n  parts[1]!.startsWith \"(\" ∧\n  parts[parts.length - 1]!.endsWith \")\" :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem first_number_preserved (nums: List Nat) :\n  nums ≠ [] →\n  (optimalDivision nums).startsWith (toString nums[0]!) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "optimal_division_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ce8f4a815128a78d6c5fb450fa864a80b0dbcbd41a867aea38bce37169a73f22",
+   "ctors": [],
+   "value": null
+  },
+  "optimal_division_single": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9855e2618a6f62a9eaa90376537b4a57eb9aeb43c5b6d23406d5c11a35df9a29",
+   "ctors": [],
+   "value": null
+  },
+  "optimal_division_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1ed0ba8fbd86301ae746b47686bbba8dd66d3532c2ef1de5f9f93423897ad5d1",
+   "ctors": [],
+   "value": null
+  },
+  "optimalDivision": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2e68ce1424d7423c7f29bdd4d627f4b6c093fb6c513517a89288db6be3f353bf",
+   "ctors": [],
+   "value": null
+  },
+  "first_number_preserved": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1588ba66200a325513f8d9fc98997747e656014f8a0607ad49c81d2f11cd6a9f",
+   "ctors": [],
+   "value": null
+  },
+  "division_format_parts": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3aa9a713399b606969af0c0236f6a177ee28dd060642749f922bd81abce30070",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "817e01a68227"
+}

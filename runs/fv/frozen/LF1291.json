@@ -1,0 +1,60 @@
+{
+ "id": "LF1291",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_candies_for_party (people_counts: List Nat) (remainder: Nat) : Nat :=\nsorry\n\ndef gcd (a b : Nat) : Nat :=\nsorry\n\ndef lcm (a b : Nat) : Nat := Nat.div (a * b) (gcd a b)\n\ntheorem remainder_divides_result (people_counts: List Nat) (remainder: Nat) (count: Nat)\n  (h: count ∈ people_counts) (h2: count > 0) :\n  count ∣ (min_candies_for_party people_counts remainder - remainder) :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval min_candies_for_party [2, 3] 1\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval min_candies_for_party [2, 4, 6] 1\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval min_candies_for_party [5] 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval min_candies_for_party [2, 3] 1\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval min_candies_for_party [2, 4, 6] 1\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval min_candies_for_party [5] 2",
+ "chunks": [
+  {
+   "text": "def min_candies_for_party (people_counts: List Nat) (remainder: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def gcd (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def lcm (a b : Nat) : Nat := Nat.div (a * b) (gcd a b)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem remainder_divides_result (people_counts: List Nat) (remainder: Nat) (count: Nat)\n  (h: count ∈ people_counts) (h2: count > 0) :\n  count ∣ (min_candies_for_party people_counts remainder - remainder) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "remainder_divides_result": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f39a6b6f69da468d212deed9f845930861a6ef9ae58fa1a6629cc5ecbdb6be01",
+   "ctors": [],
+   "value": null
+  },
+  "min_candies_for_party": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e26fe6796b3f0d9441d167c053eb966bc6518ae4bb7a2287c700b20573eb9b45",
+   "ctors": [],
+   "value": null
+  },
+  "lcm": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": "7f7611ff3ea2e51581f44682226fe61f4bbdfa1349c1f925b2810720d7a90873"
+  },
+  "gcd": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "933204300caf"
+}

@@ -1,0 +1,38 @@
+{
+ "id": "LF2527",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def convert_bits (a b : Int) : Int := sorry\n\ntheorem convert_from_zero_cases :\n  (convert_bits 0 0 = 0) ∧ \n  (convert_bits 0 1 = 1) ∧\n  (convert_bits 0 2 = 1) ∧ \n  (convert_bits 0 3 = 2) ∧\n  (convert_bits 0 4 = 1) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval convert_bits 31 14\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval convert_bits 7 17\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval convert_bits 0 0\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval convert_bits 31 14\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval convert_bits 7 17\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval convert_bits 0 0",
+ "chunks": [
+  {
+   "text": "def convert_bits (a b : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem convert_from_zero_cases :\n  (convert_bits 0 0 = 0) ∧ \n  (convert_bits 0 1 = 1) ∧\n  (convert_bits 0 2 = 1) ∧ \n  (convert_bits 0 3 = 2) ∧\n  (convert_bits 0 4 = 1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "convert_from_zero_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "181aad14c5ece6155367e5007693d728ef5055ca24a1dbf6a230aa1fb67b69e1",
+   "ctors": [],
+   "value": null
+  },
+  "convert_bits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "661a181d50e1"
+}

@@ -1,0 +1,71 @@
+{
+ "id": "LF3159",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def faulty_odometer (n : Nat) : Nat :=\n  sorry\n\ntheorem odometer_never_negative (n : Nat) : \n  faulty_odometer n ≥ 0 :=\nsorry\n\ntheorem odometer_always_smaller (n : Nat) :\n  faulty_odometer n ≤ n :=\nsorry\n\ntheorem odometer_consistent (n : Nat) :\n  faulty_odometer n = faulty_odometer n :=\nsorry\n\ntheorem odometer_zero :\n  faulty_odometer 0 = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval faulty_odometer 13\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval faulty_odometer 15\n\n/--\ninfo: 1462\n-/\n#guard_msgs in\n#eval faulty_odometer 2005\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval faulty_odometer 13\n\n/--\ninfo: 13\n-/\n#guard_msgs in\n#eval faulty_odometer 15\n\n/--\ninfo: 1462\n-/\n#guard_msgs in\n#eval faulty_odometer 2005",
+ "chunks": [
+  {
+   "text": "def faulty_odometer (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem odometer_never_negative (n : Nat) : \n  faulty_odometer n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem odometer_always_smaller (n : Nat) :\n  faulty_odometer n ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem odometer_consistent (n : Nat) :\n  faulty_odometer n = faulty_odometer n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem odometer_zero :\n  faulty_odometer 0 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "odometer_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0165ed75af1df1c6cc63765f85acc010aa105a7dbfa19db645813837a7b4cca8",
+   "ctors": [],
+   "value": null
+  },
+  "odometer_never_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "79429f43f365caf5e3a41266ee257f03b2097af3f0a67308b449d78b609e8e51",
+   "ctors": [],
+   "value": null
+  },
+  "odometer_consistent": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dd592596c47359e7222be90e57195078f912384eb41a9005419b05baf63e43b4",
+   "ctors": [],
+   "value": null
+  },
+  "odometer_always_smaller": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a1d1d72083ec25008e4504860b0fe26c1b06271c06323fa0e1d2df976b41ebce",
+   "ctors": [],
+   "value": null
+  },
+  "faulty_odometer": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "73e9167d5f83"
+}

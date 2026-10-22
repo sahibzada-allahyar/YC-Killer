@@ -1,0 +1,49 @@
+{
+ "id": "LF4260",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def points (games : List String) : Nat :=\n  sorry\n\ntheorem points_draws (n : Nat) :\n  let draw_games := List.map (fun i => s!\"{i}:{i}\") (List.range n)\n  points draw_games = n :=\n  sorry\n\ntheorem points_wins (nums : List Nat) :\n  let win_games := List.map (fun n => s!\"{n+1}:{n}\") nums\n  points win_games = nums.length * 3 :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval points [\"1:0\", \"2:0\", \"3:0\", \"4:0\", \"2:1\", \"3:1\", \"4:1\", \"3:2\", \"4:2\", \"4:3\"]\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval points [\"1:1\", \"2:2\", \"3:3\", \"4:4\", \"2:2\", \"3:3\", \"4:4\", \"3:3\", \"4:4\", \"4:4\"]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval points [\"0:1\", \"0:2\", \"0:3\", \"0:4\", \"1:2\", \"1:3\", \"1:4\", \"2:3\", \"2:4\", \"3:4\"]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval points [\"1:0\", \"2:0\", \"3:0\", \"4:0\", \"2:1\", \"3:1\", \"4:1\", \"3:2\", \"4:2\", \"4:3\"]\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval points [\"1:1\", \"2:2\", \"3:3\", \"4:4\", \"2:2\", \"3:3\", \"4:4\", \"3:3\", \"4:4\", \"4:4\"]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval points [\"0:1\", \"0:2\", \"0:3\", \"0:4\", \"1:2\", \"1:3\", \"1:4\", \"2:3\", \"2:4\", \"3:4\"]",
+ "chunks": [
+  {
+   "text": "def points (games : List String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem points_draws (n : Nat) :\n  let draw_games := List.map (fun i => s!\"{i}:{i}\") (List.range n)\n  points draw_games = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem points_wins (nums : List Nat) :\n  let win_games := List.map (fun n => s!\"{n+1}:{n}\") nums\n  points win_games = nums.length * 3 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "points_wins": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "eeb2100d45460922bcfb1566aad2849a434de83a1e78030c2f0139ccdb5417a8",
+   "ctors": [],
+   "value": null
+  },
+  "points_draws": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6c835c09cbc7b621dcbc6c37c1e37ed0713dcb9b870dafcd818880b428e650e1",
+   "ctors": [],
+   "value": null
+  },
+  "points": {
+   "kind": "def",
+   "role": "impl",
+   "type": "36fc955d100209f88b69abd697cd4b13ab6ee1753a028e42d8bf74b2bd2d985b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "5ca8ff8ddde3"
+}

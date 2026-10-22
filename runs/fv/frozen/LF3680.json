@@ -1,0 +1,38 @@
+{
+ "id": "LF3680",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def findSum (n : Int) : Int := sorry\n\ntheorem findSum_six :\n  findSum 6 = 14 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval findSum 5\n\n/--\ninfo: 33\n-/\n#guard_msgs in\n#eval findSum 10\n\n/--\ninfo: 2418\n-/\n#guard_msgs in\n#eval findSum 100\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval findSum 5\n\n/--\ninfo: 33\n-/\n#guard_msgs in\n#eval findSum 10\n\n/--\ninfo: 2418\n-/\n#guard_msgs in\n#eval findSum 100",
+ "chunks": [
+  {
+   "text": "def findSum (n : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem findSum_six :\n  findSum 6 = 14 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "findSum_six": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f8ddc19d5f12a73ab2563cb08de3de1b6c4b0d89fc404a76ecae9a1805624439",
+   "ctors": [],
+   "value": null
+  },
+  "findSum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "33eb8ee362ee"
+}

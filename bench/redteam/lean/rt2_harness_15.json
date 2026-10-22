@@ -1,0 +1,1 @@
+{"task_id":"LF2340","expect":"PROVED","lens":"harness","hole":false,"what":"honest false-rejection probe: count intervals containing queryTime via zip+filter, Int.ofNat cast"}

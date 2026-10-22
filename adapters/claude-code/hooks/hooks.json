@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "millennium-harness gate --hook claude", "timeout": 120 } ] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Read|Edit|Write|Bash|Grep|Glob",
+        "hooks": [ { "type": "command", "command": "python3 -c \"import json,sys,os; d=json.load(sys.stdin); s=json.dumps(d.get('tool_input',{})); bad=os.path.expanduser('~/.cache/millennium-harness') in s or '.millennium-harness/target.json' in s; print(json.dumps({'hookSpecificOutput':{'hookEventName':'PreToolUse','permissionDecision':'deny','permissionDecisionReason':'Millennium Harness: the locked spec is off-limits'}}) if bad else '')\"" } ] }
+    ]
+  }
+}

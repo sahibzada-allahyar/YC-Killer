@@ -1,0 +1,49 @@
+{
+ "id": "LF0701",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def String.isBinaryString (s : String) : Bool := s.all (fun c => c == '0' || c == '1')\n\ndef count_special_substrings (s : String) : Nat :=\n  sorry\n\ntheorem count_special_substrings_all_zeros (s : String) \n    (h : s.all (· = '0') = true) :\n    count_special_substrings s = 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_special_substrings \"010001\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_special_substrings \"10\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_special_substrings \"1100\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_special_substrings \"010001\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_special_substrings \"10\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_special_substrings \"1100\"",
+ "chunks": [
+  {
+   "text": "def String.isBinaryString (s : String) : Bool := s.all (fun c => c == '0' || c == '1')",
+   "hole_after": false
+  },
+  {
+   "text": "def count_special_substrings (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_special_substrings_all_zeros (s : String) \n    (h : s.all (· = '0') = true) :\n    count_special_substrings s = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_special_substrings_all_zeros": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17680e4c392ba670067cc0b6aff7e23ae19340ba1966d63855539f949c160500",
+   "ctors": [],
+   "value": null
+  },
+  "count_special_substrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "String.isBinaryString": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": "4a17ee5791fad97cfdd0020f0e31a509a32958aefaaca56c24af1aaa21806341"
+  }
+ },
+ "sha": "62ba5f650b8d"
+}

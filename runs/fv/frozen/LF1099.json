@@ -1,0 +1,115 @@
+{
+ "id": "LF1099",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calc_max_sweetness (n k : Nat) : Nat := sorry\n\ntheorem calc_max_sweetness_positive (n k : Nat) (h1 : n > 0) (h2 : k > 0) : \n  calc_max_sweetness n k > 0 := sorry\n\ntheorem calc_max_sweetness_upper_bound (n k : Nat) :\n  calc_max_sweetness n k ≤ n * k := sorry\n\ntheorem calc_max_sweetness_multiple (n k : Nat) (h : k > 0) :\n  calc_max_sweetness n k % k = 0 := sorry\n\ntheorem calc_max_sweetness_n_one (k : Nat) :\n  calc_max_sweetness 1 k = k := sorry\n\ntheorem calc_max_sweetness_n_gt_one (n k : Nat) (h : n > 1) :\n  calc_max_sweetness n k = ((n / 2) + (n % 2)) * k := sorry\n\ntheorem calc_max_sweetness_k_zero (n : Nat) :\n  calc_max_sweetness n 0 = 0 := sorry\n\ntheorem calc_max_sweetness_step_two (k : Nat) :\n  calc_max_sweetness 2 k - calc_max_sweetness 1 k = 0 := sorry\n\ntheorem calc_max_sweetness_step_three (k : Nat) :\n  calc_max_sweetness 3 k - calc_max_sweetness 2 k = k := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval calc_max_sweetness 1 2\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval calc_max_sweetness 4 3\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval calc_max_sweetness 3 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval calc_max_sweetness 1 2\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval calc_max_sweetness 4 3\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval calc_max_sweetness 3 5",
+ "chunks": [
+  {
+   "text": "def calc_max_sweetness (n k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_positive (n k : Nat) (h1 : n > 0) (h2 : k > 0) : \n  calc_max_sweetness n k > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_upper_bound (n k : Nat) :\n  calc_max_sweetness n k ≤ n * k :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_multiple (n k : Nat) (h : k > 0) :\n  calc_max_sweetness n k % k = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_n_one (k : Nat) :\n  calc_max_sweetness 1 k = k :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_n_gt_one (n k : Nat) (h : n > 1) :\n  calc_max_sweetness n k = ((n / 2) + (n % 2)) * k :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_k_zero (n : Nat) :\n  calc_max_sweetness n 0 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_step_two (k : Nat) :\n  calc_max_sweetness 2 k - calc_max_sweetness 1 k = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calc_max_sweetness_step_three (k : Nat) :\n  calc_max_sweetness 3 k - calc_max_sweetness 2 k = k :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "calc_max_sweetness_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "086820e0a2160f6ae9aaae223d85c28213e8c019bb7a1bee11ecdedaf7c5ca8c",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness_step_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "af00409d2f0a8acf04c4bffcfb00bf1b736cea2bbe70e22365c90bc9f388b338",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness_step_three": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f0690bb0500c7c57f042fe2a3013825019db4ea0028f291fb5e23da1f7fb0687",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "052c8335296dc0c83caa92edfad2f91dbaf866df97bd27d89ed69bb3f4dea383",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness_n_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2fd0e6f247994473e571b9f5a341560845dd029dc8bdd9c80852ffaee0dc67b1",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness_n_gt_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4298b1fe581448ee62be8b5a264c8e47bd4ab5230a09dd67178c6e99fd68c7c9",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness_multiple": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "50f66c4352c983c061df808efd956a281e3ad1c0d8919fdf7e03e5f5460b0244",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness_k_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "82a0039f1275239f8d41d8181aff58963dc9eb2ae1e793bf3353be9557365174",
+   "ctors": [],
+   "value": null
+  },
+  "calc_max_sweetness": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "3f85835fadcd"
+}

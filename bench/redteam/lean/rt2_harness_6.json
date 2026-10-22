@@ -1,0 +1,1 @@
+{"task_id": "LF1342", "expect": "PROVED", "lens": "harness", "hole": false, "what": "false-rejection probe: a benign bare `set_option maxHeartbeats 1000000` (not debug/compiler/interpreter.*) in a hole must NOT be over-banned; honest impl -> PROVED."}

@@ -1,0 +1,60 @@
+{
+ "id": "LF4440",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum_fib (n: Nat) : Nat :=\n  sorry\n\ntheorem sum_fib_nonnegative (n: Nat) (h: n > 0) : sum_fib n ≥ 0 :=\n  sorry\n\ntheorem sum_fib_base_case_1 : sum_fib 1 = 1 :=\n  sorry\n\ntheorem sum_fib_base_case_2 : sum_fib 2 = 2 :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval sum_fib 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval sum_fib 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval sum_fib 4\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval sum_fib 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval sum_fib 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval sum_fib 4",
+ "chunks": [
+  {
+   "text": "def sum_fib (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_fib_nonnegative (n: Nat) (h: n > 0) : sum_fib n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_fib_base_case_1 : sum_fib 1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sum_fib_base_case_2 : sum_fib 2 = 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_fib_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1b95b9681f68ad84d49230dd366e7885c91aa1a673426edd540a3bea50a8fcac",
+   "ctors": [],
+   "value": null
+  },
+  "sum_fib_base_case_2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "efae34d99b434aaddbbbaccd4e08321c965b5a4005d1c886a87096f3bb12a04f",
+   "ctors": [],
+   "value": null
+  },
+  "sum_fib_base_case_1": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "11cb671c3679993e1df7ef771bf0ec3546900d62e2294257920f2ed8b23df61f",
+   "ctors": [],
+   "value": null
+  },
+  "sum_fib": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ecc2bb92774e"
+}

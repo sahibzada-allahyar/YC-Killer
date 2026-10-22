@@ -1,0 +1,60 @@
+{
+ "id": "LF0985",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_late_submissions (submissions : List (Nat × Nat)) : Nat := sorry\n\ntheorem count_late_submissions_non_negative (submissions : List (Nat × Nat)) :\n  count_late_submissions submissions ≥ 0 := sorry\n\ntheorem count_late_submissions_upper_bound (submissions : List (Nat × Nat)) :\n  count_late_submissions submissions ≤ submissions.length := sorry\n\ntheorem count_late_submissions_manual_count (submissions : List (Nat × Nat)) :\n  count_late_submissions submissions = \n    (submissions.filter (fun p => p.2 - p.1 > 5)).length := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_late_submissions [(1, 3), (4, 4), (4, 10), (1, 11), (2, 7)]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_late_submissions [(1, 2), (3, 4), (5, 6)]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_late_submissions [(1, 7), (2, 8), (3, 9)]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_late_submissions [(1, 3), (4, 4), (4, 10), (1, 11), (2, 7)]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_late_submissions [(1, 2), (3, 4), (5, 6)]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_late_submissions [(1, 7), (2, 8), (3, 9)]",
+ "chunks": [
+  {
+   "text": "def count_late_submissions (submissions : List (Nat × Nat)) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_late_submissions_non_negative (submissions : List (Nat × Nat)) :\n  count_late_submissions submissions ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_late_submissions_upper_bound (submissions : List (Nat × Nat)) :\n  count_late_submissions submissions ≤ submissions.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_late_submissions_manual_count (submissions : List (Nat × Nat)) :\n  count_late_submissions submissions = \n    (submissions.filter (fun p => p.2 - p.1 > 5)).length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_late_submissions_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7b86f61f08518e28d87ecd1c1eb2315fdd58b67a0d17b6ede383cd1e553a8d64",
+   "ctors": [],
+   "value": null
+  },
+  "count_late_submissions_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "de5baad6365895f98fc2cb34ae8eeb94a2b58de9fb4eb1dc3d52d3b091e7059d",
+   "ctors": [],
+   "value": null
+  },
+  "count_late_submissions_manual_count": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7b3113d2e6600195d5c19c2f5c116c67bd0a6b8161d88686f0fa2ec175986a87",
+   "ctors": [],
+   "value": null
+  },
+  "count_late_submissions": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2068052fdf65a5a87d1d2c26fad810d1622173e41876a4453406f771c0c567a6",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f5907379d67d"
+}

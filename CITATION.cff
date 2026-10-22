@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+title: "Millennium Harness: fresh-context executable specifications as a verification gate for coding agents"
+message: "If you use Millennium Harness or FreshCP, please cite it."
+type: software
+license: MIT
+date-released: 2026-10-28

@@ -1,0 +1,38 @@
+{
+ "id": "LF2377",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def maximum_product (nums : List Int) : Int := sorry\n\ntheorem maximum_product_scales {nums : List Int} (h : nums.length ≥ 3) (scale : Int) (h2 : scale > 0) :\n  maximum_product (nums.map (· * scale)) = maximum_product nums * (scale * scale * scale) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval maximum_product [1, 2, 3]\n\n/--\ninfo: 24\n-/\n#guard_msgs in\n#eval maximum_product [1, 2, 3, 4]\n\n/--\ninfo: 720\n-/\n#guard_msgs in\n#eval maximum_product [-4, -3, -2, -1, 60]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval maximum_product [1, 2, 3]\n\n/--\ninfo: 24\n-/\n#guard_msgs in\n#eval maximum_product [1, 2, 3, 4]\n\n/--\ninfo: 720\n-/\n#guard_msgs in\n#eval maximum_product [-4, -3, -2, -1, 60]",
+ "chunks": [
+  {
+   "text": "def maximum_product (nums : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem maximum_product_scales {nums : List Int} (h : nums.length ≥ 3) (scale : Int) (h2 : scale > 0) :\n  maximum_product (nums.map (· * scale)) = maximum_product nums * (scale * scale * scale) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "maximum_product_scales": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "78e3527192e2b3f11ba41b496a156472f9fc206c9fdd983aa6279080267b2914",
+   "ctors": [],
+   "value": null
+  },
+  "maximum_product": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "25cf79cea1e7"
+}

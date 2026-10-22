@@ -1,0 +1,126 @@
+{
+ "id": "LA0391",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def Split (s : String) (delimiter : Char) : List String :=\n  s.split (· = delimiter)\n\ndef IsValidNumber (s : String) : Bool :=\n  s.length > 0 && s.all (fun c => '0' ≤ c && c ≤ '9')\n\ndef StringToInt (s : String) : Int :=\n  s.foldl (fun acc c => acc * 10 + (c.toNat - '0'.toNat)) 0\n\ndef IntToString (n : Int) : String :=\n  if n = 0 then \"0\" else toString n\n\ndef IsValidDoorState (s : String) : Bool :=\n  s = \"0\" || s = \"1\"\n\ndef ValidInput (input : String) : Prop :=\n  let lines := Split input '\\n'\n  lines.length ≥ 1 ∧\n  IsValidNumber (lines[0]!) ∧\n  let n := StringToInt (lines[0]!)\n  n ≥ 0 ∧ n + 1 ≤ lines.length ∧\n  ∀ i : Nat, 1 ≤ i ∧ i ≤ n.natAbs ∧ i < lines.length →\n    let parts := Split (lines[i]!) ' '\n    parts.length ≥ 2 ∧ IsValidDoorState (parts[0]!) ∧ IsValidDoorState (parts[1]!)\n\ndef ValidOutput (output : String) : Prop :=\n  IsValidNumber output\n\ndef CountLeftZeros (_ : List String) (_ : Nat) (_ : Int) : Int :=\n  0\n\ndef CountRightZeros (_ : List String) (_ : Nat) (_ : Int) : Int :=\n  0\n\ndef CalculateMinOperations (input : String) (_ : ValidInput input) : String :=\n  let lines := Split input '\\n'\n  let n := StringToInt (lines[0]!)\n  if n = 0 then \"0\"\n  else\n    let leftZeros := CountLeftZeros lines 1 n\n    let rightZeros := CountRightZeros lines 1 n\n    let leftOps := if leftZeros < n - leftZeros then leftZeros else n - leftZeros\n    let rightOps := if rightZeros < n - rightZeros then rightZeros else n - rightZeros\n    IntToString (leftOps + rightOps)\n\n@[reducible, simp]\ndef solve_precond (input : String) : Prop :=\n  input.length > 0 ∧ ValidInput input\n\ndef solve (input : String) (h_precond : solve_precond input) : String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (input : String) (result : String) (h_precond : solve_precond input) : Prop :=\n  result.length > 0 ∧ ValidOutput result ∧ result = CalculateMinOperations input (h_precond.2)\n\ntheorem solve_spec_satisfied (input : String) (h_precond : solve_precond input) :\n    solve_postcond input (solve input h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def Split (s : String) (delimiter : Char) : List String :=\n  s.split (· = delimiter)\n\ndef IsValidNumber (s : String) : Bool :=\n  s.length > 0 && s.all (fun c => '0' ≤ c && c ≤ '9')\n\ndef StringToInt (s : String) : Int :=\n  s.foldl (fun acc c => acc * 10 + (c.toNat - '0'.toNat)) 0\n\ndef IntToString (n : Int) : String :=\n  if n = 0 then \"0\" else toString n\n\ndef IsValidDoorState (s : String) : Bool :=\n  s = \"0\" || s = \"1\"\n\ndef ValidInput (input : String) : Prop :=\n  let lines := Split input '\\n'\n  lines.length ≥ 1 ∧\n  IsValidNumber (lines[0]!) ∧\n  let n := StringToInt (lines[0]!)\n  n ≥ 0 ∧ n + 1 ≤ lines.length ∧\n  ∀ i : Nat, 1 ≤ i ∧ i ≤ n.natAbs ∧ i < lines.length →\n    let parts := Split (lines[i]!) ' '\n    parts.length ≥ 2 ∧ IsValidDoorState (parts[0]!) ∧ IsValidDoorState (parts[1]!)\n\ndef ValidOutput (output : String) : Prop :=\n  IsValidNumber output\n\ndef CountLeftZeros (_ : List String) (_ : Nat) (_ : Int) : Int :=\n  0\n\ndef CountRightZeros (_ : List String) (_ : Nat) (_ : Int) : Int :=\n  0\n\ndef CalculateMinOperations (input : String) (_ : ValidInput input) : String :=\n  let lines := Split input '\\n'\n  let n := StringToInt (lines[0]!)\n  if n = 0 then \"0\"\n  else\n    let leftZeros := CountLeftZeros lines 1 n\n    let rightZeros := CountRightZeros lines 1 n\n    let leftOps := if leftZeros < n - leftZeros then leftZeros else n - leftZeros\n    let rightOps := if rightZeros < n - rightZeros then rightZeros else n - rightZeros\n    IntToString (leftOps + rightOps)\n\n@[reducible, simp]\ndef solve_precond (input : String) : Prop :=\n  input.length > 0 ∧ ValidInput input",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (input : String) (h_precond : solve_precond input) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (input : String) (result : String) (h_precond : solve_precond input) : Prop :=\n  result.length > 0 ∧ ValidOutput result ∧ result = CalculateMinOperations input (h_precond.2)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (input : String) (h_precond : solve_precond input) :\n    solve_postcond input (solve input h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d3ade88fd0a500615cc47dc1e9138460f5809f79886a7693073d0f7a1d1efbd1",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "d1934a6a3c84710d4b7fa8e2adefa01bb90b03ba546db3d999da6cc7a28aa14e"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "22ab09579fb734d2d97ec937057320ab40349d79e0e538356b8e4f6ad3874259",
+   "ctors": [],
+   "value": "5c485248bcf1bb020d8ebe57938110916d7a3b36d5f73d45ed956cd50f289395"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "786a1db51943776aa9deb09fe54242a097b01ea390cad93f9121bbffc9e9ccfa",
+   "ctors": [],
+   "value": null
+  },
+  "ValidOutput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "c31b9cf88fde1290dda112d161c4d043313eb629a5abebf12d6524cd2866ec7b"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "5d61e08c29ee79c54c5e1194920d98f16588f9c77f68f79dd2d24b38f514626b",
+   "ctors": [],
+   "value": "7dceb411aa3d89f4977b9601fbeccab76355308d9e458e3eed39d44600e06217"
+  },
+  "StringToInt": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "9902d19591b27fb48348685e0a7163895afa53ad7c590eb1b9c1c21989da1def",
+   "ctors": [],
+   "value": "5abd98e07b2deffadefbc936b08cb13df17662485449bdc426e75090d1b83a37"
+  },
+  "Split": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "569b45b12bcdb7441cb99c32bf66aeae1c92c19ec7e391302225ddb39c77456c",
+   "ctors": [],
+   "value": "871b36cfefd136c2b3f49ba1a47d215f9703db9a9b4144b290633430bef6c998"
+  },
+  "IsValidNumber": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": "fa0ff70f73145ff1c03d643d5f4faad61e22482c6114e8a0edb7c3303a847862"
+  },
+  "IsValidDoorState": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": "20fc4ba72a52a4f62e02885220abff31ce9d3a43878fda7e1e20c3c928ebb7cc"
+  },
+  "IntToString": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "6ee11f3b1bba7b29bab86d0966bbc8b7cdf4b3a6916980de885b1ecc6b9d47ad",
+   "ctors": [],
+   "value": "f84a2b8ef0037b241794a7a35638a340c54a25938e3a6f354e14b61b60908f02"
+  },
+  "CountRightZeros": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "919abc17248f17a4224d13d88032e55f9dba6a2d43a4909f9c143da18937e826",
+   "ctors": [],
+   "value": "fdcbfd565509d4f727d2e60cde5f7942104f0cb42ae50c4b6ce41ebd2b0a6cb8"
+  },
+  "CountLeftZeros": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "919abc17248f17a4224d13d88032e55f9dba6a2d43a4909f9c143da18937e826",
+   "ctors": [],
+   "value": "fdcbfd565509d4f727d2e60cde5f7942104f0cb42ae50c4b6ce41ebd2b0a6cb8"
+  },
+  "CalculateMinOperations": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "9c062c770fcaffaa4f99bf034aa60c2f1dad8c48d8ddaeb0e1fc3c8b9b03bf60",
+   "ctors": [],
+   "value": "7505ddc31bf07e1f1f5cb329b8fd75feb7ded4cd79952ca4e167c3472ee54976"
+  }
+ },
+ "sha": "f5aa6de94d2d"
+}

@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "CHEAT_REJECTED", "lens": "harness", "what": "postamble duplication: a FIRST fake #guard_msgs block (passes wrong impl) before the real frozen postamble. rfind locks the LAST (frozen) copy, so the fake early block falls into the last hole where its #eval/#guard_msgs are banned -> CHEAT_REJECTED."}

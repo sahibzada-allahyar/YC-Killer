@@ -1,0 +1,82 @@
+{
+ "id": "LF1105",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_minimum_sum_pair (n: Nat) : Nat := sorry\n\ndef isPrime (n: Nat) : Bool := sorry\n\ntheorem output_is_positive (n: Nat) (h: n ≥ 1) :\n  find_minimum_sum_pair n > 0 := sorry\n\ntheorem prime_input_returns_plus_one (n: Nat) (h: n ≥ 1) :\n  isPrime n = true → find_minimum_sum_pair n = n + 1 := sorry\n\ntheorem even_number_property (n: Nat) (h: n ≥ 2) :\n  n % 2 = 0 → find_minimum_sum_pair n ≤ 2 + n/2 := sorry\n\ntheorem one_returns_two :\n  find_minimum_sum_pair 1 = 2 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1929\n-/\n#guard_msgs in\n#eval find_minimum_sum_pair 852140\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval find_minimum_sum_pair 12\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval find_minimum_sum_pair 17\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1929\n-/\n#guard_msgs in\n#eval find_minimum_sum_pair 852140\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval find_minimum_sum_pair 12\n\n/--\ninfo: 18\n-/\n#guard_msgs in\n#eval find_minimum_sum_pair 17",
+ "chunks": [
+  {
+   "text": "def find_minimum_sum_pair (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def isPrime (n: Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem output_is_positive (n: Nat) (h: n ≥ 1) :\n  find_minimum_sum_pair n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prime_input_returns_plus_one (n: Nat) (h: n ≥ 1) :\n  isPrime n = true → find_minimum_sum_pair n = n + 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem even_number_property (n: Nat) (h: n ≥ 2) :\n  n % 2 = 0 → find_minimum_sum_pair n ≤ 2 + n/2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem one_returns_two :\n  find_minimum_sum_pair 1 = 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "prime_input_returns_plus_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "22412af840c23cc706f1206f85844ad18ddd87ba8a3ee177678fed4453372049",
+   "ctors": [],
+   "value": null
+  },
+  "output_is_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "36cc211cd623189118faa696bbf70b342f01ec111ae7017388a438c06c07b152",
+   "ctors": [],
+   "value": null
+  },
+  "one_returns_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8e05c0e88f1c8240dbed27b2f36e51d19268d8de2a73ed9b1fe4574dc967b942",
+   "ctors": [],
+   "value": null
+  },
+  "isPrime": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  },
+  "find_minimum_sum_pair": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "even_number_property": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "187d4d451326f77d945f8dfde35ec923e13b23f178ef15b807f0bf619015cab4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "3bd81b606237"
+}

@@ -1,0 +1,82 @@
+{
+ "id": "LF1528",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_chef_entries (a b : Nat) : Nat × Nat := sorry\n\ntheorem min_leq_max {a b : Nat} :\n  let (min, max) := count_chef_entries a b\n  min ≤ max := sorry\n\ntheorem min_geq_max_input {a b : Nat} :\n  let (min, max) := count_chef_entries a b \n  min ≥ (if a ≥ b then a else b) := sorry \n\ntheorem max_leq_sum {a b : Nat} :\n  let (min, max) := count_chef_entries a b\n  max ≤ a + b := sorry\n\ntheorem min_eq_max_conditions {a b : Nat} :\n  let (min, max) := count_chef_entries a b\n  min = max → (a = 0 ∨ b = 0 ∨ a = b) := sorry\n\ntheorem zero_pair_equals_nonzero {x : Nat} :\n  let (min1, max1) := count_chef_entries x 0\n  let (min2, max2) := count_chef_entries 0 x\n  (min1 = max1 ∧ min1 = x) ∧ (min2 = max2 ∧ min2 = x) := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (19, 36)\n-/\n#guard_msgs in\n#eval count_chef_entries 19 17\n\n/--\ninfo: (5, 7)\n-/\n#guard_msgs in\n#eval count_chef_entries 5 2\n\n/--\ninfo: (10, 10)\n-/\n#guard_msgs in\n#eval count_chef_entries 0 10\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (19, 36)\n-/\n#guard_msgs in\n#eval count_chef_entries 19 17\n\n/--\ninfo: (5, 7)\n-/\n#guard_msgs in\n#eval count_chef_entries 5 2\n\n/--\ninfo: (10, 10)\n-/\n#guard_msgs in\n#eval count_chef_entries 0 10",
+ "chunks": [
+  {
+   "text": "def count_chef_entries (a b : Nat) : Nat × Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_leq_max {a b : Nat} :\n  let (min, max) := count_chef_entries a b\n  min ≤ max :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_geq_max_input {a b : Nat} :\n  let (min, max) := count_chef_entries a b \n  min ≥ (if a ≥ b then a else b) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_leq_sum {a b : Nat} :\n  let (min, max) := count_chef_entries a b\n  max ≤ a + b :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_eq_max_conditions {a b : Nat} :\n  let (min, max) := count_chef_entries a b\n  min = max → (a = 0 ∨ b = 0 ∨ a = b) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zero_pair_equals_nonzero {x : Nat} :\n  let (min1, max1) := count_chef_entries x 0\n  let (min2, max2) := count_chef_entries 0 x\n  (min1 = max1 ∧ min1 = x) ∧ (min2 = max2 ∧ min2 = x) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "zero_pair_equals_nonzero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "af4f594a118f351f42397219e1912e05cf0eddfd27ededa171f4fd8918d4530f",
+   "ctors": [],
+   "value": null
+  },
+  "min_leq_max": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a84e338abb01720741ce6c6c5607ad2278f7c162da4f39b679238a10db7a02d3",
+   "ctors": [],
+   "value": null
+  },
+  "min_geq_max_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "04a7c8936c139d298bc059fa5f56c618a291cd5683c7b858b6ea56d7f3aff1c5",
+   "ctors": [],
+   "value": null
+  },
+  "min_eq_max_conditions": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "289212de371b53cf1cc6c9439c554fcae1db649353bebfff0c19a517ab29f94f",
+   "ctors": [],
+   "value": null
+  },
+  "max_leq_sum": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "171bab1c9430c642e32e5455a4759b511f7ab4ed6bcff1057bb647f1ef9a7ce3",
+   "ctors": [],
+   "value": null
+  },
+  "count_chef_entries": {
+   "kind": "def",
+   "role": "impl",
+   "type": "94d1c62df846fff2fa77a01ceb99004ec535d6ed6ff90f760e019b40920e1992",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "76f8f1ebcb79"
+}

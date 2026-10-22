@@ -1,0 +1,60 @@
+{
+ "id": "LF3588",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def past (h: Nat) (m: Nat) (s: Nat) : Nat :=\n  sorry\n\ntheorem past_valid_time {h m s: Nat} \n  (hh: h ≤ 23) (hm: m ≤ 59) (hs: s ≤ 59) : \n  past h m s = (h * 3600 + m * 60 + s) * 1000 \n  ∧ past h m s < 24 * 60 * 60 * 1000 :=\nsorry\n\ntheorem past_zero_seconds {h m: Nat}\n  (hh: h ≤ 23) (hm: m ≤ 59) :\n  past h m 0 = (h * 3600 + m * 60) * 1000 :=\nsorry \n\ntheorem past_midnight :\n  past 0 0 0 = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 61000\n-/\n#guard_msgs in\n#eval past 0 1 1\n\n/--\ninfo: 3661000\n-/\n#guard_msgs in\n#eval past 1 1 1\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval past 0 0 0\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 61000\n-/\n#guard_msgs in\n#eval past 0 1 1\n\n/--\ninfo: 3661000\n-/\n#guard_msgs in\n#eval past 1 1 1\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval past 0 0 0",
+ "chunks": [
+  {
+   "text": "def past (h: Nat) (m: Nat) (s: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem past_valid_time {h m s: Nat} \n  (hh: h ≤ 23) (hm: m ≤ 59) (hs: s ≤ 59) : \n  past h m s = (h * 3600 + m * 60 + s) * 1000 \n  ∧ past h m s < 24 * 60 * 60 * 1000 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem past_zero_seconds {h m: Nat}\n  (hh: h ≤ 23) (hm: m ≤ 59) :\n  past h m 0 = (h * 3600 + m * 60) * 1000 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem past_midnight :\n  past 0 0 0 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "past_zero_seconds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a812130dfcf0a1f6abc28785a3db4ba47dd0364d9e799ad43a1ad68b878b1e67",
+   "ctors": [],
+   "value": null
+  },
+  "past_valid_time": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cd60ec2a554240804315f2478368b2bffb611ed4470239d2b029cd1371999494",
+   "ctors": [],
+   "value": null
+  },
+  "past_midnight": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3076bd530091cdb957c1e3f0ce8ecf5eb619c7e8b1e1ffbd4cf1b378d772b2cc",
+   "ctors": [],
+   "value": null
+  },
+  "past": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "525d5c17fad6"
+}

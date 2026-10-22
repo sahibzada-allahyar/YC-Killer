@@ -1,0 +1,49 @@
+{
+ "id": "LF4241",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find (seq : List Int) : Int := sorry\n\ntheorem find_simple_sequence\n    (start : Int) :\n    find [start, start + 2, start + 6] = start + 4 := sorry\n\ntheorem find_symmetric_sequence\n    (center : Int) :\n    find [center - 4, center - 2, center + 2, center + 4] = center := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval find [3, 9, 1, 11, 13, 5]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval find [5, -1, 0, 3, 4, -3, 2, -2]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval find [2, -2, 8, -8, 4, -4, 6, -6]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval find [3, 9, 1, 11, 13, 5]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval find [5, -1, 0, 3, 4, -3, 2, -2]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval find [2, -2, 8, -8, 4, -4, 6, -6]",
+ "chunks": [
+  {
+   "text": "def find (seq : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_simple_sequence\n    (start : Int) :\n    find [start, start + 2, start + 6] = start + 4 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_symmetric_sequence\n    (center : Int) :\n    find [center - 4, center - 2, center + 2, center + 4] = center :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "find_symmetric_sequence": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "50049996b3f30da99a34b275c9ab0ad471ae7a29a69ce8ec39a9c4595ba57dcf",
+   "ctors": [],
+   "value": null
+  },
+  "find_simple_sequence": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7038e24367bb9d54d313266009397c76917a20a70cfc8f582b91d332188254bc",
+   "ctors": [],
+   "value": null
+  },
+  "find": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "cb562fca3df9"
+}

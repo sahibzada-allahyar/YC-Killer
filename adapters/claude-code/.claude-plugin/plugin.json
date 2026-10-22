@@ -1,0 +1,6 @@
+{
+  "name": "millennium-harness",
+  "version": "0.9.0",
+  "description": "Review the spec, not the code. A model that never sees your code writes an executable spec; Claude can't finish while a counterexample exists.",
+  "license": "MIT"
+}

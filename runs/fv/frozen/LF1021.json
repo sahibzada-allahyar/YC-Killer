@@ -1,0 +1,104 @@
+{
+ "id": "LF1021",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_min_value (n d : Nat) : Nat × Nat :=\n  sorry\n\ntheorem result_smaller_than_input (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  let (result_n, _) := solve_min_value n d\n  result_n ≤ n :=\nsorry\n\ntheorem result_nonnegative (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  let (result_n, _) := solve_min_value n d\n  result_n ≥ 0 :=\nsorry\n\ntheorem ops_nonnegative (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  let (_, result_ops) := solve_min_value n d\n  result_ops ≥ 0 :=\nsorry\n\ntheorem larger_numbers_get_smaller (n : Nat) (h : n > 9) :\n  let (result_n, _) := solve_min_value n 1\n  result_n < n :=\nsorry\n\ntheorem function_is_deterministic (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  solve_min_value n d = solve_min_value n d :=\nsorry\n\ntheorem one_stays_one :\n  (solve_min_value 1 1).1 = 1 :=\nsorry\n\ntheorem single_digit_not_increase (h : 9 ≥ 1) :\n  (solve_min_value 9 1).1 ≤ 9 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def solve_min_value (n d : Nat) : Nat × Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_smaller_than_input (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  let (result_n, _) := solve_min_value n d\n  result_n ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_nonnegative (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  let (result_n, _) := solve_min_value n d\n  result_n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem ops_nonnegative (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  let (_, result_ops) := solve_min_value n d\n  result_ops ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem larger_numbers_get_smaller (n : Nat) (h : n > 9) :\n  let (result_n, _) := solve_min_value n 1\n  result_n < n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem function_is_deterministic (n d : Nat) (h1 : n > 0) (h2 : d > 0) :\n  solve_min_value n d = solve_min_value n d :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem one_stays_one :\n  (solve_min_value 1 1).1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_digit_not_increase (h : 9 ≥ 1) :\n  (solve_min_value 9 1).1 ≤ 9 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_min_value": {
+   "kind": "def",
+   "role": "impl",
+   "type": "94d1c62df846fff2fa77a01ceb99004ec535d6ed6ff90f760e019b40920e1992",
+   "ctors": [],
+   "value": null
+  },
+  "single_digit_not_increase": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ec577b0b050053385b6809aa3e477fb9a6c001bfbb3c4289e8187cb00867bf1f",
+   "ctors": [],
+   "value": null
+  },
+  "result_smaller_than_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f1122dfcf957bc3b92c4a115f54ccacb2124dd4087c19b6367f6d5e3ba537295",
+   "ctors": [],
+   "value": null
+  },
+  "result_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d7b9ef6d46bc6ddbf6ada61bb4b7b997082efec6cd5c2f3117911c2792522da0",
+   "ctors": [],
+   "value": null
+  },
+  "ops_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1c2451942e3b2893a0ab9baa01088f7681c8695bf52ce482cafb5d2d28d64659",
+   "ctors": [],
+   "value": null
+  },
+  "one_stays_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6bef07a07862c1d3b7010c128831c8bdba7e85973e4da724050a9eb4eb60f10e",
+   "ctors": [],
+   "value": null
+  },
+  "larger_numbers_get_smaller": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a451243dd4f4d6e44cad38124175ed2a3509e3e9b9601e97b246f3519c070008",
+   "ctors": [],
+   "value": null
+  },
+  "function_is_deterministic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a2d6bd68228b14f2b119bf9c66daaa3c82c04d9e4b87c33e6ad36d44f3426918",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "0ceb978d1d8b"
+}

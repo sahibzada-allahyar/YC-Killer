@@ -1,0 +1,82 @@
+{
+ "id": "LF1068",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_kabir_game (n k : Nat) : Nat :=\n  sorry\n\ntheorem bound_lower : ∀ k, 0 ≤ solve_kabir_game 0 (k+1) :=\n  sorry\n\ntheorem bound_upper : solve_kabir_game (10^9) (10^9) < 1000000007 :=\n  sorry \n\ntheorem result_in_mod_range : ∀ n k, k > 0 → \n  0 ≤ solve_kabir_game n k ∧ solve_kabir_game n k < 1000000007 :=\n  sorry\n\ntheorem k_affects_result : ∀ n k, k > 1 → \n  solve_kabir_game n k ≠ solve_kabir_game n (k-1) :=\n  sorry\n\ntheorem small_inputs_bound : ∀ n k,\n  n ≤ 1000 → k ≤ 1000 → k > 0 →\n  solve_kabir_game n k ≤ (n + k)^2 + k :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_kabir_game 0 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_kabir_game 1 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval solve_kabir_game 1 3\n\n/--\ninfo: 46\n-/\n#guard_msgs in\n#eval solve_kabir_game 4 6\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_kabir_game 0 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_kabir_game 1 1\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval solve_kabir_game 1 3\n\n/--\ninfo: 46\n-/\n#guard_msgs in\n#eval solve_kabir_game 4 6",
+ "chunks": [
+  {
+   "text": "def solve_kabir_game (n k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem bound_lower : ∀ k, 0 ≤ solve_kabir_game 0 (k+1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem bound_upper : solve_kabir_game (10^9) (10^9) < 1000000007 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_in_mod_range : ∀ n k, k > 0 → \n  0 ≤ solve_kabir_game n k ∧ solve_kabir_game n k < 1000000007 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem k_affects_result : ∀ n k, k > 1 → \n  solve_kabir_game n k ≠ solve_kabir_game n (k-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem small_inputs_bound : ∀ n k,\n  n ≤ 1000 → k ≤ 1000 → k > 0 →\n  solve_kabir_game n k ≤ (n + k)^2 + k :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_kabir_game": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "small_inputs_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "621842bfbaad6d421b455ca658a27b1499322a3df3ba57457ec6f4e33fa83c7b",
+   "ctors": [],
+   "value": null
+  },
+  "result_in_mod_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d4e9af3683c3951c37f08832c4436b80c9f517ccc959ead2c1c5b85493bc3677",
+   "ctors": [],
+   "value": null
+  },
+  "k_affects_result": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1536e1dc0887e7e67544a1f22bce3ceb879fed7af3e9928d0453a1fbbf5a938b",
+   "ctors": [],
+   "value": null
+  },
+  "bound_upper": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bd8889c83aae7cab1d145b389e6c7247963ba7c2336b0c360545bab273356347",
+   "ctors": [],
+   "value": null
+  },
+  "bound_lower": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c90b6bbc2f1e5b17b6463b6409e1ae7a947b7dc629a3ce976fe6be8d21e736fd",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "05552c2a4eb4"
+}

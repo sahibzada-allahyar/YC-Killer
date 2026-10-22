@@ -1,0 +1,59 @@
+{
+ "id": "LF3389",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def listSum : List Nat → Nat\n| [] => 0\n| x::xs => x + listSum xs\n\ndef listMin : List Nat → Nat\n| [] => 0\n| [x] => x\n| x::xs => min x (listMin xs)\n\ndef secondMin : List Nat → Nat\n| [] => 0\n| [_] => 0\n| l =>\n  let m := listMin l\n  listMin (l.filter (fun x => x ≠ m))\n\ndef solve (chips : List Nat) : Nat :=\nsorry\n\ntheorem solve_two_identical_bounded (a b : Nat)\n  (h₁ : a > 0)\n  (h₂ : b > 0) :\n  solve [a, a, b] ≤ (a + a + b) / 2 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve [1, 1, 1]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve [1, 2, 1]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve [8, 2, 8]\n",
+ "warnings": [],
+ "preamble": "def listSum : List Nat → Nat\n| [] => 0\n| x::xs => x + listSum xs\n\ndef listMin : List Nat → Nat\n| [] => 0\n| [x] => x\n| x::xs => min x (listMin xs)\n\ndef secondMin : List Nat → Nat\n| [] => 0\n| [_] => 0\n| l =>\n  let m := listMin l\n  listMin (l.filter (fun x => x ≠ m))",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve [1, 1, 1]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve [1, 2, 1]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve [8, 2, 8]",
+ "chunks": [
+  {
+   "text": "def solve (chips : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_two_identical_bounded (a b : Nat)\n  (h₁ : a > 0)\n  (h₂ : b > 0) :\n  solve [a, a, b] ≤ (a + a + b) / 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_two_identical_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "24848c617b2f82c96295d8811e6b760b5e1a214e90f3d48deef4bf79123f41a9",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "secondMin": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "4f26b06a100bdfd1ab7a571d0e64502cb326a39353f80f1abcea981e1c2273fa"
+  },
+  "listSum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "listMin": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "8bfa7b116e58e27dff6dc717a83b5a7671ea0cc2c48a134b1be166b3a10ab6bb"
+  }
+ },
+ "sha": "d5eaff766025"
+}

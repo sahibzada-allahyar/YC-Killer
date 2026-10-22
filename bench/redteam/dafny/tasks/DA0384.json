@@ -1,0 +1,8 @@
+{
+ "id": "DA0384",
+ "source": "apps",
+ "source-id": "apps_test_2025",
+ "preamble": "predicate IsComposite(x: int)\n{\n    x >= 4 && exists k :: 2 <= k < x && x % k == 0\n}\n\npredicate ValidInput(queries: seq<int>)\n{\n    forall i :: 0 <= i < |queries| ==> queries[i] >= 1\n}\n\nfunction MaxCompositeSummands(n: int): int\n{\n    if n % 4 == 0 then n / 4\n    else if n % 4 == 1 && n / 4 >= 2 then n / 4 - 1\n    else if n % 4 == 2 && n / 4 >= 1 then n / 4\n    else if n % 4 == 3 && n / 4 >= 3 then n / 4 - 1\n    else -1\n}\n\npredicate ValidResult(queries: seq<int>, results: seq<int>)\n{\n    |results| == |queries| &&\n    forall i :: 0 <= i < |queries| ==> results[i] == MaxCompositeSummands(queries[i]) &&\n    forall i :: 0 <= i < |queries| ==> results[i] >= -1\n}",
+ "spec": "method solve(queries: seq<int>) returns (results: seq<int>)\n    requires ValidInput(queries)\n    ensures ValidResult(queries, results)",
+ "postamble": ""
+}

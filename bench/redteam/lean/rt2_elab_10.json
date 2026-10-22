@@ -1,0 +1,2 @@
+{"task_id": "LF1342", "expect": "PROVED", "observed": "PROVED", "hole": false, "honest": true,
+ "what": "HONEST solution (false-rejection probe): prefix-minima count via foldl. Correctly PROVED; no false rejection."}

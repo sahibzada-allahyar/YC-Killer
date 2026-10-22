@@ -1,0 +1,71 @@
+{
+ "id": "LF1430",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calc_robbery_probability (n : Nat) : Nat × Nat := sorry\n\n-- Basic properties\n\ntheorem robbery_prob_numerator (n : Nat) (h : n > 0) : \n  (calc_robbery_probability n).1 = 1 := sorry \n\ntheorem robbery_prob_denominator (n : Nat) (h : n > 0) :\n  (calc_robbery_probability n).2 = 10 ^ (n / 2) := sorry\n\ntheorem robbery_prob_consistent (n : Nat) (h : n > 0) :\n  calc_robbery_probability n = calc_robbery_probability n := sorry\n\n-- Monotonicity property\n\ntheorem robbery_prob_monotonic (n : Nat) (h : n > 1) :\n  (calc_robbery_probability (n-1)).2 ≤ (calc_robbery_probability n).2 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (1, 1)\n-/\n#guard_msgs in\n#eval calc_robbery_probability 1\n\n/--\ninfo: (1, 10)\n-/\n#guard_msgs in\n#eval calc_robbery_probability 2\n\n/--\ninfo: (1, 10)\n-/\n#guard_msgs in\n#eval calc_robbery_probability 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: (1, 1)\n-/\n#guard_msgs in\n#eval calc_robbery_probability 1\n\n/--\ninfo: (1, 10)\n-/\n#guard_msgs in\n#eval calc_robbery_probability 2\n\n/--\ninfo: (1, 10)\n-/\n#guard_msgs in\n#eval calc_robbery_probability 3",
+ "chunks": [
+  {
+   "text": "def calc_robbery_probability (n : Nat) : Nat × Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem robbery_prob_numerator (n : Nat) (h : n > 0) : \n  (calc_robbery_probability n).1 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem robbery_prob_denominator (n : Nat) (h : n > 0) :\n  (calc_robbery_probability n).2 = 10 ^ (n / 2) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem robbery_prob_consistent (n : Nat) (h : n > 0) :\n  calc_robbery_probability n = calc_robbery_probability n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem robbery_prob_monotonic (n : Nat) (h : n > 1) :\n  (calc_robbery_probability (n-1)).2 ≤ (calc_robbery_probability n).2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "robbery_prob_numerator": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "550e08cabad582d08c469ed4ab91acd98c57cfdf3f190b88223240c9d94c3444",
+   "ctors": [],
+   "value": null
+  },
+  "robbery_prob_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f99ecfb0d75b9ebcd4784da90887b8f72a814f832da673ad19cc7e22750cb88d",
+   "ctors": [],
+   "value": null
+  },
+  "robbery_prob_denominator": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "86f45f5e546285d4bc9b6e1cb20b3fbd975cae3561d49b63d334ca006576097b",
+   "ctors": [],
+   "value": null
+  },
+  "robbery_prob_consistent": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "08562322fdd00cd595e631f143f943bc09a273600c823961921e22b3d975fe83",
+   "ctors": [],
+   "value": null
+  },
+  "calc_robbery_probability": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3975485b11b040702f8f84be3931f3c62df54cb0ff30816e683f8a02093abd9b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "938f59672923"
+}

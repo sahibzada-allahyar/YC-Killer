@@ -1,0 +1,71 @@
+{
+ "id": "LF1519",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_rubiks_cuboid (m n o : Nat) : Nat := sorry\n\ntheorem solve_non_negative (m n o : Nat) : \n  solve_rubiks_cuboid m n o ≥ 0 := sorry\n\ntheorem solve_commutative (m n o : Nat) :\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid m o n ∧\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid n m o ∧ \n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid n o m ∧\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid o m n ∧\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid o n m := sorry\n\ntheorem small_cubes_zero (m n o : Nat) :\n  m ≤ 2 → n ≤ 2 → o ≤ 2 → solve_rubiks_cuboid m n o = 0 := sorry\n\ntheorem increases_with_size (m n o : Nat) :\n  solve_rubiks_cuboid (m + 1) n o ≥ solve_rubiks_cuboid m n o ∧\n  solve_rubiks_cuboid m (n + 1) o ≥ solve_rubiks_cuboid m n o ∧\n  solve_rubiks_cuboid m n (o + 1) ≥ solve_rubiks_cuboid m n o := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval solve_rubiks_cuboid 3 3 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_rubiks_cuboid 1 1 1\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval solve_rubiks_cuboid 4 3 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval solve_rubiks_cuboid 3 3 3\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_rubiks_cuboid 1 1 1\n\n/--\ninfo: 12\n-/\n#guard_msgs in\n#eval solve_rubiks_cuboid 4 3 2",
+ "chunks": [
+  {
+   "text": "def solve_rubiks_cuboid (m n o : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_non_negative (m n o : Nat) : \n  solve_rubiks_cuboid m n o ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_commutative (m n o : Nat) :\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid m o n ∧\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid n m o ∧ \n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid n o m ∧\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid o m n ∧\n  solve_rubiks_cuboid m n o = solve_rubiks_cuboid o n m :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem small_cubes_zero (m n o : Nat) :\n  m ≤ 2 → n ≤ 2 → o ≤ 2 → solve_rubiks_cuboid m n o = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem increases_with_size (m n o : Nat) :\n  solve_rubiks_cuboid (m + 1) n o ≥ solve_rubiks_cuboid m n o ∧\n  solve_rubiks_cuboid m (n + 1) o ≥ solve_rubiks_cuboid m n o ∧\n  solve_rubiks_cuboid m n (o + 1) ≥ solve_rubiks_cuboid m n o :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_rubiks_cuboid": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  },
+  "solve_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c129c6bcd034d0c0b0ca547ae758699d984b749ef184a8b5e1602cab2e20e0b5",
+   "ctors": [],
+   "value": null
+  },
+  "solve_commutative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c054c066bf426fcb14430965ec450c3e8672606d756155710c5286a46e2306ea",
+   "ctors": [],
+   "value": null
+  },
+  "small_cubes_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "111a35bf24faf86bd63ecd42618f79200b22f933d8aecf20d09a095a0e8b8f49",
+   "ctors": [],
+   "value": null
+  },
+  "increases_with_size": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c2318b7dc94b25ca7fc9ebd8ee614925f400dff33bbfc96e210802ae34152db4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b21053bc0fbb"
+}

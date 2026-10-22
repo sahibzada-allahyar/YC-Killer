@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "UNPROVED",
+ "observed": "UNPROVED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "Persistent top-level set_option (format.width 3, pp.oneline true) with no trailing 'in', placed between the frozen theorem and the postamble so it survives into the #guard_msgs tests. These options are not in the ban list and do persist, but they only affect the elaborator's pretty-printer, not #eval's runtime repr string, so a wrong Nat output is unchanged -> UNPROVED. Confirms set_option display games cannot fake scalar #eval output."
+}

@@ -1,0 +1,78 @@
+{
+ "id": "LF2925",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def abs (n : Int) : Int :=\n  if n ≥ 0 then n else -n\n\ndef list_minimum (lst : List Int) : Int :=\nsorry\n\ndef array_center (lst : List Int) : List Int :=\nsorry\n\ndef mean (lst : List Int) : Int :=\nsorry\n\ndef list_index_of (lst : List Int) (x : Int) : Nat :=\nsorry\n\ntheorem array_center_is_subset {lst : List Int} (h : lst ≠ []) :\n  ∀ x, x ∈ array_center lst → x ∈ lst :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [4, 5]\n-/\n#guard_msgs in\n#eval array_center [8, 3, 4, 5, 2, 8]\n\n/--\ninfo: [1, 2, 1]\n-/\n#guard_msgs in\n#eval array_center [1, 3, 2, 1]\n\n/--\ninfo: [10, 11, 12, 13, 14]\n-/\n#guard_msgs in\n#eval array_center [10, 11, 12, 13, 14]\n",
+ "warnings": [],
+ "preamble": "def abs (n : Int) : Int :=\n  if n ≥ 0 then n else -n",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [4, 5]\n-/\n#guard_msgs in\n#eval array_center [8, 3, 4, 5, 2, 8]\n\n/--\ninfo: [1, 2, 1]\n-/\n#guard_msgs in\n#eval array_center [1, 3, 2, 1]\n\n/--\ninfo: [10, 11, 12, 13, 14]\n-/\n#guard_msgs in\n#eval array_center [10, 11, 12, 13, 14]",
+ "chunks": [
+  {
+   "text": "def list_minimum (lst : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def array_center (lst : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def mean (lst : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def list_index_of (lst : List Int) (x : Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_center_is_subset {lst : List Int} (h : lst ≠ []) :\n  ∀ x, x ∈ array_center lst → x ∈ lst :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "mean": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  },
+  "list_minimum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  },
+  "list_index_of": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4d1be6e9c9a75fce1ca859d229e0353736a1e728567541da34a5169f195c651b",
+   "ctors": [],
+   "value": null
+  },
+  "array_center_is_subset": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2e94080c2a8ea26a6ac8e653f6dd914dd875a0fad958e674b8c01675432d16d9",
+   "ctors": [],
+   "value": null
+  },
+  "array_center": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ff8c7dcd009bee99c01691be3ac149aece3fe289c6b9eaccbc0960acfd5422ff",
+   "ctors": [],
+   "value": null
+  },
+  "abs": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": "4c117040f3f3c9da32a757012c1ed9219951fd7fc7809d0eb11b937db374d97a"
+  }
+ },
+ "sha": "cc2e1fc21332"
+}

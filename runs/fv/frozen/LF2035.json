@@ -1,0 +1,111 @@
+{
+ "id": "LF2035",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def DisjointSet := Nat → Nat\n\ndef is_valid_relationship (n : Nat) (relationships : List (Nat × Nat × Nat)) : Bool :=\nsorry\n\ndef solve_love_triangles (n : Nat) (relationships : List (Nat × Nat × Nat)) : Nat :=\nsorry\n\ndef DisjointSet.find_set (ds : DisjointSet) (x : Nat) : Nat :=\nsorry\n\ndef DisjointSet.union (ds : DisjointSet) (x y : Nat) : DisjointSet :=\nsorry\n\ntheorem empty_relationships_power_two (n : Nat) (h : n > 0) :\n  solve_love_triangles n [] = (2^(n-1)) % (10^9 + 7) :=\nsorry\n\ntheorem result_within_modulo_bounds (n : Nat) (relationships : List (Nat × Nat × Nat)) :\n  0 ≤ solve_love_triangles n relationships ∧\n  solve_love_triangles n relationships < 10^9 + 7 :=\nsorry\n\ntheorem contradictory_relationships_zero (n : Nat) (h : n ≥ 2) :\n  solve_love_triangles n [(1,2,1), (2,1,0)] = 0 :=\nsorry\n\ntheorem result_modularity (n : Nat) (relationships : List (Nat × Nat × Nat)) :\n  solve_love_triangles n relationships % (10^9 + 7) =\n  solve_love_triangles n relationships :=\nsorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_love_triangles 3 []\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_love_triangles 4 [(1, 2, 1), (2, 3, 1), (3, 4, 0), (4, 1, 0)]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_love_triangles 4 [(1, 2, 1), (2, 3, 1), (3, 4, 0), (4, 1, 1)]\n",
+ "warnings": [],
+ "preamble": "def DisjointSet := Nat → Nat",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_love_triangles 3 []\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_love_triangles 4 [(1, 2, 1), (2, 3, 1), (3, 4, 0), (4, 1, 0)]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_love_triangles 4 [(1, 2, 1), (2, 3, 1), (3, 4, 0), (4, 1, 1)]",
+ "chunks": [
+  {
+   "text": "def is_valid_relationship (n : Nat) (relationships : List (Nat × Nat × Nat)) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def solve_love_triangles (n : Nat) (relationships : List (Nat × Nat × Nat)) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def DisjointSet.find_set (ds : DisjointSet) (x : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def DisjointSet.union (ds : DisjointSet) (x y : Nat) : DisjointSet :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_relationships_power_two (n : Nat) (h : n > 0) :\n  solve_love_triangles n [] = (2^(n-1)) % (10^9 + 7) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_within_modulo_bounds (n : Nat) (relationships : List (Nat × Nat × Nat)) :\n  0 ≤ solve_love_triangles n relationships ∧\n  solve_love_triangles n relationships < 10^9 + 7 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem contradictory_relationships_zero (n : Nat) (h : n ≥ 2) :\n  solve_love_triangles n [(1,2,1), (2,1,0)] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_modularity (n : Nat) (relationships : List (Nat × Nat × Nat)) :\n  solve_love_triangles n relationships % (10^9 + 7) =\n  solve_love_triangles n relationships :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_love_triangles": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fc282ee6f220d081e491d347e0fb955e595cc45178e523e7b110d27e9009d1ee",
+   "ctors": [],
+   "value": null
+  },
+  "result_within_modulo_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d31e13ee036b79858f9a786c2458e07c8add89662be79a1ef023a99ed35dac0e",
+   "ctors": [],
+   "value": null
+  },
+  "result_modularity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "60070c16632d952c1cb4bac82d2c64e5a378fc9c2f43ee3c5d02b19435e0b943",
+   "ctors": [],
+   "value": null
+  },
+  "is_valid_relationship": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fe55efaf84126a1d1a83372c299936dc696dd97472c386be465bd57c79f657fb",
+   "ctors": [],
+   "value": null
+  },
+  "empty_relationships_power_two": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f0a582e1a8cd8ae0e74efad5070324bfbda6b701c29cb0a17064391b28655157",
+   "ctors": [],
+   "value": null
+  },
+  "contradictory_relationships_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2b828d4bd00499695225f813c01975b86c6248bbfee862a0fe7d93701a45ea7e",
+   "ctors": [],
+   "value": null
+  },
+  "DisjointSet.union": {
+   "kind": "def",
+   "role": "impl",
+   "type": "92a9238809b2751befa9525605615258eed05820c0ae327e5a544a609b6fd660",
+   "ctors": [],
+   "value": null
+  },
+  "DisjointSet.find_set": {
+   "kind": "def",
+   "role": "impl",
+   "type": "df5088d90918e28306f5ab1474b1f09ea5b5a59b3e35728c2f0660da83c2c52f",
+   "ctors": [],
+   "value": null
+  },
+  "DisjointSet": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1b133736844cb3655471652fa096eadf95e48b74d4c77c6231b4f02d12479713",
+   "ctors": [],
+   "value": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029"
+  }
+ },
+ "sha": "2c8e6f4f0159"
+}

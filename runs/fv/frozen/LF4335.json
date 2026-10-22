@@ -1,0 +1,60 @@
+{
+ "id": "LF4335",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def smallest_integer (matrix : List (List Int)) : Nat :=\n  sorry\n\ntheorem smallest_integer_result_nonnegative (matrix : List (List Int)) :\n  0 ≤ smallest_integer matrix := sorry\n\ntheorem smallest_integer_not_in_matrix (matrix : List (List Int)) :\n  ¬ (∃ row ∈ matrix, ∃ x ∈ row, x ≥ 0 ∧ x = smallest_integer matrix) := sorry\n\ntheorem negative_numbers_ignored (matrix : List (List Int)) :\n  smallest_integer matrix = \n  smallest_integer (List.map (λ row => List.map (λ x => if x ≥ 0 then x else -1) row) matrix) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval smallest_integer [[0, 2], [5, 1]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval smallest_integer [[1, 2], [3, 4]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval smallest_integer [[-1, -1], [-1, -1]]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval smallest_integer [[0, 2], [5, 1]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval smallest_integer [[1, 2], [3, 4]]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval smallest_integer [[-1, -1], [-1, -1]]",
+ "chunks": [
+  {
+   "text": "def smallest_integer (matrix : List (List Int)) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem smallest_integer_result_nonnegative (matrix : List (List Int)) :\n  0 ≤ smallest_integer matrix :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem smallest_integer_not_in_matrix (matrix : List (List Int)) :\n  ¬ (∃ row ∈ matrix, ∃ x ∈ row, x ≥ 0 ∧ x = smallest_integer matrix) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem negative_numbers_ignored (matrix : List (List Int)) :\n  smallest_integer matrix = \n  smallest_integer (List.map (λ row => List.map (λ x => if x ≥ 0 then x else -1) row) matrix) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "smallest_integer_result_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e2a7f4114fdf70a4b282ce24e1482aa22bb06d68741178f571de9e32939a5856",
+   "ctors": [],
+   "value": null
+  },
+  "smallest_integer_not_in_matrix": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cc017f5d9c7a3b28e14345a8a1223d21e816b431f096603e57a6cdda4e7e31e7",
+   "ctors": [],
+   "value": null
+  },
+  "smallest_integer": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ef2b0e34f6b77363ad7fc7ec1ea40b33b3a60052f98f9287c67aa5b1cc92677d",
+   "ctors": [],
+   "value": null
+  },
+  "negative_numbers_ignored": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "91fb2395257a35cca87e39c939ec81c4519539a067e7b50f591b6ae6925c421a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "98a3de0d9505"
+}

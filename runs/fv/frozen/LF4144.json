@@ -1,0 +1,60 @@
+{
+ "id": "LF4144",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def digits (n : Nat) : List Nat := sorry\n\ndef combinations (xs : List α) (k : Nat) : List (List α) := sorry\n\ntheorem single_digit (n : Nat) (h : n ≤ 9) :\n  digits n = [] := sorry\n\ntheorem two_digits (n : Nat) (h₁ : n ≥ 10) (h₂ : n ≤ 99) :\n  let result := digits n\n  result.length = 1 ∧ \n  result.head! = ((toString n).toList.map (fun c => c.toNat - '0'.toNat)).foldl (·+·) 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [6, 7, 11]\n-/\n#guard_msgs in\n#eval digits 156\n\n/--\ninfo: [9, 13, 17, 14, 6, 10, 7, 14, 11, 15]\n-/\n#guard_msgs in\n#eval digits 81596\n\n/--\ninfo: [11, 8, 5, 13, 10, 7]\n-/\n#guard_msgs in\n#eval digits 3852\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [6, 7, 11]\n-/\n#guard_msgs in\n#eval digits 156\n\n/--\ninfo: [9, 13, 17, 14, 6, 10, 7, 14, 11, 15]\n-/\n#guard_msgs in\n#eval digits 81596\n\n/--\ninfo: [11, 8, 5, 13, 10, 7]\n-/\n#guard_msgs in\n#eval digits 3852",
+ "chunks": [
+  {
+   "text": "def digits (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def combinations (xs : List α) (k : Nat) : List (List α) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_digit (n : Nat) (h : n ≤ 9) :\n  digits n = [] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem two_digits (n : Nat) (h₁ : n ≥ 10) (h₂ : n ≤ 99) :\n  let result := digits n\n  result.length = 1 ∧ \n  result.head! = ((toString n).toList.map (fun c => c.toNat - '0'.toNat)).foldl (·+·) 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "two_digits": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a23c9b6c4c50e1e889485b699b64b8bbcd48c6771494e139f75002f5a429738f",
+   "ctors": [],
+   "value": null
+  },
+  "single_digit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "40ac60ff00630de64aa405bc69664d5fe28712802bf672388c17b6324a2d7f85",
+   "ctors": [],
+   "value": null
+  },
+  "digits": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  },
+  "combinations": {
+   "kind": "def",
+   "role": "impl",
+   "type": "59372e5af2a278a6e5e3a1ce6fcd7c62f19a263abb4d93cb9df971be993ae8a7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "25f6fb520aaa"
+}

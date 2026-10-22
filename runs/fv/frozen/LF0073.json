@@ -1,0 +1,49 @@
+{
+ "id": "LF0073",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def merge_sorted_arrays (a1 a2 : List Int) : List Int := sorry\n\ntheorem merge_sorted_arrays_case1 :\n  merge_sorted_arrays [2, 1, 2] [1, -1, 5] = [2, 1, -1, 5] := sorry\n\ntheorem merge_sorted_arrays_case2 :\n  merge_sorted_arrays [1, 2, 3] [4, 5, 6] = [1, 2, 3, 4, 5, 6] := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def merge_sorted_arrays (a1 a2 : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem merge_sorted_arrays_case1 :\n  merge_sorted_arrays [2, 1, 2] [1, -1, 5] = [2, 1, -1, 5] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem merge_sorted_arrays_case2 :\n  merge_sorted_arrays [1, 2, 3] [4, 5, 6] = [1, 2, 3, 4, 5, 6] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "merge_sorted_arrays_case2": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6e4a2ec28100d61e1cc53f3e6a4d9e5fad2e952ef10479c069a4ec8450950df8",
+   "ctors": [],
+   "value": null
+  },
+  "merge_sorted_arrays_case1": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "878ff9c1d742e9d9d08a4e9b4295daf51b4f28416b80b2d4adac8e230551cad7",
+   "ctors": [],
+   "value": null
+  },
+  "merge_sorted_arrays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d0c021bd5e78f55d0ae19aa14e0347eabf22c9e4ffc790e7f336d28a05bcb5b0",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "808a732163ab"
+}

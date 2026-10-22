@@ -1,0 +1,60 @@
+{
+ "id": "LF0664",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def return_number (n : Int) : Int := sorry\n\ntheorem return_number_returns_input (n : Int) : \n  return_number n = n := sorry\n\ntheorem return_number_nonneg (n : Int) (h : n ≥ 0) : \n  return_number n ≥ 0 ∧ return_number n = n := sorry\n\ntheorem return_number_nonpos (n : Int) (h : n ≤ 0) :\n  return_number n ≤ 0 ∧ return_number n = n := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 123\n-/\n#guard_msgs in\n#eval return_number 123\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval return_number 0\n\n/--\ninfo: 99999\n-/\n#guard_msgs in\n#eval return_number 99999\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 123\n-/\n#guard_msgs in\n#eval return_number 123\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval return_number 0\n\n/--\ninfo: 99999\n-/\n#guard_msgs in\n#eval return_number 99999",
+ "chunks": [
+  {
+   "text": "def return_number (n : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem return_number_returns_input (n : Int) : \n  return_number n = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem return_number_nonneg (n : Int) (h : n ≥ 0) : \n  return_number n ≥ 0 ∧ return_number n = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem return_number_nonpos (n : Int) (h : n ≤ 0) :\n  return_number n ≤ 0 ∧ return_number n = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "return_number_returns_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "60055a968ab6b441f801199b47d7b0d78630c66479476e2641db544fb3a3c485",
+   "ctors": [],
+   "value": null
+  },
+  "return_number_nonpos": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8b8e1c1adca8844d69b8921753580b7a02d5b440d938f445ea98345b0eb203ef",
+   "ctors": [],
+   "value": null
+  },
+  "return_number_nonneg": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4910019dff6972db6b60ac328b0946b9a2ed23d8518c845faff03e9fc26cca19",
+   "ctors": [],
+   "value": null
+  },
+  "return_number": {
+   "kind": "def",
+   "role": "impl",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f4e020a731c0"
+}

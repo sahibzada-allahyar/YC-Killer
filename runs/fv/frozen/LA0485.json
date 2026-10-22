@@ -1,0 +1,70 @@
+{
+ "id": "LA0485",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (n m x y : Int) (xx yy : List Int) : Prop :=\n  xx.length = n ∧ yy.length = m ∧ n ≥ 1 ∧ m ≥ 1 ∧ x < y\n\ndef AgreementPossible (n m x y : Int) (xx yy : List Int) (h_valid : ValidInput n m x y xx yy) : Prop :=\n  let combined_x := xx ++ [x]\n  let combined_y := yy ++ [y]\n  (∃ max_val, max_val ∈ combined_x ∧ \n              (∀ v, v ∈ combined_x → v ≤ max_val) ∧\n   ∃ min_val, min_val ∈ combined_y ∧ \n              (∀ v, v ∈ combined_y → v ≥ min_val) ∧\n              max_val < min_val)\n\n@[reducible, simp]\ndef solve_precond (n m x y : Int) (xx yy : List Int) : Prop :=\n  ValidInput n m x y xx yy\n\ndef solve (n m x y : Int) (xx yy : List Int) (h_precond : solve_precond n m x y xx yy) : String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n m x y : Int) (xx yy : List Int) (result: String) (h_precond : solve_precond n m x y xx yy) : Prop :=\n  (result = \"No War\" ∨ result = \"War\") ∧\n  (result = \"No War\" ↔ AgreementPossible n m x y xx yy h_precond)\n\ntheorem solve_spec_satisfied (n m x y : Int) (xx yy : List Int) (h_precond : solve_precond n m x y xx yy) :\n    solve_postcond n m x y xx yy (solve n m x y xx yy h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (n m x y : Int) (xx yy : List Int) : Prop :=\n  xx.length = n ∧ yy.length = m ∧ n ≥ 1 ∧ m ≥ 1 ∧ x < y\n\ndef AgreementPossible (n m x y : Int) (xx yy : List Int) (h_valid : ValidInput n m x y xx yy) : Prop :=\n  let combined_x := xx ++ [x]\n  let combined_y := yy ++ [y]\n  (∃ max_val, max_val ∈ combined_x ∧ \n              (∀ v, v ∈ combined_x → v ≤ max_val) ∧\n   ∃ min_val, min_val ∈ combined_y ∧ \n              (∀ v, v ∈ combined_y → v ≥ min_val) ∧\n              max_val < min_val)\n\n@[reducible, simp]\ndef solve_precond (n m x y : Int) (xx yy : List Int) : Prop :=\n  ValidInput n m x y xx yy",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n m x y : Int) (xx yy : List Int) (h_precond : solve_precond n m x y xx yy) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n m x y : Int) (xx yy : List Int) (result: String) (h_precond : solve_precond n m x y xx yy) : Prop :=\n  (result = \"No War\" ∨ result = \"War\") ∧\n  (result = \"No War\" ↔ AgreementPossible n m x y xx yy h_precond)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n m x y : Int) (xx yy : List Int) (h_precond : solve_precond n m x y xx yy) :\n    solve_postcond n m x y xx yy (solve n m x y xx yy h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3f3cec0002d43b23c5fc9acf002322d2e2824cf5b50df2a4ada3e8daad6f56d4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7519a20f92541adab104ad78d0ef6bf8222fd1a10616dc1c70769b5ebd8cfa35",
+   "ctors": [],
+   "value": "b269080df6456b57a92c7ce63a046935979418403c9dade56fd880171ef2c4dc"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "fb9a38466a65a5cb8992f48a6d5cd3609a713c101eab81df2c71837e74feb025",
+   "ctors": [],
+   "value": "1e30d6fb99547951d48427cff623acd7694586961693cc08b49c53b1b90eb12c"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "bfbe41ef9d27bbfbc797c394672f52f6fa155752169cde831339e3ecdb4e4860",
+   "ctors": [],
+   "value": null
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7519a20f92541adab104ad78d0ef6bf8222fd1a10616dc1c70769b5ebd8cfa35",
+   "ctors": [],
+   "value": "cad0a95c763fbc21cf65b38da80a21cf5dd5a1b11d239519afd8846182614b6e"
+  },
+  "AgreementPossible": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f17b9e94b39577bed3a06034aca8861655b1fd9475f9b6b17e48ba25c4d42c03",
+   "ctors": [],
+   "value": "4479e1b388a03b3b2c56c01526ea89ae60b237c0e2a6a1a451828264fc0dcb94"
+  }
+ },
+ "sha": "f46cc6ab14d1"
+}

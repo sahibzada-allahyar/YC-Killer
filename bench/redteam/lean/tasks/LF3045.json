@@ -1,0 +1,12 @@
+{
+ "id": "LF3045",
+ "language": "lean",
+ "source": "fvapps",
+ "source-id": "fvapps_003045",
+ "vc-description": "/-\n# Let's play Psychic \n\nA box contains green, red, and blue balls. The total number of balls is given by `n` (`0 < n < 50`).\n\nEach ball has a mass that depends on the ball color. Green balls weigh `5kg`, red balls weigh `4kg`, and blue balls weigh `3kg`.\n\nGiven the total number of balls in the box, `n`, and a total mass, `m`, your task is to craft a program that will determine the quantities of each colored ball. Return a list of these quantities as the answer.\n\nDon't forget that some combinations of `n` and `m` may have more than one possibility!\n\n# Examples\n\n## Python\n```python\n>>> Guess_it(3, 12)\n[[0,3,0], [1,1,1]]\n```\n\n## Elixir\n\n*Note: Order of the returned elements is unimportant in the Elixir version.*\n\n# Assumptions\n\n1. You can assume that all inputs are of the correct type\n2. You can assume that the range of `n` will be `[1, 50]`\n3. Each element of the returned list should return the quantities in the order of `g`, `r`, `b`. \n\n## Python\n```python\n[[green, red, blue]]\n```\n\n## Elixir\n-/",
+ "vc-preamble": "",
+ "vc-helpers": "",
+ "vc-definitions": "def guess_it (n : Int) (m : Int) : List (List Int) := sorry\n\ndef allPos (xs : List Int) : Bool := sorry",
+ "vc-theorems": "theorem m_zero_zero :\n  guess_it 0 0 = [[0,0,0]] := sorry\n\ntheorem zero_one :\n  guess_it 0 1 = [] := sorry",
+ "vc-postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible"
+}

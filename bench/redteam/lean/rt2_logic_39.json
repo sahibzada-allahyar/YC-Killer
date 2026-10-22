@@ -1,0 +1,1 @@
+{"task_id": "LF3523", "expect": "PROVED", "note": "curated OK; shape-only wrong impl (List.replicate n 0) PROVED. The only non-trivial theorem is a length=n constraint; curation battery never tries a replicate body."}

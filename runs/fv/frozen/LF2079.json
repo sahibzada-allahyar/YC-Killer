@@ -1,0 +1,49 @@
+{
+ "id": "LF2079",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_distinct_or_values (nums : List Nat) : Nat := sorry\n\ndef uniqueCount (l : List Nat) : Nat := \n  (l.foldl (fun acc x => if x ∈ acc then acc else x::acc) []).length\n\ntheorem count_distinct_or_values_singleton {n : Nat} :\n  count_distinct_or_values [n] = 1 := sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_distinct_or_values [1, 2, 0]\n\n/--\ninfo: 11\n-/\n#guard_msgs in\n#eval count_distinct_or_values [1, 2, 3, 4, 5, 6, 1, 2, 9, 10]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_distinct_or_values [123]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_distinct_or_values [1, 2, 0]\n\n/--\ninfo: 11\n-/\n#guard_msgs in\n#eval count_distinct_or_values [1, 2, 3, 4, 5, 6, 1, 2, 9, 10]\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_distinct_or_values [123]",
+ "chunks": [
+  {
+   "text": "def count_distinct_or_values (nums : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def uniqueCount (l : List Nat) : Nat := \n  (l.foldl (fun acc x => if x ∈ acc then acc else x::acc) []).length",
+   "hole_after": false
+  },
+  {
+   "text": "theorem count_distinct_or_values_singleton {n : Nat} :\n  count_distinct_or_values [n] = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "uniqueCount": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "51d2e1a513c6c9fcf8d26588aeab2d32eb09185c98f9e865f30cc90e4fcb4881"
+  },
+  "count_distinct_or_values_singleton": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "03d3620cc5a5a59ca00224ddcf0b51cc4752263b294e959a85d17df94db738e6",
+   "ctors": [],
+   "value": null
+  },
+  "count_distinct_or_values": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "9f29e8742f4d"
+}

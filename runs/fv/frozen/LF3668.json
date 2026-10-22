@@ -1,0 +1,49 @@
+{
+ "id": "LF3668",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def gcd (a b : Nat) : Nat := sorry\n\ndef final_attack_value (x : Nat) (monster_list : List Nat) : Nat := sorry\n\ntheorem final_attack_value_empty {x : Nat} (hx : x > 0) :\n    final_attack_value x [] = x := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 110\n-/\n#guard_msgs in\n#eval final_attack_value 50 [50, 105, 200]\n\n/--\ninfo: 205\n-/\n#guard_msgs in\n#eval final_attack_value 20 [30, 20, 15, 40, 100]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 110\n-/\n#guard_msgs in\n#eval final_attack_value 50 [50, 105, 200]\n\n/--\ninfo: 205\n-/\n#guard_msgs in\n#eval final_attack_value 20 [30, 20, 15, 40, 100]",
+ "chunks": [
+  {
+   "text": "def gcd (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def final_attack_value (x : Nat) (monster_list : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem final_attack_value_empty {x : Nat} (hx : x > 0) :\n    final_attack_value x [] = x :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "gcd": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "final_attack_value_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a28c222a85ea8cef3ef11c6f6dcdd6bedf7f4ddf0310f5558a8deff7cf8747d5",
+   "ctors": [],
+   "value": null
+  },
+  "final_attack_value": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "4a6c206edbb3"
+}

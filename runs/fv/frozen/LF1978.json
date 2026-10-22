@@ -1,0 +1,38 @@
+{
+ "id": "LF1978",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_efficiency_workgroup (n : Nat) (superiors : List Int) (efficiencies : List Int) : Int :=\nsorry\n\ntheorem single_node_case (efficiency : Int) (h : -100 ≤ efficiency ∧ efficiency ≤ 100) :\n  max_efficiency_workgroup 1 [-1] [efficiency] = efficiency :=\nsorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 17\n-/\n#guard_msgs in\n#eval max_efficiency_workgroup 7 [-1, 1, 1, 1, 4, 4, 5] [3, 2, 1, 4, 5, 3, 2]\n\n/--\ninfo: 42\n-/\n#guard_msgs in\n#eval max_efficiency_workgroup 1 [-1] [42]\n\n/--\ninfo: 85\n-/\n#guard_msgs in\n#eval max_efficiency_workgroup 3 [-1, 1, 1] [1, 42, 42]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 17\n-/\n#guard_msgs in\n#eval max_efficiency_workgroup 7 [-1, 1, 1, 1, 4, 4, 5] [3, 2, 1, 4, 5, 3, 2]\n\n/--\ninfo: 42\n-/\n#guard_msgs in\n#eval max_efficiency_workgroup 1 [-1] [42]\n\n/--\ninfo: 85\n-/\n#guard_msgs in\n#eval max_efficiency_workgroup 3 [-1, 1, 1] [1, 42, 42]",
+ "chunks": [
+  {
+   "text": "def max_efficiency_workgroup (n : Nat) (superiors : List Int) (efficiencies : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_node_case (efficiency : Int) (h : -100 ≤ efficiency ∧ efficiency ≤ 100) :\n  max_efficiency_workgroup 1 [-1] [efficiency] = efficiency :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_node_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e96fe173a162e0da59ece0aeb84799f6d1aa910cf8ab0d6262ad9a65f8ccf258",
+   "ctors": [],
+   "value": null
+  },
+  "max_efficiency_workgroup": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c27f062bc426053606f9ec2077da3ac0210090004d36788775300a74e271287d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d40d53488479"
+}

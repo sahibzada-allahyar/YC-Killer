@@ -1,0 +1,82 @@
+{
+ "id": "LF4194",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def mango (quantity price : Nat) : Nat :=\n  sorry\n\ntheorem mango_cost_less_than_full : ∀ (quantity price : Nat),\n  mango quantity price ≤ quantity * price :=\nsorry\n\ntheorem mango_non_negative : ∀ (quantity price : Nat),\n  mango quantity price ≥ 0 :=\nsorry\n\ntheorem mango_every_third_free : ∀ (quantity price : Nat),\n  mango quantity price = (quantity - quantity / 3) * price :=\nsorry\n\ntheorem mango_zero_price : ∀ (quantity : Nat),\n  mango quantity 0 = 0 :=\nsorry\n\ntheorem mango_single_quantity : ∀ (price : Nat),\n  mango 1 price = price :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval mango 3 3\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval mango 9 5\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval mango 6 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval mango 3 3\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval mango 9 5\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval mango 6 2",
+ "chunks": [
+  {
+   "text": "def mango (quantity price : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mango_cost_less_than_full : ∀ (quantity price : Nat),\n  mango quantity price ≤ quantity * price :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mango_non_negative : ∀ (quantity price : Nat),\n  mango quantity price ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mango_every_third_free : ∀ (quantity price : Nat),\n  mango quantity price = (quantity - quantity / 3) * price :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mango_zero_price : ∀ (quantity : Nat),\n  mango quantity 0 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem mango_single_quantity : ∀ (price : Nat),\n  mango 1 price = price :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "mango_zero_price": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "45bc3896f4a09956eccbc5a178e1f19fce563f63a869e720c46cb322529c214c",
+   "ctors": [],
+   "value": null
+  },
+  "mango_single_quantity": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f22c5f007091a71efa18c537557ac5def9a9500c314f7a7e5fb337d827415027",
+   "ctors": [],
+   "value": null
+  },
+  "mango_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0f698a680af778b799983f4916f420722608a3fc3318e832aee4f324365f50e9",
+   "ctors": [],
+   "value": null
+  },
+  "mango_every_third_free": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ea89137168cc1120ff1713e9f5bca40cf096fefbc38ffe46a740e28e99819089",
+   "ctors": [],
+   "value": null
+  },
+  "mango_cost_less_than_full": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "da81e02e2714b216a6867ed250474f73a8e41a547da034a2832f6297d61048d8",
+   "ctors": [],
+   "value": null
+  },
+  "mango": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6384d6c5671d"
+}

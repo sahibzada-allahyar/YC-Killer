@@ -1,0 +1,91 @@
+{
+ "id": "LA0392",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (l r : Int) : Prop :=\n  l < r ∧ (r - l) % 2 = 1\n\ndef gcd (a b : Int) : Int :=\n  if a = 0 then if b ≥ 0 then b else -b\n  else if a > 0 then Int.gcd a.natAbs b.natAbs\n  else Int.gcd a.natAbs b.natAbs\n\ndef int_to_string (n : Int) : String :=\n  toString n\n\ndef PairHasGcdOne (pair : String) (l r : Int) : Prop :=\n  ∃ i j, l ≤ i ∧ i ≤ r ∧ l ≤ j ∧ j ≤ r ∧ i ≠ j ∧\n    pair = int_to_string i ++ \" \" ++ int_to_string j ∧\n    (i ≠ 0 ∨ j ≠ 0) ∧ gcd i j = 1\n\ndef ValidSolution (result : List String) (l r : Int) : Prop :=\n  result.length ≥ 1 ∧\n  result[0]! = \"YES\" ∧\n  result.length = 1 + (r - l + 1) / 2 ∧\n  (∀ i, 1 ≤ i ∧ i < result.length → PairHasGcdOne result[i]! l r)\n\n@[reducible, simp]\ndef solve_precond (l r : Int) : Prop :=\n  ValidInput l r\n\ndef solve (l r : Int) (h_precond : solve_precond l r) : List String :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (l r : Int) (result : List String) (h_precond : solve_precond l r) : Prop :=\n  ValidSolution result l r ∧\n  result.length ≥ 1 ∧\n  result[0]! = \"YES\" ∧\n  result.length = 1 + (r - l + 1) / 2 ∧\n  (∀ i, 1 ≤ i ∧ i < result.length →\n    (∃ j, l ≤ j ∧ j ≤ r - 1 ∧ j % 2 = l % 2 ∧\n     result[i]! = int_to_string j ++ \" \" ++ int_to_string (j + 1)))\n\ntheorem solve_spec_satisfied (l r : Int) (h_precond : solve_precond l r) :\n    solve_postcond l r (solve l r h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (l r : Int) : Prop :=\n  l < r ∧ (r - l) % 2 = 1\n\ndef gcd (a b : Int) : Int :=\n  if a = 0 then if b ≥ 0 then b else -b\n  else if a > 0 then Int.gcd a.natAbs b.natAbs\n  else Int.gcd a.natAbs b.natAbs\n\ndef int_to_string (n : Int) : String :=\n  toString n\n\ndef PairHasGcdOne (pair : String) (l r : Int) : Prop :=\n  ∃ i j, l ≤ i ∧ i ≤ r ∧ l ≤ j ∧ j ≤ r ∧ i ≠ j ∧\n    pair = int_to_string i ++ \" \" ++ int_to_string j ∧\n    (i ≠ 0 ∨ j ≠ 0) ∧ gcd i j = 1\n\ndef ValidSolution (result : List String) (l r : Int) : Prop :=\n  result.length ≥ 1 ∧\n  result[0]! = \"YES\" ∧\n  result.length = 1 + (r - l + 1) / 2 ∧\n  (∀ i, 1 ≤ i ∧ i < result.length → PairHasGcdOne result[i]! l r)\n\n@[reducible, simp]\ndef solve_precond (l r : Int) : Prop :=\n  ValidInput l r",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (l r : Int) (h_precond : solve_precond l r) : List String :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (l r : Int) (result : List String) (h_precond : solve_precond l r) : Prop :=\n  ValidSolution result l r ∧\n  result.length ≥ 1 ∧\n  result[0]! = \"YES\" ∧\n  result.length = 1 + (r - l + 1) / 2 ∧\n  (∀ i, 1 ≤ i ∧ i < result.length →\n    (∃ j, l ≤ j ∧ j ≤ r - 1 ∧ j % 2 = l % 2 ∧\n     result[i]! = int_to_string j ++ \" \" ++ int_to_string (j + 1)))",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (l r : Int) (h_precond : solve_precond l r) :\n    solve_postcond l r (solve l r h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "71a1109a7cb7ab22d973068036ce14f778b7bc3389c7c091ad557e3e290fe44d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "6c55caadba544e20471b83194c8d47f40ba4110a96686b310f5725d74788c78a"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7ee9d6f871cd95035d79c22452ef921f8c2c448b55770c109a4d54af93025b3b",
+   "ctors": [],
+   "value": "089f62cb729fa02383ef034ae01802ecdcb3407dcc28b0ce43f013a42647174f"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4bdd2aa05ae5d738edcff23dd9ef31d90bb2bf5a2cafa653900c072528c15377",
+   "ctors": [],
+   "value": null
+  },
+  "int_to_string": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "6ee11f3b1bba7b29bab86d0966bbc8b7cdf4b3a6916980de885b1ecc6b9d47ad",
+   "ctors": [],
+   "value": "91528f53c6ebdcd044c3ca6be5fefc3c328a0869da417a05a452cf74051a963a"
+  },
+  "gcd": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f69849a0bbfa5e71b3578e12cbc38913dc4f648b96980448e76e0db847b1d43d",
+   "ctors": [],
+   "value": "15f39b949db9a8d7abf7d6a8dbf49c7d78c11d1f52cd80f3ecb5b8c613bd9f35"
+  },
+  "ValidSolution": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "613939f15a4348748011d6134d56eabe8fd8902b9ae2b942ae9cf63eee202f12",
+   "ctors": [],
+   "value": "56be3a618c78c8b558e6b77903c80dd0b0dd07c5ad1d2589acdccb2505863541"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "121fa394539445b03244f2f3d9f2165485ff4d34ae96a41c8452ab0f60e3d04b"
+  },
+  "PairHasGcdOne": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "214bb87821bcc7aa72ee5978c4e9d9a6b4037794c7c7c0b7ae228688f4b500cd",
+   "ctors": [],
+   "value": "cb070da88e0fc3adcc4d6455d58a28623cc03bb4b6737c6cf0a5441139db9210"
+  }
+ },
+ "sha": "5525c7dcd3d1"
+}

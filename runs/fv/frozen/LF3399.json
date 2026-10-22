@@ -1,0 +1,49 @@
+{
+ "id": "LF3399",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def binary_array_to_number (arr : List Nat) : Nat :=\n  sorry\n\ntheorem binary_array_to_number_zero :\n  binary_array_to_number [0] = 0 :=\nsorry\n\ntheorem binary_array_to_number_one :\n  binary_array_to_number [1] = 1 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval binary_array_to_number [0, 0, 0, 1]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval binary_array_to_number [0, 1, 1, 0]\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval binary_array_to_number [1, 1, 1, 1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval binary_array_to_number [0, 0, 0, 1]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval binary_array_to_number [0, 1, 1, 0]\n\n/--\ninfo: 15\n-/\n#guard_msgs in\n#eval binary_array_to_number [1, 1, 1, 1]",
+ "chunks": [
+  {
+   "text": "def binary_array_to_number (arr : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem binary_array_to_number_zero :\n  binary_array_to_number [0] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem binary_array_to_number_one :\n  binary_array_to_number [1] = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "binary_array_to_number_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "90290e94b0090b8709515e46e42a9b786708bac969d59ed60812300a68d7e345",
+   "ctors": [],
+   "value": null
+  },
+  "binary_array_to_number_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6e25efc219fcc33a102301e8832c613dca800de5625311b945325b8ee6e011f8",
+   "ctors": [],
+   "value": null
+  },
+  "binary_array_to_number": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "93eadaec0a07"
+}

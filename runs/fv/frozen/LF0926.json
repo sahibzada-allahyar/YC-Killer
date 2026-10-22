@@ -1,0 +1,60 @@
+{
+ "id": "LF0926",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calculate_series_sum (n: Nat) : Nat :=\nsorry\n\ntheorem calculate_series_sum_positive {n: Nat} (h: n > 0) : \n  calculate_series_sum n > 0 := sorry\n\ntheorem calculate_series_sum_increasing {n: Nat} (h: n > 1) :\n  calculate_series_sum n > calculate_series_sum (n-1) := sorry\n\ntheorem calculate_series_sum_known_values :\n  calculate_series_sum 1 = 1 ∧ calculate_series_sum 3 = 45 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def calculate_series_sum (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calculate_series_sum_positive {n: Nat} (h: n > 0) : \n  calculate_series_sum n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calculate_series_sum_increasing {n: Nat} (h: n > 1) :\n  calculate_series_sum n > calculate_series_sum (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem calculate_series_sum_known_values :\n  calculate_series_sum 1 = 1 ∧ calculate_series_sum 3 = 45 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "calculate_series_sum_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5e7f69303c5d69b8e04df59ca2967097a8466583058837df2f633af5a686dc4a",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_series_sum_known_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fa97885dbe983008975062a51de4c3c153c64a10345934f27ed5673f2074755d",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_series_sum_increasing": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "13c8a579a16194255279aa35b5b74196845aae0a6facea1f45b9a1ff69ee5559",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_series_sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "691be797f4b0"
+}

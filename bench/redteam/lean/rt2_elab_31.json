@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "SPEC_TAMPERED",
+ "observed": "SPEC_TAMPERED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: namespace-shadow of the frozen theorem. Honest impl passes the #eval tests; theorem empty_payments is wrapped in namespace Foo ... end Foo so it becomes Foo.empty_payments. Frozen constant empty_payments missing -> SPEC_TAMPERED (name-resolution / namespace game)."
+}

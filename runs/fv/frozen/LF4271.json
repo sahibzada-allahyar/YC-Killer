@@ -1,0 +1,71 @@
+{
+ "id": "LF4271",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def get_matrix (n : Nat) : List (List Nat) := sorry\n\ntheorem matrix_size_matches_input (n : Nat) (h : n ≤ 100) :\n  let matrix := get_matrix n\n  (matrix.length = n) ∧ \n  (n > 0 → ∀ row ∈ matrix, row.length = n) := sorry\n\ntheorem matrix_has_ones_on_diagonal (n : Nat) (h : n ≤ 100) :\n  let matrix := get_matrix n\n  n > 0 → ∀ i < n, (matrix.get! i).get! i = 1 := sorry\n\ntheorem matrix_has_zeros_off_diagonal (n : Nat) (h : n ≤ 100) :\n  let matrix := get_matrix n\n  n > 0 → ∀ i j, i < n → j < n → i ≠ j →\n  (matrix.get! i).get! j = 0 := sorry\n\ntheorem empty_matrix :\n  get_matrix 0 = [] := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval get_matrix 0\n\n/--\ninfo: [[1]]\n-/\n#guard_msgs in\n#eval get_matrix 1\n\n/--\ninfo: [[1, 0], [0, 1]]\n-/\n#guard_msgs in\n#eval get_matrix 2\n\n/--\ninfo: [[1, 0, 0], [0, 1, 0], [0, 0, 1]]\n-/\n#guard_msgs in\n#eval get_matrix 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval get_matrix 0\n\n/--\ninfo: [[1]]\n-/\n#guard_msgs in\n#eval get_matrix 1\n\n/--\ninfo: [[1, 0], [0, 1]]\n-/\n#guard_msgs in\n#eval get_matrix 2\n\n/--\ninfo: [[1, 0, 0], [0, 1, 0], [0, 0, 1]]\n-/\n#guard_msgs in\n#eval get_matrix 3",
+ "chunks": [
+  {
+   "text": "def get_matrix (n : Nat) : List (List Nat) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem matrix_size_matches_input (n : Nat) (h : n ≤ 100) :\n  let matrix := get_matrix n\n  (matrix.length = n) ∧ \n  (n > 0 → ∀ row ∈ matrix, row.length = n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem matrix_has_ones_on_diagonal (n : Nat) (h : n ≤ 100) :\n  let matrix := get_matrix n\n  n > 0 → ∀ i < n, (matrix.get! i).get! i = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem matrix_has_zeros_off_diagonal (n : Nat) (h : n ≤ 100) :\n  let matrix := get_matrix n\n  n > 0 → ∀ i j, i < n → j < n → i ≠ j →\n  (matrix.get! i).get! j = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_matrix :\n  get_matrix 0 = [] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "matrix_size_matches_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cbbe4e411738a61f5785dc87ef974346a09a19fa3039668521c78b61d2b9e859",
+   "ctors": [],
+   "value": null
+  },
+  "matrix_has_zeros_off_diagonal": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1bcff9e2aa8e2e3554d981cea14f67a17f7c42a72ea20fe421fe28551a5b542c",
+   "ctors": [],
+   "value": null
+  },
+  "matrix_has_ones_on_diagonal": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1bb997c2af30ead3c3f07fb1e1053e7dc7201ea5eaa8cefd86fdbdfc463c71c1",
+   "ctors": [],
+   "value": null
+  },
+  "get_matrix": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7b59345b57261bba75d56a7ba6456dbb923cf83509cb39dc3a874b7db4d2e3d5",
+   "ctors": [],
+   "value": null
+  },
+  "empty_matrix": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "65ec9d4484fad9c2a06c7d46893ecce2af01948116d4d8152468d0ec446c2094",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7eabb0c00cd4"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF1011",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def gcd (a b : Nat) : Nat := sorry\n\ndef count_good_pairs (n p : Nat) : Nat := sorry\n\ntheorem count_good_pairs_bounds (n p : Nat) (h1 : n > 0) (h2 : p > 0) :\n  0 ≤ count_good_pairs n p ∧ count_good_pairs n p ≤ (n * (n-1)) / 2 := sorry\n\ntheorem count_good_pairs_monotonic (n p : Nat) (h1 : n > 1) (h2 : p > 0) :\n  count_good_pairs n p ≥ count_good_pairs (n-1) p := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_good_pairs 2 3\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_good_pairs 3 3\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_good_pairs 4 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_good_pairs 2 3\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_good_pairs 3 3\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval count_good_pairs 4 5",
+ "chunks": [
+  {
+   "text": "def gcd (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def count_good_pairs (n p : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_good_pairs_bounds (n p : Nat) (h1 : n > 0) (h2 : p > 0) :\n  0 ≤ count_good_pairs n p ∧ count_good_pairs n p ≤ (n * (n-1)) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_good_pairs_monotonic (n p : Nat) (h1 : n > 1) (h2 : p > 0) :\n  count_good_pairs n p ≥ count_good_pairs (n-1) p :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "gcd": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "count_good_pairs_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a91b076bea4ab69057e532f9ee77c49a6a2b60f625cc20544d8ff90469b1d607",
+   "ctors": [],
+   "value": null
+  },
+  "count_good_pairs_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5eefbaf1f4f773c561356c5a9e23a9243c7aa7e6665497b11e2a47af607d57ff",
+   "ctors": [],
+   "value": null
+  },
+  "count_good_pairs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "5fa6bdaef225"
+}

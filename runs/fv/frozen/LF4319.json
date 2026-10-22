@@ -1,0 +1,52 @@
+{
+ "id": "LF4319",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum_list : List Nat → Nat\n  | [] => 0\n  | (x::xs) => x + sum_list xs\n\ndef select_indices : List Nat → (Nat → Bool) → List Nat\n  | [], _ => []\n  | (x::xs), f => if f 0 then x::(select_indices xs (fun n => f (n+1)))\n                  else select_indices xs (fun n => f (n+1))\n\ndef row_weights (numbers : List Nat) : Nat × Nat := sorry\n\ntheorem row_weights_single_element (n : Nat) :\n  let (team1, team2) := row_weights [n]\n  team2 = 0 ∧ team1 = n := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "def sum_list : List Nat → Nat\n  | [] => 0\n  | (x::xs) => x + sum_list xs\n\ndef select_indices : List Nat → (Nat → Bool) → List Nat\n  | [], _ => []\n  | (x::xs), f => if f 0 then x::(select_indices xs (fun n => f (n+1)))\n                  else select_indices xs (fun n => f (n+1))",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def row_weights (numbers : List Nat) : Nat × Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem row_weights_single_element (n : Nat) :\n  let (team1, team2) := row_weights [n]\n  team2 = 0 ∧ team1 = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_list": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "select_indices": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "4d50f83bc8cf718ea1afdf682ea7ffe690156689aac8c592340ca90f89cd3a17",
+   "ctors": [],
+   "value": "ff0e890f1bb2ec7cb255e4c65e3e5a8b4aebac891e174048f625c0a764983bca"
+  },
+  "row_weights_single_element": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "00affdc1c08601df78707d9e907cfb8d947accb13bebe21e23a76ac6be773ae8",
+   "ctors": [],
+   "value": null
+  },
+  "row_weights": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b086408f58b758efca1ea5ffc4016f7577ff955191f2bf13b2f10ef742e8c1c6",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "08d3506d60a9"
+}

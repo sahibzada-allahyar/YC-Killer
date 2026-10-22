@@ -1,0 +1,82 @@
+{
+ "id": "LF2229",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def get_shortest_string_length (s : String) : Nat := sorry\n\ntheorem shortest_length_non_negative (s : String) : \n  get_shortest_string_length s ≥ 0 := sorry\n\ntheorem shortest_length_at_most_input (s : String) :\n  get_shortest_string_length s ≤ String.length s := sorry\n\ntheorem AB_reduces_length (s : String) (i : Nat) :\n  i + 1 < s.length →\n  (h1 : i < s.length) →\n  (h2 : i + 1 < s.length) →\n  s.data[i]'h1 = 'A' →\n  s.data[i + 1]'h2 = 'B' →\n  get_shortest_string_length s < String.length s := sorry\n\ntheorem BB_reduces_length (s : String) (i : Nat) :\n  i + 1 < s.length →\n  (h1 : i < s.length) →\n  (h2 : i + 1 < s.length) →\n  s.data[i]'h1 = 'B' →\n  s.data[i + 1]'h2 = 'B' →\n  get_shortest_string_length s < String.length s := sorry\n\ntheorem repeated_B_reduces_to_zero_or_one (n : Nat) :\n  let s := String.mk (List.replicate n 'B')\n  get_shortest_string_length s = 0 ∨ get_shortest_string_length s = 1 := sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval get_shortest_string_length \"AAA\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval get_shortest_string_length \"BABA\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval get_shortest_string_length \"AABBBABBBB\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval get_shortest_string_length \"AAA\"\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval get_shortest_string_length \"BABA\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval get_shortest_string_length \"AABBBABBBB\"",
+ "chunks": [
+  {
+   "text": "def get_shortest_string_length (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem shortest_length_non_negative (s : String) : \n  get_shortest_string_length s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem shortest_length_at_most_input (s : String) :\n  get_shortest_string_length s ≤ String.length s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem AB_reduces_length (s : String) (i : Nat) :\n  i + 1 < s.length →\n  (h1 : i < s.length) →\n  (h2 : i + 1 < s.length) →\n  s.data[i]'h1 = 'A' →\n  s.data[i + 1]'h2 = 'B' →\n  get_shortest_string_length s < String.length s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem BB_reduces_length (s : String) (i : Nat) :\n  i + 1 < s.length →\n  (h1 : i < s.length) →\n  (h2 : i + 1 < s.length) →\n  s.data[i]'h1 = 'B' →\n  s.data[i + 1]'h2 = 'B' →\n  get_shortest_string_length s < String.length s :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem repeated_B_reduces_to_zero_or_one (n : Nat) :\n  let s := String.mk (List.replicate n 'B')\n  get_shortest_string_length s = 0 ∨ get_shortest_string_length s = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "shortest_length_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ea16e475ab0fa26da90e004d9b92859749dd621164883ef48db3fc3a3b076df5",
+   "ctors": [],
+   "value": null
+  },
+  "shortest_length_at_most_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c58959f94deba96e7c8e6b2927b751b05ae086b4538c2eb1f3b8be9bd3293c5d",
+   "ctors": [],
+   "value": null
+  },
+  "repeated_B_reduces_to_zero_or_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "da77de7c9557664c1acd8a013b0081a160ea2b6f3018b3cb8e42b0d00945221c",
+   "ctors": [],
+   "value": null
+  },
+  "get_shortest_string_length": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "BB_reduces_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1e33a88a5c015bac952a0dcfc47a78defae624b97766faca6506073dbdd9c4fb",
+   "ctors": [],
+   "value": null
+  },
+  "AB_reduces_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0c8417d95c201dfc218fe4c6e5b5f35e84dd0239cf82308b3c816e6b78e07d53",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2a729e5e3e18"
+}

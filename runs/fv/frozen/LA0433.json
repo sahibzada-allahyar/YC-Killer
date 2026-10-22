@@ -1,0 +1,84 @@
+{
+ "id": "LA0433",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (testCases : List (Int × Int × List (Int × Int))) : Prop :=\n  testCases.length ≥ 0 ∧\n  ∀ i, i < testCases.length → \n    let (n, x, operations) := testCases[i]!\n    n ≥ 1 ∧ 1 ≤ x ∧ x ≤ n ∧ operations.length ≥ 0 ∧\n    (∀ j, j < operations.length → \n      let (l, r) := operations[j]!\n      1 ≤ l ∧ l ≤ r ∧ r ≤ n)\n\ndef computeFinalBoundsHelper (left right : Int) (operations : List (Int × Int)) (index : Nat) : Int × Int :=\n  if index ≥ operations.length then (left, right)\n  else\n    let (l, r) := operations[index]!\n    let newLeft := min left l\n    let newRight := max right r\n    computeFinalBoundsHelper newLeft newRight operations (index + 1)\n\ndef computeFinalBounds (x : Int) (operations : List (Int × Int)) : Int × Int :=\n  computeFinalBoundsHelper x x operations 0\n\ndef ValidResults (testCases : List (Int × Int × List (Int × Int))) (results : List Int) : Prop :=\n  ValidInput testCases →\n  results.length = testCases.length ∧\n  ∀ i, i < testCases.length → \n    let (n, x, operations) := testCases[i]!\n    let finalBounds := computeFinalBounds x operations\n    results[i]! = finalBounds.2 - finalBounds.1 + 1 ∧\n    finalBounds.1 ≤ x ∧ x ≤ finalBounds.2 ∧\n    results[i]! ≥ 1 ∧\n    1 ≤ finalBounds.1 ∧ finalBounds.1 ≤ finalBounds.2 ∧ finalBounds.2 ≤ n\n\n@[reducible, simp]\ndef solve_precond (testCases : List (Int × Int × List (Int × Int))) : Prop :=\n  ValidInput testCases\n\ndef solve (testCases : List (Int × Int × List (Int × Int))) (h_precond : solve_precond testCases) : List Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (testCases : List (Int × Int × List (Int × Int))) (results : List Int) (h_precond : solve_precond testCases) : Prop :=\n  ValidResults testCases results\n\ntheorem solve_spec_satisfied (testCases : List (Int × Int × List (Int × Int))) (h_precond : solve_precond testCases) :\n    solve_postcond testCases (solve testCases h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (testCases : List (Int × Int × List (Int × Int))) : Prop :=\n  testCases.length ≥ 0 ∧\n  ∀ i, i < testCases.length → \n    let (n, x, operations) := testCases[i]!\n    n ≥ 1 ∧ 1 ≤ x ∧ x ≤ n ∧ operations.length ≥ 0 ∧\n    (∀ j, j < operations.length → \n      let (l, r) := operations[j]!\n      1 ≤ l ∧ l ≤ r ∧ r ≤ n)\n\ndef computeFinalBoundsHelper (left right : Int) (operations : List (Int × Int)) (index : Nat) : Int × Int :=\n  if index ≥ operations.length then (left, right)\n  else\n    let (l, r) := operations[index]!\n    let newLeft := min left l\n    let newRight := max right r\n    computeFinalBoundsHelper newLeft newRight operations (index + 1)\n\ndef computeFinalBounds (x : Int) (operations : List (Int × Int)) : Int × Int :=\n  computeFinalBoundsHelper x x operations 0\n\ndef ValidResults (testCases : List (Int × Int × List (Int × Int))) (results : List Int) : Prop :=\n  ValidInput testCases →\n  results.length = testCases.length ∧\n  ∀ i, i < testCases.length → \n    let (n, x, operations) := testCases[i]!\n    let finalBounds := computeFinalBounds x operations\n    results[i]! = finalBounds.2 - finalBounds.1 + 1 ∧\n    finalBounds.1 ≤ x ∧ x ≤ finalBounds.2 ∧\n    results[i]! ≥ 1 ∧\n    1 ≤ finalBounds.1 ∧ finalBounds.1 ≤ finalBounds.2 ∧ finalBounds.2 ≤ n\n\n@[reducible, simp]\ndef solve_precond (testCases : List (Int × Int × List (Int × Int))) : Prop :=\n  ValidInput testCases",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (testCases : List (Int × Int × List (Int × Int))) (h_precond : solve_precond testCases) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (testCases : List (Int × Int × List (Int × Int))) (results : List Int) (h_precond : solve_precond testCases) : Prop :=\n  ValidResults testCases results",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (testCases : List (Int × Int × List (Int × Int))) (h_precond : solve_precond testCases) :\n    solve_postcond testCases (solve testCases h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "84f8c7839446264dd1d85a8a2000cc4eeb5f97afbad7aaa46ac33ab54c6db396",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7f0c6b9220ce6ad5d554030ee07120fd0d224643c46de53cedee9443a023de55",
+   "ctors": [],
+   "value": "e553aeb4cff100df7c3ed7bfad591c035110707cbf395e5b240fdd08c1ca9be6"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "ef1855216aa7564a73eefa82f37510a1e507062ed1b3116ac794e22289bd88ea",
+   "ctors": [],
+   "value": "3ab2c2a8c49ec5f3996c57a4614b794829f1f0527cb07cb1a5d533ff8523d03b"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "059e4ea540b7d05a13a8fe145d5c12826c10035c4ebf92fcc03b62db7dd76b05",
+   "ctors": [],
+   "value": null
+  },
+  "computeFinalBoundsHelper": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b18918f2548214b81e3507052599675c90fb12d070230994b45f94dc7270ff21",
+   "ctors": [],
+   "value": "10e5d6babd7fb59a8d227a8416ce603cbb673c476784e107241be2313702b077"
+  },
+  "computeFinalBounds": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "eea2c76cc6507c86f5d91af5482ddecd134fe44875f042d34abd055839272cdb",
+   "ctors": [],
+   "value": "0f2e26445d087b6a7fc473b284ebc542d5aecfaca619d2f6b4985ff9794e4c07"
+  },
+  "ValidResults": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "057c4eff3a2a1bd703ba3de70dbeca10625c754b50fc85141063db6b1e09a42b",
+   "ctors": [],
+   "value": "6e079bf1a1673e8794a2588b156e357dddb287274f5c4c4a96f32755afcaea82"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7f0c6b9220ce6ad5d554030ee07120fd0d224643c46de53cedee9443a023de55",
+   "ctors": [],
+   "value": "1c3790e7d1bd0b33b790c2b831629c61d7c3c949ea00a7c5920961323afb2904"
+  }
+ },
+ "sha": "ad56936f6f50"
+}

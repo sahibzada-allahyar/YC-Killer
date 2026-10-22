@@ -1,0 +1,38 @@
+{
+ "id": "LF1408",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_perimeter_fence (n m : Nat) (points : List (Int × Int)) : Float := \n  sorry\n\ntheorem min_perimeter_fence_non_negative (n m : Nat) (points : List (Int × Int)) :\n  min_perimeter_fence n m points ≥ 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def min_perimeter_fence (n m : Nat) (points : List (Int × Int)) : Float :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_perimeter_fence_non_negative (n m : Nat) (points : List (Int × Int)) :\n  min_perimeter_fence n m points ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_perimeter_fence_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f5870ef63f2eceb943df6f41d75fdd58f21c787321e7c6acc6b1d8eae2dab70d",
+   "ctors": [],
+   "value": null
+  },
+  "min_perimeter_fence": {
+   "kind": "def",
+   "role": "impl",
+   "type": "440b756d51cb0266a4ff0d72d96c5dda249a7d8f6ac9faf470f65bea1507add1",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a4a79e543cfe"
+}

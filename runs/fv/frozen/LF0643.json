@@ -1,0 +1,82 @@
+{
+ "id": "LF0643",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def MODULO := 1000000007\n\ndef sum_odds_in_range (l r : Nat) : Nat :=\n  sorry\n\ndef solve_alternate_odd_sum (d l r : Nat) : Nat :=\n  sorry\n\ntheorem result_non_negative (d l r : Nat) :\n  solve_alternate_odd_sum d l r ≥ 0 :=\nsorry\n\ntheorem same_start_end_even (d l : Nat) :\n  l % 2 = 0 →\n  solve_alternate_odd_sum d l l = 0 :=\nsorry\n\ntheorem empty_range (d : Nat) :\n  ∀ l r : Nat, r < l →\n  solve_alternate_odd_sum d l r = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 114\n-/\n#guard_msgs in\n#eval solve_alternate_odd_sum 3 10 33\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_alternate_odd_sum 2 1 7\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve_alternate_odd_sum 3 1 9\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 114\n-/\n#guard_msgs in\n#eval solve_alternate_odd_sum 3 10 33\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_alternate_odd_sum 2 1 7\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve_alternate_odd_sum 3 1 9",
+ "chunks": [
+  {
+   "text": "def MODULO := 1000000007",
+   "hole_after": false
+  },
+  {
+   "text": "def sum_odds_in_range (l r : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def solve_alternate_odd_sum (d l r : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_non_negative (d l r : Nat) :\n  solve_alternate_odd_sum d l r ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem same_start_end_even (d l : Nat) :\n  l % 2 = 0 →\n  solve_alternate_odd_sum d l l = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_range (d : Nat) :\n  ∀ l r : Nat, r < l →\n  solve_alternate_odd_sum d l r = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_odds_in_range": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "solve_alternate_odd_sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  },
+  "same_start_end_even": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "42a9cc5f7e8ffa4651a43108ab5e1d47d7abbfbd82ec3a95fc5271810a1e1a13",
+   "ctors": [],
+   "value": null
+  },
+  "result_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8c0305839cfd9eb525a0b0a958f653c8299f1944f22400017e994ff2f48b20b8",
+   "ctors": [],
+   "value": null
+  },
+  "empty_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f53ae7fa4d53af397179a2cb3ff3345b3afcf778156dde3b3c579005ae99633f",
+   "ctors": [],
+   "value": null
+  },
+  "MODULO": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a042c2f9295422f77f175109eafcd76205d097b54f71376d6aaf200c5aed1864",
+   "ctors": [],
+   "value": "76bb31d53adfdb40dd9a8aadd10cd539ce35d9911ea2ef640f0705e32842fc2b"
+  }
+ },
+ "sha": "01601b7f932f"
+}

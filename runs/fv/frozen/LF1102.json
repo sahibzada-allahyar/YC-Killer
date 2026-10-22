@@ -1,0 +1,38 @@
+{
+ "id": "LF1102",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_decodings (s : String) : String := sorry\n\ntheorem single_valid_mapping_returns_yes_or_no (n : Nat) \n  (h : 1 ≤ n ∧ n ≤ 26) :\n  let s := toString n\n  count_decodings s = \"YES\" ∨ count_decodings s = \"NO\" := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def count_decodings (s : String) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_valid_mapping_returns_yes_or_no (n : Nat) \n  (h : 1 ≤ n ∧ n ≤ 26) :\n  let s := toString n\n  count_decodings s = \"YES\" ∨ count_decodings s = \"NO\" :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_valid_mapping_returns_yes_or_no": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8166a88032c78ca38c02ef20827b1ad72a3e27fca5fb747de8fe47938aed0f3d",
+   "ctors": [],
+   "value": null
+  },
+  "count_decodings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6f0513922b1b32500fef5a52f309f3291d42e6ae6f7d7e89b365f7e92e39e763",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ed7277def08b"
+}

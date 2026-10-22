@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0457",
+ "expect": "PROVED",
+ "observed": "PROVED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3 FALSE-REJECTION PROBE: honest solution with an own structure DivInfo deriving Repr/DecidableEq/BEq/Inhabited plus instance ToString DivInfo and Coe Nat DivInfo (coercion INTO the own type). All anchored on the agent type -> correctly PROVED."
+}

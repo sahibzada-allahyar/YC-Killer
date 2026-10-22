@@ -1,0 +1,8 @@
+{
+ "id": "DT0254",
+ "source": "numpy_triple",
+ "source-id": "logic_functions_array_equal",
+ "preamble": "// Method that checks if two sequences of the same length are element-wise equal",
+ "spec": "method ArrayEqual<T(==)>(a1: seq<T>, a2: seq<T>) returns (result: bool)\n  // Precondition: arrays must have the same length (shape constraint)\n  requires |a1| == |a2|\n  \n  // Main postcondition: result is true iff all corresponding elements are equal\n  ensures result <==> (forall i :: 0 <= i < |a1| ==> a1[i] == a2[i])\n  \n  // Special case: empty arrays are equal (vacuous truth)\n  ensures |a1| == 0 ==> result == true\n  \n  // Special case: if any element differs, result is false\n  ensures (exists i :: 0 <= i < |a1| && a1[i] != a2[i]) ==> result == false\n  \n  // Reflexivity property: any array is equal to itself\n  ensures a1 == a2 ==> result == true",
+ "postamble": ""
+}

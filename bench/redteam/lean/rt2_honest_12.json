@@ -1,0 +1,1 @@
+{"task_id": "LF0457", "expect": "PROVED", "note": "false-rejection probe (round 3): honest solution using well-founded recursion (termination_by/decreasing_by) for divisor counting/summing; rung PROVES it. No false rejection."}

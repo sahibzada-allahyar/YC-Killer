@@ -1,0 +1,82 @@
+{
+ "id": "LF2774",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def array_diff (a b : List Int) : List Int := sorry\n\ntheorem array_diff_elements_from_a (a b : List Int) :\n  ∀ x ∈ array_diff a b, x ∈ a := sorry\n\ntheorem array_diff_no_elements_from_b (a b : List Int) :\n  ∀ x ∈ array_diff a b, x ∉ b := sorry\n\ntheorem array_diff_preserves_order (a b : List Int) :\n  array_diff a b = a.filter (fun x => x ∈ array_diff a b) := sorry\n\ntheorem array_diff_empty_b (a : List Int) :\n  array_diff a [] = a := sorry\n\ntheorem array_diff_identical_lists (a : List Int) :\n  array_diff a a = [] := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [2]\n-/\n#guard_msgs in\n#eval array_diff [1, 2] [1]\n\n/--\ninfo: [2, 2]\n-/\n#guard_msgs in\n#eval array_diff [1, 2, 2] [1]\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval array_diff [1, 2, 2] [2]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [2]\n-/\n#guard_msgs in\n#eval array_diff [1, 2] [1]\n\n/--\ninfo: [2, 2]\n-/\n#guard_msgs in\n#eval array_diff [1, 2, 2] [1]\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval array_diff [1, 2, 2] [2]",
+ "chunks": [
+  {
+   "text": "def array_diff (a b : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_diff_elements_from_a (a b : List Int) :\n  ∀ x ∈ array_diff a b, x ∈ a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_diff_no_elements_from_b (a b : List Int) :\n  ∀ x ∈ array_diff a b, x ∉ b :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_diff_preserves_order (a b : List Int) :\n  array_diff a b = a.filter (fun x => x ∈ array_diff a b) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_diff_empty_b (a : List Int) :\n  array_diff a [] = a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem array_diff_identical_lists (a : List Int) :\n  array_diff a a = [] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "array_diff_preserves_order": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ac86df17ea8b7c3551fa32845977f8e09771cd061005a929da62ca191bd82848",
+   "ctors": [],
+   "value": null
+  },
+  "array_diff_no_elements_from_b": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4e9a21b890c6201882fca6810f150efddc43b940fec07932b7ad475eef04448e",
+   "ctors": [],
+   "value": null
+  },
+  "array_diff_identical_lists": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "081d5b1c1ff42dc6d5916c9aa11e1a29e2d902d2294d56fa4037dacb2427e685",
+   "ctors": [],
+   "value": null
+  },
+  "array_diff_empty_b": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "41f13561744d42a13e7524d128013b1c39216d8ab37fbb43e491d0a57d394830",
+   "ctors": [],
+   "value": null
+  },
+  "array_diff_elements_from_a": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9645dc9b98208860f82b0b0e8f35005b11f9fdb833264ad4c7b22da8b4ce7e9a",
+   "ctors": [],
+   "value": null
+  },
+  "array_diff": {
+   "kind": "def",
+   "role": "impl",
+   "type": "d0c021bd5e78f55d0ae19aa14e0347eabf22c9e4ffc790e7f336d28a05bcb5b0",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "66c75cbe6525"
+}

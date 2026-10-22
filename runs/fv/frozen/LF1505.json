@@ -1,0 +1,60 @@
+{
+ "id": "LF1505",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_possible_arrays (N: Nat) (K: Nat) (A: List Nat) : Nat := sorry\n\ntheorem single_element_array (N K : Nat) (h1: N > 0) (h2: K > 0) :\n  count_possible_arrays 1 K [1] = 1 := sorry\n\ntheorem result_bounds (N K: Nat) (A: List Nat) (h1: N > 0) (h2: K > 0) :\n  count_possible_arrays N K A < 1000000007 ∧ \n  count_possible_arrays N K A ≥ 0 := sorry\n\ntheorem symmetry (N K: Nat) (h1: N > 0) (h2: K > 0) :\n  let A1 := List.replicate N 1\n  let A2 := List.replicate N 2\n  count_possible_arrays N K A1 = count_possible_arrays N K A2 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def count_possible_arrays (N: Nat) (K: Nat) (A: List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_element_array (N K : Nat) (h1: N > 0) (h2: K > 0) :\n  count_possible_arrays 1 K [1] = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_bounds (N K: Nat) (A: List Nat) (h1: N > 0) (h2: K > 0) :\n  count_possible_arrays N K A < 1000000007 ∧ \n  count_possible_arrays N K A ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem symmetry (N K: Nat) (h1: N > 0) (h2: K > 0) :\n  let A1 := List.replicate N 1\n  let A2 := List.replicate N 2\n  count_possible_arrays N K A1 = count_possible_arrays N K A2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "symmetry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "331319239490ce25c40e945ab46f0c6e3308824b9e308c0a2dc29c110738c30c",
+   "ctors": [],
+   "value": null
+  },
+  "single_element_array": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dbe31760252d4240aa606931afecaa7e0aaddc241d6fdbb3f7ca1debb269b01d",
+   "ctors": [],
+   "value": null
+  },
+  "result_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c209e5e57d60fad56cee407a2514e0737f148a13136d249a0f9658d5d64f5fac",
+   "ctors": [],
+   "value": null
+  },
+  "count_possible_arrays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "80d7a4d3f2b66acf9d3d7e09090df5394601f8920dfcfe2deeb74ed19c371174",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "2066ea20ae14"
+}

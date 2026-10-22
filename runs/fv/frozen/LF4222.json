@@ -1,0 +1,148 @@
+{
+ "id": "LF4222",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sumin (n : Nat) : Nat :=\nsorry\n\ndef sumax (n : Nat) : Nat :=\nsorry\n\ndef sumsum (n : Nat) : Nat :=\nsorry\n\ndef sumOfMins (n : Nat) : Nat :=\nsorry\n\ndef sumOfMaxs (n : Nat) : Nat :=\nsorry\n\ndef sumOfSums (n : Nat) : Nat :=\nsorry\n\ntheorem sumax_positive (n : Nat) (h : n > 0) :\n  sumax n > 0 :=\nsorry\n\ntheorem sumsum_equals_sumin_plus_sumax (n : Nat) :\n  sumsum n = sumin n + sumax n :=\nsorry\n\ntheorem sumin_positive (n : Nat) (h : n > 0) :\n  sumin n > 0 :=\nsorry\n\ntheorem sumin_le_sumax (n : Nat) :\n  sumin n ≤ sumax n :=\nsorry\n\ntheorem sumax_ge_sumin (n : Nat) :\n  sumax n ≥ sumin n :=\nsorry\n\ntheorem sumsum_positive (n : Nat) (h : n > 0) :\n  sumsum n > 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 55\n-/\n#guard_msgs in\n#eval sumin 5\n\n/--\ninfo: 91\n-/\n#guard_msgs in\n#eval sumin 6\n\n/--\ninfo: 1240\n-/\n#guard_msgs in\n#eval sumin 15\n\n/--\ninfo: 161\n-/\n#guard_msgs in\n#eval sumax 6\n\n/--\ninfo: 61755\n-/\n#guard_msgs in\n#eval sumax 45\n\n/--\ninfo: 671650\n-/\n#guard_msgs in\n#eval sumax 100\n\n/--\ninfo: 252\n-/\n#guard_msgs in\n#eval sumsum 6\n\n/--\ninfo: 93150\n-/\n#guard_msgs in\n#eval sumsum 45\n\n/--\ninfo: 1010000\n-/\n#guard_msgs in\n#eval sumsum 100\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 55\n-/\n#guard_msgs in\n#eval sumin 5\n\n/--\ninfo: 91\n-/\n#guard_msgs in\n#eval sumin 6\n\n/--\ninfo: 1240\n-/\n#guard_msgs in\n#eval sumin 15\n\n/--\ninfo: 161\n-/\n#guard_msgs in\n#eval sumax 6\n\n/--\ninfo: 61755\n-/\n#guard_msgs in\n#eval sumax 45\n\n/--\ninfo: 671650\n-/\n#guard_msgs in\n#eval sumax 100\n\n/--\ninfo: 252\n-/\n#guard_msgs in\n#eval sumsum 6\n\n/--\ninfo: 93150\n-/\n#guard_msgs in\n#eval sumsum 45\n\n/--\ninfo: 1010000\n-/\n#guard_msgs in\n#eval sumsum 100",
+ "chunks": [
+  {
+   "text": "def sumin (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sumax (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sumsum (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sumOfMins (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sumOfMaxs (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sumOfSums (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sumax_positive (n : Nat) (h : n > 0) :\n  sumax n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sumsum_equals_sumin_plus_sumax (n : Nat) :\n  sumsum n = sumin n + sumax n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sumin_positive (n : Nat) (h : n > 0) :\n  sumin n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sumin_le_sumax (n : Nat) :\n  sumin n ≤ sumax n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sumax_ge_sumin (n : Nat) :\n  sumax n ≥ sumin n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem sumsum_positive (n : Nat) (h : n > 0) :\n  sumsum n > 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sumsum_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "22a74ea7449183817a5610a94b03f54cbb231f2eb800c482d6fdb1b7fbece5b8",
+   "ctors": [],
+   "value": null
+  },
+  "sumsum_equals_sumin_plus_sumax": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1f0d29bc69f949bbaf62c8c662365758c174ec723db49dc53d86d3e0fe5b5649",
+   "ctors": [],
+   "value": null
+  },
+  "sumsum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "sumin_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ca442b783ebfb9743a3605ad306d872d45e2556c01749e57070d79a01eb91f1e",
+   "ctors": [],
+   "value": null
+  },
+  "sumin_le_sumax": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "41f3bb8b35e75622584c3644278f1689e2aa6f9e24085aac891bb1ec46f07503",
+   "ctors": [],
+   "value": null
+  },
+  "sumin": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "sumax_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c49d4b198a56b4ceecccce458f29245640024f96c5ebdf87080a8075269727bb",
+   "ctors": [],
+   "value": null
+  },
+  "sumax_ge_sumin": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6e58f825971e497def961d76bad595508057b391ed9ddd6348d0fb184555f2d6",
+   "ctors": [],
+   "value": null
+  },
+  "sumax": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "sumOfSums": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "sumOfMins": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "sumOfMaxs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b48e0d0262ba"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF2427",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def numIdenticalPairs (nums : List Int) : Nat := sorry\n\ntheorem num_identical_pairs_non_negative (nums : List Int) :\n  numIdenticalPairs nums ≥ 0 := sorry\n\ntheorem empty_or_single_is_zero (nums : List Int) :\n  nums.length ≤ 1 → numIdenticalPairs nums = 0 := sorry\n\ntheorem all_same_values (nums : List Int) (n : Nat) (x : Int) :\n  nums = List.replicate n x → n ≥ 2 →\n  numIdenticalPairs nums = n * (n-1) / 2 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval numIdenticalPairs [1, 2, 3, 1, 1, 3]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval numIdenticalPairs [1, 1, 1, 1]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval numIdenticalPairs [1, 2, 3]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval numIdenticalPairs [1, 2, 3, 1, 1, 3]\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval numIdenticalPairs [1, 1, 1, 1]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval numIdenticalPairs [1, 2, 3]",
+ "chunks": [
+  {
+   "text": "def numIdenticalPairs (nums : List Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_identical_pairs_non_negative (nums : List Int) :\n  numIdenticalPairs nums ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_or_single_is_zero (nums : List Int) :\n  nums.length ≤ 1 → numIdenticalPairs nums = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem all_same_values (nums : List Int) (n : Nat) (x : Int) :\n  nums = List.replicate n x → n ≥ 2 →\n  numIdenticalPairs nums = n * (n-1) / 2 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "num_identical_pairs_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ad3a7fbc9f61462179b74acb584f2e67652e649b4120327033b166f8886fac50",
+   "ctors": [],
+   "value": null
+  },
+  "numIdenticalPairs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": null
+  },
+  "empty_or_single_is_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "05b7ff8eb9ab48236df02bf90f6c6e4ea220c811fae40cdff634f38d9e507c2a",
+   "ctors": [],
+   "value": null
+  },
+  "all_same_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "27557f2f17c4236cc1f91443b2c4c0365ad8d0e044ddcd488cdd3de7305769e0",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a29934602f0a"
+}

@@ -1,0 +1,82 @@
+{
+ "id": "LF2812",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def riders (stations : List Nat) : Nat :=\n  sorry\n\ndef calc_min_riders (stations: List Nat) : Nat :=\n  sorry\n\ntheorem riders_positive (stations: List Nat) :\n  stations.all (fun x => x > 0 ∧ x ≤ 100) →\n  riders stations > 0 :=\nsorry\n\ntheorem riders_bounded (stations: List Nat) :\n  stations.all (fun x => x > 0 ∧ x ≤ 100) →\n  riders stations ≤ stations.length + 1 :=\nsorry\n\ntheorem riders_short_distances (stations: List Nat) :\n  stations.all (fun x => x ≤ 1) →\n  riders stations = 1 :=\nsorry\n\ntheorem riders_long_distances (stations: List Nat) :\n  stations.all (fun x => x ≥ 99 ∧ x ≤ 100) →\n  (riders stations = stations.length ∨ riders stations = stations.length + 1) :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval riders [18, 15]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval riders [43, 23, 40, 13]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval riders [33, 8, 16, 47, 30, 30, 46]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval riders [18, 15]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval riders [43, 23, 40, 13]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval riders [33, 8, 16, 47, 30, 30, 46]",
+ "chunks": [
+  {
+   "text": "def riders (stations : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def calc_min_riders (stations: List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem riders_positive (stations: List Nat) :\n  stations.all (fun x => x > 0 ∧ x ≤ 100) →\n  riders stations > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem riders_bounded (stations: List Nat) :\n  stations.all (fun x => x > 0 ∧ x ≤ 100) →\n  riders stations ≤ stations.length + 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem riders_short_distances (stations: List Nat) :\n  stations.all (fun x => x ≤ 1) →\n  riders stations = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem riders_long_distances (stations: List Nat) :\n  stations.all (fun x => x ≥ 99 ∧ x ≤ 100) →\n  (riders stations = stations.length ∨ riders stations = stations.length + 1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "riders_short_distances": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e4a831e2f4daabf0bc0088d6548071dc73d9b0ce349806bc2104c1869f29df66",
+   "ctors": [],
+   "value": null
+  },
+  "riders_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "96ebb290ebdebbe017b508c13fe60f199aef01821ddb1b4f43e5793a6d5ed6bc",
+   "ctors": [],
+   "value": null
+  },
+  "riders_long_distances": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7def12ea56a730c37ba0e77ee51b290129dbcdc6bd50a0eb902756123902035f",
+   "ctors": [],
+   "value": null
+  },
+  "riders_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5523963e92aeceafab4eb79eec0ae733ffc5b9679d5861bb13b188bdda057b8e",
+   "ctors": [],
+   "value": null
+  },
+  "riders": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "calc_min_riders": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "c2a08b5c5e71"
+}

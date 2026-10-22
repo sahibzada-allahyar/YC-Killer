@@ -1,0 +1,60 @@
+{
+ "id": "LF3656",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def close_to_zero (input : String) : Int := sorry\n\ndef abs (n : Int) : Int := sorry\n\ntheorem close_to_zero_returns_from_input_or_zero \n  (nums : List Int) : \n  nums.isEmpty → close_to_zero (toString nums) = 0 ∧\n  ¬nums.isEmpty → close_to_zero (toString nums) = 0 ∨ \n    close_to_zero (toString nums) ∈ nums := sorry\n\ntheorem empty_string_returns_zero : \n  close_to_zero \"\" = 0 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval close_to_zero \"\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval close_to_zero \"-1 50 -4 20 22 -7 0 10 -8\"\n\n/--\ninfo: 17\n-/\n#guard_msgs in\n#eval close_to_zero \"28 35 -21 17 38 -17\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval close_to_zero \"\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval close_to_zero \"-1 50 -4 20 22 -7 0 10 -8\"\n\n/--\ninfo: 17\n-/\n#guard_msgs in\n#eval close_to_zero \"28 35 -21 17 38 -17\"",
+ "chunks": [
+  {
+   "text": "def close_to_zero (input : String) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def abs (n : Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem close_to_zero_returns_from_input_or_zero \n  (nums : List Int) : \n  nums.isEmpty → close_to_zero (toString nums) = 0 ∧\n  ¬nums.isEmpty → close_to_zero (toString nums) = 0 ∨ \n    close_to_zero (toString nums) ∈ nums :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_string_returns_zero : \n  close_to_zero \"\" = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "empty_string_returns_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b253bed819becb0d2b084a682728a592295a0cc4d56ed3a766a10cabae62d4f4",
+   "ctors": [],
+   "value": null
+  },
+  "close_to_zero_returns_from_input_or_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3e563414e704c7dd8b6cba4b8e457abf72ea872746760d4f9fded901d8c51faa",
+   "ctors": [],
+   "value": null
+  },
+  "close_to_zero": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9902d19591b27fb48348685e0a7163895afa53ad7c590eb1b9c1c21989da1def",
+   "ctors": [],
+   "value": null
+  },
+  "abs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "e8a82713aacb"
+}

@@ -1,0 +1,49 @@
+{
+ "id": "LF1050",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_ops_to_zeros (s : String) : Nat := sorry\n\ntheorem output_bounds (s : String) :\n  let result := min_ops_to_zeros s\n  0 ≤ result ∧ result ≤ s.length := sorry\n\ntheorem empty_string :\n  min_ops_to_zeros \"\" = 0 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_ops_to_zeros \"01001001\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_ops_to_zeros \"0\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_ops_to_zeros \"11\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_ops_to_zeros \"01001001\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_ops_to_zeros \"0\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_ops_to_zeros \"11\"",
+ "chunks": [
+  {
+   "text": "def min_ops_to_zeros (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem output_bounds (s : String) :\n  let result := min_ops_to_zeros s\n  0 ≤ result ∧ result ≤ s.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_string :\n  min_ops_to_zeros \"\" = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "output_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a27243efd9c3d4674a4e62123493ff3432542f6d0cc80e01e0b4e0a5e478bf6c",
+   "ctors": [],
+   "value": null
+  },
+  "min_ops_to_zeros": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "empty_string": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c9f85d9df269696a9529bbe2953f5002f7cc7255f9061bc5a2164b8b302bd3d1",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7642c66288df"
+}

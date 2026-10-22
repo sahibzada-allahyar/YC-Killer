@@ -1,0 +1,49 @@
+{
+ "id": "LF3795",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def dot (n m : Nat) : String := sorry\n\ndef is_valid_grid (s : String) : Bool := sorry\n\ntheorem dot_correct_dimensions (n m : Nat)\n  (h1 : 0 < n) (h2 : n ≤ 50) (h3 : 0 < m) (h4 : m ≤ 50) :\n  let lines := (dot n m).split (· = '\\n')\n  (lines.length = 2 * m + 1) ∧ \n  (∀ line ∈ lines, line.length = 4 * n + 1) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def dot (n m : Nat) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_valid_grid (s : String) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem dot_correct_dimensions (n m : Nat)\n  (h1 : 0 < n) (h2 : n ≤ 50) (h3 : 0 < m) (h4 : m ≤ 50) :\n  let lines := (dot n m).split (· = '\\n')\n  (lines.length = 2 * m + 1) ∧ \n  (∀ line ∈ lines, line.length = 4 * n + 1) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "is_valid_grid": {
+   "kind": "def",
+   "role": "impl",
+   "type": "fa371ed8df5456489878d191f4468edf409afdfb4661a2eb273aad740d8c62f6",
+   "ctors": [],
+   "value": null
+  },
+  "dot_correct_dimensions": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "34be12c44e691a8869a8d256134885337c3000b9ac4646d0c98345e104c2637d",
+   "ctors": [],
+   "value": null
+  },
+  "dot": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e5936a66ebb17f4247205c6f1ac5a278b2a16dd6f8382b01fc8c6dc46d6f18b0",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "24d9ade07c17"
+}

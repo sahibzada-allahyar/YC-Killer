@@ -1,0 +1,98 @@
+{
+ "id": "LA0319",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (n : Int) (arr : List Int) : Prop :=\n  n ≥ 1 ∧ arr.length = n.toNat ∧ ∀ i, 0 ≤ i ∧ i < arr.length → arr[i]! ≥ 1\n\ndef ValidOperations (operations : List (Int × Int)) (n : Int) : Prop :=\n  ∀ op ∈ operations, 1 ≤ op.1 ∧ op.1 ≤ n ∧ 1 ≤ op.2 ∧ op.2 ≤ n ∧ op.2 = op.1 + 1\n\ndef isSorted (arr : List Int) : Bool :=\n  if arr.length ≤ 1 then true\n  else List.all (List.range (arr.length - 1)) (fun i => arr[i]! ≤ arr[i+1]!)\n\ndef swapAdjacent (arr : List Int) (i j : Nat) : List Int :=\n  if i < arr.length ∧ j < arr.length ∧ j = i + 1 then\n    arr.set i arr[j]!\n  else arr\n\npartial def applyOperations (arr : List Int) (operations : List (Int × Int)) : List Int :=\n  match operations with\n  | [] => arr\n  | op :: rest => \n    if 1 ≤ op.1 ∧ op.1 ≤ arr.length ∧ 1 ≤ op.2 ∧ op.2 ≤ arr.length ∧ op.2 = op.1 + 1 then\n      let newArr := swapAdjacent arr (op.1.toNat - 1) (op.2.toNat - 1)\n      applyOperations newArr rest\n    else\n      applyOperations arr rest\n\ndef countInversions (arr : List Int) : Nat :=\n  (List.range arr.length).foldl (fun acc i =>\n    acc + (List.range arr.length).foldl (fun acc2 j =>\n      if i < j ∧ arr[i]! > arr[j]! then acc2 + 1 else acc2) 0) 0\n\n@[reducible, simp]\ndef solve_precond (n : Int) (arr : List Int) : Prop :=\n  ValidInput n arr\n\ndef solve (n : Int) (arr : List Int) (h_precond : solve_precond n arr) : List (Int × Int) :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (arr : List Int) (operations : List (Int × Int)) (h_precond : solve_precond n arr) : Prop :=\n  ValidOperations operations n ∧\n  (let finalArr := applyOperations arr operations; isSorted finalArr = true ∨ operations.length = 20000) ∧\n  (∀ x, x ∈ arr ↔ x ∈ applyOperations arr operations) ∧\n  operations.length ≤ 20000 ∧\n  (isSorted arr = true → operations.length = 0)\n\ntheorem solve_spec_satisfied (n : Int) (arr : List Int) (h_precond : solve_precond n arr) :\n    solve_postcond n arr (solve n arr h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (n : Int) (arr : List Int) : Prop :=\n  n ≥ 1 ∧ arr.length = n.toNat ∧ ∀ i, 0 ≤ i ∧ i < arr.length → arr[i]! ≥ 1\n\ndef ValidOperations (operations : List (Int × Int)) (n : Int) : Prop :=\n  ∀ op ∈ operations, 1 ≤ op.1 ∧ op.1 ≤ n ∧ 1 ≤ op.2 ∧ op.2 ≤ n ∧ op.2 = op.1 + 1\n\ndef isSorted (arr : List Int) : Bool :=\n  if arr.length ≤ 1 then true\n  else List.all (List.range (arr.length - 1)) (fun i => arr[i]! ≤ arr[i+1]!)\n\ndef swapAdjacent (arr : List Int) (i j : Nat) : List Int :=\n  if i < arr.length ∧ j < arr.length ∧ j = i + 1 then\n    arr.set i arr[j]!\n  else arr\n\npartial def applyOperations (arr : List Int) (operations : List (Int × Int)) : List Int :=\n  match operations with\n  | [] => arr\n  | op :: rest => \n    if 1 ≤ op.1 ∧ op.1 ≤ arr.length ∧ 1 ≤ op.2 ∧ op.2 ≤ arr.length ∧ op.2 = op.1 + 1 then\n      let newArr := swapAdjacent arr (op.1.toNat - 1) (op.2.toNat - 1)\n      applyOperations newArr rest\n    else\n      applyOperations arr rest\n\ndef countInversions (arr : List Int) : Nat :=\n  (List.range arr.length).foldl (fun acc i =>\n    acc + (List.range arr.length).foldl (fun acc2 j =>\n      if i < j ∧ arr[i]! > arr[j]! then acc2 + 1 else acc2) 0) 0\n\n@[reducible, simp]\ndef solve_precond (n : Int) (arr : List Int) : Prop :=\n  ValidInput n arr",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (arr : List Int) (h_precond : solve_precond n arr) : List (Int × Int) :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (arr : List Int) (operations : List (Int × Int)) (h_precond : solve_precond n arr) : Prop :=\n  ValidOperations operations n ∧\n  (let finalArr := applyOperations arr operations; isSorted finalArr = true ∨ operations.length = 20000) ∧\n  (∀ x, x ∈ arr ↔ x ∈ applyOperations arr operations) ∧\n  operations.length ≤ 20000 ∧\n  (isSorted arr = true → operations.length = 0)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (arr : List Int) (h_precond : solve_precond n arr) :\n    solve_postcond n arr (solve n arr h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "swapAdjacent": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "2c67c99d6cfa172fabd9032bc3412b5ced74af85082b3b47d852c2c6dce38e82",
+   "ctors": [],
+   "value": "39c17d70d80754558576e1d375c3df5f3a4674128ee5b0eedaa5fde75609915a"
+  },
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "530fc7bc3a329c6835a6d71871a45dec1b0575ced6a2d016ef9fd542e684ecc8",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b3801015f913a180be97d3ba04728eeb29b42a5233f4bc2993a746d8791cb248",
+   "ctors": [],
+   "value": "bfab326dbc19ea99cf89ed6d1465c8076f4c55ddb4d8009852dfcd5a7650a16a"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0e87c74163005161c48cc10f68ac01c336124eeba4bcc1a9eb4aab93efd50e4c",
+   "ctors": [],
+   "value": "07a6728fd086793b25ed38e79d7d6a60d9d3e78ee6b9bd3d271e294efd405849"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6a7d807b5b853dc0df02c0434115ca6d68a7c45fc560dc4e5120f265acc1be10",
+   "ctors": [],
+   "value": null
+  },
+  "isSorted": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b295506f1e9a51c9dbc47fa3287a9069c7ff4f012c5915f8730a719e58ab07c6",
+   "ctors": [],
+   "value": "17d86d3487275b80ed2206e36244c1ad40cac7d0510a49ded624fc59469fbf2d"
+  },
+  "countInversions": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": "bc4bdf29ad62fe51912b3249573e51a4ab65b79fd0f8a000d88e0a9f6c680f7a"
+  },
+  "applyOperations": {
+   "kind": "opaque",
+   "role": "frozen",
+   "type": "1fc87b3a7740c8f766b21b4108fdb915104bc88738d6c1603ddf0b7893149b7d",
+   "ctors": [],
+   "value": "95bbfcae99435d142e34d80c34aac481a4f7ff31f126282b68e944b5ad080f0a"
+  },
+  "ValidOperations": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7ee9b039156f78ee04eceb077e2213272756d778b5b3845c9c21fdb2ff9eb29a",
+   "ctors": [],
+   "value": "e65bc4ab79fda29e1942a97fd6bf69932ca77a71396a804b98a693d189c749ae"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b3801015f913a180be97d3ba04728eeb29b42a5233f4bc2993a746d8791cb248",
+   "ctors": [],
+   "value": "a8ad76479fc09a617d857fddca76531f0a4ed8254cb8affff7de73ab77e318c2"
+  }
+ },
+ "sha": "a8eeda1034cb"
+}

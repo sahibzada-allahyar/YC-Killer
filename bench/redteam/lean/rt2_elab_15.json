@@ -1,0 +1,8 @@
+{
+ "task_id": "LF1342",
+ "expect": "UNPROVED",
+ "observed": "UNPROVED",
+ "hole": false,
+ "lens": "elaboration/name-resolution",
+ "what": "Foreign attribute [default_instance 10000] instOfNatNat. NOTE: Check.lean's default_instances filter keeps only instances whose module is Solution, so applying @[default_instance] to a LIBRARY instance name evades that list (latent defense-in-depth gap). Inert here (and on all DEV tasks): postamble numerals are already typed by the frozen function signatures, so no defaulting occurs; wrong impl -> UNPROVED. No DEV task has ambiguous postamble numerals, so not a working hole."
+}

@@ -1,0 +1,1169 @@
+[
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 1,
+"id": "DA0001"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma BaseSequenceProperties",
+"bodiless declaration with ensures: lemma UpdateLastPreservesProperties"
+],
+"verify_ok": true,
+"verified": 15,
+"id": "DA0007"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0009"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 16,
+"id": "DA0012"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0014"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0015"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 12,
+"id": "DA0019"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0020"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0022"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0025"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.CountNewlines has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0027"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0028"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 13,
+"id": "DA0030"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0034"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 2,
+"id": "DA0036"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0040"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0046"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 2,
+"id": "DA0055"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"attribute {:auto} is not allowed (allowed: abstemious, disableNonlinearArithmetic, error, fuel, induction, isolate_assertions, nativeType, nowarn, opaque, print, split_here, tailrecursion, transparent, trigger, vcs_split_on_every_assert)"
+],
+"verify_ok": true,
+"verified": 15,
+"id": "DA0058"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0066"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0073"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 2,
+"id": "DA0075"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0086"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0093"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 16,
+"id": "DA0106"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0113"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 14,
+"id": "DA0114"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0118"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0125"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.toString has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0127"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 27,
+"id": "DA0130"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0141"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0150"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0156"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 15,
+"id": "DA0162"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0163"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0166"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 25,
+"id": "DA0170"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma ComputeFinalLIterative",
+"bodiless declaration with ensures: lemma ComputeFinalRIterative"
+],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0177"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0184"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0186"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma TriangleInequalityRelation"
+],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0188"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0189"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 12,
+"id": "DA0196"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 11,
+"id": "DA0197"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0201"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 12,
+"id": "DA0213"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0222"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0225"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 13,
+"id": "DA0231"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 3,
+"id": "DA0235"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0241"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0247"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0269"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0272"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0282"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 11,
+"id": "DA0294"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0298"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma SortDescendingCorrect"
+],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0299"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.SplitLines has no body so it cannot be compiled | Function _module._default.SplitString has no body so it cannot be compiled | Function _module._default.StringToInt has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0303"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0307"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 15,
+"id": "DA0318"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0322"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0323"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma CountSetCardinality"
+],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0330"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 15,
+"id": "DA0334"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0335"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 15,
+"id": "DA0337"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0344"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0346"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma ZeroIndexedArrayProperties"
+],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0348"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 16,
+"id": "DA0349"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0351"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 12,
+"id": "DA0354"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0359"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma ValidGridAfterToggle"
+],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0365"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 13,
+"id": "DA0373"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma ComputePaymentBackwardUnfolding"
+],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0374"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0377"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0379"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0395"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0398"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 18,
+"id": "DA0402"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0406"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma sum_contributions_append"
+],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0407"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 12,
+"id": "DA0410"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 8,
+"id": "DA0411"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.splitLines has no body so it cannot be compiled | Function _module._default.isValidFirstLine has no body so it cannot be compiled | Function _module._default.isValidCoordinateLine has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0428"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 11,
+"id": "DA0435"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 3,
+"id": "DA0437"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0440"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0450"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0451"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0453"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.SplitLines has no body so it cannot be compiled | Function _module._default.SplitSpaces has no body so it cannot be compiled | Function _module._default.ParseInt has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0454"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0462"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0465"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma ExtractFirstLineComplete",
+"bodiless declaration with ensures: lemma ProcessStringStep"
+],
+"verify_ok": true,
+"verified": 17,
+"id": "DA0467"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0491"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0492"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 1,
+"id": "DA0493"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0503"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0510"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.IntToString has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0511"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0520"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma CeilDivCorrect"
+],
+"verify_ok": true,
+"verified": 5,
+"id": "DA0529"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 11,
+"id": "DA0559"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0560"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.parseInput has no body so it cannot be compiled | this assign-such-that statement is too advanced for the current compiler; Dafny's heuristics cannot find any bound for variable 's'"
+],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0563"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma TransformStringCorrectness"
+],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0565"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 14,
+"id": "DA0568"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 9,
+"id": "DA0576"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma ProcessHealthValuesProperties"
+],
+"verify_ok": true,
+"verified": 11,
+"id": "DA0582"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 14,
+"id": "DA0583"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0593"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 6,
+"id": "DA0596"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0598"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 1,
+"id": "DA0602"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 11,
+"id": "DA0614"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0618"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma SolutionExistsImpliesOneExists"
+],
+"verify_ok": true,
+"verified": 7,
+"id": "DA0634"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 26,
+"id": "DA0640"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 15,
+"id": "DA0645"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 10,
+"id": "DA0646"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.split has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 26,
+"id": "DA0652"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 4,
+"id": "DA0660"
+},
+{
+"status": "PROVED",
+"violations": [],
+"verify_ok": true,
+"verified": 11,
+"id": "DA0666"
+},
+{
+"status": "SPEC_TAMPERED",
+"violations": [
+"frozen preamble was modified"
+],
+"id": "DD0012"
+},
+{
+"status": "SPEC_TAMPERED",
+"violations": [
+"frozen preamble was modified"
+],
+"id": "DD0013"
+},
+{
+"status": "SPEC_TAMPERED",
+"violations": [
+"the frozen spec must be followed directly by the method body `{ ... }` (no extra requires/ensures/modifies or expression): 'decreases n\\n{\\n  if n == 0 {\\n    p := 1.0'..."
+],
+"id": "DD0164"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma SwapPreservesSortedPrefix",
+"bodiless declaration with ensures: lemma SwapPreservesPartition"
+],
+"verify_ok": true,
+"verified": 9,
+"id": "DD0423"
+},
+{
+"status": "SPEC_TAMPERED",
+"violations": [
+"the frozen spec starts inside an agent comment or string",
+"the frozen spec must be followed directly by the method body `{ ... }` (no extra requires/ensures/modifies or expression): ''..."
+],
+"id": "DD0855"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"banned construct: decreases *"
+],
+"verify_ok": true,
+"verified": 4,
+"id": "DH0126"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: function PadString"
+],
+"verify_ok": true,
+"verified": 3,
+"id": "DS0009"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.ShiftLeftInt has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 2,
+"id": "DS0030"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `ShapeArrays` was not verified",
+"not compilable: Method _module._default.ShapeArrays has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 5,
+"id": "DS0048"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.someT has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 4,
+"id": "DT0065"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `BitwiseOrZeroRight` was not verified",
+"frozen method/lemma `BitwiseOrZeroLeft` was not verified",
+"frozen method/lemma `BitwiseOrNegOneRight` was not verified",
+"frozen method/lemma `BitwiseOrNegOneLeft` was not verified",
+"frozen method/lemma `BitwiseOrCommutative` was not verified",
+"frozen method/lemma `BitwiseOrAssociative` was not verified",
+"frozen method/lemma `BitwiseOrIdempotent` was not verified"
+],
+"verify_ok": true,
+"verified": 2,
+"id": "DT0085"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: function ProcessLine"
+],
+"verify_ok": true,
+"verified": 7,
+"id": "DT0208"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `BitwiseOrCommutative` was not verified",
+"frozen method/lemma `BitwiseOrIdentity` was not verified",
+"frozen method/lemma `BitwiseOrIdempotent` was not verified"
+],
+"verify_ok": true,
+"verified": 2,
+"id": "DT0258"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `SinArcsin_Inverse` was not verified",
+"frozen method/lemma `Arcsin_Range` was not verified",
+"frozen method/lemma `Arcsin_Monotonic` was not verified",
+"frozen method/lemma `Arcsin_SpecialValues` was not verified"
+],
+"verify_ok": true,
+"verified": 2,
+"id": "DT0285"
+},
+{
+"status": "SPEC_TAMPERED",
+"violations": [
+"the frozen spec starts inside an agent comment or string",
+"the frozen spec must be followed directly by the method body `{ ... }` (no extra requires/ensures/modifies or expression): ''..."
+],
+"id": "DT0289"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `LogOneIsZero` was not verified",
+"frozen method/lemma `LogMonotonic` was not verified"
+],
+"verify_ok": true,
+"verified": 4,
+"id": "DT0330"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `LogExpProperties` was not verified"
+],
+"verify_ok": true,
+"verified": 7,
+"id": "DT0333"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `tan_definition` was not verified"
+],
+"verify_ok": true,
+"verified": 3,
+"id": "DT0367"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `cos_range` was not verified",
+"frozen method/lemma `cos_decreasing_property` was not verified",
+"frozen method/lemma `cos_symmetry` was not verified"
+],
+"verify_ok": true,
+"verified": 4,
+"id": "DT0393"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"bodiless declaration with ensures: lemma IntegrationScalingRelation"
+],
+"verify_ok": true,
+"verified": 6,
+"id": "DT0494"
+},
+{
+"status": "SPEC_TAMPERED",
+"violations": [
+"agent text right after the frozen preamble must start a new declaration: '{\\n  if !ContainsChar(format_str, \" \") th'..."
+],
+"id": "DT0630"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"frozen method/lemma `RunLengthEncoderProperty` was not verified"
+],
+"verify_ok": true,
+"verified": 1,
+"id": "DV0067"
+},
+{
+"status": "SPEC_TAMPERED",
+"violations": [
+"the frozen spec must be followed directly by the method body `{ ... }` (no extra requires/ensures/modifies or expression): ''..."
+],
+"id": "DV0091"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.FirstEvenIndex has no body so it cannot be compiled | Function _module._default.FirstOddIndex has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 6,
+"id": "DV0125"
+},
+{
+"status": "CHEAT_REJECTED",
+"violations": [
+"not compilable: Function _module._default.ReplaceLoopSpec has no body so it cannot be compiled"
+],
+"verify_ok": true,
+"verified": 2,
+"id": "DV0164"
+}
+]

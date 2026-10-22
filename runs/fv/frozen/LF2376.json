@@ -1,0 +1,60 @@
+{
+ "id": "LF2376",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_operations (logs : List String) : Nat := sorry\n\ntheorem depth_never_negative (logs : List String) : \n  min_operations logs ≥ 0 := sorry\n\ntheorem up_directory_at_root (logs : List String) :\n  min_operations (\"../\" :: logs) = min_operations logs := sorry\n\ntheorem current_directory_neutral (logs : List String) :\n  min_operations logs = min_operations (logs ++ [\"./\"])  := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_operations [\"d1/\", \"d2/\", \"../\", \"d21/\", \"./\"]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_operations [\"d1/\", \"d2/\", \"./\", \"d3/\", \"../\", \"d31/\"]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_operations [\"d1/\", \"../\", \"../\", \"../\"]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_operations [\"d1/\", \"d2/\", \"../\", \"d21/\", \"./\"]\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval min_operations [\"d1/\", \"d2/\", \"./\", \"d3/\", \"../\", \"d31/\"]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_operations [\"d1/\", \"../\", \"../\", \"../\"]",
+ "chunks": [
+  {
+   "text": "def min_operations (logs : List String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem depth_never_negative (logs : List String) : \n  min_operations logs ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem up_directory_at_root (logs : List String) :\n  min_operations (\"../\" :: logs) = min_operations logs :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem current_directory_neutral (logs : List String) :\n  min_operations logs = min_operations (logs ++ [\"./\"])  :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "up_directory_at_root": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cdaeaeaac7360ec3cdd5b1bdd373c801f8f37f0d8f3eb1da1aa8c42a0e4afab1",
+   "ctors": [],
+   "value": null
+  },
+  "min_operations": {
+   "kind": "def",
+   "role": "impl",
+   "type": "36fc955d100209f88b69abd697cd4b13ab6ee1753a028e42d8bf74b2bd2d985b",
+   "ctors": [],
+   "value": null
+  },
+  "depth_never_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "68155c07db33b208dcc975d776b66d90465695c8262f1e896305a174be0ea27b",
+   "ctors": [],
+   "value": null
+  },
+  "current_directory_neutral": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a682ad0c145888c962a57af0fa5d675311b3fbb8b4c2961f083e68def07299f7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7d59ed798cca"
+}

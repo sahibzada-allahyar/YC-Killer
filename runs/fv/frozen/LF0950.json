@@ -1,0 +1,60 @@
+{
+ "id": "LF0950",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_good_rectangles (M N K : Nat) : Nat := sorry\n\ntheorem good_rectangles_positive (M N K : Nat) (h₁ : M > 0) (h₂ : N > 0) (h₃ : K > 0) :\n  solve_good_rectangles M N K > 0 := sorry\n\ntheorem good_rectangles_symmetric (M N K : Nat) :\n  solve_good_rectangles M N K = solve_good_rectangles N M K := sorry\n\ntheorem good_rectangles_edge_case_k_gt_one (M N K : Nat) (h₁ : M = 1) (h₂ : N = 1) (h₃ : K > 1) :\n  solve_good_rectangles M N K = 1 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve_good_rectangles 1 3 1\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve_good_rectangles 2 2 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_good_rectangles 1 1 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval solve_good_rectangles 1 3 1\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval solve_good_rectangles 2 2 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve_good_rectangles 1 1 2",
+ "chunks": [
+  {
+   "text": "def solve_good_rectangles (M N K : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem good_rectangles_positive (M N K : Nat) (h₁ : M > 0) (h₂ : N > 0) (h₃ : K > 0) :\n  solve_good_rectangles M N K > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem good_rectangles_symmetric (M N K : Nat) :\n  solve_good_rectangles M N K = solve_good_rectangles N M K :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem good_rectangles_edge_case_k_gt_one (M N K : Nat) (h₁ : M = 1) (h₂ : N = 1) (h₃ : K > 1) :\n  solve_good_rectangles M N K = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_good_rectangles": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b713a605445ec7996a9b0824f8eb85653954de6f109ac016234cbe821739c226",
+   "ctors": [],
+   "value": null
+  },
+  "good_rectangles_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c9bbb9603e0eedc73c076d5e8b09e9971314ba435cadc155e5a4e693877f0e05",
+   "ctors": [],
+   "value": null
+  },
+  "good_rectangles_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1954096d6dcdc4c764f58630bc05cd9ddb7bf8849ffcebad81eea9227e3f9d0d",
+   "ctors": [],
+   "value": null
+  },
+  "good_rectangles_edge_case_k_gt_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "07f92136d12fdbddf2d1aa55ca415e2ef8c61c1a913227005beb16edd0777d33",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f74a866749f1"
+}

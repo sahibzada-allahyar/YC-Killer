@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "hole": false, "what": "false-rejection probe: CRLF line endings throughout + trailing spaces on frozen header lines; _norm strips CRLF and trailing ws so chunks still match and Lean accepts it"}

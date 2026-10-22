@@ -1,0 +1,93 @@
+{
+ "id": "LF1412",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_recipe_book (n : Nat) : List (List Nat) := sorry\n\ndef format_output (groups : List (List Nat)) : List String := sorry\n\ntheorem solve_recipe_book_returns_lists {n : Nat} (h : n > 0) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n\n  ∀ x ∈ result, ∀ y ∈ x, y > 0 := sorry\n\ntheorem solve_recipe_book_contains_one {n : Nat} (h : n > 0) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n\n  result ≠ [] → 1 ∈ result.head! := sorry \n\ntheorem solve_recipe_book_no_duplicates_in_groups {n : Nat} (h : n > 0) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n  \n  ∀ group ∈ result, ∀ x y, x ∈ group → y ∈ group → x = y → x = y := sorry\n\ntheorem solve_recipe_book_optimal_groups {n : Nat} (h : n > 1) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n\n  result.length ≤ (n + 1) / 2 := sorry\n\ntheorem format_output_valid {groups : List (List Nat)} :\n  let result := format_output groups\n  (∀ x ∈ result, x.length > 0) ∧\n  result.length = groups.length + 1 ∧\n  result.head! = toString groups.length := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def solve_recipe_book (n : Nat) : List (List Nat) :=",
+   "hole_after": true
+  },
+  {
+   "text": "def format_output (groups : List (List Nat)) : List String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_recipe_book_returns_lists {n : Nat} (h : n > 0) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n\n  ∀ x ∈ result, ∀ y ∈ x, y > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_recipe_book_contains_one {n : Nat} (h : n > 0) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n\n  result ≠ [] → 1 ∈ result.head! :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_recipe_book_no_duplicates_in_groups {n : Nat} (h : n > 0) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n  \n  ∀ group ∈ result, ∀ x y, x ∈ group → y ∈ group → x = y → x = y :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_recipe_book_optimal_groups {n : Nat} (h : n > 1) (h2 : n ≤ 1000) :\n  let result := solve_recipe_book n\n  result.length ≤ (n + 1) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem format_output_valid {groups : List (List Nat)} :\n  let result := format_output groups\n  (∀ x ∈ result, x.length > 0) ∧\n  result.length = groups.length + 1 ∧\n  result.head! = toString groups.length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_recipe_book_returns_lists": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8168ed9b8bb3d5b88d0d36292558e167c7fadba85140479e258ecf1888998a0b",
+   "ctors": [],
+   "value": null
+  },
+  "solve_recipe_book_optimal_groups": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "21701db0be95b3d7d320a6e400bdee4b80f1176a54114f732e50d3fdf5b1f508",
+   "ctors": [],
+   "value": null
+  },
+  "solve_recipe_book_no_duplicates_in_groups": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0c750e0ac85c5bf9cc68d1611981ef799715b16e746578fedfb555a187111227",
+   "ctors": [],
+   "value": null
+  },
+  "solve_recipe_book_contains_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "784277883ba3483fa378cb3e15e6877e7ba5683ee6707a587c5a97f1e32744dd",
+   "ctors": [],
+   "value": null
+  },
+  "solve_recipe_book": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7b59345b57261bba75d56a7ba6456dbb923cf83509cb39dc3a874b7db4d2e3d5",
+   "ctors": [],
+   "value": null
+  },
+  "format_output_valid": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8de82438c20356c6f32b288f9cf4bc0ff2e9ff163d44c3ba7cd015833a3dd835",
+   "ctors": [],
+   "value": null
+  },
+  "format_output": {
+   "kind": "def",
+   "role": "impl",
+   "type": "1d99323e72b756e939269aa81b49b5d09395d2ad45a4a2608352f3d7d981e02b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "4403118b5ab1"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF2986",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def is_happy (n : Nat) : Bool := sorry\n\ndef happy_numbers (n : Nat) : List Nat := sorry\n\ntheorem happy_numbers_consistent {n : Nat} (h : n > 0) :\n  happy_numbers n = happy_numbers n := sorry\n\ntheorem happy_numbers_specific_values :\n  1 ∈ happy_numbers 1 ∧\n  1 ∈ happy_numbers 100 ∧\n  7 ∈ happy_numbers 100 ∧\n  10 ∈ happy_numbers 100 ∧\n  13 ∈ happy_numbers 100 ∧\n  19 ∈ happy_numbers 100 ∧\n  4 ∉ happy_numbers 100 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 7, 10]\n-/\n#guard_msgs in\n#eval happy_numbers 10\n\n/--\ninfo: [1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49]\n-/\n#guard_msgs in\n#eval happy_numbers 50\n\n/--\ninfo: [1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94, 97, 100]\n-/\n#guard_msgs in\n#eval happy_numbers 100\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 7, 10]\n-/\n#guard_msgs in\n#eval happy_numbers 10\n\n/--\ninfo: [1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49]\n-/\n#guard_msgs in\n#eval happy_numbers 50\n\n/--\ninfo: [1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94, 97, 100]\n-/\n#guard_msgs in\n#eval happy_numbers 100",
+ "chunks": [
+  {
+   "text": "def is_happy (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def happy_numbers (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem happy_numbers_consistent {n : Nat} (h : n > 0) :\n  happy_numbers n = happy_numbers n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem happy_numbers_specific_values :\n  1 ∈ happy_numbers 1 ∧\n  1 ∈ happy_numbers 100 ∧\n  7 ∈ happy_numbers 100 ∧\n  10 ∈ happy_numbers 100 ∧\n  13 ∈ happy_numbers 100 ∧\n  19 ∈ happy_numbers 100 ∧\n  4 ∉ happy_numbers 100 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "is_happy": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  },
+  "happy_numbers_specific_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0d364b8cd6819bf1fd220e7ec2bd45d453c253c10e0d4f366d6d7e205a6db8e1",
+   "ctors": [],
+   "value": null
+  },
+  "happy_numbers_consistent": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e99ef255cc72742e7ea863a6850d932f5240c48eb30b85db59ae52485e7c856e",
+   "ctors": [],
+   "value": null
+  },
+  "happy_numbers": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b2bddb67fac5"
+}

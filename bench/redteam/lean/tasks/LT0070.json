@@ -1,0 +1,12 @@
+{
+ "id": "LT0070",
+ "language": "lean",
+ "source": "numpy_triple",
+ "source-id": "array_manipulation_shape",
+ "vc-description": "/- \n{\n  \"name\": \"numpy.shape\",\n  \"category\": \"Basic Operations\",\n  \"description\": \"Return the shape of an array\",\n  \"url\": \"https://numpy.org/doc/stable/reference/generated/numpy.shape.html\",\n  \"doc\": \"Return the shape of an array.\\n\\nParameters\\n----------\\na : array_like\\n    Input array.\\n\\nReturns\\n-------\\nshape : tuple of ints\\n    The elements of the shape tuple give the lengths of the\\n    corresponding array dimensions.\\n\\nExamples\\n--------\\n>>> np.shape(np.eye(3))\\n(3, 3)\\n>>> np.shape([[1, 3]])\\n(1, 2)\\n>>> np.shape([0])\\n(1,)\\n>>> np.shape(0)\\n()\",\n  \"source_location\": \"numpy/_core/fromnumeric.py\",\n  \"signature\": \"numpy.shape(a)\"\n}\n-/\n\n/-  numpy.shape: Return the shape of an array.\n\n    For a one-dimensional vector, returns its length as a natural number.\n    This corresponds to the single element in the shape tuple for 1D arrays\n    in NumPy.\n\n    In the general NumPy implementation, shape returns a tuple of dimensions.\n    For our Vector type, which is inherently one-dimensional, the shape is\n    simply the length parameter n.\n-/\n\n/-  Specification: numpy.shape returns the length of the vector.\n\n    For a Vector of length n, the shape function returns n.\n    This captures the fundamental property that the shape of a 1D array\n    is its length.\n\n    Precondition: True (shape is defined for all vectors)\n    Postcondition: The result equals the length parameter n of the vector\n-/",
+ "vc-preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do",
+ "vc-helpers": "",
+ "vc-definitions": "def shape {α : Type} {n : Nat} (a : Vector α n) : Id Nat :=\n  sorry",
+ "vc-theorems": "theorem shape_spec {α : Type} {n : Nat} (a : Vector α n) :\n    ⦃⌜True⌝⦄\n    shape a\n    ⦃⇓result => ⌜result = n⌝⦄ := by\n  sorry",
+ "vc-postamble": ""
+}

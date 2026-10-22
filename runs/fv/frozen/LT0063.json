@@ -1,0 +1,41 @@
+{
+ "id": "LT0063",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "import Std.Do.Triple\nimport Std.Tactic.Do\nimport Init.Data.Vector.Basic\nopen Std.Do\n\ndef «repeat» {α : Type} {n : Nat} (a : Vector α n) (repeats : Nat) : Id (Vector α (n * repeats)) :=\n  sorry\n\ntheorem repeat_spec {α : Type} {n : Nat} (a : Vector α n) (repeats : Nat) (h_pos : repeats > 0) :\n    ⦃⌜repeats > 0⌝⦄\n    «repeat» a repeats\n    ⦃⇓result => ⌜(∀ i : Fin (n * repeats), \n                   ∃ (k : Fin n), \n                     i.val / repeats = k.val ∧ \n                     result.get i = a.get k) ∧\n                  (∀ k : Fin n, ∀ j : Fin repeats,\n                   ∃ (idx : Fin (n * repeats)),\n                     idx.val = k.val * repeats + j.val ∧\n                     result.get idx = a.get k)⌝⦄ := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nimport Init.Data.Vector.Basic\nopen Std.Do",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def «repeat» {α : Type} {n : Nat} (a : Vector α n) (repeats : Nat) : Id (Vector α (n * repeats)) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem repeat_spec {α : Type} {n : Nat} (a : Vector α n) (repeats : Nat) (h_pos : repeats > 0) :\n    ⦃⌜repeats > 0⌝⦄\n    «repeat» a repeats\n    ⦃⇓result => ⌜(∀ i : Fin (n * repeats), \n                   ∃ (k : Fin n), \n                     i.val / repeats = k.val ∧ \n                     result.get i = a.get k) ∧\n                  (∀ k : Fin n, ∀ j : Fin repeats,\n                   ∃ (idx : Fin (n * repeats)),\n                     idx.val = k.val * repeats + j.val ∧\n                     result.get idx = a.get k)⌝⦄ := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init",
+  "Std.Do.Triple",
+  "Std.Tactic.Do",
+  "Init.Data.Vector.Basic"
+ ],
+ "constants": {
+  "repeat_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "857bc5d7a17669b55b4ba3a1727a0c5eef436fa6019ddf1f887d64264354b17a",
+   "ctors": [],
+   "value": null
+  },
+  "repeat": {
+   "kind": "def",
+   "role": "impl",
+   "type": "98ce9b920fd5843a45ac3d9f70209cf5f5d83ef718ef984376b5f817b89b1ea1",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d8c40ae279e8"
+}

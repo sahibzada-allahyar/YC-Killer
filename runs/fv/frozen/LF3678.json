@@ -1,0 +1,56 @@
+{
+ "id": "LF3678",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_zeros (l : List Int) : Nat :=\n  l.filter (· = 0) |>.length\n\ndef product_sans_n (nums : List Int) : List Int := sorry\n\ndef List.product (l : List Int) : Int :=\nsorry\n\ntheorem product_sans_n_length {nums : List Int} (h : nums ≠ []) :\n  (product_sans_n nums).length = nums.length :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [24, 12, 8, 6]\n-/\n#guard_msgs in\n#eval product_sans_n [1, 2, 3, 4]\n\n/--\ninfo: [0, -18, 0]\n-/\n#guard_msgs in\n#eval product_sans_n [9, 0, -2]\n\n/--\ninfo: [0, 0, 0]\n-/\n#guard_msgs in\n#eval product_sans_n [0, -99, 0]\n",
+ "warnings": [],
+ "preamble": "def count_zeros (l : List Int) : Nat :=\n  l.filter (· = 0) |>.length",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [24, 12, 8, 6]\n-/\n#guard_msgs in\n#eval product_sans_n [1, 2, 3, 4]\n\n/--\ninfo: [0, -18, 0]\n-/\n#guard_msgs in\n#eval product_sans_n [9, 0, -2]\n\n/--\ninfo: [0, 0, 0]\n-/\n#guard_msgs in\n#eval product_sans_n [0, -99, 0]",
+ "chunks": [
+  {
+   "text": "def product_sans_n (nums : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def List.product (l : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem product_sans_n_length {nums : List Int} (h : nums ≠ []) :\n  (product_sans_n nums).length = nums.length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "product_sans_n_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "11d587f7a8b8f5ee35e99d4b27e545c0f838782ef13fe174ef3ee2591e9f01dd",
+   "ctors": [],
+   "value": null
+  },
+  "product_sans_n": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ff8c7dcd009bee99c01691be3ac149aece3fe289c6b9eaccbc0960acfd5422ff",
+   "ctors": [],
+   "value": null
+  },
+  "count_zeros": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "23922afaca952df33aeabb114ddf7542e460237c895077c6c60860238971d2e3",
+   "ctors": [],
+   "value": "c842eec72ba426605f384e97111a7c9ae9f7a4dd10eb1380c469777a4856cc63"
+  },
+  "List.product": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "c824ba8c05d8"
+}

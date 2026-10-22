@@ -1,0 +1,74 @@
+{
+ "id": "LF0614",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def list_max (l : List Nat) : Nat :=\nmatch l with\n| [] => 0\n| h::t => List.foldl Nat.max h t\n\ndef list_min (l : List Nat) : Nat :=\nmatch l with\n| [] => 0\n| h::t => List.foldl Nat.min h t\n\ndef find_tallest_mountain (n : Nat) (heights : List Nat) : Nat :=\nsorry\n\ntheorem find_tallest_in_list {n : Nat} {heights : List Nat} (h : heights ≠ []) :\n  find_tallest_mountain n heights ∈ heights\n  :=\nsorry\n\ntheorem length_preserved {n : Nat} {heights : List Nat} :\n  heights.length = n →\n  heights.length = n\n  :=\nsorry\n\ntheorem single_mountain_height {height : Nat} :\n  find_tallest_mountain 1 [height] = height\n  :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval find_tallest_mountain 5 [4, 7, 6, 3, 1]\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval find_tallest_mountain 3 [10, 20, 30]\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_tallest_mountain 1 [5]\n",
+ "warnings": [],
+ "preamble": "def list_max (l : List Nat) : Nat :=\nmatch l with\n| [] => 0\n| h::t => List.foldl Nat.max h t\n\ndef list_min (l : List Nat) : Nat :=\nmatch l with\n| [] => 0\n| h::t => List.foldl Nat.min h t",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval find_tallest_mountain 5 [4, 7, 6, 3, 1]\n\n/--\ninfo: 30\n-/\n#guard_msgs in\n#eval find_tallest_mountain 3 [10, 20, 30]\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval find_tallest_mountain 1 [5]",
+ "chunks": [
+  {
+   "text": "def find_tallest_mountain (n : Nat) (heights : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_tallest_in_list {n : Nat} {heights : List Nat} (h : heights ≠ []) :\n  find_tallest_mountain n heights ∈ heights\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem length_preserved {n : Nat} {heights : List Nat} :\n  heights.length = n →\n  heights.length = n\n  :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_mountain_height {height : Nat} :\n  find_tallest_mountain 1 [height] = height\n  :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_mountain_height": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "93fb1c27de0ab8e0482edad0d914d9669b93bb4cb237eff58b9e6d269dec3337",
+   "ctors": [],
+   "value": null
+  },
+  "list_min": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "b6cec87cd5f62fdbabef680096920def9bda2f9f64a242805ff283b3dee6b506"
+  },
+  "list_max": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "d5eef8bfa14fc6b4cca59781a548265e7e8835992769416960eda55b9401db1d"
+  },
+  "length_preserved": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "40bafe67eb000b78e12c476c64dd23ff44ae589d5ab110940ea9ad2aa64e76d2",
+   "ctors": [],
+   "value": null
+  },
+  "find_tallest_mountain": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  },
+  "find_tallest_in_list": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "90256d3fc6e6db222f9e50b5c6674b4ff839a275e853db12390c0b3184eacdcf",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ff2dfbcd8d6f"
+}

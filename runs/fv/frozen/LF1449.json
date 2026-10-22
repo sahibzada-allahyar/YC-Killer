@@ -1,0 +1,71 @@
+{
+ "id": "LF1449",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_square_plots (length width : Nat) : Nat :=\n  sorry\n\ntheorem min_square_plots_positive (length width : Nat) (h1 : length > 0) (h2 : width > 0) :\n  min_square_plots length width > 0 :=\n  sorry\n\ntheorem min_square_plots_symmetric (length width : Nat) (h1 : length > 0) (h2 : width > 0) : \n  min_square_plots length width = min_square_plots width length :=\n  sorry\n\ntheorem min_square_plots_double_dims (length width : Nat) (h1 : length > 0) (h2 : width > 0) :\n  min_square_plots (2 * length) (2 * width) = min_square_plots length width :=\n  sorry\n\ntheorem min_square_plots_equal_dims (n : Nat) (h : n > 0) :\n  min_square_plots n n = 1 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_square_plots 10 15\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_square_plots 4 6\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_square_plots 100 150\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_square_plots 10 15\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_square_plots 4 6\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval min_square_plots 100 150",
+ "chunks": [
+  {
+   "text": "def min_square_plots (length width : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_square_plots_positive (length width : Nat) (h1 : length > 0) (h2 : width > 0) :\n  min_square_plots length width > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_square_plots_symmetric (length width : Nat) (h1 : length > 0) (h2 : width > 0) : \n  min_square_plots length width = min_square_plots width length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_square_plots_double_dims (length width : Nat) (h1 : length > 0) (h2 : width > 0) :\n  min_square_plots (2 * length) (2 * width) = min_square_plots length width :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_square_plots_equal_dims (n : Nat) (h : n > 0) :\n  min_square_plots n n = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "min_square_plots_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "83c8d097865e3593ea066d201503764462cfa08750f0d1bd02f0c152a7b676b7",
+   "ctors": [],
+   "value": null
+  },
+  "min_square_plots_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0f81b9fbc6295937582e46260359c138f80ccae63711466581f4510478dbcea5",
+   "ctors": [],
+   "value": null
+  },
+  "min_square_plots_equal_dims": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e936628d4e09ae54cf2f39bb41ca3af25e8eb155c9f87fd17b888cdeac02c471",
+   "ctors": [],
+   "value": null
+  },
+  "min_square_plots_double_dims": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8b47d305f844e5563b313e861ab14785da9c3508db67a8c4eaeb0abb5b59fc6d",
+   "ctors": [],
+   "value": null
+  },
+  "min_square_plots": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b4d3333f8bdb"
+}

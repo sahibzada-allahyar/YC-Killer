@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "UNPROVED", "lens": "harness", "what": "BOM (U+FEFF) prepended to the file: it binds to the first token so `def findSum` never declares findSum; empty preamble means holes() has no start-anchor to fail, so it reaches compile and fails there. Not a bypass."}

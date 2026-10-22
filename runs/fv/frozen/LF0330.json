@@ -1,0 +1,71 @@
+{
+ "id": "LF0330",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def num_triplets (nums1 : List Nat) (nums2 : List Nat) : Nat :=\n  sorry\n\ntheorem num_triplets_nonnegative (nums1 nums2 : List Nat) : \n  num_triplets nums1 nums2 ≥ 0 :=\n  sorry\n\ntheorem num_triplets_symmetric (nums1 nums2 : List Nat) :\n  num_triplets nums1 nums2 = num_triplets nums2 nums1 :=\n  sorry\n\ntheorem num_triplets_empty_first (nums2 : List Nat) :\n  num_triplets [] nums2 = 0 :=\n  sorry\n\ntheorem num_triplets_empty_second (nums1 : List Nat) :\n  num_triplets nums1 [] = 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval num_triplets [7, 4] [5, 2, 8, 9]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval num_triplets [1, 1] [1, 1, 1]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval num_triplets [7, 7, 8, 3] [1, 2, 9, 7]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval num_triplets [7, 4] [5, 2, 8, 9]\n\n/--\ninfo: 9\n-/\n#guard_msgs in\n#eval num_triplets [1, 1] [1, 1, 1]\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval num_triplets [7, 7, 8, 3] [1, 2, 9, 7]",
+ "chunks": [
+  {
+   "text": "def num_triplets (nums1 : List Nat) (nums2 : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_triplets_nonnegative (nums1 nums2 : List Nat) : \n  num_triplets nums1 nums2 ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_triplets_symmetric (nums1 nums2 : List Nat) :\n  num_triplets nums1 nums2 = num_triplets nums2 nums1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_triplets_empty_first (nums2 : List Nat) :\n  num_triplets [] nums2 = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_triplets_empty_second (nums1 : List Nat) :\n  num_triplets nums1 [] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "num_triplets_symmetric": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0d588af3d7bd3d8009987faf0c8206a9a3465852e7e8bb340671ea069fc34dbc",
+   "ctors": [],
+   "value": null
+  },
+  "num_triplets_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fe1ed97cae958be7af14cde4514f9cb969f62edd24e91b48c2e41b7bbb4680bb",
+   "ctors": [],
+   "value": null
+  },
+  "num_triplets_empty_second": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2e8603c0950a2f6f0461eb7d376a4ba31d11e756afb6da3f0938ab7e6479d474",
+   "ctors": [],
+   "value": null
+  },
+  "num_triplets_empty_first": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d047da048aa03e181da86fff3b22d8262a4dc8dc0bca52652e847eda0e2cd430",
+   "ctors": [],
+   "value": null
+  },
+  "num_triplets": {
+   "kind": "def",
+   "role": "impl",
+   "type": "7e5b9793e5b256793ff88f953ae64ca4710f4800d8453e58c5bc628bd65d7695",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "981706a29ccd"
+}

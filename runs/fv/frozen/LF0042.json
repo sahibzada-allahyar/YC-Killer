@@ -1,0 +1,60 @@
+{
+ "id": "LF0042",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_binary_substrings (s : String) : Nat := sorry\n\ntheorem solve_returns_nat (s : String) :\n  solve_binary_substrings s ≥ 0 := sorry\n\ntheorem result_ge_ones_count (s : String) :\n  (∃ c ∈ s.toList, c = '1') →\n  solve_binary_substrings s ≥ (s.toList.filter (· = '1')).length := sorry\n\ntheorem power_two_string_bounds (n : Nat) :\n  n > 0 →\n  let s := String.mk ('1'::List.replicate n '0')\n  solve_binary_substrings s ≥ 1 ∧\n  solve_binary_substrings s ≤ n + 1 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_binary_substrings \"0110\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_binary_substrings \"0101\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_binary_substrings \"00001000\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_binary_substrings \"0110\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve_binary_substrings \"0101\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve_binary_substrings \"00001000\"",
+ "chunks": [
+  {
+   "text": "def solve_binary_substrings (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_returns_nat (s : String) :\n  solve_binary_substrings s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_ge_ones_count (s : String) :\n  (∃ c ∈ s.toList, c = '1') →\n  solve_binary_substrings s ≥ (s.toList.filter (· = '1')).length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem power_two_string_bounds (n : Nat) :\n  n > 0 →\n  let s := String.mk ('1'::List.replicate n '0')\n  solve_binary_substrings s ≥ 1 ∧\n  solve_binary_substrings s ≤ n + 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_returns_nat": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "89aed7ce7fabb4160527b14a91e37a4e6c062d3324dc0d5f49c53c5e3fe53f59",
+   "ctors": [],
+   "value": null
+  },
+  "solve_binary_substrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "result_ge_ones_count": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8be33a563db8bccbfc2c0897e17b412aa13018512ce0b607d64db6b1f5e1bb16",
+   "ctors": [],
+   "value": null
+  },
+  "power_two_string_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d9440015f1ea1dca2a8bb4e92c12d365bdda396efee47f7602bed8457cc84aeb",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6e774ce1d9e0"
+}

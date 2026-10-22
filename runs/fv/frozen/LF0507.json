@@ -1,0 +1,93 @@
+{
+ "id": "LF0507",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_ways_to_climb (n : Nat) : Nat :=\n  sorry\n\ntheorem count_ways_positive (n : Nat) (h : n > 0) :\n  count_ways_to_climb n > 0 :=\nsorry\n\ntheorem count_ways_upper_bound (n : Nat) (h : n > 0) :\n  count_ways_to_climb n ≤ n :=\nsorry\n\ntheorem count_ways_lower_bound (n : Nat) (h : n > 0) :\n  count_ways_to_climb n ≥ (n + 1) / 2 :=\nsorry\n\ntheorem count_ways_base_cases :\n  count_ways_to_climb 1 = 1 ∧ count_ways_to_climb 2 = 2 :=\nsorry\n\ntheorem count_ways_even (n : Nat) (h₁ : n > 0) (h₂ : n % 2 = 0) :\n  count_ways_to_climb n = n/2 + 1 :=\nsorry\n\ntheorem count_ways_odd (n : Nat) (h₁ : n > 0) (h₂ : n % 2 = 1) :\n  count_ways_to_climb n = (n-1)/2 + 1 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_ways_to_climb 3\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_ways_to_climb 4\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_ways_to_climb 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval count_ways_to_climb 3\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_ways_to_climb 4\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_ways_to_climb 5",
+ "chunks": [
+  {
+   "text": "def count_ways_to_climb (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ways_positive (n : Nat) (h : n > 0) :\n  count_ways_to_climb n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ways_upper_bound (n : Nat) (h : n > 0) :\n  count_ways_to_climb n ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ways_lower_bound (n : Nat) (h : n > 0) :\n  count_ways_to_climb n ≥ (n + 1) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ways_base_cases :\n  count_ways_to_climb 1 = 1 ∧ count_ways_to_climb 2 = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ways_even (n : Nat) (h₁ : n > 0) (h₂ : n % 2 = 0) :\n  count_ways_to_climb n = n/2 + 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_ways_odd (n : Nat) (h₁ : n > 0) (h₂ : n % 2 = 1) :\n  count_ways_to_climb n = (n-1)/2 + 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_ways_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "381d2498b1723028943ecb21b88a611ab3075e6afacd56bb64c83ebe50840069",
+   "ctors": [],
+   "value": null
+  },
+  "count_ways_to_climb": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "count_ways_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "654dd0e7872338ae1f387cda521b1870eba2863f1929d5dfbed24f57166ba3d7",
+   "ctors": [],
+   "value": null
+  },
+  "count_ways_odd": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "beff6c09dccac454e7c84fa0c276d6c2b1a27ba0b867ea8c8a57fe847a52a783",
+   "ctors": [],
+   "value": null
+  },
+  "count_ways_lower_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "27af355168994aacae624e96ac3d451ad0fdd2b02d34bfa784226786b4f55ed7",
+   "ctors": [],
+   "value": null
+  },
+  "count_ways_even": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "80e95aef2d0fe0aebfcbc3316e5942f7335c8251da7d2bae2ed325924137159e",
+   "ctors": [],
+   "value": null
+  },
+  "count_ways_base_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d36ff892281719b6eb7e3fa882ff24d0339f32ca8ad54e1929d37976631e74a9",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1d749bbe3d83"
+}

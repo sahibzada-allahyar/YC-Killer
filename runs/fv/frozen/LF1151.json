@@ -1,0 +1,60 @@
+{
+ "id": "LF1151",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_correct_spellings (dict_words : List String) (misspelled : List String) : List String :=\n  sorry\n\ntheorem empty_misspelled_returns_empty {dict_words : List String} :\n  find_correct_spellings dict_words [] = [] :=\n  sorry\n\ntheorem empty_dict_returns_empty {misspelled : List String} :\n  find_correct_spellings [] misspelled = [] :=\n  sorry\n\ntheorem exact_matches_returned {words : List String} (w : String) :\n  w ∈ words → w ∈ find_correct_spellings words words :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def find_correct_spellings (dict_words : List String) (misspelled : List String) : List String :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_misspelled_returns_empty {dict_words : List String} :\n  find_correct_spellings dict_words [] = [] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_dict_returns_empty {misspelled : List String} :\n  find_correct_spellings [] misspelled = [] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem exact_matches_returned {words : List String} (w : String) :\n  w ∈ words → w ∈ find_correct_spellings words words :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "find_correct_spellings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "cedc942a491c7dad5acb872ef39c6b543fb3934028a8b8d3bb77a33acc7112e1",
+   "ctors": [],
+   "value": null
+  },
+  "exact_matches_returned": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "65535e27e110b48dbead9aaa5677bbcbef6d24d1c79dd77ea46c73da7be04260",
+   "ctors": [],
+   "value": null
+  },
+  "empty_misspelled_returns_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5c789aa3a214290e9be9064d5e3f11a164892a5c1d30037e55f334767419190b",
+   "ctors": [],
+   "value": null
+  },
+  "empty_dict_returns_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d9843570dbfdfa1f5b10f0cb735a67666e2ea3ade4b5ba8f5962f4e8b65403bd",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "815b50e40b8c"
+}

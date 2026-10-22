@@ -1,0 +1,56 @@
+{
+ "id": "LF2887",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def List.maximum! : List Nat → Nat \n  | [] => 0\n  | [x] => x\n  | (x::xs) => max x (maximum! xs)\n\ndef obtain_max_number (arr : List Nat) : Nat := sorry\n\ndef count_pairs (arr : List Nat) : Nat := sorry\n\ntheorem obtain_max_number_twos {n : Nat} (h : n ≥ 1) :\n  let arr := List.replicate n 2\n  let result := obtain_max_number arr\n  result > 0 ∧ result &&& (result - 1) = 0 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval obtain_max_number [2, 4, 8, 1, 1, 15]\n\n/--\ninfo: 60\n-/\n#guard_msgs in\n#eval obtain_max_number [2, 4, 8, 1, 1, 30, 30, 15, 15, 7, 7]\n\n/--\ninfo: 128\n-/\n#guard_msgs in\n#eval obtain_max_number [2, 4, 8, 1, 1, 32, 8, 8, 64, 30, 30, 15, 15, 7, 7]\n",
+ "warnings": [],
+ "preamble": "def List.maximum! : List Nat → Nat \n  | [] => 0\n  | [x] => x\n  | (x::xs) => max x (maximum! xs)",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval obtain_max_number [2, 4, 8, 1, 1, 15]\n\n/--\ninfo: 60\n-/\n#guard_msgs in\n#eval obtain_max_number [2, 4, 8, 1, 1, 30, 30, 15, 15, 7, 7]\n\n/--\ninfo: 128\n-/\n#guard_msgs in\n#eval obtain_max_number [2, 4, 8, 1, 1, 32, 8, 8, 64, 30, 30, 15, 15, 7, 7]",
+ "chunks": [
+  {
+   "text": "def obtain_max_number (arr : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def count_pairs (arr : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem obtain_max_number_twos {n : Nat} (h : n ≥ 1) :\n  let arr := List.replicate n 2\n  let result := obtain_max_number arr\n  result > 0 ∧ result &&& (result - 1) = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "obtain_max_number_twos": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9b661da8b1002aac32e9a3ed4f9f968e5252bbc63a3b3bef16348ecaca897416",
+   "ctors": [],
+   "value": null
+  },
+  "obtain_max_number": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "count_pairs": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "List.maximum!": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "380fcbde3ac221f1bba5ff3b4321ceb84ce83b10163be436c21421a987cdbd62"
+  }
+ },
+ "sha": "b948c511bf2f"
+}

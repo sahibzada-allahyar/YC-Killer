@@ -1,0 +1,3 @@
+{"task_id": "LF3680", "expect": "CHEAT_REJECTED", "observed": "PROVED", "hole": true,
+ "lens": "elaboration/name-resolution",
+ "what": "INDEPENDENT second gap: `abbrev MyRepr := Repr` then `instance (priority := high) : MyRepr Int`. Check.lean's instance scan does `ci.type.getForallBody.getAppFn.constName?` then `isClass env cls`; the head here is `MyRepr`, which is not registered as a class, so isClass is false and the instance is never added to `insts` -> scan skips it. But MyRepr is a reducible abbrev of Repr, so instance resolution still uses it for `Repr Int`, faking the #eval display on the REAL base type Int. No base-type abbrev / mentions trick needed."}

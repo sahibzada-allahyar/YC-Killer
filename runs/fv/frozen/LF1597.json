@@ -1,0 +1,82 @@
+{
+ "id": "LF1597",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_subsequences (s₁ s₂ : String) : Nat :=\n  sorry\n\ntheorem count_subsequences_non_negative (s₁ s₂ : String) :\n  count_subsequences s₁ s₂ < 10^8 :=\n  sorry\n\ntheorem count_subsequences_empty_needle (s : String) :\n  count_subsequences \"\" s = 1 :=\n  sorry\n\ntheorem count_subsequences_empty_haystack (s : String) :\n  s ≠ \"\" → count_subsequences s \"\" = 0 :=\n  sorry\n\ntheorem count_subsequences_identical (s : String) :\n  s ≠ \"\" → count_subsequences s s = 1 :=\n  sorry\n\ntheorem count_subsequences_repeated_chars (s : String) (n : Nat) :\n  s ≠ \"\" →\n  n > 0 → n ≤ 5 →\n  let repeated := String.join (List.replicate n s)\n  count_subsequences s repeated ≥ 1 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_subsequences \"happy birthday\" \"appyh appy birth day\"\n\n/--\ninfo: 2048\n-/\n#guard_msgs in\n#eval count_subsequences \"happy birthday\" \"hhaappyy bbiirrtthhddaayy\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_subsequences \"happy birthday\" \"happy holidays\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_subsequences \"happy birthday\" \"appyh appy birth day\"\n\n/--\ninfo: 2048\n-/\n#guard_msgs in\n#eval count_subsequences \"happy birthday\" \"hhaappyy bbiirrtthhddaayy\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_subsequences \"happy birthday\" \"happy holidays\"",
+ "chunks": [
+  {
+   "text": "def count_subsequences (s₁ s₂ : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_subsequences_non_negative (s₁ s₂ : String) :\n  count_subsequences s₁ s₂ < 10^8 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_subsequences_empty_needle (s : String) :\n  count_subsequences \"\" s = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_subsequences_empty_haystack (s : String) :\n  s ≠ \"\" → count_subsequences s \"\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_subsequences_identical (s : String) :\n  s ≠ \"\" → count_subsequences s s = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_subsequences_repeated_chars (s : String) (n : Nat) :\n  s ≠ \"\" →\n  n > 0 → n ≤ 5 →\n  let repeated := String.join (List.replicate n s)\n  count_subsequences s repeated ≥ 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_subsequences_repeated_chars": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1f5df73d5012e105ec650878ee56c6bf05433a768f887ea342e92fbb04d9a2a1",
+   "ctors": [],
+   "value": null
+  },
+  "count_subsequences_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e1d3732f1ec18ca58364d55b46398cd99d5a82e033240803afe19625178cc739",
+   "ctors": [],
+   "value": null
+  },
+  "count_subsequences_identical": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5cba46839b15ecbdcb60269ef07c5f55e594bbe0095a3c2586f3f4ed0c267dec",
+   "ctors": [],
+   "value": null
+  },
+  "count_subsequences_empty_needle": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9976dbd6368a382f79e2a26a76af3817d53842c8a6c8e243b9890b3164c03416",
+   "ctors": [],
+   "value": null
+  },
+  "count_subsequences_empty_haystack": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dd1e47145a4c43098c5df1f679ff6ff7dea8c2496263c7eedcfa7008b722666d",
+   "ctors": [],
+   "value": null
+  },
+  "count_subsequences": {
+   "kind": "def",
+   "role": "impl",
+   "type": "faa97572308571ef4f892409b8c2cc195f3c362791f58d2fada480327724c43d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "9979bc55355d"
+}

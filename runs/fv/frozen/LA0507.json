@@ -1,0 +1,77 @@
+{
+ "id": "LA0507",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (n : Int) (p : List Int) : Prop :=\n  p.length = n ∧ n ≥ 3\n\ndef IsMedianOfThree (a b c : Int) : Bool :=\n  (a < b && b < c) || (a > b && b > c)\n\ndef CountMedianElements (p : List Int) (n : Int) : Int :=\n  if n ≥ 3 then\n    (List.range (Int.natAbs (n - 2))).filter (fun i => \n      let idx := Int.ofNat i\n      if h : idx.natAbs < p.length ∧ (idx + 1).natAbs < p.length ∧ (idx + 2).natAbs < p.length then\n        IsMedianOfThree (p.get ⟨idx.natAbs, h.1⟩) (p.get ⟨(idx + 1).natAbs, h.2.1⟩) (p.get ⟨(idx + 2).natAbs, h.2.2⟩)\n      else \n        false) |>.length\n  else 0\n\n@[reducible, simp]\ndef solve_precond (n : Int) (p : List Int) : Prop :=\n  ValidInput n p\n\ndef solve (n : Int) (p : List Int) (h_precond : solve_precond n p) : Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (p : List Int) (result : Int) (h_precond : solve_precond n p) : Prop :=\n  result ≥ 0 ∧ result ≤ n - 2 ∧ result = CountMedianElements p n\n\ntheorem solve_spec_satisfied (n : Int) (p : List Int) (h_precond : solve_precond n p) :\n    solve_postcond n p (solve n p h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (n : Int) (p : List Int) : Prop :=\n  p.length = n ∧ n ≥ 3\n\ndef IsMedianOfThree (a b c : Int) : Bool :=\n  (a < b && b < c) || (a > b && b > c)\n\ndef CountMedianElements (p : List Int) (n : Int) : Int :=\n  if n ≥ 3 then\n    (List.range (Int.natAbs (n - 2))).filter (fun i => \n      let idx := Int.ofNat i\n      if h : idx.natAbs < p.length ∧ (idx + 1).natAbs < p.length ∧ (idx + 2).natAbs < p.length then\n        IsMedianOfThree (p.get ⟨idx.natAbs, h.1⟩) (p.get ⟨(idx + 1).natAbs, h.2.1⟩) (p.get ⟨(idx + 2).natAbs, h.2.2⟩)\n      else \n        false) |>.length\n  else 0\n\n@[reducible, simp]\ndef solve_precond (n : Int) (p : List Int) : Prop :=\n  ValidInput n p",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (p : List Int) (h_precond : solve_precond n p) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (p : List Int) (result : Int) (h_precond : solve_precond n p) : Prop :=\n  result ≥ 0 ∧ result ≤ n - 2 ∧ result = CountMedianElements p n",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (p : List Int) (h_precond : solve_precond n p) :\n    solve_postcond n p (solve n p h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "530fc7bc3a329c6835a6d71871a45dec1b0575ced6a2d016ef9fd542e684ecc8",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b3801015f913a180be97d3ba04728eeb29b42a5233f4bc2993a746d8791cb248",
+   "ctors": [],
+   "value": "bfab326dbc19ea99cf89ed6d1465c8076f4c55ddb4d8009852dfcd5a7650a16a"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "63f0aed17995257b9e732dfa6f6d306b5f91077929ef7ad1456788f33db8313d",
+   "ctors": [],
+   "value": "cd62520ad23732ceda99f2453b45d3c72c1e3e4c90aa94c6a349b26c82ff5e8d"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f57fae331f9eb62620a0ec28a57509b944c6261d07a7d25211129dafac08d14e",
+   "ctors": [],
+   "value": null
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b3801015f913a180be97d3ba04728eeb29b42a5233f4bc2993a746d8791cb248",
+   "ctors": [],
+   "value": "906e1852aadd348ce2a5e592a0261d18c782486feb158958d28de6fbfba6be53"
+  },
+  "IsMedianOfThree": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "afbbfa5b4ee4f1b9834698fda4165c72ac8072fd5502d3a21522c9822d00fce1",
+   "ctors": [],
+   "value": "d52e508cb138304f5785ef90d437ea82313b5036afca43b9a35543b51e7e1cf2"
+  },
+  "CountMedianElements": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0fab2b07c0bd92407e6684fb29b8d15410a3961d678fec46dfea9889b0e84663",
+   "ctors": [],
+   "value": "ccf2e718e39ed843f0471d2f13839f6b8b1e1f0b1862d4da1343f0f2b679700b"
+  }
+ },
+ "sha": "3df58b9af848"
+}

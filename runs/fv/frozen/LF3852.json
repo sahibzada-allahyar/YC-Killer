@@ -1,0 +1,49 @@
+{
+ "id": "LF3852",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (arr : List Int) : List Int :=\n  sorry\n\ntheorem last_element_always_included {arr : List Int} (h : arr ≠ []) :\n  (solve arr).getLast? = arr.getLast? :=\n  sorry\n\ntheorem result_subset_of_input {arr : List Int} (h : arr ≠ []) :\n  ∀ x : Int, x ∈ solve arr → x ∈ arr :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [21, 7, 5]\n-/\n#guard_msgs in\n#eval solve [1, 21, 4, 7, 5]\n\n/--\ninfo: [5, 4, 3, 2, 1]\n-/\n#guard_msgs in\n#eval solve [5, 4, 3, 2, 1]\n\n/--\ninfo: [17, 14, 5, 2]\n-/\n#guard_msgs in\n#eval solve [16, 17, 14, 3, 14, 5, 2]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [21, 7, 5]\n-/\n#guard_msgs in\n#eval solve [1, 21, 4, 7, 5]\n\n/--\ninfo: [5, 4, 3, 2, 1]\n-/\n#guard_msgs in\n#eval solve [5, 4, 3, 2, 1]\n\n/--\ninfo: [17, 14, 5, 2]\n-/\n#guard_msgs in\n#eval solve [16, 17, 14, 3, 14, 5, 2]",
+ "chunks": [
+  {
+   "text": "def solve (arr : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem last_element_always_included {arr : List Int} (h : arr ≠ []) :\n  (solve arr).getLast? = arr.getLast? :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem result_subset_of_input {arr : List Int} (h : arr ≠ []) :\n  ∀ x : Int, x ∈ solve arr → x ∈ arr :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ff8c7dcd009bee99c01691be3ac149aece3fe289c6b9eaccbc0960acfd5422ff",
+   "ctors": [],
+   "value": null
+  },
+  "result_subset_of_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cee278f6219e5e67207cca8056a3840f0ebdd6d435c77c9eab2d4244f5d86ea3",
+   "ctors": [],
+   "value": null
+  },
+  "last_element_always_included": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c82b1bad4bd73f213618f2e913d93c05b4151b39ea0944704966164713032b57",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "34f3264a1659"
+}

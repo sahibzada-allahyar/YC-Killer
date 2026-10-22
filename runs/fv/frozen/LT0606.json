@@ -1,0 +1,40 @@
+{
+ "id": "LT0606",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do\n\ndef decode {n : Nat} (a : Vector ByteArray n) (encoding : String := \"utf-8\") (errors : String := \"strict\") : Id (Vector String n) :=\n  sorry\n\ntheorem decode_spec {n : Nat} (a : Vector ByteArray n) (encoding : String := \"utf-8\") (errors : String := \"strict\") :\n    ⦃⌜∀ i : Fin n, (a.get i).size ≥ 0⌝⦄\n    decode a encoding errors\n    ⦃⇓result => ⌜∀ i : Fin n,\n                  -- Basic well-formedness: decoded strings are valid\n                  (result.get i).length ≥ 0 ∧\n\n                  -- Deterministic behavior: identical inputs produce identical outputs\n                  (∀ j : Fin n, a.get i = a.get j → result.get i = result.get j) ∧\n\n                  -- Empty byte arrays decode to empty strings\n                  ((a.get i).size = 0 → result.get i = \"\") ∧\n\n                  -- Identity property: encoding then decoding with same parameters is identity for valid strings\n                  (encoding = \"utf-8\" → ∀ s : String,\n                    (∃ ba : ByteArray, ba = s.toUTF8 ∧ a.get i = ba) →\n                    result.get i = s) ∧\n\n                  -- Error handling consistency: strict mode fails on invalid sequences\n                  (errors = \"strict\" →\n                    (∃ valid_utf8 : Prop, valid_utf8 ∨ result.get i = \"\")) ∧\n\n                  -- Length relationship: non-empty valid byte arrays produce strings\n                  ((a.get i).size > 0 ∧ encoding = \"utf-8\" →\n                    (result.get i).length > 0 ∨ errors ≠ \"strict\") ∧\n\n                  -- Encoding consistency: result depends on encoding parameter\n                  (∀ enc1 enc2 : String, enc1 ≠ enc2 →\n                    decode a enc1 errors ≠ decode a enc2 errors ∨\n                    (∀ j : Fin n, (a.get j).size = 0))⌝⦄ := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "import Std.Do.Triple\nimport Std.Tactic.Do\nopen Std.Do",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def decode {n : Nat} (a : Vector ByteArray n) (encoding : String := \"utf-8\") (errors : String := \"strict\") : Id (Vector String n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem decode_spec {n : Nat} (a : Vector ByteArray n) (encoding : String := \"utf-8\") (errors : String := \"strict\") :\n    ⦃⌜∀ i : Fin n, (a.get i).size ≥ 0⌝⦄\n    decode a encoding errors\n    ⦃⇓result => ⌜∀ i : Fin n,\n                  -- Basic well-formedness: decoded strings are valid\n                  (result.get i).length ≥ 0 ∧\n\n                  -- Deterministic behavior: identical inputs produce identical outputs\n                  (∀ j : Fin n, a.get i = a.get j → result.get i = result.get j) ∧\n\n                  -- Empty byte arrays decode to empty strings\n                  ((a.get i).size = 0 → result.get i = \"\") ∧\n\n                  -- Identity property: encoding then decoding with same parameters is identity for valid strings\n                  (encoding = \"utf-8\" → ∀ s : String,\n                    (∃ ba : ByteArray, ba = s.toUTF8 ∧ a.get i = ba) →\n                    result.get i = s) ∧\n\n                  -- Error handling consistency: strict mode fails on invalid sequences\n                  (errors = \"strict\" →\n                    (∃ valid_utf8 : Prop, valid_utf8 ∨ result.get i = \"\")) ∧\n\n                  -- Length relationship: non-empty valid byte arrays produce strings\n                  ((a.get i).size > 0 ∧ encoding = \"utf-8\" →\n                    (result.get i).length > 0 ∨ errors ≠ \"strict\") ∧\n\n                  -- Encoding consistency: result depends on encoding parameter\n                  (∀ enc1 enc2 : String, enc1 ≠ enc2 →\n                    decode a enc1 errors ≠ decode a enc2 errors ∨\n                    (∀ j : Fin n, (a.get j).size = 0))⌝⦄ := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init",
+  "Std.Do.Triple",
+  "Std.Tactic.Do"
+ ],
+ "constants": {
+  "decode_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7f0a0e1c182970c64c34bf484b32aafb55564d08496477aa205cd1df39a7f12d",
+   "ctors": [],
+   "value": null
+  },
+  "decode": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6586a1a4c52c17163ea9cd79753380e756b9f84cb533b38d2253d55bee03862c",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8e3449649ea8"
+}

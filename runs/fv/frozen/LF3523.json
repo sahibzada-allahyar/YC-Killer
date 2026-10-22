@@ -1,0 +1,49 @@
+{
+ "id": "LF3523",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ulam_sequence (u v n: Nat) : List Nat := sorry\n\ntheorem ulam_sequence_length {u v n: Nat} (h: u < v):\n  (ulam_sequence u v n).length = n := sorry\n\ntheorem ulam_sequence_deterministic {u v n: Nat} (h: u < v):\n  ulam_sequence u v n = ulam_sequence u v n := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def ulam_sequence (u v n: Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem ulam_sequence_length {u v n: Nat} (h: u < v):\n  (ulam_sequence u v n).length = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem ulam_sequence_deterministic {u v n: Nat} (h: u < v):\n  ulam_sequence u v n = ulam_sequence u v n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "ulam_sequence_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "409c0f0187a7486ca5e48b84ddadc485e60d849ab974923de1589b11174abd96",
+   "ctors": [],
+   "value": null
+  },
+  "ulam_sequence_deterministic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9866315902bb93a47d2ecee3bd864db910da0f15f3a52ff12cc6b7b49d155a16",
+   "ctors": [],
+   "value": null
+  },
+  "ulam_sequence": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ed3d5884456e691caaf1a5cda30eb4b6ec26806859a503987887c243b24c1c90",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "c63eb639a088"
+}

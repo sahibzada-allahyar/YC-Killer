@@ -1,0 +1,71 @@
+{
+ "id": "LF1088",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def calculate_cupcakes (rows cols : Nat) : Nat :=\n  sorry\n\ntheorem cupcakes_non_negative (rows cols : Nat) : \n  calculate_cupcakes rows cols ≥ 0 ∧ calculate_cupcakes rows cols = rows * cols :=\n  sorry\n\ntheorem cupcakes_positive (rows cols : Nat) (h1 : rows > 0) (h2 : cols > 0) :\n  calculate_cupcakes rows cols > 0 ∧ \n  calculate_cupcakes rows cols = rows * cols ∧\n  calculate_cupcakes rows cols ≥ max rows cols :=\n  sorry\n\ntheorem cupcakes_commutative (rows cols : Nat) :\n  calculate_cupcakes rows cols = calculate_cupcakes cols rows :=\n  sorry\n\ntheorem cupcakes_zero_cases (n : Nat) :\n  calculate_cupcakes 0 n = 0 ∧ \n  calculate_cupcakes n 0 = 0 ∧\n  calculate_cupcakes 0 0 = 0 :=\n  sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def calculate_cupcakes (rows cols : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem cupcakes_non_negative (rows cols : Nat) : \n  calculate_cupcakes rows cols ≥ 0 ∧ calculate_cupcakes rows cols = rows * cols :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem cupcakes_positive (rows cols : Nat) (h1 : rows > 0) (h2 : cols > 0) :\n  calculate_cupcakes rows cols > 0 ∧ \n  calculate_cupcakes rows cols = rows * cols ∧\n  calculate_cupcakes rows cols ≥ max rows cols :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem cupcakes_commutative (rows cols : Nat) :\n  calculate_cupcakes rows cols = calculate_cupcakes cols rows :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem cupcakes_zero_cases (n : Nat) :\n  calculate_cupcakes 0 n = 0 ∧ \n  calculate_cupcakes n 0 = 0 ∧\n  calculate_cupcakes 0 0 = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "cupcakes_zero_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "fa3b2e08b4a65750c14452210c0a57366ae5abccc8c005ad9a9db2dc91f1c014",
+   "ctors": [],
+   "value": null
+  },
+  "cupcakes_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f1b5a540c3a37c3af0a480537fc9676d3ac104cb70d071f85f8c5b3a07015364",
+   "ctors": [],
+   "value": null
+  },
+  "cupcakes_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17df2363c2b18b39003a5c834880d055a9e5ec36e13d741f50874a7ae7f0db63",
+   "ctors": [],
+   "value": null
+  },
+  "cupcakes_commutative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f0ce807651a83d16561727c45240e57493d2f49eb06c2ee0b29c7baee9ee480d",
+   "ctors": [],
+   "value": null
+  },
+  "calculate_cupcakes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "13add2132969"
+}

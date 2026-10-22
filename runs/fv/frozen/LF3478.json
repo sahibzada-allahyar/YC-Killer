@@ -1,0 +1,78 @@
+{
+ "id": "LF3478",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def List.sorted (l : List Nat) : Prop :=\n  ∀ i j, i < j → j < l.length →\n  match l.get? i, l.get? j with\n  | some x, some y => x ≤ y\n  | _, _ => true\n\ndef not_primes (start finish : Nat) : List Nat := sorry\n\ndef is_prime (n : Nat) : Bool :=\nsorry\n\ndef all_dig_prime (n : Nat) : Bool :=\nsorry\n\ntheorem not_primes_empty_for_equal_bounds (n : Nat) :\n  not_primes n n = [] :=\nsorry\n\ntheorem not_primes_empty_for_invalid_range (start finish : Nat)\n  (h : finish < start) :\n  not_primes start finish = [] :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [22, 25, 27, 32, 33, 35, 52, 55, 57, 72, 75]\n-/\n#guard_msgs in\n#eval not_primes 2 77\n\n/--\ninfo: [522, 525, 527, 532, 533, 535, 537, 552, 553, 555, 572, 573, 575]\n-/\n#guard_msgs in\n#eval not_primes 500 600\n\n/--\ninfo: [2722, 2723, 2725, 2727, 2732, 2733, 2735, 2737]\n-/\n#guard_msgs in\n#eval not_primes 2700 2750\n",
+ "warnings": [],
+ "preamble": "def List.sorted (l : List Nat) : Prop :=\n  ∀ i j, i < j → j < l.length →\n  match l.get? i, l.get? j with\n  | some x, some y => x ≤ y\n  | _, _ => true",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [22, 25, 27, 32, 33, 35, 52, 55, 57, 72, 75]\n-/\n#guard_msgs in\n#eval not_primes 2 77\n\n/--\ninfo: [522, 525, 527, 532, 533, 535, 537, 552, 553, 555, 572, 573, 575]\n-/\n#guard_msgs in\n#eval not_primes 500 600\n\n/--\ninfo: [2722, 2723, 2725, 2727, 2732, 2733, 2735, 2737]\n-/\n#guard_msgs in\n#eval not_primes 2700 2750",
+ "chunks": [
+  {
+   "text": "def not_primes (start finish : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_prime (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def all_dig_prime (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem not_primes_empty_for_equal_bounds (n : Nat) :\n  not_primes n n = [] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem not_primes_empty_for_invalid_range (start finish : Nat)\n  (h : finish < start) :\n  not_primes start finish = [] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "not_primes_empty_for_invalid_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "930780c54c05ca271f2e91f0c1876fe44479d6f291eb27bcfd8bbfa101e14d12",
+   "ctors": [],
+   "value": null
+  },
+  "not_primes_empty_for_equal_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5ba18204e7a5eaecd2dafd7e3bb4a7c4f7728b57251c6eafb03704e1a23f1b86",
+   "ctors": [],
+   "value": null
+  },
+  "not_primes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f2ba374ba4706f2aa1603f3b155fbdb8ef992a2fe510afa257275fac663f718d",
+   "ctors": [],
+   "value": null
+  },
+  "is_prime": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  },
+  "all_dig_prime": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  },
+  "List.sorted": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "28e17fc8968baa6ca7eae923a3d5488b40989348603ccf82b0cb720cc672a75e",
+   "ctors": [],
+   "value": "ec765c0db54d2b16baf1d6c342ad54f6ec13ad8c1f6c7ee6cc62e0ae74928819"
+  }
+ },
+ "sha": "d93e746c8324"
+}

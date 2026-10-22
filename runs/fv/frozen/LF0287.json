@@ -1,0 +1,49 @@
+{
+ "id": "LF0287",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def total_n_queens (n: Nat) : Nat := sorry \n\ntheorem total_n_queens_nonneg (n: Nat) : \n  total_n_queens n ≥ 0 := sorry\n\ntheorem total_n_queens_unique :\n  ∀ n₁ n₂, \n  n₁ = n₂ → total_n_queens n₁ = total_n_queens n₂ := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def total_n_queens (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem total_n_queens_nonneg (n: Nat) : \n  total_n_queens n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem total_n_queens_unique :\n  ∀ n₁ n₂, \n  n₁ = n₂ → total_n_queens n₁ = total_n_queens n₂ :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "total_n_queens_unique": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5c2ce95c68809583b4f7d7d316c653f278a1e36d9f8e737c0a4a767b481b28cf",
+   "ctors": [],
+   "value": null
+  },
+  "total_n_queens_nonneg": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ddbb516ba6e1e7459e6c0dafb5c2b0987005dbe52db0cbdf4da2d475073bfcb3",
+   "ctors": [],
+   "value": null
+  },
+  "total_n_queens": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1550ebad236a"
+}

@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "PROVED", "lens": "harness", "what": "FALSE REJECTION: honest solution with a guillemet identifier `«import count»` (a harmless Lean name). mask keeps guillemet-identifier contents, so the ban scan sees `import` -> CHEAT_REJECTED.", "observed": "CHEAT_REJECTED"}

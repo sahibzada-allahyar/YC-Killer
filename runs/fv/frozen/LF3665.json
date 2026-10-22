@@ -1,0 +1,60 @@
+{
+ "id": "LF3665",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def how_many_apples (n: Nat) : Nat :=\n  sorry\n\ntheorem apples_always_positive {n: Nat} (h: n ≥ 2) :\n  how_many_apples n > 0 :=\n  sorry \n\ntheorem apples_increases (n: Nat) (h: n ≥ 2) :  \n  how_many_apples n > how_many_apples (n-1) :=\n  sorry\n\ntheorem minimum_case :\n  how_many_apples 2 = 7 :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval how_many_apples 2\n\n/--\ninfo: 3121\n-/\n#guard_msgs in\n#eval how_many_apples 5\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval how_many_apples 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval how_many_apples 2\n\n/--\ninfo: 3121\n-/\n#guard_msgs in\n#eval how_many_apples 5\n\n/--\ninfo: 25\n-/\n#guard_msgs in\n#eval how_many_apples 3",
+ "chunks": [
+  {
+   "text": "def how_many_apples (n: Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem apples_always_positive {n: Nat} (h: n ≥ 2) :\n  how_many_apples n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem apples_increases (n: Nat) (h: n ≥ 2) :  \n  how_many_apples n > how_many_apples (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem minimum_case :\n  how_many_apples 2 = 7 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "minimum_case": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "122c1374f83d66e4e80bd8f12576f289c1a942316e72faa05ac50b34ccfe73db",
+   "ctors": [],
+   "value": null
+  },
+  "how_many_apples": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "apples_increases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "1df9889a4376dfe66d84254318c7a0323f5bc77d02e52d89e2f32c6894561dc2",
+   "ctors": [],
+   "value": null
+  },
+  "apples_always_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4893619e8b269eeae43cf8d036059481852ab2664258ce273b8782a6ab6f8245",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "6fe250d9fed2"
+}

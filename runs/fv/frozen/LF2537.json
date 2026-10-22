@@ -1,0 +1,38 @@
+{
+ "id": "LF2537",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def look_and_say_and_sum (n : Nat) : Nat := sorry\n\ntheorem look_and_say_first_value :\n  look_and_say_and_sum 1 = 1 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 4\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 1\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 2\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 3\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 4\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval look_and_say_and_sum 5",
+ "chunks": [
+  {
+   "text": "def look_and_say_and_sum (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem look_and_say_first_value :\n  look_and_say_and_sum 1 = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "look_and_say_first_value": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a980dd8159c0c3136eb8b290ab1b577979dc1356af8c55094c83e48f4872b316",
+   "ctors": [],
+   "value": null
+  },
+  "look_and_say_and_sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "51c4bd8a80f4"
+}

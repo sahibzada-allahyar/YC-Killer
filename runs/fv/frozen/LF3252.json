@@ -1,0 +1,71 @@
+{
+ "id": "LF3252",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def digitize (n : Nat) : List Nat := sorry \n\ntheorem digitize_length (n : Nat) : \n  List.length (digitize n) = String.length (toString n) := sorry\n\ntheorem digitize_values (n : Nat) :\n  ∀ d ∈ digitize n, d ≤ 9 := sorry\n\ntheorem digitize_reconstruction (n : Nat) :\n  let digits := digitize n\n  String.toNat! (String.intercalate \"\" (List.map toString digits)) = n := sorry\n\ntheorem digitize_zero : digitize 0 = [0] := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 2, 3]\n-/\n#guard_msgs in\n#eval digitize 123\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval digitize 1\n\n/--\ninfo: [8, 6, 7, 5, 3, 0, 9]\n-/\n#guard_msgs in\n#eval digitize 8675309\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [1, 2, 3]\n-/\n#guard_msgs in\n#eval digitize 123\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval digitize 1\n\n/--\ninfo: [8, 6, 7, 5, 3, 0, 9]\n-/\n#guard_msgs in\n#eval digitize 8675309",
+ "chunks": [
+  {
+   "text": "def digitize (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem digitize_length (n : Nat) : \n  List.length (digitize n) = String.length (toString n) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem digitize_values (n : Nat) :\n  ∀ d ∈ digitize n, d ≤ 9 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem digitize_reconstruction (n : Nat) :\n  let digits := digitize n\n  String.toNat! (String.intercalate \"\" (List.map toString digits)) = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem digitize_zero : digitize 0 = [0] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "digitize_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b4778839a455b8d42f138fa83df9d817d39651e8a26544b0318f4ca2121ad284",
+   "ctors": [],
+   "value": null
+  },
+  "digitize_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b9219ee5df5cfb9da68e1f8a08fedbe2d22e1572e5f575ae9cf5bffc6019cdd9",
+   "ctors": [],
+   "value": null
+  },
+  "digitize_reconstruction": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e4863de3ca954db53c2587f1052c17053d2a977e50c9a340db5b021af462a329",
+   "ctors": [],
+   "value": null
+  },
+  "digitize_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "89d19283afe16ae9f0b73c64ec46b52dceb0712d2cef0ef7dd11077cf2df3a6b",
+   "ctors": [],
+   "value": null
+  },
+  "digitize": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "3804b3bef119"
+}

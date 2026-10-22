@@ -1,0 +1,60 @@
+{
+ "id": "LF1973",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (ax ay bx b_y cx c_y : Int) : Nat := sorry\n\ntheorem solve_non_negative (ax ay bx b_y cx c_y : Int) :\n  solve ax ay bx b_y cx c_y ≥ 0 := sorry\n\ntheorem solve_symmetric_ab (ax ay bx b_y cx c_y : Int) :\n  solve ax ay bx b_y cx c_y = solve bx b_y ax ay cx c_y := sorry\n\ntheorem solve_symmetric_bc (ax ay bx b_y cx c_y : Int) :\n  solve ax ay bx b_y cx c_y = solve ax ay cx c_y bx b_y := sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve 3 2 2 2 2 1\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve 0 0 1 0 0 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve 1 0 0 1 1 1\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve 3 2 2 2 2 1\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve 0 0 1 0 0 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval solve 1 0 0 1 1 1",
+ "chunks": [
+  {
+   "text": "def solve (ax ay bx b_y cx c_y : Int) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_non_negative (ax ay bx b_y cx c_y : Int) :\n  solve ax ay bx b_y cx c_y ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_symmetric_ab (ax ay bx b_y cx c_y : Int) :\n  solve ax ay bx b_y cx c_y = solve bx b_y ax ay cx c_y :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_symmetric_bc (ax ay bx b_y cx c_y : Int) :\n  solve ax ay bx b_y cx c_y = solve ax ay cx c_y bx b_y :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_symmetric_bc": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c806f0957f900d480da91e2617669f506ba27de5523889d49a904cdf178dee57",
+   "ctors": [],
+   "value": null
+  },
+  "solve_symmetric_ab": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "41634b79e24bf8e3e3e661e32a4a008e22689c267450e57ac59c502d23c59e6e",
+   "ctors": [],
+   "value": null
+  },
+  "solve_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6d57142d56ee067772fbe7cf8ca889509555c5cf5cafdcbf424b83764eb4333e",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2286279a3f401788216395d82c2374b9fa6433a018e64a061672be80eae92c6b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a2a714d38caf"
+}

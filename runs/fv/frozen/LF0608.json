@@ -1,0 +1,60 @@
+{
+ "id": "LF0608",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve_subarrays (n : Nat) (arr : List Nat) : Nat :=\nsorry\n\ndef count_valid_subarrays (n : Nat) (arr : List Nat) : Nat :=\nsorry\n\ntheorem solve_subarrays_singleton (x : Nat) :\n  solve_subarrays 1 [x] = 0 :=\nsorry\n\ntheorem solve_subarrays_alternating_nonneg (n : Nat) :\n  let arr := List.replicate (2*n) 100000000 ++ List.replicate (2*n) 900000000\n  solve_subarrays (4*n) arr ≥ 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_subarrays 3 [100000000, 900000000, 100000000]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_subarrays 1 [900000000]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_subarrays 2 [100000000, 100000000]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval solve_subarrays 3 [100000000, 900000000, 100000000]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_subarrays 1 [900000000]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve_subarrays 2 [100000000, 100000000]",
+ "chunks": [
+  {
+   "text": "def solve_subarrays (n : Nat) (arr : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def count_valid_subarrays (n : Nat) (arr : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_subarrays_singleton (x : Nat) :\n  solve_subarrays 1 [x] = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_subarrays_alternating_nonneg (n : Nat) :\n  let arr := List.replicate (2*n) 100000000 ++ List.replicate (2*n) 900000000\n  solve_subarrays (4*n) arr ≥ 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_subarrays_singleton": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "94f948df2a2421eba886fbd9fddd65040cba4f313948c4c1a82b305b793f296d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_subarrays_alternating_nonneg": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3d10877758f683143d61c6930f178d69ff1db7faa0b52eec6b6d0e2095ef4fac",
+   "ctors": [],
+   "value": null
+  },
+  "solve_subarrays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  },
+  "count_valid_subarrays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d2f7dc406c95691017fe1a74a5f5736854f53a478de6ca3c93c379c10751d6b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "3a85315bf120"
+}

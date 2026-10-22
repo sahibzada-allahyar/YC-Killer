@@ -1,0 +1,9 @@
+{
+ "task_id": "LF0808",
+ "expect": "UNPROVED",
+ "observed": "UNPROVED",
+ "hole": false,
+ "false_rejection": false,
+ "lens": "elaboration/name-resolution",
+ "what": "round 3: @[default_instance] on an agent OfNat for its OWN structure W2. Inert here (impl does not pass #eval), but agent-module default instances are flagged by the default_instance scan regardless (cf. rt2_elab_21/harness_8)."
+}

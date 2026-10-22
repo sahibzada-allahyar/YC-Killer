@@ -1,0 +1,82 @@
+{
+ "id": "LF0197",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def num_unique_bst (n : Nat) : Nat := sorry\n\ntheorem num_unique_bst_base_cases : \n  num_unique_bst 0 = 1 ∧ \n  num_unique_bst 1 = 1 ∧ \n  num_unique_bst 2 = 2 := sorry\n\ntheorem num_unique_bst_positive (n : Nat) : \n  num_unique_bst n > 0 := sorry\n\ntheorem num_unique_bst_increasing (n : Nat) :\n  n ≥ 2 → num_unique_bst n > num_unique_bst (n-1) := sorry\n\ntheorem num_unique_bst_deterministic (n : Nat) :\n  num_unique_bst n = num_unique_bst n := sorry\n\ntheorem num_unique_bst_known_values :\n  num_unique_bst 0 = 1 ∧\n  num_unique_bst 1 = 1 ∧\n  num_unique_bst 2 = 2 ∧\n  num_unique_bst 3 = 5 ∧\n  num_unique_bst 4 = 14 ∧\n  num_unique_bst 5 = 42 ∧\n  num_unique_bst 6 = 132 ∧\n  num_unique_bst 7 = 429 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval num_unique_bst 3\n\n/--\ninfo: 14\n-/\n#guard_msgs in\n#eval num_unique_bst 4\n\n/--\ninfo: 42\n-/\n#guard_msgs in\n#eval num_unique_bst 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval num_unique_bst 3\n\n/--\ninfo: 14\n-/\n#guard_msgs in\n#eval num_unique_bst 4\n\n/--\ninfo: 42\n-/\n#guard_msgs in\n#eval num_unique_bst 5",
+ "chunks": [
+  {
+   "text": "def num_unique_bst (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_unique_bst_base_cases : \n  num_unique_bst 0 = 1 ∧ \n  num_unique_bst 1 = 1 ∧ \n  num_unique_bst 2 = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_unique_bst_positive (n : Nat) : \n  num_unique_bst n > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_unique_bst_increasing (n : Nat) :\n  n ≥ 2 → num_unique_bst n > num_unique_bst (n-1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_unique_bst_deterministic (n : Nat) :\n  num_unique_bst n = num_unique_bst n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem num_unique_bst_known_values :\n  num_unique_bst 0 = 1 ∧\n  num_unique_bst 1 = 1 ∧\n  num_unique_bst 2 = 2 ∧\n  num_unique_bst 3 = 5 ∧\n  num_unique_bst 4 = 14 ∧\n  num_unique_bst 5 = 42 ∧\n  num_unique_bst 6 = 132 ∧\n  num_unique_bst 7 = 429 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "num_unique_bst_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9b61e6fa0edb569d102f4cf3416906d0346e20cd56e8039b03d7e0fd6f8d7332",
+   "ctors": [],
+   "value": null
+  },
+  "num_unique_bst_known_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dead7cda32885d4b93ce46febff716e0524cee31655e383a00c99fdaa7bfa774",
+   "ctors": [],
+   "value": null
+  },
+  "num_unique_bst_increasing": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "533e1a055b311b994399403af51b65456a82d9f376452a97958fbf2c804885b6",
+   "ctors": [],
+   "value": null
+  },
+  "num_unique_bst_deterministic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "17471a7eb33887ed3508048c1f70728b6bc87431bb91965c155b4e6fd80960dc",
+   "ctors": [],
+   "value": null
+  },
+  "num_unique_bst_base_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "88b573e316734e3b1989d3749dd25da4770af5f7947e5d9db30f1fde66e7a310",
+   "ctors": [],
+   "value": null
+  },
+  "num_unique_bst": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "968823d5a7dd"
+}

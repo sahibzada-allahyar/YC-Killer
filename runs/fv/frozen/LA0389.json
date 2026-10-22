@@ -1,0 +1,84 @@
+{
+ "id": "LA0389",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (n : Int) : Prop :=\n  1 ≤ n ∧ n ≤ 2000000000\n\ndef ValidOutput (n : Int) (result : Int) : Prop :=\n  result ≥ 0 ∧\n  result ≥ n - 1 ∧\n  result ≤ n * (n - 1) / 2\n\ndef isqrt (n : Int) : Int :=\n  if n ≤ 0 then 0\n  else if n = 1 then 1\n  else if n ≤ 3 then 1\n  else\n    let approx := n / 2\n    max 0 approx\n\ndef ComputeExpectedResult (n : Int) : Int :=\n  let quad_solv_numerator := isqrt (8*n + 1) - 1\n  let x := quad_solv_numerator / 2\n  let y := x + 1\n  let xed := x * (x - 1) / 2 + n - x\n  let ybr := n - y\n  let yed := 2 * ybr\n  if xed > yed then xed else yed\n\n@[reducible, simp]\ndef solve_precond (n : Int) : Prop :=\n  ValidInput n\n\ndef solve (n : Int) (h_precond : solve_precond n) : Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (result : Int) (h_precond : solve_precond n) : Prop :=\n  ValidOutput n result ∧ result = ComputeExpectedResult n\n\ntheorem solve_spec_satisfied (n : Int) (h_precond : solve_precond n) :\n    solve_postcond n (solve n h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (n : Int) : Prop :=\n  1 ≤ n ∧ n ≤ 2000000000\n\ndef ValidOutput (n : Int) (result : Int) : Prop :=\n  result ≥ 0 ∧\n  result ≥ n - 1 ∧\n  result ≤ n * (n - 1) / 2\n\ndef isqrt (n : Int) : Int :=\n  if n ≤ 0 then 0\n  else if n = 1 then 1\n  else if n ≤ 3 then 1\n  else\n    let approx := n / 2\n    max 0 approx\n\ndef ComputeExpectedResult (n : Int) : Int :=\n  let quad_solv_numerator := isqrt (8*n + 1) - 1\n  let x := quad_solv_numerator / 2\n  let y := x + 1\n  let xed := x * (x - 1) / 2 + n - x\n  let ybr := n - y\n  let yed := 2 * ybr\n  if xed > yed then xed else yed\n\n@[reducible, simp]\ndef solve_precond (n : Int) : Prop :=\n  ValidInput n",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (h_precond : solve_precond n) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (result : Int) (h_precond : solve_precond n) : Prop :=\n  ValidOutput n result ∧ result = ComputeExpectedResult n",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (h_precond : solve_precond n) :\n    solve_postcond n (solve n h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4d711dd1fd5eb47de56df70269ac5510c9bfe264ec8d683fb46847cb775e5992",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "210450b15331ed1f8cfa53700581351d2750398147a2c342a2a8aaae0e4b5a33",
+   "ctors": [],
+   "value": "b484f610dac640d215240fbf4837dc6c7b429ab9beafdbddc4044fc89eb697f6"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "1d5535e3a771bd7a20a53105c782b0f7642ffae790753fe14a8fe70e1bfbf4d1",
+   "ctors": [],
+   "value": "6ed61178cb1e1e4fe6295e8b5067c37f364027437cb237c5ad8a08c91eef2924"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "eafb50e333778d1f87465f2ff9c9eb1e57a21cbe848b69e73c400e4245bc4bc8",
+   "ctors": [],
+   "value": null
+  },
+  "isqrt": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": "6de511b062d45ef5a5ff5d3070f949672cf74d05d8b18e0a4e3a97b569d26f43"
+  },
+  "ValidOutput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "1a6ea50d77353bf1a6f669450dc92b90288351753094370e1279ba28ccc5e205"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "210450b15331ed1f8cfa53700581351d2750398147a2c342a2a8aaae0e4b5a33",
+   "ctors": [],
+   "value": "8eaa7f320f4523e0ae1a6763419d1fc8dbcb5313d7f529680f91841bd9acf726"
+  },
+  "ComputeExpectedResult": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": "d14f240ccbbf1e039f1a26eed0f50256d811437e253ed57e29e79473f723539c"
+  }
+ },
+ "sha": "4a57f4165aff"
+}

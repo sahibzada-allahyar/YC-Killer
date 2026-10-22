@@ -1,0 +1,60 @@
+{
+ "id": "LF3045",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def guess_it (n : Int) (m : Int) : List (List Int) := sorry\n\ndef allPos (xs : List Int) : Bool := sorry\n\ntheorem m_zero_zero :\n  guess_it 0 0 = [[0,0,0]] := sorry\n\ntheorem zero_one :\n  guess_it 0 1 = [] := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def guess_it (n : Int) (m : Int) : List (List Int) :=",
+   "hole_after": true
+  },
+  {
+   "text": "def allPos (xs : List Int) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem m_zero_zero :\n  guess_it 0 0 = [[0,0,0]] :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zero_one :\n  guess_it 0 1 = [] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "zero_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6a9a17daea90e8e74cd0fd789d890807f081039e71cb62a3c492b9f7569558f2",
+   "ctors": [],
+   "value": null
+  },
+  "m_zero_zero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "327c80cebc49344508370458d35814426d68acd05d5cd12448a8abb93431f342",
+   "ctors": [],
+   "value": null
+  },
+  "guess_it": {
+   "kind": "def",
+   "role": "impl",
+   "type": "22d6384b30602c84f3fece06cebafb55b6221eb90b5f550a2ec4ca863afd2542",
+   "ctors": [],
+   "value": null
+  },
+  "allPos": {
+   "kind": "def",
+   "role": "impl",
+   "type": "b295506f1e9a51c9dbc47fa3287a9069c7ff4f012c5915f8730a719e58ab07c6",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "af5cf39364e0"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "LF3188",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (n : Nat) : Int := sorry\n\ntheorem solve_non_negative_or_minus_one (n : Nat) : \n  solve n ≥ -1 := sorry\n\ntheorem solve_impossible_single_digit (n : Nat) :\n  n < 10 ∧ n % 5 ≠ 0 → solve n = -1 := sorry\n\ntheorem solve_leading_zeros (n m : Nat) :\n  n = m → solve n = solve m := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve 50\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve 521\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve 7\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval solve 50\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval solve 521\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval solve 7",
+ "chunks": [
+  {
+   "text": "def solve (n : Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_non_negative_or_minus_one (n : Nat) : \n  solve n ≥ -1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_impossible_single_digit (n : Nat) :\n  n < 10 ∧ n % 5 ≠ 0 → solve n = -1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_leading_zeros (n m : Nat) :\n  n = m → solve n = solve m :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_non_negative_or_minus_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "4cd365edc1fd5631824640df3285dd31479ee379910dfdfcca807febfebeda14",
+   "ctors": [],
+   "value": null
+  },
+  "solve_leading_zeros": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e7508c7b6dd51a88baa5feed6edef1b6e99f89c0945fc9728715f38ff10097c8",
+   "ctors": [],
+   "value": null
+  },
+  "solve_impossible_single_digit": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5bff302e23e5b99b41b10047cdd8c34803144089c2f82a05e0454de24747ed98",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "45a38ef37bfa45f8cc41c6298383eb8f5798e412291489dc25ee658dc8d1b5fe",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "1a9a4ad7a0b7"
+}

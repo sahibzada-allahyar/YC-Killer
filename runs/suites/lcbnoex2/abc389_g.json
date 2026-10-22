@@ -1,0 +1,1 @@
+{"pid": "abc389_g", "kind": "stdin", "func": null, "status": "SPEC_INVALID", "sha": "", "n_refs": 0, "inputs": [], "expected": [], "report": {"specs": {"spec_0.py": "only 9 valid generated inputs ()", "spec_1.py": "only 12 valid generated inputs ()", "spec_2.py": "only 12 valid generated inputs ()"}}}

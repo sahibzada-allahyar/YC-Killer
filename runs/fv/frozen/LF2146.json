@@ -1,0 +1,49 @@
+{
+ "id": "LF2146",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_cost_workout (n k : Nat) (x : List Nat) (a : Nat) (c : List Nat) : Int := sorry\n\ndef sum_list : List Nat → Nat \n  | [] => 0\n  | h::t => h + sum_list t\n\ntheorem min_cost_workout_empty (k a : Nat) :\n  min_cost_workout 0 k [] a [] = 0 := sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_cost_workout 5 10000 [10000, 30000, 30000, 40000, 20000] 20000 [5, 2, 8, 3, 6]\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval min_cost_workout 5 10000 [10000, 40000, 30000, 30000, 20000] 10000 [5, 2, 8, 3, 6]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_cost_workout 5 49 [22, 23, 11, 17, 49] 50 [102, 55, 77, 34, 977]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval min_cost_workout 5 10000 [10000, 30000, 30000, 40000, 20000] 20000 [5, 2, 8, 3, 6]\n\n/--\ninfo: -1\n-/\n#guard_msgs in\n#eval min_cost_workout 5 10000 [10000, 40000, 30000, 30000, 20000] 10000 [5, 2, 8, 3, 6]\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval min_cost_workout 5 49 [22, 23, 11, 17, 49] 50 [102, 55, 77, 34, 977]",
+ "chunks": [
+  {
+   "text": "def min_cost_workout (n k : Nat) (x : List Nat) (a : Nat) (c : List Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sum_list : List Nat → Nat \n  | [] => 0\n  | h::t => h + sum_list t",
+   "hole_after": false
+  },
+  {
+   "text": "theorem min_cost_workout_empty (k a : Nat) :\n  min_cost_workout 0 k [] a [] = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum_list": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "min_cost_workout_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d6eb2b80844d782947a375e8e12d1e65b34c78cb2c7f9387d79c89a93766d1da",
+   "ctors": [],
+   "value": null
+  },
+  "min_cost_workout": {
+   "kind": "def",
+   "role": "impl",
+   "type": "457fe04fb012c5d5bc61aec68cd75e7abbdbf752a646028fba41c9cc0601d4b9",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "bb2fb1b0380c"
+}

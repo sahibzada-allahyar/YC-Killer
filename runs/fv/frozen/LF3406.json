@@ -1,0 +1,82 @@
+{
+ "id": "LF3406",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def doors (n : Nat) : Nat :=\nsorry\n\ndef sqrt (n : Nat) : Nat :=\nsorry\n\ntheorem doors_non_negative (n : Nat) :\n  doors n ≥ 0 :=\nsorry\n\ntheorem doors_squared_leq (n : Nat) :\n  (doors n) * (doors n) ≤ n :=\nsorry\n\ntheorem doors_plus_one_squared_gt (n : Nat) :\n  (doors n + 1) * (doors n + 1) > n :=\nsorry\n\ntheorem doors_perfect_squares (n : Nat) :\n  doors (n * n) = n :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval doors 5\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval doors 10\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval doors 100\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval doors 5\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval doors 10\n\n/--\ninfo: 10\n-/\n#guard_msgs in\n#eval doors 100",
+ "chunks": [
+  {
+   "text": "def doors (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def sqrt (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem doors_non_negative (n : Nat) :\n  doors n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem doors_squared_leq (n : Nat) :\n  (doors n) * (doors n) ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem doors_plus_one_squared_gt (n : Nat) :\n  (doors n + 1) * (doors n + 1) > n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem doors_perfect_squares (n : Nat) :\n  doors (n * n) = n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sqrt": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "doors_squared_leq": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "05661544d826be8ad57bd2c37118b06e0f60d3e6570030420c0d8e71c480912b",
+   "ctors": [],
+   "value": null
+  },
+  "doors_plus_one_squared_gt": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "517990acb91470ccfcb82feed4abe459ae5822e7dd28c060c67af5a5d2f74c30",
+   "ctors": [],
+   "value": null
+  },
+  "doors_perfect_squares": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a886c0a52dbbb0c79dbeac8567be54043dfebb8b6bc1131ba118cc73763e92c4",
+   "ctors": [],
+   "value": null
+  },
+  "doors_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2900156623eba6b22e32dd5385ecc24f7cd6cd002a6e97948d4f7254c62087c0",
+   "ctors": [],
+   "value": null
+  },
+  "doors": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "75d01e252cc3"
+}

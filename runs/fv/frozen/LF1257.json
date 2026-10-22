@@ -1,0 +1,71 @@
+{
+ "id": "LF1257",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sorted (s : String) : String := sorry\n\ndef largest_digit_rearrangement (n : Nat) : Nat := sorry\n\ntheorem not_less_than_input (n : Nat) :\n  largest_digit_rearrangement n ≥ n := sorry\n\ntheorem rearrangement_idempotent (n : Nat) :\n  largest_digit_rearrangement (largest_digit_rearrangement n) = largest_digit_rearrangement n := sorry\n\ntheorem preserves_length (n : Nat) :\n  (toString (largest_digit_rearrangement n)).length = (toString n).length := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval largest_digit_rearrangement 2\n\n/--\ninfo: 221\n-/\n#guard_msgs in\n#eval largest_digit_rearrangement 212\n\n/--\ninfo: 4321\n-/\n#guard_msgs in\n#eval largest_digit_rearrangement 4321\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval largest_digit_rearrangement 2\n\n/--\ninfo: 221\n-/\n#guard_msgs in\n#eval largest_digit_rearrangement 212\n\n/--\ninfo: 4321\n-/\n#guard_msgs in\n#eval largest_digit_rearrangement 4321",
+ "chunks": [
+  {
+   "text": "def sorted (s : String) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def largest_digit_rearrangement (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem not_less_than_input (n : Nat) :\n  largest_digit_rearrangement n ≥ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem rearrangement_idempotent (n : Nat) :\n  largest_digit_rearrangement (largest_digit_rearrangement n) = largest_digit_rearrangement n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem preserves_length (n : Nat) :\n  (toString (largest_digit_rearrangement n)).length = (toString n).length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sorted": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6f0513922b1b32500fef5a52f309f3291d42e6ae6f7d7e89b365f7e92e39e763",
+   "ctors": [],
+   "value": null
+  },
+  "rearrangement_idempotent": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9e2f4da601c432772e5f07b9dc4dfb648f8f026a737586f6f510770e16019954",
+   "ctors": [],
+   "value": null
+  },
+  "preserves_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "32611735cf8a25c34220bbed1f115206ecd51a2ec10a3788507ea6d2c01fd7ec",
+   "ctors": [],
+   "value": null
+  },
+  "not_less_than_input": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b6129c2d09065f8b4b40964168e487fe17017ff0e177666b23aa08b00a86c9e9",
+   "ctors": [],
+   "value": null
+  },
+  "largest_digit_rearrangement": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "0d451a5cb664"
+}

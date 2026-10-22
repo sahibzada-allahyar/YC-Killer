@@ -1,0 +1,49 @@
+{
+ "id": "LF0539",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def solve (n: Nat) (k: Nat) : String × String := sorry \n\ndef stringToNat (s: String) : Nat := sorry\n\ntheorem solve_outputs_are_digits (n: Nat) (k: Nat)\n    (h1: n ≥ 2) (h2: k ≥ 1) (h3: n ≤ 1000000) (h4: k ≤ 10) :\n    let (first, last) := solve n k\n    (∀ c ∈ first.data, '0' ≤ c ∧ c ≤ '9') ∧\n    (∀ c ∈ last.data, '0' ≤ c ∧ c ≤ '9') := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible",
+ "chunks": [
+  {
+   "text": "def solve (n: Nat) (k: Nat) : String × String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def stringToNat (s: String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_outputs_are_digits (n: Nat) (k: Nat)\n    (h1: n ≥ 2) (h2: k ≥ 1) (h3: n ≤ 1000000) (h4: k ≤ 10) :\n    let (first, last) := solve n k\n    (∀ c ∈ first.data, '0' ≤ c ∧ c ≤ '9') ∧\n    (∀ c ∈ last.data, '0' ≤ c ∧ c ≤ '9') :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "stringToNat": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_outputs_are_digits": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "12fb6327fe286795a4b62fcd3e6918347ba041f67cb4bdc217aa63de9d5afb38",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ffa93f50730c2bfaac72eea365e1cc95d5234937b983e874dde6c829f7839c18",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "99b0da06c1a1"
+}

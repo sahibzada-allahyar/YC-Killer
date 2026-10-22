@@ -1,0 +1,8 @@
+{
+ "id": "DA0134",
+ "source": "apps",
+ "source-id": "apps_test_673",
+ "preamble": "predicate ValidInput(n: int, k: int)\n{\n    n >= 1 && k > 0\n}\n\npredicate IsCorrectResult(n: int, k: int, result: int)\n    requires k > 0\n{\n    result > n && result % k == 0 && forall x :: n < x < result ==> x % k != 0\n}",
+ "spec": "method solve(n: int, k: int) returns (result: int)\n    requires ValidInput(n, k)\n    ensures IsCorrectResult(n, k, result)",
+ "postamble": ""
+}

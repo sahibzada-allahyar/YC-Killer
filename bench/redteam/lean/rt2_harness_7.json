@@ -1,0 +1,1 @@
+{"task_id": "LF3680", "expect": "CHEAT_REJECTED", "lens": "harness", "hole": false, "what": "display hijack via `attribute [instance] fakeRepr` where fakeRepr : Repr Int is a plain def. Check.lean scans every constant whose TYPE is a class regardless of the instance attribute, so fakeRepr (Repr Int, no agent anchor) -> CHEAT_REJECTED."}

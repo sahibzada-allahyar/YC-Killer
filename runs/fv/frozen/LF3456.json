@@ -1,0 +1,71 @@
+{
+ "id": "LF3456",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def distribute (nodes : Nat) (workload : Nat) : List (List Nat) :=\n  sorry\n\ndef listMaximum (l : List Nat) : Nat :=\n  sorry\n\ndef listMinimum (l : List Nat) : Nat :=\n  sorry\n\ndef listSum (l : List Nat) : Nat :=\n  sorry\n\ntheorem distribute_length {nodes workload : Nat}\n  (h : nodes ≤ workload ∨ workload = 0) :\n  (distribute nodes workload).length = nodes :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [[0, 1], [2, 3]]\n-/\n#guard_msgs in\n#eval distribute 2 4\n\n/--\ninfo: [[0], [1], [2]]\n-/\n#guard_msgs in\n#eval distribute 3 3\n\n/--\ninfo: [[0, 1, 2], [3, 4, 5], [6, 7], [8, 9]]\n-/\n#guard_msgs in\n#eval distribute 4 10\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [[0, 1], [2, 3]]\n-/\n#guard_msgs in\n#eval distribute 2 4\n\n/--\ninfo: [[0], [1], [2]]\n-/\n#guard_msgs in\n#eval distribute 3 3\n\n/--\ninfo: [[0, 1, 2], [3, 4, 5], [6, 7], [8, 9]]\n-/\n#guard_msgs in\n#eval distribute 4 10",
+ "chunks": [
+  {
+   "text": "def distribute (nodes : Nat) (workload : Nat) : List (List Nat) :=",
+   "hole_after": true
+  },
+  {
+   "text": "def listMaximum (l : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def listMinimum (l : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def listSum (l : List Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem distribute_length {nodes workload : Nat}\n  (h : nodes ≤ workload ∨ workload = 0) :\n  (distribute nodes workload).length = nodes :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "listSum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "listMinimum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "listMaximum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": null
+  },
+  "distribute_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a567a0d781be4c8d2f9c152ce2455732c2d612a76dfc20276688eef6e58ddc02",
+   "ctors": [],
+   "value": null
+  },
+  "distribute": {
+   "kind": "def",
+   "role": "impl",
+   "type": "9d5d813050fc8a137664f12dc295bd97389b6944e8fd2104be9218123cf43095",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "affea4c2f33a"
+}

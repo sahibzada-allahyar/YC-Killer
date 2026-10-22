@@ -1,0 +1,1 @@
+{"pid": "arc188_c", "kind": "stdin", "func": null, "status": "SPEC_INVALID", "sha": "", "n_refs": 1, "inputs": [], "expected": [], "report": {"specs": {"spec_0.py": "ok | outlier-dis=129/309", "spec_1.py": "ok | outlier-dis=29/209", "spec_2.py": "ok | outlier-dis=0/180"}}}

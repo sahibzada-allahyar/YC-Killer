@@ -1,0 +1,163 @@
+{
+ "id": "LA0587",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (queries: List (Char × Int)) : Prop :=\n  queries.length > 0 ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → (queries[i]!).1 = 'L' ∨ (queries[i]!).1 = 'R' ∨ (queries[i]!).1 = '?') ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → (queries[i]!).2 > 0) ∧\n  (∀ i j, 0 ≤ i ∧ i < j ∧ j < queries.length ∧ ((queries[i]!).1 = 'L' ∨ (queries[i]!).1 = 'R') ∧ ((queries[j]!).1 = 'L' ∨ (queries[j]!).1 = 'R') → (queries[i]!).2 ≠ (queries[j]!).2) ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length ∧ (queries[i]!).1 = '?' → \n      ∃ j, 0 ≤ j ∧ j < i ∧ ((queries[j]!).1 = 'L' ∨ (queries[j]!).1 = 'R') ∧ (queries[j]!).2 = (queries[i]!).2) ∧\n  (∃ i, 0 ≤ i ∧ i < queries.length ∧ (queries[i]!).1 = '?')\n\nstructure BookshelfState where\n  positions : Int → Option Int\n  head : Int\n  tail : Int\n\ndef SimulateQueries (queries: List (Char × Int)) (query_idx: Nat) : BookshelfState :=\n  { positions := fun _ => none, head := 0, tail := 0 }\n\ndef ComputeMinRemovals (queries: List (Char × Int)) (query_idx: Nat) : Int :=\n  if h : query_idx < queries.length ∧ (queries[query_idx]!).1 = '?' then\n    let book_id := (queries[query_idx]!).2\n    let state := SimulateQueries queries query_idx\n    match state.positions book_id with\n    | some pos => \n        let left_removals := pos - state.head\n        let right_removals := state.tail - pos\n        let min_removals := min left_removals right_removals\n        min_removals - 1\n    | none => 0\n  else 0\n\ndef ValidOutput (queries: List (Char × Int)) (results: List Int) : Prop :=\n  results.length = (queries.filter (fun q => q.1 = '?')).length ∧\n  (∀ i, 0 ≤ i ∧ i < results.length → results[i]! ≥ 0) ∧\n  (∀ r_idx, 0 ≤ r_idx ∧ r_idx < results.length → \n      ∃ q_idx, q_idx < queries.length ∧ (queries[q_idx]!).1 = '?' ∧\n      results[r_idx]! = ComputeMinRemovals queries q_idx) ∧\n  (∀ q_idx, q_idx < queries.length ∧ (queries[q_idx]!).1 = '?' →\n      ∃ r_idx, 0 ≤ r_idx ∧ r_idx < results.length ∧\n      results[r_idx]! = ComputeMinRemovals queries q_idx)\n\n@[reducible, simp]\ndef solve_precond (queries: List (Char × Int)) : Prop :=\n  ValidInput queries\n\ndef solve (queries: List (Char × Int)) (h_precond : solve_precond queries) : List Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (queries: List (Char × Int)) (results: List Int) (h_precond : solve_precond queries) : Prop :=\n  ValidOutput queries results\n\ntheorem solve_spec_satisfied (queries: List (Char × Int)) (h_precond : solve_precond queries) :\n    solve_postcond queries (solve queries h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (queries: List (Char × Int)) : Prop :=\n  queries.length > 0 ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → (queries[i]!).1 = 'L' ∨ (queries[i]!).1 = 'R' ∨ (queries[i]!).1 = '?') ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → (queries[i]!).2 > 0) ∧\n  (∀ i j, 0 ≤ i ∧ i < j ∧ j < queries.length ∧ ((queries[i]!).1 = 'L' ∨ (queries[i]!).1 = 'R') ∧ ((queries[j]!).1 = 'L' ∨ (queries[j]!).1 = 'R') → (queries[i]!).2 ≠ (queries[j]!).2) ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length ∧ (queries[i]!).1 = '?' → \n      ∃ j, 0 ≤ j ∧ j < i ∧ ((queries[j]!).1 = 'L' ∨ (queries[j]!).1 = 'R') ∧ (queries[j]!).2 = (queries[i]!).2) ∧\n  (∃ i, 0 ≤ i ∧ i < queries.length ∧ (queries[i]!).1 = '?')\n\nstructure BookshelfState where\n  positions : Int → Option Int\n  head : Int\n  tail : Int\n\ndef SimulateQueries (queries: List (Char × Int)) (query_idx: Nat) : BookshelfState :=\n  { positions := fun _ => none, head := 0, tail := 0 }\n\ndef ComputeMinRemovals (queries: List (Char × Int)) (query_idx: Nat) : Int :=\n  if h : query_idx < queries.length ∧ (queries[query_idx]!).1 = '?' then\n    let book_id := (queries[query_idx]!).2\n    let state := SimulateQueries queries query_idx\n    match state.positions book_id with\n    | some pos => \n        let left_removals := pos - state.head\n        let right_removals := state.tail - pos\n        let min_removals := min left_removals right_removals\n        min_removals - 1\n    | none => 0\n  else 0\n\ndef ValidOutput (queries: List (Char × Int)) (results: List Int) : Prop :=\n  results.length = (queries.filter (fun q => q.1 = '?')).length ∧\n  (∀ i, 0 ≤ i ∧ i < results.length → results[i]! ≥ 0) ∧\n  (∀ r_idx, 0 ≤ r_idx ∧ r_idx < results.length → \n      ∃ q_idx, q_idx < queries.length ∧ (queries[q_idx]!).1 = '?' ∧\n      results[r_idx]! = ComputeMinRemovals queries q_idx) ∧\n  (∀ q_idx, q_idx < queries.length ∧ (queries[q_idx]!).1 = '?' →\n      ∃ r_idx, 0 ≤ r_idx ∧ r_idx < results.length ∧\n      results[r_idx]! = ComputeMinRemovals queries q_idx)\n\n@[reducible, simp]\ndef solve_precond (queries: List (Char × Int)) : Prop :=\n  ValidInput queries",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (queries: List (Char × Int)) (h_precond : solve_precond queries) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (queries: List (Char × Int)) (results: List Int) (h_precond : solve_precond queries) : Prop :=\n  ValidOutput queries results",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (queries: List (Char × Int)) (h_precond : solve_precond queries) :\n    solve_postcond queries (solve queries h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2df17abcedf3dc9a0d51f7ea6eae10a842f8b1f57e681dd8caa9c386bcef41a4",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7ed986abc961990781d3c7cdce734bc04b87bb2eb2e151a9619c7e2a853e0448",
+   "ctors": [],
+   "value": "5729cce02decbd1eb1eecbdbbfdaf6ad7c683f57fdbca493674bac65931ba10f"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "206e7151908b20029d79ec751f61aff9247d2e417aebe887f4510cf7cee5d42a",
+   "ctors": [],
+   "value": "162d06835eef850cabb13751104e87684ea27395e5b3f06962de176a8942c83b"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "bb1a039f33b611b14e97107e77559494dc5ed89ae31ab170ac40dd7715aa39ce",
+   "ctors": [],
+   "value": null
+  },
+  "ValidOutput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "e3de958b95a0f360d6e8b1f3bf40f8df7ce0a2517b19d4c01664ba0c6989b346",
+   "ctors": [],
+   "value": "80caa72650b12690e5ae35e5dc4462c2bd6068d10fb1e08e3c3d7bd23c0a62c9"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7ed986abc961990781d3c7cdce734bc04b87bb2eb2e151a9619c7e2a853e0448",
+   "ctors": [],
+   "value": "27183d2bd14ae264064b238bf4124a059aee8efa81517743632cc8988aad4ae1"
+  },
+  "SimulateQueries": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a2e286a9639bd96901ce3832e0ac5feaf8fbf4dc140c2fb294a52e0d880181ee",
+   "ctors": [],
+   "value": "d464ac4196aa4aaaddd9add7e37bd13f155c9a6d3540f6c44417c17e2c22e68e"
+  },
+  "ComputeMinRemovals": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "8ec634555439e00528a4319a1703de549d00989103b79823577f1037a662573d",
+   "ctors": [],
+   "value": "0e57e5b669efb0c23d66940edc18a86002c7aa28415b3d7b93a1490a422c6091"
+  },
+  "BookshelfState.tail": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "c08bc33a9a9ef83760cfd8dc301f544f9ec31d88d208a4365420db525b873b08",
+   "ctors": [],
+   "value": "ebb1818d7ca5ee2f60061eb473c554043dc571d123efa1751081eea7e1e73bb4"
+  },
+  "BookshelfState.positions": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "05fd5972af0b89022c33636fc7177a57aecee782645150812335fd7eba6b912e",
+   "ctors": [],
+   "value": "daaff6fe6579499fe53acb200e8efdc3738b9679d881297fe64c4cdb46b6d39b"
+  },
+  "BookshelfState.noConfusionType.withCtorType": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a1c348b944ba965333c81a3498ad7b488e51db9658d92c7e969e5cd555117a37",
+   "ctors": [],
+   "value": "527f9325483b872c2f57594d184c262f726f5adef2b98c0298d4d48cc9774383"
+  },
+  "BookshelfState.noConfusionType.withCtor": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "7eadb7ca53376faaaa3e10983675095c42463305bc53f273632fa01d10764d86",
+   "ctors": [],
+   "value": "deb7cc53db46df110bca243463315ef7d8f454b69b867f1a84279fceaca064a2"
+  },
+  "BookshelfState.noConfusionType": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "a65e5cb29460e8a2dee389190bb551aa0ee379616b61c0c14be2d3467446d1ae",
+   "ctors": [],
+   "value": "f584f434d4aebe90242459feb0bb70fb383f182f5f20ad6f46dc2d583a180a3b"
+  },
+  "BookshelfState.mk.sizeOf_spec": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a6a1d97af0ae9cb99f337abc0ce73d5f7385bef2b3e850d48f618b05e3216d75",
+   "ctors": [],
+   "value": null
+  },
+  "BookshelfState.mk.injEq": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "5cdbee38edb7bb6d9d277ab2a01d39efcd7646ccebad548830462237dae633cb",
+   "ctors": [],
+   "value": null
+  },
+  "BookshelfState.mk.inj": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c7e49346da7936a76bd5bd54d2eb4d55b2984ba2b31ff708fb2b5e553c59b260",
+   "ctors": [],
+   "value": null
+  },
+  "BookshelfState.mk": {
+   "kind": "ctor",
+   "role": "frozen",
+   "type": "23e0e24ccf3789a2964c4c4d05c928b7bc4073c5b7fc0618e139e67a2a2d10f6",
+   "ctors": [],
+   "value": null
+  },
+  "BookshelfState.head": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "c08bc33a9a9ef83760cfd8dc301f544f9ec31d88d208a4365420db525b873b08",
+   "ctors": [],
+   "value": "7d703a7b65be7933d485ae98840ff972e296511adf1a5f7d98e27d635786ee44"
+  },
+  "BookshelfState": {
+   "kind": "inductive",
+   "role": "frozen",
+   "type": "1b133736844cb3655471652fa096eadf95e48b74d4c77c6231b4f02d12479713",
+   "ctors": [
+    "BookshelfState.mk"
+   ],
+   "value": null
+  }
+ },
+ "sha": "6669a2efe8a9"
+}

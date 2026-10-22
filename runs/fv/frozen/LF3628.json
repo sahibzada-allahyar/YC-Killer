@@ -1,0 +1,71 @@
+{
+ "id": "LF3628",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def pair_zeros (xs : List Int) : List Int := sorry\n\ntheorem pair_zeros_length_valid (xs : List Int) : \n  List.length (pair_zeros xs) ≤ List.length xs := sorry\n\ntheorem pair_zeros_preserves_nonzero (xs : List Int) (x : Int) :\n  x ∈ pair_zeros xs → x ≠ 0 → x ∈ xs := sorry\n\ntheorem pair_zeros_zero_count (xs : List Int) :\n  let input_zeros := (xs.filter (· = 0)).length\n  let output_zeros := ((pair_zeros xs).filter (· = 0)).length\n  output_zeros = (input_zeros + 1) / 2 := sorry\n\ntheorem pair_zeros_preserves_ordering (xs : List Int) :\n  (xs.filter (· ≠ 0)) = ((pair_zeros xs).filter (· ≠ 0)) := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval pair_zeros []\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval pair_zeros [1]\n\n/--\ninfo: [0]\n-/\n#guard_msgs in\n#eval pair_zeros [0]\n\n/--\ninfo: [0, 1, 2]\n-/\n#guard_msgs in\n#eval pair_zeros [0, 1, 0, 2]\n\n/--\ninfo: [1, 0, 1, 2, 0]\n-/\n#guard_msgs in\n#eval pair_zeros [1, 0, 1, 0, 2, 0, 0]\n\n/--\ninfo: [0, 0, 0]\n-/\n#guard_msgs in\n#eval pair_zeros [0, 0, 0, 0, 0, 0]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval pair_zeros []\n\n/--\ninfo: [1]\n-/\n#guard_msgs in\n#eval pair_zeros [1]\n\n/--\ninfo: [0]\n-/\n#guard_msgs in\n#eval pair_zeros [0]\n\n/--\ninfo: [0, 1, 2]\n-/\n#guard_msgs in\n#eval pair_zeros [0, 1, 0, 2]\n\n/--\ninfo: [1, 0, 1, 2, 0]\n-/\n#guard_msgs in\n#eval pair_zeros [1, 0, 1, 0, 2, 0, 0]\n\n/--\ninfo: [0, 0, 0]\n-/\n#guard_msgs in\n#eval pair_zeros [0, 0, 0, 0, 0, 0]",
+ "chunks": [
+  {
+   "text": "def pair_zeros (xs : List Int) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pair_zeros_length_valid (xs : List Int) : \n  List.length (pair_zeros xs) ≤ List.length xs :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pair_zeros_preserves_nonzero (xs : List Int) (x : Int) :\n  x ∈ pair_zeros xs → x ≠ 0 → x ∈ xs :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pair_zeros_zero_count (xs : List Int) :\n  let input_zeros := (xs.filter (· = 0)).length\n  let output_zeros := ((pair_zeros xs).filter (· = 0)).length\n  output_zeros = (input_zeros + 1) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem pair_zeros_preserves_ordering (xs : List Int) :\n  (xs.filter (· ≠ 0)) = ((pair_zeros xs).filter (· ≠ 0)) :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "pair_zeros_zero_count": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0cd6d2a57256e223bf02452f17fcf72676bb92e8e5826c51f3e8462249e2fa80",
+   "ctors": [],
+   "value": null
+  },
+  "pair_zeros_preserves_ordering": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ddd46e571b2f4e8a49d08d6ed91c69c83f73e0ed798b3247e933474c5005da9b",
+   "ctors": [],
+   "value": null
+  },
+  "pair_zeros_preserves_nonzero": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "64ce0aeab53ed042679558b7488f9b356c114bfcabd964204007a82312223dde",
+   "ctors": [],
+   "value": null
+  },
+  "pair_zeros_length_valid": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e11f68d4091ecf2aa832928fd3eff18025aa4cca7d1f6aebdd9e9fd16a288599",
+   "ctors": [],
+   "value": null
+  },
+  "pair_zeros": {
+   "kind": "def",
+   "role": "impl",
+   "type": "ff8c7dcd009bee99c01691be3ac149aece3fe289c6b9eaccbc0960acfd5422ff",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "349b0b0158d1"
+}

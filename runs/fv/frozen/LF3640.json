@@ -1,0 +1,60 @@
+{
+ "id": "LF3640",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def palin (length pos : Nat) : Nat :=\nsorry\n\ndef is_palindrome (n : Nat) : Bool :=\nsorry\n\ndef num_length (n : Nat) : Nat :=\nsorry\n\ntheorem single_digit_palindromes (pos : Nat) (h : 0 < pos ∧ pos < 10) :\n  let result := palin 1 pos\n  result = pos ∧ result < 10 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 22\n-/\n#guard_msgs in\n#eval palin 2 2\n\n/--\ninfo: 1441\n-/\n#guard_msgs in\n#eval palin 4 5\n\n/--\ninfo: 102201\n-/\n#guard_msgs in\n#eval palin 6 3\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 22\n-/\n#guard_msgs in\n#eval palin 2 2\n\n/--\ninfo: 1441\n-/\n#guard_msgs in\n#eval palin 4 5\n\n/--\ninfo: 102201\n-/\n#guard_msgs in\n#eval palin 6 3",
+ "chunks": [
+  {
+   "text": "def palin (length pos : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def is_palindrome (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def num_length (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_digit_palindromes (pos : Nat) (h : 0 < pos ∧ pos < 10) :\n  let result := palin 1 pos\n  result = pos ∧ result < 10 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_digit_palindromes": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c72c8609d187b41c207ff67980114439076712b75945a2c99442900171327392",
+   "ctors": [],
+   "value": null
+  },
+  "palin": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "num_length": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "is_palindrome": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d3dd37380a6e"
+}

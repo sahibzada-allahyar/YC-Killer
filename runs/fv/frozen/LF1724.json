@@ -1,0 +1,60 @@
+{
+ "id": "LF1724",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def nQueen (n : Nat) : List Nat := sorry\n\ndef isValidSolution (n : Nat) (queens : List Nat) : Bool := sorry\n\ntheorem solution_size (n : Nat) (h : n ≥ 4) :\n  (nQueen n).length = n := sorry\n\ntheorem queens_in_bounds (n : Nat) (h : n ≥ 4) :\n  ∀ x ∈ nQueen n, 0 ≤ x ∧ x < n := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0]\n-/\n#guard_msgs in\n#eval nQueen 1\n\n/--\ninfo: [1, 3, 0, 2]\n-/\n#guard_msgs in\n#eval nQueen 4\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval nQueen 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0]\n-/\n#guard_msgs in\n#eval nQueen 1\n\n/--\ninfo: [1, 3, 0, 2]\n-/\n#guard_msgs in\n#eval nQueen 4\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval nQueen 2",
+ "chunks": [
+  {
+   "text": "def nQueen (n : Nat) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def isValidSolution (n : Nat) (queens : List Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solution_size (n : Nat) (h : n ≥ 4) :\n  (nQueen n).length = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem queens_in_bounds (n : Nat) (h : n ≥ 4) :\n  ∀ x ∈ nQueen n, 0 ≤ x ∧ x < n :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solution_size": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9baca1ec63b21ab6eeb27a84d725274e38031583f00fdde8a0b0acdb5eedef3c",
+   "ctors": [],
+   "value": null
+  },
+  "queens_in_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d62ed58e7a2c96abf75d9c262e82e8d3986107130ec1be747191a5e2e9fc58dd",
+   "ctors": [],
+   "value": null
+  },
+  "nQueen": {
+   "kind": "def",
+   "role": "impl",
+   "type": "6196d757db635cf002a4775deaba31557821d63bac7f6f79f6b7fe6159c87eb7",
+   "ctors": [],
+   "value": null
+  },
+  "isValidSolution": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e5ebe78a95c583b1dbc0f5261172f629c64c1cce18f7ddac5365024d6ab23370",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "c219f830a58a"
+}

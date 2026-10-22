@@ -1,0 +1,89 @@
+{
+ "id": "LF3327",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def isVowel (c : Char) : Bool := \n  let lc := c.toLower\n  lc == 'a' ∨ lc == 'e' ∨ lc == 'i' ∨ lc == 'o' ∨ lc == 'u' ∨ lc == 'y'\n\ndef vowel_indices (s : String) : List Nat :=\nsorry\n\ntheorem vowel_indices_in_bounds (s : String) :\n  ∀ i ∈ vowel_indices s, 0 < i ∧ i ≤ s.length :=\nsorry\n\ntheorem vowel_indices_ascending (s : String) (i j : Nat) :\n  i < j → \n  i ∈ vowel_indices s →\n  j ∈ vowel_indices s →\n  i < j :=\nsorry\n\ntheorem vowel_indices_points_to_vowels (s : String) (i : Nat) :\n  i ∈ vowel_indices s → \n  i > 0 →\n  i ≤ s.length →\n  isVowel (s.data.get! (i-1)) :=\nsorry\n\ntheorem vowel_indices_finds_all_vowels (s : String) :\n  (vowel_indices s).length = (s.data.filter isVowel).length :=\nsorry\n\ntheorem vowel_indices_unique (s : String) (i j : Nat) :\n  i ∈ vowel_indices s →\n  j ∈ vowel_indices s →\n  i = j ∨ i ≠ j :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval vowel_indices \"mmm\"\n\n/--\ninfo: [2, 4]\n-/\n#guard_msgs in\n#eval vowel_indices \"super\"\n\n/--\ninfo: [1, 2, 4, 6]\n-/\n#guard_msgs in\n#eval vowel_indices \"YoMama\"\n",
+ "warnings": [],
+ "preamble": "def isVowel (c : Char) : Bool := \n  let lc := c.toLower\n  lc == 'a' ∨ lc == 'e' ∨ lc == 'i' ∨ lc == 'o' ∨ lc == 'u' ∨ lc == 'y'",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: []\n-/\n#guard_msgs in\n#eval vowel_indices \"mmm\"\n\n/--\ninfo: [2, 4]\n-/\n#guard_msgs in\n#eval vowel_indices \"super\"\n\n/--\ninfo: [1, 2, 4, 6]\n-/\n#guard_msgs in\n#eval vowel_indices \"YoMama\"",
+ "chunks": [
+  {
+   "text": "def vowel_indices (s : String) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vowel_indices_in_bounds (s : String) :\n  ∀ i ∈ vowel_indices s, 0 < i ∧ i ≤ s.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vowel_indices_ascending (s : String) (i j : Nat) :\n  i < j → \n  i ∈ vowel_indices s →\n  j ∈ vowel_indices s →\n  i < j :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vowel_indices_points_to_vowels (s : String) (i : Nat) :\n  i ∈ vowel_indices s → \n  i > 0 →\n  i ≤ s.length →\n  isVowel (s.data.get! (i-1)) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vowel_indices_finds_all_vowels (s : String) :\n  (vowel_indices s).length = (s.data.filter isVowel).length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem vowel_indices_unique (s : String) (i j : Nat) :\n  i ∈ vowel_indices s →\n  j ∈ vowel_indices s →\n  i = j ∨ i ≠ j :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "vowel_indices_unique": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7eb4f3c0dd2056d41674b246ed42cc9302ebc79ac1ce7e9e1e6078eed74faaee",
+   "ctors": [],
+   "value": null
+  },
+  "vowel_indices_points_to_vowels": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "6d38b5dedae4ca4a1eb15ad84d1dcc3ffeaf506461220146aff644a80bf4aa21",
+   "ctors": [],
+   "value": null
+  },
+  "vowel_indices_in_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3e971e7f6ed25002fb25ec9e834b1d1b7777025c5f75dfd6caca1918483fcd5d",
+   "ctors": [],
+   "value": null
+  },
+  "vowel_indices_finds_all_vowels": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "803daffb7667136f7ac28c1d0c4ea6c522318ab82fdf8bd770dd262d405f3235",
+   "ctors": [],
+   "value": null
+  },
+  "vowel_indices_ascending": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "16b449ec3607a667c68d4e04173e5e782387f0467077eb1e7a1cc21f0e273837",
+   "ctors": [],
+   "value": null
+  },
+  "vowel_indices": {
+   "kind": "def",
+   "role": "impl",
+   "type": "226a0126496e97e0388dd232e47252781f7e5b627c9846f575bbce3147dbb6c8",
+   "ctors": [],
+   "value": null
+  },
+  "isVowel": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "e7c2f1d22077d750f96386ad05fbc41b9349526a6768f97022ddf4dd1a83ae96",
+   "ctors": [],
+   "value": "95db273653108200ae91241bde1aa6352231cc89a260b4f2ac3937811464292e"
+  }
+ },
+ "sha": "b1469b3c2d05"
+}

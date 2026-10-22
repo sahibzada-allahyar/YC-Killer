@@ -1,0 +1,148 @@
+{
+ "id": "LF4186",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def is_prime (n : Nat) : Bool :=\n  sorry\n\ndef end_one (n : Nat) : Bool :=\n  sorry\n\ndef solve (a b : Nat) : Nat :=\n  sorry\n\ntheorem is_prime_not_small (n : Nat) :\n  n ≤ 1 → is_prime n = false :=\nsorry\n\ntheorem is_prime_no_factors (n : Nat) :\n  is_prime n = true →\n  ∀ i : Nat, 2 ≤ i → i ≤ n^(1/2) → n % i ≠ 0 :=\nsorry\n\ntheorem prime_multiplication (n : Nat) :\n  2 < n → is_prime (2*n) = false :=\nsorry\n\ntheorem end_one_is_bool (n : Nat) :\n  end_one n = true ∨ end_one n = false :=\nsorry\n\ntheorem end_one_for_one :\n  end_one 1 = true :=\nsorry\n\ntheorem end_one_special_cases (n : Nat) :\n  (n = 1 ∨ n = 10) → end_one n = true :=\nsorry\n\ntheorem solve_bounded (a b : Nat) :\n  a ≤ b →\n  0 ≤ solve a b ∧ solve a b ≤ b - a :=\nsorry\n\ntheorem solve_wrong_order (a b : Nat) :\n  b < a → solve a b = 0 :=\nsorry\n\ntheorem solve_unit_range (n : Nat) :\n  solve n (n+1) = 0 ∨ solve n (n+1) = 1 :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve 1 25\n\n/--\ninfo: 28\n-/\n#guard_msgs in\n#eval solve 100 1000\n\n/--\ninfo: 47\n-/\n#guard_msgs in\n#eval solve 100 2000\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval solve 1 25\n\n/--\ninfo: 28\n-/\n#guard_msgs in\n#eval solve 100 1000\n\n/--\ninfo: 47\n-/\n#guard_msgs in\n#eval solve 100 2000",
+ "chunks": [
+  {
+   "text": "def is_prime (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def end_one (n : Nat) : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def solve (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem is_prime_not_small (n : Nat) :\n  n ≤ 1 → is_prime n = false :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem is_prime_no_factors (n : Nat) :\n  is_prime n = true →\n  ∀ i : Nat, 2 ≤ i → i ≤ n^(1/2) → n % i ≠ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prime_multiplication (n : Nat) :\n  2 < n → is_prime (2*n) = false :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem end_one_is_bool (n : Nat) :\n  end_one n = true ∨ end_one n = false :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem end_one_for_one :\n  end_one 1 = true :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem end_one_special_cases (n : Nat) :\n  (n = 1 ∨ n = 10) → end_one n = true :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_bounded (a b : Nat) :\n  a ≤ b →\n  0 ≤ solve a b ∧ solve a b ≤ b - a :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_wrong_order (a b : Nat) :\n  b < a → solve a b = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem solve_unit_range (n : Nat) :\n  solve n (n+1) = 0 ∨ solve n (n+1) = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_wrong_order": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7be8c39dc4209923acf0619e720c3bcd9100f1671e3788041a1ca1ec3014494f",
+   "ctors": [],
+   "value": null
+  },
+  "solve_unit_range": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "22eafafc1f785c386375c0059b4c297c13f5c64f134ac1420def60bcd8ce42df",
+   "ctors": [],
+   "value": null
+  },
+  "solve_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b16fe18024aeacbdc66c8311f03408ee5605c14de89d10e17e0a793c1f9995f9",
+   "ctors": [],
+   "value": null
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  },
+  "prime_multiplication": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "802a56fcd8909dde4678859cfd4d77bb3e40f1bd54d0f71b065f70ec9f6bd94e",
+   "ctors": [],
+   "value": null
+  },
+  "is_prime_not_small": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9bd75912ccc9d41c91bbd9e1f9566dee5d437fcfe18169294724aa01d630536d",
+   "ctors": [],
+   "value": null
+  },
+  "is_prime_no_factors": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "84c224362e57a96bc38127874fd9330f5dd207078447e8d0232180936ced9378",
+   "ctors": [],
+   "value": null
+  },
+  "is_prime": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  },
+  "end_one_special_cases": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7e74aad34b147fafd2e587711e278cbcd83fb024790ec0cea9a4aaf298752df4",
+   "ctors": [],
+   "value": null
+  },
+  "end_one_is_bool": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a39289ea667b7b72e1b04bf0f0cde4191be33b7e4a1243ff8383c835b44104e0",
+   "ctors": [],
+   "value": null
+  },
+  "end_one_for_one": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "50c891cc5975c6187f3410ce36910fc3f4ee7e9ad966bcfc1e0a8ebb6aca4ca5",
+   "ctors": [],
+   "value": null
+  },
+  "end_one": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f48f777bf10a710864c5f46b8366c184190658eb7a3ce932dce451f8ea2102e5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "8e349dab79f0"
+}

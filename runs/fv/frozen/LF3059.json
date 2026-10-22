@@ -1,0 +1,59 @@
+{
+ "id": "LF3059",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "abbrev sum (l : List Nat) : Nat :=\n  match l with\n  | [] => 0\n  | x :: xs => x + sum xs\n\ndef filterWithIndex (l : List Nat) (p : Nat → Nat → Bool) : List Nat :=\n  let rec helper : List Nat → Nat → List Nat\n    | [], _ => []\n    | (x :: xs), i => if p i x then x :: helper xs (i+1) else helper xs (i+1)\n  helper l 0\n\ndef SJF (jobs : List Nat) (index : Nat) : Nat :=\n  sorry\n\ntheorem single_job_returns_itself {jobs : List Nat} {job : Nat} (h : jobs = [job]) :\n  SJF jobs 0 = job :=\nsorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 100\n-/\n#guard_msgs in\n#eval SJF [100] 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval SJF [3, 10, 20, 1, 2] 0\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval SJF [3, 10, 10, 20, 1, 2] 1\n",
+ "warnings": [],
+ "preamble": "abbrev sum (l : List Nat) : Nat :=\n  match l with\n  | [] => 0\n  | x :: xs => x + sum xs\n\ndef filterWithIndex (l : List Nat) (p : Nat → Nat → Bool) : List Nat :=\n  let rec helper : List Nat → Nat → List Nat\n    | [], _ => []\n    | (x :: xs), i => if p i x then x :: helper xs (i+1) else helper xs (i+1)\n  helper l 0",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 100\n-/\n#guard_msgs in\n#eval SJF [100] 0\n\n/--\ninfo: 6\n-/\n#guard_msgs in\n#eval SJF [3, 10, 20, 1, 2] 0\n\n/--\ninfo: 16\n-/\n#guard_msgs in\n#eval SJF [3, 10, 10, 20, 1, 2] 1",
+ "chunks": [
+  {
+   "text": "def SJF (jobs : List Nat) (index : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_job_returns_itself {jobs : List Nat} {job : Nat} (h : jobs = [job]) :\n  SJF jobs 0 = job :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "3b40b8150efae483cc08217800506a0189cf28852332e6175f3c62ea02ab0507",
+   "ctors": [],
+   "value": "e61d789c45390a2d433df90f5d9eb326f264cc2b9035a1e5de0bb304900ea3aa"
+  },
+  "single_job_returns_itself": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "148d16fe8ea02b114facd028a3040ded5d352154716b0759baa61c67b74e64f5",
+   "ctors": [],
+   "value": null
+  },
+  "filterWithIndex.helper": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774869954f0020491e88361ac41e307f978181239f3b85cb579fc29d8ae37077",
+   "ctors": [],
+   "value": "1b524e45ba457d6bf46af5fea5fafaa2b32a0a3d1cdbcfc20caa11c916a200cd"
+  },
+  "filterWithIndex": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "21af223b7cc961b07cd361c83adbb311e24d60818e007a528854ac50b87efd98",
+   "ctors": [],
+   "value": "67a9dcd1f8f004562e240efa0104cde376e735ebd613924ae4b03cbef2e93db0"
+  },
+  "SJF": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e26fe6796b3f0d9441d167c053eb966bc6518ae4bb7a2287c700b20573eb9b45",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "18bf95de5943"
+}

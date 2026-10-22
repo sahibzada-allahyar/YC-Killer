@@ -1,0 +1,60 @@
+{
+ "id": "LF1351",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_binary_additions (s1 s2 : String) : Nat := sorry\n\ntheorem zeros_add_no_carry : \n  count_binary_additions \"0\" \"0\" = 0 := sorry\n\ntheorem one_zero_no_carry :\n  count_binary_additions \"1\" \"0\" = 0 := sorry \n\ntheorem zero_one_one_carry :\n  count_binary_additions \"0\" \"1\" = 1 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_binary_additions \"100010\" \"0\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_binary_additions \"0\" \"100010\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_binary_additions \"11100\" \"1010\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_binary_additions \"100010\" \"0\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_binary_additions \"0\" \"100010\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval count_binary_additions \"11100\" \"1010\"",
+ "chunks": [
+  {
+   "text": "def count_binary_additions (s1 s2 : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zeros_add_no_carry : \n  count_binary_additions \"0\" \"0\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem one_zero_no_carry :\n  count_binary_additions \"1\" \"0\" = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem zero_one_one_carry :\n  count_binary_additions \"0\" \"1\" = 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "zeros_add_no_carry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "92752ea58ef70ea4044ffe4d0d4599ad1e43e5bb84427dd2bad8ba60ab177e54",
+   "ctors": [],
+   "value": null
+  },
+  "zero_one_one_carry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "afe8fa4ef6fb687dc4cfff97a944c6e62f95bf35e39a86e00e77359b7d630704",
+   "ctors": [],
+   "value": null
+  },
+  "one_zero_no_carry": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f7c40029027b5652bd76dc3d059c3ac5bbe047f322f2eb74387cfb195fba9200",
+   "ctors": [],
+   "value": null
+  },
+  "count_binary_additions": {
+   "kind": "def",
+   "role": "impl",
+   "type": "faa97572308571ef4f892409b8c2cc195f3c362791f58d2fada480327724c43d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "95882efbc164"
+}

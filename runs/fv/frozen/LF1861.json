@@ -1,0 +1,60 @@
+{
+ "id": "LF1861",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def List.isSubsetOf (l1 l2 : List α) [BEq α] : Bool :=\n  sorry\n\ndef people_indexes (favorite_companies : List (List String)) : List Nat :=\n  sorry\n\ntheorem people_indexes_valid_indices\n  (favorite_companies : List (List String)) :\n  let result := people_indexes favorite_companies\n  ∀ i ∈ result, i < favorite_companies.length :=\nsorry\n\ntheorem people_indexes_empty :\n  people_indexes [] = [] :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0, 1, 4]\n-/\n#guard_msgs in\n#eval people_indexes [[\"leetcode\", \"google\", \"facebook\"], [\"google\", \"microsoft\"], [\"google\", \"facebook\"], [\"google\"], [\"amazon\"]]\n\n/--\ninfo: [0, 1]\n-/\n#guard_msgs in\n#eval people_indexes [[\"leetcode\", \"google\", \"facebook\"], [\"leetcode\", \"amazon\"], [\"facebook\", \"google\"]]\n\n/--\ninfo: [0, 1, 2, 3]\n-/\n#guard_msgs in\n#eval people_indexes [[\"leetcode\"], [\"google\"], [\"facebook\"], [\"amazon\"]]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0, 1, 4]\n-/\n#guard_msgs in\n#eval people_indexes [[\"leetcode\", \"google\", \"facebook\"], [\"google\", \"microsoft\"], [\"google\", \"facebook\"], [\"google\"], [\"amazon\"]]\n\n/--\ninfo: [0, 1]\n-/\n#guard_msgs in\n#eval people_indexes [[\"leetcode\", \"google\", \"facebook\"], [\"leetcode\", \"amazon\"], [\"facebook\", \"google\"]]\n\n/--\ninfo: [0, 1, 2, 3]\n-/\n#guard_msgs in\n#eval people_indexes [[\"leetcode\"], [\"google\"], [\"facebook\"], [\"amazon\"]]",
+ "chunks": [
+  {
+   "text": "def List.isSubsetOf (l1 l2 : List α) [BEq α] : Bool :=",
+   "hole_after": true
+  },
+  {
+   "text": "def people_indexes (favorite_companies : List (List String)) : List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem people_indexes_valid_indices\n  (favorite_companies : List (List String)) :\n  let result := people_indexes favorite_companies\n  ∀ i ∈ result, i < favorite_companies.length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem people_indexes_empty :\n  people_indexes [] = [] :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "people_indexes_valid_indices": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7dff2a382129c264594291d6749ea5252aee0a6b97912ae92f6a83c8f6545021",
+   "ctors": [],
+   "value": null
+  },
+  "people_indexes_empty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "ce99a0353057074178d164231894b58e6eab8179bea2fe2eb035910d262b8548",
+   "ctors": [],
+   "value": null
+  },
+  "people_indexes": {
+   "kind": "def",
+   "role": "impl",
+   "type": "8383b024e93f69a6080fda8600288d1dc2ba0c864bbe04f825132fded472581e",
+   "ctors": [],
+   "value": null
+  },
+  "List.isSubsetOf": {
+   "kind": "def",
+   "role": "impl",
+   "type": "16b029cc207858d5a6c62e058e3cc4bc9550ab22aea5269eeca333a72d5603eb",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a156123855a4"
+}

@@ -1,0 +1,8 @@
+{
+ "id": "DT0137",
+ "source": "numpy_triple",
+ "source-id": "data_type_routines_typecodes",
+ "preamble": "datatype StringOption = None | Some(s: string)",
+ "spec": "method typecodes(category: string) returns (result: StringOption)\n    // Returns type character codes for valid NumPy dtype categories\n    ensures category == \"Character\" ==> result == Some(\"S1\")\n    ensures category == \"Integer\" ==> result == Some(\"bhilqnp\")  \n    ensures category == \"UnsignedInteger\" ==> result == Some(\"BHILQNP\")\n    ensures category == \"Float\" ==> result == Some(\"fdg\")\n    ensures category == \"Complex\" ==> result == Some(\"FDG\")\n    ensures category == \"AllInteger\" ==> result == Some(\"bBhHiIlLqQnNpP\")\n    ensures category == \"AllFloat\" ==> result == Some(\"fdgFDG\")\n    ensures category == \"Datetime\" ==> result == Some(\"Mm\")\n    ensures category == \"All\" ==> result == Some(\"?bhilqnpBHILQNPfdgFDGSUVOMm\")\n    // Returns None for unrecognized categories\n    ensures (category != \"Character\" && category != \"Integer\" && category != \"UnsignedInteger\" && \n            category != \"Float\" && category != \"Complex\" && category != \"AllInteger\" && \n            category != \"AllFloat\" && category != \"Datetime\" && category != \"All\") ==> result == None",
+ "postamble": ""
+}

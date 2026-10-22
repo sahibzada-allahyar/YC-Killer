@@ -1,0 +1,93 @@
+{
+ "id": "LF2521",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def prod2sum (a b c d: Int) : List (List Int) :=\n  sorry\n\ntheorem prod2sum_output_length (a b c d : Int) :\n  let result := prod2sum a b c d\n  1 ≤ result.length ∧ result.length ≤ 2 := sorry\n\ntheorem prod2sum_sublist_length (a b c d : Int) :\n  let result := prod2sum a b c d\n  ∀ sublist ∈ result, sublist.length = 2 := sorry\n\ntheorem prod2sum_nonneg_values (a b c d : Int) :\n  let result := prod2sum a b c d\n  ∀ sublist ∈ result, ∀ x ∈ sublist, 0 ≤ x := sorry\n\ntheorem prod2sum_sublists_sorted (a b c d : Int) :\n  let result := prod2sum a b c d\n  ∀ sublist ∈ result, (sublist.get! 0) ≤ (sublist.get! 1) := sorry\n\ntheorem prod2sum_list_sorted (a b c d : Int) :\n  let result := prod2sum a b c d\n  result.length = 2 → (result.get! 0) ≤ (result.get! 1) := sorry\n\ntheorem prod2sum_reversible (a b c d : Int) :\n  (prod2sum a b c d).length = (prod2sum c d a b).length := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [[1, 7], [5, 5]]\n-/\n#guard_msgs in\n#eval prod2sum 1 2 1 3\n\n/--\ninfo: [[2, 23], [7, 22]]\n-/\n#guard_msgs in\n#eval prod2sum 2 3 4 5\n\n/--\ninfo: [[2, 8]]\n-/\n#guard_msgs in\n#eval prod2sum 1 1 3 5\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [[1, 7], [5, 5]]\n-/\n#guard_msgs in\n#eval prod2sum 1 2 1 3\n\n/--\ninfo: [[2, 23], [7, 22]]\n-/\n#guard_msgs in\n#eval prod2sum 2 3 4 5\n\n/--\ninfo: [[2, 8]]\n-/\n#guard_msgs in\n#eval prod2sum 1 1 3 5",
+ "chunks": [
+  {
+   "text": "def prod2sum (a b c d: Int) : List (List Int) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prod2sum_output_length (a b c d : Int) :\n  let result := prod2sum a b c d\n  1 ≤ result.length ∧ result.length ≤ 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prod2sum_sublist_length (a b c d : Int) :\n  let result := prod2sum a b c d\n  ∀ sublist ∈ result, sublist.length = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prod2sum_nonneg_values (a b c d : Int) :\n  let result := prod2sum a b c d\n  ∀ sublist ∈ result, ∀ x ∈ sublist, 0 ≤ x :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prod2sum_sublists_sorted (a b c d : Int) :\n  let result := prod2sum a b c d\n  ∀ sublist ∈ result, (sublist.get! 0) ≤ (sublist.get! 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prod2sum_list_sorted (a b c d : Int) :\n  let result := prod2sum a b c d\n  result.length = 2 → (result.get! 0) ≤ (result.get! 1) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem prod2sum_reversible (a b c d : Int) :\n  (prod2sum a b c d).length = (prod2sum c d a b).length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "prod2sum_sublists_sorted": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7bc155e917fb31e3b9ce1db95e3f67ad8064f36f9dd4b4c439cd16848a340e1e",
+   "ctors": [],
+   "value": null
+  },
+  "prod2sum_sublist_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d5099ddd79bec2c975b7f05f2e603ce5f0cd3d6fcb59843780391e066fa409fb",
+   "ctors": [],
+   "value": null
+  },
+  "prod2sum_reversible": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "44505f594c5035b7c3adcade588de552bae9d53d601e8b69c652091fc6e72835",
+   "ctors": [],
+   "value": null
+  },
+  "prod2sum_output_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e374f75e513bb652391c81227da44228e3b31895582895a3bfae90740bbdaddc",
+   "ctors": [],
+   "value": null
+  },
+  "prod2sum_nonneg_values": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "deae2fa276051ae34050adbf1a7e37651d53103a35f50c7d129d653559935ea6",
+   "ctors": [],
+   "value": null
+  },
+  "prod2sum_list_sorted": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d0cef2ab1ee5ee8d326ede08c80d055654888384700b6770d8d397e1fd3cbc35",
+   "ctors": [],
+   "value": null
+  },
+  "prod2sum": {
+   "kind": "def",
+   "role": "impl",
+   "type": "35e14f0cb383286fd2974d560fb35bb4d3c09a37c8d64bfaba8ac5b0a1ba4580",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "99396662b8c0"
+}

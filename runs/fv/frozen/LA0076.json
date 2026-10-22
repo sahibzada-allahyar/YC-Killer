@@ -1,0 +1,77 @@
+{
+ "id": "LA0076",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def sum (s : List Int) : Int :=\n  match s with\n  | [] => 0\n  | x :: xs => x + sum xs\n\ndef ValidInput (n : Int) (k : Int) (a : List Int) : Prop :=\n  n ≥ 1 ∧ a.length = Int.natAbs n ∧ k ≥ 0 ∧ ∀ i, 0 ≤ i ∧ i < n → a[Int.natAbs i]! ≥ 0\n\ndef ValidOutput (a : List Int) (finalSchedule : List Int) (additionalWalks : Int) (k : Int) : Prop :=\n  finalSchedule.length = a.length ∧\n  additionalWalks ≥ 0 ∧\n  (∀ i, 0 ≤ i ∧ i < Int.ofNat a.length → finalSchedule[Int.natAbs i]! ≥ a[Int.natAbs i]!) ∧\n  (∀ i, 0 ≤ i ∧ i < Int.ofNat a.length - 1 → finalSchedule[Int.natAbs i]! + finalSchedule[Int.natAbs (i + 1)]! ≥ k) ∧\n  additionalWalks = sum finalSchedule - sum a\n\n@[reducible, simp]\ndef solve_precond (n : Int) (k : Int) (a : List Int) : Prop :=\n  ValidInput n k a\n\ndef solve (n : Int) (k : Int) (a : List Int) (h_precond : solve_precond n k a) : Int × List Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n : Int) (k : Int) (a : List Int) (result : Int × List Int) (h_precond : solve_precond n k a) : Prop :=\n  ValidOutput a result.2 result.1 k\n\ntheorem solve_spec_satisfied (n : Int) (k : Int) (a : List Int) (h_precond : solve_precond n k a) :\n    solve_postcond n k a (solve n k a h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def sum (s : List Int) : Int :=\n  match s with\n  | [] => 0\n  | x :: xs => x + sum xs\n\ndef ValidInput (n : Int) (k : Int) (a : List Int) : Prop :=\n  n ≥ 1 ∧ a.length = Int.natAbs n ∧ k ≥ 0 ∧ ∀ i, 0 ≤ i ∧ i < n → a[Int.natAbs i]! ≥ 0\n\ndef ValidOutput (a : List Int) (finalSchedule : List Int) (additionalWalks : Int) (k : Int) : Prop :=\n  finalSchedule.length = a.length ∧\n  additionalWalks ≥ 0 ∧\n  (∀ i, 0 ≤ i ∧ i < Int.ofNat a.length → finalSchedule[Int.natAbs i]! ≥ a[Int.natAbs i]!) ∧\n  (∀ i, 0 ≤ i ∧ i < Int.ofNat a.length - 1 → finalSchedule[Int.natAbs i]! + finalSchedule[Int.natAbs (i + 1)]! ≥ k) ∧\n  additionalWalks = sum finalSchedule - sum a\n\n@[reducible, simp]\ndef solve_precond (n : Int) (k : Int) (a : List Int) : Prop :=\n  ValidInput n k a",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n : Int) (k : Int) (a : List Int) (h_precond : solve_precond n k a) : Int × List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n : Int) (k : Int) (a : List Int) (result : Int × List Int) (h_precond : solve_precond n k a) : Prop :=\n  ValidOutput a result.2 result.1 k",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n : Int) (k : Int) (a : List Int) (h_precond : solve_precond n k a) :\n    solve_postcond n k a (solve n k a h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "sum": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": "efcdabd63d08c390fe10cb01c45a4dc1ea18e5c12cfdcc617a288298fb8f8bf6"
+  },
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "cd4c3587ff83129bdce5f889c8ccffcbc9a546e44376c5f1501e0d3693e2e2d2",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d40d5e85c062aae3710c64df388f7d3356b1dc43c3aaaf1beabed3793997bc28",
+   "ctors": [],
+   "value": "124794db27edd77df94f6b8cefa4f7459cdb92a06263a5863faf38bf93ba15bf"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c68f3aea8fb239047603e9bd72398932acebccd179e18ce77673b9d60693d0",
+   "ctors": [],
+   "value": "a247ac869a8acc71b1ea89d1949b45c4fd43b0f7f4c9dace4041d6a6414a0e6d"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f8c56b5559f6dcd2084a57dcd0e34c7086e9ca87d5a3ac22e7b99fb7619a84bd",
+   "ctors": [],
+   "value": null
+  },
+  "ValidOutput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f548dab569887d202132f22daea170f2b09b3d7958e19a30e7fdc5b8a3f79930",
+   "ctors": [],
+   "value": "2762b028fe83d0b478744bff54d711e46da7cd9c6784523eaa130d5d6ab0f98c"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "d40d5e85c062aae3710c64df388f7d3356b1dc43c3aaaf1beabed3793997bc28",
+   "ctors": [],
+   "value": "b113d38e33ca2d084c12f37356d423b69953822805f422fc15b53a3ee89ee032"
+  }
+ },
+ "sha": "3b3958355eb4"
+}

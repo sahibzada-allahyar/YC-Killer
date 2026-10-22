@@ -1,0 +1,60 @@
+{
+ "id": "LF2016",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_pretty_substrings (s: String) : Nat :=\n  sorry\n\ntheorem count_non_negative (s: String) : \n  count_pretty_substrings s ≥ 0 :=\n  sorry\n\ntheorem count_bounded_by_length (s: String) :\n  let n := s.length\n  count_pretty_substrings s ≤ n * (n + 1) / 2 :=\n  sorry \n\ntheorem balanced_parens_pretty (n: Nat) :\n  n > 0 → \n  let s := String.mk (List.replicate n '(' ++ List.replicate n ')')\n  count_pretty_substrings s ≥ 1 := \n  sorry\n\n-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_pretty_substrings \"((?))\"\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval count_pretty_substrings \"??()??\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_pretty_substrings \"??\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: competition\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval count_pretty_substrings \"((?))\"\n\n/--\ninfo: 7\n-/\n#guard_msgs in\n#eval count_pretty_substrings \"??()??\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_pretty_substrings \"??\"",
+ "chunks": [
+  {
+   "text": "def count_pretty_substrings (s: String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_non_negative (s: String) : \n  count_pretty_substrings s ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_bounded_by_length (s: String) :\n  let n := s.length\n  count_pretty_substrings s ≤ n * (n + 1) / 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem balanced_parens_pretty (n: Nat) :\n  n > 0 → \n  let s := String.mk (List.replicate n '(' ++ List.replicate n ')')\n  count_pretty_substrings s ≥ 1 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_pretty_substrings": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  },
+  "count_non_negative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "dda745af615ae18bca4c0032f7186d16a1ef30084df124c01511ec205f55110c",
+   "ctors": [],
+   "value": null
+  },
+  "count_bounded_by_length": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "13f5b3e3a247e7ff79dbdad6350f6a6ba1f0b87f9509bde08b47c9a1a4d26ac8",
+   "ctors": [],
+   "value": null
+  },
+  "balanced_parens_pretty": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e0c64c29350055f1f8ea255dcb8d2c07c92f7fc448d1c913d1d57bfbab0a4665",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "a16798951304"
+}

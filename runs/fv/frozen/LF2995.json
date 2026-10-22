@@ -1,0 +1,38 @@
+{
+ "id": "LF2995",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def binary_cleaner (seq : List Int) : List Int × List Nat := sorry\n\ntheorem binary_cleaner_properties (seq : List Int) :\n  let result := binary_cleaner seq\n  (∀ x ∈ result.1, x < 2) ∧\n  (∀ i ∈ result.2, i < seq.length) ∧\n  (List.all result.2 fun i => seq.get! i ≥ 2) ∧\n  result.1.length + result.2.length = seq.length := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: ([0, 1, 1, 0, 1, 1], [2, 5])\n-/\n#guard_msgs in\n#eval binary_cleaner [0, 1, 2, 1, 0, 2, 1, 1]\n\n/--\ninfo: ([0, 1, 1, 0], [3])\n-/\n#guard_msgs in\n#eval binary_cleaner [0, 1, 1, 2, 0]\n\n/--\ninfo: ([1], [])\n-/\n#guard_msgs in\n#eval binary_cleaner [1]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: ([0, 1, 1, 0, 1, 1], [2, 5])\n-/\n#guard_msgs in\n#eval binary_cleaner [0, 1, 2, 1, 0, 2, 1, 1]\n\n/--\ninfo: ([0, 1, 1, 0], [3])\n-/\n#guard_msgs in\n#eval binary_cleaner [0, 1, 1, 2, 0]\n\n/--\ninfo: ([1], [])\n-/\n#guard_msgs in\n#eval binary_cleaner [1]",
+ "chunks": [
+  {
+   "text": "def binary_cleaner (seq : List Int) : List Int × List Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem binary_cleaner_properties (seq : List Int) :\n  let result := binary_cleaner seq\n  (∀ x ∈ result.1, x < 2) ∧\n  (∀ i ∈ result.2, i < seq.length) ∧\n  (List.all result.2 fun i => seq.get! i ≥ 2) ∧\n  result.1.length + result.2.length = seq.length :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "binary_cleaner_properties": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "74060a6ec63d711e58e592a210a3d7425d2bc2326546b18110e6fc21cbdffa97",
+   "ctors": [],
+   "value": null
+  },
+  "binary_cleaner": {
+   "kind": "def",
+   "role": "impl",
+   "type": "e5ed9ce9cb081ed8b79fccabd1c950e6ea72ada0e31146bbf3b827c80d2ee3da",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "0414f6ebeb91"
+}

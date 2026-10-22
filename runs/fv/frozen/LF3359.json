@@ -1,0 +1,71 @@
+{
+ "id": "LF3359",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def owned_cat_and_dog (cat_years : Nat) (dog_years : Nat) : List Nat\n:= sorry\n\ntheorem owned_cat_and_dog_output_types (cat_years dog_years : Nat) :\n  let result := owned_cat_and_dog cat_years dog_years\n  result.length = 2 ∧ ∀ x ∈ result, x ≥ 0\n:= sorry\n\ntheorem owned_cat_and_dog_monotonic (cat_years dog_years : Nat) :\n  let result1 := owned_cat_and_dog cat_years dog_years\n  let result2 := owned_cat_and_dog (cat_years + 4) (dog_years + 5)\n  result2[0]! ≥ result1[0]! ∧ result2[1]! ≥ result1[1]!\n:= sorry\n\ntheorem owned_cat_and_dog_zero_years (cat_years dog_years : Nat) :\n  cat_years ≤ 14 → dog_years ≤ 14 → owned_cat_and_dog cat_years dog_years = [0, 0]\n:= sorry\n\ntheorem owned_cat_and_dog_formula (cat_years dog_years : Nat) :\n  cat_years ≥ 24 → dog_years ≥ 24 →\n  let result := owned_cat_and_dog cat_years dog_years\n  result[0]! = 2 + (cat_years - 24) / 4 ∧ result[1]! = 2 + (dog_years - 24) / 5\n:= sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0, 0]\n-/\n#guard_msgs in\n#eval owned_cat_and_dog 9 7\n\n/--\ninfo: [2, 2]\n-/\n#guard_msgs in\n#eval owned_cat_and_dog 24 24\n\n/--\ninfo: [10, 10]\n-/\n#guard_msgs in\n#eval owned_cat_and_dog 56 64\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: [0, 0]\n-/\n#guard_msgs in\n#eval owned_cat_and_dog 9 7\n\n/--\ninfo: [2, 2]\n-/\n#guard_msgs in\n#eval owned_cat_and_dog 24 24\n\n/--\ninfo: [10, 10]\n-/\n#guard_msgs in\n#eval owned_cat_and_dog 56 64",
+ "chunks": [
+  {
+   "text": "def owned_cat_and_dog (cat_years : Nat) (dog_years : Nat) : List Nat\n:=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem owned_cat_and_dog_output_types (cat_years dog_years : Nat) :\n  let result := owned_cat_and_dog cat_years dog_years\n  result.length = 2 ∧ ∀ x ∈ result, x ≥ 0\n:=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem owned_cat_and_dog_monotonic (cat_years dog_years : Nat) :\n  let result1 := owned_cat_and_dog cat_years dog_years\n  let result2 := owned_cat_and_dog (cat_years + 4) (dog_years + 5)\n  result2[0]! ≥ result1[0]! ∧ result2[1]! ≥ result1[1]!\n:=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem owned_cat_and_dog_zero_years (cat_years dog_years : Nat) :\n  cat_years ≤ 14 → dog_years ≤ 14 → owned_cat_and_dog cat_years dog_years = [0, 0]\n:=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem owned_cat_and_dog_formula (cat_years dog_years : Nat) :\n  cat_years ≥ 24 → dog_years ≥ 24 →\n  let result := owned_cat_and_dog cat_years dog_years\n  result[0]! = 2 + (cat_years - 24) / 4 ∧ result[1]! = 2 + (dog_years - 24) / 5\n:=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "owned_cat_and_dog_zero_years": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "652e90e465a1b8360eb6236400f44195b78c8fe00fef9df556675e20a45b1550",
+   "ctors": [],
+   "value": null
+  },
+  "owned_cat_and_dog_output_types": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "bf98b1bda8ae98f2b0ee99d6f2683d600eb89b372341451f6ee9a783d8100af4",
+   "ctors": [],
+   "value": null
+  },
+  "owned_cat_and_dog_monotonic": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9aa80598dfa0002745947bb1647867c03174e8d5be52d8a568bb4a7df4396024",
+   "ctors": [],
+   "value": null
+  },
+  "owned_cat_and_dog_formula": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "46648e05649bbf73c5b55ad0f59b468c2c07a95561950db8339183216d358127",
+   "ctors": [],
+   "value": null
+  },
+  "owned_cat_and_dog": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f2ba374ba4706f2aa1603f3b155fbdb8ef992a2fe510afa257275fac663f718d",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "f75ea6a7bf97"
+}

@@ -1,0 +1,84 @@
+{
+ "id": "LA0384",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def IsComposite (x : Int) : Prop :=\n  x ≥ 4 ∧ ∃ k, 2 ≤ k ∧ k < x ∧ x % k = 0\n\ndef ValidInput (queries : List Int) : Prop :=\n  ∀ i, 0 ≤ i ∧ i < queries.length → queries[i]! ≥ 1\n\ndef MaxCompositeSummands (n : Int) : Int :=\n  if n % 4 = 0 then n / 4\n  else if n % 4 = 1 ∧ n / 4 ≥ 2 then n / 4 - 1\n  else if n % 4 = 2 ∧ n / 4 ≥ 1 then n / 4\n  else if n % 4 = 3 ∧ n / 4 ≥ 3 then n / 4 - 1\n  else -1\n\ndef ValidResult (queries : List Int) (results : List Int) : Prop :=\n  results.length = queries.length ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → results[i]! = MaxCompositeSummands queries[i]!) ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → results[i]! ≥ -1)\n\n@[reducible, simp]\ndef solve_precond (queries : List Int) : Prop :=\n  ValidInput queries\n\ndef solve (queries : List Int) (h_precond : solve_precond queries) : List Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (queries : List Int) (results : List Int) (h_precond : solve_precond queries) : Prop :=\n  ValidResult queries results\n\ntheorem solve_spec_satisfied (queries : List Int) (h_precond : solve_precond queries) :\n    solve_postcond queries (solve queries h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def IsComposite (x : Int) : Prop :=\n  x ≥ 4 ∧ ∃ k, 2 ≤ k ∧ k < x ∧ x % k = 0\n\ndef ValidInput (queries : List Int) : Prop :=\n  ∀ i, 0 ≤ i ∧ i < queries.length → queries[i]! ≥ 1\n\ndef MaxCompositeSummands (n : Int) : Int :=\n  if n % 4 = 0 then n / 4\n  else if n % 4 = 1 ∧ n / 4 ≥ 2 then n / 4 - 1\n  else if n % 4 = 2 ∧ n / 4 ≥ 1 then n / 4\n  else if n % 4 = 3 ∧ n / 4 ≥ 3 then n / 4 - 1\n  else -1\n\ndef ValidResult (queries : List Int) (results : List Int) : Prop :=\n  results.length = queries.length ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → results[i]! = MaxCompositeSummands queries[i]!) ∧\n  (∀ i, 0 ≤ i ∧ i < queries.length → results[i]! ≥ -1)\n\n@[reducible, simp]\ndef solve_precond (queries : List Int) : Prop :=\n  ValidInput queries",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (queries : List Int) (h_precond : solve_precond queries) : List Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (queries : List Int) (results : List Int) (h_precond : solve_precond queries) : Prop :=\n  ValidResult queries results",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (queries : List Int) (h_precond : solve_precond queries) :\n    solve_postcond queries (solve queries h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e3d1dea17518c5699afbc7664b8d482c2a544d2f3e870ed4c0164cba1cbd7beb",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "396167b6b12a33dd094f131bfde64289eef0fdb5dc3c1e95658e78bc6498f71d",
+   "ctors": [],
+   "value": "6665224ee26c32dbe89d9479105ebaa2e64b17d7d3a13b97510ce9f082909477"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b1c61e71c2093bf7ad689cdf0e5325ae96a53e4d7ce0ee269462821cedfae89e",
+   "ctors": [],
+   "value": "2f4b2cc4230c62f069f5653a177e83dd45600474d23b2ffd02699dd5df259692"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4c9542aa3934a3e863c3e94257cc831699c25740fb8f97e877538fb21aed1997",
+   "ctors": [],
+   "value": null
+  },
+  "ValidResult": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "42849a74cf7c118fcf2cf70f26ea8dcb591737e37d8afaa289aaa67ab9139789",
+   "ctors": [],
+   "value": "0cfc70e07ccccf7adf87123c9d0e5ae1f32084bbc25d687c3323ef3c632c3882"
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "396167b6b12a33dd094f131bfde64289eef0fdb5dc3c1e95658e78bc6498f71d",
+   "ctors": [],
+   "value": "d2c72151ab5f19514e4d5782c52af6ca2accbf0ac3e74d847ab71d9a51c6a05a"
+  },
+  "MaxCompositeSummands": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "0b90dcef96fb3af0a7f7a4da7c666233dc60307ba67dc93ae65c3a4146b9197a",
+   "ctors": [],
+   "value": "4f4190b4a3d27d46d578acbce383e6e6116d32d17158758e137ced66719ad38d"
+  },
+  "IsComposite": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "210450b15331ed1f8cfa53700581351d2750398147a2c342a2a8aaae0e4b5a33",
+   "ctors": [],
+   "value": "145dcecb52316e7451ae8bb4fe73938ff8bf4c9b704a6590572dc4abc65e703d"
+  }
+ },
+ "sha": "25ee193e23ff"
+}

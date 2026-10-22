@@ -1,0 +1,49 @@
+{
+ "id": "LF3012",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def count_odd_pentaFib (n : Nat) : Nat :=\n  sorry\n\ntheorem count_odd_pentaFib_nonnegative (n : Nat) :\n  count_odd_pentaFib n ≥ 0 :=\n  sorry\n\ntheorem count_odd_pentaFib_first_terms (n : Nat) (h : n ≤ 5) :\n  count_odd_pentaFib n = match n with\n    | 0 => 0\n    | 1 => 1  \n    | 2 => 1\n    | 3 => 1\n    | 4 => 1\n    | 5 => 1\n    | _ => 0\n  :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_odd_pentaFib 0\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_odd_pentaFib 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_odd_pentaFib 2\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval count_odd_pentaFib 0\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_odd_pentaFib 1\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval count_odd_pentaFib 2",
+ "chunks": [
+  {
+   "text": "def count_odd_pentaFib (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_odd_pentaFib_nonnegative (n : Nat) :\n  count_odd_pentaFib n ≥ 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem count_odd_pentaFib_first_terms (n : Nat) (h : n ≤ 5) :\n  count_odd_pentaFib n = match n with\n    | 0 => 0\n    | 1 => 1  \n    | 2 => 1\n    | 3 => 1\n    | 4 => 1\n    | 5 => 1\n    | _ => 0\n  :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "count_odd_pentaFib_nonnegative": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "47abb0f22b6c2bb5ae20b7d5d0be76d79165b4ce10b37011e809d295e6427729",
+   "ctors": [],
+   "value": null
+  },
+  "count_odd_pentaFib_first_terms": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "04c9ae44e99a1048b0e01fd83240835608ace55a8ff96ea3bb421652e313ed09",
+   "ctors": [],
+   "value": null
+  },
+  "count_odd_pentaFib": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "13b7927a57c7"
+}

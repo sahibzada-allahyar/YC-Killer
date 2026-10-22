@@ -1,0 +1,2 @@
+{"task_id": "LF3596", "expect": "PROVED", "observed": "PROVED", "hole": false, "honest": true,
+ "what": "HONEST solution (false-rejection probe): composes the frozen Float helpers throw_points/bonus_points (uses Decidable ∀ over Floats). Correctly PROVED."}

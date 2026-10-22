@@ -1,0 +1,42 @@
+{
+ "id": "LF2886",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def abacaba (n : Nat) : Char := sorry\n\ntheorem abacaba_is_lowercase (n : Nat) : \n  let result := abacaba n\n  97 ≤ result.toNat ∧ result.toNat ≤ 122 := sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 'a'\n-/\n#guard_msgs in\n#eval abacaba 1\n\n/--\ninfo: 'c'\n-/\n#guard_msgs in\n#eval abacaba 4\n\n/--\ninfo: 'e'\n-/\n#guard_msgs in\n#eval abacaba 16\n",
+ "warnings": [
+  "postamble expects a non-Lean output: info: 'a'",
+  "postamble expects a non-Lean output: info: 'c'",
+  "postamble expects a non-Lean output: info: 'e'"
+ ],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 'a'\n-/\n#guard_msgs in\n#eval abacaba 1\n\n/--\ninfo: 'c'\n-/\n#guard_msgs in\n#eval abacaba 4\n\n/--\ninfo: 'e'\n-/\n#guard_msgs in\n#eval abacaba 16",
+ "chunks": [
+  {
+   "text": "def abacaba (n : Nat) : Char :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem abacaba_is_lowercase (n : Nat) : \n  let result := abacaba n\n  97 ≤ result.toNat ∧ result.toNat ≤ 122 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "abacaba_is_lowercase": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "af7507f4097a283c49b465d5f3d75c3ca97bf254095fcff49254daa4e086ef09",
+   "ctors": [],
+   "value": null
+  },
+  "abacaba": {
+   "kind": "def",
+   "role": "impl",
+   "type": "60faa6ad3a73f0b84947c2bb947389f9c78b04c938066f45b843873e3899154a",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "884ecb0105a6"
+}

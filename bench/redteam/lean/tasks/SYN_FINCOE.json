@@ -1,0 +1,12 @@
+{
+ "id": "SYN_FINCOE",
+ "language": "lean",
+ "source": "synthetic",
+ "source-id": "Millennium Harness red team: a postamble test whose input goes through a core coercion (Fin 5 -> Int)",
+ "vc-description": "/-\nSynthetic task (not from vericoding): `shift x` is `x + 1`. Its #guard_msgs test passes a `Fin 5` value where an `Int` is expected, so the test's input goes through core's `Fin 5 -> Int` coercion.\n-/",
+ "vc-preamble": "def probe : Fin 5 := 3",
+ "vc-helpers": "",
+ "vc-definitions": "def shift (x : Int) : Int :=\n  sorry",
+ "vc-theorems": "theorem shift_ge (x : Int) : shift x ≥ x := by\n  sorry",
+ "vc-postamble": "/--\ninfo: 4\n-/\n#guard_msgs in\n#eval shift probe"
+}

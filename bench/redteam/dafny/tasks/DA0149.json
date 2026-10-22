@@ -1,0 +1,8 @@
+{
+ "id": "DA0149",
+ "source": "apps",
+ "source-id": "apps_test_752",
+ "preamble": "predicate validInput(stdin_input: string)\n{\n    var lines := splitLines(stdin_input);\n    |lines| >= 1 && \n    (var n := parseInteger(lines[0]);\n     n >= 0 && |lines| >= 2*n + 1 && \n     (forall i :: 1 <= i <= 2*n ==> i < |lines| && |lines[i]| > 0))\n}\n\nfunction computeMismatches(stdin_input: string): nat\n    requires validInput(stdin_input)\n    ensures computeMismatches(stdin_input) <= parseInteger(splitLines(stdin_input)[0])\n{\n    var lines := splitLines(stdin_input);\n    var n := parseInteger(lines[0]);\n    if n == 0 then 0\n    else\n        var prevSizes := countSizes(lines[1..n+1]);\n        var currentSizes := lines[n+1..2*n+1];\n        countUnmatchedSizes(prevSizes, currentSizes)\n}",
+ "spec": "method solve(stdin_input: string) returns (result: string)\n    requires |stdin_input| > 0\n    requires validInput(stdin_input)\n    ensures |result| > 0\n    ensures result[|result|-1] == '\\n' || (|result| > 1 && result[|result|-2..] == \"\\r\\n\")\n    ensures exists mismatches: nat :: result == intToString(mismatches) + \"\\n\" && \n            mismatches == computeMismatches(stdin_input)\n    ensures (var lines := splitLines(stdin_input);\n             var n := parseInteger(lines[0]);\n             n >= 0 ==> (var mismatches := computeMismatches(stdin_input);\n                        mismatches <= n &&\n                        result == intToString(mismatches) + \"\\n\"))",
+ "postamble": ""
+}

@@ -1,0 +1,82 @@
+{
+ "id": "LF1334",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def max_pizza_time (n : Nat) (k : Nat) (s : String) : Nat :=\n  sorry\n\ndef count_ones (s : String) : Nat :=\n  sorry\n\ntheorem max_pizza_time_bounds (n k: Nat) (s: String) :\n  n > 0 → s.length = n →\n  let result := max_pizza_time n k s\n  0 ≤ result ∧ result ≤ n :=\nsorry\n\ntheorem max_pizza_time_upper_bound (n k: Nat) (s: String) :\n  n > 0 → s.length = n →\n  max_pizza_time n k s ≤ n :=\nsorry\n\ntheorem max_pizza_time_all_ones (n: Nat) :\n  n > 0 →\n  let s := String.mk (List.replicate n '1')\n  max_pizza_time n 0 s = n :=\nsorry\n\ntheorem max_pizza_time_all_zeros (n: Nat) :\n  n > 0 →\n  let s := String.mk (List.replicate n '0')\n  let k := n / 2\n  max_pizza_time n k s = k :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval max_pizza_time 13 2 \"0101110000101\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval max_pizza_time 6 3 \"100001\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval max_pizza_time 5 2 \"10001\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 5\n-/\n#guard_msgs in\n#eval max_pizza_time 13 2 \"0101110000101\"\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval max_pizza_time 6 3 \"100001\"\n\n/--\ninfo: 3\n-/\n#guard_msgs in\n#eval max_pizza_time 5 2 \"10001\"",
+ "chunks": [
+  {
+   "text": "def max_pizza_time (n : Nat) (k : Nat) (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def count_ones (s : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_pizza_time_bounds (n k: Nat) (s: String) :\n  n > 0 → s.length = n →\n  let result := max_pizza_time n k s\n  0 ≤ result ∧ result ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_pizza_time_upper_bound (n k: Nat) (s: String) :\n  n > 0 → s.length = n →\n  max_pizza_time n k s ≤ n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_pizza_time_all_ones (n: Nat) :\n  n > 0 →\n  let s := String.mk (List.replicate n '1')\n  max_pizza_time n 0 s = n :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem max_pizza_time_all_zeros (n: Nat) :\n  n > 0 →\n  let s := String.mk (List.replicate n '0')\n  let k := n / 2\n  max_pizza_time n k s = k :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "max_pizza_time_upper_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f26e99bb6780c92fe22ba1df1c6cf7345b40c4c049ce0fd13043611aa5e07437",
+   "ctors": [],
+   "value": null
+  },
+  "max_pizza_time_bounds": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "d0a0618a8044dd1b0821e655a390f6fe0f18c193a268f336bd5b5e68f5bb0fa6",
+   "ctors": [],
+   "value": null
+  },
+  "max_pizza_time_all_zeros": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "9c5fb503f258b3083216ef3d7878d08907eea9371d8f5a0956cb791f4207a28a",
+   "ctors": [],
+   "value": null
+  },
+  "max_pizza_time_all_ones": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c44133fe2abab623a3a53ca6549535a94677f50e6fab5993229898723e04f662",
+   "ctors": [],
+   "value": null
+  },
+  "max_pizza_time": {
+   "kind": "def",
+   "role": "impl",
+   "type": "8f3bb7f6cfe7f8e755608c0d26bd1064d519d13992147b316d4aebcb83f93950",
+   "ctors": [],
+   "value": null
+  },
+  "count_ones": {
+   "kind": "def",
+   "role": "impl",
+   "type": "4b45f625699b9c5b764124687cdd22329463123362b994ef51203c36538d16e4",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "7b20f578a1a4"
+}

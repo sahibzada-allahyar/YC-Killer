@@ -1,0 +1,60 @@
+{
+ "id": "LF3185",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_longest (numbers : List Int) : Int :=\n  sorry\n\ntheorem find_longest_in_list (numbers : List Int) \n  (h : numbers ≠ []) : \n  find_longest numbers ∈ numbers :=\n  sorry\n\ntheorem find_longest_has_max_len (numbers : List Int) \n  (h : numbers ≠ []) :\n  ∀ x ∈ numbers, \n    (toString (find_longest numbers)).length ≥ (toString x).length :=\n  sorry\n\ntheorem ties_return_first (numbers : List Int)\n  (h : numbers.length ≥ 2) :\n  let result := find_longest numbers\n  let maxLen := (toString result).length \n  numbers.find? (fun x => (toString x).length = maxLen) = some result :=\n  sorry\n\n-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 100\n-/\n#guard_msgs in\n#eval find_longest [1, 10, 100]\n\n/--\ninfo: 9000\n-/\n#guard_msgs in\n#eval find_longest [9000, 8, 800]\n\n/--\ninfo: 900\n-/\n#guard_msgs in\n#eval find_longest [8, 900, 500]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: introductory\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 100\n-/\n#guard_msgs in\n#eval find_longest [1, 10, 100]\n\n/--\ninfo: 9000\n-/\n#guard_msgs in\n#eval find_longest [9000, 8, 800]\n\n/--\ninfo: 900\n-/\n#guard_msgs in\n#eval find_longest [8, 900, 500]",
+ "chunks": [
+  {
+   "text": "def find_longest (numbers : List Int) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_longest_in_list (numbers : List Int) \n  (h : numbers ≠ []) : \n  find_longest numbers ∈ numbers :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_longest_has_max_len (numbers : List Int) \n  (h : numbers ≠ []) :\n  ∀ x ∈ numbers, \n    (toString (find_longest numbers)).length ≥ (toString x).length :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem ties_return_first (numbers : List Int)\n  (h : numbers.length ≥ 2) :\n  let result := find_longest numbers\n  let maxLen := (toString result).length \n  numbers.find? (fun x => (toString x).length = maxLen) = some result :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "ties_return_first": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "48f508d60febe7e46a8994fe7ec032bb382167ae606c563a5c5a45a00535ee53",
+   "ctors": [],
+   "value": null
+  },
+  "find_longest_in_list": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "06dc6555cf21bb65153fb1facf7bf780e6f967c1675c6ade466981f62c2a3d07",
+   "ctors": [],
+   "value": null
+  },
+  "find_longest_has_max_len": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "3be44e30b5c425dfe302e76b7a7010e3c4d2b5bd668bc645dfbf2eb0a482f080",
+   "ctors": [],
+   "value": null
+  },
+  "find_longest": {
+   "kind": "def",
+   "role": "impl",
+   "type": "774b4db27b391f3bc7c0bf0cb74f2e9be2560b895b80200d37243ac29b500689",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "b404ed1a9080"
+}

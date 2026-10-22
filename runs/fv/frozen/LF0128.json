@@ -1,0 +1,60 @@
+{
+ "id": "LF0128",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def String.repeat (s : String) (n : Nat) : String :=\n  sorry\n\ndef number_of_arrays (s : String) (k : Nat) : Nat :=\n  sorry\n\ntheorem single_digit_valid {d : Char} {k : Nat}\n  (h1 : d ∈ ['1', '2', '3', '4', '5', '6', '7', '8', '9'])\n  (h2 : k > 0)\n  : number_of_arrays (String.mk [d]) k = if (d.toNat - 48) ≤ k then 1 else 0 :=\nsorry\n\ntheorem single_zero_invalid {k : Nat} (h : k > 0)\n  : number_of_arrays \"0\" k = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval number_of_arrays \"1000\" 10000\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval number_of_arrays \"1000\" 10\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval number_of_arrays \"1317\" 2000\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval number_of_arrays \"1000\" 10000\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval number_of_arrays \"1000\" 10\n\n/--\ninfo: 8\n-/\n#guard_msgs in\n#eval number_of_arrays \"1317\" 2000",
+ "chunks": [
+  {
+   "text": "def String.repeat (s : String) (n : Nat) : String :=",
+   "hole_after": true
+  },
+  {
+   "text": "def number_of_arrays (s : String) (k : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_digit_valid {d : Char} {k : Nat}\n  (h1 : d ∈ ['1', '2', '3', '4', '5', '6', '7', '8', '9'])\n  (h2 : k > 0)\n  : number_of_arrays (String.mk [d]) k = if (d.toNat - 48) ≤ k then 1 else 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem single_zero_invalid {k : Nat} (h : k > 0)\n  : number_of_arrays \"0\" k = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "single_zero_invalid": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "8218aa688a9f55915a6a1cfddc2c7dcad55c7168dc64b522e0583e4495cf5c44",
+   "ctors": [],
+   "value": null
+  },
+  "single_digit_valid": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "e287f0cff0c39538ad8b5e9a9ffada00356dc8679703746154ec0c6a8bec0c4c",
+   "ctors": [],
+   "value": null
+  },
+  "number_of_arrays": {
+   "kind": "def",
+   "role": "impl",
+   "type": "f2b1f6e147df9b829df4e0a1497329a0bc9708a1dd3f6de7cbf93488fea38076",
+   "ctors": [],
+   "value": null
+  },
+  "String.repeat": {
+   "kind": "def",
+   "role": "impl",
+   "type": "be3d807cf54579f2ea57d3584d511bbabcfa6e35db00a518bc2481bbcf1a802b",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "31276c456b20"
+}

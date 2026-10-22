@@ -1,0 +1,60 @@
+{
+ "id": "LF1448",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def check_string_chars (s : String) (n : Nat) (chars : String) : Nat :=\n  sorry\n\ntheorem invalid_chars_check {test_str chars_str : String} {n : Nat}\n  (h1 : test_str.length > 0)\n  (h2 : chars_str.length > 0) \n  (h3 : ∃ c ∈ test_str.data, c ∉ chars_str.data) :\n  check_string_chars test_str test_str.length chars_str = 0 :=\nsorry\n\ntheorem empty_string_check {chars : String}\n  (h : chars.length > 0) :\n  check_string_chars \"\" 0 chars = 1 := \nsorry\n\ntheorem empty_chars_check {s : String} \n  (h : s.length > 0) :\n  check_string_chars s s.length \"\" = 0 :=\nsorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_string_chars \"abcd\" 4 \"a b c d\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_string_chars \"aabbbcccdddd\" 4 \"a b c d\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval check_string_chars \"acd\" 3 \"a b d\"\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_string_chars \"abcd\" 4 \"a b c d\"\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval check_string_chars \"aabbbcccdddd\" 4 \"a b c d\"\n\n/--\ninfo: 0\n-/\n#guard_msgs in\n#eval check_string_chars \"acd\" 3 \"a b d\"",
+ "chunks": [
+  {
+   "text": "def check_string_chars (s : String) (n : Nat) (chars : String) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem invalid_chars_check {test_str chars_str : String} {n : Nat}\n  (h1 : test_str.length > 0)\n  (h2 : chars_str.length > 0) \n  (h3 : ∃ c ∈ test_str.data, c ∉ chars_str.data) :\n  check_string_chars test_str test_str.length chars_str = 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_string_check {chars : String}\n  (h : chars.length > 0) :\n  check_string_chars \"\" 0 chars = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem empty_chars_check {s : String} \n  (h : s.length > 0) :\n  check_string_chars s s.length \"\" = 0 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "invalid_chars_check": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2fbe5c46556d672cb9b880f5d632f0ff84a158707ef068f84423bc7b1773b7ce",
+   "ctors": [],
+   "value": null
+  },
+  "empty_string_check": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "b4ff3dc14ed085853b687977f1fb149d38947ff09e56526e4f096865ee560652",
+   "ctors": [],
+   "value": null
+  },
+  "empty_chars_check": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "7cb7441c16da5b5801e960292c2e10dd2e399fa8ec488550be8305f848bf430d",
+   "ctors": [],
+   "value": null
+  },
+  "check_string_chars": {
+   "kind": "def",
+   "role": "impl",
+   "type": "1e0b54f6eab3239530073940992a4a0550d2c012d3fe409b2e2b6a97cc5a1042",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "ec4693d962a7"
+}

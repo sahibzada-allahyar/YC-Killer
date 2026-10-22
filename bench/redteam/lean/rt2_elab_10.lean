@@ -1,0 +1,30 @@
+def count_max_speed_cars (speeds : List Int) : Nat :=
+  (speeds.foldl (fun (acc : Nat × Option Int) s =>
+    match acc.2 with
+    | none => (1, some s)
+    | some m => if s < m then (acc.1 + 1, some s) else (acc.1, some m)) (0, none)).1
+
+theorem count_max_speed_cars_empty_list :
+  count_max_speed_cars [] = 0 :=
+rfl
+
+-- Apps difficulty: interview
+-- Assurance level: guarded_and_plausible
+
+/--
+info: 1
+-/
+#guard_msgs in
+#eval count_max_speed_cars [10]
+
+/--
+info: 2
+-/
+#guard_msgs in
+#eval count_max_speed_cars [8, 3, 6]
+
+/--
+info: 2
+-/
+#guard_msgs in
+#eval count_max_speed_cars [4, 5, 1, 2, 3]

@@ -1,0 +1,104 @@
+{
+ "id": "LF1150",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def min_menus_for_price (price : Nat) : Nat := sorry\n\ndef bin_ones (n : Nat) : Nat := sorry\n\n-- The result is always positive\n\ntheorem min_menus_positive (price : Nat) \n  (h : price > 0) (h₂ : price ≤ 1000000) : \n  min_menus_for_price price > 0 := sorry\n\n-- The result is never more than binary ones plus 2048s\n\ntheorem min_menus_binary_bound (price : Nat) \n  (h : price > 0) (h₂ : price ≤ 1000000) :\n  min_menus_for_price price ≤ bin_ones (price % 2048) + (price / 2048) := sorry\n\n-- Powers of 2 up to 2048 require exactly 1 menu\n\ntheorem power_two_property (price : Nat) \n  (h : price > 0) (h₂ : price ≤ 2048)\n  (h₃ : ∃ k, price = 2^k) :\n  min_menus_for_price price = 1 := sorry\n\n-- Edge cases\n\ntheorem edge_case_2048 : min_menus_for_price 2048 = 1 := sorry\n\ntheorem edge_case_4096 : min_menus_for_price 4096 = 2 := sorry\n\ntheorem edge_case_2047 : min_menus_for_price 2047 = 11 := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_menus_for_price 10\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_menus_for_price 256\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_menus_for_price 4096\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_menus_for_price 10\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval min_menus_for_price 256\n\n/--\ninfo: 2\n-/\n#guard_msgs in\n#eval min_menus_for_price 4096",
+ "chunks": [
+  {
+   "text": "def min_menus_for_price (price : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "def bin_ones (n : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_menus_positive (price : Nat) \n  (h : price > 0) (h₂ : price ≤ 1000000) : \n  min_menus_for_price price > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem min_menus_binary_bound (price : Nat) \n  (h : price > 0) (h₂ : price ≤ 1000000) :\n  min_menus_for_price price ≤ bin_ones (price % 2048) + (price / 2048) :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem power_two_property (price : Nat) \n  (h : price > 0) (h₂ : price ≤ 2048)\n  (h₃ : ∃ k, price = 2^k) :\n  min_menus_for_price price = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem edge_case_2048 : min_menus_for_price 2048 = 1 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem edge_case_4096 : min_menus_for_price 4096 = 2 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem edge_case_2047 : min_menus_for_price 2047 = 11 :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "power_two_property": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "a0ec4bde0c0d4739f990bf3ae38d2716dcc502db7aca290f38d891844d2f6a1f",
+   "ctors": [],
+   "value": null
+  },
+  "min_menus_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "c86f2e101393ae24020fbfc4b72b487e8e0e3e557e5d58397833fb86140b4855",
+   "ctors": [],
+   "value": null
+  },
+  "min_menus_for_price": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  },
+  "min_menus_binary_bound": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "81c10fae3126408564e915939695772ac1aa00e0215bcf4389acdb6df6a2e336",
+   "ctors": [],
+   "value": null
+  },
+  "edge_case_4096": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "0a3332aa86aca1343ca1386057794418baa4b71360b0dbfe968fa4ba887c7a80",
+   "ctors": [],
+   "value": null
+  },
+  "edge_case_2048": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "72282a879d3a4c11ad9ae98c5ea4d53e6298d4dc4a9b3ff11c51fecc0e74a469",
+   "ctors": [],
+   "value": null
+  },
+  "edge_case_2047": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "f0f6ccf9e2fc37cc507f4f33742468fd874143ae58d2440ca0a5fde12e945bee",
+   "ctors": [],
+   "value": null
+  },
+  "bin_ones": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c494f3a8f22bfaa221b8034eae6390853b7f24bc067f71584496015138859029",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "3886e05a5be7"
+}

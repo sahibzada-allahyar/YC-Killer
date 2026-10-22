@@ -1,0 +1,71 @@
+{
+ "id": "LF0021",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def find_smallest_k (n : Nat) (s : List Nat) : Int := sorry\n\ndef bxor (a b : Nat) : Nat := sorry\n\ntheorem find_smallest_k_positive (n : Nat) (s : List Nat) :\n  let k := find_smallest_k n s\n  k ≠ -1 → k > 0 := sorry\n\ntheorem find_smallest_k_bounded (n : Nat) (s : List Nat) :\n  let k := find_smallest_k n s\n  k ≠ -1 → k ≤ 1024 := sorry\n\ntheorem find_smallest_k_permutation_invariant (n : Nat) (s : List Nat) :\n  s.length ≥ 2 → \n  find_smallest_k n s = find_smallest_k n s.reverse := sorry\n\n-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval find_smallest_k 4 [1, 0, 2, 3]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval find_smallest_k 6 [10, 7, 14, 8, 3, 12]\n\n/--\ninfo: 1023\n-/\n#guard_msgs in\n#eval find_smallest_k 2 [0, 1023]\n",
+ "warnings": [],
+ "preamble": "",
+ "postamble": "-- Apps difficulty: interview\n-- Assurance level: guarded_and_plausible\n\n/--\ninfo: 1\n-/\n#guard_msgs in\n#eval find_smallest_k 4 [1, 0, 2, 3]\n\n/--\ninfo: 4\n-/\n#guard_msgs in\n#eval find_smallest_k 6 [10, 7, 14, 8, 3, 12]\n\n/--\ninfo: 1023\n-/\n#guard_msgs in\n#eval find_smallest_k 2 [0, 1023]",
+ "chunks": [
+  {
+   "text": "def find_smallest_k (n : Nat) (s : List Nat) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "def bxor (a b : Nat) : Nat :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_smallest_k_positive (n : Nat) (s : List Nat) :\n  let k := find_smallest_k n s\n  k ≠ -1 → k > 0 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_smallest_k_bounded (n : Nat) (s : List Nat) :\n  let k := find_smallest_k n s\n  k ≠ -1 → k ≤ 1024 :=",
+   "hole_after": true
+  },
+  {
+   "text": "theorem find_smallest_k_permutation_invariant (n : Nat) (s : List Nat) :\n  s.length ≥ 2 → \n  find_smallest_k n s = find_smallest_k n s.reverse :=",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "find_smallest_k_positive": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "548e8b962b82901fe8f3aa1b1d869e0d49f7d8b07327cec770290db468181b3c",
+   "ctors": [],
+   "value": null
+  },
+  "find_smallest_k_permutation_invariant": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "2decd29e26558691b624a65f9debeaa82ffe4c26faf3d889d4a46a1fba5e5373",
+   "ctors": [],
+   "value": null
+  },
+  "find_smallest_k_bounded": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "54257bfff56b5fd5971211ae65df000433968449c0cf2548f248d54e3dcf0fc9",
+   "ctors": [],
+   "value": null
+  },
+  "find_smallest_k": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2b1b18207cd584c1d92cb970bac0c6eead8f4481b81c27a03b9dc4e46c41e106",
+   "ctors": [],
+   "value": null
+  },
+  "bxor": {
+   "kind": "def",
+   "role": "impl",
+   "type": "2771c28e04cc9f06cc98c8e81ef3e6fe34d6b74506aa242a1d1f5f2f22f38ee5",
+   "ctors": [],
+   "value": null
+  }
+ },
+ "sha": "d450f0b92aae"
+}

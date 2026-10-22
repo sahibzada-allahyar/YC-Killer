@@ -1,0 +1,70 @@
+{
+ "id": "LA0192",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def ValidInput (n k : Int) : Prop :=\n  n ≥ 1 ∧ k ≥ 2\n\ndef SatisfiesConstraint (x n k : Int) : Prop :=\n  x > 0 ∧ k > 0 ∧ (x / k) * (x % k) = n\n\n@[reducible, simp]\ndef solve_precond (n k : Int) : Prop :=\n  ValidInput n k\n\ndef solve (n k : Int) (h_precond : solve_precond n k) : Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n k : Int) (result : Int) (h_precond : solve_precond n k) : Prop :=\n  result > 0 ∧ SatisfiesConstraint result n k ∧ (∀ x, x > 0 ∧ (x / k) * (x % k) = n → result ≤ x)\n\ntheorem solve_spec_satisfied (n k : Int) (h_precond : solve_precond n k) :\n    solve_postcond n k (solve n k h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def ValidInput (n k : Int) : Prop :=\n  n ≥ 1 ∧ k ≥ 2\n\ndef SatisfiesConstraint (x n k : Int) : Prop :=\n  x > 0 ∧ k > 0 ∧ (x / k) * (x % k) = n\n\n@[reducible, simp]\ndef solve_precond (n k : Int) : Prop :=\n  ValidInput n k",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n k : Int) (h_precond : solve_precond n k) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n k : Int) (result : Int) (h_precond : solve_precond n k) : Prop :=\n  result > 0 ∧ SatisfiesConstraint result n k ∧ (∀ x, x > 0 ∧ (x / k) * (x % k) = n → result ≤ x)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n k : Int) (h_precond : solve_precond n k) :\n    solve_postcond n k (solve n k h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "71a1109a7cb7ab22d973068036ce14f778b7bc3389c7c091ad557e3e290fe44d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "6c55caadba544e20471b83194c8d47f40ba4110a96686b310f5725d74788c78a"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "15d787b7e12de64102c41d59636258256e2c90964c7120be9a16943b20c67966",
+   "ctors": [],
+   "value": "68714217758b7928cee37c879a20b62897172af3333bcaf03f3a6889a0c2270b"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c949f6819212e39c355314a2ee984dea35a95fbc85a209b726bc0621f4deae69",
+   "ctors": [],
+   "value": null
+  },
+  "ValidInput": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "227b055f23fbb438bfcc843734b7a95719f8af1da3b231f856181cf2932fa328"
+  },
+  "SatisfiesConstraint": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "f6a40988c9b36ea3b31b578143f309fb8c2d16b683586ba7f53be7a761b74c2a",
+   "ctors": [],
+   "value": "418508e7f9e5709259870cfff4778f81c69d9533b9848bf23ba2e33a1dbb1e96"
+  }
+ },
+ "sha": "ecdcb6f319a6"
+}

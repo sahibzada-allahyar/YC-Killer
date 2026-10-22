@@ -1,0 +1,63 @@
+{
+ "id": "LA0024",
+ "toolchain": "4.23.0-rc2",
+ "skeleton": "def power (base : Int) (exp : Nat) : Int :=\n  if exp = 0 then 1\n  else base * power base (exp - 1)\n\n@[reducible, simp]\ndef solve_precond (n k : Int) : Prop :=\n  n > 0 ∧ k ≥ 0\n\ndef solve (n k : Int) (h_precond : solve_precond n k) : Int :=\n  sorry\n\n@[reducible, simp]\ndef solve_postcond (n k : Int) (result: Int) (h_precond : solve_precond n k) : Prop :=\n  result > 0 ∧ result % n = 0 ∧ result % power 10 (Int.natAbs k) = 0 ∧ (∀ m, m > 0 ∧ m % n = 0 ∧ m % power 10 (Int.natAbs k) = 0 → result ≤ m)\n\ntheorem solve_spec_satisfied (n k : Int) (h_precond : solve_precond n k) :\n    solve_postcond n k (solve n k h_precond) h_precond := by\n  sorry\n",
+ "warnings": [],
+ "preamble": "def power (base : Int) (exp : Nat) : Int :=\n  if exp = 0 then 1\n  else base * power base (exp - 1)\n\n@[reducible, simp]\ndef solve_precond (n k : Int) : Prop :=\n  n > 0 ∧ k ≥ 0",
+ "postamble": "",
+ "chunks": [
+  {
+   "text": "def solve (n k : Int) (h_precond : solve_precond n k) : Int :=",
+   "hole_after": true
+  },
+  {
+   "text": "@[reducible, simp]\ndef solve_postcond (n k : Int) (result: Int) (h_precond : solve_precond n k) : Prop :=\n  result > 0 ∧ result % n = 0 ∧ result % power 10 (Int.natAbs k) = 0 ∧ (∀ m, m > 0 ∧ m % n = 0 ∧ m % power 10 (Int.natAbs k) = 0 → result ≤ m)",
+   "hole_after": false
+  },
+  {
+   "text": "theorem solve_spec_satisfied (n k : Int) (h_precond : solve_precond n k) :\n    solve_postcond n k (solve n k h_precond) h_precond := by",
+   "hole_after": true
+  }
+ ],
+ "imports": [
+  "Init"
+ ],
+ "constants": {
+  "solve_spec_satisfied": {
+   "kind": "theorem",
+   "role": "theorem",
+   "type": "71a1109a7cb7ab22d973068036ce14f778b7bc3389c7c091ad557e3e290fe44d",
+   "ctors": [],
+   "value": null
+  },
+  "solve_precond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "b0c24f734cca54901dafd9235c75764e7d1c7bba66b447fa87bceadceb7db46a",
+   "ctors": [],
+   "value": "4872d57767b3b7afdcce12dbec72e6fda26064805a4c55a7bb068187b9171f20"
+  },
+  "solve_postcond": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "15d787b7e12de64102c41d59636258256e2c90964c7120be9a16943b20c67966",
+   "ctors": [],
+   "value": "fe141818feaf159846e0cd2ee3dab86b4862c8f17a7acdc1d6f0e6b85b04b231"
+  },
+  "solve": {
+   "kind": "def",
+   "role": "impl",
+   "type": "c949f6819212e39c355314a2ee984dea35a95fbc85a209b726bc0621f4deae69",
+   "ctors": [],
+   "value": null
+  },
+  "power": {
+   "kind": "def",
+   "role": "frozen",
+   "type": "321c9c96298bc0b769304589e825ec220413d872e4c74850d419213cf7d70a39",
+   "ctors": [],
+   "value": "04319dbd63adac753ff6cf09f1c68673fc73f6054423befc75a4d6a7d13b50d8"
+  }
+ },
+ "sha": "9fc4589158e3"
+}
