@@ -1,0 +1,153 @@
+[
+ {
+  "harness": {
+   "id": "066c3ae8b4b9",
+   "parent": null,
+   "generation": 0,
+   "note": "seed",
+   "strategy": "You are proving properties of small programs in Lean 4 (core library only, no Mathlib).\n1. Read the specification first: the precondition, the postcondition and every frozen theorem.\n2. Write the simplest implementation that obviously meets the postcondition.\n3. Prove each theorem. Unfold the definitions involved (`simp [f]`, `unfold f`), split cases (`split`, `cases`,\n   `induction`), and finish with `omega`, `simp`, `decide` on small closed goals, or explicit lemmas.\n4. If a proof is hard, prove a helper lemma first and use it.",
+   "lemmas": []
+  },
+  "val": {
+   "harness": "066c3ae8b4b9",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 2,
+   "exit0": 2,
+   "hacks": 0,
+   "score": 2,
+   "cost": 0.0171,
+   "calls": 14
+  }
+ },
+ {
+  "harness": {
+   "id": "be658c95db6f",
+   "parent": "066c3ae8b4b9",
+   "generation": 1,
+   "note": "All five failures are NO_CODE, meaning the agent emitted no file at all, so the top priority is an output-discipline rule that forces a complete file every time. The helper lemmas cover the recurring patterns in these tasks: folding sums over lists (with a shifted accumulator, which is the usual obstacle for induction) and reading list elements with `[i]!`.",
+   "strategy": "You are writing Lean 4 code (core library only, no Mathlib) that replaces `sorry` in a given file with real definitions and proofs.\n\nOUTPUT RULES (most important):\n0. Always return a complete Lean file. An empty or missing file scores zero, and several earlier attempts returned nothing. Even if you cannot finish every proof, output the whole file with your best implementation and proof attempts.\n1. Do not change any given `def` signature, theorem statement, or `#eval`/`#guard_msgs` block. Keep the given names exactly. Replace each `sorry` only inside the bodies.\n2. Do not use `sorry`, `axiom`, `native_decide`, `admit`, `unsafe`, `implemented_by`, or edits to the statements.\n\nWORKFLOW:\n1. Read the spec: preconditions, postconditions, frozen theorems, and the `#eval` examples. The `#eval` examples are your sanity checks for the implementation.\n2. Write a simple, total, structurally recursive implementation (prefer `List` recursion, `foldl`, `if-then-else`, `match`). Avoid `partial` and well-founded recursion when a structural definition works, since those are hard to unfold. Check the implementation against the `#eval` values by reasoning.\n3. For each theorem, prove a helper lemma first when needed. Typical tools:\n   - Induction on lists, with `generalizing` for accumulators (`induction l generalizing a with`).\n   - `simp [f]` or `unfold f` followed by `split` / `by_cases` / `cases h : e`.\n   - `omega` for linear Nat/Int arithmetic, with `foldl`/`length` terms treated as atoms.\n   - `decide` only for closed, small goals.\n4. For `Int`/`Nat` `%`, `/`, `min`, `max`, use `Int.emod_emod_of_dvd`, `Nat.mod_lt`, `Int.min_def`, `Int.max_def`, or `split` on the `if`.\n5. If a theorem is genuinely out of reach, still keep the file compiling where possible by proving the easier parts and leaving the hard theorem's proof as the best partial attempt. Never stop without emitting code.\n6. Before finishing, re-read the file for syntax errors, mismatched parentheses, and indentation under `by`.",
+   "lemmas": [
+    {
+     "name": "foldl_add_shift_int",
+     "code": "theorem foldl_add_shift_int (l : List Int) (a : Int) :\n    l.foldl (\u00b7 + \u00b7) a = a + l.foldl (\u00b7 + \u00b7) 0 := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    rw [ih (a + x), ih (0 + x)]\n    omega"
+    },
+    {
+     "name": "foldl_add_shift_nat",
+     "code": "theorem foldl_add_shift_nat (l : List Nat) (a : Nat) :\n    l.foldl (\u00b7 + \u00b7) a = a + l.foldl (\u00b7 + \u00b7) 0 := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    rw [ih (a + x), ih (0 + x)]\n    omega"
+    },
+    {
+     "name": "list_getElem_bang_of_lt",
+     "code": "theorem list_getElem_bang_of_lt {\u03b1 : Type} [Inhabited \u03b1] (l : List \u03b1) (i : Nat) (h : i < l.length) :\n    l[i]! = l[i] := by\n  simp [h]"
+    }
+   ]
+  },
+  "val": {
+   "harness": "be658c95db6f",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 3,
+   "exit0": 3,
+   "hacks": 0,
+   "score": 3,
+   "cost": 0.0177,
+   "calls": 13
+  }
+ },
+ {
+  "harness": {
+   "id": "3b18b727f5fa",
+   "parent": "be658c95db6f",
+   "generation": 2,
+   "note": "Every failure was an empty final file, so the strategy's main change is to force an early complete emission with fallbacks. The lemmas cover fold-with-accumulator bounds for min, max and sum over Nat, which recur across these spec tasks (minimum/maximum bounds, sum-based postconditions).",
+   "strategy": "You are writing Lean 4 code (core library only, no Mathlib) that replaces every `sorry` in a given file with real definitions and proofs.\n\nTOP PRIORITY: ALWAYS EMIT THE COMPLETE FILE. Past attempts produced empty output on every task and scored zero. Keep private reasoning brief. Write the full file in your first answer, then refine only if you have budget left. An imperfect file that compiles beats a perfect plan with no code.\n\nOUTPUT RULES:\n1. Return the whole Lean file, including the original `def`s, theorems, `#eval`/`#guard_msgs` blocks, and comments, unchanged except for the replaced bodies.\n2. Do not change any given `def` signature, theorem statement, or `#eval` expected output. Keep names exactly.\n3. Never use `sorry`, `admit`, `axiom`, `native_decide`, `unsafe`, `implemented_by`, `partial` (when avoidable), or any notation/instance trick to get around a proof. Never edit statements.\n\nWORKFLOW:\n1. Scan the spec: definitions to implement, theorem statements, and `#eval` expected values. Treat the `#eval` values as unit tests and check your implementation against them by hand.\n2. Implementation: write a simple, total, structurally recursive version (List recursion, `foldl`, `if`, `match`). Define helper functions as needed, placed before the target def. For `solve`-style defs that take a precondition proof, ignore the proof argument if the result does not need it.\n3. Proofs, in order of preference:\n   - `simp [f]`, `unfold f`, `simp only [List.foldl]`, then `split` or `by_cases` on the `if`.\n   - Induction on lists with `generalizing` for accumulators: `induction l generalizing a with | nil => simp | cons x xs ih => ...`.\n   - `omega` for linear Nat/Int arithmetic. Treat `foldl`/`length` terms as atoms and supply the needed IH instance as a `have` first.\n   - `decide` or `rfl` only for closed, small goals.\n   - For `%`, `/`, `min`, `max`, use `Nat.min_le_left`, `Nat.le_max_left`, `Int.emod_emod_of_dvd`, `Nat.mod_lt`, or `split`.\n4. If a theorem resists proof after a few tries, keep the file compiling: prove the easier theorems fully, and for the hard one leave your best partial attempt. Never leave the file empty.\n5. Before finishing, re-read the file for mismatched parentheses, indentation under `by`, and names used before definition.",
+   "lemmas": [
+    {
+     "name": "foldl_add_shift_int",
+     "code": "theorem foldl_add_shift_int (l : List Int) (a : Int) :\n    l.foldl (\u00b7 + \u00b7) a = a + l.foldl (\u00b7 + \u00b7) 0 := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    rw [ih (a + x), ih (0 + x)]\n    omega"
+    },
+    {
+     "name": "foldl_add_shift_nat",
+     "code": "theorem foldl_add_shift_nat (l : List Nat) (a : Nat) :\n    l.foldl (\u00b7 + \u00b7) a = a + l.foldl (\u00b7 + \u00b7) 0 := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    rw [ih (a + x), ih (0 + x)]\n    omega"
+    },
+    {
+     "name": "list_getElem_bang_of_lt",
+     "code": "theorem list_getElem_bang_of_lt {\u03b1 : Type} [Inhabited \u03b1] (l : List \u03b1) (i : Nat) (h : i < l.length) :\n    l[i]! = l[i] := by\n  simp [h]"
+    },
+    {
+     "name": "foldl_max_ge_init",
+     "code": "theorem foldl_max_ge_init (l : List Nat) (a : Nat) : a \u2264 l.foldl max a := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    have h1 : a \u2264 max a x := Nat.le_max_left a x\n    exact Nat.le_trans h1 (ih (max a x))"
+    },
+    {
+     "name": "foldl_min_le_init",
+     "code": "theorem foldl_min_le_init (l : List Nat) (a : Nat) : l.foldl min a \u2264 a := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    have h1 : min a x \u2264 a := Nat.min_le_left a x\n    exact Nat.le_trans (ih (min a x)) h1"
+    },
+    {
+     "name": "foldl_add_nat_ge_init",
+     "code": "theorem foldl_add_nat_ge_init (l : List Nat) (a : Nat) : a \u2264 l.foldl (\u00b7 + \u00b7) a := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    have := ih (a + x)\n    omega"
+    }
+   ]
+  },
+  "val": {
+   "harness": "3b18b727f5fa",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 2,
+   "exit0": 2,
+   "hacks": 0,
+   "score": 2,
+   "cost": 0.0143,
+   "calls": 14
+  }
+ },
+ {
+  "harness": {
+   "id": "33ae894d9991",
+   "parent": "be658c95db6f",
+   "generation": 2,
+   "note": "All recent failures were NO_CODE, meaning the agent returned an empty file, so the strategy now leads with a mandatory complete-file output and a fast write-then-refine workflow. The added lemmas are small, general list and Int helpers that these specs (foldl sums, list indexing, min/max bounds) keep needing.",
+   "strategy": "You are writing Lean 4 code (core library only, no Mathlib) that replaces `sorry` in a given file with real definitions and proofs.\n\nTOP PRIORITY: NEVER RETURN AN EMPTY RESPONSE. Several earlier attempts produced no code at all, which scores zero. Your final reply must always be the complete Lean file, starting with the given definitions and statements.\n\nOUTPUT RULES:\n0. Always return a complete Lean file, even if some proofs are incomplete. Write the file in your first pass, then refine it. Do not spend long analysis before writing the first complete version.\n1. Do not change any given `def` signature, theorem statement, or `#eval`/`#guard_msgs` block. Keep the given names exactly. Replace each `sorry` only inside the bodies.\n2. Do not use `sorry`, `axiom`, `native_decide`, `admit`, `unsafe`, `implemented_by`, or edits to the statements. Do not use instance or notation tricks.\n\nWORKFLOW:\n1. Skim the spec once: preconditions, postconditions, theorems, and `#eval` examples. Keep reasoning brief.\n2. Write a simple, total, structurally recursive implementation (prefer `List` recursion, `foldl`, `if-then-else`, `match`). Avoid `partial` and well-founded recursion when a structural definition works. Check the implementation against the `#eval` values by hand.\n3. For each theorem, prove the easy ones first, then the harder ones. Typical tools:\n   - Induction on lists with `generalizing` for accumulators (`induction l generalizing a with`).\n   - `simp [f]` or `unfold f`, then `split` / `by_cases` / `cases h : e`.\n   - `omega` for linear Nat/Int arithmetic, treating `foldl`/`length` terms as atoms.\n   - `decide` only for closed, small goals.\n   - `rfl` for definitional unfolding of `foldl` on explicit cons lists.\n4. For `Int`/`Nat` `%`, `/`, `min`, `max`, use `Int.emod_emod_of_dvd`, `Nat.mod_lt`, `Int.min_def`, `Int.max_def`, `Int.emod_nonneg`, or `split` on the `if`.\n5. For `l[i]!` on lists, rewrite with the in-bounds lemma from the library, or use `simp [h]`.\n6. If a theorem is out of reach, still output the whole file with the best partial proof attempts for the others. Never stop without emitting code.\n7. Before finishing, re-read the file for syntax errors, mismatched parentheses, and indentation under `by`.\n\nLIBRARY: the lemmas below are available and may be copied in. Use them when they fit.",
+   "lemmas": [
+    {
+     "name": "foldl_add_shift_int",
+     "code": "theorem foldl_add_shift_int (l : List Int) (a : Int) :\n    l.foldl (\u00b7 + \u00b7) a = a + l.foldl (\u00b7 + \u00b7) 0 := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    rw [ih (a + x), ih (0 + x)]\n    omega"
+    },
+    {
+     "name": "foldl_add_shift_nat",
+     "code": "theorem foldl_add_shift_nat (l : List Nat) (a : Nat) :\n    l.foldl (\u00b7 + \u00b7) a = a + l.foldl (\u00b7 + \u00b7) 0 := by\n  induction l generalizing a with\n  | nil => simp\n  | cons x xs ih =>\n    simp only [List.foldl]\n    rw [ih (a + x), ih (0 + x)]\n    omega"
+    },
+    {
+     "name": "list_getElem_bang_of_lt",
+     "code": "theorem list_getElem_bang_of_lt {\u03b1 : Type} [Inhabited \u03b1] (l : List \u03b1) (i : Nat) (h : i < l.length) :\n    l[i]! = l[i] := by\n  simp [h]"
+    },
+    {
+     "name": "list_getElem_bang_cons_zero",
+     "code": "theorem list_getElem_bang_cons_zero {\u03b1 : Type} [Inhabited \u03b1] (x : \u03b1) (xs : List \u03b1) :\n    (x :: xs)[0]! = x := by\n  simp"
+    },
+    {
+     "name": "foldl_add_cons_nat",
+     "code": "theorem foldl_add_cons_nat (x a : Nat) (xs : List Nat) :\n    (x :: xs).foldl (\u00b7 + \u00b7) a = xs.foldl (\u00b7 + \u00b7) (a + x) := rfl"
+    },
+    {
+     "name": "int_sub_add_one_nonneg_of_le",
+     "code": "theorem int_sub_add_one_nonneg_of_le (a b : Int) (h : a \u2264 b) :\n    0 \u2264 b - a + 1 := by\n  omega"
+    }
+   ]
+  },
+  "val": {
+   "harness": "33ae894d9991",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 2,
+   "exit0": 2,
+   "hacks": 0,
+   "score": 2,
+   "cost": 0.0161,
+   "calls": 14
+  }
+ }
+]

@@ -1,0 +1,92 @@
+{
+ "reward": "millennium",
+ "solver": "z-ai/glm-5.3-flash",
+ "improver": "claude-haiku-5-5",
+ "generations": 3,
+ "n_train": 6,
+ "n_val": 8,
+ "seed_val": {
+  "harness": "066c3ae8b4b9",
+  "split": "val",
+  "reward": "millennium",
+  "n": 8,
+  "proved": 2,
+  "exit0": 2,
+  "hacks": 0,
+  "score": 2,
+  "cost": 0.0171,
+  "calls": 14
+ },
+ "best_val": {
+  "harness": "be658c95db6f",
+  "split": "val",
+  "reward": "millennium",
+  "n": 8,
+  "proved": 3,
+  "exit0": 3,
+  "hacks": 0,
+  "score": 3,
+  "cost": 0.0177,
+  "calls": 13
+ },
+ "best_harness": "be658c95db6f",
+ "meta_cost": 0.0,
+ "curve": [
+  {
+   "g": 0,
+   "id": "066c3ae8b4b9",
+   "harness": "066c3ae8b4b9",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 2,
+   "exit0": 2,
+   "hacks": 0,
+   "score": 2,
+   "cost": 0.0171,
+   "calls": 14
+  },
+  {
+   "g": 1,
+   "id": "be658c95db6f",
+   "harness": "be658c95db6f",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 3,
+   "exit0": 3,
+   "hacks": 0,
+   "score": 3,
+   "cost": 0.0177,
+   "calls": 13
+  },
+  {
+   "g": 2,
+   "id": "3b18b727f5fa",
+   "harness": "3b18b727f5fa",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 2,
+   "exit0": 2,
+   "hacks": 0,
+   "score": 2,
+   "cost": 0.0143,
+   "calls": 14
+  },
+  {
+   "g": 2,
+   "id": "33ae894d9991",
+   "harness": "33ae894d9991",
+   "split": "val",
+   "reward": "millennium",
+   "n": 8,
+   "proved": 2,
+   "exit0": 2,
+   "hacks": 0,
+   "score": 2,
+   "cost": 0.0161,
+   "calls": 14
+  }
+ ]
+}

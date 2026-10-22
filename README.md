@@ -119,13 +119,27 @@ python -m millennium_rsi report runs/rsi/glm
 
 Tasks are the curated development split of the vericoding Lean tasks (`runs/fv/`); the test split stays held out.
 
+A first run (a small smoke test on 8 held-out tasks; GLM-5.3 Flash solving, Claude Haiku 5.5 improving):
+
+```text
+$ python -m millennium_rsi report runs/rsi/smoke
+reward=millennium solver=z-ai/glm-5.3-flash improver=claude-haiku-5-5
+  gen  0  066c3ae8b4b9  proved   2/8  exit0   2  fake  0  $0.017
+  gen  1  be658c95db6f  proved   3/8  exit0   3  fake  0  $0.018
+  gen  2  3b18b727f5fa  proved   2/8  exit0   2  fake  0  $0.014
+  gen  2  33ae894d9991  proved   2/8  exit0   2  fake  0  $0.016
+```
+
+All nine lemmas the improver proposed were kernel-checked before entering the library; the evolved harnesses are in
+[`runs/rsi/smoke/archive.json`](runs/rsi/smoke/archive.json). Larger runs and the exit-code ablation are next.
+
 ## Quickstart
 
 Requires Python 3.10+ and the pinned toolchains: Lean `v4.23.0-rc2` (via [elan](https://github.com/leanprover/elan))
 and/or [Dafny 4.11](https://github.com/dafny-lang/dafny/releases/tag/v4.11.0).
 
 ```bash
-git clone https://github.com/sahibzada-allahyar/YC-Killer.git millennium-harness
+git clone https://github.com/sahibzada-allahyar/Formal-Verification-RSI.git millennium-harness
 ```
 
 ```bash
