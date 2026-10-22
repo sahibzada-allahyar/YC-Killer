@@ -52,8 +52,14 @@ class LLM:
     def _post(self, url: str, headers: dict, body: dict) -> dict:
         req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"content-type": "application/json",
                                                                                   **headers})
-        with urllib.request.urlopen(req, timeout=self.timeout) as r:
-            return json.loads(r.read())
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            body = e.read().decode(errors="replace")[:500]
+            if 400 <= e.code < 500 and e.code != 429:
+                raise ValueError(f"HTTP {e.code}: {body}") from e  # not retried: the request itself is wrong
+            raise
 
     def _openrouter(self, system: str, user: str) -> str:
         d = self._post("https://openrouter.ai/api/v1/chat/completions",
@@ -69,7 +75,7 @@ class LLM:
         key = os.environ.get("ANTHROPIC_API_KEY") or os.environ["ANTHROPIC_API_KEY_2"]
         d = self._post("https://api.anthropic.com/v1/messages",
                        {"x-api-key": key, "anthropic-version": "2023-06-01"},
-                       {"model": self.model, "max_tokens": self.max_tokens, "temperature": self.temperature,
+                       {"model": self.model, "max_tokens": self.max_tokens,  # Claude 5 models fix their own sampling
                         "system": system, "messages": [{"role": "user", "content": user}]})
         u = d.get("usage") or {}
         self.usage.add(Usage(1, u.get("input_tokens", 0), u.get("output_tokens", 0)))
