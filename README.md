@@ -6,6 +6,9 @@
 
 **Formal verification you can trust, and recursive self-improvement that can't cheat.**
 
+<sub>Formal verification · Lean 4 · Dafny · automated theorem proving · autoformalization · verified software engineering ·
+AI for mathematics and physics · recursive self-improvement (RSI) · reward hacking · AI safety</sub>
+
 <p>
 <a href="#results"><img src="https://img.shields.io/badge/fake_proofs_accepted-0%2F96-6B95F0?style=flat-square&labelColor=101314" alt="0 of 96 cheats accepted"></a>
 <a href="https://lean-lang.org"><img src="https://img.shields.io/badge/Lean-4.23-E8E4D8?style=flat-square&labelColor=101314" alt="Lean 4.23"></a>
@@ -83,6 +86,13 @@ Claude Haiku 5.5 and DeepSeek V4.1 Flash the in-loop gain is 0 to 2 tasks. Full 
 ## Millennium RSI
 
 **Recursive self-improvement with a reward that cannot be gamed.**
+
+Recursive self-improvement is moving from theory to products. This month Recursive released
+[Flint](https://www.wired.com/story/recursive-self-improvement-flint-latest-model-scary-good/), an open-weight coding
+model whose pipeline, its CEO Richard Socher says, was almost entirely "done and improved upon by AI"
+([TechCrunch](https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/)).
+The open question for every such system is the same: what stops a self-improving AI from improving its score instead
+of itself? Millennium RSI answers it with formal verification.
 
 Self-improving AI systems are here: research agents now help design the next model. Every such loop is only as good
 as the score it climbs, and a system that rewrites itself to raise a score will find any gap between the score and the
