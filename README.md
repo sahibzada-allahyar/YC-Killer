@@ -1,3 +1,5 @@
+Personal website: [Sahibzada Allahyar](https://sahibzada-allahyar.github.io)
+
 <div align="center">
 
 <img src="docs/assets/hero.gif" alt="Millennium Harness: a trefoil of proof steps turning blue as each one is kernel-checked, while fake proofs flash red and are rejected" width="100%">
