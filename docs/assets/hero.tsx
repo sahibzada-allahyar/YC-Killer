@@ -2,11 +2,9 @@ import React, { useMemo } from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { ThreeCanvas } from "@remotion/three";
 import * as THREE from "three";
-import { loadFont as loadSerif } from "@remotion/google-fonts/InstrumentSerif";
-import { loadFont as loadMono } from "@remotion/google-fonts/JetBrainsMono";
+import { CM_SERIF, CM_MONO } from "./cm";
+const SERIF = CM_SERIF, MONO = CM_MONO, CHALK = CM_SERIF, SANS = CM_SERIF;
 
-const SERIF = loadSerif().fontFamily;
-const MONO = loadMono().fontFamily;
 
 export const HERO_FRAMES = 180; // 6 s at 30 fps, seamless loop
 const N = 300;
